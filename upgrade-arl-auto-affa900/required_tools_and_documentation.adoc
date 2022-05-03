@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/required_tools_and_documentation.html 
+keywords: required, tools, documentation, install, worksheet, ontap 
+summary: 您必須擁有特定工具和文件、才能執行AFF 從VMware到AFF VMware的升級。 
+---
+= 必要的工具與文件
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您必須有接地線才能執行升級、而且在升級過程中需要參考其他文件。
+
+請參閱 link:other_references.html["參考資料"] 存取此升級所需的參考文件和參考網站清單。

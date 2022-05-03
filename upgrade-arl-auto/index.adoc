@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/index.html 
+keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology 
+summary: 您可以ONTAP 使用「系統控制器更換」命令、重新定位非根Aggregate的擁有權、將執行SES9.5的控制器硬體升級至9.7。 
+---
+= 總覽
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+本程序說明如何針對下列系統組態、使用Aggregate重新定位（ARL）來升級控制器硬體：
+
+[cols="40,20,40"]
+|===
+| 方法 | 版本ONTAP | 支援的系統 
+
+
+| 使用「系統控制器置換」命令 | 9.5至9.7 | link:decide_to_use_the_aggregate_relocation_guide.html#sys_commands_95_97_supported_systems["支援的系統對照表連結"] 
+|===
+在過程中、您會使用更換的控制器硬體來升級原始的控制器硬體、以重新定位非根集合體的擁有權。您可以多次從節點移轉Aggregate至節點、以確認在整個升級程序中、至少有一個節點正在處理來自集合體的資料。您也可以移轉資料邏輯介面（LIF）、並在繼續進行時將新控制器上的網路連接埠指派給介面群組。
+
+在此資訊中、原始節點稱為「node1」和「node2」、新節點稱為「node3」和「node4」。在上述程序中、「node1」會由「node3」取代、而「node2」則會由「node4」取代。
+
+術語「node1」、「node2」、「node3」和「node4」僅用於區分原始節點和新節點。執行此程序時、您必須取代原始節點和新節點的真實名稱。但是實際上、節點名稱並未變更：「node3」與「node1」名稱相同、而「node4」在升級控制器硬體後的名稱與「node2」名稱相同。
+
+在本資訊中、「系統搭配FlexArray 不支援的虛擬化軟體」一詞係指屬於這些新平台的系統。「V系列系統」一詞是指可附加至儲存陣列的個別硬體系統。
+
+.重要資訊：
+* 此程序相當複雜、假設您具備進階ONTAP 的功能不完整的管理技能。您也必須閱讀並瞭解 link:guidelines_for_upgrading_controllers_with_arl.html["使用ARL升級控制器的準則"] 和 link:overview_of_the_arl_upgrade.html["ARL升級總覽"] 開始升級之前。
+* 此程序假設更換的控制器硬體是新的、而且尚未使用。此程序不包含使用wpeconfig命令準備已用控制器所需的步驟。如果先前使用替換控制器硬體、尤其是控制器以Data ONTAP 7-Mode執行時、您必須聯絡技術支援部門。
+* 您可以使用此程序來升級具有兩個以上節點之叢集中的控制器硬體、但是您需要針對叢集中的每個HA配對分別執行程序。
+* 本程序適用於FAS 包含AFF 「支援整合式虛擬化軟體」的各種系統、V系列系統、支援各種系統。FlexArray如果安裝所需的授權、則在發行完Solide9.5之後發行的系統可附加至儲存陣列。FAS ONTAP現有的V系列系統在ONTAP 支援方面、請參考《S25：如需儲存陣列和V系列機型的詳細資訊、請參閱 link:other_references.html["參考資料"] 若要連結至_SUR__ Hardware Universe 、請前往V系列支援對照表。
+* 從版本號為9.6開始ONTAP 、此程序適用於執行4節點MetroCluster 版本的版本。由於這個組態站台可位於兩個實體位置、因此必須在每個站台個別執行自動化控制器升級、才能進行HA配對。MetroCluster MetroCluster
+* 如果您要從AFF 某個不支援的A320系統進行升級、您可以使用Volume Moves來升級控制器硬體、或聯絡技術支援部門。如果您願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+

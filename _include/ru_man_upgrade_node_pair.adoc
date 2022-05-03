@@ -1,0 +1,14 @@
+= 
+:allow-uri-read: 
+
+
+若要升級節點配對、您必須準備原始節點、然後在原始節點和新節點上執行一系列步驟。然後您可以取消委任原始節點。
+
+.步驟
+. link:stage1_prepare_for_upgrade.html["階段1：準備升級"]
+. link:stage2_relocate_retire_node1.html["階段2：重新部署和淘汰節點1"]
+. link:stage_3_install_boot_node3.html["階段3：安裝和開機節點3"]
+. link:stage4_record_info_retire_node2.html["第4階段：記錄資訊並淘汰節點2"]
+. link:stage5_install_boot_node4.html["階段5：安裝和開機節點4"]
+. link:stage6_complete_upgrade.html["第6階段：完成升級"]
+

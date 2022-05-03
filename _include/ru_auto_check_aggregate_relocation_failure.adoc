@@ -1,0 +1,26 @@
+= 檢查Aggregate重新配置失敗
+:allow-uri-read: 
+
+
+
+
+== 檢查Aggregate重新配置失敗
+
+在程序期間、ARL可能會在階段2、階段3或階段5中失敗。
+
+.步驟
+. 輸入下列命令並檢查輸出：
++
+《集合重遷秀》
+
++
+「shorage aggregate regate regate regate show」命令會顯示哪些Aggregate已成功重新配置、哪些未重新配置、以及故障原因。
+
+. 檢查主控台是否有任何EMS訊息。
+. 請採取下列其中一項行動：
++
+** 根據「儲存集合體重新定位show」命令的輸出和EMS訊息的輸出、採取適當的修正行動。
+** 使用「overre-tetoes」選項或「superre-dite-checks」選項的「shorage aggregate regate or搬 移start」命令、強制重新配置集合體或集合體。
+
+
+

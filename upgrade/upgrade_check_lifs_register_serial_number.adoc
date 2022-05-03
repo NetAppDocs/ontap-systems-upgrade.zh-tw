@@ -1,0 +1,41 @@
+---
+permalink: upgrade/upgrade-check-lifs-register-serial-number.html 
+sidebar: sidebar 
+keywords: lifs 
+summary: 在將替換節點送回服務之前、您應該先確認該生命點是否位於其主連接埠、如果AutoSupport 啟用了「支援使用者支援功能」、請先登錄替換節點的序號、然後重設自動恢復功能。 
+---
+= 驗證LIF並登錄序號
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在將替換節點恢復服務之前、您必須先確認該生命點是否位於其主連接埠、如果AutoSupport 啟用了「支援使用者支援功能」、請先登錄替換節點的序號、然後重設自動恢復功能。
+
+. 驗證邏輯介面是否向其主伺服器和連接埠回報：「network interface show -is home-false」
++
+如果有任何生命期被列為假、請將其還原至主連接埠：「網路介面回復*」
+
+. 向NetApp支援部門註冊系統序號。
++
+[cols="1,2"]
+|===
+| 如果... | 然後... 
+
+
+ a| 
+啟用了支援AutoSupport
+ a| 
+傳送AutoSupport 資訊以登錄序號。
+
+
+
+ a| 
+未啟用支援AutoSupport
+ a| 
+請致電NetApp支援部門以註冊序號。
+
+|===
+. 如果停用自動還原、請重新啟用：「儲存容錯移轉修改節點本機-自動恢復true」
+

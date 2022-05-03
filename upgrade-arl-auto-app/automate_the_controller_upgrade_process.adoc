@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/automate_the_controller_upgrade_process.html 
+keywords: automating, controller, upgrade, process, network, port, ha 
+summary: 使用半自動ARL程序來升級執行ONTAP 不含更新版本的控制器。 
+---
+= 自動化控制器升級程序
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在控制器升級期間、控制器會被另一個執行較新或更強大平台的控制器所取代。此內容的早期版本包含不中斷營運的控制器更新程序指示、其中包含完全手動的步驟。本內容提供新自動化程序的步驟、此程序利用自動網路連接埠連線檢查來進一步簡化控制器升級體驗。
+
+手動程序既冗長又複雜、但在此簡化程序中、您可以使用集合體重新配置來實作控制器更新、讓HA配對能夠更有效率地進行不中斷營運的升級。手動步驟大幅減少、尤其是驗證、收集資訊及檢查後的步驟。

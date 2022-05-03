@@ -1,0 +1,92 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/join_quorum_node_has_different_ports_stage5.html 
+keywords: quorum, cluster, network ports, node, broadcast domain 
+summary: 在第5階段中、ONTAP 使用「系統控制器更換」命令、將執行版本號為9.5的控制器升級至9.7時、請確認新節點是否加入仲裁。 
+---
+= 當節點具有不同的網路連接埠集時、請加入仲裁
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+新控制器的節點會在一開始自動開機並嘗試加入叢集；不過、如果新節點有不同的網路連接埠集、您必須執行下列步驟、以確認節點已成功加入仲裁。
+
+您可以將這些指示用於任何相關節點。節點3用於下列範例。
+
+.步驟
+. 輸入下列命令並檢查輸出、確認新的叢集連接埠位於叢集廣播網域中：
++
+「網路連接埠show -node-port port -Fields broadcast Domain」
+
++
+以下範例顯示連接埠「e1a」位於節點3的叢集網域中：
+
++
+[listing]
+----
+cluster::> network port show -node node3 -port e1a -fields broadcast-domain
+node    port  broadcast-domain
+------  ----  ---------------
+node3   e1a   Cluster
+----
+. 輸入下列命令並檢查輸出、將正確的連接埠新增至叢集廣播網域：
++
+「網路連接埠修改-nodes -port -IPSpace叢集-MTU 9000」
+
++
+此範例在節點3上新增叢集連接埠「e1b」：
+
++
+[listing]
+----
+network port modify -node node3 -port e1b -ipspace Cluster -mtu 9000
+----
+. 使用下列命令、將叢集生命區移轉至新的連接埠、每個LIF只需移轉一次：
++
+「網路介面移轉-vserver叢集-lif<lif_name>-source-Node node3 dest-Node node3 -dite-port <port_name>」
+
+. 修改叢集lifs的主連接埠、如下所示：
++
+「網路介面修改-vserver叢集-lIF <lif_name>–home-port <port_name>'
+
+. 如果叢集連接埠不在叢集廣播網域中、請使用下列命令加以新增：
++
+「網路連接埠廣播網域附加連接埠-IPSpace叢集-BroadcastDomain叢集連接埠節點：連接埠」
+
+. 從叢集廣播網域移除舊的連接埠。您可以用於任何相關節點。下列命令會移除節點3上的連接埠「e0d」：
++
+「網路連接埠廣播網域移除連接埠網路連接埠廣播網域移除連接埠IPSpace叢集-broadcast網域叢集節點3：e0d」
+
+. 驗證節點是否重新加入仲裁、如下所示：
++
+「cluster show -node3 -Fields health」
+
+. 調整裝載叢集生命與節點管理/叢集管理生命體的廣播網域。確認每個廣播網域都包含正確的連接埠。如果某個連接埠裝載LIF或主控LIF、則無法在廣播網域之間移動連接埠、因此您可能需要依照下列方式移轉及修改LIF：
++
+.. 顯示LIF的主連接埠：
++
+「網路介面顯示欄位主節點、主連接埠」
+
+.. 顯示包含此連接埠的廣播網域：
++
+「網路連接埠廣播網域show -port <node_name:port_name>'
+
+.. 新增或移除廣播網域的連接埠：
++
+「網路連接埠廣播網域附加連接埠網路連接埠廣播網域移除連接埠」
+
+.. 修改LIF的主連接埠：
++
+「網路介面修改-vserver <vserver_name>-lif<lif_name>–home-port <port_name>'
+
++
+如有必要、請調整叢集間的廣播網域、並移轉叢集間的LIF。資料生命量維持不變。
+
+
+
+

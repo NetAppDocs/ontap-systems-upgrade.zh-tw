@@ -1,0 +1,126 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html 
+keywords: relocate, non-root, aggregates, nas, lif, node2, node3 
+summary: 使用ONTAP 「系統控制器更換」命令、將非根Aggregate和NAS資料LIF從節點1移至節點2、並將節點1的資源移至節點3。 
+---
+= 將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在將node1替換成node3之前、您必須先將非根Aggregate和NAS資料lIF從node1移至node2、然後再將node1的資源移至node3。
+
+當您開始工作時、必須已暫停該作業；您必須手動恢復該作業。
+
+在升級過程中、遠端LIF會處理SAN LUN的流量。在升級期間、移轉SAN LIF對於叢集或服務健全狀況並不必要。將node3聯機後，您必須驗證生命期是否正常並位於適當的端口上。
+
+
+NOTE: 不會修改集合體和lifs的主擁有者、只會修改目前擁有者。
+
+.步驟
+. 恢復Aggregate重新定位和NAS資料LIF移動作業：
++
+「系統控制器更換恢復」
+
++
+所有非根Aggregate和NAS資料lifs都會從節點1移轉至節點2。
+
++
+此作業會暫停、以便您確認是否已將所有節點1非根Aggregate和非SAN資料lIF移轉至節點2。
+
+. 檢查集合體重新配置和NAS資料LIF移動作業的狀態：
++
+「System Controller replace show-details」（系統控制器取代顯示詳細資料
+
+. 在作業仍暫停的情況下、確認節點2上的所有非根Aggregate狀態均處於線上狀態：
++
+「torage Aggregate show -node2>-state online -root假」
+
++
+以下範例顯示節點2上的非根Aggregate處於線上狀態：
+
++
+[listing]
+----
+cluster::> storage aggregate show -node node2 state online -root false
+
+Aggregate  Size     Available  Used%  State  #Vols  Nodes  RAID Status
+---------  -------  ---------  -----  ------ -----  ------ --------------
+aggr_1     744.9GB  744.8GB    0%     online     5  node2  raid_dp,normal
+aggr_2     825.0GB  825.0GB    0%     online     1  node2  raid_dp,normal
+2 entries were displayed.
+----
++
+如果Aggregate已離線或成為節點2上的外部節點、請在節點2上使用下列命令將其上線、每個Aggregate一次：
+
++
+「torage Aggregate online -gregate <agger_name>」
+
+. 在節點2上使用下列命令並檢查其輸出、以確認節點2上的所有磁碟區都已上線：
++
+「Volume show -node2>-state offline」（Volume show -node2>-state offline）
+
++
+如果節點2上有任何磁碟區離線、請在節點2上使用下列命令將其上線、每個磁碟區一次：
+
++
+「Volume online -vserver <vserver_name>-volume <volume <volume．name>'
+
++
+與此命令搭配使用的「<vserver_name>」可在先前的「Volume show」命令輸出中找到。
+
+
+
+. [[step5]如果新硬體上目前裝載資料生命週區的連接埠不存在、請將其從廣播網域中移除：
++
+「網路連接埠廣播網域移除連接埠」
+
+. 如果有任何生命中斷、請輸入下列命令、並針對每個LIF輸入一次、將該生命的管理狀態設定為「UP」：
++
+「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-node<nodename>-STATUS-admin up」
+
+. 如果已設定介面群組或VLAN、請完成下列子步驟：
++
+.. 如果您尚未儲存VLAN和介面群組資訊、請在節點3開機後、在節點3上重新建立VLAN和介面群組。
+.. 從介面群組移除VLAN：
++
+「網路連接埠VLAN刪除節點<節點名稱>-連接埠<ifgrp>-vlan-id <vlan_ID>」
+
++
+
+NOTE: 請遵循修正行動來解決VLAN DELETE命令所建議的任何錯誤。
+
+.. 輸入下列命令並檢查其輸出、查看節點上是否已設定任何介面群組：
++
+「network port ifgrp show -node<nodename>-ifgrp <ifgrp_name>-instance」
+
++
+系統會顯示節點的介面群組資訊、如下列範例所示：
+
++
+[listing]
+----
+cluster::> network port ifgrp show -node node1 -ifgrp a0a -instance
+                 Node: node1
+ Interface Group Name: a0a
+Distribution Function: ip
+        Create Policy: multimode_lacp
+          MAC Address: 02:a0:98:17:dc:d4
+   Port Participation: partial
+        Network Ports: e2c, e2d
+             Up Ports: e2c
+           Down Ports: e2d
+----
+.. 如果節點上已設定任何介面群組、請記錄這些群組的名稱及指派給它們的連接埠、然後輸入下列命令刪除連接埠、每個連接埠一次：
++
+「network port ifgrp remove-port -node<nodename>-ifgrp <ifgrp_name>-port <netport>'
+
+
+
+

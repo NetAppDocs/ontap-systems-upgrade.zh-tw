@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/verify_switchover_healing_switchback.html 
+keywords: verifying, switchover, healing, switchback, metrocluster, management, disaster, recovery, mcc 
+summary: 使用「系統控制器更換」命令、在升級執行更新版本的控制器時、請驗證MetroCluster 「不中斷組態」切換、修復及切換作業ONTAP 。 
+---
+= 驗證切換、修復及切換
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您應該驗證MetroCluster 該組態的切換、修復及切換作業。
+
+請參閱 link:other_references.html["參考資料"] 若要連結至_SURFManagement MetroCluster 和Disaster Recovery_內容、請使用所述的程序進行協調切換、修復及切換。

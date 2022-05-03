@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/stage_5_index.html 
+keywords: install, boot, node4, node2, node-management,  stage 5 
+summary: ARL升級的第5階段程序順序、使用「系統控制器更換」命令、在執行ONTAP 版本號從9.5到9.7的控制器上執行。 
+---
+= 階段5.安裝及開機節點4
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在第5階段期間、您會安裝並開機node4、將叢集和節點管理連接埠從node2對應至node4、然後驗證node4安裝。您也可以將node2擁有的NAS資料lifs從node3移至node4、然後將node2的Aggregate從node3移至node4。
+
+.步驟
+. link:install_boot_node4.html["安裝及開機節點4"]
+. link:set_fc_or_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"]
+. link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"]
+. link:join_quorum_node_has_different_ports_stage5.html["當節點具有不同的網路連接埠集時、請加入仲裁"]
+. link:verify_node4_installation.html["驗證node4安裝"]
+. link:restore_key-manager_config_node4.html["還原節點4上的金鑰管理程式組態"]
+. link:move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html["將節點2擁有的非根Aggregate和NAS資料lifs從節點3移至節點4"]
+

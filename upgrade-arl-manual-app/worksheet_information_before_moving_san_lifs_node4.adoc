@@ -1,0 +1,71 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual-app/worksheet_information_before_moving_san_lifs_node4.html 
+keywords: worksheet, information, SAN, LIF, switch, port, adapter 
+summary: 在執行ONTAP 《Se 9.8或更新版本》的控制器上進行手動ARL升級時、請記錄node2 NAS資料LIF組態資訊。 
+---
+= 工作表：將NAS資料生命週期移至節點4之前要記錄的資訊
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+若要在將SAN LIF從node3移至node4之後、協助驗證您的組態是否正確、您可以使用下列工作表來記錄每個LIF的「介面卡」和「切換連接埠」資訊。
+
+從「網路介面show -data-protocol fc*」命令輸出中記錄LIF「介面卡」資訊、以及節點3的「FCP介面卡show -Fields switch-port、fc-WWPN」命令輸出中的「切換連接埠」資訊。
+
+完成移轉至節點4之後、請在節點4上記錄lIF「介面卡」和「切換連接埠」資訊、並確認每個LIF仍連接至相同的「切換連接埠」。
+
+[cols="6*"]
+|===
+3+| 節點3 3+| 節點4 
+
+
+| LIF | 介面卡 | 「切換連接埠」 | LIF | 介面卡 | 「切換連接埠」 
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+
+
+|  |  |  |  |  |  
+|===

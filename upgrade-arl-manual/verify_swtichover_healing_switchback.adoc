@@ -1,0 +1,19 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/verify_swtichover_healing_switchback.html 
+keywords: verify,switchover, healing, switchback, negotiated, mcc, metrocluster 
+summary: 在執行ONTAP 更新版本的控制器上進行手動ARL升級時、請確認切換、修復及切換作業。 
+---
+= 驗證切換、修復及切換
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您應該驗證MetroCluster 該組態的切換、修復及切換作業。
+
+請參閱 link:other_references.html["參考資料"] 若要連結至_SURFManagement MetroCluster 和Disaster Recovery_內容、請遵循議定的切換、修復和切換程序。

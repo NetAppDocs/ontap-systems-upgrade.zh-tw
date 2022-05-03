@@ -1,0 +1,92 @@
+---
+permalink: upgrade/upgrade-considerations.html 
+sidebar: sidebar 
+keywords: plan, upgrade, consideration, contact, technical, support, recommendation, guidance, cluster, considerations for upgrading controller hardware 
+summary: 若要規劃升級、您應該熟悉一般的升級考量。如有必要、請聯絡技術支援部門、以取得叢集組態的特定建議與指引。 
+---
+= 升級控制器硬體的考量事項
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要規劃升級、您必須熟悉一般的升級考量。如有必要、請聯絡技術支援部門、以取得叢集組態的特定建議與指引。
+
+要求與限制
+
+* 移動儲存設備進行升級的程序會中斷營運。透過移動磁碟區進行升級的程序不中斷營運。
+* 新節點必須支援與原始節點相同的軟體版本。
++
+link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["升級ONTAP"^]
+
+* 您必須觀察最大叢集大小。
++
+當您透過移動磁碟區進行升級時、新節點會在移除原始節點之前加入叢集。確保叢集中的控制器數量不會超過程序期間所支援的最大叢集大小。
+
++
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+* 在叢集中結合不同的控制器平台模式時、您必須遵守儲存平台混合規則。
++
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+* 新節點必須有足夠的儲存空間、以容納與原始節點相關的儲存設備。
++
+https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["使用CLI進行磁碟與Aggregate管理"^]
+
+* 根Aggregate大小和新系統支援的磁碟數量必須等於或大於原始系統支援的磁碟數量。
++
+如需根Aggregate大小需求、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+* HA配對中的控制器必須為兩AFF 個架構或兩FAS 個架構。
+* 如果節點位於同一個叢集中、您可以將磁碟區或實體儲存設備從一個FAS2xxx移至較新的FAS2xxx進行升級。例如、您可以將磁碟區或實體儲存設備從FAS2552移至FAS2750。
+* 如果您要升級具有多個HA配對的叢集中的HA配對、則必須將epsilon移至未進行控制器升級的HA配對節點。例如、如果您要升級叢集中的節點A/nodeB、並使用HA配對組態節點A/nodeB和節點C/noded、則必須將epsilon移至節點C或noded。
+* 如果您使用ONTAP 的是版本號為6、P11、9.7P8或更新版本、建議啟用連線功能、活動功能及可用性監控（恢復）、以便在發生特定節點故障時、將叢集恢復成仲裁。「kernel-service」命令需要進階權限層級存取。如需詳細資訊、請參閱： https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU436["NetApp知識庫文章SU436：恢復接管預設組態已變更"^]。從功能組別9.8開始ONTAP 、預設會啟用「KCS-enable-takeover」參數。
+* 如果您要升級雙節點MetroCluster 的效能提升組態、請參閱： https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["選擇升級或重新整理方法"^]
+
+
+具有內部儲存設備的系統
+
+
+NOTE: 下列系統具有內部儲存設備：FAS2220、FAS2240-2、FAS2240-4、FAS2520、FAS2552、 FAS2554、FAS2620、FAS2650、FAS2720、FAS2750、 S20A200、S202220、S20A700s、S20A800、S20A250。AFF AFF AFF AFF AFF
+
+* 如果您的系統未列於上方、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^] 檢查是否有內部磁碟機。
+* 如果您的系統具有內部儲存設備、建議您使用移動磁碟區來升級。
+* 如果您的系統具有內部儲存設備、您可以將系統轉換成磁碟機櫃、並將其連接至同一叢集中的新節點。FAS2220和FAS2520控制器無法轉換成磁碟機櫃。
++
+將FAS2240或FAS255x系統轉換成磁碟機櫃、是工作流程中透過移動儲存設備進行升級的一項選擇性工作。
+
+* 如果您的系統具有內部儲存設備、或是內部SATA磁碟機或SSD上有磁碟區或集合體的系統、您可以將內部儲存設備移轉至連接至同一叢集中新節點的磁碟機櫃來進行升級。
++
+傳輸內部儲存設備是工作流程中的一項選用工作、可用來透過移動儲存設備進行升級。
+
+
+
+可能需要採取其他步驟的情況
+
+* 如果新系統的插槽比原始系統少、或連接埠類型較少或不同、您可能需要在新系統中新增介面卡。
++
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+* 如果原始節點或新節點使用FlexArray 「還原虛擬化」軟體。
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/V_Series/What_are_the_specific_steps_involved_in_FlexArray_for_NetApp_controller_upgrades%2F%2Freplacements%3F["NetApp知識庫文章：FlexArray 《關於NetApp控制器升級與更換的具體步驟》"^]
+
+* 如果叢集有SAN主機、您可能需要採取步驟來解決LUN序號變更的問題。
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_with_Infrastructure_Automation/resolve_issues_during_storage_controller_motherboard_replacement_and_head_upgrades_with_iSCSI_and_FCP["如何透過iSCSI和FCP解決儲存控制器主機板更換與升級的問題"^]
+
+* 如果您的系統使用頻外ACP、您可能需要從頻外ACP移轉至頻內ACP。
++
+https://kb.netapp.com/app/answers/answer_view/a_id/1029778["NetApp知識庫文章1029778：頻內ACP設定與支援"^]
+
+
+
+*相關資訊*
+
+xref:upgrade-methods.adoc[選擇升級控制器硬體的方法]
+
+xref:upgrade-by-moving-storage-parent.adoc[移動儲存設備來升級控制器硬體]
+
+xref:upgrade-by-moving-volumes-parent.adoc[透過移動磁碟區來升級控制器硬體]

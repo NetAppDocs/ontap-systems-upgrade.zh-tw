@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/get_address_key_management_server_encryption.html 
+keywords: storage, encryption, authentication, key, manager, external 
+summary: 在執行ONTAP 更新版本的控制器上手動升級ARL時、設定儲存加密。 
+---
+= 取得外部金鑰管理伺服器的IP位址以進行儲存加密
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+升級後、您必須立即設定儲存加密、並建立全叢集驗證金鑰、以取代先前的節點層級驗證金鑰。
+
+.步驟
+. 安裝必要的用戶端和伺服器安全通訊端層（SSL）憑證、以與金鑰管理伺服器通訊：
++
+「安全憑證安裝」
+
+. 在每個節點上使用下列命令、在所有節點上設定儲存加密：
++
+「安全的金鑰管理程式設定」
+
+. 新增每個金鑰管理伺服器的IP位址：
++
+「安全金鑰管理程式新增」
+
+. 確認叢集中所有節點上都已設定並可使用相同的金鑰管理伺服器：
++
+「安全金鑰管理程式顯示狀態」
+
+. 建立新的全叢集驗證金鑰：
++
+「安全金鑰管理程式建立金鑰」
+
+. 記下新的驗證金鑰ID。
+. 使用新的驗證金鑰重新輸入所有自我加密磁碟機的金鑰：
++
+「torage加密磁碟modify -disk *-data-key-id <imiting_key_id>'」
+
+

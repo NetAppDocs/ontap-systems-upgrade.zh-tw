@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/required_tools_documentation.html 
+keywords: Tool, documentation, center, content, reference, worksheet 
+summary: 您必須擁有特定工具和文件、才能在執行ONTAP VMware 9.7或更早版本的控制器上執行手動ARL升級。 
+---
+= 必要的工具與文件
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您必須有特定工具才能安裝新硬體、而且在升級過程中需要參考其他文件。您也必須記錄完成控制器升級所需的重要資訊、並提供工作表以記錄資訊。
+
+您需要下列工具來執行升級：
+
+* 接地線
+* 2號十字螺絲起子
+
+
+前往 link:other_references.html["參考資料"] 一節、以存取此升級所需的參考文件清單。

@@ -1,0 +1,51 @@
+---
+permalink: upgrade/upgrade-prepare-when-moving-volumes.html 
+sidebar: sidebar 
+keywords: perform, preparation, upgrading, upgrade, controller, hardware, moving, move, volume, prepare for the upgrade when moving volumes 
+summary: 您需要先執行幾個準備步驟、才能透過移動磁碟區來升級控制器硬體。 
+---
+= 準備在移動磁碟區時進行升級
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須先執行幾個準備步驟、才能透過移動磁碟區來升級控制器硬體。
+
+.步驟
+. 在原始節點上顯示磁碟區：
++
+「Volume show」
+
++
+您可以使用命令輸出來準備要移至新節點的磁碟區清單。
+
+. 顯示及記錄原始節點的授權資訊：
++
+「系統授權展示」
+
+. 如果您在原始節點上使用儲存加密、而新節點有啟用加密的磁碟、請確定原始節點的磁碟已正確鎖定：
++
+.. 顯示自我加密磁碟（SED）的相關資訊：
++
+「torage加密磁碟顯示」
+
+.. 如果有任何磁碟與非製造商的安全ID（非MSID）金鑰相關聯、請將其重新輸入MSID金鑰：
++
+"torage加密磁碟修改"
+
+
+
+. 如果叢集目前處於雙節點無交換器組態、請使用您偏好的交換器類型、將叢集移轉至雙節點交換叢集。
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140536["使用Cisco叢集交換器移轉至雙節點交換叢集"^]
+
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["使用NetApp CN1610叢集交換器移轉至雙節點交換叢集"^]
+
+. 從AutoSupport 每個原始節點傳送一個消息、通知技術支援人員升級：
++
+「系統節點AutoSupport 無法叫用節點<node_name>-type all -messing node_name from <platform _entite> to <platform _new>""（將節點名稱從<platform _entiture>升級至<platform _new>""）」
+
+

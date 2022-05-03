@@ -1,0 +1,34 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/send_custom_asup_message_prior_reconfig_switches.html 
+keywords: autosupport, reconfigure, send message, maintenance, netapp support 
+summary: 通知NetApp技術支援部門、在ONTAP 執行更新版本的控制器上進行手動ARL升級時、正在進行維護。 
+---
+= 重新設定交換器之前、請先傳送自訂AutoSupport 的功能資訊
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在重新設定交換器之前、您必須發出AutoSupport 一份不確定訊息、通知NetApp技術支援人員正在進行維護。告知技術支援部門正在進行維護、可防止他們假設發生中斷、而開啟案例。
+
+此工作必須在每MetroCluster 個站台上執行。
+
+.步驟
+. 登入叢集。
+. 叫出AutoSupport 指示維護開始的消息：
++
+「系統節點AutoSupport 不支援呼叫節點*-type all -Message mainten=<maintenance window-in hours >」
+
++
+"maintenance window-in-hours（維護時間間隔）"值指定維護時間的長度、最長可達72小時。如果維護作業在時間結束之前完成、您可以叫用AutoSupport 指示維護期間結束的資訊消息：
+
++
+「系統節點AutoSupport 不完整地叫用節點*-type all -most MAn=end」
+
+. 在合作夥伴網站上重複這些步驟。
+

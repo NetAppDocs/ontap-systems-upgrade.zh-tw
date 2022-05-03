@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual-app/verify_node4_installation.html 
+keywords: verify, install, node4, cluster, communicate 
+summary: 在執行ONTAP 更新版本的控制器上進行手動ARL升級時、請驗證node4的安裝和與node3的通訊。 
+---
+= 驗證node4安裝
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+安裝並開機節點4之後、您必須驗證節點是否已正確安裝、是否為叢集的一部分、以及節點3是否可以通訊。
+
+.步驟
+. 在系統提示字元下、登入節點4。
+. 輸入下列命令、確認node4與node3同時屬於同一個叢集、而且狀況良好：
++
+「叢集展示」
+
+. 輸入下列命令、確認node4可以與node3通訊、而且所有l生命 週期都已啟動：
++
+「網路介面show -curr-node4>'
+
+. 請採取下列其中一項行動：
++
+|===
+| 如果節點4是... | 然後... 
+
+
+| 在與節點3分開的機箱中  a| 
+完成下列步驟、即可在節點之間連接HA互連：
+
+.. 將節點3的頂端互連連接埠連接至節點4的頂端互連連接埠。
+.. 將節點3的底部互連連接埠連接至節點4的底部互連連接埠。
+.. 前往 <<step5,步驟5.>>。
+
+
+
+
+| 與節點3位於同一個機箱中 | 前往 <<step5,步驟5.>>。您不需要手動連接節點之間的HA互連；在相同的機箱組態中、HA互連會透過背板自動連接。 
+|===
+. [[Step5]採取下列其中一項行動：
++
+|===
+| 如果叢集是... | 然後... 
+
+
+| 在SAN環境中 | 完成步驟6、移至部分 link:move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html["將節點2擁有的NAS資料生命週期從節點3移至節點4、並驗證節點4上的SAN生命週期"]。 
+
+
+| 不在SAN環境中 | 跳過步驟6、前往部分link:move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html["將節點2擁有的NAS資料生命週期從節點3移至節點4、並驗證節點4上的SAN生命週期"]。 
+|===
+. 在其中一個節點上輸入下列命令、確認node3和node4均為仲裁：
++
+「事件記錄檔show -messagename scsimblag.*」
+
++
+以下範例顯示叢集中節點達到仲裁時的輸出：
+
++
+[listing]
+----
+cluster::> event log show -messagename scsiblade.*
+Time                Node   Severity      Event
+------------------- ------ ------------- --------------------------
+8/13/2012 14:03:51  node1  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+8/13/2012 14:03:51  node2  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+8/13/2012 14:03:48  node3  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+8/13/2012 14:03:43  node4  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+----
+

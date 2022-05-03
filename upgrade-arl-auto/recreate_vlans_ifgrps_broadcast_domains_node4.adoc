@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/recreate_vlans_ifgrps_broadcast_domains_node4.html 
+keywords: node4, interface group, VLANs, broadcast domains, re-create 
+summary: 使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.5的控制器升級至9.7時、請在節點4上重新建立節點2的VLAN、介面群組和廣播網域。 
+---
+= 在節點4上重新建立VLAN、介面群組和廣播網域
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在您確認node4處於仲裁狀態並可與node3通訊之後、您必須在node4上重新建立node2的VLAN、介面群組和廣播網域。您也必須將node3連接埠新增至新重新建立的廣播網域。
+
+如需建立及重新建立VLAN、介面群組及廣播網域的詳細資訊、請參閱 link:other_references.html["參考資料"] 並連結至_網路管理_。
+
+.步驟
+. 使用中記錄的節點2資訊、在節點4上重新建立VLAN link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["將非根Aggregate和NAS資料LIF從節點2重新定位至節點3"] 區段：
++
+「網路連接埠VLAN create -node4>-vlan <vlan-names>」
+
+. 使用中記錄的node2資訊、在節點4上重新建立介面群組 link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["將非根Aggregate和NAS資料LIF從節點2重新定位至節點3"] 區段：
++
+「網路連接埠ifgrp create -node4>-ifgrp <port_ifgrp_name>-distr-func'
+
+. 使用中記錄的node2資訊、在節點4上重新建立廣播網域 link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["將非根Aggregate和NAS資料LIF從節點2重新定位至節點3"] 區段：
++
+「網路連接埠廣播網域建立-IPSpace預設值-broadcast網域<廣播網域名稱>-MTU <MTU大小>-port <node_name:port_name、node_name:port_name>'
+
+. 將node4連接埠新增至新重新建立的廣播網域：
++
+「網路連接埠、廣播網域、附加連接埠、廣播網域<廣播網域名稱>-連接埠<節點名稱：連接埠名稱、節點名稱：連接埠名稱>」
+
+

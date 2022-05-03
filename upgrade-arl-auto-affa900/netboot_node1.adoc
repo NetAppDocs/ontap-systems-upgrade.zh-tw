@@ -1,0 +1,219 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/netboot_node1.html 
+keywords: preparing, netboot, ontap, node1, aff, a900 
+summary: 交換相應AFF 的EsceA900 node1控制器模組和NVRAM模組之後、您必須使用netboot node1。 
+---
+= netboot node1
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+交換相應AFF 的EsceA900 node1控制器模組和NVRAM模組之後、您必須使用netboot node1。「netboot」一詞表示您是從ONTAP 儲存在遠端伺服器上的鏡像進行開機。準備網路開機時、您必須在ONTAP 系統可以存取的網路伺服器上新增一份《支援》9開機映像。
+
+除非安裝在機箱中並已開啟電源、否則無法檢查ONTAP 安裝在AFF 架構控制器模組之開機媒體上的版本。在進行升級的32位元支援系統上執行的支援版本必須與在更新的支援系統上執行的支援版本相同、而且主要和備份開機映像必須相符。ONTAP AFF ONTAP AFF您可以在開機功能表中執行netboot、然後執行wappeconfig命令來設定映像。如果控制器模組先前曾在另一個叢集中使用、則「wifeconfig」命令會清除開機媒體上的任何剩餘組態。
+
+
+NOTE: 您也可以使用USB開機選項來執行netboot。請參閱 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["NetApp知識庫文章：如何使用boot_recovery loader_command來安裝ONTAP 還原、以進行系統的初始設定"^]。
+
+.開始之前
+* 確認您可以使用系統存取HTTP伺服器。
+* 請從ONTAP NetApp支援網站下載系統所需的系統檔案、以及正確版本的支援。請參閱 link:other_references.html["參考資料"] 連結至_NetApp支援網站_。
+
+
+如果新的控制器ONTAP 上安裝的版本與原控制器上安裝的版本不相同、則必須以網路開機。安裝每個新的控制器之後、您可以從ONTAP 儲存在Web伺服器上的Image9映像來啟動系統。然後、您可以將正確的檔案下載到開機媒體裝置、以供後續系統開機。
+
+.步驟
+. 請參閱 link:other_references.html["參考資料"] 可鏈接到_NetApp Support Situ_下載用於執行系統的netboot的文件。
+. [[netboot_node1_step2]_NetApp ONTAP Support Sites_的軟體下載區段下載適當的支援軟體、並將「<ontap_version >_image.tgz」檔案儲存在網路存取的目錄中。
+. 切換至網路存取目錄、並確認您所需的檔案可用。
+. 您的目錄清單應包含「<ONTAP_VERSION >_image.tgz」。
+. 選擇下列其中一項動作來設定netboot連線。
++
+
+NOTE: 您必須使用管理連接埠和IP做為netboot連線。請勿使用資料LIF IP、否則在執行升級時可能會發生資料中斷。
+
++
+[cols="35,65"]
+|===
+| 如果動態主機組態傳輸協定（DHCP）是... | 然後... 
+
+
+| 執行中 | 在開機環境提示字元中使用下列命令自動設定連線：「ifconfige0M -auto」 
+
+
+| 未執行  a| 
+在開機環境提示字元中使用下列命令手動設定連線：「ifconfige0M -addr=<filer_addr>-mask=<網路遮罩>-gateway=- dns =<dns _addr> domain=<dns網域>'<filer_addr>'是儲存系統的IP位址。「網路遮罩」是儲存系統的網路遮罩。「<閘道>」是儲存系統的閘道。'<DNs_addr>'是網路上名稱伺服器的IP位址。此參數為選用項目。'<DNs_domain>'是網域名稱服務（DNS）網域名稱。此參數為選用項目。
+
+
+NOTE: 您的介面可能需要其他參數。在韌體提示字元中輸入「Help ifconfig」以取得詳細資料。
+
+|===
+. 在節點1上執行netboot：
++
+“netboot \http://<web_server_ip/path_to_web_accessible_directory>/netboot/kernel`
+
++
+
+NOTE: 請勿中斷開機。
+
+. 等待AFF 運行在EsceA900控制器模組上的node1開機、並顯示開機功能表選項、如下所示：
++
+[listing]
+----
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)?
+----
+. 從開機功能表中、選取選項「（7）Install new software first（先安裝新軟體）」。
++
+此功能表選項會下載新ONTAP 的功能表映像、並將其安裝至開機裝置。
+
++
+[NOTE]
+====
+請忽略下列訊息：「HA配對不支援不中斷升級此程序」。本附註適用於不中斷營運ONTAP 的更新版軟體、不適用於控制器升級。
+
+請務必使用netboot將新節點更新為所需映像。如果您使用另一種方法在新控制器上安裝映像、可能會安裝錯誤的映像。此問題適用於ONTAP 所有的版本。
+
+====
+. 如果系統提示您繼續此程序、請輸入「y」、然後在系統提示您輸入套件時、輸入URL：「http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz`」
++
+「<path_to_the_web-易於 存取的目錄>」應該會引導您下載「<ONTAP_VERSION >_image.tgz」 <<netboot_node1_step2,步驟2>>。
+
+. 完成下列子步驟以重新啟動控制器模組：
++
+.. 當您看到下列提示時、請輸入「n」跳過備份恢復：
++
+[listing]
+----
+Do you want to restore the backup configuration now? {y|n}
+----
+.. 當您看到下列提示時、請輸入「y」重新開機：
++
+[listing]
+----
+The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
+----
++
+控制器模組會重新開機、但會在開機功能表停止、因為開機裝置已重新格式化、而且必須還原組態資料。
+
+
+
+. 出現提示時、請執行「wecponfig」命令、清除開機媒體上任何先前的組態：
++
+.. 當您看到以下訊息時、請回答「是」：
++
+[listing]
+----
+This will delete critical system configuration, including cluster membership.
+Warning: do not run this option on a HA node that has been taken over.
+Are you sure you want to continue?:
+----
+.. 節點會重新開機以完成「wecpionfig」、然後在開機功能表停止。
+
+
+. 從開機功能表中選取「5」選項以進入維護模式。對提示回答「yes」、直到節點在維護模式和命令提示字元「*>」停止為止。
+. 驗證控制器和機箱是否設定為「ha」：
++
+《ha-config show》
+
++
+以下範例顯示「ha-config show」命令的輸出：
+
++
+[listing]
+----
+Chassis HA configuration: ha
+Controller HA configuration: ha
+----
+. 如果控制器和機箱未設定為「ha」、請使用下列命令修正組態：
++
+「ha-config modify控制器ha」
+
++
+「ha-config modify機箱ha」
+
+. 驗證「ha-config」設定：
++
+《ha-config show》
+
++
+[listing]
+----
+Chassis HA configuration: ha
+Controller HA configuration: ha
+----
+. 停止節點1：
++
+《停止》
+
++
+node1應在載入程式提示下停止。
+
+. 在節點2上、檢查系統日期、時間和時區：
++
+'日期'
+
+. 在節點1上、請在開機環境提示字元中使用下列命令檢查日期：
++
+「如何日期」
+
+. 如有必要、請在節點1上設定日期：
++
+「et date <mm/dd/yed>'
+
++
+
+NOTE: 在節點1上設定對應的UTC日期。
+
+. 在節點1上、請在開機環境提示字元中使用下列命令檢查時間：
++
+「時間安排」
+
+. 如有必要、請在節點1上設定時間：
++
+「設定時間<hh：mm：ss>」
+
++
+
+NOTE: 在節點1上設定對應的UTC時間。
+
+. 在節點1上設定合作夥伴系統ID：
++
+「etenv PARTNER-sysid <node2_sysid>'」
+
++
+您可以從node2上的「nodeshow -node2>'命令輸出取得node2系統ID。
+
++
+.. 儲存設定：
++
+「aveenv」
+
+
+
+. 在node1上的載入程式提示字元中、驗證node1的「合作夥伴sysid」：
++
+《prontenv合作夥伴sysid》
+
++
+對於node1、「合作夥伴sysid」必須是node2。
+
+

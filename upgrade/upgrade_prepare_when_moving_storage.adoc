@@ -1,0 +1,142 @@
+---
+permalink: upgrade/upgrade-prepare-when-moving-storage.html 
+sidebar: sidebar 
+keywords: licenses 
+summary: 在移轉儲存設備進行升級之前、您必須從原始節點收集授權資訊、規劃網路組態、記錄系統ID、並準備網路開機所需的檔案。 
+---
+= 準備在移動儲存設備時進行升級
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在移轉儲存設備進行升級之前、您必須從原始節點收集授權資訊、規劃網路組態、記錄系統ID、並準備網路開機所需的檔案。
+
+.步驟
+. 顯示並記錄來自原始節點、節點1和節點2的授權資訊：
++
+「系統授權展示」
+
+. 如果您在節點1/node2 HA配對上使用儲存加密、而新節點有啟用加密的磁碟、請確定原始節點的磁碟已正確鎖定：
++
+.. 顯示自我加密磁碟（SED）的相關資訊
++
+「torage加密磁碟顯示」
+
+.. 如果有任何磁碟與非製造商的安全ID（非MSID）金鑰相關聯、請將其重新輸入MSID金鑰
++
+"torage加密磁碟修改"
+
+
+
+. [Preping_move_store_3]].記錄節點1/node2 HA配對上的連接埠和LIF組態資訊：
++
+[cols="1,2"]
+|===
+| 若要顯示有關...的資訊 | 輸入... 
+
+
+ a| 
+磁碟櫃、每個磁碟櫃中的磁碟數目、Flash儲存設備詳細資料、記憶體、NVRAM和網路卡
+ a| 
+「系統節點執行節點<node_name> sysconfig」
+
+
+
+ a| 
+叢集網路和節點管理生命里
+ a| 
+「網路介面show -role叢集、node-mgmt」
+
+
+
+ a| 
+實體連接埠
+ a| 
+「network port show -node<node_name>-type Physical（網路連接埠顯示節點<node_name>類型實體）」
+
+
+
+ a| 
+容錯移轉群組
+ a| 
+「網路介面容錯移轉群組show -vserver <vserver_name>」
+
+記錄非叢集範圍的容錯移轉群組名稱和連接埠。
+
+
+
+ a| 
+VLAN組態
+ a| 
+「網路連接埠VLAN show -Node <node_name>」
+
+記錄每個網路連接埠和VLAN ID配對。
+
+
+
+ a| 
+介面群組組態
+ a| 
+「網路連接埠ifgrp show -node<node_name>-instance」
+
+記錄介面群組的名稱及指派給它們的連接埠。
+
+
+
+ a| 
+廣播網域
+ a| 
+「網路連接埠廣播網域節目」
+
+
+
+ a| 
+IPSpace資訊
+ a| 
+「網路IPSpace節目」
+
+|===
+. 取得升級至之每個新節點的預設叢集連接埠、資料連接埠和節點管理連接埠資訊： https://hwu.netapp.com["NetApp Hardware Universe"^]
+. [[Prepe_move_store_5]]下載並準備用於執行netboot的檔案。
++
+安裝新節點之後、您可能需要netboot、以確保新節點執行的ONTAP 版本與原始節點相同。「netboot」一詞是指您從ONTAP 儲存在遠端伺服器上的不實映像進行開機。準備網路開機時、您必須將ONTAP 一份《支援》9開機映像複本放到系統可以存取的網路伺服器上。
+
++
+.. 存取 https://mysupport.netapp.com/site/["NetApp 支援網站"^] 可下載用於執行系統netboot的文件。
+.. 請ONTAP 從NetApp支援網站的軟體下載區段下載適當的支援軟體、並將「<ONTAP_VERW>_image.tgz」檔案儲存在可從網路存取的目錄中。
+.. 切換至網路存取目錄、並確認您所需的檔案可用。
+
+
++
+[cols="1,2"]
+|===
+| 適用於... | 然後... 
+
+
+ a| 
+* FAS2200、FAS2500、FAS3200、FAS6200、FAS/AFF8000系列系統*
+ a| 
+將「<ONTAP_VERON>_image.tgz」檔案的內容解壓縮到目標目錄：「tar -zxvf <ONTAP_VERVERON>_image.tgz」
+
+*附註：*如果您要在Windows上解壓縮內容、請使用7-Zip或WinRAR擷取netboot映像。
+
+您的目錄清單應包含一個netboot資料夾、其中包含一個核心檔案：「netboot/kernel」（netboot/kernel）
+
+
+
+ a| 
+*所有其他系統*
+ a| 
+您的目錄清單應包含下列檔案：
+
+「<ONTAP版本>_image.tgz」
+
+
+NOTE: 您不需要擷取「<ONTAP_VERON>_image.tgz」檔案的內容。
+
+|===
+
+
+您將使用目錄中的資訊 xref:upgrade-set-up-new-nodes.adoc[設定新節點]。

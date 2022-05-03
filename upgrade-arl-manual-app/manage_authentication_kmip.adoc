@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual-app/manage_authentication_kmip.html 
+keywords: kmip, authentication, keys, fips 
+summary: 使用KMIP伺服器、在執行ONTAP 版本號為9.8或更新版本的控制器上進行手動ARL升級時、管理驗證金鑰。 
+---
+= 使用KMIP伺服器管理驗證
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+有了NetApp推出的更新版本、您可以使用金鑰管理互通性傳輸協定（KMIP）伺服器來管理驗證金鑰。ONTAP
+
+.步驟
+. 新增控制器：
++
+「安全金鑰管理程式設定節點<new_manager_name>'」
+
+. 新增金鑰管理程式：
++
+「安全金鑰管理程式-新增<key_manager_server_ip_address>」
+
+. 驗證金鑰管理伺服器是否已設定、且可供叢集中的所有節點使用：
++
+「安全金鑰管理程式顯示狀態」
+
+. 將驗證金鑰從所有連結的金鑰管理伺服器還原至新節點：
++
+「安全金鑰管理程式還原節點<新控制器名稱>」
+
+. 使用新的驗證金鑰重新輸入所有自我加密磁碟：
++
+「torage加密磁碟修改磁碟*（-data-key-id nonMSID Ak）」
+
+. 如果您使用聯邦資訊處理標準（FIPS）、請使用新的驗證金鑰重新鎖定所有自我加密磁碟：
++
+「torage加密磁碟* modify -disk *（修改磁碟*）[-FIPS-KEY-id nonMSID AK]（FIPS金鑰ID非MSID AK）」
+
+

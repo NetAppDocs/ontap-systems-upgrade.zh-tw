@@ -1,0 +1,68 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/decide_to_use_the_aggregate_relocation_guide.html 
+keywords: aggregate relocation, decide to use, upgrade, model, matrix, replacement, controller 
+summary: 使用ONTAP 「系統控制器更換」命令、決定是否使用ARL來升級執行《SES9.5 to 9.7》的控制器。 
+---
+= 決定是否使用Aggregate重新配置程序
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+本內容說明如何升級HA配對中的儲存控制器與新的控制器、同時保留所有現有的資料和磁碟。這是一個複雜的程序、只能由經驗豐富的系統管理員使用。
+
+在下列情況下使用此內容：
+
+* 您正在升級執行ONTAP S69.5、9.6或9.7的NetApp控制器。本文件不適用於ONTAP 升級至更新至更新版本。
+* 您不想將新的控制器新增為叢集的新HA配對、也不想使用Volume Moves來移轉資料。
+* 您在管理ONTAP 方面經驗豐富、而且對於在診斷權限模式下工作的風險感到自在。
+* 如果您要升級MetroCluster 的是一個版本為4節點或更高的FC組態、而且所有節點都執行ONTAP 的是版本號為32的9.6或9.7。
+
+
+
+NOTE: 您可以在本程序中使用NetApp儲存加密（NSE）和NetApp Volume加密（NVE）。
+
+[sys_commands_95_97_supported_Systems]下表顯示控制器升級支援的機型對照表。
+
+[cols="50,50"]
+|===
+| 舊控制器 | 更換控制器 
+
+
+| FAS8020、FAS8040、FAS8060、FAS8080 | FAS8200、FAS8300、FAS8700、FAS9000 
+
+
+| AFF8020、AFF8040、AFF8060、AFF8080 | Exe300、ExeA400、Exe4A700^1^、AFF AFF AFF AFF ExA800^2^ 
+
+
+| FAS8200 | FAS8700、FAS9000、FAS8300、4^^、^^5^ 
+
+
+| 部分A300 AFF | Exe7700^1^、Ex4A800^2^^、^^3^、ExA400^4^、^^5^ AFF AFF AFF 
+|===
+
+NOTE: 如果您的控制器升級模式組合不在上表中、請聯絡技術支援部門。
+
+支援針對AFF 該系統的^1^ARL自動升級ONTAP 功能、可從Ze 9.7P2取得。
+
+^2^如果您要更新AFF 至支援內部和外部磁碟的FSIFA800或系統、則必須遵循內部NVMe磁碟上根Aggregate的特定指示。請參閱 link:set_fc_or_uta_uta2_config_on_node3.html#step14["檢查並設定節點3步驟14上的UTA/UTA2連接埠"] 和 link:set_fc_or_uta_uta2_config_node4.html#step14["檢查並設定節點4步驟14上的UTA/UTA2連接埠"]。
+
+從AFF We 9.7P5 AFF 支援從32 A300自動升級至32 A800系統的^3^ARL ONTAP 。
+
+從功能強大的支援功能、從功能完善的支援功能AFF 升級至AFF 功能完善的支援系統、從功能完善的功能升級至功能完善的功能ONTAP 、從功能完善的功能升級至功能完善的功能。
+
+^5^如果您要在AFF 雙節點無交換式叢集組態中、從Sfzha300升級AFF 至Sf2 A400或FAS8200、則必須選擇暫用叢集連接埠來升級控制器。以乙太網路套裝組合形式提供兩種組態：夾層卡連接埠為乙太網路類型、夾層連接埠為FC類型、而以FC套裝組合形式提供夾層連接埠為FC類型。AFF
+
+* 對於採用乙太網路類型組態的FASA400或FAS8300、您可以使用兩個夾層連接埠中的任何一個作為暫用叢集連接埠。AFF
+* 若為AFF 採用FC類型組態的Arf-A400或FAS8300、您必須新增四埠10GbE網路介面卡（零件編號X1147A）、以提供暫用叢集連接埠。
+* 使用暫用叢集連接埠完成控制器升級之後、您可以不中斷營運地將叢集LIF移轉至e3a和e3b、AFF 將100GbE連接埠移轉至ESIA400系統、以及將FAS8300系統上的e0c和e0d、100GbE連接埠。
+
+
+如果您偏好其他方法來升級控制器硬體、並願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+
+請參閱 link:other_references.html["參考資料"] 連結至_SURF9 ONTAP 文件中心_、您可在此存取ONTAP VMware產品文件。

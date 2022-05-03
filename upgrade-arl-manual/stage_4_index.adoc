@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/stage_4_index.html 
+keywords: stage 4, record, node2, information, retire 
+summary: 第4階段程序順序、可在執行ONTAP 版本為9.7或更早版本的控制器上進行手動ARL升級。 
+---
+= 第4階段：記錄node2資訊並淘汰node2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在第4階段期間、您會記錄node2資訊、然後淘汰node2。
+
+.步驟
+. link:record_node2_information.html["記錄node2資訊"]
+. link:retire_node2.html["淘汰節點2"]
+

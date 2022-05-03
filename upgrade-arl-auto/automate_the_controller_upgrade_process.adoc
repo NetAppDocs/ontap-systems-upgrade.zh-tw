@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/automate_the_controller_upgrade_process.html 
+keywords: automate, controller, upgrade, nondisruptive 
+summary: 請使用半自動ARL程序、將執行ONTAP 版本號為「更新版」的控制器升級至9.7。 
+---
+= 自動化控制器升級程序
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在控制器升級期間、控制器會被另一個執行較新或更強大平台的控制器所取代。
+
+此內容的早期版本包含不中斷營運的控制器更新程序指示、其中包含完全手動的步驟。本內容提供新自動化程序的步驟。
+
+手動程序既冗長又複雜、但在這個簡化程序中、您可以使用Aggregate重新配置來實作控制器更新、以便為HA配對提供更有效率且不中斷營運的升級。手動步驟大幅減少、尤其是驗證、收集資訊及檢查後的步驟。

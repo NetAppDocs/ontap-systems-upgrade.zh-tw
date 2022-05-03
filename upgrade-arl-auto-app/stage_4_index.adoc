@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/stage_4_index.html 
+keywords: relocate, retire, node2, LIF, node3, non-root aggregates, stage 4 
+summary: ARL升級的第4階段程序順序、使用「系統控制器更換」命令來執行ONTAP 更新版本的控制器。 
+---
+= 第4階段：重新部署和淘汰節點2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在第4階段期間、所有非根Aggregate都會從節點2重新定位至節點3；節點2擁有的非SAN資料lifs會移至節點3。您必須記錄必要的node2資訊、然後淘汰node2。
+
+.步驟
+. link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["將非根Aggregate和NAS資料LIF從節點2重新定位至節點3"]
+. link:retire_node2.html["淘汰節點2"]
+

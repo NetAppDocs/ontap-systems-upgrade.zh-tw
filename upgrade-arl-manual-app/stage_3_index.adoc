@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual-app/stage_3_index.html 
+keywords: relocate, retire, node1, steps, stage 3 
+summary: 第3階段在執行ONTAP 版本號的控制器上進行手動ARL升級的程序順序。 
+---
+= 階段3.安裝及開機節點3
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在第3階段期間、您可以安裝並開機node3、將叢集和節點管理連接埠從node1對應至node3、驗證node3安裝、以及將屬於node1的資料l區 和SAN lIF從node2移至node3。您也可以將節點2上的所有集合體重新定位到節點3、然後將節點2擁有的資料生命體和SAN生命體移到節點3。
+
+.步驟
+. link:install_boot_node3.html["安裝及開機節點3"]
+. link:set_fc_uta_uta2_config_node3.html["在節點3上設定FC或UTA/UTA2組態"]
+. link:map_ports_node1_node3.html["將連接埠從節點1對應至節點3"]
+. link:move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html["將節點1擁有的NAS資料lifs從節點2移至節點3、並驗證節點3上的SAN lifs"]
+. link:relocate_non_root_aggr_node2_node3.html["將非根Aggregate從節點2重新部署到節點3"]
+. link:move_nas_lifs_node2_node3.html["將節點2擁有的NAS資料lifs移至節點3"]
+

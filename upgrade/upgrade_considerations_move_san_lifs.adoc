@@ -1,0 +1,26 @@
+---
+permalink: upgrade/upgrade_considerations_move_san_lifs.html 
+sidebar: sidebar 
+keywords: cluster, san, environment, lif, original, node, unjoin, original, move san lifs 
+summary: 只有當您變更叢集內容時、才需要移動SAN LIF。 
+---
+= 移轉SAN LIF的考量
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+只有在變更叢集內容（例如、將節點新增至叢集或從叢集刪除節點）時、才需要移動SAN LIF。移動LIF時、您不需要在叢集的附加主機與新的目標介面之間重新分區FC架構或建立新的iSCSI工作階段。
+
+您可以使用「network interface modify」命令來移動SAN LIF。若要移動SAN LIF、您必須將LIF離線、將LIF移至不同的主節點或連接埠、然後將其重新連線至新位置。非對稱邏輯單元存取（ALUA）提供備援路徑和自動路徑選擇、是ONTAP 任何一套SAN解決方案的一部分。因此、當LIF因為移動而離線時、不會中斷I/O。主機只需重試、然後將I/O移至另一個LIF。
+
+在LIF移動期間、您可以不中斷營運地執行下列工作：
+
+* 以對存取LUN資料的主機而言透明的方式、將叢集的一對HA替換成升級的HA配對
+* 升級目標介面卡
+* 將儲存虛擬機器（SVM）的資源從叢集中的一組節點移至同一叢集中的另一組節點
+* 當主機伺服器上線時、您可以將SAN LUN移至新的HA配對、而不會中斷主機伺服器對LUN資料的存取
+
+
+如需詳細資訊、請參閱 https://docs.netapp.com/us-en/ontap/san-admin/move-san-lifs-task.html["SAN LIF移動"^] _SAN儲存管理_文件中的程序。

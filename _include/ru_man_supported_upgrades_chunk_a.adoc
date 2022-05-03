@@ -1,0 +1,15 @@
+= 
+:allow-uri-read: 
+
+
+* 更換的控制器容量必須等於或高於原始控制器。容量等於或大於容量是指NVRAM大小、Volume、LUN或Aggregate數限制等屬性、也指新節點的最大Volume或Aggregate大小。
+* 您可以升級下列類型的系統：
++
+** 從一個系統到一個系統。FAS FAS
+** 一個包含「虛擬化軟體」或「V系列」系統的系統。FAS FlexArray
+** 從一個系統到一個系統的整個過程。AFF AFF
+** 系統FlexArray 若採用「非虛擬化軟體FAS 」或「V系列」系統、則只要配備FlexArray 「非虛擬化軟體」或「V系列」系統的系統沒有陣列LUN即可。
+** V系列系統、搭配FlexArray 使用「虛擬化軟體」或「V系列」系統。
+
+
+

@@ -1,0 +1,33 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/persist_enable_switches.html 
+keywords: enable, switches, fabric, persistent 
+summary: 在執行ONTAP 更新版本的控制器上、在手動升級ARL時、持續啟用架構中的Brocade和Cisco交換器。 
+---
+= 持續啟用交換器
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您必須持續啟用網路中的交換器。
+
+持續啟用交換器：
+
+* 對於Brocade交換器、請使用「shwitchCfgPeristentenable」命令。
++
+[listing]
+----
+FC_switch_A_1:admin> switchCfgPersistentenable
+----
+* 對於Cisco交換器、請使用「no suspend」命令。
++
+[listing]
+----
+vsan [vsna #]no suspend
+----
+

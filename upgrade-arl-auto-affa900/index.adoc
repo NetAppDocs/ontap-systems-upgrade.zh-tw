@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/index.html 
+keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology, aff, a700, a900 
+summary: 您可以AFF 交換控制器模組和NVS、將顯示器硬體從處理器A700升級至AFF 顯示器A900。 
+---
+= 總覽
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+本程序說明如何使用Aggregate重新配置（ARL）來升級控制器硬體、以進行下列系統組態：
+
+[cols="30,20,20,30"]
+|===
+| 方法 | 版本ONTAP | 支援的系統 | 說明 
+
+
+| 使用「系統控制器置換」命令 | 9.10或更新版本 | 從A700移轉至32 A900 AFF AFF | 保留相同的機箱、即可將AFF S4A700轉換成AFF S4A900 
+|===
+交換控制器模組和NVRAM模組、即可在不中斷營運的情況下、將高可用度（HA）節點配對上的控制器硬體升級AFF 至AFF 支援功能完善的32倍系統。您可以在AFF 不屬於根的情況下、在不屬於根的情況下移轉到各個節點。安裝完成後、您可以將非根集合體從AFF 顆叢集A700節點移轉至AFF 該節點。您可以在升級程序期間存取所升級節點上的資料。
+
+在此控制器升級程序中、您可以將AFF 一個非洲版的處理器A700升級為AFF 一個非洲版的處理器A900系統。
+
+
+NOTE: 您只能將AFF 位於E4A700系統上每個節點上的兩個現場可更換單元（FRU）換成新的FRU。您不需要移動、拔下或重新連接I/O卡、資料纜線、磁碟櫃和磁碟。
+
+此程序使用稱為Aggregate資源移轉（ARL）的方法、可利用HA組態、讓您將非根集合體的擁有權從一個節點移至另一個節點（如果它們共用同一個叢集內的儲存設備）。
+
+在過程中、您會使用更換的控制器硬體來升級原始的控制器硬體、以重新定位非根集合體的擁有權。您可以在節點之間多次移轉集合體、以確保在整個升級程序中、至少有一個節點正在處理來自集合體的資料。您也可以在繼續進行時、在叢集中的節點之間移轉資料生命量。
+
+
+NOTE: 術語* node1*和* node2*僅用作本文檔中的節點名稱參考。執行此程序時、您必須替換節點的真實名稱。
+
+.重要資訊
+* 此程序相當複雜、假設您具備進階ONTAP 的功能不完整的管理技能。您也應該閱讀並瞭解 link:guidelines_for_upgrading_controllers_with_arl.html["使用AFF ARL從功能不只A700升級到AFF 功能不只A900的準則"] 和 link:overview_of_the_arl_upgrade.html["ARL升級總覽"] 開始升級之前的章節。
+* 此程序假設更換的控制器硬體是新的、並未在其他系統中使用。此程序不包含使用wpeconfig命令準備已用控制器所需的步驟。如果更換的控制器硬體先前是用作另一個ONTAP 支撐叢集的一部分、或是用作獨立的單一節點系統、您必須聯絡技術支援部門。
+* 您可以使用此程序來升級具有兩個以上節點之叢集中的控制器硬體、但是您需要針對叢集中的每個HA配對分別執行程序。
+* 此程序僅適用於AFF SolidA700系統。如需所有其他需要升級AFF 至32位元A900系統的控制器機型、請參閱 link:other_references.html["參考資料"] 若要連結至_、請使用「系統控制器更換」命令來升級執行ONTAP VMware 9.8或更新版本的控制器硬體、以及使用集合體重新配置來手動升級執行ONTAP VMware 9.8或更新版本的控制器硬體內容（_Using Aggregate Relocation to Manually Upgrade Controller Hardware）。
+* 此產品僅支援高線電源（200V至240V）AFF 。如果AFF 您的功能為使用低線電源（100V至120V）執行的V4A700系統、則在AFF 使用此程序之前、您必須先將該功能轉換成使用該功能的電源。
+* 如果AFF 您在從無法運作的情況下從某個處理器A700系統升級、您可以移動儲存設備來升級控制器硬體、或聯絡技術支援部門。請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+

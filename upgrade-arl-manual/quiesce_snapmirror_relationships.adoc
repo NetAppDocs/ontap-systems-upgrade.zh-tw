@@ -1,0 +1,35 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/quiesce_snapmirror_relationships.html 
+keywords: quiesce, snapmirror, relationship, netboot, destination cluster 
+summary: 在您對系統進行網路開機之前、請先在執行ONTAP 版本號為9.7或更早版本的控制器上進行手動ARL升級、以停止所有SnapMirror關係。 
+---
+= 靜止SnapMirror關係
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在您對系統進行網路開機之前、您必須確認所有SnapMirror關係均已靜止。當SnapMirror關係靜止時、它會在重新開機和容錯移轉之間保持靜止。
+
+.步驟
+. 驗證目的地叢集上的SnapMirror關係狀態：
++
+「napmirror show」
+
++
+
+NOTE: 如果狀態為「Transferring（正在傳輸）」、您必須中止這些傳輸：「napmirror abort-dite-vserver <vserver name>'（napmirror abort-dite-vserver <vserver名稱>）」
+
++
+如果SnapMirror關係未處於「Transferring（傳輸）」狀態、則中止將會失敗。
+
+. 停止叢集之間的所有關係：
++
+「napmirror quiesce -dite-vserver <vserver-name>」
+
+

@@ -1,0 +1,251 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/map_ports_node2_node4.html 
+keywords: map, node2, node4, physical ports, cluster, network, connectivity 
+summary: 在執行ONTAP 版本更新的控制器上手動升級ARL時、請確認節點2上的實體連接埠正確對應至節點4。 
+---
+= 將連接埠從節點2對應至節點4
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您必須確定節點2上的實體連接埠正確對應至節點4上的實體連接埠、以便節點4在升級後與叢集中的其他節點和網路進行通訊。
+
+您必須已經有新節點上連接埠的相關資訊、才能存取此資訊、請參閱 link:other_references.html["參考資料"] 以連結至_SURE_ Hardware Universe 。您可以使用本節稍後的資訊。
+
+節點4的軟體組態必須符合節點4的實體連線能力、而且必須先還原IP連線、才能繼續升級。
+
+連接埠設定可能有所不同、視節點的機型而定。您必須使原始節點的連接埠和LIF組態與您計畫新節點的組態相容。這是因為新節點在開機時會重新執行相同的組態、也就是說、當您開機node4 Data ONTAP 時、該節點將嘗試在節點2上使用的相同連接埠上裝載LIF。
+
+因此、如果節點2上的實體連接埠未直接對應至節點4上的實體連接埠、則在開機後、需要變更軟體組態才能還原叢集、管理和網路連線。此外、如果節點2上的叢集連接埠未直接對應至節點4上的叢集連接埠、則節點4在重新開機時、可能不會自動重新加入仲裁、直到軟體組態變更、將叢集生命週期裝載到正確的實體連接埠為止。
+
+.步驟
+. 請在此表格中記錄節點2、連接埠、廣播網域和IPspaces的所有節點2纜線資訊：
++
+[cols="7*"]
+|===
+| LIF | 節點2連接埠 | 節點2 IPspaces | 節點2廣播網域 | 節點4連接埠 | Node4 IPspaces | Node4廣播網域 
+
+
+| 叢集1 |  |  |  |  |  |  
+
+
+| 叢集2 |  |  |  |  |  |  
+
+
+| 叢集3 |  |  |  |  |  |  
+
+
+| 叢集4. |  |  |  |  |  |  
+
+
+| 叢集5. |  |  |  |  |  |  
+
+
+| 叢集6. |  |  |  |  |  |  
+
+
+| 節點管理 |  |  |  |  |  |  
+
+
+| 叢集管理 |  |  |  |  |  |  
+
+
+| 資料1. |  |  |  |  |  |  
+
+
+| 資料2. |  |  |  |  |  |  
+
+
+| 資料3. |  |  |  |  |  |  
+
+
+| 資料4. |  |  |  |  |  |  
+
+
+| SAN |  |  |  |  |  |  
+
+
+| 叢集間連接埠 |  |  |  |  |  |  
+|===
++
+如需取得此資訊的步驟、請參閱「錄音節點2資訊」一節。
+
+. 使用中的相同程序、在上表中記錄節點4、連接埠、廣播網域和IPspaces的所有纜線資訊 link:record_node2_information.html["記錄node2資訊"] 一節、以瞭解取得此資訊的步驟。
+. 請遵循下列步驟、確認設定是否為雙節點無交換器叢集：
++
+.. 將權限層級設為進階：
+.. 確認設定是否為雙節點無交換器叢集：
++
+[listing]
+----
+cluster::*> network options switchless-cluster show
+Enable Switchless Cluster: false/true
+----
++
+此命令的值必須符合系統的實體狀態。
+
+.. 返回管理權限層級：
++
+[listing]
+----
+cluster::*> set -privilege admin
+cluster::>
+----
+
+
+. 執行下列步驟、將節點4變成仲裁：
++
+.. 開機節點4.請參閱 link:install_boot_node4.html["安裝及開機節點4"] 如果您尚未啟動節點、請將其開機。
+.. 確認新的叢集連接埠位於叢集廣播網域中：
++
+「網路連接埠show -node<node>-port <port>-Fields broadcast網域'下列範例顯示連接埠「e0a」位於節點4的叢集網域中：
+
++
+[listing]
+----
+cluster::> network port show -node node4 -port e0a -fields broadcast-domain
+
+node       port broadcast-domain
+---------- ---- ----------------
+node4      e1a  Cluster
+----
+.. 如果叢集連接埠不在叢集廣播網域中、請使用下列命令加以新增：
++
+「broadcast網域附加連接埠-IPSpace叢集-broadcast網域叢集-ports <nodes:port>」
+
+.. 將正確的連接埠新增至叢集廣播網域：
++
+「網路連接埠修改-nodes -port -IPSpace叢集-MTU 9000」
+
++
+此範例在節點4上新增叢集連接埠「e1b」：
+
++
+「網路連接埠修改節點節點4 -連接埠e1b -IPSpace叢集-MTU 9000」
+
++
+
+NOTE: 對於VMware組態、您可能無法變更連接埠的廣播網域、因為它與裝載同步目的地SVM LIF的連接埠相關聯、並看到類似但不限於下列的錯誤：MetroCluster
+
++
+[listing]
+----
+command failed: This operation is not permitted on a Vserver that is configured as the destination of a MetroCluster Vserver relationship.
+----
++
+從遠端站台上對應的sync-sSource SVM輸入下列命令、將sync-destination LIF重新分配至適當的連接埠：
+
++
+「MetroCluster 功能伺服器重新同步-vserver <vserver_name>」
+
+.. 針對每個LIF、將叢集生命區移轉至新的連接埠一次：
++
+「網路介面移轉-vserver叢集-lif<lif_name>-source-Node node4 - dest-node4 -destite-port <port_name>」
+
+.. 修改叢集lifs的主連接埠：
++
+「網路介面修改-vserver叢集-lIF <lif_name>–home-port <port_name>'
+
+.. 從叢集廣播網域移除舊連接埠：
++
+「網路連接埠廣播網域移除連接埠」
+
++
+此命令會移除節點4上的連接埠「e0d」：「網路連接埠廣播網域移除連接埠-IPSpace叢集-broadcast網域叢集節點4：e0d」
+
+.. 驗證node4是否已重新加入仲裁：
++
+「cluster show -node4 -Fields health」
+
+
+
+. [[man_map_2_step5]]調整裝載叢集生命週年和節點管理/叢集管理生命週年的廣播網域。確保每個廣播網域都包含正確的連接埠。如果連接埠裝載於廣播網域之間、或是裝載於LIF的主目錄中、則無法在這些網域之間移動連接埠、因此您可能需要移轉及修改lifs、如下列步驟所示：
++
+.. 顯示LIF的主連接埠：
++
+「網路介面顯示欄位主節點、主連接埠」
+
+.. 顯示包含此連接埠的廣播網域：
++
+「網路連接埠廣播網域show -port <node_name:port_name>'
+
+.. 新增或移除廣播網域的連接埠：
++
+「網路連接埠廣播網域附加連接埠」
+
++
+「網路連接埠廣播網域移除連接埠」
+
+.. 修改LIF的主連接埠：
++
+「網路介面修改-vserver <vserver_name>-lif<lif_name>–home-port <port_name>'
+
+
+
+. 如有必要、請使用中所示的相同命令來調整叢集間廣播網域、並移轉叢集間的LIF <<man_map_2_step5,步驟5.>>。
+. 如有必要、請使用中所示的相同命令、調整任何其他廣播網域並移轉資料生命量 <<man_map_2_step5,步驟5.>>。
+. 如果節點2上有任何連接埠不再存在於節點4上、請依照下列步驟加以刪除：
++
+.. 存取任一節點上的進階權限層級：
++
+"進階權限"
+
+.. 若要刪除連接埠：
++
+「網路連接埠刪除節點<node_name>-port <port_name>」
+
+.. 返回管理層級：
++
+「et -priv. admin」
+
+
+
+. 調整所有LIF容錯移轉群組：「網路介面修改-容錯移轉群組<容錯移轉群組>-容錯移轉原則<容錯移轉原則>」
++
+下列命令會將容錯移轉原則設定為「廣播網域範圍」、並使用容錯移轉群組「fg1」中的連接埠作為「node4」上LIF「data1」的容錯移轉目標：
+
++
+「網路介面修改-vserver node4 -lIF data1容錯移轉原則、廣播網域範圍內的容錯移轉群組fg1」
+
++
+如需詳細資訊、請參閱 link:other_references.html["參考資料"] 若要連結至_網路管理_或_ ONTAP 《_資訊9命令：手冊頁參考_》、請前往_設定LIF_上的容錯移轉設定。
+
+. 驗證節點4上的變更：
++
+「網路連接埠show -node4」
+
+. 每個叢集LIF都必須偵聽連接埠7700。驗證叢集LIF是否正在偵聽連接埠7700：
++
+：「：>網路連線偵聽show -vserver叢集」
+
++
+連接埠7700偵聽叢集連接埠是預期結果、如下列雙節點叢集範例所示：
+
++
+[listing]
+----
+Cluster::> network connections listening show -vserver Cluster
+Vserver Name     Interface Name:Local Port     Protocol/Service
+---------------- ----------------------------  -------------------
+Node: NodeA
+Cluster          NodeA_clus1:7700               TCP/ctlopcp
+Cluster          NodeA_clus2:7700               TCP/ctlopcp
+Node: NodeB
+Cluster          NodeB_clus1:7700               TCP/ctlopcp
+Cluster          NodeB_clus2:7700               TCP/ctlopcp
+4 entries were displayed.
+----
+. 如有必要、請針對未接聽連接埠7700的每個叢集LIF、將LIF的管理狀態設為「自己」、然後設定為「UP」：
++
+：`:>net int modify -vserver cluster -lif<cluster－lif>-STATUS-admin down；net int modify -vserver cluster -lIF <cluster－lif>-STATUS-admin up（net int modify -vserver Cluster -lIF <cluster－lif>-STATUS-admin up）
+
++
+重複步驟11、確認叢集LIF現在正在偵聽連接埠7700。
+
+

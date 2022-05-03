@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/reconfig_index.html 
+keywords: reconfigure, fc, switch, layout, RCF, metrocluster 
+summary: 針對S廳9.1或更新版本、請重新設定連接埠配置、並在手動升級ARL時套用最新的RCT至執行速度為9.7或更新版本的控制器。ONTAP ONTAP 
+---
+= 將FC交換器配置重新設定ONTAP 為適用於更新版本的版本
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果您現有的FC交換器配置是在ONTAP 更新版9.1之前設定、則必須重新設定連接埠配置、並套用最新的參考組態檔（RCFC）。此程序僅適用於MetroCluster 不含FFC組態的情況。
+
+您必須識別網路網域中的FC交換器。
+
+您需要管理員密碼、才能存取FTP或scp伺服器。
+
+如果您現有的FC交換器配置是在ONTAP 更新版本的版本號之前設定、而且您要升級ONTAP 至支援版本號為「支援版本號9.1」或更新版本的平台模式、則必須執行此工作。如果您是從現有的交換器配置升級、而此配置已設定ONTAP 為使用更新版本的版本、則不需要_。
+
+此程序不中斷營運、磁碟歸零時約需四小時完成（不包括機架和堆疊）。
+
+.步驟
+. link:send_custom_asup_message_prior_reconfig_switches.html["重新設定交換器之前、請先傳送自訂AutoSupport 的功能資訊"]
+. link:verify_health_mcc_config.html["驗MetroCluster 證整個過程的效能狀況"]
+. link:check_mcc_config_errors.html["檢查MetroCluster 是否有任何組態錯誤"]
+. link:persist_disable_switches.html["持續停用交換器"]
+. link:determine_new_cabling_layout.html["確定新的佈線配置"]
+. link:apply_RCF_files_recable_switches.html["套用RCF檔案並重新介面交換器"]
+. link:persist_enable_switches.html["持續啟用交換器"]
+. link:verify_swtichover_healing_switchback.html["驗證切換、修復及切換"]
+

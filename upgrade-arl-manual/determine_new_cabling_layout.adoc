@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/determine_new_cabling_layout.html 
+keywords: cable, cabling, layout, disk shelf, fc switches 
+summary: 在ONTAP 執行更新版本的控制器上手動升級ARL時、請判斷新控制器模組和磁碟櫃的佈線配置。 
+---
+= 確定新的佈線配置
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您必須確定新控制器模組和新磁碟櫃與現有FC交換器之間的纜線。
+
+此工作必須在每MetroCluster 個站台執行。
+
+使用_Fabric附加MetroCluster 的《安裝與組態》內容來判斷交換器類型的纜線配置、使用連接埠使用方式進行八節點MetroCluster 的《Esp組態》。FC交換器連接埠使用量必須符合內容中所述的使用量、才能使用參考組態檔（RCFC）。
+
+前往 link:other_references.html["參考資料"] 連結至_Fabric附加MetroCluster 的《安裝與組態》內容。
+
+
+NOTE: 如果您的環境無法以可使用RCT的方式進行纜線連接、請聯絡技術支援部門。如果纜線無法使用RCT、請勿使用此程序。

@@ -1,0 +1,69 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/decide_to_use_the_aggregate_relocation_guide.html 
+keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability 
+summary: 使用ONTAP 「系統控制器更換」命令、決定是否使用ARL來升級執行《指令》9.8或更新版本的控制器。 
+---
+= 決定是否使用Aggregate重新配置程序
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+本內容說明如何升級HA配對中的儲存控制器與新的控制器、同時保留所有現有的資料和磁碟。這是一個複雜的程序、只能由經驗豐富的系統管理員使用。
+
+您可以在下列情況下使用此內容：
+
+* 您執行ONTAP 的是版本不含更新版本的版本。
+* 您不想將新的控制器新增為叢集的新HA配對、也不想使用Volume Moves來移轉資料。
+* 您在管理ONTAP 方面經驗豐富、而且對於在診斷權限模式下工作的風險感到自在。
+* 如果您要升級MetroCluster 某個版本的架構、它是四節點或更高的FC組態、而且所有節點都執行ONTAP 的是更新版本的版本號。
++
+如需升級MetroCluster 靜態IP組態、請參閱 link:other_references.html["參考資料"] 連結至_E不明MetroCluster Upgrade and Expansion內容。
+
+
+
+
+NOTE: 您可以在本程序中使用NetApp儲存加密（NSE）和NetApp Volume加密（NVE）。
+
+[sys_commands_98_supported_Systems].下表顯示控制器升級所支援的機型對照表。
+
+|===
+| 舊控制器 | 更換控制器 
+
+
+| FAS8020、FAS8040、FAS8060、FAS8080 | FAS8200、FAS8300、FAS8700、FAS9000 
+
+
+| AFF8020、AFF8040、AFF8060、AFF8080 | Exe300、ExeA400、Exe0A700、AFF AFF AFF AFF Ex4A800^1^ 
+
+
+| FAS8200 | FAS8700、FAS9000、FAS8300、3^ 
+
+
+| 部分A300 AFF | 例如：ExeA700、ExeA800^1^、AFF AFF AFF ExeA400^3^ 
+
+
+| 解答320 AFF | VA400^2^ AFF 
+|===
+
+NOTE: 如果您的控制器升級模式組合不在上表中、請聯絡技術支援部門。
+
+^1^如需AFF 瞭解更多有關支援Arfa800系統的步驟、請參閱第節中提及A800的步驟 link:set_fc_or_uta_uta2_config_on_node3.html#step23["檢查並設定節點3步驟23上的UTA/UTA2連接埠"]或 link:set_fc_or_uta_uta2_config_node4.html#step23["檢查並設定節點4步驟23上的UTA/UTA2連接埠"]。
+
+從支援從AFF 32 A320自動升級至AFF 32 A400系統的^2^ARL、範圍從ONTAP 4.9到9.1。
+
+^3^如果您要在AFF 雙節點無交換式叢集組態中、從Sfzha300升級AFF 至Sf2 A400或FAS8200、則必須選擇暫用叢集連接埠以進行控制器升級。以乙太網路套裝組合形式提供兩種組態：夾層卡連接埠為乙太網路類型、夾層連接埠為FC類型、而以FC套裝組合形式提供夾層連接埠為FC類型。AFF
+
+* 對於採用乙太網路類型組態的FASA400或FAS8300、您可以使用兩個夾層連接埠中的任何一個作為暫用叢集連接埠。AFF
+* 若為AFF 採用FC類型組態的Arf-A400或FAS8300、您必須新增四埠10GbE網路介面卡（零件編號X1147A）、以提供暫用叢集連接埠。
+* 使用暫用叢集連接埠完成控制器升級之後、您可以不中斷營運地將叢集LIF移轉至e3a和e3b、AFF 將100GbE連接埠移轉至ESIA400系統、以及將FAS8300系統上的e0c和e0d、100GbE連接埠。
+
+
+如果您偏好其他方法來升級控制器硬體、並願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+
+請參閱 link:other_references.html["參考資料"] 連結至_SURF9 ONTAP 文件中心_、您可在此存取ONTAP VMware產品文件。

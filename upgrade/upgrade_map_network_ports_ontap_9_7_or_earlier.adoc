@@ -1,0 +1,138 @@
+---
+permalink: upgrade/upgrade-map-network-ports-ontap-9-7-or-earlier.html 
+sidebar: sidebar 
+keywords: enable, node3, node4, node, communicate, cluster, network, upgrade, physical, port, configure, setting, intend, data, map, map network ports using ontap 9.7 or earlier 
+summary: 若要讓節點3和節點4在升級後與叢集中的其他節點和網路進行通訊、您必須確保實體連接埠已正確設定為適合特定用途的設定、例如叢集、資料等。 
+---
+= 使用ONTAP 更新版本的更新版本來對應網路連接埠
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要讓節點3和節點4在升級後與叢集中的其他端口和網路進行通訊、您必須確認實體連接埠已正確設定為適合特定用途的設定、例如叢集、資料等。
+
+這些步驟適用於執行ONTAP 下列版本的系統：如果您執行ONTAP 的是效能不正常的9.8、則必須使用中的程序 xref:upgrade-map-network-ports-ontap-9-8.adoc[使用ONTAP NET9.8對應網路連接埠]。
+
+您必須在節點3和節點4上執行這些步驟。
+
+
+NOTE: 下列命令範例是指「node1」、因為在程序的這個階段、替換節點「node3」和「node4」實際上是命名為「node1」和「node2」。
+
+.步驟
+. 如果您的系統執行ONTAP 的是*停止* S498。您必須使用中的程序 xref:upgrade-map-network-ports-ontap-9-8.adoc[使用ONTAP NET9.8對應網路連接埠]。
+. 找到節點1和節點2的連接埠和LIF組態資訊、這些資訊記錄在_移動儲存設備時準備升級_、 link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3["步驟3."]。
+. 找到您在_準備在移動儲存設備時升級_中記錄的連接埠、廣播網域和IPspaces資訊、 link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3["步驟3."]。
++
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+. 進行下列變更：
++
+.. 如果您尚未將節點3和節點4開機至叢集提示字元、請將其開機。
+.. 將正確的連接埠新增至「叢集（叢集）”廣播網域：
++
+「網路連接埠修改節點<node_name>-port <port_name>-MTU 9000 -IPSpace叢集」
+
++
+此範例在「節點1」上新增「叢集」連接埠e1b：
+
++
+「網路連接埠修改節點節點1 -連接埠e1b -IPSpace叢集-MTU 9000」
+
+.. 針對每個LIF、將LIF移轉至新連接埠一次：
++
+「網路介面移轉-vserver <vserver_name>-lif<lif_name>-source-Node node1 -dite-Node node1 -dite-port <port_name>」
+
++
+SAN資料生命量只能在離線時移轉。
+
+.. 修改叢集lifs的主連接埠：
++
+「網路介面修改-vserver叢集-lIF <lif_name>–home-port <port_name>'
+
+.. 從叢集廣播網域移除舊連接埠：
++
+「網路連接埠廣播網域移除連接埠-IPSpace叢集-broadcast網域叢集-ports <node1:port>」
+
+.. 顯示節點3和節點4的健全狀況：
++
+「cluster show -node1>-Fields health」
+
+.. 每個叢集LIF都必須偵聽連接埠7700。驗證叢集LIF是否正在偵聽連接埠7700：
++
+：「：>網路連線偵聽show -vserver叢集」
+
++
+連接埠7700偵聽叢集連接埠是預期結果、如下列雙節點叢集範例所示：
+
++
+[listing]
+----
+Cluster::> network connections listening show -vserver Cluster
+Vserver Name     Interface Name:Local Port     Protocol/Service
+---------------- ----------------------------  -------------------
+Node: NodeA
+Cluster          NodeA_clus1:7700               TCP/ctlopcp
+Cluster          NodeA_clus2:7700               TCP/ctlopcp
+Node: NodeB
+Cluster          NodeB_clus1:7700               TCP/ctlopcp
+Cluster          NodeB_clus2:7700               TCP/ctlopcp
+4 entries were displayed.
+----
+.. 如有必要、請針對未接聽連接埠7700的每個叢集LIF、將LIF的管理狀態設為「自己」、然後設定為「UP」：
++
+：`:>net int modify -vserver cluster -lif<cluster－lif>-STATUS-admin down；net int modify -vserver cluster -lIF <cluster－lif>-STATUS-admin up（net int modify -vserver Cluster -lIF <cluster－lif>-STATUS-admin up）
+
++
+重複子步驟（g）、確認叢集LIF現在正在偵聽連接埠7700。
+
+
+
+. 修改VLAN和"ifgrp config"以符合新的控制器實體連接埠配置。
+. 刪除節點3和節點4上不再存在的節點1和節點2連接埠（進階權限層級）：
++
+「網路連接埠刪除-node1>-port <port_name>'
+
+. [map_97_7]視需要調整節點管理廣播網域、並移轉節點管理和叢集管理生命週年：
++
+.. 顯示LIF的主連接埠：
++
+「網路介面顯示欄位主節點、主連接埠」
+
+.. 顯示包含連接埠的廣播網域：
++
+「網路連接埠廣播網域show -port <node_name:port_name>'
+
+.. 視需要新增或移除廣播網域的連接埠：
++
+「網路連接埠廣播網域附加連接埠」
+
++
+「網路連接埠廣播網域移除連接埠」
+
+.. 如有必要、請修改LIF的主連接埠：
++
+「網路介面修改-vserver <vserver_name>-lif<lif_name>–home-port <port_name>'
+
+
+
+. 如有必要、請使用中的命令來調整叢集間廣播網域、並移轉叢集間的lifs <<map_97_7,步驟7.>>。
+. 如有必要、請使用中的命令來調整任何其他廣播網域、並移轉資料生命量 <<map_97_7,步驟7.>>。
+. 調整所有LIF容錯移轉群組：
++
+「網路介面修改-容錯移轉群組<容錯移轉群組>-容錯移轉原則<容錯移轉原則>」
+
++
+下列命令會將容錯移轉原則設定為廣播網域範圍、並使用容錯移轉群組「fg1」中的連接埠作為「節點1」上LIF「data1」的容錯移轉目標：
+
++
+「網路介面修改-vserver node1 -lIF data1 -容 錯移轉原則、廣播網域範圍內的容錯移轉群組fg1」
+
+. 顯示node3和node4的網路連接埠屬性：
++
+「network port show -node1」
+
+
+
+您已完成實體連接埠的對應。若要完成升級、請前往 xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[請執行ONTAP 更新步驟以更新至更新版本的版本]。

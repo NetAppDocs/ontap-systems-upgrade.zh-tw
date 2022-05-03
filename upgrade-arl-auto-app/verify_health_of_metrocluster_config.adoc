@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/verify_health_of_metrocluster_config.html 
+keywords: verifying, health, metrocluster, configuration, fabric, mcc 
+summary: 使用MetroCluster 「系統控制器更換」命令來驗證執行ONTAP 版本號為‘9.8或更新版本的控制器升級時、效能不穩定且運作正常。 
+---
+= 驗MetroCluster 證整個過程的效能狀況
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在開始升級Fabric MetroCluster 的版本之前、您必須先檢查MetroCluster 該組態的健全狀況、以驗證運作是否正確。
+
+.步驟
+. 驗證MetroCluster 這些元件是否正常運作：
++
+《不一樣的跑程》MetroCluster
+
++
+....
+metrocluster_siteA::*> metrocluster check run
+....
++
+此作業會在背景執行。
+
+. 完成「MetroCluster 不完整檢查」作業後、請檢視結果：
++
+《不一樣的表演》MetroCluster
+
++
+大約五分鐘後、會顯示下列結果：
+
++
+[listing]
+----
+metrocluster_siteA::*> metrocluster check show
+Last Checked On: 4/7/2019 21:15:05
+Component            Result
+---------------      -------
+nodes                ok
+lifs                 ok
+config-replication   ok
+aggregates           warning
+clusters             ok
+connections          not-applicable
+volumes              ok
+7 entries were displayed.
+----
+. 檢查執行MetroCluster 中的檢查作業狀態：
++
+《不穩定作業歷史》顯示-job-id 38 MetroCluster
+
+. 確認沒有健全狀況警示：
++
+「系統健全狀況警示顯示」
+
+

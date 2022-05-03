@@ -1,0 +1,84 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/relocate_non_root_aggr_nas_data_lifs_node1_node2.html 
+keywords: relocating, non-root, aggregates, nas, data, lif, node1, node2 
+summary: 使用ONTAP 「系統控制器更換」命令、將非根Aggregate和NAS資料lifs從節點1移至節點2、並在升級執行更新版本的控制器時、將節點1的資源移至節點3。 
+---
+= 將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在將node1替換成node3之前、您必須先將非根Aggregate和NAS資料lIF從node1移至node2、然後再將node1的資源移至node3。
+
+當您開始工作時、該作業應該已經暫停；您必須手動恢復該作業。
+
+在移轉集合體和lifs之後、此作業會暫停以供驗證之用。在此階段、您必須驗證是否所有非根Aggregate和非SAN資料生命體都移轉至節點3。
+
+
+NOTE: 不會修改集合體和lifs的主擁有者、只會修改目前擁有者。
+
+.步驟
+. 恢復Aggregate重新定位和NAS資料LIF移動作業：
++
+「系統控制器更換恢復」
+
++
+所有非根Aggregate和NAS資料lifs都會從節點1移轉至節點2。
+
++
+此作業會暫停、以便您確認是否已將所有節點1非根Aggregate和非SAN資料lIF移轉至節點2。
+
+. 檢查集合體重新配置和NAS資料LIF移動作業的狀態：
++
+「System Controller replace show-details」（系統控制器取代顯示詳細資料
+
+. 在作業仍暫停的情況下、確認節點2上的所有非根Aggregate狀態均處於線上狀態：
++
+「torage Aggregate show -node2>-state online -root假」
+
++
+以下範例顯示節點2上的非根Aggregate處於線上狀態：
+
++
+[listing]
+----
+cluster::> storage aggregate show -node node2 state online -root false
+
+Aggregate  Size     Available  Used%  State  #Vols  Nodes  RAID Status
+---------  -------  ---------  -----  ------ -----  ------ --------------
+aggr_1     744.9GB  744.8GB    0%     online     5  node2  raid_dp,normal
+aggr_2     825.0GB  825.0GB    0%     online     1  node2  raid_dp,normal
+2 entries were displayed.
+----
++
+如果Aggregate已離線或成為節點2上的外部節點、請在節點2上使用下列命令將其上線、每個Aggregate一次：
+
++
+「torage Aggregate online -gregate <agger_name>」
+
+. 在節點2上使用下列命令並檢查其輸出、以確認節點2上的所有磁碟區都已上線：
++
+「Volume show -node2>-state offline」（Volume show -node2>-state offline）
+
++
+如果節點2上有任何磁碟區離線、請在節點2上使用下列命令將其上線、每個磁碟區一次：
+
++
+「Volume online -vserver <vserver_name>-volume <volume <volume．name>'
+
++
+與此命令搭配使用的「<vserver_name>」可在先前的「Volume show」命令輸出中找到。
+
+
+
+. [[step5]]如果有任何生命週期中斷、請使用下列命令將生命週期的管理狀態設為「up」（上）、每個LIF一次：
++
+「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-Node <nodename>- STATUS-admin up」
+
+

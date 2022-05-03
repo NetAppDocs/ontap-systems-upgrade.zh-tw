@@ -1,0 +1,506 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/set_fc_or_uta_uta2_config_node4.html 
+keywords: fc configuration, uta configuration, UTA2 configuration, configure FC ports, UTA/UTA2 card, node4, target, adapter, ports 
+summary: 使用ONTAP 「系統控制器更換」命令來升級執行《更新版本》9.8或更新版本的控制器時、請設定node4內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡。 
+---
+= 在節點4上設定FC或UTA/UTA2組態
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果node4具有內建FC連接埠、內建統一化目標介面卡（UTA/UTA2）連接埠或UTA/UTA2卡、則必須先設定這些設定、才能完成其餘程序。
+
+您可能需要完成 <<Configure FC ports on node4>> 部分 <<Check and configure UTA/UTA2 ports on node4>>或這兩個區段。
+
+
+NOTE: 如果節點4沒有內建FC連接埠、內建UTA/UTA2連接埠或UTA/UTA2卡、而且您正在升級含有儲存磁碟的系統、則可以跳至 link:verify_node4_installation.html["驗證node4安裝"]。但是、如果您有V系列系統或有FlexArray 支援VMware虛擬化的軟體、並且連接至儲存陣列、而節點4沒有內建FC連接埠、內建UTA/ UTA2連接埠或UTA/ UTA2卡、則必須返回_安裝與開機節點4_區段、並繼續執行 link:install_boot_node4.html#step22["步驟22"]。確定節點4有足夠的機架空間。如果node4與node2位於不同的機箱中、您可以將node4放在與node3相同的位置。如果節點2和節點4位於同一個機箱中、則節點4已位於適當的機架位置。
+
+.選擇
+* <<Configure FC ports on node4>>
+* <<Check and configure UTA/UTA2 ports on node4>>
+
+
+
+
+== 在節點4上設定FC連接埠
+
+如果節點4具有FC連接埠（內建或FC介面卡上）、您必須先在節點上設定連接埠組態、才能將其投入服務、因為連接埠並未預先設定。如果未設定連接埠、可能會導致服務中斷。
+
+您必須擁有儲存在區段中節點2的FC連接埠設定值 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]。
+
+如果您的系統沒有FC組態、您可以跳過本節。如果您的系統有內建UTA/UTA2連接埠或UTA/UTA2介面卡、請在中進行設定 <<Check and configure UTA/UTA2 ports on node4>>。
+
+*重要*：如果您的系統有儲存磁碟、您必須在叢集提示字元下輸入本節中的命令。如果您的V系列系統或系統FlexArray 已連接至儲存陣列、請在維護模式下於本節中輸入命令。
+
+.步驟
+. 請採取下列其中一項行動：
++
+[cols="30,70"]
+|===
+| 如果您要升級的系統... | 然後… 
+
+
+| 具有儲存磁碟 | 「系統節點硬體統一連線展示」 
+
+
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 「ucadmin show」 
+|===
++
+系統會顯示系統上所有FC和整合式網路卡的相關資訊。
+
+. 比較節點4上的FC設定與先前從節點1擷取的設定。
+. 請採取下列其中一項行動：
++
+[cols="30,70"]
+|===
+| 如果您要升級的系統... | 然後… 
+
+
+| 具有儲存磁碟  a| 
+視需要修改節點4上的FC連接埠：
+
+** 若要設定目標連接埠：
++
+「ucadmin modify -m fc-t target <適 配器>」
+
+** 設定啟動器連接埠：
++
+「ucadmin modify -m fc-t initiator <adapter>'」
+
+
+
+「-t」是FC4類型：目標或啟動器。
+
+
+
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 視需要修改節點4上的FC連接埠：「ucadmin modify -m fs -t initiator -f <adapter_port_name>'`-t'是FC4類型、目標或啟動器。*附註*：FC連接埠必須設定為啟動器。 
+|===
+. 結束維護模式：
++
+《停止》
+
+. 從載入程式提示字元啟動系統：
++
+Boot_ONTAP功能表
+
+. 輸入命令後、請等待系統在開機環境提示字元停止。
+. 從開機功能表中選取「5」選項以進行維護模式。
+
+
+. [[step8]請採取下列其中一項行動：
++
+[cols="30,70"]
+|===
+| 如果您要升級的系統... | 然後… 
+
+
+| 具有儲存磁碟  a| 
+** 跳過本節、前往 link:verify_node4_installation.html["驗證node4安裝"] 如果節點4沒有UTA/UTA2卡或UTA/UTA2內建連接埠。
+
+
+
+
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
+** 前往 <<Check and configure UTA/UTA2 ports on node4>> 如果節點4有UTA/UTA2卡或UTA/UTA2內建連接埠。
+** 跳過_檢查並設定節點4_上的UTA/UTA2連接埠（如果節點4沒有UTA/UTA2卡或UTA/UTA2內建連接埠）一節、返回_安裝與開機節點4_一節、然後繼續執行 link:install_boot_node4.html#step23["步驟23"]。
+
+
+|===
+
+
+
+
+== 檢查並設定節點4上的UTA/UTA2連接埠
+
+如果節點4內建UTA/UTA2連接埠或UTA/UTA2A卡、您必須檢查連接埠的組態並加以設定、視您要使用升級系統的方式而定。
+
+UTA/UTA2連接埠必須具備正確的SFP+模組。
+
+UTA/UTA2連接埠可設定為原生FC模式或UTA/UTA2A模式。FC模式支援FC啟動器和FC目標；UTA/UTA2模式可讓並行NIC和FCoE流量共用相同的10GbE SFP+介面、並支援FC目標。
+
+
+NOTE: NetApp行銷資料可能會使用UTA2一詞來指稱CNA介面卡和連接埠。不過、CLI使用「CNA」一詞。
+
+UTA/UTA2連接埠可能位於介面卡或控制器上、且具有下列組態：
+
+* UTA/UTA2卡與控制器一起訂購、在出貨前已設定為符合您要求的特性。
+* 與控制器分開訂購的UTA/UTA2卡會隨附預設FC目標特性。
+* 新控制器上的內建UTA/UTA2連接埠已設定（出貨前）、以符合您要求的特性。
+
+
+不過、您應該檢查節點4上UTA/UTA2連接埠的組態、並視需要加以變更。
+
+
+WARNING: *注意*：如果您的系統有儲存磁碟、除非指示進入維護模式、否則請在叢集提示字元下輸入本節中的命令。如果您的MetroCluster 系統是連接FlexArray 至儲存陣列的支援功能不支援功能的FC系統、V系列系統或含有功能不全的虛擬化軟體的系統、則您必須處於維護模式才能設定UTA/UTA2連接埠。
+
+.步驟
+. 在節點4上使用下列命令之一、檢查連接埠目前的設定方式：
++
+[cols="30,70"]
+|===
+| 如果系統... | 然後… 
+
+
+| 具有儲存磁碟 | 「系統節點硬體統一連線展示」 
+
+
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 「ucadmin show」 
+|===
++
+系統會顯示類似下列範例的輸出：
+
++
+....
+*> ucadmin show
+                Current  Current    Pending   Pending   Admin
+Node   Adapter  Mode     Type       Mode      Type      Status
+----   -------  ---      ---------  -------   --------  -------
+f-a    0e       fc       initiator  -          -        online
+f-a    0f       fc       initiator  -          -        online
+f-a    0g       cna      target     -          -        online
+f-a    0h       cna      target     -          -        online
+f-a    0e       fc       initiator  -          -        online
+f-a    0f       fc       initiator  -          -        online
+f-a    0g       cna      target     -          -        online
+f-a    0h       cna      target     -          -        online
+*>
+....
+. 如果目前的SFP+模組不符合所需用途、請更換為正確的SFP+模組。
++
+請聯絡您的NetApp代表、以取得正確的SFP+模組。
+
+. 檢查「ucadmin show」命令的輸出、判斷UTA/UTA2連接埠是否具有您想要的特性。
+. 請採取下列其中一項行動：
++
+[cols="30,70"]
+|===
+| 如果CNA連接埠... | 然後… 
+
+
+| 沒有您想要的特性 | 前往 <<auto_check_4_step5,步驟5.>>。 
+
+
+| 擁有您想要的個人風格 | 跳過步驟5至步驟12、前往 <<auto_check_4_step13,步驟13>>。 
+|===
+. [[auto_check_4_step5]]請採取下列其中一項行動：
++
+[cols="30,70"]
+|===
+| 如果您正在設定... | 然後… 
+
+
+| UTA/UTA2卡上的連接埠 | 前往 <<auto_check_4_step7,步驟7.>> 
+
+
+| 內建UTA/UTA2連接埠 | 跳過步驟7、前往 <<auto_check_4_step8,步驟8.>>。 
+|===
+. 如果介面卡處於啟動器模式、且UTA/UTA2連接埠處於線上狀態、請將UTA/UTA2連接埠離線：
++
+「torage disableAdapter <adapter_name>」（停用介面卡）
+
++
+目標模式中的介面卡會在維護模式中自動離線。
+
+. [[auto_check_4_step7]]如果目前的組態與所需用途不符、請視需要變更組態：
++
+「ucadmin modify -m fc|cna -t啟動器| target <適 配器名稱>'
+
++
+** 「-m」是個人化模式、FC或10GbE UTA。
+** "-t"是FC4類型、"target（目標）"或"initiator（啟動器）"。
++
+
+NOTE: 您必須使用FC啟動器來執行磁帶機、FlexArray 非僅供參考的虛擬化系統及MetroCluster 各種組態。SAN用戶端必須使用FC目標。
+
+
+
+. [[auto_check_4_step8]使用下列命令檢查設定輸出、以驗證設定：
++
+「ucadmin show」
+
+. 驗證設定：
++
+[cols="40,60"]
+|===
+| 如果系統... | 然後… 
+
+
+| 具有儲存磁碟 | 「ucadmin show」 
+
+
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 「ucadmin show」 
+|===
++
+以下範例的輸出顯示FC4類型的介面卡「1b」正在變更為「啟動器」、介面卡「2a」和「2b」的模式正在變更為「cna」：
+
++
+....
+*> ucadmin show
+Node  Adapter  Current Mode  Current Type  Pending Mode  Pending Type  Admin Status
+----  -------  ------------  ------------  ------------  ------------  ------------
+f-a   1a       fc             initiator    -             -             online
+f-a   1b       fc             target       -             initiator     online
+f-a   2a       fc             target       cna           -             online
+f-a   2b       fc             target       cna           -             online
+4 entries were displayed.
+*>
+....
+. 針對每個連接埠輸入下列其中一個命令、將任何目標連接埠置於線上：
++
+[cols="30,70"]
+|===
+| 如果系統... | 然後… 
+
+
+| 具有儲存磁碟 | 「網路FCP介面卡修改節點<node_name>-Adapter <adapter_name>-state up」 
+
+
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 「FCP config <adapter_name> up」 
+|===
+. 連接連接埠。
+
+
+. [[step12]請採取下列其中一項行動：
++
+[cols="30,70"]
+|===
+| 如果系統... | 然後… 
+
+
+| 具有儲存磁碟 | 前往 link:verify_node4_installation.html["驗證node4安裝"]。 
+
+
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 返回_安裝與開機節點4_區段、然後繼續執行 link:install_boot_node4.html#step23["步驟23"]。 
+|===
+. [[auto_check_4_step13]結束維護模式：
++
+《停止》
+
+. [[step14]開機節點進入開機功能表：
++
+Boot_ONTAP功能表。
+
++
+如果您要升級至A800、請前往 <<auto_check_4_step23,步驟23>>
+
+. [[auto_check_4_step15]]在節點4上、前往開機功能表並使用2/7、然後選取隱藏的選項「boot_after控制器更換」。在提示符下輸入node2將node2的磁碟重新指派給node4、如下例所示。
++
+[listing]
+----
+LOADER-A> boot_ontap menu
+.
+.
+<output truncated>
+.
+All rights reserved.
+*******************************
+*                             *
+* Press Ctrl-C for Boot Menu. *
+*                             *
+*******************************
+.
+<output truncated>
+.
+Please choose one of the following:
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? 22/7
+(22/7)                          Print this secret List
+(25/6)                          Force boot with multiple filesystem disks missing.
+(25/7)                          Boot w/ disk labels forced to clean.
+(29/7)                          Bypass media errors.
+(44/4a)                         Zero disks if needed and create new flexible root volume.
+(44/7)                          Assign all disks, Initialize all disks as SPARE, write DDR labels
+.
+.
+<output truncated>
+.
+.
+(wipeconfig)                        Clean all configuration on boot device
+(boot_after_controller_replacement) Boot after controller upgrade
+(boot_after_mcc_transition)         Boot after MCC transition
+(9a)                                Unpartition all disks and remove their ownership information.
+(9b)                                Clean configuration and initialize node with partitioned disks.
+(9c)                                Clean configuration and initialize node with whole disks.
+(9d)                                Reboot the node.
+(9e)                                Return to main boot menu.
+The boot device has changed. System configuration information could be lost. Use option (6) to
+restore the system configuration, or option (4) to initialize all disks and setup a new system.
+Normal Boot is prohibited.
+Please choose one of the following:
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? boot_after_controller_replacement
+This will replace all flash-based configuration with the last backup to disks. Are you sure
+you want to continue?: yes
+.
+.
+<output truncated>
+.
+.
+Controller Replacement: Provide name of the node you would like to replace:
+<nodename of the node being replaced>
+Changing sysid of node node2 disks.
+Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
+Partner sysid = 4294967295, owner sysid = 536940063
+.
+.
+<output truncated>
+.
+.
+varfs_backup_restore: restore using /mroot/etc/varfs.tgz
+varfs_backup_restore: attempting to restore /var/kmip to the boot device
+varfs_backup_restore: failed to restore /var/kmip to the boot device
+varfs_backup_restore: attempting to restore env file to the boot device
+varfs_backup_restore: successfully restored env file to the boot device wrote
+    key file "/tmp/rndc.key"
+varfs_backup_restore: timeout waiting for login
+varfs_backup_restore: Rebooting to load the new varfs
+Terminated
+<node reboots>
+System rebooting...
+.
+.
+Restoring env file from boot media...
+copy_env_file:scenario = head upgrade
+Successfully restored env file from boot media...
+Rebooting to load the restored env file...
+.
+System rebooting...
+.
+.
+.
+<output truncated>
+.
+.
+.
+.
+WARNING: System ID mismatch. This usually occurs when replacing a
+boot device or NVRAM cards!
+Override system ID? {y|n} y
+.
+.
+.
+.
+Login:
+----
++
+
+NOTE: 在上述主控台輸出範例中、ONTAP 如果系統使用進階磁碟分割（ADP）磁碟、則會提示您輸入合作夥伴節點名稱。
+
+. 如果系統進入重新開機迴圈並顯示「找不到磁碟」訊息、表示系統已將FC或UTA/UTA2連接埠重設回目標模式、因此無法看到任何磁碟。若要解決此問題、請繼續 <<auto_check_4_step17,步驟17>> 至 <<auto_check_4_step22,步驟22>> 或移至章節 link:verify_node4_installation.html["驗證node4安裝"]。
+. [[auto_check_4_step17]在自動開機期間按下「Ctrl-C」、即可在「loader>」提示字元下停止節點。
+. 在載入程式提示下、進入維護模式：
++
+Boot_ONTAP maint
+
+. 在維護模式中、顯示所有先前設定的啟動器連接埠、這些連接埠現在都處於目標模式：
++
+「ucadmin show」
+
++
+將連接埠改回啟動器模式：
+
++
+「ucadmin modify -m fs -t initiator -f <介面卡名稱>」
+
+. 確認連接埠已變更為啟動器模式：
++
+「ucadmin show」
+
+. 結束維護模式：
++
+《停止》
+
+. [[auto_check_4_step22]在載入程式提示下開機：
++
+Boot_ONTAP
+
++
+現在、在開機時、節點可以偵測先前指派給它的所有磁碟、並可依預期開機。
+
+
+
+. [[auto_check_4_step23]如果您要從具有外部磁碟的系統升級至支援內部和外部磁碟AFF 的系統（例如、E25A800系統）、請將node2 Aggregate設為根Aggregate、以確保node4從節點2的根Aggregate開機。若要設定根Aggregate、請移至開機功能表、然後選取選項「5」以進入維護模式。
++
+
+WARNING: *您必須依照所示的確切順序執行下列子步驟；否則可能導致中斷運作、甚至資料遺失。*
+
++
+下列程序會將node4設定為從節點2的根Aggregate開機：
+
++
+.. 進入維護模式：
++
+Boot_ONTAP maint
+
+.. 檢查node2 Aggregate的RAID、plex和Checksum資訊：
++
+「aggr狀態-r」
+
+.. 檢查node2 Aggregate的狀態：
++
+「aggr狀態」
+
+.. 如有必要、請將node2 Aggregate上線：
++
+「aggr_online root_aggr_from _」
+
+.. 防止節點4從其原始根Aggregate開機：
++
+「aggr offline <root_aggr_on_node4>'」
+
+.. 將node2根Aggregate設為節點4的新根Aggregate：
++
+「aggr options aggr_ffrom _」（aggr_from _）<節點2> root（根）
+
+.. 確認節點4的根Aggregate為離線狀態、且從節點2移轉的磁碟根Aggregate為線上狀態、並設定為root：
++
+「aggr狀態」
+
++
+
+NOTE: 如果無法執行上一個子步驟、可能會導致節點4從內部根Aggregate開機、或者可能導致系統假設有新的叢集組態存在、或提示您識別一個。
+
++
+以下是命令輸出的範例：
+
+
+
++
+....
+---------------------------------------------------------------------
+Aggr State                       Status               Options
+aggr 0_nst_fas8080_15 online     raid_dp, aggr        root, nosnap=on
+                                 fast zeroed
+                                 64-bit
+aggr0 offline                    raid_dp, aggr        diskroot
+                                 fast zeroed`
+                                 64-bit
+---------------------------------------------------------------------
+....
+

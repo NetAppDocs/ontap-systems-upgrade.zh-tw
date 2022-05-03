@@ -1,0 +1,53 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl/index.html 
+keywords: aggregate, relocation, moving, manual, upgrade, relocate, hardware 
+summary: 使用Aggregate重新配置來升級控制器硬體 
+---
+= 使用Aggregate重新配置來升級控制器硬體
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+本內容說明如何使用Aggregate重新配置（ARL）、在不中斷營運的情況下升級控制器硬體。
+
+如需升級控制器硬體的其他方法、請參閱 xref:other_references.adoc[參考資料] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+
+您可以在不中斷營運的情況下、將非ONTAP 根集合體從原始節點移轉至同一個叢集中的新節點、以升級執行支援的節點配對上的控制器硬體。在升級期間、可存取所要升級節點上的資料。
+
+ARL利用HA組態、讓您能夠將非根Aggregate的擁有權從一個節點移到另一個節點（如果它們共享同一個叢集內的儲存設備）。
+
+有兩種ARL方法可以使用系統命令或手動升級來升級控制器硬體。在開始之前、您必須先確認已為控制器硬體升級選取正確的內容。
+
+如果您使用系統命令執行升級、請參閱下表：
+
+[cols="30,70"]
+|===
+| 如果您執行的ONTAP 是這個版本... | 若要使用系統命令進行升級、請使用… 
+
+
+| 9.10.1或更新版本 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["使用「系統控制器更換」命令、將AFF 執行AFF 《E59.10.1》或更新版本的《EVA700》升級至《E4A900》ONTAP"] 
+
+
+| 9.8或更新版本 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html["使用「系統控制器更換」命令來升級執行ONTAP 效能不正常的控制器硬體"] 
+
+
+| 9.5至9.7 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/index.html["使用「系統控制器更換」命令、將執行ONTAP E9.5的控制器硬體升級至ONTAP E9.7"] 
+|===
+如果您要執行手動升級、請參閱下表：
+
+[cols="30,70"]
+|===
+| 如果您執行的ONTAP 是這個版本... | 若要手動升級、請使用… 
+
+
+| 9.8或更新版本 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html["手動升級執行ONTAP 效能不更新的控制器硬體"] 
+
+
+| 9.0至9.7 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/index.html["手動升級執行ONTAP 效能不低於更新版本的控制器硬體"] 
+|===

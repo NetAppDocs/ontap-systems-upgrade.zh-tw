@@ -1,0 +1,18 @@
+---
+permalink: upgrade/upgrade-complete-ontap-9-8.html 
+sidebar: sidebar 
+keywords: complete, upgrade, ontap, complete the upgrade in ontap 9.8 
+summary: 請使用下列步驟完成ONTAP 更新、請參考《產品介紹9：8： 
+---
+= 完成ONTAP 更新、請使用更新功能升級
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+請使用下列步驟完成ONTAP 更新：
+
+* link:upgrade-map-network-ports-ontap-9-8.html["使用ONTAP NET9.8對應網路連接埠"]
+* link:upgrade-final-upgrade-steps-in-ontap-9-8.html["執行ONTAP 更新步驟、請參考以更新"]
+

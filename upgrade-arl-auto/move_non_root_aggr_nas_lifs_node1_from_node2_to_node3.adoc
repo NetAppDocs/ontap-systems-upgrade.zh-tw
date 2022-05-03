@@ -1,0 +1,163 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/move_non_root_aggr_nas_lifs_node1_from_node2_to_node3.html 
+keywords: aggregate relocation, lifs, node3, node1, node2, NAS 
+summary: 使用ONTAP 「系統控制器更換」命令、將執行版本號為9.5的控制器升級至9.7的控制器時、請將節點2上的節點1 NAS資料LIF從節點2移至節點3。 
+---
+= 將節點1擁有的非根Aggregate和NAS資料lifs從節點2移至節點3
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+驗證node3安裝之後、在將Aggregate從node2重新定位至node3之前、您必須將屬於node1的NAS資料lIF、目前位於node2上、從node2移至node3。您還必須驗證節點3上是否存在SAN lifs。
+
+在升級過程中、遠端LIF會處理SAN LUN的流量。在升級期間、移轉SAN LIF對於叢集或服務健全狀況並不必要。除非需要將SAN LIF對應至新連接埠、否則不會移動SAN LIF。將node3聯機後，您將驗證生命期是否正常並位於適當的端口上。
+
+.步驟
+. 恢復重新定位作業：
++
+「系統控制器更換恢復」
+
++
+系統會執行下列工作：
+
++
+** 叢集仲裁檢查
+** 系統ID檢查
+** 映像版本檢查
+** 目標平台檢查
+** 網路連線能力檢查
+
+
++
+此作業會在網路連線能力檢查的這個階段暫停。
+
+. 手動確認網路及所有VLAN、介面群組和廣播網域均已正確設定。
+. 恢復重新定位作業：
++
+「系統控制器更換恢復」
+
++
+[listing]
+----
+To complete the "Network Reachability" phase, ONTAP network configuration must
+be manually adjusted to match the new physical network configuration of the
+hardware. This includes assigning network ports to the correct broadcast
+domains, creating any required ifgrps and VLANs, and modifying the home-port
+parameter of network interfaces to the appropriate ports. Refer to the "Using
+aggregate relocation to upgrade controller hardware on a pair of nodes running
+ONTAP 9.x" documentation, Stages 3 and 5. Have all of these steps been manually
+completed? [y/n]
+----
+. 輸入「y」繼續。
+. 系統會執行下列檢查：
++
+** 叢集健全狀況檢查
+** 叢集LIF狀態檢查
+
+
++
+執行這些檢查之後、系統會將節點1擁有的非根Aggregate和NAS資料lifs重新定位至新的控制器節點3。資源重新配置完成後、系統會暫停。
+
+. 檢查集合體重新配置和NAS資料LIF移動作業的狀態：
++
+「System Controller replace show-details」（系統控制器取代顯示詳細資料
+
+. 驗證非根集合體和NAS資料lifs是否已成功重新定位至節點3。
++
+如果有任何集合體無法重新定位或遭到否決、您必須手動重新定位集合體、或在必要時覆寫檢查結果或目的地檢查。請參閱 link:relocate_failed_or_vetoed_aggr.html["重新部署故障或被否決的集合體"] 以取得更多資訊。
+
+. 完成下列子步驟、確認SAN LIF位於節點3上的正確連接埠：
++
+.. 輸入下列命令並檢查其輸出：
++
+「網路介面show -data-Protocol <iscs|FCP >-home-node3>'
+
++
+系統會傳回類似下列範例的輸出：
+
++
+[listing]
+----
+cluster::> net int show -data-protocol iscsi|fcp -home-node node3
+
+        Logical   Status     Network           Current  Current Is
+Vserver Interface Admin/Oper Address/Mask      Node     Port    Home
+------- --------- ---------- ----------------- -------- ------- ----
+vs0
+        a0a       up/down     10.63.0.53/24     node3   a0a     true
+        data1     up/up       10.63.0.50/18     node3   e0c     true
+        rads1     up/up       10.63.0.51/18     node3   e1a     true
+        rads2     up/down     10.63.0.52/24     node3   e1b     true
+vs1
+        lif1      up/up       172.17.176.120/24 node3   e0c     true
+        lif2      up/up       172.17.176.121/24 node3   e1a     true
+----
+.. 如果節點3的SAN生命體或SAN生命體群組位於節點1上不存在的連接埠、或需要對應至不同連接埠、請完成下列子步驟、將其移至節點3上的適當連接埠：
++
+... 將LIF狀態設為「關閉」：
++
+「網路介面修改-vserver <vserver_name>-lIF <LIF_name>-STATUS-admin DOWN」
+
+... 從連接埠集移除LIF：
++
+「portset移除-vserver <vserver_name>-portset <portSet_name>-port-name <port_name>」
+
+... 輸入下列其中一個命令：
++
+**** 移動單一LIF：
++
+「網路介面修改-vserver <vserver_name>-lIF <LIF_name>-home-port <new_home_port>`
+
+**** 將單一不存在或不正確連接埠上的所有LIF移至新連接埠：
++
+「網路介面修改｛-home-port <port_on_node1>-home-Node <node1>-role data｝-home-port <new_home_port_on_node3>'
+
+**** 將lifs新增回連接埠集：
++
+「portset add -vserver <vserver_name>-portset <portset_name>-port-name <port_name>'
+
++
+
+NOTE: 您必須確認將SAN LIF移至與原始連接埠具有相同連結速度的連接埠。
+
+
+
+
+
+.. 將所有生命期的狀態修改為「up」、以便生命期可以接受及傳送節點上的流量：
++
+「網路介面修改-home-port <port_name>-home-node<node3>-lIF DATA -STATUS admin up」
+
+.. 在任一節點上輸入以下命令並檢查其輸出、以確認LIF已移至正確的連接埠、且LIF的狀態為「up」（啟動）：
++
+「網路介面show -home-Node <node3>-role data」
+
+.. 如果有任何生命中斷、請輸入下列命令、並針對每個LIF輸入一次、將該生命的管理狀態設定為「UP」：
++
+「網路介面修改-vserver <vserver_name>-lif<lif_name>-STATUS-admin up」
+
+
+
+. 繼續作業、以提示系統執行必要的POST檢查：
++
+「系統控制器更換恢復」
+
++
+系統會執行下列POST檢查：
+
++
+** 叢集仲裁檢查
+** 叢集健全狀況檢查
+** 集合體重建檢查
+** Aggregate狀態檢查
+** 磁碟狀態檢查
+** 叢集LIF狀態檢查
+
+
+

@@ -1,0 +1,10 @@
+= 
+:allow-uri-read: 
+
+
+.步驟
+. link:relocate_non_root_aggr_node1_node2.html["將節點1擁有的非根Aggregate和NAS資料lifs重新定位至節點2"]
+. link:move_nas_lifs_node1_node2.html["將節點1擁有的NAS資料lifs移至節點2"]
+. link:record_node1_information.html["正在記錄node1資訊"]
+. link:retire_node1.html["淘汰節點1"]
+

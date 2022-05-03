@@ -1,0 +1,24 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/lifs_invalid_ports_after_upgrade.html 
+keywords: lifs, invalid, ports, error, mismatch, troubleshoot, metrocluster 
+summary: 在執行版本號為9.7或更早版本的控制器上進行手動ARL升級之後、重新同步MetroCluster 在無效連接埠上的LIF。ONTAP 
+---
+= LIF在升級後位於無效連接埠上
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+升級完成後、如果MetroCluster 您有一個故障碼組態、FC邏輯介面（LIF）可能會留在不正確的連接埠上。您可以執行重新同步作業、將lifs重新指派給正確的連接埠。
+
+.步驟
+. 輸入「MetroCluster vsvserver resSync」命令、將lifs重新分配到正確的連接埠。
++
+「MetroCluster vsvserver resSync -vserver <vserver_name> fCP、mc、header upgrade、test.vs」
+
+

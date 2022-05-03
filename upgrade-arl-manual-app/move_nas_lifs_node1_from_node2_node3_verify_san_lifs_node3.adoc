@@ -1,0 +1,270 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual-app/move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html 
+keywords: move, nas, san, lif, ports, broadcast domain, node1, node2, node3 
+summary: 在執行ONTAP 支援9.8或更新版本的控制器上進行手動ARL升級時、將節點2上的節點1 NAS資料lifs從節點2移至節點3。 
+---
+= 將節點1擁有的NAS資料lifs從節點2移至節點3、並驗證節點3上的SAN lifs
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在將Aggregate從node2重新定位到node3之前、您必須將屬於node1的NAS資料lifs（目前位於node2上）、從node2移到node3。您也必須驗證節點3上的SAN LIF。
+
+在升級過程中、遠端LIF會處理SAN LUN的流量。在升級期間、移轉SAN LIF對於叢集或服務健全狀況並不必要。除非需要將SAN LIF對應至新連接埠、否則不會移動SAN LIF。將node3聯機後，您將驗證生命期是否正常並位於適當的端口上。
+
+.步驟
+. [[step1]]在任一節點上輸入下列命令並擷取輸出、列出節點2未擁有的所有NAS資料生命量：
++
+「network interface show -role data -curr-node2>-is主目錄假主節點<node3>'
+
+. [[Worksheet_step2]]如果叢集是針對SAN lifs進行設定、請在此記錄SAN lifs「介面卡」和「切換連接埠」組態資訊 link:worksheet_information_before_moving_san_lifs_node3.html["工作表"] 以供稍後的程序使用。
++
+.. 列出節點2上的SAN LIF並檢查輸出：
++
+「網路介面show -data傳輸協定fc*」
+
++
+系統會傳回類似下列範例的輸出：
+
++
+[listing]
+----
+cluster1::> net int show -data-protocol fc*
+  (network interface show)
+             Logical     Status     Network            Current        Current Is
+Vserver      Interface   Admin/Oper Address/Mask       Node           Port    Home
+-----------  ----------  ---------- ------------------ -------------  ------- ----
+svm2_cluster1
+             lif_svm2_cluster1_340
+                         up/up      20:02:00:50:56:b0:39:99
+                                                       cluster1-01    1b      true
+             lif_svm2_cluster1_398
+                         up/up      20:03:00:50:56:b0:39:99
+                                                       cluster1-02    1a      true
+             lif_svm2_cluster1_691
+                         up/up      20:01:00:50:56:b0:39:99
+                                                       cluster1-01    1a      true
+             lif_svm2_cluster1_925
+                         up/up      20:04:00:50:56:b0:39:99
+                                                       cluster1-02    1b      true
+4 entries were displayed.
+----
+.. 列出現有組態並檢查輸出：
++
+「FCP介面卡顯示欄位交換器連接埠、fc-WWPN」
+
++
+系統會傳回類似下列範例的輸出：
+
++
+[listing]
+----
+cluster1::> fcp adapter show -fields switch-port,fc-wwpn
+  (network fcp adapter show)
+node         adapter  fc-wwpn                  switch-port
+-----------  -------  -----------------------  -------------
+cluster1-01  0a       50:0a:09:82:9c:13:38:00  ACME Switch:0
+cluster1-01  0b       50:0a:09:82:9c:13:38:01  ACME Switch:1
+cluster1-01  0c       50:0a:09:82:9c:13:38:02  ACME Switch:2
+cluster1-01  0d       50:0a:09:82:9c:13:38:03  ACME Switch:3
+cluster1-01  0e       50:0a:09:82:9c:13:38:04  ACME Switch:4
+cluster1-01  0f       50:0a:09:82:9c:13:38:05  ACME Switch:5
+cluster1-01  1a       50:0a:09:82:9c:13:38:06  ACME Switch:6
+cluster1-01  1b       50:0a:09:82:9c:13:38:07  ACME Switch:7
+cluster1-02  0a       50:0a:09:82:9c:6c:36:00  ACME Switch:0
+cluster1-02  0b       50:0a:09:82:9c:6c:36:01  ACME Switch:1
+cluster1-02  0c       50:0a:09:82:9c:6c:36:02  ACME Switch:2
+cluster1-02  0d       50:0a:09:82:9c:6c:36:03  ACME Switch:3
+cluster1-02  0e       50:0a:09:82:9c:6c:36:04  ACME Switch:4
+cluster1-02  0f       50:0a:09:82:9c:6c:36:05  ACME Switch:5
+cluster1-02  1a       50:0a:09:82:9c:6c:36:06  ACME Switch:6
+cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
+16 entries were displayed
+----
+
+
+. [[step3]請採取下列其中一項行動：
++
+[cols="35,65"]
+|===
+| 如果節點1... | 然後... 
+
+
+| 已設定介面群組或VLAN | 前往 <<man_lif_verify_3_step3,步驟4.>>。 
+
+
+| 未設定介面群組或VLAN | 跳過步驟4、前往 <<man_lif_verify_3_step4,步驟5.>>。 
+|===
+. [[man_lif_VERIF_3_step3]]執行下列子步驟、將原本位於節點1上的介面群組和VLAN上裝載的任何NAS資料LIF、從節點2移轉至節點3：
++
+.. [[man_lif_VERIF_3_substepa]將先前屬於介面群組節點1的節點2上裝載的任何資料LIF移轉至節點3上的連接埠、只要輸入下列命令、即可在同一個網路上裝載LIF：
++
+「網路介面移轉-vserver <vserver_name>-lif<lif_name>-destite-node<node3>–destite-port <netport|ifgrp>'
+
+.. 在中修改LIF的主連接埠和主節點 <<man_lif_verify_3_substepa,子步驟A>> 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
++
+「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-node3>-home-port <netport|ifgrp>`
+
+.. [[man_lif_VERIF_3_substepc]將先前屬於VLAN連接埠節點1的節點2上裝載的任何資料LIF移轉至節點3上的連接埠、只要輸入下列命令、即可在同一個網路上裝載LIF：
++
+「網路介面移轉-vserver <vserver_name>-lif<lif_name>-destite-node<node3>–destite-port <netport|ifgrp>'
+
+.. 修改中的lifs主連接埠和主節點 <<man_lif_verify_3_substepc,子步驟c>> 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
++
+「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-node3>-home-port <netport|ifgrp>`
+
+
+
+. [[man_lif_VERIF_3_step4]請採取下列其中一項行動：
++
+[cols="25,75"]
+|===
+| 如果叢集設定為... | 然後... 
+
+
+| NAS | 完成 <<man_lif_verify_3_step5,步驟6.>> 和 <<man_lif_verify_3_step6,步驟7.>>、跳過步驟8、然後完成 <<man_lif_verify_3_step8,步驟9.>> 透過 <<man_lif_verify_3_step11,步驟12.>>。 
+
+
+| SAN | 停用節點上的所有SAN LIF、以便進行升級：「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-Node <node_to _upgrade >-home-port <netport|ifgrp>-station-admin drod' 
+|===
+. [[man_lif_VERIF_3_step5]]如果您的平台上有不同的資料連接埠、請將連接埠新增至廣播網域：
++
+「網路連接埠廣播網域附加連接埠-IPSpace <IPspace_name>-broadcast網域管理-ports <node:port>'
+
++
+下列範例將節點「8200-1」上的連接埠「e0a」和節點「8060-1」上的連接埠「e0i」新增至IPspace「預設」中的廣播網域「mgmt」：
+
++
+[listing]
+----
+cluster::> network port broadcast-domain add-ports -ipspace Default -broadcast-domain mgmt -ports 8200-1:e0a, 8060-1:e0i
+----
+. [[man_lif_VERIF_3_step6]]輸入下列命令、將每個NAS資料LIF移轉至節點3、每個LIF一次：
++
+「網路介面移轉-vserver <vserver_name>-lif<lif_name>-dite-node<node3>-dite-port <netport|ifgrp>'
+
+. [[man_lif_VERIF_3_step7]請確定資料移轉持續進行：
++
+「網路介面修改-vserver <vserver_name>-lif <lif_name>-home-port <netport|ifgrp>-home-node3>`
+
+. [[man_lif_firm_3_step8]確認SAN LIF位於節點3上的正確連接埠：
++
+.. 輸入下列命令並檢查其輸出：
++
+「網路介面show -data傳輸協定iscsiSCSI|FCP -home-Node <node3>'
+
++
+系統會傳回類似下列範例的輸出：
+
++
+[listing]
+----
+cluster::> net int show -data-protocol iscsi|fcp -home-node node3
+              Logical     Status      Network             Current        Current  Is
+ Vserver      Interface   Admin/Oper  Address/Mask        Node           Port     Home
+ -----------  ----------  ----------  ------------------  -------------  -------  ----
+ vs0
+              a0a         up/down     10.63.0.53/24       node3          a0a      true
+              data1       up/up       10.63.0.50/18       node3          e0c      true
+              rads1       up/up       10.63.0.51/18       node3          e1a      true
+              rads2       up/down     10.63.0.52/24       node3          e1b      true
+ vs1
+              lif1        up/up       172.17.176.120/24   node3          e0c      true
+              lif2        up/up       172.17.176.121/24   node3          e1a      true
+----
+.. 將「FCP介面卡show」命令的輸出與您在工作表中記錄的組態資訊進行比較、確認新的「介面卡」和「切換連接埠」組態正確無誤 <<worksheet_step2,步驟2>>。
++
+在節點3上列出新的SAN LIF組態：
+
++
+「FCP介面卡顯示欄位交換器連接埠、fc-WWPN」
+
++
+系統會傳回類似下列範例的輸出：
+
++
+[listing]
+----
+cluster1::> fcp adapter show -fields switch-port,fc-wwpn
+  (network fcp adapter show)
+node        adapter fc-wwpn                 switch-port
+----------- ------- ----------------------- -------------
+cluster1-01 0a      50:0a:09:82:9c:13:38:00 ACME Switch:0
+cluster1-01 0b      50:0a:09:82:9c:13:38:01 ACME Switch:1
+cluster1-01 0c      50:0a:09:82:9c:13:38:02 ACME Switch:2
+cluster1-01 0d      50:0a:09:82:9c:13:38:03 ACME Switch:3
+cluster1-01 0e      50:0a:09:82:9c:13:38:04 ACME Switch:4
+cluster1-01 0f      50:0a:09:82:9c:13:38:05 ACME Switch:5
+cluster1-01 1a      50:0a:09:82:9c:13:38:06 ACME Switch:6
+cluster1-01 1b      50:0a:09:82:9c:13:38:07 ACME Switch:7
+cluster1-02 0a      50:0a:09:82:9c:6c:36:00 ACME Switch:0
+cluster1-02 0b      50:0a:09:82:9c:6c:36:01 ACME Switch:1
+cluster1-02 0c      50:0a:09:82:9c:6c:36:02 ACME Switch:2
+cluster1-02 0d      50:0a:09:82:9c:6c:36:03 ACME Switch:3
+cluster1-02 0e      50:0a:09:82:9c:6c:36:04 ACME Switch:4
+cluster1-02 0f      50:0a:09:82:9c:6c:36:05 ACME Switch:5
+cluster1-02 1a      50:0a:09:82:9c:6c:36:06 ACME Switch:6
+cluster1-02 1b      50:0a:09:82:9c:6c:36:07 ACME Switch:7
+16 entries were displayed
+----
++
+
+NOTE: 如果新組態中的SAN LIF不在仍連接至相同「切換連接埠」的介面卡上、則當您重新啟動節點時、可能會導致系統中斷。
+
+.. 如果節點3的SAN生命體或SAN生命體群組位於節點1上不存在的連接埠、或需要對應至不同連接埠、請完成下列子步驟、將其移至節點3上的適當連接埠：
++
+... 將LIF狀態設為「向下」：
++
+「網路介面修改-vserver <vserver_name>-lIF <LIF_name>-STATUS-admin DOWN」
+
+... 從連接埠集移除LIF：
++
+「portset移除-vserver <vserver_name>-portset <portSet_name>-port-name <port_name>」
+
+... 輸入下列其中一個命令：
++
+**** 移動單一LIF：
++
+「網路介面修改-vserver <vserver_name>-lIF <LIF_name>-home-port <new_home_port>`
+
+**** 將單一不存在或不正確連接埠上的所有LIF移至新連接埠：
++
+「網路介面修改｛-home-port <port_on_node1>-home-Node <node1>-role data｝-home-port <new_home_port_on_node3>'
+
+**** 將lifs新增回連接埠集：
++
+「portset add -vserver <vserver_name>-portset <portset_name>-port-name <port_name>'
+
++
+
+NOTE: 您必須將SAN LIF移至連結速度與原始連接埠相同的連接埠。
+
+
+
+
+
+
+
+. 將所有生命期的狀態修改為「up」、以便生命期可以接受及傳送節點上的流量：
++
+「網路介面修改-home-port <port_name>-home-node<node3>-lIF DATA -STATUS-admin up」
+
+. 在任一節點上輸入下列命令、檢查其輸出、確認已將l生命 移至正確的連接埠、並在任一節點上輸入下列命令、檢查輸出結果、以確認lIF的狀態為「up」：
++
+「網路介面show -home-Node <node3>-role data」
+
+. [[man_lif_VERIF_3_step11]如果有任何lifs當機、請輸入下列命令將lifs的管理狀態設為「up」、每個LIF一次：
++
+「網路介面修改-vserver <vserver_name>-lIF <LIF_name>-STATUS-admin up」
+
+. 將升級後AutoSupport 的支援資訊訊息傳送給NetApp for node1：
++
+「系統節點AutoSupport 無法叫用節點<node3>-type all -messed "node1 Successfully eved from <platform _old> to <platform _new>""（系統節點無法叫用節點<node3>-type all -messed "node1已
+
+

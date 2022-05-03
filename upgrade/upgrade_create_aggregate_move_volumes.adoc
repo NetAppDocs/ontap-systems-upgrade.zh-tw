@@ -1,0 +1,103 @@
+---
+permalink: upgrade/upgrade-create-aggregate-move-volumes.html 
+sidebar: sidebar 
+keywords: create, aggregate, node, store, volume, original, node, identify, aggregate, individually, create an aggregate and moving volumes to the new nodes 
+summary: 您至少在每個新節點上建立一個集合體、以儲存您要從原始節點移動的磁碟區。您必須為每個磁碟區識別一個集合體、然後分別移動每個磁碟區。 
+---
+= 建立Aggregate並將磁碟區移至新節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您至少在每個新節點上建立一個集合體、以儲存您要從原始節點移動的磁碟區。您必須為每個磁碟區識別一個集合體、然後分別移動每個磁碟區。
+
+必須先初始化資料保護鏡射關係、才能移動磁碟區。
+
+https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["尋找所需的資料保護程序"^]。
+
+.步驟
+. 在每個新節點上建立至少一個Aggregate：
++
+sorage Aggregate create -aggregate aggreg_name -Node new_no_name -diskcountinteger'
+
+. 將新的Aggregate新增至與原始節點上您要從中移動磁碟區的Aggregate相同的SVM：
++
+「vserver add-aggregate」
+
++
+新的Aggregate和要從中移動磁碟區的舊Aggregate都必須位於相同的SVM中。
+
+. 確認新的Aggregate現在已指派給與原始節點上Aggregate相同的SVM：
++
+「vserver show -vserversvm_name」
+
+. 顯示您要從原始節點移至新節點的磁碟區資訊：
++
+「Volume show -vserver Svm_name -Node ORIGINAL_node_name'
+
++
+您應該保留命令輸出以供日後參考。
+
++
+下列範例顯示「VS1」SVM和「node0」節點上的磁碟區：
+
++
+[listing]
+----
+cluster::> volume show -vserver vs1 -node node0
+Vserver   Volume       Aggregate    State      Type       Size  Available Used%
+--------- ------------ ------------ ---------- ---- ---------- ---------- -----
+vs1       clone        aggr1        online     RW         40MB    37.87MB    5%
+vs1       vol1         aggr1        online     RW         40MB    37.87MB    5%
+vs1       vs1root      aggr1        online     RW         20MB    18.88MB    5%
+3 entries were displayed.
+----
+. 判斷您可以將特定Volume移至哪個Aggregate：
++
+「Volume move target aggr show -vserver Svm_name -volume vol_name」
+
++
+下列範例顯示、「VS2」SVM上的「user_max」磁碟區可移至任何列出的集合體：
+
++
+[listing]
+----
+cluster::> volume move target-aggr show -vserver vs2 -volume user_max
+Aggregate Name   Available Size  Storage Type
+--------------   --------------  ------------
+aggr2            467.9GB         FCAL
+node12a_aggr3    10.34GB         FCAL
+node12a_aggr2    10.36GB         FCAL
+node12a_aggr1    10.36GB         FCAL
+node12a_aggr4    10.36GB         FCAL
+5 entries were displayed
+----
+. 在您要移動的每個磁碟區上執行驗證檢查、以驗證是否可將其移至指定的Aggregate：
++
+「Volume move start -vserver Svm_name -volume volume volume volume名稱-destination-aggregate destination_aggregate name -perform validation-only true」
+
+. 一次移動一個磁碟區（進階權限層級）：
++
+「Volume move start -vserver Svm_name -volume vol_name -destination-aggregate destination_aggreg_name -cover－windowinteger'
+
++
+您無法移動節點根磁碟區（vol0）。其他磁碟區（包括SVM根磁碟區）也可以移動。
+
+. 顯示「Volume Move（Volume Move）（Volume Move（Volume Move））））））作業的結果、以驗證是否成功移動磁碟區：
++
+「Volume Move show -vserver Svm_name -volume vol_name」
+
+. 如果多次嘗試後、「Volume Move（Volume Move）」（Volume Move（Volume Move））作業仍未完成最後階段、請強制移動完成：
++
+「Volume Move triver-cover -vserver Svm_name -volume vol_name -force true」
+
++
+強制完成磁碟區移動作業、可能會中斷用戶端對您正在移動之磁碟區的存取。
+
+. 確認磁碟區已成功移至指定的SVM、而且位於正確的Aggregate：
++
+「Volume show -vserver Svm_name」
+
+

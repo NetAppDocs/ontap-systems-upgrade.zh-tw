@@ -1,0 +1,23 @@
+= 
+:allow-uri-read: 
+
+
+.步驟
+. 存取NetApp支援網站、下載用於執行系統網路開機的檔案。
+. 請ONTAP 從NetApp支援網站的軟體下載區段下載適當的支援軟體、並將「<ONTAP_VERW>_image.tgz」檔案儲存在可從網路存取的目錄中。
+. 切換至網路存取目錄、並確認您所需的檔案可用。
++
+[cols="30,70"]
+|===
+| 適用於... | 然後... 
+
+
+| FAS / AFF8000系列系統 | 將「<ONTAP_VERSION >_image.tgz」檔案的內容解壓縮到目標目錄：「tar -zxvf <ONTAP_VERVERSION >_image.tgz」*附註*：如果您要在Windows上解壓縮內容、請使用7-Zip或WinRAR來擷取netboot映像。您的目錄清單應包含一個netboot資料夾、其中包含一個核心檔案：「netboot/kernel」（netboot/kernel） 
+
+
+| 所有其他系統 | 您的目錄清單應包含下列檔案：「<ONTAP_VERSION >_image.tgz」*附註*：您不需要擷取「<ONTAP_VERSION >_image.tgz」檔案的內容。 
+|===
++
+您將會使用中目錄中的資訊 link:stage_3_install_boot_node3_overview.html["階段3."]。
+
+

@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/guidelines_for_upgrading_controllers_with_arl.html 
+keywords: guidelines, upgrading, controllers, ARL 
+summary: 瞭解您是否ONTAP 可以使用「系統控制器更換」命令來升級執行效能不全的控制器。 
+---
+= 使用ARL升級控制器的準則
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+若要瞭ONTAP 解您是否可以使用ARL來升級執行《支援》9.8或更新版本的一對控制器、取決於平台及原始與更換控制器的組態。
+
+
+
+== 支援ARL升級
+
+當您使用本ARL程序升級一對節點ONTAP 以利執行更新以利執行本程序（適用於更新版本的）時、您必須確認ARL是否可在原始控制器和更換控制器上執行。
+
+您必須檢查所有已定義的集合體大小、以及原始系統所支援的磁碟數量。然後、您必須將所支援的Aggregate大小和磁碟數目、與新系統所支援的Aggregate大小和磁碟數目進行比較。請參閱 link:other_references.html["參考資料"] 可連結至Hardware Universe 提供此資訊的_SUR__。新系統支援的Aggregate大小和磁碟數目必須等於或大於原始系統支援的Aggregate大小和磁碟數目。
+
+您必須在叢集混合規則中驗證新節點是否能在更換原始控制器時、成為現有節點的叢集一部分。如需叢集混合規則的詳細資訊、請參閱 link:other_references.html["參考資料"] 以連結至_SURE_ Hardware Universe 。
+
+
+NOTE: 如果您要升級支援內部磁碟機的系統（例如FAS2700或AFF E4A250）、但沒有內部磁碟機、請參閱 link:other_references.html["參考資料"] 並使用_Aggregate Relocation中的程序來手動升級控制器Hardware_內容、而這些內容適用於ONTAP 您的版次。
+
+如果您的系統每個節點有兩個以上的叢集連接埠、例如FAS8080或AFF8080系統、則在開始升級之前、您必須將叢集生命體移轉並重新主控至每個節點的兩個叢集連接埠。如果您在每個節點上使用兩個以上的叢集連接埠來執行控制器升級、則在升級之後、新控制器上的叢集生命量可能會遺失。
+
+使用ARL的控制器升級支援使用SnapLock 「支援」的系統、這些系統均設定了「支援使用者支援使用者支援的功能」和SnapLock 「支援使用者支援
+
+
+
+== 雙節點無交換式叢集
+
+如果您要升級雙節點無交換式叢集中的節點、則可在執行升級時、將節點留在無交換器叢集中。您不需要將它們轉換成交換式叢集。
+
+
+
+== 不支援ARL升級
+
+您無法執行下列升級：
+
+* 更換不支援連接至原始控制器之磁碟櫃的控制器
++
+請參閱 link:other_references.html["參考資料"] 可連結至_SURE_ Hardware Universe 以取得磁碟支援資訊。
+
+* 例如FAS 、使用內部磁碟機的入門級控制器：一套
++
+如果您想要使用內部磁碟機來升級入門級控制器、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備來連結至_Upgrade、請移Data ONTAP 至「移動磁碟區」以升級執行叢集式VMware的一對節點」程序。
+
+
+
+
+
+== 疑難排解
+
+如果在升級控制器時發生任何問題、請參閱 link:troubleshoot.html["疑難排解"] 本節將於程序結束時提供更多資訊和可能的解決方案。
+
+如果您找不到解決所遇到問題的解決方案、請聯絡技術支援部門。

@@ -1,0 +1,7 @@
+= 
+:allow-uri-read: 
+
+
+如果您偏好其他方法來升級控制器硬體、並願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+
+請參閱 link:other_references.html["參考資料"] 連結至_SURF9 ONTAP 文件中心_、您可在此存取ONTAP VMware產品文件。

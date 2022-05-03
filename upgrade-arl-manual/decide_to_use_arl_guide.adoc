@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/decide_to_use_arl_guide.html 
+keywords: decision, decision, what to use, upgrade, HA pair, metrocluster, storage encryption, volume encryption, NSE, NVE 
+summary: 決定是否使用手動ARL程序、將HA配對中的儲存控制器升級至執行ONTAP 版本為9.7或更早版本的新控制器。 
+---
+= 決定是否使用Aggregate重新配置程序
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+本內容說明如何升級HA配對中的儲存控制器與新的控制器、同時保留所有現有的資料和磁碟。這是一個複雜的程序、只能由經驗豐富的系統管理員使用。
+
+在下列情況下使用此內容：
+
+* 您不想將新的控制器新增為叢集的新HA配對、也不想使用Volume Moves來移轉資料。
+* 您在管理ONTAP 方面經驗豐富、而且對於在診斷權限模式下工作的風險感到自在。
+* 您的系統使用的是MetroCluster 執行ONTAP 支援支援功能的Fabric支援4節點和8節點組態、可執行支援功能的版本號為2、9、5或更早版本。
+
+
+
+NOTE: 您可以在本程序中使用NetApp儲存加密（NSE）和NetApp Volume加密（NVE）。
+
+如果您偏好其他方法來升級控制器硬體、並願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+
+請參閱 link:other_references.html["參考資料"] 連結至_SURF9 ONTAP 文件中心_、您可在此存取ONTAP VMware產品文件。

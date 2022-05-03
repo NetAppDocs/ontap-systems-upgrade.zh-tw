@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/relocate_failed_or_vetoed_aggr.html 
+keywords: relocate, aggregates, fail, veto 
+summary: 使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.5的控制器升級至9.7時、請手動重新定位故障或遭否決的集合體。 
+---
+= 重新部署故障或被否決的集合體
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果有任何集合體無法重新定位或遭到否決、您必須手動重新定位集合體、或在必要時覆寫檢查結果或目的地檢查。
+
+由於錯誤、重新配置作業將會暫停。
+
+.步驟
+. 請檢查EMS記錄、以判斷集合體為何無法重新定位或遭否決。
+. 重新部署任何故障或被否決的集合體：
++
+「torage Aggregate regate regate or搬 移開始節點<node1>-destate <node2> Aggregate-list *-ndos控制 器升級true」
+
+. 出現提示時、請輸入「y」。
+. 您可以使用下列其中一種方法來強制重新配置：
++
+[cols="35,65"]
+|===
+| 選項 | 說明 
+
+
+| 壓倒一切的否決檢查 | 輸入下列內容：「torage aggregate regate regate regate reg搬 移開始- override-tetoes *-ndos控制 器升級true」 
+
+
+| 覆寫目的地檢查 | 輸入下列內容：「torage Aggregate regate regate orocationstart -overridedation-checks*-ND-controllerupgradate true」 
+|===
+

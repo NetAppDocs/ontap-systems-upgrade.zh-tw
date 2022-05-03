@@ -1,0 +1,28 @@
+---
+permalink: upgrade/upgrade-install-new-nodes.html 
+sidebar: sidebar 
+keywords: upgrade, moving, move, storage, install, node3, node4, attach, power, console, network, connection, install the new nodes 
+summary: 當您透過移動儲存設備進行升級時、首先要安裝node3和node4、然後將電源、主控台和網路連線連接至新節點。 
+---
+= 安裝新節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您透過移動儲存設備進行升級時、首先要安裝node3和node4、然後將電源、主控台和網路連線連接至新節點。
+
+.步驟
+. 如有需要、請依照適當的介面卡安裝程序中的指示、在節點3和節點4中安裝任何介面卡。
+. 依照平台的安裝與設定指示_安裝新節點。
++
+此時請勿將原始節點的磁碟櫃連接至新節點。
+
+. 依照平台的_安裝與設定指示_、將電源與主控台連線連接至節點3/node4 HA配對。
+. 連接網路纜線。
+. 將儲存櫃纜線以外的所有剩餘纜線分別從節點1/node2 HA配對傳輸至節點3/node4上的對應連接埠。
++
+這包括不用於連接儲存櫃的光纖通道和乙太網路纜線。
+
+

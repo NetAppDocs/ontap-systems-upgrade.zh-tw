@@ -1,0 +1,273 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/install_boot_node4.html 
+keywords: install, boot, node4, install ONTAP 
+summary: 使用ONTAP 「系統控制器更換」命令、將執行ONTAP 版本號從9.5升級至9.7的控制器時、請安裝及開機節點4並安裝效益分析軟體。 
+---
+= 安裝及開機節點4
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您必須在機架中安裝node4、將node2的連線傳輸至node4、開機node4、然後安裝ONTAP 。然後您必須重新指派節點2的任何備用磁碟、屬於根磁碟區的任何磁碟、以及任何未在程序中稍早重新放置到節點3的非根Aggregate、如本節所述。
+
+重新配置作業會在此階段開始時暫停。此程序大多是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。此外、您必須確認NAS資料生命週期已成功移至節點4。
+
+如果netboot node4的版本ONTAP 與node2上安裝的版本不相同、則需要netboot node4。安裝node4之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點4。接著、您可以依照中的指示、將正確的檔案下載到開機媒體裝置、以供後續系統開機 link:prepare_for_netboot.html["準備netboot"]。
+
+.重要事項：
+* 如果您要升級連接至儲存陣列的V系列系統、或是使用FlexArray 連接至儲存陣列的支援功能之非功能性虛擬化軟體的系統、則必須完成 <<auto_install4_step1,步驟1.>> 透過 <<auto_install4_step21,步驟21>>然後離開本節並依照指示進行 link:set_fc_or_uta_uta2_config_node4.html#configure-fc-ports-on-node4["在節點4上設定FC連接埠"] 和至 link:set_fc_or_uta_uta2_config_node4.html#check-and-configure-utauta2-ports-on-node4["檢查並設定節點4上的UTA/UTA2連接埠"]，在維護模式下輸入命令。接著您必須返回本節並繼續 <<auto_install4_step23,步驟23>>。
+* 不過、如果您要升級具有儲存磁碟的系統、則必須完成本節的完整內容、然後繼續 link:set_fc_or_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"]，在叢集提示字元中輸入命令。
+
+
+.步驟
+. [[[auto_install4_step1]]請確定node4有足夠的機架空間。
++
+如果node4與node2位於不同的機箱中、您可以將node4放在與node3相同的位置。如果節點2和節點4位於同一個機箱中、則節點4已位於適當的機架位置。
+
+. 按照節點機型的安裝與設定說明_中的指示、在機架中安裝節點4。
+. 纜線節點4、將連線從節點2移至節點4。
++
+依照_Installation and Setup Instructions（安裝與設定說明）或_EsceVirtualization FlexArray Installation Requirements and Reference（節點4平台參考資料）、適當的磁碟櫃文件、以及_High Availability management_中的指示、連接下列連線。
+
++
+請參閱 link:other_references.html["參考資料"] 連結至_ FlexArray 《虛擬化安裝要求與參考資料》和_《高可用度管理》。
+
++
+** 主控台（遠端管理連接埠）
+** 叢集連接埠
+** 資料連接埠
+** 叢集與節點管理連接埠
+** 儲存設備
+** SAN組態：iSCSI乙太網路和FC交換器連接埠
++
+
+NOTE: 您可能不需要將互連卡/FC-VI卡或互連/FC-VI纜線連線從節點2移至節點4、因為大多數平台機型都有獨特的互連卡機型。若要進行此功能、您必須將FC-VI纜線連線從節點2移至節點4。MetroCluster如果新主機沒有FC-VI卡、您可能需要移動FC-VI卡。
+
+
+
+. 開啟節點4的電源、然後在主控台終端按下「Ctrl-C」來存取開機環境提示字元、以中斷開機程序。
++
+
+NOTE: 當您啟動節點4時、可能會看到下列警告訊息：
+
++
+....
+WARNING: The battery is unfit to retain data during a power outage. This is likely
+         because the battery is discharged but could be due to other temporary
+         conditions.
+         When the battery is ready, the boot process will complete
+         and services will be engaged. To override this delay, press 'c' followed
+         by 'Enter'
+....
+. 如果您在步驟4中看到警告訊息、請採取下列行動：
++
+.. 檢查可能指出NVRAM電池電量不足以外問題的任何主控台訊息、並視需要採取任何必要的修正行動。
+.. 讓電池充電並完成開機程序。
++
+
+WARNING: *注意：請勿置換延遲；若不讓電池充電、可能導致資料遺失。*
+
++
+
+NOTE: 請參閱 link:prepare_for_netboot.html["準備netboot"]。
+
+
+
+
+
+. [[step6]]選擇下列其中一項動作來設定netboot連線。
++
+
+NOTE: 您必須使用管理連接埠和IP做為netboot連線。請勿使用資料LIF IP、否則在執行升級時可能會發生資料中斷。
+
++
+[cols="30,70"]
+|===
+| 如果動態主機組態傳輸協定（DHCP）是... | 然後... 
+
+
+| 執行中 | 在開機環境提示字元中輸入下列命令、即可自動設定連線：「ifconfige0M -auto」 
+
+
+| 未執行 | 在開機環境提示字元中輸入下列命令、手動設定連線：「ifconfige0M -addr=<filer_addr>-mask=<netmask>-gateway=<dns _addr> domain=<dns網域>'<filer_addr>'是儲存系統的IP位址。「網路遮罩」是儲存系統的網路遮罩。「<閘道>」是儲存系統的閘道。'<DNs_addr>'是網路上名稱伺服器的IP位址。'<DNs_domain>'是網域名稱服務（DNS）網域名稱。如果使用此選用參數、則不需要netboot伺服器URL中的完整網域名稱；您只需要伺服器的主機名稱。*注意：*您的介面可能需要其他參數。在韌體提示字元中輸入「Help ifconfig」以取得詳細資料。 
+|===
+. 在節點4上執行netboot：
++
+[cols="30,70"]
+|===
+| 適用於... | 然後... 
+
+
+| FAS / AFF8000系列系統 | “netboot \http://<web_server_ip/path_to_web-accessible_directory>/netboot/kernel` 
+
+
+| 所有其他系統 | “netboot \http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz` 
+|===
++
+「<path_to the _the_web-易於 存取的目錄>」應該會引導您在本節的步驟1中下載「<ONTAP_VERSION >_image.tgz」 link:prepare_for_netboot.html["準備netboot"]。
+
++
+
+NOTE: 請勿中斷開機。
+
+. 從開機功能表中、選取選項「（7）Install new software first（先安裝新軟體）」。
++
+此功能表選項會下載新ONTAP 的功能表映像、並將其安裝至開機裝置。
+
++
+
+NOTE: 請忽略下列訊息：「HA配對不支援不中斷升級此程序」。本附註適用於ONTAP 不中斷營運的升級功能、不適用於控制器升級。請務必使用netboot將新節點更新為所需映像。如果您使用另一種方法在新控制器上安裝映像、可能會安裝錯誤的映像。此問題適用於ONTAP 所有的版本。
+
+. 如果系統提示您繼續此程序、請輸入「y」、並在系統提示您輸入套件時、輸入URL：
++
+http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz`
+
+. 完成下列子步驟以重新啟動控制器模組：
++
+.. 當您看到下列提示時、請輸入「n」跳過備份恢復：
++
+....
+Do you want to restore the backup configuration now? {y|n}
+....
+.. 當您看到下列提示時、輸入「y」重新開機：
++
+....
+The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
+....
++
+控制器模組會重新開機、但會在開機功能表停止、因為開機裝置已重新格式化、而且必須還原組態資料。
+
+
+
+. 從開機功能表中選取維護模式「5」、然後在系統提示您繼續開機時輸入「y」。
+. 確認控制器和機箱已設定為HA：
++
+《ha-config show》
+
++
+以下範例顯示「ha-config show」命令的輸出：
+
++
+....
+Chassis HA configuration: ha
+Controller HA configuration: ha
+....
++
+
+NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。獨立式系統或HA配對內的所有元件的狀態必須相同。
+
+. 如果控制器和機箱未設定為HA、請使用下列命令修正組態：
++
+「ha-config modify控制器ha」
+
++
+「ha-config modify機箱ha」
+
++
+如果您使用MetroCluster 的是不含任何功能的組態、請使用下列命令來修改控制器和機箱：
+
++
+「ha-config modify控制器MCC」
+
++
+「ha-config modify機箱MCC」
+
+. 結束維護模式：
++
+《停止》
+
++
+在開機環境提示字元中按Ctrl-C來中斷自動開機。
+
+. [[[auto_install4_step15]在節點3上、檢查系統日期、時間和時區：
++
+'日期'
+
+. 在節點4上、請在開機環境提示字元中使用下列命令檢查日期：
++
+「如何日期」
+
+. 如有必要、請在節點4上設定日期：
++
+「et date <mm/dd/yed>'
+
+. 在節點4上、請在開機環境提示字元中使用下列命令檢查時間：
++
+「時間安排」
+
+. 如有必要、請在節點4上設定時間：
++
+「設定時間<hh：mm：ss>」
+
+. 如有必要、請在節點4上設定合作夥伴系統ID：
++
+「etenv PARTNER- sysid <node2_sysid>'」
+
++
+.. 儲存設定：
++
+「aveenv」
+
+
+
+. [[[auto_install4_step21]]在新節點的開機載入程式中、必須設定「partnie-sysid」參數。對於node4、「合作夥伴- sysid」必須是node3。驗證node3的「合作夥伴- sysid」：
++
+《王子》合作夥伴sysid》
+
+. [[step22]請採取下列其中一項行動：
++
+[cols="30,70"]
+|===
+| 如果您的系統... | 然後... 
+
+
+| 具有磁碟、無後端儲存設備 | 前往 <<auto_install4_step23,步驟23>>。 
+
+
+| 是連接FlexArray 至儲存陣列的V系列系統或系統、其中含有與之相關的功能完善的虛擬化軟體  a| 
+.. 前往章節 link:set_fc_or_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"] 並完成本節的小節。
+.. 返回本節、並完成其餘步驟、從開始 <<auto_install4_step23,步驟23>>。
+
+
+*重要事項*：您必須先重新設定FC內建連接埠、CNA內建連接埠和CNA卡、才能ONTAP 使用FlexArray 「支援虛擬化」軟體在V系列或系統上啟動。
+
+|===
+
+
+. [[auto_install4_step23]將新節點的FC啟動器連接埠新增至交換器區域。
++
+如有需要、請參閱、將內建連接埠修改為啟動器 link:set_fc_or_uta_uta2_config_node4.html#configure-fc-ports-on-node4["在節點4上設定FC連接埠"]。請參閱儲存陣列與分區文件、以取得分區的進一步指示。
+
+. 將FC啟動器連接埠新增至儲存陣列做為新主機、將陣列LUN對應至新主機。
++
+請參閱儲存陣列與分區文件以取得相關指示。
+
+. 修改與儲存陣列上陣列LUN相關的主機或磁碟區群組中的全球連接埠名稱（WWPN）值。
++
+安裝新的控制器模組會變更與每個內建FC連接埠相關的WWPN值。
+
+. 如果您的組態使用交換器型分區、請調整分區以反映新的WWPN值。
+. [[step27]如果此組態正在使用NetApp儲存加密（NSE）、則必須將「setenv bootarg.storageEncryption.supports」命令設定為「true」、並將「kmip.init.maxwait`變數」設定為「Off」、以避免在節點2組態載入後發生開機迴圈：
++
+「etenv bootarg.storageencryption。支援true」
+
++
+「kmip.init.maxwait關」
+
+. 開機節點進入開機功能表：
++
+Boot_ONTAP功能表
+
++
+如果您沒有FC或UTA/UTA2組態、請執行 link:set_fc_or_uta_uta2_config_node4.html#auto_check_node4_step15["檢查並設定節點4步驟15上的UTA/UTA2連接埠"] 因此節點4可以識別節點2的磁碟。
+
+
+
+. [[step29]若為MetroCluster 支援功能的全功能組態、請FlexArray 前往。若需使用連接至儲存陣列的虛擬化軟體的V系列系統和系統、請前往 link:set_fc_or_uta_uta2_config_node4.html#auto_check_node4_step15["檢查並設定節點4步驟15上的UTA/UTA2連接埠"]。
+

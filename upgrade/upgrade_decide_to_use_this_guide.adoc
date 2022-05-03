@@ -1,0 +1,55 @@
+---
+permalink: upgrade/upgrade-decide-to-use-this-guide.html 
+sidebar: sidebar 
+keywords:  
+summary: 本內容說明如何AFF 透過移動儲存設備或磁碟區來升級叢FAS 集中的處理器系統或作業系統的控制器硬體。 
+---
+= 決定是否要透過移動磁碟區或儲存設備來升級
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+本內容說明如何AFF 透過移動儲存設備或磁碟區來升級叢FAS 集中的處理器系統或作業系統的控制器硬體。
+
+如果您想在下列情況下升級控制器硬體、請使用此程序：
+
+
+NOTE: 由於推出自動連接埠配置功能、因此在更新過程中、硬體升級程序已在ONTAP 更新過程中簡化。
+
+* 您的原始和新節點均相容且受支援。
+* 您正在將執行ONTAP 更新版本的一對節點升級至執行相同版本的新節點配對。
+* 您正在重新使用新節點上原始節點的IP位址、網路遮罩和閘道。
+* 您計畫透過移動儲存設備或移動磁碟區來升級控制器硬體。
+* 如果您要透過移動儲存設備來升級、您就準備好執行中斷程序。
++
+透過移動磁碟區進行升級不會中斷營運。
+
+* 您打算將受支援模型的節點轉換成磁碟櫃、然後將其附加至新節點。
+
+
+如果您要升級雙節點MetroCluster 的功能不全組態、則必須使用中的程序 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["升級與擴充MetroCluster"^] 內容：
+
+本內容並未說明如何使用Aggregate重新定位（ARL）來升級控制器硬體、如中所述 link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl/index.html["ARL控制器硬體升級"^] 內容：
+
+如果您要更換個別元件、請參閱該元件的現場可更換單元（FRU）傳單。
+
+[NOTE]
+====
+在透過移動儲存設備來升級控制器硬體的步驟中、原始節點稱為節點1和節點2、新節點稱為節點3和節點4。在上述過程中、node1會由node3取代、node2則會由node4取代。
+
+image::../upgrade/media/original_to_new_nodes.png[原始節點至新節點]
+
+====
+術語node1、node2、node3和node4僅用於區分原始節點和新節點。執行此程序時、您必須取代原始節點和新節點的真實名稱。但是實際上、節點名稱並未變更：節點3的名稱為node1、而節點4的名稱為node2（控制器硬體已升級）。
+
+*相關資訊*
+
+xref:upgrade-considerations.adoc[升級控制器硬體的考量事項]
+
+xref:upgrade-methods.adoc[選擇升級控制器硬體的方法]
+
+https://docs.netapp.com/us-en/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html["哪裡可以找MetroCluster 到執行維護工作的程序"^]
+
+https://hwu.netapp.com["NetApp Hardware Universe"^]

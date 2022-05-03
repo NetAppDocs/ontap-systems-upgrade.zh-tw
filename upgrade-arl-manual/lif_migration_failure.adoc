@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/lif_migration_failure.html 
+keywords: lif, migration, failure, error, troubleshoot 
+summary: 移轉到階段2、階段3或階段5之後、LIF無法連線、在執行ONTAP 更新版本的控制器上進行手動ARL升級。 
+---
+= LIF移轉失敗
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+移轉生命週期之後、在第2階段、第3階段或第5階段移轉之後、生命週期可能不會上線。
+
+.步驟
+. 確認連接埠MTU大小與來源節點相同。
++
+例如、如果來源節點上的叢集連接埠MTU大小為9000、則目的地節點上的MTU大小應為9000。
+
+. 如果連接埠的實體狀態為「關閉」、請檢查網路纜線的實體連線。
+

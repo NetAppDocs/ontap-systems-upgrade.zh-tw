@@ -1,0 +1,121 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/overview_of_the_arl_upgrade.html 
+keywords: aggregate relocation, upgrade, process, overview, stages 
+summary: 瞭解ONTAP 如何使用「系統控制器更換」命令、將執行《SES9.5》的控制器升級至9.7。 
+---
+= ARL升級總覽
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在使用ARL升級節點之前、您應該先瞭解程序的運作方式。在本內容中、程序分為幾個階段。
+
+
+
+== 升級節點配對
+
+若要升級節點配對、您需要準備原始節點、然後在原始節點和新節點上執行一系列步驟。然後您可以取消委任原始節點。
+
+
+
+== ARL升級順序總覽
+
+在程序期間、您可以使用更換的控制器硬體（一次一個控制器）來升級原始控制器硬體、並利用HA配對組態來重新配置非根集合體的擁有權。所有非根Aggregate都必須經過兩次重新定位、才能到達最終目的地、這是正確的升級節點。
+
+每個Aggregate都有一個擁有者和目前擁有者。主擁有者是該集合體的實際擁有者、而目前擁有者則是暫時擁有者。
+
+下表說明您在每個階段中執行的高層工作、以及階段結束時的集合擁有權狀態。程序稍後會提供詳細步驟：
+
+[cols="25,75"]
+|===
+| 階段 | 步驟 
+
+
+| link:stage_1_index.html["第1階段：準備升級"]  a| 
+. 執行預先檢查、確認您可以執行此作業。
+. 準備網路開機（選用）。
+
+
+第1階段結束時的Aggregate所有權：
+
+* node1是node1集合體的主擁有者和目前擁有者。
+* node2是node2 Aggregate的主擁有者和目前擁有者。
+
+
+
+
+| link:stage_2_index.html["第2階段：重新部署和淘汰節點1"]  a| 
+. 將非根Aggregate從node1移至node2。
+. 將節點1擁有的非SAN資料lifs移至節點2。
+. 淘汰節點1。
+
+
+第2階段結束時的Aggregate所有權：
+
+* node2是node1 Aggregate的目前擁有者。
+* node2是node2 Aggregate的主擁有者和目前擁有者。
+
+
+
+
+| link:stage_3_index.html["階段3.安裝及開機節點3"]  a| 
+. 安裝及開機節點3。
+. 設定FC或CNA組態。
+. 將連接埠從節點1對應至節點3。
+. 驗證是否已成功安裝節點3。
+. 將節點1擁有的非SAN資料lifs從節點2移至節點3。
+. 將節點1擁有的非根集合體從節點2重新定位到節點3。
+
+
+第3階段結束時的Aggregate所有權：
+
+* node3是node1 Aggregate的主擁有者和目前擁有者。
+* node2是node2 Aggregate的主擁有者和目前擁有者。
+
+
+
+
+| link:stage_4_index.html["第4階段：重新部署和淘汰節點2"]  a| 
+. 將非根Aggregate從節點2重新部署到節點3。
+. 將節點2擁有的非SAN資料lifs移至節點3。
+. 淘汰節點2。
+
+
+第4階段結束時的Aggregate所有權：
+
+* node3是原屬於node1的Aggregate的主擁有者和目前擁有者。
+* node2是node2 Aggregate的主擁有者。
+* node3是node2 Aggregate的目前擁有者。
+
+
+
+
+| link:stage_5_index.html["階段5.安裝及開機節點4"]  a| 
+. 安裝及開機節點4。
+. 在節點4上設定FC或CNA組態。
+. 將連接埠從節點2對應至節點4。
+. 驗證node4安裝。
+. 將節點2擁有的非SAN資料生命週期從節點3重新部署至節點4、並驗證節點4上的SAN生命週期。
+
+
+第5階段結束時的Aggregate所有權：
+
+* node3是原屬於node1的集合體的主擁有者和目前擁有者。
+* Node4是原屬於節點2的Aggregate主擁有者和目前擁有者。
+
+
+
+
+| link:stage_6_index.html["階段6.完成升級"]  a| 
+. 確認系統設定正確。
+. 在新的控制器模組上設定儲存加密。
+. 如有需要、請繼續SnapMirror作業。
+
+
+|===

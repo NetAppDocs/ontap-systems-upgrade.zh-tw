@@ -1,0 +1,18 @@
+= 
+:allow-uri-read: 
+
+
+.步驟
+. 若要同步Onboard Key Manager的加密組態、請在叢集提示字元中執行下列命令：
++
+|===
+| 對於此ONTAP 版本… | 使用此命令... 
+
+
+| 部分9.6或9.7 ONTAP | 安全金鑰管理程式內建同步 
+
+
+| 版本9.5 ONTAP | 安全金鑰管理程式設定節點<node_name> 
+|===
+. 輸入Onboard Key Manager的全叢集密碼。
+

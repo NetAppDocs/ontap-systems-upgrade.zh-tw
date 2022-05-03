@@ -1,0 +1,326 @@
+= 
+:allow-uri-read: 
+
+
+在您更換原始節點之前、您必須先確認這些節點位於HA配對中、沒有遺失或故障的磁碟、可以存取彼此的儲存設備、而且不會擁有指派給叢集中其他節點的資料生命期。您也必須收集有關原始節點的資訊、如果叢集位於SAN環境中、請確認叢集中的所有節點都處於仲裁狀態。
+
+.步驟
+. 確認每個原始節點都有足夠的資源、可在接管模式期間充分支援兩個節點的工作負載。
++
+請參閱 link:other_references.html["參考資料"] 若要連結至_高可用度管理_並遵循_ HA配對最佳實務做法_一節。任何原始節點都不應以超過50%的使用率執行；如果節點的使用率低於50%、則可在控制器升級期間處理兩個節點的負載。
+
+. 完成下列子步驟、為原始節點建立效能基準：
++
+.. 確定診斷使用者帳戶已解除鎖定。
++
+*重要*：診斷使用者帳戶僅供低階診斷用途使用、僅限在技術支援的指導下使用。
+
++
+*重要*：如需解除鎖定使用者帳戶的相關資訊、請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。
+
+.. 請參閱 link:other_references.html["參考資料"] 連結至_NetApp支援網站_並下載效能與統計資料收集器（perfstat Converged）。
++
+Perfstat融合式工具可讓您建立效能基準、以便在升級後進行比較。
+
+.. 依照NetApp支援網站上的指示建立效能基準。
+
+
+. 請參閱 link:other_references.html["參考資料"] 若要連結至_NetApp支援網站、並在NetApp支援網站上開啟支援案例。
++
+您可以使用此案例來報告升級期間可能發生的任何問題。
+
+. 驗證node3和node4的NVMEM或NVRAM電池是否已充電、如果電池未充電、請將其充電。
++
+您必須實際檢查node3和node4、以查看是否已為NVMEM或NVRAM電池充電。如需節點3和節點4機型的LED相關資訊、請參閱 link:other_references.html["參考資料"] 以連結至_SURE_ Hardware Universe 。
+
++
+
+WARNING: *注意*請勿嘗試清除NVRAM內容。如果需要清除NVRAM的內容、請聯絡NetApp技術支援部門。
+
+. 檢查ONTAP node3和node4上的版本。
++
+新節點上ONTAP 必須安裝相同版本的還原9.x、並安裝在原始節點上。如果新節點ONTAP 安裝了不同版本的支援、則安裝新的控制器之後、您必須對其進行網路開機。如需有關如何升級ONTAP 功能的說明、請參閱 link:other_references.html["參考資料"] 連結至_Upgrade ONTAP
+
++
+有關node3和node4上ONTAP 的版本資訊、應包含在運送箱中。當節點開機或您可以將節點開機至維護模式並執行命令時、會顯示此版本：ONTAP
+
++
+「分度」
+
+. 檢查節點1和節點2上是否有兩個或四個叢集LIF：
++
+「網路介面show -role cluster」
+
++
+系統會顯示任何叢集LIF、如下列範例所示：
+
++
+....
+cluster::> network interface show -role cluster
+        Logical    Status     Network          Current  Current Is
+Vserver Interface  Admin/Oper Address/Mask     Node     Port    Home
+------- ---------- ---------- ---------------- -------- ------- ----
+node1
+        clus1      up/up      172.17.177.2/24  node1    e0c     true
+        clus2      up/up      172.17.177.6/24  node1    e0e     true
+node2
+        clus1      up/up      172.17.177.3/24  node2    e0c     true
+        clus2      up/up      172.17.177.7/24  node2    e0e     true
+....
+. 如果節點1或節點2上有兩個或四個叢集lifs、請完成下列子步驟、確認您可以ping通所有可用路徑上的兩個叢集lifs：
++
+.. 輸入進階權限層級：
++
+"進階權限"
+
++
+系統會顯示下列訊息：
+
++
+....
+Warning: These advanced commands are potentially dangerous; use them only when directed to do so by NetApp personnel.
+Do you wish to continue? (y or n):
+....
+.. 輸入「y」。
+.. Ping節點並測試連線能力：
++
+「叢集ping叢集節點node_name」
+
++
+系統會顯示類似下列範例的訊息：
+
++
+....
+cluster::*> cluster ping-cluster -node node1
+Host is node1
+Getting addresses from network interface table...
+Local = 10.254.231.102 10.254.91.42
+Remote = 10.254.42.25 10.254.16.228
+Ping status:
+...
+Basic connectivity succeeds on 4 path(s) Basic connectivity fails on 0 path(s)
+................
+Detected 1500 byte MTU on 4 path(s):
+Local 10.254.231.102 to Remote 10.254.16.228
+Local 10.254.231.102 to Remote 10.254.42.25
+Local 10.254.91.42 to Remote 10.254.16.228
+Local 10.254.91.42 to Remote 10.254.42.25
+Larger than PMTU communication succeeds on 4 path(s)
+RPC status:
+2 paths up, 0 paths down (tcp check)
+2 paths up, 0 paths down (udp check)
+....
++
+如果節點使用兩個叢集連接埠、您應該會看到它能夠在四個路徑上進行通訊、如範例所示。
+
+.. 返回管理層級權限：
++
+「et -priv. admin」
+
+
+
+. 確認node1和node2位於HA配對中、並確認節點彼此已連線、而且可以接管：
++
+「容錯移轉顯示」
+
++
+以下範例顯示節點彼此連線並可進行接管時的輸出：
+
++
+....
+cluster::> storage failover show
+                              Takeover
+Node           Partner        Possible State Description
+-------------- -------------- -------- -------------------------------
+node1          node2          true     Connected to node2
+node2          node1          true     Connected to node1
+....
++
+兩個節點都不應處於部分恢復狀態。以下範例顯示node1在部分恢復中：
+
++
+....
+cluster::> storage failover show
+                              Takeover
+Node           Partner        Possible State Description
+-------------- -------------- -------- -------------------------------
+node1          node2          true     Connected to node2, Partial giveback
+node2          node1          true     Connected to node1
+....
++
+如果任一節點處於部分恢復狀態、請使用「儲存容錯移轉還原」命令來執行恢復、然後使用「儲存容錯移轉show-gorback」命令來確保不需要歸還集合體。如需命令的詳細資訊、請參閱 link:other_references.html["參考資料"] 連結至_高可用度管理_。
+
+. [[man_prepe_node_step9]]確認節點1和節點2均不擁有其目前擁有者（但不擁有主擁有者）的Aggregate：
++
+「torage Aggregate show -node<node_name>-is主目錄假欄位擁有者名稱、主名稱、狀態」
+
++
+如果node1和node2都不擁有當前擁有者（但不是主擁有者）的Aggregate、系統將傳回類似下列範例的訊息：
+
++
+....
+cluster::> storage aggregate show -node node2 -is-home false -fields owner-name,homename,state
+There are no entries matching your query.
+....
++
+下列範例顯示四個集合體的主擁有者節點2（但不是目前擁有者）之節點的命令輸出：
+
++
+....
+cluster::> storage aggregate show -node node2 -is-home false
+               -fields owner-name,home-name,state
+
+aggregate     home-name    owner-name   state
+------------- ------------ ------------ ------
+aggr1         node1        node2        online
+aggr2         node1        node2        online
+aggr3         node1        node2        online
+aggr4         node1        node2        online
+
+4 entries were displayed.
+....
+. 請採取下列其中一項行動：
++
+[cols="35,65"]
+|===
+| 如果中有命令 <<man_prepare_nodes_step9,步驟9.>>... | 然後... 
+
+
+| 輸出空白 | 跳過步驟11、前往 <<man_prepare_nodes_step12,步驟12.>>。 
+
+
+| 已輸出 | 前往 <<man_prepare_nodes_step11,步驟11.>>。 
+|===
+. [man準備節點_step11]如果節點1或節點2擁有的Aggregate是目前擁有者、但不是擁有主擁有者、請完成下列子步驟：
++
+.. 將合作夥伴節點目前擁有的Aggregate傳回主擁有者節點：
++
+「儲存容錯移轉還原-ofnode<home_node_name>」
+
+.. 驗證node1和node2是否仍擁有當前擁有者（但不是主擁有者）的Aggregate：
++
+「torage Aggregate show -nodes <node_name>-is主目錄假欄位擁有者名稱、主目錄名稱、狀態」
+
++
+以下範例顯示當節點同時是Aggregate的目前擁有者和主擁有者時、命令的輸出：
+
++
+....
+cluster::> storage aggregate show -nodes node1
+          -is-home true -fields owner-name,home-name,state
+
+aggregate     home-name    owner-name   state
+------------- ------------ ------------ ------
+aggr1         node1        node1        online
+aggr2         node1        node1        online
+aggr3         node1        node1        online
+aggr4         node1        node1        online
+
+4 entries were displayed.
+....
+
+
+. [man籌備節點_step12]確認節點1和節點2可以存取彼此的儲存設備、並確認沒有磁碟遺失：
++
+「torage容錯移轉顯示欄位local-missing磁碟、合作夥伴遺失磁碟」
+
++
+以下範例顯示沒有磁碟遺失時的輸出：
+
++
+....
+cluster::> storage failover show -fields local-missing-disks,partner-missing-disks
+
+node     local-missing-disks partner-missing-disks
+-------- ------------------- ---------------------
+node1    None                None
+node2    None                None
+....
++
+如果有任何磁碟遺失、請參閱 link:other_references.html["參考資料"] 若要使用CLI連結至_磁碟與集合管理、使用CLI進行_邏輯儲存管理、以及_高可用度管理_、以設定HA配對的儲存設備。
+
+. 確認node1和node2正常且符合參加叢集的資格：
++
+「叢集展示」
+
++
+以下範例顯示兩個節點都符合資格且狀況良好的輸出：
+
++
+....
+cluster::> cluster show
+
+Node                  Health  Eligibility
+--------------------- ------- ------------
+node1                 true    true
+node2                 true    true
+....
+. 將權限層級設為進階：
++
+"進階權限"
+
+. [[man_prepe_node_step15]]確認node1和node2執行相同ONTAP 的版本：
++
+「ystem nodem image show -node1、node2 >-iscurrent true」
+
++
+下列範例顯示命令的輸出：
+
++
+....
+cluster::*> system node image show -node node1,node2 -iscurrent true
+
+                 Is      Is                Install
+Node     Image   Default Current Version   Date
+-------- ------- ------- ------- --------- -------------------
+node1
+         image1  true    true    9.1         2/7/2017 20:22:06
+node2
+         image1  true    true    9.1         2/7/2017 20:20:48
+
+2 entries were displayed.
+....
+. 驗證node1和node2是否都不擁有屬於叢集中其他節點的任何資料生命週期、並檢查輸出中的「Current Node（目前節點）」和「is Home（原為主節點）」欄位：
++
+「網路介面show -role data -is主目錄假-curr-node<node_name>」
+
++
+以下範例顯示節點1沒有由叢集中其他節點擁有的lifs時的輸出：
+
++
+....
+cluster::> network interface show -role data -is-home false -curr-node node1
+ There are no entries matching your query.
+....
++
+以下範例顯示節點1擁有其他節點所擁有的資料lifs時的輸出：
+
++
+....
+cluster::> network interface show -role data -is-home false -curr-node node1
+
+            Logical    Status     Network            Current       Current Is
+Vserver     Interface  Admin/Oper Address/Mask       Node          Port    Home
+----------- ---------- ---------- ------------------ ------------- ------- ----
+vs0
+            data1      up/up      172.18.103.137/24  node1         e0d     false
+            data2      up/up      172.18.103.143/24  node1         e0f     false
+
+2 entries were displayed.
+....
+. 如果輸出為 <<man_prepare_nodes_step15,步驟15>> 顯示node1或node2擁有叢集中其他節點所擁有的任何資料lifs、將資料lifs從node1或node2移轉至其他節點：
++
+「網路介面還原-vserver *-lif*」
+
++
+如需「網路介面回復」命令的詳細資訊、請參閱 link:other_references.html["參考資料"] 若要連結至「_SURF9 ONTAP 命令：手動頁面參考_」。
+
+. 檢查node1或node2是否擁有任何故障磁碟：
++
+「torage disk show -nodelist <node1、node2 >-disbed」
+
++
+如果有任何磁碟發生故障、請依照_Disk中的指示、使用CLI進行Aggregate管理。（請參閱 link:other_references.html["參考資料"] 使用CLI連結至_磁碟與集合管理。）
+
+. 完成下列子步驟並記錄每個命令的輸出、以收集節點1和節點2的相關資訊：
+

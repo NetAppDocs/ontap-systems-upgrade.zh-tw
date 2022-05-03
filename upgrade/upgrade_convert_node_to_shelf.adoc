@@ -1,0 +1,32 @@
+---
+permalink: upgrade/upgrade-convert-node-to-shelf.html 
+sidebar: sidebar 
+keywords: node, support, model, process, upgrading, upgrade, moving, move, convert, drive, shelf, attach, convert an original node to a drive shelf 
+summary: 如果您的原始節點是支援的機型之一、在升級期間、您可以將節點轉換成磁碟機櫃、然後將其附加至同一叢集中的新節點。 
+---
+= 將原始節點轉換成磁碟機櫃
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您的原始節點是支援的機型之一、在升級期間、您可以將節點轉換成磁碟機櫃、然後將其附加至同一叢集中的新節點。
+
+您必須已檢閱 link:upgrade-considerations.html["升級控制器硬體的考量事項"] 關於將節點轉換成磁碟機櫃。如果您需要特定組態的指引、請聯絡技術支援部門。
+
+.步驟
+. 使用適當的IOM模組來更換您要轉換的節點中的控制器模組。
++
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+. 設定磁碟機櫃ID。
++
+每個磁碟機櫃（包括機箱）都需要一個唯一的ID。
+
+. 視需要重設其他磁碟機櫃ID。
+. 關閉連接至新節點的任何磁碟機櫃的電源、然後關閉新節點的電源。
+. 將轉換後的磁碟機櫃纜線連接至新系統上的SAS連接埠、如果您使用頻外ACP纜線、請將纜線連接至新節點上的ACP連接埠。
+. 開啟轉換後磁碟機櫃和連接至新節點的任何其他磁碟機櫃的電源。
+. 開啟新節點的電源、然後按Ctrl-C存取開機環境提示字元、中斷每個節點的開機程序。
+

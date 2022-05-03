@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/verify_node4_installation.html 
+keywords: verify, node4, installation, MetroCluster, restore, key, manager 
+summary: 使用ONTAP 「系統控制器更換」命令、將執行更新至9.7的控制器升級時、請確認節點4加入仲裁、重新建立節點1的VLAN、介面群組和廣播網域、並還原金鑰管理程式組態。 
+---
+= 驗證node4安裝
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+安裝並開機節點4之後、您必須驗證節點是否已正確安裝、是否為叢集的一部分、以及節點3是否可以通訊。
+
+在此過程中、當節點4加入仲裁時、作業將暫停。
+
+.步驟
+. 驗證node4是否已加入仲裁：
++
+「cluster show -node4 -Fields health」
+
+. 輸入下列命令、確認node4與node3屬於同一個叢集、而且正常運作：
++
+「叢集展示」
+
+. 檢查作業狀態、並確認節點4的組態資訊與節點2相同：
++
+「System Controller replace show-details」（系統控制器取代顯示詳細資料
+
++
+如果節點4的組態不同、稍後程序可能會發生系統中斷。
+
+. 檢查更換的控制器是否已正確設定MetroCluster 為符合不實的組態、而非處於切換模式。
++
+
+CAUTION: *注意：* MetroCluster 目前階段的不正常設定、您可能會有錯誤需要解決。請參閱 link:verify_health_of_metrocluster_config.html["驗MetroCluster 證整個過程的效能狀況"]。
+
+
+
+
+
+== 在節點4上重新建立VLAN、介面群組和廣播網域
+
+在您確認node4處於仲裁狀態並可與node3通訊之後、您必須在node4上重新建立node2的VLAN、介面群組和廣播網域。您也必須將node3連接埠新增至新重新建立的廣播網域。
+
+如需建立及重新建立VLAN、介面群組及廣播網域的詳細資訊、請參閱 link:other_references.html["參考資料"] 並連結至_網路管理_。
+
+.步驟
+. 使用中記錄的節點2資訊、在節點4上重新建立VLAN link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["將非根Aggregate和NAS資料LIF從節點2重新定位至節點3"] 區段：
++
+「網路連接埠VLAN create -node4>-vlan <vlan-names>」
+
+. 使用中記錄的node2資訊、在節點4上重新建立介面群組 link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["將非根Aggregate和NAS資料LIF從節點2重新定位至節點3"] 區段：
++
+「網路連接埠ifgrp create -node4>-ifgrp <port_ifgrp_name>-distr-func'
+
+. 使用中記錄的node2資訊、在節點4上重新建立廣播網域 link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["將非根Aggregate和NAS資料LIF從節點2重新定位至節點3"] 區段：
++
+「網路連接埠廣播網域建立-IPSpace預設值-broadcast網域<廣播網域名稱>-MTU <MTU大小>-port <node_name:port_name、node_name:port_name>'
+
+. 將node4連接埠新增至新重新建立的廣播網域：
++
+「網路連接埠、廣播網域、附加連接埠、廣播網域<廣播網域名稱>-連接埠<節點名稱：連接埠名稱、節點名稱：連接埠名稱>」
+
+
+
+
+
+== 還原節點4上的金鑰管理程式組態
+
+如果您使用NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、加密組態必須同步至新節點。當節點1集合體從節點2到節點4完成ARL時、加密的磁碟區會離線。
+
+.步驟
+. 若要同步Onboard Key Manager的加密組態、請在叢集提示字元中執行下列命令：
++
+|===
+| 對於此ONTAP 版本… | 使用此命令... 
+
+
+| 部分9.6或9.7 ONTAP | 安全金鑰管理程式內建同步 
+
+
+| 版本9.5 ONTAP | 安全金鑰管理程式設定節點<node_name> 
+|===
+. 輸入Onboard Key Manager的全叢集密碼。
+

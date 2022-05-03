@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html 
+keywords: guidelines, upgrade, aff, a900, a700, ontap, controllers 
+summary: 瞭解您是否可以使用ARL將AFF 某個地方的版號升級至AFF 某個地方的版號。 
+---
+= 使用AFF ARL從功能不只A700升級到AFF 功能不只A900的準則
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+使用ARL將AFF 一對執行ONTAP 《支援》（We）9.10.1或更新版本的《支援》（Arl AFF ）控制器升級至《支援》（a）900系統、取決於系統和原控制器和更換控制器的組態。
+
+
+
+== 支援ARL升級
+
+支援的組合包括使用ARL升級到Ar4A700、並只交換控制器模組和NVRAM模組。AFF AFF如果您已收到AFF 全新的整套系統（包括新機箱）、請參閱 link:other_references.html["參考資料"] 若要連結至_、請使用「系統控制器更換」命令來升級執行ONTAP 《Estrs9.8或更新版本》內容的控制器硬體。
+
+
+WARNING: 本程序嚴格適用於AFF 執行AFF 下列功能的從Ar1a700升級到執行ONTAP 版的更新版的更新版：32位元以上的升級版。請勿使用此程序在任何其他系統組合之間執行升級。
+
+使用ARL的控制器升級支援使用SnapLock 「支援」的系統、這些系統均設定了「支援使用者支援使用者支援的功能」和SnapLock 「支援使用者支援
+
+
+
+== 雙節點無交換式叢集
+
+如果您要升級雙節點無交換式叢集中的節點、則可在執行升級時、將節點留在無交換器叢集中。您不需要將它們轉換成交換式叢集。
+
+
+
+== 疑難排解
+
+如果在升級控制器時發生任何問題、請參閱 link:troubleshoot_index.html["疑難排解"] 本節將於程序結束時提供更多資訊和可能的解決方案。
+
+如果您找不到解決所遇到問題的解決方案、請聯絡技術支援部門。

@@ -1,0 +1,7 @@
+= 
+:allow-uri-read: 
+
+
+如果node4具有內建FC連接埠、內建統一化目標介面卡（UTA/UTA2）連接埠或UTA/UTA2卡、則必須先設定這些設定、才能完成其餘程序。
+
+您可能需要完成 <<Configure FC ports on node4>> 部分 <<Check and configure UTA/UTA2 ports on node4>>或這兩個區段。

@@ -1,0 +1,27 @@
+---
+permalink: upgrade/upgrade-optional-move-internal-storage.html 
+sidebar: sidebar 
+keywords: node, support, model, internal, sata, drive, ssd, moving, move, upgrading, upgrade, convert, move internal storage or convert the system to a drive shelf 
+summary: 如果您的原始節點是受支援的機型之一、您可以將其內部SATA磁碟機或SSD移至磁碟機櫃、並在升級過程中移動儲存設備以連接至新節點。您也可以將系統轉換成磁碟機櫃、並將其連接至新節點。 
+---
+= 選用：移動內部儲存設備或將系統轉換成磁碟機櫃
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您的原始節點是受支援的機型之一、您可以將其內部SATA磁碟機或SSD移至磁碟機櫃、並在升級過程中移動儲存設備以連接至新節點。您也可以將系統轉換成磁碟機櫃、並將其連接至新節點。
+
+您只能在同一個叢集內移動磁碟機或磁碟機櫃。
+
+.選擇
+* link:upgrade-move-internal-drives.html["從原始節點移動內部磁碟機"]
++
+如果您的原始節點是支援的機型之一、在升級期間、您可以將節點的內部SATA磁碟機或SSD移至連接至同一叢集中新節點的磁碟機櫃。您無法將SAS磁碟機傳輸至連接至新節點的磁碟機櫃。
+
+* link:upgrade-convert-node-to-shelf.html["將原始節點轉換成磁碟機櫃"]
++
+如果您的原始節點是支援的機型之一、在升級期間、您可以將節點轉換成磁碟機櫃、然後將其附加至同一叢集中的新節點。
+
+

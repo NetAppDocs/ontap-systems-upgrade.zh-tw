@@ -1,0 +1,27 @@
+---
+permalink: upgrade/upgrade-methods.html 
+sidebar: sidebar 
+keywords:  
+summary: 一般而言、控制器硬體的升級方式取決於原始節點的平台機型。您可以移動儲存設備（中斷程序）或移動磁碟區（不中斷營運程序）來升級。 
+---
+= 選擇升級控制器硬體的方法
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+一般而言、控制器硬體的升級方式取決於原始節點的平台機型。您可以透過移動儲存設備（中斷程序）或移動磁碟區（不中斷營運程序）來升級。
+
+image::../upgrade/media/methods_for_upgrading_controller_hardware.png[升級控制器硬體的方法]
+
+
+NOTE: 採用內部磁碟機的機型包括：FAS2220、FAS2240-2、FAS2240-4、FAS2520、FAS2552、 FAS2554、FAS2620、FAS2650、FAS2720、FAS2750、 S20A200、S202220、S20A700s、S20A800、S20A250。AFF AFF AFF AFF AFF
+
+如果您的系統未列於上方、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^] 檢查是否有內部磁碟機。
+
+*相關資訊*
+
+link:upgrade-by-moving-storage-parent.html["移動儲存設備進行升級的工作流程"]
+
+link:upgrade-by-moving-volumes-parent.html["透過移動磁碟區進行升級的工作流程"]

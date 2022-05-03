@@ -1,0 +1,101 @@
+---
+permalink: upgrade/upgrade-attach-shelves-reassign-disks.html 
+sidebar: sidebar 
+keywords: reassign, disk, belong, node1, node2, node3, node4, node, attach, storage, shelves, shelf, reassign, ownership, attach storage shelves reassign disk ownership 
+summary: 您必須分別將屬於節點1和節點2的磁碟重新指派給節點3和節點4。 
+---
+= 連接儲存櫃並重新指派磁碟擁有權
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須分別將屬於節點1和節點2的磁碟重新指派給節點3和節點4。
+
+您可以在節點3和節點4上執行本節中的步驟、完成節點3和節點4上的每個步驟、然後再繼續下一步。
+
+.步驟
+. 將儲存櫃纜線從節點1/node2連接至節點3/node4。驗證電源供應器和磁碟櫃的實體連線能力。
+. 從node3載入器提示字元中、開機至維護模式：
++
+Boot_ONTAP maint
+
+. 顯示節點3的系統ID：
++
+「展示-v」
+
++
+[listing]
+----
+*> disk show -v
+Local System ID: 101268854
+...
+----
++
+請記下節點3的系統ID、以便在以下步驟4中使用。
+
+. 重新指派節點1的備用磁碟、屬於根Aggregate的磁碟、以及任何資料Aggregate：
++
+"Disk reassign-s _node1_sysid_-d _node3_sysid_-p _nod2_sysid_"
+
++
+--
+** 參數`_node1_sysid_'是您在_關閉原始節點_、 link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5["步驟5."]。
+** 僅當共享磁碟存在時、才指定參數「_-p PARTNER_sysid_'」。
+
+
+[NOTE]
+====
+重新指派節點2的備用磁碟、屬於根Aggregate的磁碟、以及任何資料Aggregate時、命令為：
+
+"Disk reassign-s node2_sysid -d node4_sysid -p node3_sysid"
+
+====
+--
++
+系統會顯示類似以下內容的訊息：
+
++
+[listing]
+----
+Partner node must not be in Takeover mode during disk reassignment from maintenance mode.
+Serious problems could result!!
+Do not proceed with reassignment if the partner is in takeover mode. Abort reassignment (y/n)?n
+
+After the node becomes operational, you must perform a takeover and giveback of the HA partner node to ensure disk reassignment is successful.
+Do you want to continue (y/n)?y
+----
+. 輸入「y」繼續。
++
+系統會顯示類似以下內容的訊息：
+
++
+[listing]
+----
+The system displays the following message:
+Disk ownership will be updated on all disks previously belonging to Filer with sysid
+<sysid>.
+Do you want to continue (y/n)? y
+----
+. 輸入「y」繼續。
+. 確認選項欄位中的node1根Aggregate設為「root」、其他Aggregate則設為線上：
++
+「aggr狀態」
+
++
+您應該會看到類似下列的輸出：
+
++
+[listing]
+----
+*> aggr status
+           Aggr State           Status                Options
+          aggr0 online          raid_dp, aggr         root
+                                64-bit
+----
+. 結束維護模式：
++
+《停止》
+
+

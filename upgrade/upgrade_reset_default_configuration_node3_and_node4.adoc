@@ -1,0 +1,55 @@
+---
+permalink: upgrade/upgrade-reset-default-configuration-node3-and-node4.html 
+sidebar: sidebar 
+keywords: confirm, configuration, information, boot, media, interfere, controller, upgrade, reset, node3, node4, node, default, setting, reset default configuration on the new nodes 
+summary: 若要確認開機媒體上的組態資訊不會干擾控制器升級、您需要將節點3和節點4的組態重設為預設組態設定。 
+---
+= 在新節點上重設預設組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要確認開機媒體上的組態資訊不會干擾控制器升級、您必須將節點3和節點4的組態重設為預設組態設定。
+
+您必須在節點3和節點4上執行下列步驟。您可以在每個節點上平行執行這些步驟。
+
+. 將節點開機至開機功能表：
++
+Boot_ONTAP功能表
+
+. 在開機功能表提示字元中、輸入「wepeconfig」、然後按Enter。
++
+下列畫面顯示開機功能表提示
+
++
+[listing]
+----
+Please choose one of the following:
+
+    (1) Normal Boot.
+    (2) Boot without /etc/rc.
+    (3) Change password.
+    (4) Clean configuration and initialize all disks.
+    (5) Maintenance mode boot.
+    (6) Update flash from backup config.
+    (7) Install new software first.
+    (8) Reboot node.
+    (9) Configure Advanced Drive Partitioning.
+    Selection (1-9)?  wipeconfig
+----
+. 當您看到類似於以下內容的提示時、請輸入「yes（是）」：
++
+[listing]
+----
+This option deletes critical system configuration, including cluster membership.
+Warning: do not run this option on a HA node that has been taken over.
+Are you sure you want to continue?: yes
+Rebooting to finish wipeconfig request.
+----
++
+系統會啟動「無圖」程序、然後重新開機。程序完成後、系統會返回開機功能表。
+
+. 在開機功能表中、輸入8重新啟動節點、然後在自動開機期間按* Ctrl-C*、在載入程式提示字元下停止節點。
+

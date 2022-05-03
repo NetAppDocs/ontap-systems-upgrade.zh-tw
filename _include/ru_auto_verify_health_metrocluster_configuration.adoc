@@ -1,0 +1,36 @@
+= 
+:allow-uri-read: 
+
+
+. 完成「MetroCluster 不完整檢查」作業後、請檢視結果：
++
+《不一樣的表演》MetroCluster
+
++
+大約五分鐘後、會顯示下列結果：
+
++
+[listing]
+----
+metrocluster_siteA::*> metrocluster check show
+Last Checked On: 4/7/2019 21:15:05
+Component            Result
+---------------      -------
+nodes                ok
+lifs                 ok
+config-replication   ok
+aggregates           warning
+clusters             ok
+connections          not-applicable
+volumes              ok
+7 entries were displayed.
+----
+. 檢查執行MetroCluster 中的檢查作業狀態：
++
+《不穩定作業歷史》顯示-job-id 38 MetroCluster
+
+. 確認沒有健全狀況警示：
++
+「系統健全狀況警示顯示」
+
+

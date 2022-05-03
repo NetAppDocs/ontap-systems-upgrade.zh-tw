@@ -1,0 +1,101 @@
+---
+permalink: upgrade/upgrade-remove-disk-ownership-new-nodes.html 
+sidebar: sidebar 
+keywords: node, internal, disk, add-on, shelves, attach, system, interfere, controller, upgrade, remove, ownership, node3, node4, node, remove ownership of disks attached to the new nodes 
+summary: 如果新節點有內部磁碟或附加磁碟櫃連接至系統、這些磁碟或附加磁碟櫃可能會干擾控制器升級。請使用下列步驟移除隨節點3/node4一起提供的任何新磁碟的擁有權。 
+---
+= 移除附加至新節點的磁碟擁有權
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果新節點有內部磁碟或附加磁碟櫃連接至系統、這些磁碟或附加磁碟櫃可能會干擾控制器升級。請使用下列步驟移除隨節點3/node4一起提供的任何新磁碟的擁有權。
+
+這些步驟會逐一在節點3和節點4上執行。節點順序無關緊要。
+
+[NOTE]
+====
+* 節點1和節點2的磁碟櫃在此階段並未實際連接至節點3和節點4。
+* 您只需要移除新控制器隨附的磁碟和磁碟櫃的磁碟擁有權。
+* 如果您要升級硬體、則不需要移除磁碟的擁有權、只要在內部磁碟平台上交換舊控制器與新控制器、同時保留舊控制器的機箱和磁碟即可。
++
+例如、如果您只要將舊的A200控制器模組與新的A220控制器模組交換、同時將舊A200的機箱和磁碟保留在原位、就能將系統從A200升級至A220、 您不會移除新A220控制器模組磁碟的擁有權、如本節_移除附加至新節點的磁碟擁有權_所述。
+
++
+如果您對在控制器升級期間移除磁碟擁有權有任何疑問、請聯絡NetApp技術支援。
+
++
+以下是具有內部儲存設備的系統清單：FAS2220、FAS2240-2、FAS2240-4、FAS2520、FAS2552、 FAS2554、FAS2620、FAS2650、FAS2720、FAS2750、 S20A200、S202220、S20A700s、S20A800、S20A250。AFF AFF AFF AFF AFF
+
++
+如果您的系統未列於上方、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^] 檢查是否有內部磁碟機。
+
+
+
+====
+.步驟
+. 在節點的載入器提示字元下、輸入命令：
++
+Boot_ONTAP功能表
+
+. 在開機功能表提示字元中、輸入「9a」、然後按Enter。
++
+下列畫面顯示開機功能表提示。
+
++
+[listing]
+----
+Please choose one of the following:
+
+    (1) Normal Boot.
+    (2) Boot without /etc/rc.
+    (3) Change password.
+    (4) Clean configuration and initialize all disks.
+    (5) Maintenance mode boot.
+    (6) Update flash from backup config.
+    (7) Install new software first.
+    (8) Reboot node.
+    (9) Configure Advanced Drive Partitioning.
+    Selection (1-9)?  9a
+----
+. 當您看到類似下列的提示時、請輸入「y」來移除磁碟擁有權：
++
+[listing]
+----
+
+########## WARNING ##########
+
+This is a disruptive operation and will result in the
+    loss of all filesystem data. Before proceeding further,
+    make sure that:
+    1) This option (9a) has been executed or will be executed
+    on the HA partner node, prior to reinitializing either
+    system in the HA-pair.
+    2) The HA partner node is currently in a halted state or
+    at the LOADER prompt.
+
+
+    Do you still want to continue (yes/no)? yes
+----
++
+系統會移除磁碟擁有權、並返回開機功能表。
+
+. 在開機功能表中、輸入「5」進入維護模式。
+. 在維護模式中、執行「磁碟show」命令。
++
+不應列出任何磁碟。
+
+. 執行命令：
++
+「展示-A'」
+
++
+所有列出的磁碟都應取消指派。
+
+. 結束維護模式：
++
+《停止》
+
+

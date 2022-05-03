@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html 
+keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability, aff, a700, a900 
+summary: 決定是否使用ARL程序將AFF 某個部分升級至AFF 某個部分。 
+---
+= 決定是否使用Aggregate重新配置程序
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+本內容說明如何升級AFF 搭配全新AFF 的更新版的更新版、以搭配使用的更新版的功能、同時保留所有現有的資料和磁碟。這是一個複雜的程序、只能由經驗豐富的系統管理員使用。
+
+請在下列情況下使用此程序：
+
+* 您已向NetApp銷售代表確認、您已收到AFF 一個不完整的控制器模組和NVRAM模組、以及升級所需的零件。
+* 您執行ONTAP 的是版本不含更新版本的版本。
+* 您不想將新的控制器新增為叢集的新HA配對、也不想使用Volume Moves來移轉資料。
+* 您在管理ONTAP 方面經驗豐富、而且對於在診斷權限模式下工作的風險感到自在。
+
+
+請*不要*在下列情況下使用此程序：
+
+* 您正在FlexArray 使用的是AFF 功能不實的虛擬化軟體。
+* 您使用的是共享交換器、用於叢集互連和乙太網路附加儲存設備。
+
+
+如需升級Fabric MetroCluster 的靜態MetroCluster 或靜態IP組態、請參閱 link:other_references.html["參考資料"] 連結至_E不明MetroCluster Upgrade and Expansion內容。
+
+
+NOTE: 您可以在本程序中使用NetApp儲存加密（NSE）和NetApp Volume加密（NVE）。
+
+如果您偏好其他方法來升級控制器硬體、並願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+
+請參閱 link:other_references.html["參考資料"] 連結至_SURF9 ONTAP 文件中心_、您可在此存取ONTAP VMware產品文件。

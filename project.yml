@@ -1,0 +1,59 @@
+---
+settings:
+  name: AFF and FAS Controller Upgrade
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: zh-tw,us-en,ja-jp,zh-cn,ko-kr
+sidebar:
+  entries:
+  - title: 系統升級文件AFF FAS
+    url: "/index.html"
+  - section: upgrade
+  - section: upgrade-arl
+homepage:
+  tiles:
+  - title: 開始使用
+    links:
+    - title: 發行說明ONTAP
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
+  - title: 透過移動儲存設備或磁碟區（大多數系統）進行升級
+    links:
+    - title: 升級控制器硬體
+      url: "/upgrade/upgrade-decide-to-use-this-guide.html"
+  - title: 在執行ONTAP 效能不全的系統上移動Aggregate來升級
+    links:
+    - title: 使用「系統控制器更換」命令AFF （從E4A700到AFF E4A900）
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/
+    - title: 使用「系統控制器更換」命令（大多數系統）
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
+    - title: 使用手動命令
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
+  - title: 在執行ONTAP 更新版本的系統上移動Aggregate來進行升級
+    links:
+    - title: 使用「系統控制器更換」命令（大多數系統）
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
+    - title: 使用手動命令
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
+  - title: 以MetroCluster 不更新組態升級系統
+    links:
+    - title: 針對MetroCluster 您的需求組態選擇升級程序
+      url: https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html
+  - title: 更多資源
+    links:
+    - title: 系統文件ONTAP
+      url: https://docs.netapp.com/us-en/ontap-systems/index.html
+    - title: 交換器文件ONTAP
+      url: https://docs.netapp.com/us-en/ontap-systems-switches/index.html
+    - title: 軟體文件ONTAP
+      url: https://docs.netapp.com/us-en/ontap/index.html
+    - title: NetApp Hardware Universe
+      url: https://hwu.netapp.com/
+    - title: NetApp Active IQ Config Advisor
+      url: https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor
+    - title: NetApp 互通性對照表
+      url: https://mysupport.netapp.com/matrix/#welcome
+    - title: NetApp社群
+      url: https://community.netapp.com/t5/ONTAP-and-FAS/ct-p/fas-ontap-oncommand-and-related-plug-ins

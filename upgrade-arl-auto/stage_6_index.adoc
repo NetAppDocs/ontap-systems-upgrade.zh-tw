@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/stage_6_index.html 
+keywords: complete upgrade, node, unified, target, storage, encryption, MetroCluster, stage 6 
+summary: ARL升級的第6階段程序順序、使用「系統控制器更換」命令、在執行ONTAP 版本號從9.5到9.7的控制器上執行。 
+---
+= 階段6.完成升級
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在第6階段期間、請確定新節點已正確設定。如果其中一個新節點有統一化的目標介面卡、您必須還原任何連接埠組態、而且可能需要變更介面卡的特性。如果新節點已啟用加密、您也應該設定儲存加密。您也應該取消委任舊節點。
+
+.步驟
+. link:ensure_new_controllers_are_set_up_correctly.html["請確定新的控制器已正確設定"]
+. link:set_up_storage_encryption_new_module.html["在新的控制器模組上設定儲存加密"]
+. link:set_up_netapp_volume_encryption_new_module.html["在新的控制器模組上設定NetApp加密"]
+. link:decommission_old_system.html["取消委任舊系統"]
+. link:resume_snapmirror_operations.html["恢復SnapMirror作業"]
+
+
+若要進行此功能、您必須儘快更換災難恢復/容錯移轉站台節點。MetroCluster不支援不支援在支援範圍內不相符的控制器機型MetroCluster 、因為控制器機型不相符可能導致災難恢復鏡像離線。當您在第二個站台更換節點時、請使用命令-"ship-MetroCluster-checkse"（指令-"ship-MetroCluster-checkse"）選項來跳過MetroCluster 檢查。

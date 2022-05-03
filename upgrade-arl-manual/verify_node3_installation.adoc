@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/verify_node3_installation.html 
+keywords: verify, node3, install, installation, node4 
+summary: 在執行ONTAP 更新版本的控制器上進行手動ARL升級時、請在節點2上驗證node3的安裝與通訊。 
+---
+= 驗證node3安裝
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+安裝並開機節點3之後、您必須驗證節點是否已正確安裝、是否為叢集的一部分、以及節點2是否可以通訊。
+
+.步驟
+. [[step1]]在系統提示字元下、登入節點3。然後驗證node3是否與node2同時屬於同一個叢集、以及是否正常：
++
+「叢集展示」
+
+. [[step2]]確認node3可以與node2通訊、而且所有LIF都已啟動：
++
+「網路介面show -curr-node3>'
+
+. [[step3]請採取下列其中一項行動：
++
+[cols="35,65"]
+|===
+| 如果叢集是... | 然後... 
+
+
+| 在SAN環境中 | 完成 <<step4,步驟4.>> 然後移至區段 link:move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html["將節點1擁有的NAS資料lifs從節點2移至節點3、並驗證節點3上的SAN lifs"]。 
+
+
+| 不在SAN環境中 | 跳過步驟4、前往 link:move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html["將節點1擁有的NAS資料lifs從節點2移至節點3、並驗證節點3上的SAN lifs"]。 
+|===
+. [[step4]在其中一個節點上輸入下列命令並檢查其輸出、以驗證node2和node3是否處於仲裁狀態：
++
+「事件記錄檔show -messagename scsimblag.*」
+
++
+以下範例顯示叢集中節點達到仲裁時的輸出：
+
++
+[listing]
+----
+cluster::> event log show -messagename scsiblade.*
+Time                Node   Severity      Event
+------------------- ------ ------------- --------------------------
+8/13/2012 14:03:51  node1  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+8/13/2012 14:03:51  node2  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+8/13/2012 14:03:48  node3  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+8/13/2012 14:03:43  node4  INFORMATIONAL scsiblade.in.quorum: The scsi-blade ...
+----
+

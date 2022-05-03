@@ -1,0 +1,118 @@
+= 
+:allow-uri-read: 
+
+
+若要確認設定正確、您必須啟用HA配對。您也必須驗證node3和node4是否可以存取彼此的儲存設備、以及它們是否擁有屬於叢集上其他節點的資料LIF。此外、您必須確認node3擁有node1的Aggregate、而node4擁有node2的Aggregate、而且兩個節點的磁碟區都在線上。
+
+.步驟
+. 對節點2進行檢查後、會啟用節點2叢集的儲存容錯移轉和叢集HA配對。完成作業後、兩個節點都會顯示為已完成、系統會執行一些清除作業。
+. 確認已啟用儲存容錯移轉：
++
+「容錯移轉顯示」
+
++
+下列範例顯示啟用儲存容錯移轉時命令的輸出：
+
++
+....
+cluster::> storage failover show
+                  Takeover
+Node     Partner  Possible   State Description
+-------- -----    -------    ------------------
+node3    node4    true       Connected to node4
+node4    node3    true       Connected to node3
+....
+. 使用下列命令檢查輸出、確認node3和node4屬於同一個叢集：
++
+「叢集展示」
+
+. 使用下列命令檢查輸出、確認節點3和節點4可以存取彼此的儲存設備：
++
+「torage容錯移轉顯示欄位local-missing磁碟、合作夥伴遺失磁碟」
+
+. 使用下列命令檢查輸出、確認節點3和節點4都不擁有叢集中其他節點所擁有的資料lifs主目錄：
++
+「網路介面展示」
+
++
+如果節點3或節點4都不擁有叢集中其他節點所擁有的資料生命週期、請將資料生命週期還原為其主擁有者：
+
++
+網路介面回復
+
+. 驗證node3是否擁有node1的集合體、以及node4是否擁有node2的集合體：
++
+「torage Aggregate show -Owner-name <node3>'
+
++
+「torage Aggregate show -Owner-name <node4>'
+
+. 判斷是否有任何磁碟區離線：
++
+「Volume show -node3>-state offline」（Volume show -node3>-state offline）
+
++
+Volume show -node4>-state offline（Volume show -node4>-state offline）
+
+. 如果有任何磁碟區離線、請將它們與您在一節中擷取的離線磁碟區清單進行比較 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]並在每個Volume上使用一次下列命令、視需要將任何離線磁碟區上線：
++
+「Volume online -vserver <vserver_name>-volume <volume <volume．name>'
+
+. 針對每個節點使用下列命令、安裝新節點的新授權：
++
+「系統授權新增-授權代碼<lite_code,liter_code,liter_code...>'
+
++
+授權代碼參數接受28個大寫字母字元金鑰的清單。您可以一次新增一個授權、也可以一次新增多個授權、以英文分隔每個授權金鑰。
+
+. 使用下列其中一個命令、從原始節點移除所有舊授權：
++
+「系統授權清除-未使用-過期」
+
++
+「系統授權刪除-序號<node_sSerial_number>-package<sitedable套件>」
+
++
+--
+** 刪除所有過期的授權：
++
+「系統授權清除-過期」
+
+** 刪除所有未使用的授權：
++
+「系統授權清理-未使用」
+
+** 在節點上使用下列命令、從叢集刪除特定授權：
++
+「系統授權刪除-序號<node1_sSerial_number>-package *」
+
++
+「系統授權刪除-序號<node2_sSerial_number>-package *」
+
+
+
+--
++
+將顯示下列輸出：
+
++
+....
+Warning: The following licenses will be removed:
+<list of each installed package>
+Do you want to continue? {y|n}: y
+....
++
+輸入「y」以移除所有套件。
+
+. 使用下列命令並檢查輸出、確認已正確安裝授權：
++
+「系統授權展示」
+
++
+您可以比較輸出與您在區段中擷取的輸出 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]。
+
+. 如果在組態中使用NetApp儲存加密（NSE）、您可以使用'<kmip.init.maxwait>`變數'off'（在中）將'采 用'采 用'true（真）'命令來設定'setenv bootarg.storageEncryption.support'命令 link:install_boot_node4.html#step27["安裝並開機節點4、步驟27"]）、您需要重設變數：
++
+「et diag; systemShell -node<node_name>-command Sudo kenv -u -p kmip.init.maxwait`」
+
+

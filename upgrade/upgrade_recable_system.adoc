@@ -1,0 +1,31 @@
+---
+permalink: upgrade/upgrade-recable-system.html 
+sidebar: sidebar 
+keywords: run, diagnostic, recable, controller, module, storage, network, connection, recable the system 
+summary: 執行診斷之後、您必須重新連接控制器模組的儲存設備和網路連線。 
+---
+= 重新啟用系統
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+執行診斷之後、您必須重新連接控制器模組的儲存設備和網路連線。
+
+. 重新安裝系統。
+. 使用Config Advisor 下列資訊驗證纜線是否正確：
++
+.. 請從Config Advisor NetApp支援網站下載並安裝此功能。
++
+http://mysupport.netapp.com/["mysupport.netapp.com"]
+
+.. 輸入目標系統的資訊、然後按一下「*收集資料*」。
+.. 按一下「*纜線連接*」索引標籤、然後檢查輸出。
++
+請確定所有磁碟櫃均已顯示、且所有磁碟均顯示在輸出中、以修正您發現的任何纜線問題。
+
+.. 按一下適當的索引標籤、然後檢查Config Advisor 來自NetApp的輸出、檢查其他纜線。
+
+
+

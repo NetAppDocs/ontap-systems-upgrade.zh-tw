@@ -1,0 +1,16 @@
+= 
+:allow-uri-read: 
+
+
+您可以恢復在升級之前靜止的SnapMirror傳輸、並恢復SnapMirror關係。升級完成後、更新會如期進行。
+
+.步驟
+. 驗證目的地上的SnapMirror狀態：
++
+「napmirror show」
+
+. 恢復SnapMirror關係：
++
+「napmirror resume -destination–vserver <vserver_name>」
+
+

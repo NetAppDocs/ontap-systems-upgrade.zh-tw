@@ -1,0 +1,236 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual-app/map_ports_node1_node3.html 
+keywords: map, ports, node1, node3, cluster, home port, vlan ports, broadcast domain, connectivity 
+summary: 在執行ONTAP 《Esc9.8或更新版本》的控制器上進行手動ARL升級時、請確認節點1上的實體連接埠正確對應至節點3。 
+---
+= 將連接埠從節點1對應至節點3
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您必須確定節點1上的實體連接埠正確對應至節點3上的實體連接埠、以便節點3在升級後與叢集中的其他節點和網路進行通訊。
+
+您必須已經取得有關_E__新節點上連接埠的資訊Hardware Universe 。（請前往 link:other_references.html["參考資料"] 以連結至_SURE_ Hardware Universe ）。您可以使用本節稍後和中的資訊 link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"]。
+
+node3的軟體組態必須符合node3的實體連線能力、而且必須先還原IP連線、才能繼續升級。
+
+連接埠設定可能有所不同、視節點的機型而定。
+
+.步驟
+. [[step1]]請執行下列步驟、確認設定是否為雙節點無交換式叢集：
++
+.. 將權限層級設為進階：
++
+"進階權限"
+
+.. 確認設定是否為雙節點無交換器叢集：
++
+「網路選項、無交換式叢集展示」
+
++
+例如：
+
++
+[listing]
+----
+ cluster::*> network options switchless-cluster show
+ Enable Switchless Cluster: false/true
+----
++
+此命令的值必須符合系統的實體狀態。
+
+.. 返回管理權限層級：
++
+「et -priv. admin」
+
+
+
+. [[step2]]進行下列變更：
++
+.. 修改將成為叢集廣播網域一部分的連接埠：
++
+「網路連接埠修改節點<node_name>-port <port_name>-MTU 9000 -IPSpace叢集」
+
++
+此範例在「node1」上新增叢集連接埠e1b：
+
++
+[listing]
+----
+network port modify -node node1 -port e1b -ipspace Cluster -mtu 9000
+----
+.. 針對每個LIF、將叢集生命區移轉至新的連接埠一次：
++
+「網路介面移轉-vserver <vserver_name>-lif<lif_name>-source-Node <node1>-dite-node<node1>-destite-port <port_name>」
+
++
+移轉所有叢集生命量並建立叢集通訊時、叢集應達到仲裁。
+
+.. 修改叢集lifs的主連接埠：
++
+「網路介面修改-vserver叢集-lIF <lif_name>–home-port <port_name>'
+
+.. 從叢集廣播網域移除舊連接埠：
++
+「網路連接埠廣播網域移除連接埠-IPSpace叢集-broadcast網域叢集-ports <node1:port>」
+
+.. 顯示節點1和節點3的健全狀況：
++
+「cluster show -node1>-Fields health」
+
+.. 每個叢集LIF都必須偵聽連接埠7700。驗證叢集LIF是否正在偵聽連接埠7700：
++
+：「：>網路連線偵聽show -vserver叢集」
+
++
+連接埠7700偵聽叢集連接埠是預期結果、如下列雙節點叢集範例所示：
+
++
+[listing]
+----
+Cluster::> network connections listening show -vserver Cluster
+Vserver Name     Interface Name:Local Port     Protocol/Service
+---------------- ----------------------------  -------------------
+Node: NodeA
+Cluster          NodeA_clus1:7700               TCP/ctlopcp
+Cluster          NodeA_clus2:7700               TCP/ctlopcp
+Node: NodeB
+Cluster          NodeB_clus1:7700               TCP/ctlopcp
+Cluster          NodeB_clus2:7700               TCP/ctlopcp
+4 entries were displayed.
+----
+.. 如有必要、請針對未接聽連接埠7700的每個叢集LIF、將LIF的管理狀態設為「自己」、然後設定為「UP」：
++
+：`:>net int modify -vserver cluster -lif<cluster－lif>-STATUS-admin down；net int modify -vserver cluster -lIF <cluster－lif>-STATUS-admin up（net int modify -vserver Cluster -lIF <cluster－lif>-STATUS-admin up）
+
++
+重複子步驟（f）、確認叢集LIF現在正在連接埠7700上偵聽。
+
+
+
+. [[man_map_1_step3]]修改裝載資料lifs之實體連接埠的廣播網域成員資格。
++
+.. 列出所有連接埠的連線狀態：
++
+「網路連接埠連線能力顯示」
+
+.. 修復實體連接埠的可連線性、接著在每個連接埠上執行下列命令（一次一個連接埠）：
++
+「可到達性修復-Node <node_name>-port <port_name>」
+
++
+預期會出現類似以下的警告。請視需要檢閱並輸入「y」或「n」：
+
++
+[listing]
+----
+WARNING: Repairing port "node_name:port" might cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+----
+.. 若要讓ONTAP 支援功能更新完成修復、請在最後一個連接埠上執行「可連線性修復」命令後等待約一分鐘。
+.. 列出叢集上的所有廣播網域：
++
+《廣播網域節目》
+
+.. 執行可連線性修復時ONTAP 、嘗試將連接埠放在正確的廣播網域中。但是、如果無法判斷連接埠的連線能力、而且與任何現有的廣播網域不相符、ONTAP 則無法針對這些連接埠建立新的廣播網域。如果新建立的廣播網域的所有成員連接埠都會成為介面群組的成員連接埠、您可以視需要刪除這些網域。刪除廣播網域：
++
+「broadcast網域刪除-broadcast網域<broadcast網域>」
+
+.. 檢閱介面群組組態、並視需要新增或刪除成員連接埠。
++
+新增成員連接埠至介面群組連接埠：
+
++
+"ifgrp add-port -node<node_name>-ifgrp <ifgrp_port>-port <port_name>
+
++
+從介面群組連接埠移除成員連接埠：
+
++
+「ifgrp disfile-port -node_<node_name>_-ifgrp <ifgrp_port>-port <port_name>」
+
+.. 視需要刪除並重新建立VLAN連接埠。刪除VLAN連接埠：
++
+「VLAN刪除節點<node_name>-vlan-name <vla_port>_」
+
++
+建立VLAN連接埠：
+
++
+「vlan create -node_name>-vlan-name<vla_port>`
+
++
+
+NOTE: 視所升級系統的網路組態複雜度而定、您可能需要重複執行子步驟（A）到（g）、直到所有連接埠都正確放置在所需位置為止。
+
+
+
+. [[step4]如果系統上未設定任何VLAN、請前往 <<man_map_1_step5,步驟5.>>。如果已設定VLAN、請還原先前在不再存在的連接埠上設定或是在移至另一個廣播網域的連接埠上設定的已移除VLAN。
++
+.. 顯示已移出的VLAN：
++
+「顯示虛擬區域網路」
+
+.. 將移除的VLAN還原至所需的目的地連接埠：
++
+「Dislocation-vlans還原-node<node_name>-port <port_name>-dite-port <dite_port>'
+
+.. 確認所有已移除的VLAN均已還原：
++
+「顯示虛擬區域網路」
+
+.. VLAN會在建立後約一分鐘內自動置入適當的廣播網域。確認還原的VLAN已置於適當的廣播網域中：
++
+「網路連接埠連線能力顯示」
+
+
+
+. [[man_map_1_step5]]從ONTAP 版本號9.8開始、ONTAP 當連接埠在網路連接埠可連線性修復程序期間於廣播網域之間移動時、會自動修改lifs的主連接埠。如果LIF的主連接埠已移至其他節點、或未指派、則LIF會顯示為已移除的LIF。還原主連接埠不再存在或重新放置到其他節點的已移轉LIF主連接埠。
++
+.. 顯示其主連接埠可能移至其他節點或不再存在的LIF：
++
+「顯示介面」
+
+.. 還原每個LIF的主連接埠：
++
+「顯示介面還原-vserver <vserver_name>-lif-name <LIF_name>」
+
+.. 確認所有LIF主連接埠均已還原：
++
+「顯示介面」
+
+
+
++
+當所有連接埠均已正確設定並新增至正確的廣播網域時、「network port re連通 性show」命令會針對所有連接的連接埠、將連線狀態報告為「OK（正常）」、對於沒有實體連線的連接埠、狀態應顯示為「不可到達性」。如果有任何連接埠報告的狀態不是這兩個連接埠、請依照中所述修復連線能力 <<man_map_1_step3,步驟3.>>。
+
+. [[man_map_1_step6]]確認所有LIF都在屬於正確廣播網域的連接埠上以管理方式啟動。
++
+.. 檢查是否有任何管理性停機的生命生命：
++
+「網路介面show -vserver <vserver_name>-STATUS-admin down」
+
+.. 檢查是否有任何運作中斷的生命：
++
+「網路介面show -vserver <vserver_name>-STATUS-oper down」
+
+.. 修改任何需要修改的生命期、使其具有不同的主連接埠：
++
+「網路介面修改-vserver <vserver_name>-lIF <LIF_name>-home-port <home_port>'
+
++
+
+NOTE: 對於iSCSI LIF、若要修改主連接埠、則需要以管理方式關閉LIF。
+
+.. 將非主目錄連接埠的LIF還原為各自主目錄連接埠：
++
+「網路介面回復*」
+
+
+
+

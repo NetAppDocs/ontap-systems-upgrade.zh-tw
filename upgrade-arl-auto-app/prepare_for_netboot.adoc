@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/prepare_for_netboot.html 
+keywords: preparing, netboot, ndac, ontap 
+summary: 使用ONTAP 「系統控制器更換」命令、升級執行版本支援的控制器時、請準備好netboot node3和node4。 
+---
+= 準備netboot
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+當您在程序稍後的實體機架節點3和節點4之後、可能需要將它們以網路開機。「netboot」一詞是指從ONTAP 儲存在遠端伺服器上的ImageImage啟動。準備網路開機時、您必須將ONTAP 一份《支援》9開機映像複本放到系統可以存取的網路伺服器上。
+
+.開始之前
+* 確認您可以使用系統存取HTTP伺服器。
+* 請參閱 link:other_references.html["參考資料"] 連結至_NetApp支援網站_、並下載適用於您平台及ONTAP 正確版本之更新程式的必要系統檔案。
+
+
+如果新的控制器ONTAP 上安裝的版本與原控制器上安裝的版本不相同、則必須以網路開機。安裝每個新的控制器之後、您可以從ONTAP 儲存在Web伺服器上的Image9映像來啟動系統。然後、您可以將正確的檔案下載到開機媒體裝置、以供後續系統開機。
+
+.步驟
+. 存取NetApp支援網站、下載用於執行系統網路開機的檔案。
+. 請ONTAP 從NetApp支援網站的軟體下載區段下載適當的支援軟體、並將「<ONTAP_VERW>_image.tgz」檔案儲存在可從網路存取的目錄中。
+. 切換至網路存取目錄、並確認您所需的檔案可用。
++
+[cols="30,70"]
+|===
+| 適用於... | 然後... 
+
+
+| FAS / AFF8000系列系統 | 將「<ONTAP_VERSION >_image.tgz」檔案的內容解壓縮到目標目錄：「tar -zxvf <ONTAP_VERVERSION >_image.tgz」*附註*：如果您要在Windows上解壓縮內容、請使用7-Zip或WinRAR來擷取netboot映像。您的目錄清單應包含一個netboot資料夾、其中包含一個核心檔案：「netboot/kernel」（netboot/kernel） 
+
+
+| 所有其他系統 | 您的目錄清單應包含下列檔案：「<ONTAP_VERSION >_image.tgz」*附註*：您不需要擷取「<ONTAP_VERSION >_image.tgz」檔案的內容。 
+|===
++
+您將會使用中目錄中的資訊 link:stage_3_install_boot_node3_overview.html["階段3."]。
+
+

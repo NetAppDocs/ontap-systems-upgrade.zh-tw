@@ -1,0 +1,39 @@
+---
+permalink: upgrade/upgrade-install-and-join-new-nodes-move-vols.html 
+sidebar: sidebar 
+keywords: install, node, join, cluster, volume, original, node, install the new nodes and joining them to the cluster 
+summary: 您必須安裝新節點並將其加入叢集、以便從原始節點移動磁碟區。 
+---
+= 安裝新節點並將其加入叢集
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須安裝新節點並將其加入叢集、以便從原始節點移動磁碟區。
+
+當您透過移動磁碟區來升級控制器硬體時、原始節點和新節點必須位於同一個叢集內。
+
+.步驟
+. 安裝新節點並將其加入叢集：
++
+[cols="1,2"]
+|===
+| 如果叢集正在執行... | 請遵循...中的指示 
+
+
+ a| 
+更新版本ONTAP
+ a| 
+https://docs.netapp.com/us-en/ontap-sm-classic/expansion/index.html["叢集擴充管理"^]
+
+
+
+ a| 
+發行版本不再於更新版本ONTAP
+ a| 
+http://mysupport.netapp.com/documentation/productlibrary/index.html?productID=30092["尋找Data ONTAP 適用於您的版本的《叢集擴充快速指南》（Cluster Expansion Express Guide）"^]
+
+|===
+

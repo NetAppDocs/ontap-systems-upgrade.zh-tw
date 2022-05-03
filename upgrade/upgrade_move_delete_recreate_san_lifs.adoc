@@ -1,0 +1,19 @@
+---
+permalink: upgrade/upgrade_move_delete_recreate_san_lifs.html 
+sidebar: sidebar 
+keywords: cluster, san, environment, delete, lif, re-create, move san lifs, create 
+summary: 視叢集內容和叢集環境而定、您需要移動、刪除或建立SAN生命期、或重新建立刪除的SAN生命期。 
+---
+= 移動、刪除或建立SAN LIF
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+視叢集內容和叢集環境而定、您必須移動、刪除或建立SAN生命體、或重新建立刪除的SAN生命體。
+
+* link:upgrade_considerations_move_san_lifs.html["移轉SAN LIF的考量"]
+* link:upgrade-delete-san-lifs.html["從原始節點刪除不再需要的SAN LIF"]
+* link:upgrade_create_recreate_san_lifs.html["建立新的SAN生命體、或重新建立刪除的SAN生命體"]
+

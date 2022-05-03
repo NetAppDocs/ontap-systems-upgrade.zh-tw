@@ -1,0 +1,22 @@
+---
+permalink: upgrade/upgrade-complete.html 
+sidebar: sidebar 
+keywords: complete, upgrade, ontap, complete the upgrade 
+summary: 完成ONTAP 更新、請參閱《更新版（更新ONTAP 版本）：更新版（更新版本：）、更新版（更新版本： 
+---
+= 完成升級
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+完成ONTAP 更新、請參閱《更新版（更新ONTAP 版本）：更新版（更新版本：）、更新版（更新版本：
+
+您必須使用ONTAP 適用於您版本的更新程序。
+
+image::../upgrade/media/workflow_completing_upgrade_98_or_97x.png[完成升級]
+
+* 若要完成ONTAP 更新、請前往 xref:upgrade-complete-ontap-9-8.adoc[完成ONTAP 更新、請使用更新功能升級]。
+* 若要完成ONTAP 更新、請前往 xref:upgrade-complete-ontap-9-7-or-earlier.adoc[完成ONTAP 更新、請參閱《更新版本]。
+

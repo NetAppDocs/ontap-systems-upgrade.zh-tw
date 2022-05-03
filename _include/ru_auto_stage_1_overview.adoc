@@ -1,0 +1,10 @@
+= 
+:allow-uri-read: 
+
+
+在第1階段期間、您必須準備節點進行升級、並執行一系列預先檢查。您可能需要重新鎖定磁碟以進行儲存加密。您也必須準備好新控制器的網路開機。
+
+.步驟
+. link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]
+. link:get_ip_address_of_external_kms_for_storage_encryption.html["取得外部金鑰管理伺服器的IP位址以進行儲存加密"]
+

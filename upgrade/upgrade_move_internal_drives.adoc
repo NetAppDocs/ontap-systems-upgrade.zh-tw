@@ -1,0 +1,47 @@
+---
+permalink: upgrade/upgrade-move-internal-drives.html 
+sidebar: sidebar 
+keywords: node, support, model, upgrading, upgrade, moving, move, storage, internal, sata, drive, ssd, drive, shelf, attach, cluster, transfer, sas, drive, move internal drives from an original node 
+summary: 如果您的原始節點是受支援的機型之一、在升級期間、您可以將節點的內部SATA磁碟機或SSD移至連接至同一叢集中新節點的磁碟機櫃。您無法將SAS磁碟機傳輸至連接至新節點的磁碟機櫃。 
+---
+= 從原始節點移動內部磁碟機
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您的原始節點是支援的機型之一、在升級期間、您可以將節點的內部SATA磁碟機或SSD移至連接至同一叢集中新節點的磁碟機櫃。您無法將SAS磁碟機傳輸至連接至新節點的磁碟機櫃。
+
+.開始之前
+* 您必須已檢閱 link:upgrade-considerations.html["升級控制器硬體的考量事項"] 關於移動內部磁碟機。
++
+如果您需要特定組態的指引、請聯絡技術支援部門。
+
+* 原始節點的SATA或SSD磁碟機載體必須與新的磁碟機櫃相容。
+* 相容的磁碟機櫃必須已連接至新節點。
+* 磁碟機櫃必須有足夠的可用磁碟槽、才能容納來自原始節點的SATA或SSD磁碟機載體。
+
+
+.步驟
+. 從系統正面輕移擋板。
+. [[move_int_drive_2]]按下磁碟機承載器左側的釋放按鈕。
++
+托架上的CAM握把部分彈開、並從中間背板釋放托架。
+
+. 將CAM握把拉至完全開啟位置、以從中間板中取出托架、然後將托架從磁碟機櫃中輕推。
++
+
+NOTE: 在移除、安裝或攜帶磁碟機時、請務必使用兩隻手。不過、請勿將手放在外露在機架底部的磁碟機板上。
+
+. 將CAM握把置於開啟位置時、將托架插入新磁碟機櫃的插槽、並持續推入、直到托架停止為止。
++
+
+NOTE: 裝入載體時請用兩隻手。
+
+. [move_int_drive_5]關閉CAM握把、使托架完全就位在中間板上、並將握把卡入定位。
++
+您必須緩慢關閉握把、使其與機層面正確對齊。
+
+. 重複 <<move_int_drive_2,步驟2>> 透過 <<move_int_drive_5,步驟5.>> 適用於您要移至新系統的所有磁碟機。
+

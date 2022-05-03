@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/restore_key-manager_config_node4.html 
+keywords: restore key-manager, configuration, node4, nve, arl, volume, encryption 
+summary: 如有必要、請ONTAP 使用「系統控制器更換」命令、在升級執行版本號為Esce9.8或更新版本的控制器時、在節點4上還原金鑰管理程式組態。 
+---
+= 還原節點4上的金鑰管理程式組態
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果您使用NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、加密組態必須同步至新節點。當節點1集合體從節點2到節點4完成ARL時、加密的磁碟區會離線。
+
+執行下列步驟、將加密組態同步至新節點：
+
+.步驟
+. 在叢集提示字元中使用下列命令、同步化Onboard Key Manager（OKM）的加密組態：
++
+「安全金鑰管理程式內建同步」
+
+. 為OKM輸入整個叢集的通關密碼。
+

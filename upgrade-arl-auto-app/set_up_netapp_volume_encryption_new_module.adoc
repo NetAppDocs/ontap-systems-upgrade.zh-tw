@@ -1,0 +1,65 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/set_up_netapp_volume_encryption_new_module.html 
+keywords: set up, netapp volume encryption, controller, module, nve, node 
+summary: 如有必要、請使用ONTAP 「系統控制器更換」命令、在升級執行《ESCSI 9.8或更新版本》的控制器時、為NVE設定新的控制器模組。 
+---
+= 在新的控制器模組上設定NetApp Volume Encryption
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果新控制器的更換控制器或高可用度（HA）合作夥伴使用NetApp Volume Encryption（NVE）、您必須為NVE設定新的控制器模組。
+
+此程序包括在新控制器模組上執行的步驟。您必須在正確的節點上輸入命令。
+
+.步驟
+. 確認金鑰管理伺服器仍可使用、狀態及驗證金鑰資訊：
++
+「安全金鑰管理程式金鑰查詢節點節點」
+
+. 將上一步列出的金鑰管理伺服器新增至新控制器的金鑰管理伺服器清單：
++
+.. 新增金鑰管理伺服器：
++
+「安全金鑰管理程式外部附加伺服器-金鑰伺服器<key_manager_server_ip_address>」
+
+.. 針對每個列出的金鑰管理伺服器重複上一步。您最多可以連結四個金鑰管理伺服器。
+.. 確認已成功新增金鑰管理伺服器：
++
+「安全關鍵經理外部秀」
+
+
+
+. 在新的控制器模組上、執行金鑰管理設定精靈以設定及安裝金鑰管理伺服器。
++
+您必須安裝與現有控制器模組相同的金鑰管理伺服器。
+
++
+.. 在新節點上啟動金鑰管理伺服器設定精靈：
++
+「安全金鑰管理程式外部啟用」
+
+.. 完成精靈中的步驟以設定金鑰管理伺服器。
+
+
+. 將驗證金鑰從所有連結的金鑰管理伺服器還原至新節點：
++
+[cols="30,70"]
+|===
+| 適用於... | 使用此命令... 
+
+
+| 外部金鑰管理（EKM） | 「安全金鑰管理程式外部還原」此命令需要OKM複雜密碼 
+
+
+| 內建金鑰管理程式 | 「安全金鑰管理程式內建同步」 
+|===
+
+
+檢查是否有任何磁碟區因為驗證金鑰無法使用或無法連線到EKM伺服器而離線。使用「Volume online」命令將這些磁碟區重新連線。

@@ -1,0 +1,11 @@
+---
+section: upgrade-arl
+title: 使用Aggregate重新配置來升級控制器硬體
+entries:
+- title: 總覽
+  url: "/upgrade-arl/index.html"
+- section: upgrade-arl-auto-affa900
+- section: upgrade-arl-auto-app
+- section: upgrade-arl-manual-app
+- section: upgrade-arl-auto
+- section: upgrade-arl-manual

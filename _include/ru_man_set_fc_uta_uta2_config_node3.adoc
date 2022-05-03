@@ -1,0 +1,19 @@
+= 
+:allow-uri-read: 
+
+
+如果節點3具有內建FC連接埠、內建統一化目標介面卡（UTA/UTA2）連接埠或UTA/UTA2卡、則必須先設定設定、才能完成其餘程序。
+
+您可能需要完成 <<Configure FC ports on node3>>或 <<Check and configure UTA/UTA2 ports on node3>>或這兩個區段。
+
+
+NOTE: NetApp行銷資料可能會使用「UTA2」一詞來指稱CNA介面卡和連接埠。不過、CLI使用「CNA」一詞。
+
+* 如果節點3沒有內建FC連接埠、內建UTA/UTA2連接埠或UTA/UTA2卡、而且您正在升級含有儲存磁碟的系統、則可以跳至 link:map_ports_node1_node3.html["將連接埠從節點1對應至節點3"]。
+* 但是、如果您的V系列系統或系統搭載FlexArray 含有儲存陣列的VMware虛擬化軟體、而節點3沒有內建FC連接埠、內建UTA/ UTA連接埠或UTA/ UTA2卡、請返回_Install and boot node3_並繼續執行 link:install_boot_node3.html#step22["步驟22"]。
+
+
+.選項：
+* <<Configure FC ports on node3>>
+* <<Check and configure UTA/UTA2 ports on node3>>
+

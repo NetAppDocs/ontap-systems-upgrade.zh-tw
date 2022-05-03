@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/persist_disable_switches.html 
+keywords: disable, switches, fabric, persistent, modify, configuration, configure 
+summary: 在Fabric中停用Brocade和Cisco交換器、並在執行ONTAP 更新版本的控制器上手動進行ARL升級時修改組態。 
+---
+= 永久停用交換器
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您必須持續停用Fabric中的交換器、才能修改其組態。
+
+您可以在交換器命令列上執行命令來停用交換器、而用於此功能的命令並非ONTAP 使用指令。
+
+持續停用交換器：
+
+* 對於Brocade交換器、請使用「shwitchCfgPeristentDisable」命令。
+* 對於Cisco交換器、請使用「usfPEND」命令。
+
+
+下列命令會持續停用Brocade交換器：
+
+[listing]
+----
+FC_switch_A_1:admin> switchCfgPersistentDisable
+----
+下列命令會停用Cisco交換器：
+
+[listing]
+----
+vsan [vsna #] suspend
+----

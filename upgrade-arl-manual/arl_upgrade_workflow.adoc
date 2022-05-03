@@ -1,0 +1,143 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/arl_upgrade_workflow.html 
+keywords: upgrade workflow, procedure steps, stages 
+summary: 瞭解執行ONTAP NetApp 9.7或更早版本之控制器配對的手動ARL升級程序如何運作。 
+---
+= ARL升級工作流程
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在使用ARL升級節點之前、您應該先瞭解程序的運作方式。在本文中、程序分為幾個階段。
+
+
+
+== 升級節點配對
+
+若要升級節點配對、您必須準備原始節點、然後在原始節點和新節點上執行一系列步驟。然後您可以取消委任原始節點。
+
+
+
+== ARL升級順序總覽
+
+在程序期間、您可以使用更換的控制器硬體（一次一個控制器）來升級原始控制器硬體、並利用HA配對組態來重新配置非根集合體的擁有權。所有非根Aggregate都必須經過兩次重新定位、才能到達最終目的地、這是正確的升級節點。
+
+每個Aggregate都有一個擁有者和目前擁有者。主擁有者是該集合體的實際擁有者、而目前擁有者則是暫時擁有者。
+
+下圖顯示程序的各個階段。淺灰色的粗箭頭代表集合體的重新定位和生命量的移動、而較細的黑色箭頭則代表原始節點的移除。較小的控制器映像代表原始節點、較大的控制器映像則代表新節點。
+
+image:arl_upgrade_manual_image1.PNG["顯示ARL程序各階段的圖例"]
+
+下表說明您在每個階段中執行的高層工作、以及階段結束時的集合擁有權狀態。程序稍後會提供詳細步驟：
+
+[cols="35,65"]
+|===
+| 階段 | 步驟 
+
+
+| link:stage_1_index.html["階段1：準備升級"]  a| 
+. 確定控制器是否在內部磁碟機上有集合體。
++
+只有從具有內部磁碟機的控制器升級時、才需要執行此步驟。
+
+. 準備節點以進行升級。
+. 重新輸入磁碟以進行儲存加密。
++
+只有當您從具有自我加密磁碟機的系統進行升級時、才需要執行此工作。
+
+. 驗證叢集上的SnapMirror關係狀態、並停止叢集之間的所有關係。
+. 準備netboot。
+
+
+第1階段結束時的Aggregate所有權：
+
+* node1是node1集合體的主擁有者和目前擁有者。
+* node2是node2 Aggregate的主擁有者和目前擁有者。
+
+
+
+
+| link:stage_2_index.html["階段2：淘汰節點1"]  a| 
+. 將非根Aggregate從節點1重新部署到節點2。
+. 將節點1擁有的非SAN資料IFS移至節點2。
+. 記錄node1資訊。
+. 重新部署故障或被否決的集合體。
+. 淘汰節點1。
+
+
+第2階段結束時的Aggregate所有權：
+
+* node1是node1 Aggregate的主擁有者。
+* node2是node1 Aggregate的目前擁有者。
+* node2是node2 Aggregate的主擁有者和目前擁有者。
+
+
+
+
+| link:stage_3_index.html["階段3：安裝和開機節點3"]  a| 
+. 安裝及開機節點3。
+. 在節點3上設定UTA/UTA2組態。
+. 將連接埠從節點1對應至節點3。
+. 驗證node3安裝。
+. 將節點1擁有的非SAN資料lifs從節點2移至節點3、並驗證節點3上的SNA lifs。
+. 將非根Aggregate從節點2重新部署到節點3。
+. 將節點2擁有的非SAN資料lifs移至節點3。
+
+
+第3階段結束時的Aggregate所有權：
+
+* node2是node2 Aggregate的主擁有者、但不是目前擁有者。
+* node3是原屬於node1的Aggregate的主擁有者和目前擁有者。
+* node2是屬於node2但不是主擁有者的Aggregate的主擁有者和目前擁有者。
+
+
+
+
+| link:stage_4_index.html["第4階段：淘汰節點2"]  a| 
+. 記錄node2資訊。
+. 淘汰節點2。
+
+
+集合體擁有權不會發生任何變更。
+
+
+
+| link:stage_5_index.html["階段5：安裝和開機節點4"]  a| 
+. 安裝及開機節點4。
+. 在節點4上設定UTA/UTA2組態。
+. 將連接埠從節點2對應至節點4。
+. 驗證是否已成功安裝節點4。
+. 將節點2擁有的非SAN資料生命週期從節點3移至節點4、並驗證節點4上的SNA lifs。
+. 將node2的非根Aggregate從node3重新定位到node4。
+
+
+第5階段結束時的Aggregate所有權：
+
+* node3是原屬於node1的集合體的主擁有者和目前擁有者。
+* Node4是原屬於節點2的Aggregate主擁有者和目前擁有者。
+
+
+
+
+| link:stage_6_index.html["第6階段：完成升級"]  a| 
+. 確認新的控制器已正確設定。
+. 在新節點上設定儲存加密。
++
+只有當您升級至具有自我加密磁碟機的系統時、才需要執行此工作。
+
+. 取消委任舊系統。
+. 恢復NetApp SnapMirror關係。
++
+*附註：*儲存虛擬機器（SVM）災難恢復更新不會依照指派的排程中斷。
+
+
+
+集合體擁有權不會發生任何變更。
+
+|===

@@ -1,0 +1,160 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/move_nas_lifs_node1_node2.html 
+keywords: node1, node3, nas, lifs, cluster, san 
+summary: 如果您有雙節點叢集、請將節點1的NAS資料l生命 週期移至節點2；如果叢集有兩個以上的節點、則在ONTAP 執行EAS9.7或更早版本的控制器上進行手動ARL升級時、將節點1的NAS資料lifs移至第三節點。 
+---
+= 將節點1擁有的NAS資料lifs移至節點2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+若要將節點1替換為節點3、您必須先將節點1擁有的NAS資料lifs移至節點2（如果您有雙節點叢集）、或移至第三節點（如果叢集有兩個以上節點）。您使用的方法取決於叢集是針對NAS或SAN進行設定。
+
+在升級過程中、遠端LIF會處理SAN LUN的流量。在升級期間、移轉SAN LIF對於叢集或服務健全狀況並不必要。將node3聯機後，您必須驗證生命期是否正常並位於適當的端口上。
+
+.步驟
+. 輸入下列命令並擷取輸出、列出節點1上裝載的所有NAS資料lifs：
++
+「網路介面show -data-Protocol nfs | CIFS -curr-node1>'
+
++
+系統會在節點1上顯示NAS資料LIF、如下列範例所示：
+
++
+[listing]
+----
+ cluster::> network interface show -data-protocol nfs|cifs -curr-node node1
+
+          Logical     Status      Network             Current   Current Is
+ Vserver  Interface   Admin/Oper  Address/Mask        Node      Port    Home
+ -------- ----------  ----------  ------------------  --------- ------- ----
+ vs0
+          a0a         up/down     10.63.0.53/24       node1     a0a     true
+          data1       up/up       10.63.0.50/18       node1     e0c     true
+          rads1       up/up       10.63.0.51/18       node1     e1a     true
+          rads2       up/down     10.63.0.52/24       node1     e1b     true
+ vs1
+          lif1        up/up       192.17.176.120/24   node1     e0c     true
+          lif2        up/up       172.17.176.121/24   node1     e1a     true
+----
+. 請採取下列其中一項行動：
++
+[cols="40,60"]
+|===
+| 如果節點1... | 然後... 
+
+
+| 已設定介面VLAN群組 | 前往 <<man_move_lif_1_2_step3,步驟3.>>。 
+
+
+| 未設定介面群組或VLAN | 跳過步驟3、前往 <<man_move_lif_1_2_step4,步驟4.>>。 
+|===
++
+使用「network port vlan show」命令來顯示連接到VLAN的網路連接埠資訊、並使用「network port ifgrp show」命令來顯示連接埠介面群組的相關資訊。
+
+. [[man_move_lif_1_2_step3]]請採取下列步驟、移轉節點1上介面群組和VLAN上裝載的任何NAS資料lifs：
++
+.. [[man_move_lif_1_2_substepa]]將節點1上任何介面群組和VLAN上裝載的lifs移轉到節點2上的連接埠、以便在與介面群組相同的網路上裝載lifs、方法是輸入下列命令、每個LIF一次：
++
+「網路介面移轉-vserver <vserver_name>-lif<lif_name>-dest-node-node2>–destite-port <netport|ifgrp>'
+
+.. 在中修改lifs和VLAN的主連接埠和主節點 <<man_move_lif_1_2_substepa,子步驟A>> 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
++
+「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-node2>- home-port <netport|ifgrp>'
+
+
+
+. [[man_move_lif_1_2_step4]]採取下列其中一項行動：
++
+[cols="20,80"]
+|===
+| 如果叢集設定為... | 然後... 
+
+
+| NAS | 完成 <<man_move_lif_1_2_step5,步驟5.>> 透過 <<man_move_lif_1_2_step8,步驟8.>>。 
+
+
+| SAN | 停用節點上的所有SAN LIF、以便進行升級：「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-Node <node_to _upgrade >-home-port <netport|ifgrp>-station-admin drod' 
+|===
+. [[man_move_lif_1_2_step5]]輸入下列命令、將NAS資料lifs從節點1移轉至節點2、每個資料LIF一次：
++
+「網路介面移轉-vserver <vserver_name>-lif<lif_name>-dest-node-node2>-dest-port <data_port>`
+
+. [[step6]輸入下列命令並檢查其輸出、以確認已將l生命 移至正確的連接埠、並在任一節點上輸入下列命令檢查輸出、確認lIF的狀態為up：
++
+「network interface show -curr-node-node2>-data-protocol nfs | CIFS」
+
+. [[step7]輸入下列命令、以修改移轉LIF的主節點：
++
+「網路介面修改-vserver <vserver_name>-lIF <LIF_name>-home-Node <node2>-home-port <port_name>」
+
+. [[man_move_lif_1_2_step8]]驗證LIF是否使用連接埠做為其主連接埠或目前連接埠。如果連接埠不是主連接埠或目前連接埠、請前往 <<man_move_lif_1_2_step9,步驟9.>>：
++
+「網路介面show -home-Node <node2>-home-port <port_name>」
+
++
+「網路介面show -curr-node<node_name>-curr-port <port_name>」
+
+. [[man_move_lif_1_2_step9]]如果lifs使用連接埠做為主連接埠或目前連接埠、請修改LIF以使用不同的連接埠：
++
+「網路介面移轉-vserver <vserver_name>-lif<lif_name>-destination–節點<node_name>-destination-port <port_name>」
+
++
+「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-node<node_name>-home-port <port_name>」
+
+. [[step10]如果新硬體上目前裝載資料生命期的連接埠不存在、請立即將它們從廣播網域中移除：
++
+「網路連接埠廣播網域移除連接埠-IPSpace預設值-broadcast網域預設值-ports <nodes:port>'
+
+. [[step11]如果有任何lifs當機、請輸入下列命令、將lifs的管理狀態設為「up」（開機）、每個LIF只需輸入一次：
++
+「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-node-node>-STATUS-admin up」
+
++
+
+NOTE: 對於VMware組態、您可能無法變更連接埠的廣播網域、因為它與裝載目的地儲存虛擬機器（SVM）LIF的連接埠相關聯。MetroCluster從遠端站台上的對應來源SVM輸入下列命令、將目的地LIF重新分配至適當的連接埠：「MetroCluster Sesvserver resSync -vserver <vserver_name>」
+
+. [[step12]輸入下列命令並檢查其輸出、以確認節點1上沒有剩餘的資料lifs：
++
+「網路介面show -curr-node-node1>-role data」
+
+. [[step13]如果已設定介面群組或VLAN、請完成下列子步驟：
++
+.. 輸入下列命令、從介面群組中移除VLAN：
++
+「網路連接埠VLAN刪除節點<節點名稱>-port <ifgrp_name>-vlan-id <vlan_ID>'
+
+.. 輸入下列命令並檢查其輸出、查看節點上是否已設定任何介面群組：
++
+「network port ifgrp show -node<nodename>-ifgrp <ifgrp_name>-instance」
+
++
+系統會顯示節點的介面群組資訊、如下列範例所示：
+
++
+[listing]
+----
+  cluster::> network port ifgrp show -node node1 -ifgrp a0a -instance
+                   Node: node1
+   Interface Group Name: a0a
+  Distribution Function: ip
+          Create Policy: multimode_lacp
+            MAC Address: 02:a0:98:17:dc:d4
+     Port Participation: partial
+          Network Ports: e2c, e2d
+               Up Ports: e2c
+             Down Ports: e2d
+----
+.. 如果節點上已設定任何介面群組、請記錄這些群組的名稱及指派給它們的連接埠、然後輸入下列命令刪除連接埠、每個連接埠一次：
++
+「network port ifgrp remove-port -node<nodename>-ifgrp <ifgrp_name>-port <netport>'
+
+
+
+

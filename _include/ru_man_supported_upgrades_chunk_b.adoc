@@ -1,0 +1,16 @@
+= 
+:allow-uri-read: 
+
+
+* 使用ARL的控制器升級支援使用SnapLock 「支援」的系統、這些系統均設定了「支援使用者支援使用者支援的功能」和SnapLock 「支援使用者支援
+
+
+您必須確認ARL是否可在原始控制器和更換控制器上執行。您必須檢查所有已定義的集合體大小、以及原始系統所支援的磁碟數量。然後將它們與新系統支援的集合體大小和磁碟數目進行比較。若要存取此資訊、請參閱 link:other_references.html["參考資料"] 以連結至_SURE_ Hardware Universe 。新系統支援的Aggregate大小和磁碟數目必須等於或大於原始系統支援的Aggregate大小和磁碟數目。
+
+您必須在叢集混合規則中驗證新節點是否能在更換原始控制器時、成為現有節點的叢集一部分。如需叢集混合規則的詳細資訊、請參閱 link:other_references.html["參考資料"] 以連結至_SURE_ Hardware Universe 。
+
+
+NOTE: 這兩種系統都是高可用度（HA）或非HA。兩個節點都必須啟用或停用特性設定；您無法將已啟用「All Flash Optimized」特性設定的節點與未在同一個HA配對中啟用特性設定的節點合併。如果身分不同、請聯絡技術支援部門。
+
+
+NOTE: 如果新系統的插槽數少於原始系統、或連接埠少於或不同、您可能需要將介面卡新增至新系統。請參閱 link:other_references.html["參考資料"] 如Hardware Universe 需特定平台的詳細資訊、請連結至NetApp支援網站上的_SUR__。

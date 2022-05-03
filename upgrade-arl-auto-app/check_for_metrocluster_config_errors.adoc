@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/check_for_metrocluster_config_errors.html 
+keywords: metrocluster, configuration, errors, config, advisor, netapp, support, site 
+summary: 使用「系統控制器更換」命令、在升級執行版本不含更新版本的控制器時、請使用Config Advisor 「更新工具」來檢查常見的組態錯誤ONTAP 。 
+---
+= 檢查MetroCluster 是否有任何組態錯誤
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用Active IQ Config Advisor NetApp支援網站提供的「支援」工具來檢查常見的組態錯誤。
+
+此為組態驗證與健全狀況檢查工具。Active IQ Config Advisor您可以在安全站台和非安全站台上部署、以供資料收集和系統分析之用。
+
+
+NOTE: 支援功能有限、僅限線上使用。Config Advisor
+
+. 下載 link:https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"] 工具：
+. 執行Active IQ Config Advisor 功能、檢閱輸出內容、並遵循其建議來解決任何問題。
+

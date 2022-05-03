@@ -1,0 +1,197 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/verify_node2_installation.html 
+keywords: verifying, verify, node, install, installation, aff, a900, NVRAM, controller 
+summary: 使用AFF EsceA900控制器模組和NVRAM模組來驗證node2安裝。 
+---
+= 驗證node2安裝
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您必須使用AFF EsceA900控制器模組和NVRAM模組來驗證node2安裝。由於實體連接埠沒有變更、因此您不需要將實體連接埠從AFF EsceA700 node2對應到AFF EsceA900 node2。
+
+使用AFF E4A900控制器模組開機節點1之後、您必須確認其安裝正確。您必須等待節點2加入仲裁、然後繼續執行控制器更換作業。
+
+在此過程中、節點2加入仲裁時、操作會暫停。
+
+.步驟
+. 驗證node2是否已加入仲裁：
++
+「cluster show -node2 -Fields health」
+
++
+保健領域的產出應該是真的。
+
+. 驗證node2是否與node1屬於同一個叢集、而且它是否正常：
++
+「叢集展示」
+
+. 切換至進階權限模式：
++
+《進階設定》
+
+. 檢查控制器更換作業的狀態、並確認它處於暫停狀態、且狀態與節點2停止之前的狀態相同、以執行安裝新控制器和移動纜線的實體工作：
++
+「System Controller replace show」（系統控制器更換顯示）
+
++
+「System Controller replace show-details」（系統控制器取代顯示詳細資料
+
+. 恢復控制器更換作業：
++
+「系統控制器更換恢復」
+
+. 控制器更換作業會暫停以進行介入、並顯示下列訊息：
++
+[listing]
+----
+Cluster::*> system controller replace show
+Node          Status                       Error-Action
+------------  ------------------------     ------------------------------------
+Node2         Paused-for-intervention      Follow the instructions given in
+                                           Step Details
+Node1         None
+
+Step Details:
+--------------------------------------------
+To complete the Network Reachability task, the ONTAP network configuration must be manually adjusted to match the new physical network configuration of the hardware. This includes:
+
+
+1. Re-create the interface group, if needed, before restoring VLANs. For detailed commands and instructions, refer to the "Re-creating VLANs, ifgrps, and broadcast domains" section of the upgrade controller hardware guide for the ONTAP version running on the new controllers.
+2. Run the command "cluster controller-replacement network displaced-vlans show" to check if any VLAN is displaced.
+3. If any VLAN is displaced, run the command "cluster controller-replacement network displaced-vlans restore" to restore the VLAN on the desired port.
+2 entries were displayed.
+----
++
+
+NOTE: 在此程序中、_重新建立VLAN、ifgrps和廣播網域_一節已重新命名為_在節點2上還原網路組態。
+
+. 在控制器更換處於暫停狀態時、繼續執行 <<Restore network configuration on node2>>。
+
+
+
+
+== 還原節點2上的網路組態
+
+確認節點2處於仲裁狀態並可與節點1通訊之後、請確認節點1的VLAN、介面群組和廣播網域是否顯示在節點2上。此外、請確認所有節點2網路連接埠都已設定在正確的廣播網域中。
+
+如需建立及重新建立VLAN、介面群組及廣播網域的詳細資訊、請參閱 link:other_references.html["參考資料"] 連結至_Network Management內容。
+
+.步驟
+. 列出已升級節點2上的所有實體連接埠：
++
+「網路連接埠show -node2」
+
++
+此時會顯示節點上的所有實體網路連接埠、VLAN連接埠和介面群組連接埠。從這個輸出中、您可以看到ONTAP 任何實體連接埠、這些連接埠已被動作區移至「叢集」廣播網域。您可以使用此輸出來協助決定哪些連接埠應做為介面群組成員連接埠、VLAN基礎連接埠或獨立實體連接埠來裝載lifs。
+
+. 列出叢集上的廣播網域：
++
+《廣播網域節目》
+
+. 列出節點2上所有連接埠的網路連接埠可連線性：
++
+「網路連接埠可連線性show -node2」
+
++
+您應該會看到類似下列範例的輸出。連接埠和廣播名稱各不相同。
+
++
+[listing]
+----
+Cluster::*> network port reachability show -node local
+Node      Port     Expected Reachability                Reachability Status
+--------- -------- ------------------------------------ ---------------------
+Node2
+          e0M      Default:Mgmt                         no-reachability
+          e10a     Default:Default-3                    ok
+          e10b     Default:Default-4                    ok
+          e11a     Cluster:Cluster                      no-reachability
+          e11b     Cluster:Cluster                      no-reachability
+          e11c     -                                    no-reachability
+          e11d     -                                    no-reachability
+          e2a      Default:Default-1                    ok
+          e2b      Default:Default-2                    ok
+          e9a      Default:Default                      no-reachability
+          e9b      Default:Default                      no-reachability
+          e9c      Default:Default                      no-reachability
+          e9d      Default:Default                      no-reachability
+13 entries were displayed.
+----
++
+在前面的範例中、節點2已在更換控制器之後開機並加入仲裁。它有數個連接埠無法連線、且正在等待連線能力掃描。
+
+. [[reest_node2_step4]]使用下列命令、以「ok」以外的連線狀態、修復節點2上每個連接埠的連線能力、順序如下：
++
+「網路連接埠可連線性修復-節點<node_name>-port <port_name>」
+
++
+--
+.. 實體連接埠
+.. VLAN連接埠
+
+
+--
++
+您應該會看到如下範例所示的輸出：
+
++
+[listing]
+----
+Cluster ::> reachability repair -node node2 -port e9d
+----
++
+[listing]
+----
+Warning: Repairing port "node2:e9d" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+----
++
+如前述範例所示、若連接埠的連線狀態可能與目前所在廣播網域的連線狀態不同、則會出現警告訊息。檢視連接埠的連線能力、並視需要回答「y」或「n」。
+
++
+驗證所有實體連接埠的可連線性是否符合預期：
+
++
+「網路連接埠連線能力顯示」
+
++
+執行可連線性修復時ONTAP 、嘗試將連接埠放在正確的廣播網域中。但是、如果無法判斷連接埠的連線能力、而且不屬於任何現有的廣播網域、ONTAP 則無法使用這些連接埠來建立新的廣播網域。
+
+. 驗證連接埠可連線性：
++
+「網路連接埠連線能力顯示」
+
++
+當所有連接埠均已正確設定並新增至正確的廣播網域時、「network port re連通 性show」命令會針對所有連接的連接埠、將連線狀態報告為「ok」、對於沒有實體連線的連接埠、狀態應顯示為「不可到達性」。如果有任何連接埠報告這兩個以外的狀態、請執行連線能力修復、並依照中的指示、從廣播網域新增或移除連接埠 <<restore_node2_step4,步驟4.>>。
+
+. 確認所有連接埠均已置入廣播網域：
++
+「網路連接埠展示」
+
+. 確認廣播網域中的所有連接埠均已設定正確的最大傳輸單元（MTU）：
++
+「網路連接埠廣播網域節目」
+
+. 還原LIF主連接埠、指定需要還原的Vserver和LIF主連接埠（如果有）、請使用下列步驟：
++
+.. 列出任何已移出的生命：
++
+「顯示介面」
+
+.. 還原LIF主節點和主連接埠：
++
+「顯示介面還原主節點節點節點節點<node_name>-vserver <vserver_name>-lif-name <LIF_name>」
+
+
+
+. 驗證所有生命段是否都有主連接埠、且是否以管理方式啟動：
++
+「網路介面顯示欄位主連接埠、狀態管理」
+
+

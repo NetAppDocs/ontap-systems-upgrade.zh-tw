@@ -1,0 +1,5 @@
+= 
+:allow-uri-read: 
+
+
+在升級期間、Aggregate重新配置（ARL）可能會在不同的點失敗。

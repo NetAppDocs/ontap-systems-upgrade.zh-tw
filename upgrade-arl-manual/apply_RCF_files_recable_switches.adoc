@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/apply_RCF_files_recable_switches.html 
+keywords: rcf files, reference configuration, switches, nodes, recable, fc 
+summary: 在執行ONTAP 更新版本的控制器上手動升級ARL時、安裝RCF檔案以重新設定Cisco和Brocade交換器。 
+---
+= 套用RCF檔案並重新介面交換器
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您必須套用適當的參考組態檔（RCT）、才能重新設定交換器以容納新節點。套用RCFs之後、您就可以重新連接交換器。
+
+FC交換器連接埠使用量必須符合_架構附加MetroCluster 的《安裝與組態》內容中所述的使用量、才能使用RCW。前往 link:other_references.html["參考資料"] 連結至_Fabric附加MetroCluster 的《安裝與組態》內容。
+
+.步驟
+. 前往 https://mysupport.netapp.com/site/products/all/details/metrocluster-rcf/downloads-tab["RCF下載MetroCluster"^] 頁面、然後選取交換器組態的RCT。
++
+您必須使用符合交換器機型的RCT。
+
+. 選擇符合您的交換器機型的程序、並依照安裝說明來安裝FC交換器RCFs：
++
+** https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/task_install_the_brocade_fc_switch_rcf_file.html["安裝Brocade FC交換器RCF"^]
+** https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/task_download_and_install_the_cisco_fc_switch_rcf_files.html["安裝Cisco FC交換器RCF"^]
+
+
+. 確認交換器組態已儲存。
+. 使用您在中建立的佈線配置、將兩個FC對SAS橋接器連接至FC交換器 link:determine_new_cabling_layout.html["確定新的佈線配置"]。
+. 驗證連接埠是否在線上：
++
+** 對於Brocade交換器、請使用「shwitchshow」命令。
+** 對於Cisco交換器、請使用show「interface brief」命令。
+
+
+. 將FC-VI連接埠從控制器連接至交換器。
+. 從現有節點、確認FC-VI連接埠已上線：
++
+「顯示此介面卡的資訊」MetroCluster
+
++
+《不互連鏡像秀》MetroCluster
+
+

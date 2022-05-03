@@ -1,0 +1,72 @@
+---
+permalink: upgrade/upgrade-move-lifs-to-new-nodes.html 
+sidebar: sidebar 
+keywords: move, volume, original, node, migrate, non-san, lif, cluster-management, move non-san data lifs and cluster management lifs to the new nodeas 
+summary: 將磁碟區從原始節點移出之後、您需要將非SAN資料生命期和叢集管理生命期從原始節點移轉到新節點。 
+---
+= 將非SAN資料生命期和叢集管理生命期移至新節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從原始節點移除磁碟區之後、您必須將非SAN資料生命期和叢集管理生命期從原始節點移轉至新節點。
+
+您無法移轉LIF、以便使用VMware vStorage API進行陣列整合（VAAI）進行複本卸載作業。
+
+.步驟
+. 從裝載叢集LIF的節點、將非SAN資料LIF的主連接埠從原始節點變更為新節點：
++
+「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-node<new_nnode_name>-home-port｛<netport|ifgrp>｝」
+
+. 請採取下列其中一項行動：
++
+[cols="1,2"]
+|===
+| 如果您想要移轉... | 然後輸入... 
+
+
+ a| 
+特定LIF
+ a| 
+「網路介面移轉-vserver <vserver_name>-lif<lif_name>-source-Node <source_node_name>-dite-node<dest_nnode_name>-dite-port <dest_port_name>」
+
+
+
+ a| 
+所有非SAN資料生命體與叢集管理生命體
+ a| 
+「network interface migration-all -node<node_name>」（網路介面移轉-all節點<node_name>）
+
+|===
++
+下列命令會將SVM「vs0」上名為「dataif1」的LIF移轉到「node0b」上的連接埠「e0d」：
+
++
+[listing]
+----
+cluster::> network interface migrate -vserver vs0 -lif datalif1 -destination-node node0b -destination-port e0d
+----
++
+下列命令會從目前（本機）節點移轉所有資料和叢集管理lifs：
+
++
+[listing]
+----
+cluster::> network interface migrate-all -node local
+----
+. 檢查叢集管理LIF的主節點是否位於原始節點之一：「network interface show -lIF cluster_mgmt -Fields home-node'
+. 如果叢集管理LIF的主節點位於其中一個原始節點上、請完成下列步驟：
++
+.. 將叢集管理LIF的主節點切換至其中一個新節點：
++
+「網路介面修改-vserver <叢集名稱>-lIF叢集管理-home-Node <新節點名稱>-home-port｛<netport|ifgrp>｝」
+
+.. 將叢集管理LIF移轉至其中一個新節點：
++
+「網路介面移轉-vserver <vserver_name>-lIF叢集管理-dite-node-nodes <new_nnode_name>-dite-port {<netport|ifgrp>}」
+
+
+
+

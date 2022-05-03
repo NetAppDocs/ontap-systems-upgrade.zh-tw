@@ -1,0 +1,27 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html 
+keywords: restore key-manager, configuration, node1, nve, arl, volume, encryption 
+summary: 如有需要、AFF 可在將升級的節點1 AFF 升級到EsceA700期間、將金鑰管理程式組態還原至EsceA900。 
+---
+= 在升級的節點1上還原金鑰管理程式組態
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果您使用NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、加密組態必須同步至新節點。當節點1集合體從節點2到節點1完成ARL時、加密的磁碟區會離線。
+
+執行下列步驟、將加密組態同步至新節點：
+
+.步驟
+. 在叢集提示字元中使用下列命令、同步化Onboard Key Manager（OKM）的加密組態：
++
+「安全金鑰管理程式內建同步」
+
+. 為OKM輸入整個叢集的通關密碼。
+

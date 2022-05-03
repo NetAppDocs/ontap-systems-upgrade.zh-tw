@@ -1,0 +1,46 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-manual/verify_health_mcc_config.html 
+keywords: health, mcc, metrocluster, configuration, configure 
+summary: 在MetroCluster 執行ONTAP 更新版本的控制器上、在手動進行ARL升級時、請驗證「不穩定」組態的健全狀況、並正確操作。 
+---
+= 驗MetroCluster 證整個過程的效能狀況
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您應該檢查MetroCluster 該組態的健全狀況、以驗證運作是否正確。
+
+.步驟
+. 驗證MetroCluster 這些元件是否正常運作：
++
+《不一樣的跑程》MetroCluster
+
++
+[listing]
+----
+cluster_A::> metrocluster check run
+
+Last Checked On: 10/1/2017 16:03:37
+
+Component           Result
+------------------- ---------
+nodes               ok
+lifs                ok
+config-replication  ok
+aggregates          ok
+4 entries were displayed.
+
+Command completed. Use the "metrocluster check show -instance" command or sub-commands in "metrocluster check" directory for detailed results.
+To check if the nodes are ready to do a switchover or switchback operation, run "metrocluster switchover -simulate" or "metrocluster switchback -simulate", respectively.
+----
+. 確認沒有健全狀況警示：
++
+「系統健全狀況警示顯示」
+
+

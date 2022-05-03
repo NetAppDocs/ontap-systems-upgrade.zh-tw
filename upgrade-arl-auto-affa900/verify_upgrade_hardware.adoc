@@ -1,0 +1,17 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/verify_upgrade_hardware.html 
+keywords: preparing, nodes, upgrade 
+summary: 在開始升級之前、請確認AFF 您擁有正確的硬體、以便進行從故障到AFF 故障的修復升級。 
+---
+= 驗證升級硬體
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在開始升級之前、您必須確認您擁有正確的硬體、才能將AFF 某個故障系統升級至AFF 一個故障排除系統。對於要升級的每個HA配對、您必須有兩個系統控制器模組和兩個NVRAM模組。如果零件遺失、請聯絡技術支援部門或NetApp銷售聯絡人以尋求協助。

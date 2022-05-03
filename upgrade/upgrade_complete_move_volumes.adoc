@@ -1,0 +1,66 @@
+---
+permalink: upgrade/upgrade-complete-move-volumes.html 
+sidebar: sidebar 
+keywords: complete, procedure, upgrading, upgrade, move, moving, volume, configure, service, processor, sp, license, autosupport, storage, encryption, fc, nca, port, complete the upgrade 
+summary: 若要透過移動磁碟區來完成升級程序、您需要設定服務處理器（SP）、安裝新授權、以及設定AutoSupport 更新。您可能還需要設定儲存設備或Volume Encryption、並設定FC或NCA連接埠。 
+---
+= 完成升級
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要透過移動磁碟區完成升級程序、您必須設定服務處理器（SP）、安裝新授權、以及設定AutoSupport 更新。您可能還需要設定儲存設備或Volume Encryption、並設定FC或NCA連接埠。
+
+. 視需要在新節點上設定SP：
++
+「系統服務處理器網路修改」
+
+. 視需要在新節點上安裝新授權：
++
+《系統授權新增》
+
+. 在AutoSupport 新節點上設定功能：
++
+系統節點AutoSupport 的功能不受限制
+
+. 從每個新節點、傳送升級後AutoSupport 的資訊給技術支援：
++
+「系統節點AutoSupport 無法叫用節點node_name -type all -m則 訊息「node_name coted walled from plate_old to platform _new」（節點名稱已從platfore_old成功升級至platform _new）。
+
+. 使用中的適當程序還原儲存設備或Volume Encryption功能https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["使用CLI管理加密"^] 內容：
++
+視您使用的是內建或外部金鑰管理而定、請使用下列其中一個程序：
+
++
+** 「還原內建金鑰管理加密金鑰」
+** 「還原外部金鑰管理加密金鑰」
+
+
+. 如果新節點具有FC連接埠（內建或FC介面卡）、內建CNA連接埠或CNA卡、請在儲存系統提示字元中輸入下列命令：
++
+「系統節點硬體統一連線修改節點節點名稱介面卡名稱模式｛fc/cna｝-type｛target | initiator｝」
+
++
+link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["使用CLI進行SAN管理"^]
+
++
+您只能在CNA介面卡離線時修改CNA組態。
+
+. 如有必要、請在新節點上設定無交換器叢集。
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140536["使用Cisco叢集交換器移轉至雙節點交換叢集"^]
+
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["使用NetApp CN1610叢集交換器移轉至雙節點交換叢集"^]
+
+. 如有需要、請透過NetApp支援網站取消委任原始系統、告知NetApp系統已不再運作、且可從支援資料庫中移除：
++
+.. 登入 https://mysupport.netapp.com/site/global/dashboard["NetApp支援"^] 網站。
+.. 單擊鏈接* My Installed System*。
+.. 在「*安裝的系統*」頁面上、以表單輸入舊系統的序號、然後按一下「*執行！*」
+.. 在「取消委任表單」頁面上填寫表單、然後按一下「*提交*」。
+
+
+

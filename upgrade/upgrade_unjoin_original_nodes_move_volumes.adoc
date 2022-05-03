@@ -1,0 +1,82 @@
+---
+permalink: upgrade/upgrade-unjoin-original-nodes-move-volumes.html 
+sidebar: sidebar 
+keywords: volume, move, node, unjoin, original, cluster, configuration, disk, initialize, unjoin the original nodes from the cluster 
+summary: 將磁碟區移至新節點之後、您就會從叢集中取消加入原始節點。當您取消加入節點時、節點的組態會被清除、且所有磁碟都會初始化。 
+---
+= 從叢集取消加入原始節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將磁碟區移至新節點之後、您就會從叢集中取消加入原始節點。當您取消加入節點時、節點的組態會被清除、而且所有磁碟都會初始化。
+
+.步驟
+. 停用原始節點上的高可用度組態：「torage容錯移轉修改-node<orite_node_name>-enabled假」
+. 存取進階權限層級：
++
+"進階權限"
+
+. 識別具有epsilon的節點：
++
+「叢集展示」
+
++
+在下列範例中、「node0」目前保留epsilon：
+
++
+[listing]
+----
+cluster::*>
+Node                 Health  Eligibility  Epsilon
+-------------------- ------- ------------ ------------
+node0                true    true         true
+node1                true    true         false
+node2                true    true         false
+node3                true    true         false
+----
+. 如果其中一個原始節點保留epsilon、請將epsilon移至不同的節點：
++
+.. 從原始節點移除epsilon：+「cluster modify -Node <ORIGIN_node_name>-epsilon假」
+.. 將epsilon指派給不同的節點：+「cluster modify -node<new_node_name>-epsilon true」
+
+
+. 從保留在叢集中的節點、從叢集取消連接每個原始節點（進階權限層級）：
++
+「cluster unjoin -node<ORIGIN_node_name>」
+
++
+系統會顯示類似以下內容的訊息：
+
++
+[listing]
+----
+Warning: This command will unjoin node node_name from the cluster. You
+         must unjoin the failover partner as well. After the node is
+         successfully unjoined, erase its configuration and initialize all
+         disks by using the "Clean configuration and initialize all disks (4)"
+         option from the boot menu.
+         Do you want to continue? {y|n}: y
+----
+. 輸入「y」繼續。
++
+未加入的節點會自動重新開機、並在開機功能表停止。
+
+. 從未加入節點的開機功能表中、選取選項*（4）Clean組態、然後初始化所有磁碟*、以清除節點的組態並初始化所有磁碟。
++
+系統會顯示類似以下內容的訊息：
+
++
+[listing]
+----
+Zero disks, reset config and install a new file system?:
+This will erase all the data on the disks, are you sure?:
+----
+. 在兩個提示字元中輸入「y」。
+. 如果叢集僅剩兩個節點、請為雙節點叢集設定高可用度：
++
+"cluster ha modify -configured true"
+
+

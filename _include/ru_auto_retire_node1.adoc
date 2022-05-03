@@ -1,0 +1,18 @@
+= 
+:allow-uri-read: 
+
+
+若要淘汰節點1、請繼續執行自動化作業、以停用與節點2的HA配對、並正確關閉節點1。之後您必須從機架或機箱中移除節點1。
+
+.步驟
+. 恢復作業：
++
+「系統控制器更換恢復」
+
+. 驗證node1是否已停止：
++
+「System Controller replace show-details」（系統控制器取代顯示詳細資料
+
+
+
+您可以在升級完成後取消委任節點1。請參閱 link:decommission_old_system.html["取消委任舊系統"]。
