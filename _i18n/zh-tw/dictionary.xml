@@ -4420,4 +4420,7 @@
   <block id="f86f16f11e093ddd1a9acafc8ee58e6f" category="sidebar">移動非SAN資料生命體和叢集管理生命體</block>
   <block id="cf3329822cb6acbd3f59abba0514d804" category="sidebar">刪除SAN LIF</block>
   <block id="d2e2f3320c4d610d0815b1405859a98b" category="sidebar">取消連接原始節點</block>
+  <block id="23ec9249d03285a513eaaf182a7bcd49" category="cell">AFF8080</block>
+  <block id="4c6ae5d985a0142843ba3f6f8875cf0b" category="cell">VA900^4^ AFF</block>
+  <block id="44b12a5fbf6c87a940ab615ec2102604" category="paragraph">從ONATP 9.10.1開始、ARL自動升級支援從執行ONTAP WS9.8或更新版本的AFF8080系統、升級AFF 至執行9.10.1或更新版本的S4A900系統。</block>
 </blocks>
