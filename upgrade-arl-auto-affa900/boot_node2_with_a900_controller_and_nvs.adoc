@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html
 keywords: boot, NVRAM, controller, module, node2, aff, a700, a900 
 summary: 使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2。 
 ---
-= 使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2
+= 使用AFF FASA900或FAS9500控制器和NVRAM模組來開機節點2
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2。
 
 
 [role="lead"]
-節點2搭配AFF EsceA900控制器模組和NVRAM模組、現在已準備好升級。透過交換控制器模組和NVRAM模組、將AFF 某個處理器從某個部分升級至AFF 某個部分、只需移動主控台和管理連線即可。本節提供使用AFF E4A900控制器模組和NVRAM模組來開機節點2所需的步驟。
+節點2搭配AFF EscoreA900或FAS9500控制器和NVRAM模組、現在已準備好升級。透過交換控制器和NVRAM模組、將「從A 700升級至e a 900」或「FAS9000升級至FAS9500」只需移動主控台和管理連線即可。AFF AFF本節提供使用AFF E4A900或FAS9500控制器和NVRAM模組來開機節點2所需的步驟。
 
 .步驟
 . [[boot_node2_step1]]如果此組態正在使用NetApp儲存加密（NSE）、則必須將「setenv bootarg.storageEncryption.support'命令設定為「true」、並將「kmip.init.maxwait`變數」設定為「Off」、以避免在節點2組態載入後發生開機迴圈：
@@ -28,7 +28,7 @@ summary: 使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2。
 +
 Boot_ONTAP功能表
 
-. 節點會在開機功能表停止。輸入「22/7」、然後選取隱藏選項「boot_after控制器置換」。若要將AFF EsceA700 node1磁碟重新指派至AFF EsceA900 node1、請在提示字元下輸入節點2的實際節點名稱。請參考下列範例：
+. 節點會在開機功能表停止。輸入「22/7」、然後選取隱藏選項「boot_after控制器置換」。若要重新指派AFF EscoreA700或FAS9000節點1磁碟到AFF EsceA900或FAS9500節點1、請在提示字元下輸入節點2的實際節點名稱。請參考下列範例：
 +
 [listing]
 ----

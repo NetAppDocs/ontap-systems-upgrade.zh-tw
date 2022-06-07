@@ -401,7 +401,7 @@ Login:
 
 NOTE: 在上述主控台輸出範例中、ONTAP 如果系統使用進階磁碟分割（ADP）磁碟、則會提示您輸入合作夥伴節點名稱。
 
-. [[step16]如果系統進入重新開機迴圈、並顯示「找不到磁碟」訊息、表示系統已將FC或UTA/UTA2連接埠重設回目標模式、因此無法看到任何磁碟。若要解決此問題、請繼續 <<auto_check3_step17,步驟17>> 至 <<auto_check3_step22,步驟22>>或移至區段 link:verify_node3_installation.html["驗證node3安裝"]。
+. 如果系統進入重新開機迴圈並顯示「找不到磁碟」訊息、表示系統已將FC或UTA/UTA2連接埠重設回目標模式、因此無法看到任何磁碟。若要解決此問題、請繼續 <<auto_check3_step17,步驟17>> 至 <<auto_check3_step22,步驟22>>或移至區段 link:verify_node3_installation.html["驗證node3安裝"]。
 . [[auto_checks3_step17]在自動開機期間按「Ctrl-C」、即可在「loader>」提示字元下停止節點。
 . [[step18]在載入程式提示下、進入維護模式：
 +

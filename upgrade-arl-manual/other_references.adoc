@@ -106,7 +106,7 @@ summary: 在執行ONTAP 版本號為9.7或更早版本的控制器上支援手�
 | link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["升級ONTAP"^] | 內含下載及升級ONTAP 功能的說明。 
 
 
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["使用「系統控制器更換」命令、將AFF 執行AFF 《E59.10.1》或更新版本的《EVA700》升級至《E4A900》ONTAP"^] | 說明如何AFF 使用「系統控制器更換」命令、在不中斷營運的情況下、將某個執行AFF 版本更新至執行版本更新的版本更新至執行ONTAP 版本更新的版本、所需的集合體重新配置程序。 
+| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["使用「系統控制器更換」命令、將AFF 執行AFF 《E59.10.1》或更新版本的《Ex-A700》升級至《Ex4A900》或《FAS9000》至《FAS9500》ONTAP"^] | 說明如何使用AFF 「系統控制器更換」命令、在不中斷營運的情況下、將EVA700升級至AFF 執行EWNSHA900系統或FAS9000至執行ONTAP EW9.10.1或更新版本的FAS9500系統、所需的集合體重新配置程序。 
 
 
 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html["使用「系統控制器更換」命令來升級執行ONTAP 效能不正常的控制器硬體"^] | 說明ONTAP 使用「系統控制器更換」命令、在不中斷營運的情況下升級執行E9.8的控制器所需的集合體重新配置程序。 

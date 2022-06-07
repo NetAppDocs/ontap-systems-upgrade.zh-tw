@@ -56,12 +56,12 @@ summary: 瞭解AFF 如何AFF 執行從NetApp A700升級到Ar900 ARL控制器的�
 
 
 
-| link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["第2階段：從節點1重新部署資源、並淘汰AFF E4A700節點1"]  a| 
+| link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["第2階段：從節點1重新部署資源、並淘汰AFF EsceA700或FAS9000節點1"]  a| 
 . 將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2
 . 重新部署故障或被否決的集合體
 . 淘汰節點1
-. 移除AFF 「功能性」控制器模組和NVRAM模組
-. 在AFF 節點1上安裝E4A900 NVRAM模組和控制器模組
+. 移除AFF 功能不整的A700或FAS9000控制器和NVRAM模組
+. 在AFF 節點1上安裝E4A900或FAS9500 NVRAM和控制器模組
 . netboot node1
 
 
@@ -73,8 +73,8 @@ summary: 瞭解AFF 如何AFF 執行從NetApp A700升級到Ar900 ARL控制器的�
 
 
 
-| link:boot_node1_with_a900_controller_and_nvs.html["第3階段：使用AFF E4A900控制器模組NVRAM模組啟動節點1"]  a| 
-. 使用AFF EsceeA900控制器模組和NVRAM模組來開機節點1
+| link:boot_node1_with_a900_controller_and_nvs.html["第3階段：使用AFF 支援E4A900或FAS9500控制器和NVRAM模組的開機節點1"]  a| 
+. 使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點1
 . 驗證是否已成功安裝node1
 . 還原node1網路組態
 . 在升級的節點1上還原金鑰管理程式組態
@@ -83,7 +83,7 @@ summary: 瞭解AFF 如何AFF 執行從NetApp A700升級到Ar900 ARL控制器的�
 
 第3階段結束時的Aggregate所有權：
 
-* 升級AFF 版的E4A900 node1是node1 Aggregate的主擁有者和目前擁有者
+* 升級AFF 版的E4A900或FAS9500節點1是node1 Aggregate的主擁有者和目前擁有者
 * node2是node2 Aggregate的主擁有者和目前擁有者
 
 
@@ -103,8 +103,8 @@ summary: 瞭解AFF 如何AFF 執行從NetApp A700升級到Ar900 ARL控制器的�
 
 
 
-| link:install_a900_nvs_and_controller_on_node2.html["第5階段：在AFF 節點2上安裝EsceA900 NVRAM模組和控制器模組"]  a| 
-. 在AFF 節點2上安裝E4A900 NVRAM模組和控制器模組
+| link:install_a900_nvs_and_controller_on_node2.html["第5階段：在AFF 節點2上安裝EFASA900或FAS9500 NVRAM和控制器模組"]  a| 
+. 在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組
 . netboot node2
 
 
@@ -116,8 +116,8 @@ summary: 瞭解AFF 如何AFF 執行從NetApp A700升級到Ar900 ARL控制器的�
 
 
 
-| link:boot_node2_with_a900_controller_and_nvs.html["第6階段：使用AFF E4A900控制器模組和NVRAM模組來開機節點2"]  a| 
-. 使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2
+| link:boot_node2_with_a900_controller_and_nvs.html["第6階段：使用AFF E4A900或FAS9500控制器和NVRAM模組來開機節點2"]  a| 
+. 使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點2
 . 驗證是否已正確安裝節點2
 . 還原node2網路組態
 . 將非根Aggregate和NAS資料lifs移回節點2

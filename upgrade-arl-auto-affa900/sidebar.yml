@@ -1,6 +1,6 @@
 ---
 section: upgrade-arl-auto-affa900
-title: 使用「系統控制器更換」命令、將AFF 執行AFF 《E59.10.1》或更新版本的《EVA700》升級至《E4A900》ONTAP
+title: 使用「系統控制器更換」命令、將AFF E4A700升級至AFF E4A900或FAS9000升級至FAS9500
 entries:
 - title: 總覽
   url: "/upgrade-arl-auto-affa900/index.html"
@@ -10,7 +10,7 @@ entries:
   url: "/upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html"
 - title: 必要的工具與文件
   url: "/upgrade-arl-auto-affa900/required_tools_and_documentation.html"
-- title: 使用AFF ARL從功能不只A700升級到AFF 功能不只A900的準則
+- title: 升級控制器的準則
   url: "/upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html"
 - title: ARL升級總覽
   url: "/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html"
@@ -22,7 +22,7 @@ entries:
     url: "/upgrade-arl-auto-affa900/prepare_nodes_for_upgrade.html"
   - title: 取得外部金鑰管理伺服器的IP位址以進行儲存加密
     url: "/upgrade-arl-auto-affa900/get_ip_address_of_external_kms_for_storage_encryption.html"
-- title: 第2階段：重新部署資源並淘汰AFF EsceA700 node1
+- title: 第2階段：重新部署資源、並淘汰AFF EsceeA700或FAS9000節點1
   entries:
   - title: 將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html"
@@ -32,9 +32,9 @@ entries:
     url: "/upgrade-arl-auto-affa900/retire_node1.html"
   - title: netboot node1
     url: "/upgrade-arl-auto-affa900/netboot_node1.html"
-- title: 階段3.使用AFF EsceeA900控制器模組和NVRAM模組來開機節點1
+- title: 階段3.使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點1
   entries:
-  - title: 使用AFF EsceeA900控制器模組和NVRAM模組來開機節點1
+  - title: 使用AFF EsceA900控制器和NVRAM模組來開機節點1
     url: "/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html"
   - title: 驗證node1安裝
     url: "/upgrade-arl-auto-affa900/verify_node1_installation.html"
@@ -48,15 +48,15 @@ entries:
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html"
   - title: 淘汰節點2
     url: "/upgrade-arl-auto-affa900/retire_node2.html"
-- title: 階段5.在AFF 節點2上安裝E4A900 NVRAM模組和控制器模組
+- title: 階段5.在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組
   entries:
-  - title: 在AFF 節點2上安裝E4A900 NVRAM模組和控制器模組
+  - title: 在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組
     url: "/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html"
   - title: netboot node2
     url: "/upgrade-arl-auto-affa900/netboot_node2.html"
-- title: 階段6.使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2
+- title: 階段6.使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點2
   entries:
-  - title: 使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2
+  - title: 使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點2
     url: "/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html"
   - title: 驗證node2安裝
     url: "/upgrade-arl-auto-affa900/verify_node2_installation.html"

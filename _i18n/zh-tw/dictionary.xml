@@ -662,7 +662,6 @@
   <block id="56b97cceb683f15e6179871d3991edcc" category="list-text">[[auto_checks3_step13]結束維護模式：</block>
   <block id="0e0a51d5d131ec116dbea50118d432b6" category="list-text">[[step14]執行「boot_ONTAP功能表」、將節點開機到開機功能表。如果您要升級至A800、請前往 <block ref="8de8415e5ddf050c51dc9df1ad54385b" category="inline-xref-macro-rx"></block>。</block>
   <block id="8818e56033c79a7d315b502b9d66c4b0" category="list-text">[[Auto9597_check_node3_step15]在節點3上、前往開機功能表並使用2/7選取隱藏選項「boot_after控制器置換」。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。</block>
-  <block id="98df3e165a2b52781e38f636917b8597" category="list-text">[[step16]如果系統進入重新開機迴圈、並顯示「找不到磁碟」訊息、這是因為系統已將連接埠重設回目標模式、因此無法看到任何磁碟。繼續 <block ref="cc511b4dbeed99af4a19f83ac3e97f04" category="inline-xref-macro-rx"></block> 至 <block ref="8dac798a0974640f6cae187a1dbe2d57" category="inline-xref-macro-rx"></block> 以解決此問題。</block>
   <block id="014925696b96cf52282301c416016c05" category="list-text">[[auto_checks3_step17]在自動開機期間按「Ctrl-C」、即可在「loader&gt;」提示字元下停止節點。</block>
   <block id="46f0d1accd1916f786a903c85ad13b0f" category="list-text">[[step18]在載入程式提示下、進入維護模式：</block>
   <block id="8e26679b9fca64c8419387ed5ddbd066" category="list-text">[[step19]在維護模式中、顯示所有先前設定的啟動器連接埠、這些連接埠現在處於目標模式：</block>
@@ -765,8 +764,6 @@
   <block id="52fe96f88349d1bc6c73acbb2110bf86" category="cell"><block ref="52fe96f88349d1bc6c73acbb2110bf86" category="inline-link-macro-rx"></block></block>
   <block id="25c1844876df2afa3616f32befb014b3" category="cell">內含下載及升級ONTAP 功能的說明。</block>
   <block id="29f0de2b0e55e07da57cbc094ee90f18" category="inline-link-macro">使用「系統控制器更換」命令、將AFF 執行AFF 《E59.10.1》或更新版本的《EVA700》升級至《E4A900》ONTAP</block>
-  <block id="0a34d6af6eb5dc44a124da38508c4782" category="cell"><block ref="0a34d6af6eb5dc44a124da38508c4782" category="inline-link-macro-rx"></block></block>
-  <block id="878733e1c0833b1e42dc0c78c85de530" category="cell">說明如何AFF 使用「系統控制器更換」命令、在不中斷營運的情況下、將某個執行AFF 版本更新至執行版本更新的版本更新至執行ONTAP 版本更新的版本、所需的集合體重新配置程序。</block>
   <block id="0e490704226a6f678e043e59eee46210" category="inline-link-macro">使用「系統控制器更換」命令來升級執行ONTAP 效能不正常的控制器硬體</block>
   <block id="c6f3014369a1f06fe73f7a2cba39dfb1" category="cell"><block ref="c6f3014369a1f06fe73f7a2cba39dfb1" category="inline-link-macro-rx"></block></block>
   <block id="62a92c3d7ea27667983fb6842f0835ec" category="cell">說明ONTAP 使用「系統控制器更換」命令、在不中斷營運的情況下升級執行E9.8的控制器所需的集合體重新配置程序。</block>
@@ -1421,15 +1418,10 @@
   <block id="4c9c9eda5f5430e91b4aed6f35a5e99d" category="paragraph">如需升級MetroCluster 靜態IP組態、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 連結至_E不明MetroCluster Upgrade and Expansion內容。</block>
   <block id="875c64b3c2a29ed26843ae23dac3007b" category="paragraph">[sys_commands_98_supported_Systems].下表顯示控制器升級所支援的機型對照表。</block>
   <block id="c1a19380507e7e6ae4f9e86f2f492cf1" category="cell">Exe300、ExeA400、Exe0A700、AFF AFF AFF AFF Ex4A800^1^</block>
-  <block id="7f627dd33a5bf840f270330c41badb8d" category="cell">FAS8700、FAS9000、FAS8300、3^</block>
-  <block id="09c446ae2255191f73eeab607258baaa" category="cell">例如：ExeA700、ExeA800^1^、AFF AFF AFF ExeA400^3^</block>
   <block id="73ab298c8e00d66d28156892903a39ce" category="cell">解答320 AFF</block>
-  <block id="ce519c4631a5597216245426b360453b" category="cell">VA400^2^ AFF</block>
   <block id="f02eccb3076760465f52e896d2649983" category="inline-link-macro">檢查並設定節點3步驟23上的UTA/UTA2連接埠</block>
   <block id="51de0f52809b4037608dba4b84c411b1" category="inline-link-macro">檢查並設定節點4步驟23上的UTA/UTA2連接埠</block>
   <block id="9d84cc48ac59ed03e236e199b8e72aa8" category="paragraph">^1^如需AFF 瞭解更多有關支援Arfa800系統的步驟、請參閱第節中提及A800的步驟 <block ref="46e0d635bf9a753e435b3e56ea555b72" category="inline-link-macro-rx"></block>或 <block ref="916a396aec2ea8c5191dac1b7e554adf" category="inline-link-macro-rx"></block>。</block>
-  <block id="55b7ad7b49f6385bd9a88c160fc047a1" category="paragraph">從支援從AFF 32 A320自動升級至AFF 32 A400系統的^2^ARL、範圍從ONTAP 4.9到9.1。</block>
-  <block id="d94152152b104cd141cb46a6decafc34" category="paragraph">^3^如果您要在AFF 雙節點無交換式叢集組態中、從Sfzha300升級AFF 至Sf2 A400或FAS8200、則必須選擇暫用叢集連接埠以進行控制器升級。以乙太網路套裝組合形式提供兩種組態：夾層卡連接埠為乙太網路類型、夾層連接埠為FC類型、而以FC套裝組合形式提供夾層連接埠為FC類型。AFF</block>
   <block id="1d6e912902b1e30f8b9da52e03335a4b" category="summary">使用ONTAP 「系統控制器更換」命令來準備節點、並在升級執行《指令集》9.8或更新版本的控制器時執行一系列預先檢查。</block>
   <block id="4ba8d4701b7c72b570a63797aff938e0" category="list-text">從ONTAP S廳9.10.1開始、自動交涉切換（NSO）型升級程序是四節點MetroCluster 的SFC組態的預設值。如果您要升級四節點MetroCluster 的現象FC組態、當您發出「系統控制器更換啟動」命令時、必須將「-NSO」參數設定為「假」、以防止以NSO為基礎的程序啟動：</block>
   <block id="b3afc5631bd5d3ad4780733ad83b3ed3" category="paragraph">「系統控制器取代start節點&lt;node_names&gt;-NSO假」</block>
@@ -1495,7 +1487,6 @@
   <block id="70d6bd3154ab38128a772f6268fea926" category="list-text">如果節點3沒有UTA/UTA2卡或UTA/UTA2內建連接埠、請跳過一節 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block> 並返回_安裝和開機節點3_一節、然後繼續執行 <block ref="279060155dcadaa13689560d46e381cb" category="inline-link-macro-rx"></block>。</block>
   <block id="66610f6c17cdd2f74ae18935d0791243" category="cell">前往 <block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block>。</block>
   <block id="f0d8df7e74601e48e696d4b303665234" category="cell">返回_安裝與開機節點3_區段、然後繼續執行 <block ref="279060155dcadaa13689560d46e381cb" category="inline-link-macro-rx"></block>。</block>
-  <block id="78c17ca9081fa3b223c0d18eaf556df4" category="list-text">[[step16]如果系統進入重新開機迴圈、並顯示「找不到磁碟」訊息、表示系統已將FC或UTA/UTA2連接埠重設回目標模式、因此無法看到任何磁碟。若要解決此問題、請繼續 <block ref="cc511b4dbeed99af4a19f83ac3e97f04" category="inline-xref-macro-rx"></block> 至 <block ref="8dac798a0974640f6cae187a1dbe2d57" category="inline-xref-macro-rx"></block>或移至區段 <block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block>。</block>
   <block id="8749fd273c1ff3de22cc73e8f3a4e1fd" category="summary">使用ONTAP 「系統控制器更換」命令、參考支援執行版本號為「更新版本」的控制器升級所需的內容和網站。</block>
   <block id="7fb09ce149939f5078b07b7d45f68e40" category="summary">當使用ONTAP 「系統控制器更換」命令來升級執行版本不支援的控制器時、系統可能會在不同的階段當機（重新開機、發生緊急情況、或經歷電源循環）。</block>
   <block id="78d45d4102c6b7fa82c29a7ee6d3feac" category="paragraph">如果節點3在此階段當機、則不會發生接管、因為HA配對已停用。</block>
@@ -2461,7 +2452,6 @@
   <block id="d3f49e44800c8ff8556d915b88782e44" category="list-title">選項：</block>
   <block id="218c1c22487e3cea0e94aedcabb843e2" category="paragraph">您必須擁有儲存在節點1中的FC連接埠設定值 <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block>。</block>
   <block id="53d8e9a89e7df0f2e9d3d1647aa47fa3" category="admonition">*重要*：如果您的系統有儲存磁碟、請在叢集提示字元下輸入本節中的命令。如果您使用V系列系統或使用FlexArray 支援功能的虛擬化軟體、並已連線至儲存陣列、請在維護模式下於本節輸入命令。</block>
-  <block id="9dc09e5212ac728648450db66b8f3668" category="list-text">[[step1]]請採取下列其中一項行動：</block>
   <block id="fb0e67401f3473ee656312bb98935878" category="cell">前往 <block ref="4e8d6367d01e7a88b5b6b591ecf5d6db" category="inline-xref-macro-rx"></block></block>
   <block id="32781b45218385923d91bc21b08c6b68" category="cell">前往 <block ref="79ba4e2202506d0f17b14ab90d196879" category="inline-xref-macro-rx"></block></block>
   <block id="838b228ad3b40461ad1dc100f5671807" category="list-text">[[man_config_3_step2]Boot node3和存取維護模式：</block>
@@ -2495,7 +2485,6 @@
   <block id="49844625e7eb80b095f9d3c525f8cba6" category="list-text">如果節點3沒有卡或內建連接埠、請跳過 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>，然後返回_Install and boot node3_並繼續執行 <block ref="a4103675c41ea57f7287e0804dd0c9dd" category="inline-link-macro-rx"></block>。</block>
   <block id="de418d0eb742cb1027dedde84846a1a0" category="paragraph">UTA/UTA2連接埠可設定為原生FC模式或UTA/UTA2模式。FC模式支援FC啟動器和FC目標；UTA/UTA2模式可讓同時NIC和FCoE流量共用相同的10GbE SFP+介面、並支援FC目標。</block>
   <block id="a286b63bee5a5b535ee4aacbaf102732" category="admonition">*注意*：如果您的系統有儲存磁碟、除非系統指示進入維護模式、否則您必須在叢集提示字元下輸入本節中的命令。如果您有一個vseries系統或有FlexArray 一個使用支援功能的虛擬化軟體、並且已連線至儲存陣列、則必須在維護模式提示字元下輸入本節中的命令。您必須處於維護模式、才能設定UTA/UTA2連接埠。</block>
-  <block id="d430acf9b1fab77a9b9905bbf1423c57" category="list-text">[[step1]]檢查連接埠目前的設定方式、在節點3上輸入下列命令：</block>
   <block id="1f81aa18292065e5242ce30775d96e2c" category="paragraph">系統會顯示類似下列範例的輸出：</block>
   <block id="581e0d52eede5c7a9002197a5955188f" category="list-text">[[step3]檢查「系統節點硬體統一連線show」或「ucadmin show」命令的輸出、以判斷UTA/UTA2連接埠是否具有您想要的特性。</block>
   <block id="39e1a687c8a1a3bb49c730ad7b98a3d5" category="cell">前往 <block ref="2fc3b3e515184c116c95342a9ca8cb9f" category="inline-xref-macro-rx"></block>。</block>
@@ -3128,21 +3117,16 @@
   <block id="a1a54b5bb2c9a480b1b25789e5a2ba99" category="paragraph">「網路介面show -vserver &lt;vserver_name&gt;-STATUS-oper down」</block>
   <block id="e60389070edd39af4fe7aea580d3af71" category="paragraph">「網路介面修改-vserver &lt;vserver_name&gt;-lif&lt;lif_name&gt;-home-port &lt;home_port&gt;`</block>
   <block id="2fd90d60a25deece3a4d5127856e8967" category="summary">決定是否使用ARL程序將AFF 某個部分升級至AFF 某個部分。</block>
-  <block id="907aff731fdff77dd937f103d185946f" category="paragraph">本內容說明如何升級AFF 搭配全新AFF 的更新版的更新版、以搭配使用的更新版的功能、同時保留所有現有的資料和磁碟。這是一個複雜的程序、只能由經驗豐富的系統管理員使用。</block>
   <block id="c08f0b6d71108219929095cbd90d111d" category="paragraph">請在下列情況下使用此程序：</block>
-  <block id="57f36738e6329d2ffcb04a05c9df66ce" category="list-text">您已向NetApp銷售代表確認、您已收到AFF 一個不完整的控制器模組和NVRAM模組、以及升級所需的零件。</block>
-  <block id="cb5c20f460544e3511cfa78abbc0bee7" category="list-text">您執行ONTAP 的是版本不含更新版本的版本。</block>
   <block id="eb51502469d00e14522e17bfff4124ad" category="list-text">您不想將新的控制器新增為叢集的新HA配對、也不想使用Volume Moves來移轉資料。</block>
   <block id="a3bad37bbfc8cbb39ebdfc42ccfa6bec" category="list-text">您在管理ONTAP 方面經驗豐富、而且對於在診斷權限模式下工作的風險感到自在。</block>
   <block id="9cc6fc2f026195efe30da793b04e5bd0" category="paragraph">請*不要*在下列情況下使用此程序：</block>
-  <block id="c97b09e63b29c1434e101e879c019813" category="list-text">您正在FlexArray 使用的是AFF 功能不實的虛擬化軟體。</block>
   <block id="d94e9d7914bbd98510d8cb9e0a6d08b1" category="list-text">您使用的是共享交換器、用於叢集互連和乙太網路附加儲存設備。</block>
   <block id="c79acf75c7bb6af7f11f0d260b4152eb" category="paragraph">如需升級Fabric MetroCluster 的靜態MetroCluster 或靜態IP組態、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 連結至_E不明MetroCluster Upgrade and Expansion內容。</block>
   <block id="0a3b7a3d7928584d593ce11f1af70bda" category="summary">驗證節點1上的節點2的NAS資料LIF在AFF 進行從節點1到節點2 AFF 的升級時、是否已從節點1重新定位至節點2。</block>
   <block id="cf76afd058516dd90fe89aedbec6904e" category="doc">將非根Aggregate和NAS資料lifs移回節點2</block>
   <block id="701fa495284f4a753f53b83d9db59d99" category="paragraph">在驗證節點2上的網路組態之後、在將Aggregate從節點1重新定位至節點2之前、您必須驗證屬於節點2的NAS資料lifs目前位於節點1上、是否已從節點1重新定位至節點2。您還必須驗證節點2上是否存在SAN lifs。</block>
   <block id="ee2ce060961db1c7ec1f363acef87d91" category="paragraph">在升級過程中、遠端LIF會處理SAN LUN的流量。在升級期間、移轉SAN LIF對於叢集或服務健全狀況並不必要。除非需要將SAN LIF對應至新連接埠、否則不會移動SAN LIF。將node2聯機後，必須驗證該生命段是否正常且位於適當的端口上。</block>
-  <block id="d6ff025120180dbbbc759b37191b4628" category="paragraph">執行這些檢查之後、系統會將非根Aggregate和NAS資料lifs重新定位回節點2、節點2現在正在AFF 運行於E4A900控制器上。</block>
   <block id="7d7b11f14dacd1dc55ecbacf79121ab1" category="paragraph">資源重新配置完成後、控制器更換作業會暫停。</block>
   <block id="371a52c6bb799f6fb34f1a8ac8617b35" category="paragraph">如果控制器更換程序暫停、請檢查並修正錯誤（如果有）、然後發出「推入」以繼續操作。</block>
   <block id="b990f6960d7072e815b8e4d805f92035" category="paragraph">如果有任何生命段被移除、請將主節點還原回節點2：</block>
@@ -3177,23 +3161,12 @@
   <block id="d32c8c9a666cf2a9a55ea61717d44bf9" category="admonition">如果正在使用使用Onboard Key Manager的NetApp Volume Encryption、請準備好金鑰管理程式通關密碼、以便在稍後的程序中完成金鑰管理程式重新同步。</block>
   <block id="057d1f92125d6fed46d8a437e75f2b3d" category="paragraph">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要連結至_NetApp Support Site_、您可以在這裡取得9.10.1或更新版本的新2個字元授權金鑰。金鑰可在「軟體授權」下的「我的支援」區段中找到。如果網站沒有您需要的授權金鑰、請聯絡您的NetApp銷售代表。</block>
   <block id="5d0e6c628fa55718654de0f71041a32a" category="summary">您可以AFF 交換控制器模組和NVS、將顯示器硬體從處理器A700升級至AFF 顯示器A900。</block>
-  <block id="04f31d48e56d090943746f00faca6286" category="paragraph">本程序說明如何使用Aggregate重新配置（ARL）來升級控制器硬體、以進行下列系統組態：</block>
-  <block id="6b2b3132949d5e5963ea62440851e1da" category="cell">9.10或更新版本</block>
   <block id="1c962f08f92ca556b5f958f512421f7b" category="cell">從A700移轉至32 A900 AFF AFF</block>
-  <block id="0a991b6a26e16629e37325e8ec12b617" category="cell">保留相同的機箱、即可將AFF S4A700轉換成AFF S4A900</block>
-  <block id="d23f5051b54ef3a223ccfdaa74506f86" category="paragraph">交換控制器模組和NVRAM模組、即可在不中斷營運的情況下、將高可用度（HA）節點配對上的控制器硬體升級AFF 至AFF 支援功能完善的32倍系統。您可以在AFF 不屬於根的情況下、在不屬於根的情況下移轉到各個節點。安裝完成後、您可以將非根集合體從AFF 顆叢集A700節點移轉至AFF 該節點。您可以在升級程序期間存取所升級節點上的資料。</block>
-  <block id="b4487973401042be49d7ce291f0a7816" category="paragraph">在此控制器升級程序中、您可以將AFF 一個非洲版的處理器A700升級為AFF 一個非洲版的處理器A900系統。</block>
-  <block id="b506bf2d759395dc5e9a526b8a8a5085" category="admonition">您只能將AFF 位於E4A700系統上每個節點上的兩個現場可更換單元（FRU）換成新的FRU。您不需要移動、拔下或重新連接I/O卡、資料纜線、磁碟櫃和磁碟。</block>
   <block id="60b36970c08352c3c476769f29561cf4" category="paragraph">此程序使用稱為Aggregate資源移轉（ARL）的方法、可利用HA組態、讓您將非根集合體的擁有權從一個節點移至另一個節點（如果它們共用同一個叢集內的儲存設備）。</block>
   <block id="1d257551bf86ffe550883c2efe77b8d8" category="paragraph">在過程中、您會使用更換的控制器硬體來升級原始的控制器硬體、以重新定位非根集合體的擁有權。您可以在節點之間多次移轉集合體、以確保在整個升級程序中、至少有一個節點正在處理來自集合體的資料。您也可以在繼續進行時、在叢集中的節點之間移轉資料生命量。</block>
   <block id="61d5cfba7704fb82d2cf6a1ebdf016a2" category="admonition">術語* node1*和* node2*僅用作本文檔中的節點名稱參考。執行此程序時、您必須替換節點的真實名稱。</block>
   <block id="addb9e70976c2f94b8ccfc3736a31888" category="list-title">重要資訊</block>
-  <block id="09ae20b09a8c19ed0bbb39e5bb05e664" category="inline-link-macro">使用AFF ARL從功能不只A700升級到AFF 功能不只A900的準則</block>
-  <block id="32898fc8f4a5029e42e4dec90f47aacf" category="list-text">此程序相當複雜、假設您具備進階ONTAP 的功能不完整的管理技能。您也應該閱讀並瞭解 <block ref="b49755eb65062586cd5b4474d108ae63" category="inline-link-macro-rx"></block> 和 <block ref="57e14e08755134bb6fef9ad899bb58ee" category="inline-link-macro-rx"></block> 開始升級之前的章節。</block>
   <block id="51108f40a613018fdc6b3ad89f42122e" category="list-text">此程序假設更換的控制器硬體是新的、並未在其他系統中使用。此程序不包含使用wpeconfig命令準備已用控制器所需的步驟。如果更換的控制器硬體先前是用作另一個ONTAP 支撐叢集的一部分、或是用作獨立的單一節點系統、您必須聯絡技術支援部門。</block>
-  <block id="032e383323d25667eb1cf2fd98d90920" category="list-text">此程序僅適用於AFF SolidA700系統。如需所有其他需要升級AFF 至32位元A900系統的控制器機型、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要連結至_、請使用「系統控制器更換」命令來升級執行ONTAP VMware 9.8或更新版本的控制器硬體、以及使用集合體重新配置來手動升級執行ONTAP VMware 9.8或更新版本的控制器硬體內容（_Using Aggregate Relocation to Manually Upgrade Controller Hardware）。</block>
-  <block id="feddf6629be3f6a618ac78bf3ed4030d" category="list-text">此產品僅支援高線電源（200V至240V）AFF 。如果AFF 您的功能為使用低線電源（100V至120V）執行的V4A700系統、則在AFF 使用此程序之前、您必須先將該功能轉換成使用該功能的電源。</block>
-  <block id="3ad849030cc8cbffe73ee39692333dfd" category="list-text">如果AFF 您在從無法運作的情況下從某個處理器A700系統升級、您可以移動儲存設備來升級控制器硬體、或聯絡技術支援部門。請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要透過移動磁碟區或儲存設備連結至_Upgrade。</block>
   <block id="62685a7763bc1abddb93a736f4149d3a" category="summary">確認HA配對已啟用、確認節點1和節點2儲存設備存取和LIF、並在將AFF E4A700升級AFF 為EW1A900之後確認Aggregate所有權。</block>
   <block id="30dfb9ed789b89ce66132f0084fdfe74" category="paragraph">若要確認設定正確、您必須確認HA配對已啟用。您也必須驗證node1和node2是否能夠存取彼此的儲存設備、以及它們是否擁有屬於叢集上其他節點的資料LIF。此外、您必須確認所有資料集合體都位於正確的主節點上、而且兩個節點的磁碟區都處於線上狀態。如果其中一個新節點有統一化的目標介面卡、您必須還原任何連接埠組態、而且可能需要變更介面卡的使用。</block>
   <block id="c33d1193fa61b53992488cb1598a346b" category="list-text">對節點2進行檢查後、會啟用節點2叢集的儲存容錯移轉和叢集HA配對。完成作業後、兩個節點都會顯示為已完成、系統會執行一些清除作業。</block>
@@ -3206,7 +3179,6 @@
   <block id="ee003f27b169d76d97322f42ff3b1684" category="paragraph">「Volume show -node1&gt;-state offline」（Volume show -node1&gt;-state offline）</block>
   <block id="8f3c31fbc98a55b30d3c8c6b6ba60ad1" category="list-text">使用下列命令並檢查其輸出、確認已正確安裝授權：</block>
   <block id="6e7e19ae8357eafafb5df9d5e403d692" category="paragraph">您可以比較輸出與中擷取的輸出 <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block> 區段。</block>
-  <block id="2104ce46042122ef5e6074d53e8e5b96" category="list-text">如果在組態中使用NetApp儲存加密（NSE）、而您使用「kmip.init.maxwait&gt;`」變數「Off」（在_Boot node2中、搭配AFF 使用VA900控制器模組和NVRAM模組）、將「setenv bootarg.storageEncryption.supports」命令設為「true」、 <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>）、您必須重設變數：</block>
   <block id="83384f48b367d39b20d627f5230807a9" category="list-text">在兩個節點上使用下列命令來設定SP：</block>
   <block id="09e9f7abfe1cdfbd7b4465d4dbc6bd0c" category="paragraph">如果節點1和節點2上已啟用儲存加密、請完成一節 <block ref="18c90c300c0b71334b8b427eaf4f38a3" category="inline-link-macro-rx"></block>。否則、請完成本節 <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>。</block>
   <block id="1da419b6d2e60d5ecd7df833a2ba8f52" category="summary">驗證節點2上的節點1的NAS資料LIF在AFF 進行從節點2到節點1 AFF 的升級時、是否已從節點2重新定位至節點1。</block>
@@ -3221,7 +3193,6 @@
   <block id="8ab86d38fbb9b5285e479977ebd1e54a" category="summary">階段2、階段3或階段5移轉到AFF SageA700升級到AFF SageA900之後、LIF將無法上線。</block>
   <block id="aceac87ad181071fb431ae2fdb715377" category="summary">將node2的非根Aggregate升級至node1時、將AFF 其重新定位至AFF 該節點1。</block>
   <block id="487b7a723d50ceb8e8e166efb4cef927" category="doc">將非根Aggregate和NAS資料LIF從節點2重新定位至節點1</block>
-  <block id="45bd8fa49096f851be07068b30dcaed0" category="paragraph">您AFF 必須先將節點2所屬的非根Aggregate重新定位至節點1、才能將節點2更換為EsceA900控制器模組和NVRAM模組。</block>
   <block id="9d9f265fd42c463def1909297104525a" category="paragraph">完成上一階段的檢查後、節點2的資源版本會自動啟動。非根Aggregate和非SAN資料LIF會從節點2移轉至新節點1。</block>
   <block id="e254cf6efdd2e615e6727237969d6011" category="paragraph">在移轉集合體和lifs之後、此作業會暫停以供驗證之用。在此階段、您必須確認所有非根Aggregate和非SAN資料l生命 體都已移轉至新的節點1。</block>
   <block id="e7fbff0ca3f51e1ef167cd5ff9eba89b" category="list-text">驗證所有非根Aggregate均處於線上狀態、以及節點1上的狀態：</block>
@@ -3236,8 +3207,6 @@
   <block id="6e13fc9d1e75c160461788f1b750083d" category="list-text">使用下列命令檢查輸出、確認節點2上沒有剩餘的資料lifs：</block>
   <block id="5c29a1b28ae2f684e62d4c2276e7e8e6" category="summary">交換相應AFF 的E4A900 node2控制器模組和NVRAM模組之後、您可能需要將它們以網路開機。</block>
   <block id="f28e6dd67b477412b5b29af155fdd706" category="doc">netboot node2</block>
-  <block id="703f447483d766269b52a3d26e221a3d" category="paragraph">在交換相應AFF 的E4A900 node2控制器模組和NVRAM之後、您可能需要將模組以netboot方式開機。「netboot」一詞表示您是從ONTAP 儲存在遠端伺服器上的鏡像進行開機。準備網路開機時、您必須將ONTAP 一份《支援》9開機映像複本放到系統可以存取的網路伺服器上。</block>
-  <block id="22aba2c38dfd5be04ccecae539161f04" category="paragraph">除非安裝在機箱中並已開啟電源、否則無法檢查ONTAP 安裝在AFF 架構控制器模組之開機媒體上的版本。在進行升級的32位元支援系統上執行的支援版本必須與在更新的支援系統上執行的支援版本相同、而且主要和備份開機映像必須相符。ONTAP AFF ONTAP AFF您可以在開機功能表中執行netboot、然後執行wappeconfig命令來設定映像。如果控制器模組先前曾在另一個叢集中使用、則「wifeconfig」命令會清除開機媒體上的任何剩餘組態。</block>
   <block id="479797897f076c1b85379ce2582f407d" category="inline-link-macro">NetApp知識庫文章：如何使用boot_recovery loader_command來安裝ONTAP 還原、以進行系統的初始設定</block>
   <block id="439ee18cc3b8447dc7005ee865a16034" category="admonition">您也可以使用USB開機選項來執行netboot。請參閱 <block ref="bf492b442968a212511cdeeb769ceb71" category="inline-link-macro-rx"></block>。</block>
   <block id="dc4e68dae6f2c9aa089b7b7f44a400c0" category="list-text">請從ONTAP NetApp支援網站下載系統所需的系統檔案、以及正確版本的支援。請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 連結至_NetApp支援網站_。</block>
@@ -3249,7 +3218,6 @@
   <block id="1e23f3f1f1ff4c1174660749785a3e47" category="admonition">您的介面可能需要其他參數。在韌體提示字元中輸入「Help ifconfig」以取得詳細資料。</block>
   <block id="521d2e7a8ad46807c0ef8c12e39a788c" category="list-text">在節點2上執行netboot：</block>
   <block id="99002edb0db3876428b0f60105beedae" category="paragraph">“netboot \http://&lt;web_server_ip/path_to_web_accessible_directory&gt;/netboot/kernel`</block>
-  <block id="ef9602c57cf8182f8c7c4634f476ea25" category="list-text">等待AFF 節點2現在在Escea900控制器模組上執行、以開機並顯示開機功能表選項、如下列輸出所示：</block>
   <block id="b0cf2f9b05191bd2a4d5a0a854fe9fee" category="paragraph">請忽略下列訊息：「HA配對不支援不中斷升級此程序」。本附註適用於不中斷營運ONTAP 的更新版軟體、不適用於控制器升級。</block>
   <block id="5401a55d9c4318be587707f2931a86b0" category="paragraph">請務必使用netboot將新節點更新為所需映像。如果您使用另一種方法在新控制器上安裝映像、可能會安裝錯誤的映像。此問題適用於ONTAP 所有的版本。</block>
   <block id="a303e403af842ae1a3aee97050fd5dcf" category="list-text">如果系統提示您繼續此程序、請輸入「y」、然後在系統提示您輸入套件時、輸入URL：「http://&lt;web_server_ip/path_to_web-accessible_directory&gt;/&lt;ontap_version&gt;_image.tgz`」</block>
@@ -3275,19 +3243,14 @@
   <block id="edb3af1551b6e96be7f9b204f3cec480" category="summary">將故障或被否決的Aggregate在AFF 進行更新時重新部署至AFF 更新版的32位元組。</block>
   <block id="b8083dfb29da686812e3bafb3a73f823" category="summary">在將節點2升級至EsceA700時、請關閉節點2、並將其從機架或機箱中移除AFF 。AFF</block>
   <block id="7bd08b5c3a9e3849e82a1fef790d117b" category="summary">使用AFF EsceeA900控制器模組和NVRAM模組來開機節點1。</block>
-  <block id="a08cb1ebd9789c8231c6f7fe95ac600b" category="doc">使用AFF EsceeA900控制器模組和NVRAM模組來開機節點1</block>
-  <block id="7d30e2f4deef3993c9053b53b1e98242" category="paragraph">節點1搭配AFF EsceA900控制器模組和NVRAM模組、現在已準備好進行開機。透過交換控制器模組和NVRAM模組、將AFF 某個處理器從某個部分升級至AFF 某個部分、只需移動主控台和管理連線即可。本節提供使用AFF E4A900控制器模組和NVRAM模組來開機節點1所需的步驟。</block>
   <block id="a9e10fdb71bd2ac495122a9187fd9483" category="list-text">如果在此組態中使用NetApp儲存加密（NSE）、則必須將「setenv bootarg.storageEncryption.supports」命令設定為「true」、並將「kmip.init.maxwait`變數」設定為「Off」、以避免在載入node1組態後發生開機迴圈：</block>
   <block id="22d219ca4c61aa27b2616b43ecd9678a" category="list-text">將節點開機至「boot_menu」：</block>
-  <block id="e1d4223a486d75812a7653769a14285b" category="list-text">節點會在開機功能表停止。輸入「22/7」、然後選取隱藏選項「boot_after控制器置換」。若要將AFF EsceA700 node1磁碟重新指派至AFF EsceA900 node1、請在提示字元下輸入節點1的實際節點名稱。請參考下列範例：</block>
   <block id="9b043fdaedad96364338df4b458e563e" category="paragraph">在前述主控台輸出範例中、ONTAP 如果系統使用進階磁碟分割（ADP）磁碟、則會提示您輸入合作夥伴節點名稱。</block>
   <block id="939b677a0e4df037cd999a739cd94317" category="paragraph">上例所示的系統ID為範例ID。您要升級之節點的實際系統ID會有所不同。</block>
   <block id="5952acedcc143d30a19364d245887b58" category="paragraph">在提示輸入節點名稱與登入提示之間、節點會重新開機數次、以還原環境變數、更新系統卡上的韌體、以及進行其他ONTAP 的更新。</block>
   <block id="fa5b7598ff79398479188d836810f48d" category="summary">支援AFF 從功能性到AFF 功能性的更新的參考內容和網站。</block>
   <block id="d1f8c09926e8e53bc0799e4043d1af79" category="summary">使用AFF E4A900控制器模組和NVRAM模組來驗證node1安裝。</block>
   <block id="af9d3f15b5098b02572b4a5b4c346c3d" category="doc">驗證node1安裝</block>
-  <block id="fd09d973fc5068ff0886f9b666934f60" category="paragraph">您必須使用AFF EsceA900控制器模組和NVRAM模組來驗證node1安裝。由於實體連接埠沒有變更、因此您不需要將實體連接埠從AFF EsceA700 node1對應到AFF EsceA900 node1。</block>
-  <block id="050ee0f77aff38c6ec36f73da8a54e1c" category="paragraph">使用AFF E4A900控制器模組開機節點1之後、您必須確認其安裝正確。您必須等待節點1加入仲裁、然後繼續執行控制器更換作業。</block>
   <block id="c6fd244601cc323697fc7e6249268acd" category="paragraph">在此過程中、當節點1嘗試自動加入仲裁時、控制器升級作業應該會暫停。</block>
   <block id="ff5725f7647773e4bb6ba48f86580a14" category="list-text">驗證node1是否已加入仲裁：</block>
   <block id="73dac86302530c6371ee49f4ae0c3157" category="paragraph">「cluster show -node1 -Fields health」</block>
@@ -3304,7 +3267,6 @@
   <block id="97a140c436b20824a78c55187d8f3252" category="list-text">列出節點1上所有連接埠的網路連接埠可連線性：</block>
   <block id="cceb77422957d2a7588c1df43f5eacd8" category="paragraph">「網路連接埠可連線性show -node1」</block>
   <block id="d51b3938c62e269961f6447fa716fc1f" category="paragraph">在前面的範例中、節點1會在更換控制器之後開機。某些連接埠無法連線、因為沒有實體連線功能。您必須修復任何連線狀態為「OK」以外的連接埠。</block>
-  <block id="9eff901780752a19a1be28a5abb8114f" category="admonition">在將介面升級至Ard21控制器期間AFF 、網路連接埠及其連線功能不應改變。AFF所有連接埠都應位於正確的廣播網域中、而且網路連接埠的連線能力不應改變。不過、在將LIF從節點2移回節點1之前、您必須先確認網路連接埠的連線能力和健全狀況狀態。</block>
   <block id="a5fb308a92e4604c009062c3de7b2789" category="list-text">[[reest_node1_step4]]使用下列命令、修復節點1上每個連接埠的可連線性狀態、其可連線性為「ok」以外的狀態：</block>
   <block id="1edb05285bdfcd8326cc54455703d7ec" category="list-text">實體連接埠</block>
   <block id="2c7aa9454c1ca6be9ef48b69c5b8cab5" category="list-text">VLAN連接埠</block>
@@ -3337,10 +3299,8 @@
   <block id="e035160959e76686219645967f202317" category="paragraph">非根Aggregate發生中斷、在節點2重新開機之前、這些非根Aggregate已經重新部署。</block>
   <block id="295aeb05b88224ae18df0d9c12e9931d" category="summary">交換相應AFF 的EsceA900 node1控制器模組和NVRAM模組之後、您必須使用netboot node1。</block>
   <block id="8fec9698e48614a1961275dcbf888442" category="doc">netboot node1</block>
-  <block id="55235259d45464d098b17f2b9f398779" category="paragraph">交換相應AFF 的EsceA900 node1控制器模組和NVRAM模組之後、您必須使用netboot node1。「netboot」一詞表示您是從ONTAP 儲存在遠端伺服器上的鏡像進行開機。準備網路開機時、您必須在ONTAP 系統可以存取的網路伺服器上新增一份《支援》9開機映像。</block>
   <block id="b3fa942f65431caf219b9891c77a7cc2" category="list-text">[[netboot_node1_step2]_NetApp ONTAP Support Sites_的軟體下載區段下載適當的支援軟體、並將「&lt;ontap_version &gt;_image.tgz」檔案儲存在網路存取的目錄中。</block>
   <block id="2e9296c7316d4c4c76380224c1db72b2" category="list-text">在節點1上執行netboot：</block>
-  <block id="7158cb602a75d71a43fc88a8cc225d1e" category="list-text">等待AFF 運行在EsceA900控制器模組上的node1開機、並顯示開機功能表選項、如下所示：</block>
   <block id="e581180eb51e0c55c220313efa4f6d03" category="paragraph">「&lt;path_to_the_web-易於 存取的目錄&gt;」應該會引導您下載「&lt;ONTAP_VERSION &gt;_image.tgz」 <block ref="3c453ca3ddf73b988300a74fd18c23c3" category="inline-xref-macro-rx"></block>。</block>
   <block id="963f89f538a2fcd5d086c865807c540a" category="list-text">出現提示時、請執行「wecponfig」命令、清除開機媒體上任何先前的組態：</block>
   <block id="e3dcb6e98d703b4041ac7a4b6d40412e" category="list-text">從開機功能表中選取「5」選項以進入維護模式。對提示回答「yes」、直到節點在維護模式和命令提示字元「*&gt;」停止為止。</block>
@@ -3368,31 +3328,18 @@
   <block id="bafdb6036f860959892761c8ddf5ada2" category="list-text">使用內建金鑰管理程式（OKM）管理儲存加密</block>
   <block id="5967cd2dd5257e032e2c1568e265b057" category="list-text">node1是node1集合體的主擁有者和目前擁有者</block>
   <block id="a324d0a89d17fcc011978fff16b784da" category="list-text">node2是node2 Aggregate的主擁有者和目前擁有者</block>
-  <block id="2752e749ec326bfcd5d2b1c8a96e0eec" category="inline-link-macro">第2階段：從節點1重新部署資源、並淘汰AFF E4A700節點1</block>
-  <block id="cb4c4746969288d0369714b8d83599db" category="cell"><block ref="cb4c4746969288d0369714b8d83599db" category="inline-link-macro-rx"></block></block>
-  <block id="a9e87ca1b1784ceb7feece392847957a" category="list-text">移除AFF 「功能性」控制器模組和NVRAM模組</block>
-  <block id="b4403b18071e2ca5e05f326eba5b4948" category="list-text">在AFF 節點1上安裝E4A900 NVRAM模組和控制器模組</block>
   <block id="70bfac3efc816446939b969cb549c8b8" category="list-text">node2是node1 Aggregate的目前擁有者</block>
   <block id="ec258c431af242bb93ebbf0d82a4afd2" category="list-text">node2是node2 Aggregate的主擁有者和目前擁有者</block>
-  <block id="28903874eab25751407a78548a11a0d4" category="inline-link-macro">第3階段：使用AFF E4A900控制器模組NVRAM模組啟動節點1</block>
-  <block id="dce08c9234f984510fc2b564a40b2ed3" category="cell"><block ref="dce08c9234f984510fc2b564a40b2ed3" category="inline-link-macro-rx"></block></block>
   <block id="c355563dc6e37024ffcd7f18d583279e" category="list-text">驗證是否已成功安裝node1</block>
   <block id="8bc1591998d3254a215a1fea9cd0e4be" category="list-text">還原node1網路組態</block>
   <block id="0ac66da022e888300d8ec43f47b716d6" category="list-text">在升級的節點1上還原金鑰管理程式組態</block>
-  <block id="78f9df4f95654214c6e34228379e988b" category="list-text">升級AFF 版的E4A900 node1是node1 Aggregate的主擁有者和目前擁有者</block>
   <block id="fff8cb6f4bd9c58d6037356a96d73247" category="inline-link-macro">階段4：從節點2重新部署資源、並淘汰節點2</block>
   <block id="3047a160705f1dd8a555e5c6e774b38e" category="cell"><block ref="3047a160705f1dd8a555e5c6e774b38e" category="inline-link-macro-rx"></block></block>
   <block id="be74d1508b2732e00219890be181ffa6" category="list-text">升級的node1是原屬於node1的Aggregate的主擁有者和目前擁有者</block>
   <block id="2749cc92bd0dcac6365232852f87d5ed" category="list-text">node2是node2 Aggregate的主擁有者</block>
   <block id="5e4cf46306e58ecb7565589182d4efcf" category="list-text">升級的node1是node2 Aggregate的目前擁有者</block>
-  <block id="077a06e13ba85be7400a3c7082518a65" category="inline-link-macro">第5階段：在AFF 節點2上安裝EsceA900 NVRAM模組和控制器模組</block>
-  <block id="81f79958723f464ea2cc913e92d5fcd1" category="cell"><block ref="81f79958723f464ea2cc913e92d5fcd1" category="inline-link-macro-rx"></block></block>
-  <block id="acefe8f63b4f12e9f8f9caa7855c6b2b" category="list-text">在AFF 節點2上安裝E4A900 NVRAM模組和控制器模組</block>
   <block id="b9d700c14c433794754c2dcdea895b9f" category="list-text">node1是原屬於node1的Aggregate的主擁有者和目前擁有者。</block>
   <block id="bc594bc91cd11d472f20e22d31df3f8a" category="list-text">升級的node2是原屬於node2的Aggregate的主擁有者和目前擁有者。</block>
-  <block id="637841b17ce301de3888791fb5dc3a05" category="inline-link-macro">第6階段：使用AFF E4A900控制器模組和NVRAM模組來開機節點2</block>
-  <block id="18cd7454da0542e1edda356cabdf1e68" category="cell"><block ref="18cd7454da0542e1edda356cabdf1e68" category="inline-link-macro-rx"></block></block>
-  <block id="d2d55edd96c212fea9e5b9140695c621" category="list-text">使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2</block>
   <block id="a9545d4e2e159386ef9b0e397e4672ac" category="list-text">驗證是否已正確安裝節點2</block>
   <block id="58f283896d00f6d1826f08e4ff47d9e0" category="list-text">還原node2網路組態</block>
   <block id="52a370bfb3df9d6787958443a448c014" category="inline-link-macro">第7階段：完成升級</block>
@@ -3402,27 +3349,18 @@
   <block id="a49504d8b75dfd4cf79a0dd8adceb34b" category="summary">在AFF 從靜止A700 AFF 升級到靜止A900的過程中、設定及管理儲存加密、管理驗證金鑰、以及靜止SnapMirror關係。</block>
   <block id="2ed045fa4ee3544c7e5a632a26d55b9f" category="paragraph">從ONTAP 功能更新至功能更新至功能更新、您可以使用金鑰管理互通性傳輸協定（KMIP）伺服器來管理驗證金鑰。</block>
   <block id="b2d1e6982a7161543252f06b3304ae95" category="summary">在開始升級之前、請確認AFF 您擁有正確的硬體、以便進行從故障到AFF 故障的修復升級。</block>
-  <block id="1176c0fcba3cf6f058a29800ebea5d8a" category="paragraph">在開始升級之前、您必須確認您擁有正確的硬體、才能將AFF 某個故障系統升級至AFF 一個故障排除系統。對於要升級的每個HA配對、您必須有兩個系統控制器模組和兩個NVRAM模組。如果零件遺失、請聯絡技術支援部門或NetApp銷售聯絡人以尋求協助。</block>
   <block id="5e6358f28b34aeff7c31a849cd71090e" category="summary">您必須擁有特定工具和文件、才能執行AFF 從VMware到AFF VMware的升級。</block>
   <block id="1b8060cb5ae9dd21090d2ec07cc376b2" category="paragraph">您必須有接地線才能執行升級、而且在升級過程中需要參考其他文件。</block>
   <block id="d72e37445f435123c47c01a1bd03271c" category="paragraph">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 存取此升級所需的參考文件和參考網站清單。</block>
   <block id="e57d7ba8fb9b97ff4cc0b7b8c4a0b876" category="summary">使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2。</block>
-  <block id="617a5d16b196505acad38817e41e4c81" category="paragraph">節點2搭配AFF EsceA900控制器模組和NVRAM模組、現在已準備好升級。透過交換控制器模組和NVRAM模組、將AFF 某個處理器從某個部分升級至AFF 某個部分、只需移動主控台和管理連線即可。本節提供使用AFF E4A900控制器模組和NVRAM模組來開機節點2所需的步驟。</block>
   <block id="3891297e49eacc493b7b08dbb7fa3f93" category="list-text">[[boot_node2_step1]]如果此組態正在使用NetApp儲存加密（NSE）、則必須將「setenv bootarg.storageEncryption.support'命令設定為「true」、並將「kmip.init.maxwait`變數」設定為「Off」、以避免在節點2組態載入後發生開機迴圈：</block>
-  <block id="2bbe578e5c09f7900dc7f227b86c3682" category="list-text">節點會在開機功能表停止。輸入「22/7」、然後選取隱藏選項「boot_after控制器置換」。若要將AFF EsceA700 node1磁碟重新指派至AFF EsceA900 node1、請在提示字元下輸入節點2的實際節點名稱。請參考下列範例：</block>
   <block id="4aa5a5226abeed57a9e86a4cdbd74335" category="summary">如有需要、可在AFF 升級到AFF 更新版的過程中設定儲存加密、安裝SSL憑證、以及設定金鑰管理伺服器。</block>
   <block id="74d87258605a34730c51b53265d130eb" category="summary">將非根Aggregate和NAS資料lifs從節點1移至節點2、AFF 並在將節點1的資源還原至AFF 更新版的過程中、將節點1的資源還原至更新版的支援區。</block>
-  <block id="532e1c77f15a540d9366e10e815b985e" category="paragraph">您AFF 必須先將非根Aggregate和NAS資料lifs從節點1移至節點2、然後才能將節點1的資源還原回AFF 執行於NetApp A900系統上的節點1上、才能將節點1取代為使用支援EsceA900控制器模組和NVRAM模組。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。</block>
-  <block id="35275fabaa2468d01cfdfe24836fec99" category="paragraph">在升級過程中、遠端LIF會處理SAN LUN的流量。您不需要在升級期間移動SAN LIF來維持叢集或服務健全狀況。當您將節點1上線為AFF EVA900之後、您必須確認該等生命段是否正常、並位於適當的連接埠上。</block>
   <block id="4cc41ac3ff89b0e0d88cacedf58eb50d" category="summary">讓NetApp知道、升級AFF 至更新版的更新版後、舊系統已不再運作。</block>
   <block id="dcee0f9120fab3d583542a733afb5a2b" category="summary">如有需要、AFF 可在將升級的節點1 AFF 升級到EsceA700期間、將金鑰管理程式組態還原至EsceA900。</block>
   <block id="961892a8e5f7bb9328d303cade402bcd" category="paragraph">如果您使用NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、加密組態必須同步至新節點。當節點1集合體從節點2到節點1完成ARL時、加密的磁碟區會離線。</block>
   <block id="8e588b362fa6e77faa0431bb51b2e5d6" category="summary">請使用部分自動化ARL程序、將AFF 某個功能升級至AFF 一個功能強大的功能。</block>
-  <block id="11fcc21387b876b11afb701ee44e39fc" category="paragraph">在此控制器升級期間、您將AFF 用AFF 一個VA900控制器來取代一個功能不正常的功能。本內容提供自動化程序的步驟、使用自動磁碟指派和網路連接埠連線檢查來簡化控制器升級體驗。</block>
   <block id="de9f7d5e1d4c04a6ec4f1097d1a1a241" category="summary">瞭解您是否可以使用ARL將AFF 某個地方的版號升級至AFF 某個地方的版號。</block>
-  <block id="6244645d8886d0af5e5f9f789a1363cd" category="paragraph">使用ARL將AFF 一對執行ONTAP 《支援》（We）9.10.1或更新版本的《支援》（Arl AFF ）控制器升級至《支援》（a）900系統、取決於系統和原控制器和更換控制器的組態。</block>
-  <block id="ab7cae63aadb61d757d1e31be5a5dfa4" category="paragraph">支援的組合包括使用ARL升級到Ar4A700、並只交換控制器模組和NVRAM模組。AFF AFF如果您已收到AFF 全新的整套系統（包括新機箱）、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要連結至_、請使用「系統控制器更換」命令來升級執行ONTAP 《Estrs9.8或更新版本》內容的控制器硬體。</block>
-  <block id="211e5683572c7d90b708c5a8728647a2" category="admonition">本程序嚴格適用於AFF 執行AFF 下列功能的從Ar1a700升級到執行ONTAP 版的更新版的更新版：32位元以上的升級版。請勿使用此程序在任何其他系統組合之間執行升級。</block>
   <block id="253fd57a6c2965ca518ebbfc6bf1e7cc" category="paragraph">如果在升級控制器時發生任何問題、請參閱 <block ref="8b711d7eff849b62a32d0b2d66f85a6c" category="inline-link-macro-rx"></block> 本節將於程序結束時提供更多資訊和可能的解決方案。</block>
   <block id="1b829ba4059a871e329472e665878ce0" category="summary">在將SnapMirror傳輸和關係AFF 升級到AFF 還原A900的過程中、恢復SnapMirror傳輸和關係。</block>
   <block id="44890d8a50a99cc721d8e6b9108090d8" category="summary">關於從功能性的A700升級到功能性的A900時可能發生的問題資訊AFF 。AFF</block>
@@ -3432,7 +3370,6 @@
   <block id="a98ce2caf38bef05082af61a7b3cfd2a" category="paragraph">在下列情況下、Aggregate可能無法正確重新定位、也就是將節點2當作主節點、而非節點1：</block>
   <block id="17d6197f66fac0500a1052e1756381a7" category="list-text">在第3階段期間、當Aggregate從節點2重新定位至節點1時。</block>
   <block id="b64ff0aed650d75434d24e770d7ac535" category="paragraph">正在重新部署的部分集合體將node1當作其主節點。例如、此類Aggr_nnode_1可稱為Aggr_node_1。如果在第3階段重新配置aggr_node_1失敗、且無法強制重新配置、則會將Aggregate留在node2上。</block>
-  <block id="542aa4590c9b5c399bd6afe6d9019eab" category="list-text">在第4階段之後、當節點2被AFF 取代為EsceA900控制器模組和NVRAM模組時。</block>
   <block id="bbc15afd4ded8ef20f852908a9e94008" category="paragraph">當節點2被替換時、aggr_node_1會以node1作為主節點、而非node2連線。</block>
   <block id="7161e79fb43252db4d620ecbcfbe0672" category="paragraph">您可以在啟用儲存容錯移轉之後、完成下列步驟、修正階段6之後的不正確擁有權問題：</block>
   <block id="99fb891a920a0a874aa601c151d5ef1b" category="list-text">取得Aggregate清單：</block>
@@ -3445,8 +3382,6 @@
   <block id="445fae138e0209c0bbf33e92c38c82b6" category="paragraph">沒有node1做為主擁有者的Aggregate可以使用步驟3中相同的重新配置命令、重新定位至node1。</block>
   <block id="06e8f251b536b4b0a7af95aa92a37415" category="summary">使用AFF EsceA900控制器模組和NVRAM模組來驗證node2安裝。</block>
   <block id="ab8666705fb8255d0f27c0919160c1e4" category="doc">驗證node2安裝</block>
-  <block id="01a35799697d769b0c640182d9a4b59b" category="paragraph">您必須使用AFF EsceA900控制器模組和NVRAM模組來驗證node2安裝。由於實體連接埠沒有變更、因此您不需要將實體連接埠從AFF EsceA700 node2對應到AFF EsceA900 node2。</block>
-  <block id="c82f2298e8b3c76974b76a8ddcdc4261" category="paragraph">使用AFF E4A900控制器模組開機節點1之後、您必須確認其安裝正確。您必須等待節點2加入仲裁、然後繼續執行控制器更換作業。</block>
   <block id="ba7d8f5ebb18592d91d949241848dfe6" category="paragraph">在此過程中、節點2加入仲裁時、操作會暫停。</block>
   <block id="c32050bd0152940e859c61963c8eac2b" category="list-text">驗證node2是否已加入仲裁：</block>
   <block id="4944974c6eb515b06e75893287e18f10" category="list-text">驗證node2是否與node1屬於同一個叢集、而且它是否正常：</block>
@@ -3468,15 +3403,9 @@
   <block id="da2b45cbcbfabc951a211d4aed4ae9d5" category="doc">還原節點2上的金鑰管理程式組態</block>
   <block id="1e8bb1e6c1a2cfa5a650244764ef539c" category="paragraph">如果您使用NetApp Volume Encryption（NVE）來加密要升級的系統上的磁碟區、加密組態必須同步至新節點。當節點1集合體從節點2到節點1完成ARL時、加密的磁碟區會離線。</block>
   <block id="8a0b39942bdb20d83fc11a2c0940f45d" category="summary">ARL控制器升級程序期間、關於Ar4A900 NVRAM模組和控制器模組的安裝說明AFF 。</block>
-  <block id="310669d893d588644d176995ed9dad99" category="doc">在AFF 節點2上安裝E4A900 NVRAM模組和控制器模組</block>
-  <block id="0dc0def10482ec13946f7a807b4a2cc0" category="paragraph">您必須在AFF 節點2上安裝收到的用於升級的EsceA900 NVRAM模組和控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。</block>
   <block id="a7b5ccf02bd0f6b23fc889ebb5354dbc" category="paragraph">如果您尚未接地、請正確接地。</block>
-  <block id="6a41e779d849620d9eab27b1ac05d62c" category="section-title">安裝AFF VA900 NVRAM模組</block>
-  <block id="2ae4d49dac7c53580706a81482ea9eb9" category="paragraph">請使用下列程序、將AFF E4A900 NVRAM模組安裝在節點2的插槽6中。</block>
   <block id="3d6ee5006b58007aa6b243ac902837ac" category="list-text">將NVRAM模組對齊插槽6中機箱開孔的邊緣。</block>
   <block id="a8ad32b9b5381f0e3f1c5897679ae7eb" category="list-text">將NVRAM模組輕推入插槽、直到帶有字母和編號的I/O CAM栓開始與I/O CAM銷接合、然後將I/O CAM栓完全推入、將NVRAM模組鎖定到位。</block>
-  <block id="206a1a8dfd426c156b48ab46846acc00" category="section-title">在AFF 節點2中安裝E4A900控制器模組。</block>
-  <block id="5290116daec6e79a183cfb76bc74414e" category="paragraph">請使用下列程序、在AFF 節點2中安裝EsceA900控制器模組。</block>
   <block id="9242c558140d9a52d10f2e6b57f75893" category="list-text">將控制器模組的一端對準機箱中的托架B、然後將控制器模組輕推至系統的一半。</block>
   <block id="1ba57f7982d64e52fcc3eb0235996968" category="admonition">機箱標籤位於控制器模組正上方的機箱上。</block>
   <block id="254d1495a725edffc2f7c4eb5441615a" category="admonition">在程序稍後指示您將控制器模組完全插入機箱之前、請勿將其完全插入機箱。</block>
@@ -3488,11 +3417,8 @@
   <block id="2ea32610c0c34642fe97bf6f44009b1f" category="list-text">只要模組就位、請立即連接序列主控台、並準備好中斷節點1的自動開機。</block>
   <block id="d9f54add7d47cd87694cd3f82ac8b56b" category="list-text">中斷自動開機之後、node2會在載入程式提示字元停止。如果您未準時中斷自動開機、且節點2開始開機、請等待提示、然後按* Ctrl-C*進入開機功能表。節點停止在開機功能表後、請使用選項「8」重新啟動節點、並在重新開機期間中斷自動開機。</block>
   <block id="b17a59560ebfb087ad44c6322178e9e4" category="summary">在AFF 從EVA700 AFF 升級至EsceA900期間、停用HA配對與node2、並關閉node1。</block>
-  <block id="d833cdd8c2a2d78a9e958f2ad1aa027a" category="paragraph">若要淘汰節點1、請繼續執行自動化作業、以停用與節點2的HA配對、並正確關閉節點1。您稍後必須從AFF 節點1機箱中移除EsceeERA700控制器模組和NVRAM模組、然後在AFF 節點1上安裝EsceA900 NVRAM模組和控制器模組。</block>
   <block id="c293ce688a142a8943b3fa428c09e414" category="paragraph">節點1完全停止後、node1應位於loader&gt;提示字元。若要查看Loader&gt;提示、請連線至node1的序列主控台。</block>
   <block id="eedd3589e87e21a342b71fbe4c46b471" category="paragraph">在此階段、node1已關閉、所有資料均由node2提供服務。由於節點1和節點2位於同一個機箱中、並由相同的電源供應器組供電、因此請勿關閉機箱電源。您必須小心、只移除節點1控制器模組和節點1 NVRAM模組。通常、節點1是位於機箱左側的控制器A、當您從系統背面查看控制器時。控制器標籤位於控制器模組正上方的機箱上。</block>
-  <block id="7772cd0198105a3d1385b2e8a38dfd13" category="section-title">移除AFF 「功能不一」控制器模組</block>
-  <block id="aa7985a89f1c2f960f222e4a5876a369" category="paragraph">請使用下列程序移除AFF 「非洲」控制器模組。</block>
   <block id="21ae48aa7bbdbaeb1a967d5328b891b6" category="list-text">從節點1移除控制器模組之前、請先從節點1控制器模組拔下主控台纜線（如果有）和管理纜線。</block>
   <block id="16597a9dd20f2d5db13339b0bf3ad60c" category="admonition">當您在節點1上工作時、只能從節點1移除主控台纜線和e0M纜線。在此過程中、您不得移除或變更節點1或節點2上的任何其他纜線或連線。</block>
   <block id="4f15dffc58c8598c508fa46cd5335ebb" category="list-text">解除鎖定並從機箱中取出控制器模組A。</block>
@@ -3504,9 +3430,6 @@
   <block id="b733ab833a64f07b84375a26a6af83f0" category="cell">CAM握把</block>
   <block id="1ce9441378e5288a31f9dee89eb4cb1d" category="list-text">旋轉CAM握把、使其完全脫離機箱的控制器模組、然後將控制器模組滑出機箱。</block>
   <block id="838771143f1029cc3b1ac5c3be2796bc" category="paragraph">將控制器模組滑出機箱時、請確定您支援控制器模組的底部。</block>
-  <block id="60add02e6f855fc403608c4428daa060" category="section-title">移除AFF 功能不再需要的NVRAM模組</block>
-  <block id="be1a493bb2bbb64bcab3e438e79773b3" category="paragraph">請依照下列程序移除AFF 「VA700 NVRAM模組」。</block>
-  <block id="906fd0158ff703237eed6f1ded5f66d9" category="admonition">此功能可在插槽6中使用AFF 、高度是系統中其他模組的兩倍。</block>
   <block id="0857dbdec564e89c1ed34a571bb8af41" category="list-text">從節點1的插槽6中解除鎖定並移除NVRAM模組。</block>
   <block id="1746c03166c1029bf12087835ea936f0" category="list-text">按下帶有字母和編號的CAM按鈕。</block>
   <block id="e73d298eda7538e8d44a7ca445767962" category="paragraph">CAM按鈕會從機箱移出。</block>
@@ -3516,12 +3439,7 @@
   <block id="1ade29bb16a89d6eb1ac0378b26d08cc" category="image-alt">卸下NVRAM模組</block>
   <block id="c6e52defde912721ad3ec5315c5d9664" category="cell">I/O CAM栓鎖有編號和編號</block>
   <block id="0e50691d6ac3e9df529fa546f2486bd7" category="cell">I/O鎖定完全解除鎖定</block>
-  <block id="a0f5247271e7048116aa586dafd443b7" category="list-text">如果AFF 您使用任何附加模組做為ESIEA700 NVRAM模組上的coredump裝置、請勿將其傳輸至AFF ESIA900 NVRAM模組。</block>
-  <block id="f7ad80f76c353ca20776e333fbf2c24d" category="paragraph">您必須在AFF 節點1上安裝收到的用於升級的EsceA900 NVRAM模組和控制器模組。請勿將coredump裝置從AFF ESIEA700 NVRAM模組移至AFF ESIEA900 NVRAM模組。</block>
-  <block id="56ae35a8a7c9aea560074a59dd85953e" category="paragraph">請使用下列程序、將AFF E4A900 NVRAM模組安裝在節點1的插槽6中。</block>
   <block id="5d555500d4c58002388a7088e1c8f510" category="image-alt">安裝NVRAM模組</block>
-  <block id="65aec26ee881486d9f784225cd0751c8" category="section-title">在AFF 節點1上安裝E4A900控制器模組。</block>
-  <block id="3624eaadadde076eadac129a6945d35a" category="paragraph">請使用下列程序、在AFF 節點1中安裝EsceA900控制器模組。</block>
   <block id="a93447d104277da61e99f98be3016581" category="list-text">將控制器模組的一端對準機箱的開啟A、然後將控制器模組輕推至系統的一半。</block>
   <block id="8c3e973bd184c686de74d4c99763571c" category="admonition">在程序稍後指示之前、請勿將控制器模組完全插入機箱。</block>
   <block id="85b0e5132d3bec02fcda8eb6f24b6062" category="list-text">將管理和主控台連接埠連接至節點1控制器模組。</block>
@@ -4389,11 +4307,7 @@
   <block id="42b2cb9f9e1a3cf15145887e95d849a8" category="sidebar">工作表：在控制器升級之前和期間收集的資訊</block>
   <block id="0df71f161bb7f6f4a1dd4c0ceefcb245" category="sidebar">第4階段：記錄資訊並淘汰節點2</block>
   <block id="79f3abfd76c996d707b348dbfb91c42b" category="sidebar">在節點4上設定FC或UTA/UTA2組態</block>
-  <block id="2500b2e21dbe74e889f94334876e761f" category="sidebar">第2階段：重新部署資源並淘汰AFF EsceA700 node1</block>
-  <block id="a1e942c10f3ef940af9560fa7f9b1bcf" category="sidebar">階段3.使用AFF EsceeA900控制器模組和NVRAM模組來開機節點1</block>
   <block id="7f34c3c52d70c0425b1f8f450d9011fa" category="sidebar">第4階段：從節點2重新部署資源、並淘汰節點2</block>
-  <block id="1eec8458b505239680f521752a8c01ec" category="sidebar">階段5.在AFF 節點2上安裝E4A900 NVRAM模組和控制器模組</block>
-  <block id="994245d9c168d8ec5856e8519cf95566" category="sidebar">階段6.使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2</block>
   <block id="e58fe7640209496d4d7a887457b3a8c5" category="sidebar">第7階段：完成升級</block>
   <block id="ea61e2c2ff507048203824add1eb7c21" category="sidebar">考量</block>
   <block id="2bfb87bbde1d2f1a85359c4188897f44" category="sidebar">選擇方法</block>
@@ -4421,6 +4335,118 @@
   <block id="cf3329822cb6acbd3f59abba0514d804" category="sidebar">刪除SAN LIF</block>
   <block id="d2e2f3320c4d610d0815b1405859a98b" category="sidebar">取消連接原始節點</block>
   <block id="23ec9249d03285a513eaaf182a7bcd49" category="cell">AFF8080</block>
-  <block id="4c6ae5d985a0142843ba3f6f8875cf0b" category="cell">VA900^4^ AFF</block>
-  <block id="44b12a5fbf6c87a940ab615ec2102604" category="paragraph">從ONATP 9.10.1開始、ARL自動升級支援從執行ONTAP WS9.8或更新版本的AFF8080系統、升級AFF 至執行9.10.1或更新版本的S4A900系統。</block>
+  <block id="ae201a8621d5678d9f7db2f1543be658" category="inline-link-macro">使用「系統控制器更換」命令、將AFF 執行AFF 《E59.10.1》或更新版本的《Ex-A700》升級至《Ex4A900》或《FAS9000》至《FAS9500》ONTAP</block>
+  <block id="df69e9ae0d9f7ac20a24f0c796c5fd93" category="cell"><block ref="df69e9ae0d9f7ac20a24f0c796c5fd93" category="inline-link-macro-rx"></block></block>
+  <block id="88b12ac6a25fc9dcdeff5648aa2d9e8f" category="cell">說明如何使用AFF 「系統控制器更換」命令、在不中斷營運的情況下、將EVA700升級至AFF 執行EWNSHA900系統或FAS9000至執行ONTAP EW9.10.1或更新版本的FAS9500系統、所需的集合體重新配置程序。</block>
+  <block id="562fafbbb89476d10c038539c7edc691" category="list-text">如果系統進入重新開機迴圈、並顯示「找不到磁碟」訊息、這是因為系統已將連接埠重設回目標模式、因此無法看到任何磁碟。繼續 <block ref="cc511b4dbeed99af4a19f83ac3e97f04" category="inline-xref-macro-rx"></block> 至 <block ref="8dac798a0974640f6cae187a1dbe2d57" category="inline-xref-macro-rx"></block> 以解決此問題。</block>
+  <block id="f2c15df21143edf73966939dd59ca6fb" category="list-text">如果系統進入重新開機迴圈並顯示「找不到磁碟」訊息、表示系統已將FC或UTA/UTA2連接埠重設回目標模式、因此無法看到任何磁碟。若要解決此問題、請繼續 <block ref="cc511b4dbeed99af4a19f83ac3e97f04" category="inline-xref-macro-rx"></block> 至 <block ref="8dac798a0974640f6cae187a1dbe2d57" category="inline-xref-macro-rx"></block>或移至區段 <block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block>。</block>
+  <block id="a21bb6fd42ff6eb59f1b181296f7c703" category="cell">FAS8020^3^、FAS8040^3^、FAS8060、FAS8080</block>
+  <block id="34a273586a26b9c6b133c4ff92d23f7c" category="cell">FAS8060^4^、FAS8080、4^</block>
+  <block id="756d409209ace98589705774b5011aa0" category="cell">FAS9500</block>
+  <block id="8245966310b85f53855742d8e5ba304d" category="cell">AFF8020^3^、AFF8040^3^、AFF8060、AFF8080</block>
+  <block id="15669f56a9080989e0dd31ca6ec7de95" category="cell">AFF8060^4^、AFF8080 4^</block>
+  <block id="ec5e81cea4c5ee83d635778e86350e80" category="cell">解答900 AFF</block>
+  <block id="83881871feba8f42c547551eb77311c5" category="cell">FAS8300、FAS8700、FAS9000、FAS9500</block>
+  <block id="b2eb0585a7b45bf3f01cacfcc45b17f6" category="cell">FAS8300、FAS8700、FAS9000</block>
+  <block id="5b7a8b52e3325206af4bfbcf07693215" category="cell">Exe400^2^、ExA700、Ex4A800^1^、AFF AFF AFF AFF WxeA900</block>
+  <block id="e02a538b8ab4faf6c7d890fa1fcfa7a7" category="cell">VA320^4^ AFF</block>
+  <block id="540dacfeb5577ce4282c41e9c7518680" category="cell">解答400 AFF</block>
+  <block id="3987c2b3042faa1f0f41d1ec08f2ed7e" category="cell">部分A400、部分A700 AFF AFF</block>
+  <block id="41c1636eb5024bf8b152d1ca09286521" category="paragraph">^2^如果您要在AFF 雙節點無交換式叢集組態中、從Sfzha300升級AFF 至Sf2 A400或FAS8200、則必須選擇暫用叢集連接埠以進行控制器升級。以乙太網路套裝組合形式提供兩種組態：夾層卡連接埠為乙太網路類型、夾層連接埠為FC類型、而以FC套裝組合形式提供夾層連接埠為FC類型。AFF</block>
+  <block id="e9dc6fafb0f1f8ce64537ec567468d16" category="paragraph">對於FAS8020、FAS8040、AFF8020和AFF8040系統升級到上表所列的目標替換控制器、替換控制器必須執行與ONTAP 舊控制器相同的版本。請注意、FAS8020、FAS8040、AFF8020和AFF8040系統不支援ONTAP 更新於ONTAP 支援更新版本9.8的版本。</block>
+  <block id="58639a55064ac1eb8afcb76dee256457" category="paragraph">^4^驗證ONTAP 控制器升級所支援的支援的更新版本。</block>
+  <block id="a45da96d0bf6575970f2d27af22be28a" category="cell">系統</block>
+  <block id="d85bd4eac4ae2ba50be5c03b292af8f8" category="cell">9.9.1或更新版本</block>
+  <block id="94869c0e3d68936a54ce1ef1d7459f3e" category="cell">AFF8060</block>
+  <block id="a07a923eb6b740023890d052b6fb6e9a" category="cell">9.8P13或更新版本的修補程式</block>
+  <block id="728152178b0535e4c7e93f53223fbfff" category="cell">9.8P10或更新版本的修補程式</block>
+  <block id="edbeb952c4054f67ce1836afbda00903" category="cell">FAS8060</block>
+  <block id="eb30343e3b73c36d3224c319d83cc2e6" category="cell">9.10.1P3或更新版本</block>
+  <block id="8ed24dd5fb292ecefe76fe92a5fc3988" category="cell">FAS8080</block>
+  <block id="e2060bf680bf4facfccf3befec69ef04" category="cell">9.8P12或更新版本的修補程式</block>
+  <block id="c7f409d27e38c597f7352e5c3444f367" category="list-text">檢查目前如何設定連接埠、在節點3上輸入下列命令：</block>
+  <block id="d6c2e2d86e9dabadec600438d0eb1471" category="paragraph">您必須使用AFF EscoreA900或FAS9500控制器和NVRAM模組來驗證node1安裝。由於實體連接埠沒有變更、因此您不需要將舊節點1的實體連接埠對應至替換節點1。</block>
+  <block id="bec9a7c0c4bfaaeb806f9f4ddb681c8c" category="paragraph">使用AFF E4A900或FAS9500控制器模組開機節點1之後、您必須確認其安裝正確。您必須等待節點1加入仲裁、然後繼續執行控制器更換作業。</block>
+  <block id="8f34775699af0e65cbc1a35c0cb8b84b" category="admonition">在從功能性到功能性的協助下、從FASA700升級至功能性的A900或FAS9000升級至FAS9500控制器時、網路連接埠及其連線能力不應改變。AFF AFF所有連接埠都應位於正確的廣播網域中、而且網路連接埠的連線能力不應改變。不過、在將LIF從節點2移回節點1之前、您必須先確認網路連接埠的連線能力和健全狀況狀態。</block>
+  <block id="6b31a3b30b01ea09ca78efcb226343b9" category="paragraph">您必須AFF 先將節點2重新定位至節點1、才能將節點2更換為EscoreA900或FAS9500控制器模組和NVRAM模組。</block>
+  <block id="ec034682ed62501de72881ae5f23afb0" category="paragraph">在交換相應AFF 的E4A900或FAS9500節點2控制器模組和NVRAM之後、您可能需要將其以網路開機。「netboot」一詞表示您是從ONTAP 儲存在遠端伺服器上的鏡像進行開機。準備網路開機時、您必須將ONTAP 一份《支援》9開機映像複本放到系統可以存取的網路伺服器上。</block>
+  <block id="7d4491ed84bf03aef84c9714a80e7635" category="paragraph">除非安裝在機箱中並已開啟電源、否則無法檢查ONTAP 安裝在AFF 架構套件上的更新版本、例如：在不支援更新的情況下、在不支援更新的情況下、在不支援更新的情況下、在不支援更新的情況下、在不支援更新的情況下、在不支援更新的情況下、更新的更新版本必須與在不支援更新的情況下執行的更新版本相同。ONTAP AFF ONTAP AFF您可以在開機功能表中執行netboot、然後執行wappeconfig命令來設定映像。如果控制器模組先前曾在另一個叢集中使用、則「wifeconfig」命令會清除開機媒體上的任何剩餘組態。</block>
+  <block id="a841a9a6470f2ced16c0b663704b5dfe" category="list-text">等待AFF 正在執行的節點2啟動、並顯示如下輸出所示的開機功能表選項：</block>
+  <block id="162c8b4a39fcb111690cbc082fa26537" category="paragraph">若要淘汰節點1、請繼續執行自動化作業、以停用與節點2的HA配對、並正確關閉節點1。您稍後必須從AFF 節點1機箱中移除EscoreA700或FAS9000控制器和NVRAM模組、然後在AFF 節點1上安裝EsceA900或FAS9500控制器和NVRAM模組。</block>
+  <block id="f22136c41db26c6022caf6417275b450" category="section-title">移除AFF 功能不整的A700或FAS9000控制器和NVRAM模組</block>
+  <block id="ba579f865c148542656e741f915bc210" category="section-title">移除AFF 「功能不整」或「FAS9000」控制器模組</block>
+  <block id="208671d931da81374958ab0bdeb8d0f0" category="paragraph">請使用下列程序移除AFF 不適用的A700或FAS9000控制器模組。</block>
+  <block id="831816e1924f3edb2d170ec4c291d0f3" category="section-title">移除AFF 「功能不整」或「FAS9000 NVRAM模組」</block>
+  <block id="fceff39b493e10b2b789e99ad15cc406" category="paragraph">請使用下列程序移除AFF 不含功能的A700或FAS9000 NVRAM模組。</block>
+  <block id="3d748e41fa426d2025ff3eb80b369ede" category="admonition">FASA700或FAS9000 NVRAM模組位於插槽6中、高度是系統中其他模組的兩倍。AFF</block>
+  <block id="1f15728c77802915b0186fe3b48a5405" category="section-title">在AFF 節點1上安裝E4A900或FAS9500 NVRAM和控制器模組</block>
+  <block id="44188a216db4c50ab80d8d6376079f11" category="paragraph">您必須在AFF 節點1上安裝您收到的用於升級的EsceA900或FAS9500 NVRAM和控制器模組。</block>
+  <block id="32820fb65b578170b0fc242eb57ba80e" category="list-text">請勿將coredump裝置從AFF ESIEA700 NVRAM模組移至AFF ESIEA900 NVRAM模組。</block>
+  <block id="d0106eeb656b11c6a07a8e45dcf1b214" category="list-text">將FAS9000 NVRAM模組中安裝的所有快閃快取模組移至FAS9500 NVRAM模組。</block>
+  <block id="c7fecf95820e09d00c74bf86805bc991" category="section-title">安裝AFF 「FASA900」或「FAS9500 NVRAM」模組</block>
+  <block id="1a841cb7f620c7f0684b56a8a034fb65" category="paragraph">請使用下列程序、將AFF E4A900或FAS9500 NVRAM模組安裝在節點1的插槽6中。</block>
+  <block id="830a042377d7fdbd36c48ece8669e61c" category="section-title">在AFF 節點1上安裝E4A900或FAS9500控制器模組。</block>
+  <block id="bb0ced2b785386259d517f7ae7bd88d1" category="paragraph">請使用下列程序、在AFF 節點1中安裝E4A900或FAS9500控制器模組。</block>
+  <block id="a8785e7ad1cb0d71507bbcb99df9c1f7" category="cell">將AFF 一個不變的A700系統轉換成AFF 一個不變的A900系統、保留A700機箱</block>
+  <block id="e1b003e7f655a9b7177c226f66898500" category="cell">9.10.1 P3或更新版本</block>
+  <block id="3029eeb5ee6e861b02eb2a1ffd3d3b8e" category="cell">FAS9000至FAS9500</block>
+  <block id="92edbfe3ededa1bb85b931ec295f360d" category="cell">將FAS9000系統轉換成FAS9500系統、保留FAS9000機箱。</block>
+  <block id="a5ce3ab443f38c92fc244c3533db25fd" category="paragraph">您可以交換控制器和NVRAM模組、在高可用度（HA）配對上不中斷地升級控制器硬體。首先、您要在舊的控制器節點之間移轉非根Aggregate。安裝之後、您可以將非根集合體從舊的控制器節點移轉到替換的控制器節點。您可以在升級程序期間存取所升級節點上的資料。</block>
+  <block id="3f8470255fba84fd3f339ba171093986" category="paragraph">在此控制器升級程序期間、AFF 您只能將位於ESATA A700或FAS9000系統上每個節點上的兩個現場可更換單元（FRU）與新的FRU交換。</block>
+  <block id="c9df35145886ac45d1457faee2b9dd89" category="admonition">您不需要移動、拔下或重新連接I/O卡、資料纜線、磁碟櫃和磁碟。</block>
+  <block id="4ed758f1326f5379f7dc30fe674ce726" category="inline-link-macro">升級控制器的準則</block>
+  <block id="61bb0e064fd915427168b2e72e080eff" category="list-text">此程序相當複雜、假設您具備進階ONTAP 的功能不完整的管理技能。您也應該閱讀並瞭解 <block ref="937d04c1dac5501bcacf105e8700fe45" category="inline-link-macro-rx"></block> 和 <block ref="57e14e08755134bb6fef9ad899bb58ee" category="inline-link-macro-rx"></block> 開始升級之前的章節。</block>
+  <block id="15bb782d54e5e11e2e8ab3b723e7ec55" category="list-text">此程序僅適用於AFF FASA700和FAS9000系統。如需所有其他需要升級AFF 至FASA900或FAS9500系統的控制器機型、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要連結至_、請使用「系統控制器更換」命令來升級執行ONTAP VMware 9.8或更新版本的控制器硬體、以及使用集合體重新配置來手動升級執行ONTAP VMware 9.8或更新版本的控制器硬體內容（_Using Aggregate Relocation to Manually Upgrade Controller Hardware）。</block>
+  <block id="f57bde3eaa64080d17b3c49dfac5f25f" category="list-text">支援高速線路電源（200V至240V）的支援僅有支援FAS900和FAS9500系統。AFF如果AFF 您的FASA700或FAS9000系統是以低線電源（100V至120V）執行、則在AFF 使用此程序之前、您必須先將該功能轉換成使用該功能的電源供應器或FAS9000輸入電源。</block>
+  <block id="a34fce485aa189385b6d78cd230756d8" category="list-text">如果AFF 您在從無法運作的情況下從某個不支援的A700或FAS9000系統升級、您可以移動儲存設備來升級控制器硬體、或聯絡技術支援部門。請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要透過移動磁碟區或儲存設備連結至_Upgrade。</block>
+  <block id="3e6b0398ec9c232118e2d2bc538ec645" category="inline-link-macro">第2階段：從節點1重新部署資源、並淘汰AFF EsceA700或FAS9000節點1</block>
+  <block id="234aad7efddedee52ac80d1129d0fddf" category="cell"><block ref="234aad7efddedee52ac80d1129d0fddf" category="inline-link-macro-rx"></block></block>
+  <block id="f8268b4f2949c257f7e5044e9ac05880" category="inline-link-macro">第3階段：使用AFF 支援E4A900或FAS9500控制器和NVRAM模組的開機節點1</block>
+  <block id="14c73342ec8c7cda4bcc16e81c01222e" category="cell"><block ref="14c73342ec8c7cda4bcc16e81c01222e" category="inline-link-macro-rx"></block></block>
+  <block id="4440b548c1cae9d923561d0a7fe3a103" category="list-text">使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點1</block>
+  <block id="3e2a6a2edac30411bac1b47c4ba20774" category="list-text">升級AFF 版的E4A900或FAS9500節點1是node1 Aggregate的主擁有者和目前擁有者</block>
+  <block id="88429116c298b552cf5a2fd1dfd8ac94" category="inline-link-macro">第5階段：在AFF 節點2上安裝EFASA900或FAS9500 NVRAM和控制器模組</block>
+  <block id="610628fd4123449e9b763fe935601b98" category="cell"><block ref="610628fd4123449e9b763fe935601b98" category="inline-link-macro-rx"></block></block>
+  <block id="dbc99796dd5482cbc7660b57b686c30f" category="list-text">在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組</block>
+  <block id="25beb58d3a670fb2c16081f902a5bff2" category="inline-link-macro">第6階段：使用AFF E4A900或FAS9500控制器和NVRAM模組來開機節點2</block>
+  <block id="82fe66fed743ab06100b56ff7cede89d" category="cell"><block ref="82fe66fed743ab06100b56ff7cede89d" category="inline-link-macro-rx"></block></block>
+  <block id="d066afecd32f577c431df88c1a421ca4" category="list-text">使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點2</block>
+  <block id="3d34e56cf21c4a138ab823660c2b5555" category="paragraph">在下列系統組態中使用ARL來升級一對控制器：</block>
+  <block id="2a0a9f74d7fd41063ed18276c24550d5" category="list-text">將AFF 一對用作「更新AFF 版本」的「功能」的「功能性」控制器升級至執行ONTAP 「功能性」的「功能性」系統</block>
+  <block id="546138e0b7501a286c581953c65b874d" category="list-text">將一對FAS9000控制器升級至執行ONTAP SHor9.10.1P3或更新版本的FAS9500系統</block>
+  <block id="8c3db477300524bd7d8bcf2bba005da2" category="paragraph">支援AFF 的組合包括控制器從功能不完整的A700升級至AFF 功能不完整的A900、或從FAS9000升級至FAS9500、使用ARL和NVRAM模組。如果您已收到AFF 全新的整套系統（包括新機箱）、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要連結至_、請使用「系統控制器更換」命令來升級執行ONTAP 《Estrs9.8或更新版本》內容的控制器硬體。</block>
+  <block id="89270eb0a4789198b9486a5396fb9846" category="admonition">此程序嚴格適用於AFF 執行下列項目的從Ar1A700升級AFF 到Ar1A900、ONTAP 以及執行從更新版本的FAS9.10.1或更高版本、以及執行9.10.1P3或更新版本的FAS9000升級到FAS9500。請勿使用此程序在任何其他系統組合之間執行升級。</block>
+  <block id="cf7bed4e96113c76fe71493d087876b9" category="paragraph">您必須在AFF 節點2上安裝您收到的用於升級的EscoreA900或FAS9500 NVRAM和控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。</block>
+  <block id="446e34a339be0fda54aae2fe862c868f" category="paragraph">請使用下列程序、將AFF E4A900或FAS9500 NVRAM模組安裝在節點2的插槽6中。</block>
+  <block id="b5e3968706cd8f4fee9d9a918b1b867f" category="section-title">在AFF 節點2中安裝E4A900或FAS9500控制器模組</block>
+  <block id="43d062a38b70447bd532892c53e0817c" category="paragraph">請使用下列程序、在AFF 節點2中安裝E4A900或FAS9500控制器模組。</block>
+  <block id="7226eae03ab7f26a2dd297f61cf08736" category="paragraph">執行這些檢查之後、系統會將非根集合體和NAS資料lip重新定位回節點2、節點2現在正在AFF 執行於E4A900或FAS9500控制器上。</block>
+  <block id="1e5f9f2daefe506ea2b48caff7fcf4ae" category="paragraph">您AFF 必須先將非根Aggregate和NAS資料LIF從節點1移至節點2、然後才能將節點1的資源還原回AFF 執行於NetApp A900或FAS9500系統上的節點1上、才能將節點1取代為使用NetApp處理器A900或FAS9500控制器和NVRAM模組的節點1。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。</block>
+  <block id="3cf8297a666eb50587e23b50dcba8b11" category="paragraph">在升級過程中、遠端LIF會處理SAN LUN的流量。您不需要在升級期間移動SAN LIF來維持叢集或服務健全狀況。當您將節點1上線作為AFF E4A900或FAS9500系統之後、您必須確認該等生命段是否正常、並位於適當的連接埠上。</block>
+  <block id="8a2c86b63701889cf10547896e555b82" category="list-text">在第4階段之後、當節點2被AFF 取代為EscoreA900或FAS9500控制器和NVRAM模組時。</block>
+  <block id="c0bf6385dfa15c204a13d5abb6770653" category="paragraph">在此控制器升級期間、您將AFF 用AFF 一套FASA900控制器或FAS9000控制器來更換一個不正常的A700控制器。本內容提供自動化程序的步驟、使用自動磁碟指派和網路連接埠連線檢查來簡化控制器升級體驗。</block>
+  <block id="2a2d4d28b7b0848fbdd189061adaff52" category="paragraph">本內容說明如何在AFF FAS9000 AFF HA配對中、將更新的儲存控制器與全新的FAS9000 HA控制器配對中的全新版塊升級至更新的FAS9500控制器、同時保留所有現有的資料和磁碟。這是一個複雜的程序、只能由經驗豐富的系統管理員使用。</block>
+  <block id="3d58d6338cfd5f06b224201846bd6759" category="list-text">您已向NetApp銷售代表確認、您已收到AFF 了《關於更新的知識、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術</block>
+  <block id="58fd942a7ba8a430b491bba397e88d17" category="list-text">您執行ONTAP 的是適用於AFF 某個32位元組控制器的32位元組版本。</block>
+  <block id="7addcb2495004d218f3791cfcb74d41e" category="list-text">您執行ONTAP 的是FAS9500控制器的版本不符合功能的版本。</block>
+  <block id="b0ce3e25b9ec3a13c13ca9a6fa5323b7" category="list-text">您正在FlexArray 使用的是AFF 功能不實的虛擬化軟體來搭配使用於功能不實的A700或FAS9000系統。</block>
+  <block id="c72ac68ecc63380b07ba76bc038edf2e" category="paragraph">您必須使用AFF EscoreA900或FAS9500控制器和NVRAM模組來驗證node2安裝。由於實體連接埠沒有變更、因此您不需要將實體連接埠從舊節點2對應至替換節點2。</block>
+  <block id="fbb88f36cd542fa5f9d7d9b7989c4fa9" category="paragraph">使用AFF E4A900或FAS9500控制器模組開機節點1之後、您必須確認其安裝正確。您必須等待節點2加入仲裁、然後繼續執行控制器更換作業。</block>
+  <block id="2547b168178c27dad563f660708cda35" category="list-text">如果在組態中使用NetApp儲存加密（NSE）、而您使用「kmip.init.maxwait`」變數「Off」（在_Boot node2中、搭配AFF 使用NetApp A900或FAS9500控制器和NVRAM模組）、將「show」bootarg.storageEncryption.supports命令設為「true」、 <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>）、您必須重設變數：</block>
+  <block id="0b67bd45e44a6983f2e329371f92a85c" category="paragraph">交換相應AFF 的E4A900或FAS9500節點1控制器和NVRAM模組之後、您必須使用netboot node1。「netboot」一詞表示您是從ONTAP 儲存在遠端伺服器上的鏡像進行開機。準備網路開機時、您必須在ONTAP 系統可以存取的網路伺服器上新增一份《支援》9開機映像。</block>
+  <block id="6bc5a701ba593a754b9fc417aacb558c" category="paragraph">除非安裝在機箱中並已開啟電源、否則無法檢查ONTAP 安裝在AFF 架構套件上的支援媒體版本、例如：在不支援支援更新的支援基礎架構成本的支援基礎架構成本。ONTAP AFF ONTAP AFF您可以在開機功能表中執行netboot、然後執行wappeconfig命令來設定映像。如果控制器模組先前曾在另一個叢集中使用、則「wifeconfig」命令會清除開機媒體上的任何剩餘組態。</block>
+  <block id="fed5188660beab0c1ca98ade1cf9e488" category="list-text">請等待AFF 執行於EscoreA900或FAS9500控制器模組上的節點1開機、並顯示開機功能表選項、如下所示：</block>
+  <block id="2fef7d8ad2c6da5a6bfc7b0d1cb4d82f" category="doc">使用AFF FASA900或FAS9500控制器和NVRAM模組來開機節點2</block>
+  <block id="85a900d149967784a6d6e1061792097f" category="paragraph">節點2搭配AFF EscoreA900或FAS9500控制器和NVRAM模組、現在已準備好升級。透過交換控制器和NVRAM模組、將「從A 700升級至e a 900」或「FAS9000升級至FAS9500」只需移動主控台和管理連線即可。AFF AFF本節提供使用AFF E4A900或FAS9500控制器和NVRAM模組來開機節點2所需的步驟。</block>
+  <block id="29af000d792467e009d5e082d6fb2b1e" category="list-text">節點會在開機功能表停止。輸入「22/7」、然後選取隱藏選項「boot_after控制器置換」。若要重新指派AFF EscoreA700或FAS9000節點1磁碟到AFF EsceA900或FAS9500節點1、請在提示字元下輸入節點2的實際節點名稱。請參考下列範例：</block>
+  <block id="5e1956d6adc0bdab37f993d5b46e373b" category="paragraph">節點1搭配AFF EscoreA900或FAS9500控制器和NVRAM模組、現在可以開機了。透過交換控制器和NVRAM模組、將某個從處理器升級到FASA700至FASA900或FAS9000至FAS9500、只需移動主控台和管理連線即可。AFF AFF本節提供使用AFF E4A900或FAS9500控制器和NVRAM模組來開機節點1所需的步驟。</block>
+  <block id="def24406017cbdd73b740bba1a1e6765" category="list-text">節點會在開機功能表停止。輸入「22/7」、然後選取隱藏選項「boot_after控制器置換」。若要重新指派節點1磁碟、請AFF 在提示字元下、輸入節點1的實際節點名稱、將節點1磁碟從支援功能的EsceA700重新指派至AFF EsceA900或從FAS9000重新指派至FAS9500。請參考下列範例：</block>
+  <block id="5fa38b455ca95ac213888d230b770ee7" category="paragraph">在開始升級之前、您必須先確認AFF 您擁有的是正確的硬體、可讓您進行從故障到AFF 故障的修復A700升級、或是從FAS9000升級到FAS9500升級。對於要升級的每個HA配對、您必須有兩個系統控制器模組和兩個NVRAM模組。如果零件遺失、請聯絡技術支援部門或NetApp銷售聯絡人以尋求協助。</block>
+  <block id="ba5bb93bf3745b7b90abb302dc84dab9" category="sidebar">使用「系統控制器更換」命令、將AFF E4A700升級至AFF E4A900或FAS9000升級至FAS9500</block>
+  <block id="cec0ad56d161fd372b8f511ac2258e91" category="sidebar">第2階段：重新部署資源、並淘汰AFF EsceeA700或FAS9000節點1</block>
+  <block id="3e7ed5dc4e5c354a7d48cc37baefc4ad" category="sidebar">階段3.使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點1</block>
+  <block id="f8963d11fe6453d2060dd15fbe008dd0" category="sidebar">使用AFF EsceA900控制器和NVRAM模組來開機節點1</block>
+  <block id="1ed45ea6838f5dd96a4433ce598c8050" category="sidebar">階段5.在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組</block>
+  <block id="6c86470db96f676f214aa83001c5a57f" category="sidebar">在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組</block>
+  <block id="ae89e936215d96a55c04a947db881581" category="sidebar">階段6.使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點2</block>
 </blocks>

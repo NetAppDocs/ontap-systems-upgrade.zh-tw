@@ -122,7 +122,7 @@ Do you want to continue? {y|n}: y
 +
 您可以比較輸出與中擷取的輸出 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] 區段。
 
-. 如果在組態中使用NetApp儲存加密（NSE）、而您使用「kmip.init.maxwait>`」變數「Off」（在_Boot node2中、搭配AFF 使用VA900控制器模組和NVRAM模組）、將「setenv bootarg.storageEncryption.supports」命令設為「true」、 link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1["步驟1."]）、您必須重設變數：
+. 如果在組態中使用NetApp儲存加密（NSE）、而您使用「kmip.init.maxwait`」變數「Off」（在_Boot node2中、搭配AFF 使用NetApp A900或FAS9500控制器和NVRAM模組）、將「show」bootarg.storageEncryption.supports命令設為「true」、 link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1["步驟1."]）、您必須重設變數：
 +
 「et diag; systemShell -node<node_name>-command Sudo kenv -u -p kmip.init.maxwait`」
 

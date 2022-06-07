@@ -36,39 +36,70 @@ NOTE: 您可以在本程序中使用NetApp儲存加密（NSE）和NetApp Volume�
 | 舊控制器 | 更換控制器 
 
 
-| FAS8020、FAS8040、FAS8060、FAS8080 | FAS8200、FAS8300、FAS8700、FAS9000 
+| FAS8020^3^、FAS8040^3^、FAS8060、FAS8080 | FAS8200、FAS8300、FAS8700、FAS9000 
 
 
-| AFF8020、AFF8040、AFF8060、AFF8080 | Exe300、ExeA400、Exe0A700、AFF AFF AFF AFF Ex4A800^1^ 
+| FAS8060^4^、FAS8080、4^ | FAS9500 
 
 
-| FAS8200 | FAS8700、FAS9000、FAS8300、3^ 
+| AFF8020^3^、AFF8040^3^、AFF8060、AFF8080 | Exe300、ExeA400、Exe0A700、AFF AFF AFF AFF Ex4A800^1^ 
 
 
-| 部分A300 AFF | 例如：ExeA700、ExeA800^1^、AFF AFF AFF ExeA400^3^ 
+| AFF8060^4^、AFF8080 4^ | 解答900 AFF 
 
 
-| 解答320 AFF | VA400^2^ AFF 
+| FAS8200 | FAS8300、FAS8700、FAS9000、FAS9500 
 
 
-| AFF8080 | VA900^4^ AFF 
+| FAS8300、FAS8700、FAS9000 | FAS9500 
+
+
+| 部分A300 AFF | Exe400^2^、ExA700、Ex4A800^1^、AFF AFF AFF AFF WxeA900 
+
+
+| VA320^4^ AFF | 解答400 AFF 
+
+
+| 部分A400、部分A700 AFF AFF | 解答900 AFF 
 |===
 
 NOTE: 如果您的控制器升級模式組合不在上表中、請聯絡技術支援部門。
 
 ^1^如需AFF 瞭解更多有關支援Arfa800系統的步驟、請參閱第節中提及A800的步驟 link:set_fc_or_uta_uta2_config_on_node3.html#step23["檢查並設定節點3步驟23上的UTA/UTA2連接埠"]或 link:set_fc_or_uta_uta2_config_node4.html#step23["檢查並設定節點4步驟23上的UTA/UTA2連接埠"]。
 
-從支援從AFF 32 A320自動升級至AFF 32 A400系統的^2^ARL、範圍從ONTAP 4.9到9.1。
-
-^3^如果您要在AFF 雙節點無交換式叢集組態中、從Sfzha300升級AFF 至Sf2 A400或FAS8200、則必須選擇暫用叢集連接埠以進行控制器升級。以乙太網路套裝組合形式提供兩種組態：夾層卡連接埠為乙太網路類型、夾層連接埠為FC類型、而以FC套裝組合形式提供夾層連接埠為FC類型。AFF
+^2^如果您要在AFF 雙節點無交換式叢集組態中、從Sfzha300升級AFF 至Sf2 A400或FAS8200、則必須選擇暫用叢集連接埠以進行控制器升級。以乙太網路套裝組合形式提供兩種組態：夾層卡連接埠為乙太網路類型、夾層連接埠為FC類型、而以FC套裝組合形式提供夾層連接埠為FC類型。AFF
 
 * 對於採用乙太網路類型組態的FASA400或FAS8300、您可以使用兩個夾層連接埠中的任何一個作為暫用叢集連接埠。AFF
 * 若為AFF 採用FC類型組態的Arf-A400或FAS8300、您必須新增四埠10GbE網路介面卡（零件編號X1147A）、以提供暫用叢集連接埠。
 * 使用暫用叢集連接埠完成控制器升級之後、您可以不中斷營運地將叢集LIF移轉至e3a和e3b、AFF 將100GbE連接埠移轉至ESIA400系統、以及將FAS8300系統上的e0c和e0d、100GbE連接埠。
 
 
-從ONATP 9.10.1開始、ARL自動升級支援從執行ONTAP WS9.8或更新版本的AFF8080系統、升級AFF 至執行9.10.1或更新版本的S4A900系統。
+對於FAS8020、FAS8040、AFF8020和AFF8040系統升級到上表所列的目標替換控制器、替換控制器必須執行與ONTAP 舊控制器相同的版本。請注意、FAS8020、FAS8040、AFF8020和AFF8040系統不支援ONTAP 更新於ONTAP 支援更新版本9.8的版本。
 
+^4^驗證ONTAP 控制器升級所支援的支援的更新版本。
+
+[cols="20,30,20,30"]
+|===
+2+| 舊控制器 2+| 更換控制器 
+
+
+| 系統 | 版本ONTAP | 系統 | 版本ONTAP 
+
+
+| 解答320 AFF | 9.9.1或更新版本 | 解答400 AFF | 9.9.1或更新版本 
+
+
+| AFF8060 | 9.8P13或更新版本的修補程式 | 解答900 AFF | 9.10.1或更新版本 
+
+
+| AFF8080 | 9.8P10或更新版本的修補程式 | 解答900 AFF | 9.10.1或更新版本 
+
+
+| FAS8060 | 9.8P13或更新版本的修補程式 | FAS9500 | 9.10.1P3或更新版本 
+
+
+| FAS8080 | 9.8P12或更新版本的修補程式 | FAS9500 | 9.10.1P3或更新版本 
+|===
 如果您偏好其他方法來升級控制器硬體、並願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
 
 請參閱 link:other_references.html["參考資料"] 連結至_SURF9 ONTAP 文件中心_、您可在此存取ONTAP VMware產品文件。

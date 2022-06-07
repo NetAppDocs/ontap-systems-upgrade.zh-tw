@@ -14,7 +14,7 @@ summary: 在AFF 從EVA700 AFF 升級至EsceA900期間、停用HA配對與node2�
 
 
 [role="lead"]
-若要淘汰節點1、請繼續執行自動化作業、以停用與節點2的HA配對、並正確關閉節點1。您稍後必須從AFF 節點1機箱中移除EsceeERA700控制器模組和NVRAM模組、然後在AFF 節點1上安裝EsceA900 NVRAM模組和控制器模組。
+若要淘汰節點1、請繼續執行自動化作業、以停用與節點2的HA配對、並正確關閉節點1。您稍後必須從AFF 節點1機箱中移除EscoreA700或FAS9000控制器和NVRAM模組、然後在AFF 節點1上安裝EsceA900或FAS9500控制器和NVRAM模組。
 
 .步驟
 . 恢復作業：
@@ -32,7 +32,7 @@ summary: 在AFF 從EVA700 AFF 升級至EsceA900期間、停用HA配對與node2�
 
 
 
-== 移除AFF 「功能性」控制器模組和NVRAM模組
+== 移除AFF 功能不整的A700或FAS9000控制器和NVRAM模組
 
 在此階段、node1已關閉、所有資料均由node2提供服務。由於節點1和節點2位於同一個機箱中、並由相同的電源供應器組供電、因此請勿關閉機箱電源。您必須小心、只移除節點1控制器模組和節點1 NVRAM模組。通常、節點1是位於機箱左側的控制器A、當您從系統背面查看控制器時。控制器標籤位於控制器模組正上方的機箱上。
 
@@ -40,9 +40,9 @@ summary: 在AFF 從EVA700 AFF 升級至EsceA900期間、停用HA配對與node2�
 
 
 
-=== 移除AFF 「功能不一」控制器模組
+=== 移除AFF 「功能不整」或「FAS9000」控制器模組
 
-請使用下列程序移除AFF 「非洲」控制器模組。
+請使用下列程序移除AFF 不適用的A700或FAS9000控制器模組。
 
 .步驟
 . 從節點1移除控制器模組之前、請先從節點1控制器模組拔下主控台纜線（如果有）和管理纜線。
@@ -80,12 +80,12 @@ image::../media/black_circle_two.png[第二名]
 
 
 
-=== 移除AFF 功能不再需要的NVRAM模組
+=== 移除AFF 「功能不整」或「FAS9000 NVRAM模組」
 
-請依照下列程序移除AFF 「VA700 NVRAM模組」。
+請使用下列程序移除AFF 不含功能的A700或FAS9000 NVRAM模組。
 
 
-NOTE: 此功能可在插槽6中使用AFF 、高度是系統中其他模組的兩倍。
+NOTE: FASA700或FAS9000 NVRAM模組位於插槽6中、高度是系統中其他模組的兩倍。AFF
 
 .步驟
 . 從節點1的插槽6中解除鎖定並移除NVRAM模組。
@@ -118,22 +118,25 @@ image::../media/black_circle_two.png[第二名]
 |===
 
 
-. 如果AFF 您使用任何附加模組做為ESIEA700 NVRAM模組上的coredump裝置、請勿將其傳輸至AFF ESIA900 NVRAM模組。
 
 
 
 
-== 在AFF 節點1上安裝E4A900 NVRAM模組和控制器模組
+== 在AFF 節點1上安裝E4A900或FAS9500 NVRAM和控制器模組
 
-您必須在AFF 節點1上安裝收到的用於升級的EsceA900 NVRAM模組和控制器模組。請勿將coredump裝置從AFF ESIEA700 NVRAM模組移至AFF ESIEA900 NVRAM模組。
+您必須在AFF 節點1上安裝您收到的用於升級的EsceA900或FAS9500 NVRAM和控制器模組。
+
+* 請勿將coredump裝置從AFF ESIEA700 NVRAM模組移至AFF ESIEA900 NVRAM模組。
+* 將FAS9000 NVRAM模組中安裝的所有快閃快取模組移至FAS9500 NVRAM模組。
+
 
 如果您尚未接地、請正確接地。
 
 
 
-=== 安裝AFF VA900 NVRAM模組
+=== 安裝AFF 「FASA900」或「FAS9500 NVRAM」模組
 
-請使用下列程序、將AFF E4A900 NVRAM模組安裝在節點1的插槽6中。
+請使用下列程序、將AFF E4A900或FAS9500 NVRAM模組安裝在節點1的插槽6中。
 
 .步驟
 . 將NVRAM模組對齊插槽6中機箱開孔的邊緣。
@@ -159,9 +162,9 @@ image::../media/black_circle_two.png[第二名]
 
 
 
-=== 在AFF 節點1上安裝E4A900控制器模組。
+=== 在AFF 節點1上安裝E4A900或FAS9500控制器模組。
 
-請使用下列程序、在AFF 節點1中安裝EsceA900控制器模組。
+請使用下列程序、在AFF 節點1中安裝E4A900或FAS9500控制器模組。
 
 .步驟
 . 將控制器模組的一端對準機箱的開啟A、然後將控制器模組輕推至系統的一半。

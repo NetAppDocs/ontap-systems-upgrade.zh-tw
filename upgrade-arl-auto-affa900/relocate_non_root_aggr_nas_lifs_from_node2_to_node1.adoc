@@ -14,7 +14,7 @@ summary: 將node2的非根Aggregate升級至node1時、將AFF 其重新定位至
 
 
 [role="lead"]
-您AFF 必須先將節點2所屬的非根Aggregate重新定位至節點1、才能將節點2更換為EsceA900控制器模組和NVRAM模組。
+您必須AFF 先將節點2重新定位至節點1、才能將節點2更換為EscoreA900或FAS9500控制器模組和NVRAM模組。
 
 完成上一階段的檢查後、節點2的資源版本會自動啟動。非根Aggregate和非SAN資料LIF會從節點2移轉至新節點1。
 

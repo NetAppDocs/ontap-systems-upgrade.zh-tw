@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.htm
 keywords: install, NVRAM, aff, a900, node2, controller, module 
 summary: ARL控制器升級程序期間、關於Ar4A900 NVRAM模組和控制器模組的安裝說明AFF 。 
 ---
-= 在AFF 節點2上安裝E4A900 NVRAM模組和控制器模組
+= 在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,15 @@ summary: ARL控制器升級程序期間、關於Ar4A900 NVRAM模組和控制器�
 
 
 [role="lead"]
-您必須在AFF 節點2上安裝收到的用於升級的EsceA900 NVRAM模組和控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。
+您必須在AFF 節點2上安裝您收到的用於升級的EscoreA900或FAS9500 NVRAM和控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。
 
 如果您尚未接地、請正確接地。
 
 
 
-== 安裝AFF VA900 NVRAM模組
+== 安裝AFF 「FASA900」或「FAS9500 NVRAM」模組
 
-請使用下列程序、將AFF E4A900 NVRAM模組安裝在節點2的插槽6中。
+請使用下列程序、將AFF E4A900或FAS9500 NVRAM模組安裝在節點2的插槽6中。
 
 .步驟
 . 將NVRAM模組對齊插槽6中機箱開孔的邊緣。
@@ -31,9 +31,9 @@ summary: ARL控制器升級程序期間、關於Ar4A900 NVRAM模組和控制器�
 
 
 
-== 在AFF 節點2中安裝E4A900控制器模組。
+== 在AFF 節點2中安裝E4A900或FAS9500控制器模組
 
-請使用下列程序、在AFF 節點2中安裝EsceA900控制器模組。
+請使用下列程序、在AFF 節點2中安裝E4A900或FAS9500控制器模組。
 
 .步驟
 . 將控制器模組的一端對準機箱中的托架B、然後將控制器模組輕推至系統的一半。
