@@ -277,35 +277,27 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
-      <div id="ie-i18n-menu">
-      <span class="ie-i18n-lang">繁體中文</span>
-        <button class="ie-i18n-icon-container" type="button">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">繁體中文</span>
           <svg class="n-globe__icon" aria-labelledby="title">
             <title>globe</title>
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/zh-tw/ontap-systems-upgrade/common/svg/sprite.svg#globe"></use>
           </svg>
         </button>
       </div>
-      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
-        <div class="n-language-selector-menu">
-          <ul class="n-menu__list">
-            <li class="n-menu__list-column">
-              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/record_node2_information.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-manual/record_node2_information.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/record_node2_information.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-cn/ontap-systems-upgrade/upgrade-arl-manual/record_node2_information.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
-                </li><li class="n-menu__list-item n-menu__list-item--level-1">
-                  <a href="https://docs.netapp.com/zh-tw/ontap-systems-upgrade/upgrade-arl-manual/record_node2_information.html" class="n-menu__header-text"><span translate="no" class="notranslate">繁體中文</span></a>
-                </li></ul>
-            </li>
-          </ul>
-        </div>
-      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/zh-tw/ontap-systems-upgrade/upgrade-arl-manual/record_node2_information.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/record_node2_information.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/ontap-systems-upgrade/upgrade-arl-manual/record_node2_information.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/ontap-systems-upgrade/upgrade-arl-manual/record_node2_information.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/ontap-systems-upgrade/upgrade-arl-manual/record_node2_information.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li></ul>
     </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
@@ -678,11 +670,11 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/ontap-systems-upgrade/pdfs/sidebar/使用_系統控制器更換_命令_將AFF_執行AFF__E59_10_1_或更新版本的_EVA700_升級至_E4A900_ONTAP.pdf" 
+              href="/zh-tw/ontap-systems-upgrade/pdfs/sidebar/使用_系統控制器更換_命令_將AFF_E4A700升級至AFF_E4A900或FAS9000升級至FAS9500.pdf" 
             
           >
             <img src="/zh-tw/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            使用「系統控制器更換」命令、將AFF 執行AFF 《E59.10.1》或更新版本的《EVA700》升級至《E4A900》ONTAP
+            使用「系統控制器更換」命令、將AFF E4A700升級至AFF E4A900或FAS9000升級至FAS9500
           </a>
           
 
@@ -737,11 +729,11 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/ontap-systems-upgrade/pdfs/sidebar/第2階段_重新部署資源並淘汰AFF_EsceA700_node1.pdf" 
+              href="/zh-tw/ontap-systems-upgrade/pdfs/sidebar/第2階段_重新部署資源_並淘汰AFF_EsceeA700或FAS9000節點1.pdf" 
             
           >
             <img src="/zh-tw/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            第2階段：重新部署資源並淘汰AFF EsceA700 node1
+            第2階段：重新部署資源、並淘汰AFF EsceeA700或FAS9000節點1
           </a>
           
 
@@ -770,11 +762,11 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/ontap-systems-upgrade/pdfs/sidebar/階段3_使用AFF_EsceeA900控制器模組和NVRAM模組來開機節點1.pdf" 
+              href="/zh-tw/ontap-systems-upgrade/pdfs/sidebar/階段3_使用AFF_EscoreA900或FAS9500控制器和NVRAM模組來開機節點1.pdf" 
             
           >
             <img src="/zh-tw/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            階段3.使用AFF EsceeA900控制器模組和NVRAM模組來開機節點1
+            階段3.使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點1
           </a>
           
 
@@ -832,11 +824,11 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/ontap-systems-upgrade/pdfs/sidebar/階段5_在AFF_節點2上安裝E4A900_NVRAM模組和控制器模組.pdf" 
+              href="/zh-tw/ontap-systems-upgrade/pdfs/sidebar/階段5_在AFF_節點2上安裝E4A900或FAS9500_NVRAM和控制器模組.pdf" 
             
           >
             <img src="/zh-tw/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            階段5.在AFF 節點2上安裝E4A900 NVRAM模組和控制器模組
+            階段5.在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組
           </a>
           
 
@@ -861,11 +853,11 @@
           
           <a target="_blank" 
             
-              href="/zh-tw/ontap-systems-upgrade/pdfs/sidebar/階段6_使用AFF_EsceeA900控制器模組和NVRAM模組來開機節點2.pdf" 
+              href="/zh-tw/ontap-systems-upgrade/pdfs/sidebar/階段6_使用AFF_EscoreA900或FAS9500控制器和NVRAM模組來開機節點2.pdf" 
             
           >
             <img src="/zh-tw/ontap-systems-upgrade/images/pdf.png" width="16" height="16"/>
-            階段6.使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2
+            階段6.使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點2
           </a>
           
 
@@ -2247,7 +2239,7 @@
     $("#toggleContainerPdf").toggle('display');
     $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
   });
-</script><div class="sidebar-nav-container">
+</script><div class="sidebar-nav-container" id="mysidebardiv">
   <ul id="mysidebar" class="nav"><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/index.html">
         系統升級文件AFF FAS
       </a></li><li class="subfolders "><a href="#">
@@ -2347,7 +2339,7 @@
       <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl/index.html">
         總覽
       </a></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> 使用「系統控制器更換」命令、將AFF 執行AFF 《E59.10.1》或更新版本的《EVA700》升級至《E4A900》ONTAP</div>
+        <div class="na-navbar-padding"> 使用「系統控制器更換」命令、將AFF E4A700升級至AFF E4A900或FAS9000升級至FAS9500</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html">
         總覽
@@ -2358,7 +2350,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/required_tools_and_documentation.html">
         必要的工具與文件
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html">
-        使用AFF ARL從功能不只A700升級到AFF 功能不只A900的準則
+        升級控制器的準則
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html">
         ARL升級總覽
       </a></li><li class="subfolders "><a href="#">
@@ -2371,7 +2363,7 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/get_ip_address_of_external_kms_for_storage_encryption.html">
         取得外部金鑰管理伺服器的IP位址以進行儲存加密
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> 第2階段：重新部署資源並淘汰AFF EsceA700 node1</div>
+        <div class="na-navbar-padding"> 第2階段：重新部署資源、並淘汰AFF EsceeA700或FAS9000節點1</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html">
         將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2
@@ -2382,10 +2374,10 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node1.html">
         netboot node1
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> 階段3.使用AFF EsceeA900控制器模組和NVRAM模組來開機節點1</div>
+        <div class="na-navbar-padding"> 階段3.使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點1</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html">
-        使用AFF EsceeA900控制器模組和NVRAM模組來開機節點1
+        使用AFF EsceA900控制器和NVRAM模組來開機節點1
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node1_installation.html">
         驗證node1安裝
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html">
@@ -2400,17 +2392,17 @@
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/retire_node2.html">
         淘汰節點2
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> 階段5.在AFF 節點2上安裝E4A900 NVRAM模組和控制器模組</div>
+        <div class="na-navbar-padding"> 階段5.在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html">
-        在AFF 節點2上安裝E4A900 NVRAM模組和控制器模組
+        在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/netboot_node2.html">
         netboot node2
       </a></li></ul></li><li class="subfolders "><a href="#">
-        <div class="na-navbar-padding"> 階段6.使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2</div>
+        <div class="na-navbar-padding"> 階段6.使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點2</div>
       </a>
       <ul><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html">
-        使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2
+        使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點2
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/verify_node2_installation.html">
         驗證node2安裝
       </a></li><li class=" "><a class="na-navbar-padding" href="/zh-tw/ontap-systems-upgrade/upgrade-arl-auto-affa900/restore_key_manager_config_node2.html">
@@ -3330,4 +3322,5 @@ node2
     </script>
     <script src='/zh-tw/ontap-systems-upgrade/js/www-ntap.js'></script>
     <script src='/zh-tw/ontap-systems-upgrade/js/tabbed-blocks.js'></script>
+    <script src='/zh-tw/ontap-systems-upgrade/js/sidebar.js'></script>
   </body></html>
