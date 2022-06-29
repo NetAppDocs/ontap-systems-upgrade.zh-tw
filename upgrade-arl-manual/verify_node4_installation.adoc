@@ -24,7 +24,7 @@ summary: 在執行ONTAP 更新版本的控制器上、在手動升級ARL時、�
 
 . 驗證node4是否可以與node3通訊、以及所有l生命 週期是否都在正常運作：
 +
-「網路介面show -curr-node4>'
+「網路介面show -curr-node-node4_」
 
 . 請採取下列其中一項行動：
 +

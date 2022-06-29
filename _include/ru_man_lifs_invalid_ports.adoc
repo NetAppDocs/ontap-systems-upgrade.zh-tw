@@ -7,6 +7,6 @@
 .步驟
 . 輸入「MetroCluster vsvserver resSync」命令、將lifs重新分配到正確的連接埠。
 +
-「MetroCluster vsvserver resSync -vserver <vserver_name> fCP、mc、header upgrade、test.vs」
+「MetroCluster Sesvserver resSync -vserver _vserver_name_ fCP、mc、healmUpgrade、test.vs」
 
 

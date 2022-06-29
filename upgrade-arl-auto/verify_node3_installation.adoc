@@ -48,19 +48,19 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行更新至9.7�
 .步驟
 . 使用中記錄的節點1資訊、在節點3上重新建立VLAN link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2"] 區段：
 +
-「網路連接埠VLAN create -Node <node_name>-vlan <vlan-names>」
+「網路連接埠VLAN create -node_node_name_-vlan _vlan-names _」
 
 . 使用中記錄的node1資訊、在node3上重新建立介面群組 link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2"] 區段：
 +
-「網路連接埠ifgrp create -node<node_name>-ifgrp <port_ifgrp_name>-distr-func'
+「網路連接埠ifgrp create -node_node_name_-ifgrp _port_ifgrp_name_-distr-func'
 
 . 使用中記錄的節點1資訊、在節點3上重新建立廣播網域 link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2"] 區段：
 +
-「網路連接埠廣播網域建立-IPSpace預設值-broadcast網域<廣播網域名稱>-MTU <MTU大小>-port <node_name:port_name、node_name:port_name>'
+「網路連接埠廣播網域建立-IPSpace預設值-broadcast網域_broadcast網域名稱_-MTU _MTU大小_-連接埠_node_name:port_name、node_name:port_name_」
 
 . 將node3連接埠新增至新重新建立的廣播網域：
 +
-「網路連接埠、廣播網域、附加連接埠、廣播網域<廣播網域名稱>-連接埠<節點名稱：連接埠名稱、節點名稱：連接埠名稱>」
+「網路連接埠廣播網域附加連接埠-broadcast網域_broadcast網域名稱_-連接埠_norme_name:port_name、node_name:port_name_」
 
 
 
@@ -68,7 +68,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行更新至9.7�
 
 == 還原節點3上的金鑰管理程式組態
 
-如果您使用NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、加密組態必須同步至新節點。當節點1集合體從節點2到節點3完成ARL時、加密的磁碟區會離線。
+如果您使用NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、加密組態必須同步至新節點。如果您沒有還原金鑰管理程式、當您使用ARL將節點1集合體從節點2重新定位至節點3時、加密的磁碟區將會離線。
 
 .步驟
 . 若要同步Onboard Key Manager的加密組態、請在叢集提示字元中執行下列命令：
@@ -77,10 +77,10 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行更新至9.7�
 | 對於此ONTAP 版本… | 使用此命令... 
 
 
-| 部分9.6或9.7 ONTAP | 安全金鑰管理程式內建同步 
+| 部分9.6或9.7 ONTAP | 「安全金鑰管理程式內建同步」 
 
 
-| 版本9.5 ONTAP | 安全金鑰管理程式設定節點<node_name> 
+| 版本9.5 ONTAP | 「安全金鑰管理程式設定節點_norme_name_」 
 |===
 . 輸入Onboard Key Manager的全叢集密碼。
 

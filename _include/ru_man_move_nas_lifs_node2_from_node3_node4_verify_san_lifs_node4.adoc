@@ -91,19 +91,19 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 .. [[man_lif_VERIF_4_substepa]將先前屬於介面群組節點2的節點3上裝載的任何LIF移轉至節點4上的連接埠、以便在同一個網路上裝載LIF、方法是針對每個LIF輸入下列命令一次：
 +
-「網路介面移轉-vserver <vserver_name>-lif<lif_name>-dest-node4–dest-port <netport|ifgrp>`
+「網路介面移轉-vserver _vserver_name_-lif_lif_name_-dest-node4–dest-port _netport|ifgrp_」
 
 .. 修改中的lifs主連接埠和主節點 <<man_lif_verify_4_substepa,子步驟A>> 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
 +
-「網路介面修改-vserver <vserver_name>-lif<datalif_name>-home-Node node4 home-port <netport|ifgrp>`
+「網路介面修改-vserver _vserver_name_-lif_datalif_name_-home-Node node4 home-port _netport|ifgrp_」
 
 .. [[man_lif_VERIF_4_substepc]將先前屬於VLAN連接埠節點2的節點3上裝載的任何LIF移轉至節點4上的連接埠、以便在同一個網路上裝載LIF、方法是輸入下列命令（每個LIF一次）：
 +
-「網路介面移轉-vserver <vserver_name>-lif <datalif_name>-dest-Node node4–dest-port <netport|ifgrp>'
+「網路介面移轉-vserver _vserver_name_-lif_datalif_name_-dest-Node node4–dest-port _netport|ifgrp_」
 
 .. 修改中的lifs主連接埠和主節點 <<man_lif_verify_4_substepc,子步驟c>> 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
 +
-「網路介面修改-vserver <vserver_name>-lif <datalif_name>-home-Node <node4> home-port <netport|ifgrp>'
+「網路介面修改-vserver _vserver_name_-lif_datalif_name_-home-node-node4_ home-port _netport|ifgrp_」
 
 
 
@@ -124,7 +124,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 |===
 . [[man_lif_VERIF_4_Step5]]如果您的平台上有不同的資料連接埠、請輸入下列命令、將連接埠新增至廣播網域：
 +
-「網路連接埠廣播網域附加連接埠-IPSpace <IPspace_name>-broadcast網域管理連接埠<node:port>'
+「網路連接埠廣播網域附加連接埠-IPSpace _IPspace_name_-broadcast網域管理連接埠_node:port_」
 
 +
 下列範例將節點「6280-1」上的連接埠「e0a」和節點「8060-1」上的連接埠「e0i」新增至IPspace預設中的廣播網域管理：
@@ -136,11 +136,11 @@ cluster::> network port broadcast-domain add-ports -ipspace Default  -broadcast-
 ----
 . 輸入下列命令、將每個NAS資料LIF移轉至節點4、每個LIF一次：
 +
-「網路介面移轉-vserver <vserver-name>-lif <datalif-name>-dest-node-node4>-destite-port <netport|ifgrp>-home-node4>'
+「網路介面移轉-vserver _vserver-name_-lif_datalif-name_-dest-node-node4_-dest-port _netport|ifgrp_-home-node-node4_」
 
 . 確保資料移轉持續進行：
 +
-「網路介面修改-vserver <vserver_name>-lif <datalif_name>-home-port <netport|ifgrp>'
+「網路介面修改-vserver _vserver_name_-lif_datalif_name_-home-port _netport|ifgrp_」
 
 . [[man_lif_verify_4_step8]輸入下列命令、以列出所有網路連接埠並檢查其輸出、驗證所有連結的狀態為「up」：
 +
@@ -180,7 +180,7 @@ node4
 
 .. 針對每個舊的網路連接埠輸入下列命令一次：
 +
-「網路連接埠刪除節點<node_name>-port <port_name>」
+"network port delete -node_node_name_-port _port_name_"（網路連接埠刪除-node_node_name_-port _port_name_）
 
 .. 輸入下列命令即可返回管理員層級：
 +
@@ -256,25 +256,25 @@ NOTE: 如果新組態中的SAN LIF不在仍連接至相同「切換連接埠」�
 +
 ... 將LIF狀態設為「關閉」：
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>-STATUS-admin DOUTE」
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-stue-admin down」
 
 ... 從連接埠集移除LIF：
 +
-「portset移除-vserver <vserver_name>-portset <portSet_name>-port-name <port_name>」
+「portset移除-vserver _vserver_name_-portset _portset_name_-port-name _port_name_」
 
 ... 輸入下列其中一個命令：
 +
 **** 移動單一LIF：
 +
-「網路介面修改-lif<lif_name>-home-port <new_home_port>`
+「網路介面修改-lif_lif_name_-home-port _new_home_port_」
 
 **** 將單一不存在或不正確連接埠上的所有LIF移至新連接埠：
 +
-「網路介面修改｛-home-port <port_on_node2>-home-node<node2>-role data｝-home-port <new_home_port_on_node4>'
+「網路介面修改｛-home-port _port_on_node2_-home-node_node2_-role data｝-home-port _new_home_port_on_node4_」
 
 **** 將lifs新增回連接埠集：
 +
-「portset add -vserver <vserver_name>-portset <portset_name>-port-name <port_name>'
+「portset add -vserver _vserver_name_-portset _portset_name_-port-name _port_name_」
 
 
 
@@ -288,14 +288,14 @@ NOTE: 您必須將SAN LIF移至連結速度與原始連接埠相同的連接埠�
 
 . 輸入下列命令、將所有lifs的狀態修改為「up」、以便lifs可以接受及傳送節點上的流量：
 +
-「網路介面修改-vserver <vserver_name>-home-port <port_name>-home-node<node4> lif_name>-STATUS-admin up」
+「網路介面修改-vserver _vserver_name_-home-port _port_name_-home-node_node4_ lif_lif_name_-stue-admin up」
 
 . 在任一節點上輸入以下命令並檢查輸出、以確認任何SAN LIF都已移至正確的連接埠、而且該LIF的狀態為「up」（啟動）：
 +
-「網路介面show -home-Node <node4>-role data」
+「網路介面show -home-node-node4_-role data」
 
 . [[man_lif_VERIF_4_Step13]如果有任何LIF當機、請輸入下列命令、將LIF的管理狀態設為「UP」、每個LIF一次：
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>-STATUS-admin up」
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-stue-admin up」
 
 

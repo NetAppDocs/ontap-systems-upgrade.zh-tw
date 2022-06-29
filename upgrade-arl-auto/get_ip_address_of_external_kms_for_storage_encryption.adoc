@@ -40,7 +40,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.
 . 記下新的驗證金鑰ID。
 . 使用新的驗證金鑰重新輸入所有自我加密磁碟機的金鑰：
 +
-「torage加密磁碟modify -disk *-data-key-id <imiting_key_id>'」
+「torage加密磁碟modify -disk *-data-key-id _imalization_key_id_」
 
 
 
@@ -54,11 +54,11 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.
 
 . 新增控制器：
 +
-「安全金鑰管理程式設定節點<new_manager_name>'」
+「安全金鑰管理程式設定節點_new_manager_name_」
 
 . 新增金鑰管理程式：
 +
-「安全金鑰管理程式-新增<key_manager_server_ip_address>」
+「安全金鑰管理程式- add _key_manager_server_ip_address_」
 
 . 驗證金鑰管理伺服器是否已設定、且可供叢集中的所有節點使用：
 +
@@ -66,7 +66,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.
 
 . 將驗證金鑰從所有連結的金鑰管理伺服器還原至新節點：
 +
-「安全金鑰管理程式還原節點<新控制器名稱>」
+「安全金鑰管理程式還原-node_new_控制 器名稱_」
 
 . 使用新的驗證金鑰重新輸入所有自我加密磁碟：
 +
@@ -120,7 +120,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.
 +
 [NOTE]
 ====
-如果狀態為「Transferring（正在傳輸）」、您必須中止傳輸：「napmirror abort-dite-vserver <vserver_name>」
+如果狀態為「Transferring（正在傳輸）」、您必須中止傳輸：「napmirror abort-destination-vserver _vserver_name_」
 
 ====
 +
@@ -128,6 +128,6 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.
 
 . 停止叢集之間的所有關係：
 +
-「napmirror quiesce -dite-vserver <vserver_name>」
+「napmirror quiesce -destination-vserver _vserver_name_」
 
 

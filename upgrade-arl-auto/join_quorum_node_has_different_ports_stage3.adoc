@@ -48,15 +48,15 @@ network port modify -node node3 -port e1b -ipspace Cluster -mtu 9000
 ----
 . 使用下列命令、將叢集生命區移轉至新的連接埠、每個LIF只需移轉一次：
 +
-「網路介面移轉-vserver叢集-lif<lif_name>-source-Node node3 - dest-node3 -destite-port <port_name>」
+「網路介面移轉-vserver叢集-lif_lif_name_-source-Node node3 - dest-node3 -destation-port _port_name_」
 
 . 修改叢集lifs的主連接埠：
 +
-「網路介面修改-vserver叢集-lIF <lif_name>–home-port <port_name>'
+「網路介面修改-vserver叢集-lif_lif_name_–home-port _port_name_`
 
 . 如果叢集連接埠不在叢集廣播網域中、請使用下列命令加以新增：
 +
-「網路連接埠Broadcast網域附加連接埠-IPSpace叢集-BroadcastDomain叢集-連接埠節點：連接埠」
+「網路連接埠廣播網域附加連接埠-IPSpace叢集-broadcast網域叢集-連接埠節點：連接埠」
 
 . 從叢集廣播網域移除舊的連接埠。您可以用於任何相關節點。下列命令會移除節點3上的連接埠「e0d」：
 +
@@ -74,10 +74,10 @@ network port modify -node node3 -port e1b -ipspace Cluster -mtu 9000
 
 .. 顯示包含此連接埠的廣播網域：
 +
-「網路連接埠廣播網域show -port <node_name:port_name>'
+「網路連接埠廣播網域show -ports_node_name:port_name_'
 
 .. 從廣播網域新增或移除連接埠：「網路連接埠、廣播網域、附加連接埠、網路連接埠、廣播網域、移除連接埠」
-.. 修改LIF的主連接埠：「網路介面修改-vserver vserver -lIF <lif_name>–home-port <port_name>'、必要時可調整叢集間廣播網域、並移轉叢集間的LIF。資料生命量維持不變。
+.. 修改LIF的主連接埠：「網路介面修改-vserver vserver -lif_lif_name_–home-port _port_name_」、必要時可調整叢集間廣播網域、並移轉叢集間的LIF。資料生命量維持不變。
 
 
 

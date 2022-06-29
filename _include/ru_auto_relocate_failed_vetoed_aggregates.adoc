@@ -10,7 +10,7 @@
 . 請檢查事件管理系統（EMS）記錄、以判斷為何無法重新部署或遭否決該集合體。
 . 重新部署任何故障或被否決的集合體：
 +
-「torage Aggregate regate regate or搬 移開始節點<node1>-destate <node2> Aggregate-list <aggr_name>-ne-控制 器升級true」
+「torage Aggregate regate regate regulationstart -node_node1_-destate _node2_-aggregate-list _aggr_name_-ne-控制 器升級true」
 
 . 出現提示時、請輸入「y」。
 . 您可以使用下列其中一種方法來強制重新配置：
@@ -21,8 +21,8 @@
 | 選項 | 說明 
 
 
-| 壓倒一切的否決檢查 | 使用下列命令：「torage Aggregate regate regulationstart -Node node1 -destination node2 -Aggregate-list <aggr_list>-ne-控制 器升級true -override-etoes true」 
+| 壓倒一切的否決檢查 | 使用下列命令：「torage Aggregate regate regulationstart -Node node1 -destination node2 -aggregate-list _aggr_list_-ne-控制 器升級true -override-etoes true」 
 
 
-| 覆寫目的地檢查 | 使用下列命令：「torage Aggregate regate regulationstart -Node node1 -destination node2 -Aggregate-list <aggr_list>-ne-控制 器升級true -override-etoes true -override-dest-checkstrue」 
+| 覆寫目的地檢查 | 使用下列命令：「torage Aggregate regate regulationstart -Node node1 -destination node2 -aggregate-list _aggr_list_-ne-控制 器升級true -override-etoes true -override-dest-checkstrue」 
 |===

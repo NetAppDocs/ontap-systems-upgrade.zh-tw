@@ -56,18 +56,18 @@ NOTE: NetApp行銷資料可能會使用「UTA2」一詞來指代整合式網路�
 ** 若要設定目標連接埠：
 
 
-「ucadmin modify -m fc-t target <適 配器>」
+「ucadmin modify -m sfc-t target _adapter-'」
 
 ** 設定啟動器連接埠：
 
 
-「ucadmin modify -m fc-t initiator <adapter>'」
+「ucadmin modify -m光纖通道-t啟動器_adapter-'」
 
 「-t」是FC4類型：目標或啟動器。
 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 在維護模式（開機功能表選項5）中、視需要修改node3上的FC連接埠：「ucadmin modify -m fs -t initiator -f <adapter_port_name>'`-t'是FC4類型、目標或啟動器。*附註*：FC連接埠必須設定為啟動器。 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 在維護模式（開機功能表選項5）中、視需要修改node3上的FC連接埠：「ucadmin modify -m fs -t mitator -f _adapter_port_name_`-t'是FC4類型、目標或啟動器。*附註*：FC連接埠必須設定為啟動器。 
 |===
 . [[step3]請採取下列其中一項行動：
 +
@@ -218,14 +218,14 @@ Adapter  Mode     Type        Mode      Type       Status
 |===
 . [[step6]如果介面卡處於啟動器模式、且UTA/UTA2連接埠處於線上狀態、請將UTA/UTA2連接埠離線：
 +
-「torage disableAdapter <adapter_name>」（停用介面卡）
+「停用介面卡_adapter_name_」
 
 +
 目標模式中的介面卡會在維護模式中自動離線。
 
 . [[auto_checks3_step7]如果目前的組態不符合所需用途、請視需要變更組態：
 +
-「ucadmin modify -m fc|cna -t啟動器| target <適 配器名稱>'
+「ucadmin modify -m fc|cna -t啟動器| target _adapter_name_」
 
 +
 ** 「m」是指個人化模式、「光纖通道」或「cna」。
@@ -274,10 +274,10 @@ Adapter  Mode       Type        Mode     Type        Status
 | 如果系統... | 然後… 
 
 
-| 具有儲存磁碟 | 「網路FCP介面卡修改節點<node_name>-Adapter <adapter_name>-state up」 
+| 具有儲存磁碟 | 網路FCP介面卡修改-node_node_name_-介 面卡_adapter_name_-state up 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 「FCP config <adapter_name> up」 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | "FCP config _adapter_name_ up（FCP組態介面卡名稱_啟動）" 
 |===
 . [[step11]連接連接埠。
 
@@ -395,7 +395,7 @@ Boot_ONTAP maint
 將連接埠改回啟動器模式：
 
 +
-「ucadmin modify -m fs -t initiator -f <介面卡名稱>」
+「ucadmin modify -m fs -t initiator -f _Adapter name_'」
 
 . [[step20]確認連接埠已變更為啟動器模式：
 +
@@ -405,7 +405,15 @@ Boot_ONTAP maint
 +
 《停止》
 
-. [[auto_checks3_step22]在載入程式提示下開機：
++
+[NOTE]
+====
+如果您要從支援外部磁碟的系統升級至也支援外部磁碟的系統、請前往 <<auto_check3_step22,步驟22>>。
+
+如果您要從支援外部磁碟的系統升級至同時支援內部和外部磁碟的系統、例如AFF 、一個支援內部和外部磁碟的系統、請前往 <<auto_check3_step23,步驟23>>。
+
+====
+. [[auto_checks3_step22]在載入程式提示下、開機：
 +
 Boot_ONTAP
 
@@ -435,15 +443,15 @@ Boot_ONTAP maint
 
 .. 如有必要、請將node1 Aggregate上線：
 +
-「aggr_online root_aggr_from _」
+"aggr_online root_aggr_from __node1__（aggr_online root_aggr_from __node1__）"
 
 .. 防止節點3從其原始根Aggregate開機：
 +
-「aggr offline <root_aggr_on_node3>'」
+「aggr offline _root_aggr_on_node3_」
 
 .. 將node1根Aggregate設為節點3的新根Aggregate：
 +
-「aggr options aggr_ffrom _」（aggr_from _）<節點1> root（根）
+"aggr options aggr_fe__ node1__ root"
 
 .. 確認節點3的根Aggregate為離線狀態、且從節點1移轉的磁碟根Aggregate為線上狀態、並設定為root：
 +

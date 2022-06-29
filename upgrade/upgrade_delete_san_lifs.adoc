@@ -16,7 +16,7 @@ summary: 如果叢集位於SAN環境中、您必須先從原始節點刪除任�
 .步驟
 . 如果您有iSCSI啟動器、請完成下列步驟：
 +
-.. 顯示目前連線至原始節點上SVM的作用中啟動器清單、每個舊生命期各顯示一次：+「iSCSI連線show -vserver <vserver_name>-lif<old_lif>'
+.. 顯示目前連線至原始節點上SVM的作用中啟動器清單、每個舊生命期各顯示一次：+「iSCSI連線show -vserver _vserver_name_-lif_old_lif_」
 +
 下列範例顯示命令的輸出、其中使用中的啟動器連接至SVM VS1：
 
@@ -54,10 +54,10 @@ js11      ps0          mixed    LIF1,                   igroup1
 ----
 . 如果原始節點上的任何iSCSIs或FC LIF是連接埠集的成員、請將其從連接埠集移除：
 +
-「LUN連接埠集移除-vserver <vserver_name>-portset <portSet_name>-port-name <lif_name>'
+「LUN連接埠集移除-vserver _vserver_name_-portset _portset_name_-port-name _lif_name_`
 
 . 刪除原始節點上的LIF：
 +
-「網路介面刪除-vserver <vserver_name>-lif<lif_name>`
+網路介面刪除-vserver _vserver_name_-lif_lif_name_`
 
 

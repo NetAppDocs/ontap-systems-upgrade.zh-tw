@@ -15,7 +15,7 @@ Boot_ONTAP maint
 將連接埠改回啟動器模式：
 
 +
-「ucadmin modify -m fs -t initiator -f <介面卡名稱>」
+「ucadmin modify -m fs -t initiator -f _Adapter name_'」
 
 . 確認連接埠已變更為啟動器模式：
 +
@@ -25,7 +25,15 @@ Boot_ONTAP maint
 +
 《停止》
 
-. [[auto_check_4_step22]在載入程式提示下開機：
++
+[NOTE]
+====
+如果您要從支援外部磁碟的系統升級至也支援外部磁碟的系統、請前往 <<auto_check_4_step22,步驟22>>。
+
+如果您要從使用外部磁碟的系統升級至同時支援內部和外部磁碟的系統、例如AFF 、一個支援內部和外部磁碟的系統、請前往 <<auto_check_4_step23,步驟23>>。
+
+====
+. [[auto_check_4_step22]在載入程式提示下、開機：
 +
 Boot_ONTAP
 

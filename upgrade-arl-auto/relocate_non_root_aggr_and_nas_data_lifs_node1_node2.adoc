@@ -40,7 +40,7 @@ NOTE: 不會修改集合體和lifs的主擁有者、只會修改目前擁有者�
 
 . 在作業仍暫停的情況下、確認節點2上的所有非根Aggregate狀態均處於線上狀態：
 +
-「torage Aggregate show -node2>-state online -root假」
+「torage Aggregate show -node2_-state online -root假」
 
 +
 以下範例顯示節點2上的非根Aggregate處於線上狀態：
@@ -60,20 +60,20 @@ aggr_2     825.0GB  825.0GB    0%     online     1  node2  raid_dp,normal
 如果Aggregate已離線或成為節點2上的外部節點、請在節點2上使用下列命令將其上線、每個Aggregate一次：
 
 +
-「torage Aggregate online -gregate <agger_name>」
+'線上儲存Aggregate -Agggr_name_'
 
 . 在節點2上使用下列命令並檢查其輸出、以確認節點2上的所有磁碟區都已上線：
 +
-「Volume show -node2>-state offline」（Volume show -node2>-state offline）
+「Volume show -node2_-state offline」
 
 +
 如果節點2上有任何磁碟區離線、請在節點2上使用下列命令將其上線、每個磁碟區一次：
 
 +
-「Volume online -vserver <vserver_name>-volume <volume <volume．name>'
+"Volume online -vserver _vserver_name_-volume _volume _name_"
 
 +
-與此命令搭配使用的「<vserver_name>」可在先前的「Volume show」命令輸出中找到。
+與此命令一起使用的"_vserver_name_"可在先前的"volume show"命令輸出中找到。
 
 
 
@@ -83,14 +83,14 @@ aggr_2     825.0GB  825.0GB    0%     online     1  node2  raid_dp,normal
 
 . 如果有任何生命中斷、請輸入下列命令、並針對每個LIF輸入一次、將該生命的管理狀態設定為「UP」：
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-node<nodename>-STATUS-admin up」
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-nodename_-stale-admin up」
 
 . 如果已設定介面群組或VLAN、請完成下列子步驟：
 +
 .. 如果您尚未儲存VLAN和介面群組資訊、請在節點3開機後、在節點3上重新建立VLAN和介面群組。
 .. 從介面群組移除VLAN：
 +
-「網路連接埠VLAN刪除節點<節點名稱>-連接埠<ifgrp>-vlan-id <vlan_ID>」
+「網路連接埠VLAN刪除-node_nodename_-port _ifgrp_-vlan-id _vlan_ID_」
 
 +
 
@@ -98,7 +98,7 @@ NOTE: 請遵循修正行動來解決VLAN DELETE命令所建議的任何錯誤。
 
 .. 輸入下列命令並檢查其輸出、查看節點上是否已設定任何介面群組：
 +
-「network port ifgrp show -node<nodename>-ifgrp <ifgrp_name>-instance」
+「網路連接埠ifgrp show -node_nodename_-ifgrp _ifgrp_name_-instance」
 
 +
 系統會顯示節點的介面群組資訊、如下列範例所示：
@@ -119,7 +119,7 @@ Distribution Function: ip
 ----
 .. 如果節點上已設定任何介面群組、請記錄這些群組的名稱及指派給它們的連接埠、然後輸入下列命令刪除連接埠、每個連接埠一次：
 +
-「network port ifgrp remove-port -node<nodename>-ifgrp <ifgrp_name>-port <netport>'
+「網路連接埠ifgrp remove-port -node_nodename_-ifgrp _ifgrp_name_-port _netport_」
 
 
 

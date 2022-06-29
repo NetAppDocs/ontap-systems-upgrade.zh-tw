@@ -100,7 +100,7 @@ cluster::>
 .. 開機節點3。請參閱 link:install_boot_node3.html["安裝及開機節點3"] 如果您尚未啟動節點、請將其開機。
 .. 確認新的叢集連接埠位於叢集廣播網域中：
 +
-「網路連接埠show -node>-port <port>-Fields broadcast網域」
+「網路連接埠show -node-nodE_-port _port_-Fields廣播網域」
 
 +
 以下範例顯示連接埠「e0a」位於節點3的叢集網域中：
@@ -108,7 +108,7 @@ cluster::>
 +
 [listing]
 ----
- cluster::> network port show -node <node3> -port e0a -fields broadcast-domain
+ cluster::> network port show -node _node3_ -port e0a -fields broadcast-domain
 
  node       port broadcast-domain
  ---------- ---- ----------------
@@ -116,7 +116,7 @@ cluster::>
 ----
 .. 如果叢集連接埠不在叢集廣播網域中、請使用下列命令加以新增：
 +
-「broadcast網域附加連接埠-IPSpace叢集-broadcast網域叢集-ports <nodes:port>」
+「broadcast網域附加連接埠-IPSpace叢集-broadcast網域叢集-ports _normal:port_」
 
 +
 此範例在節點3上新增叢集連接埠「e1b」：
@@ -140,11 +140,11 @@ network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000
 ----
 .. 針對每個LIF、將叢集生命區移轉至新的連接埠一次：
 +
-「網路介面移轉-vserver叢集-lif<lif_name>-SOURation-node3>-dite-node<node3>-dite-port <port_name>」
+「網路介面移轉-vserver叢集-lif_lif_name_-source-node3_-dest-node3_-destation-port _port_name_」
 
 .. 修改叢集lifs的主連接埠：
 +
-「網路介面修改-vserver叢集-lIF <lif_name>–home-port <port_name>'
+「網路介面修改-vserver叢集-lif_lif_name_–home-port _port_name_`
 
 .. 從叢集廣播網域移除舊連接埠：
 +
@@ -170,7 +170,7 @@ network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000
 
 .. 顯示包含此連接埠的廣播網域：
 +
-「網路連接埠廣播網域show -port <node_name:port_name>'
+「網路連接埠廣播網域show -ports_node_name:port_name_'
 
 .. 新增或移除廣播網域的連接埠：
 +
@@ -181,7 +181,7 @@ network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000
 
 .. 修改LIF的主連接埠：
 +
-「網路介面修改-vserver vserver -lIF <lif_name>–home-port <port_name>'
+「網路介面修改-vserver vserver -lif_lif_name_–home-port _port_name_`
 
 
 
@@ -195,7 +195,7 @@ network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000
 
 .. 若要刪除連接埠：
 +
-「網路連接埠刪除節點<node_name>-port <port_name>」
+"network port delete -node_node_name_-port _port_name_"（網路連接埠刪除-node_node_name_-port _port_name_）
 
 .. 返回管理層級：
 +
@@ -205,7 +205,7 @@ network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000
 
 . 調整所有LIF容錯移轉群組：
 +
-「網路介面修改-容錯移轉群組<容錯移轉群組>-容錯移轉原則<容錯移轉原則>」
+「網路介面修改-容錯移轉群組_容 錯移轉群組_-容錯移轉原則_容 錯移轉原則_」
 
 +
 下列命令會將容錯移轉原則設定為「廣播網域範圍」、並使用容錯移轉群組「fg1」中的連接埠作為節點3上LIF「data1」的容錯移轉目標：

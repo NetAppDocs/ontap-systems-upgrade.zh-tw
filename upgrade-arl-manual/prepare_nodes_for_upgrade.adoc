@@ -164,7 +164,7 @@ node2          node1          true     Connected to node1
 
 . [[man_prepe_node_step9]]確認節點1和節點2均不擁有其目前擁有者（但不擁有主擁有者）的Aggregate：
 +
-「torage Aggregate show -node<node_name>-is主目錄假欄位擁有者名稱、主名稱、狀態」
+「torage Aggregate show -nodes _norme_name_-is主目錄錯誤欄位擁有者名稱、主目錄名稱、狀態」
 
 +
 如果node1和node2都不擁有當前擁有者（但不是主擁有者）的Aggregate、系統將傳回類似下列範例的訊息：
@@ -207,11 +207,11 @@ aggr4         node1        node2        online
 +
 .. 將合作夥伴節點目前擁有的Aggregate傳回主擁有者節點：
 +
-「儲存容錯移轉還原-ofnode<home_node_name>」
+儲存容錯移轉恢復-ofnode_home_node_name_`
 
 .. 驗證node1和node2是否仍擁有當前擁有者（但不是主擁有者）的Aggregate：
 +
-「torage Aggregate show -nodes <node_name>-is主目錄假欄位擁有者名稱、主目錄名稱、狀態」
+「torage Aggregate show -nodes _norme_name_-is主目錄錯誤欄位擁有者名稱、主目錄名稱、狀態」
 
 +
 以下範例顯示當節點同時是Aggregate的目前擁有者和主擁有者時、命令的輸出：
@@ -273,7 +273,7 @@ node2                 true    true
 
 . [[man_prepe_node_step15]]確認node1和node2執行相同ONTAP 的版本：
 +
-「ystem nodem image show -node1、node2 >-iscurrent true」
+「系統節點映像顯示-node1、node2_-iscurrent true」
 
 +
 下列範例顯示命令的輸出：
@@ -294,7 +294,7 @@ node2
 ....
 . 驗證node1和node2是否都不擁有屬於叢集中其他節點的任何資料生命週期、並檢查輸出中的「Current Node（目前節點）」和「is Home（原為主節點）」欄位：
 +
-「網路介面show -role data -is主目錄假-curr-node<node_name>」
+「網路介面show -role data -is主目錄假-curr-node_node_name_」
 
 +
 以下範例顯示節點1沒有由叢集中其他節點擁有的lifs時的輸出：
@@ -329,7 +329,7 @@ vs0
 
 . 檢查node1或node2是否擁有任何故障磁碟：
 +
-「torage disk show -nodelist <node1、node2 >-disbed」
+「torage disk show -nodelist _node1、node2_-disbed」
 
 +
 如果有任何磁碟發生故障、請依照_Disk中的指示、使用CLI進行Aggregate管理。（請參閱 link:other_references.html["參考資料"] 使用CLI連結至_磁碟與集合管理。）
@@ -341,7 +341,7 @@ vs0
 
 . 記錄兩個節點的機型、系統ID和序號：
 +
-「System節點show -node1、node2 >-instance」
+「系統節點show -node1、node2_-instance」
 
 +
 
@@ -349,7 +349,7 @@ NOTE: 您將使用此資訊重新指派磁碟、並取消委任原始節點。
 
 . 在節點1和節點2上輸入下列命令、並從輸出中記錄磁碟櫃、每個磁碟櫃的磁碟數目、Flash儲存詳細資料、記憶體、NVRAM和網路卡的相關資訊：
 +
-「run -node<node_name> sysconfig」
+"run -node_node_name_ sysconfig"
 
 +
 
@@ -357,7 +357,7 @@ NOTE: 您可以使用此資訊來識別可能要傳輸至節點3或節點4的零
 
 . 在節點1和節點2上輸入下列命令、並記錄兩個節點上線上的Aggregate：
 +
-「torage Aggregate show -node<node_name>-state online」
+「torage Aggregate show -node_node_name_-state online」
 
 +
 
@@ -365,7 +365,7 @@ NOTE: 您可以使用此資訊和下列子步驟中的資訊、在整個程序�
 
 . [man準備節點_step19]在節點1和節點2上輸入下列命令、並記錄兩個節點上離線的磁碟區：
 +
-「Volume show -node<node_name>-state offline」
+「Volume show -node_node_name_-st態offline」
 
 +
 
@@ -413,7 +413,7 @@ fg_6210_e0c         Default           node1:e0c, node1:e0d
 . 如果故障切換群組並非「clusterwide」、請記錄故障切換群組名稱和屬於故障切換群組的連接埠。
 . 輸入下列命令、查看節點上是否已設定任何VLAN：
 +
-「網路連接埠VLAN show -Node <node_name>」
+「網路連接埠VLAN show -node_node_name_」
 
 +
 VLAN是透過實體連接埠進行設定。如果實體連接埠有所變更、則稍後將需要重新建立VLAN。
@@ -446,7 +446,7 @@ node1   e1b-70    e1b     70      00:15:17:76:7b:69
 |===
 .. [man準備節點_step23]如果您不知道節點1和節點2是否位於SAN或非SAN環境中、請輸入下列命令並檢查其輸出：
 +
-「網路介面show -vserver <vserver_name>-data-protocol iscsiSCSI|FCP」
+「網路介面show -vserver _vserver_name_-data-protocol iscsiSCSI|FCP」
 
 +
 如果未針對SVM設定iSCSI或FC、則命令會顯示類似下列範例的訊息：
@@ -528,7 +528,7 @@ node1         node1         in-quorum     true          operational
 |===
 .. [[man_prepe_node_step26]]輸入下列命令並檢查其輸出、驗證節點1和節點2上是否有已啟用SAN iSCSI或FC服務的每個SVM的SAN LIF：
 +
-「網路介面show -data傳輸協定iscsiSCSI|FCP -home-Node <node_name>」
+「網路介面show -data-Protocol iscsiSCSI|FCP -home-node_node_name_」
 
 +
 此命令會顯示節點1和節點2的SAN LIF資訊。下列範例顯示「Status admin/Oper（狀態管理/操作）」欄中的狀態為「up / up（開/開）」、表示已啟用SAN iSCSI和FC服務：
@@ -654,7 +654,7 @@ SnapVault         site    SnapVault License     -
 
 .. 在AutoSupport 每個節點上輸入下列命令並檢查其輸出、以檢查原始系統是否已啟用Efis:
 +
-「系統節點AutoSupport 不支援show -Node <node1、node2>'
+「系統節點AutoSupport 不支援show -node1、node2_」
 
 +
 命令輸出會顯示AutoSupport 是否啟用了功能性、如下列範例所示：
@@ -710,7 +710,7 @@ NOTE: 此時請勿傳送AutoSupport 適用於節點2的消息給NetApp；稍後�
 
 .. [[man_prepe_node_step36、Step 36] AutoSupport 輸入下列命令並檢查其輸出、以驗證是否已傳送此資訊：
 +
-「系統節點AutoSupport 不支援show -node1>-instance」
+「系統節點AutoSupport 不支援show -node1_-instance」
 
 +
 欄位「Last Subject sent：」（上次傳送主旨：）和「Last Time sent：」（上次傳送時間：）包含上次傳送訊息的標題、以及傳送訊息的時間。

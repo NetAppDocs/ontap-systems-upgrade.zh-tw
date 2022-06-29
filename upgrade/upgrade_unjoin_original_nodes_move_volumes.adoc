@@ -14,7 +14,7 @@ summary: 將磁碟區移至新節點之後、您就會從叢集中取消加入�
 將磁碟區移至新節點之後、您就會從叢集中取消加入原始節點。當您取消加入節點時、節點的組態會被清除、而且所有磁碟都會初始化。
 
 .步驟
-. 停用原始節點上的高可用度組態：「torage容錯移轉修改-node<orite_node_name>-enabled假」
+. 停用原始節點上的高可用度組態：「torage容錯移轉修改-node_orent_node_name_-enabled_fals'
 . 存取進階權限層級：
 +
 "進階權限"
@@ -39,13 +39,13 @@ node3                true    true         false
 ----
 . 如果其中一個原始節點保留epsilon、請將epsilon移至不同的節點：
 +
-.. 從原始節點移除epsilon：+「cluster modify -Node <ORIGIN_node_name>-epsilon假」
-.. 將epsilon指派給不同的節點：+「cluster modify -node<new_node_name>-epsilon true」
+.. 從原始節點移除epsilon：+「cluster modify -node_enture_node_name_-epsilon假」
+.. 將epsilon指派給不同的節點：+「cluster modify -node_new_node_name_-epsilon true」
 
 
 . 從保留在叢集中的節點、從叢集取消連接每個原始節點（進階權限層級）：
 +
-「cluster unjoin -node<ORIGIN_node_name>」
+"cluster unjoin -node_原始 節點名稱_"
 
 +
 系統會顯示類似以下內容的訊息：

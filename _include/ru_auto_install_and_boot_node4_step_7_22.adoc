@@ -100,7 +100,7 @@ NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。�
 
 . 如有必要、請在節點4上設定日期：
 +
-「et date <mm/dd/yed>'
+"et date _mm/dd/yed_"
 
 . 在節點4上、請在開機環境提示字元中使用下列命令檢查時間：
 +
@@ -108,11 +108,11 @@ NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。�
 
 . 如有必要、請在節點4上設定時間：
 +
-「設定時間<hh：mm：ss>」
+"et time _hh：mm:ss_"
 
 . 如有必要、請在節點4上設定合作夥伴系統ID：
 +
-「etenv PARTNER- sysid <node2_sysid>'」
+"etenv PARTNER-sysid _node2_sysid_"
 
 +
 .. 儲存設定：
@@ -121,9 +121,9 @@ NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。�
 
 
 
-. [[[auto_install4_step21]]在新節點的開機載入程式中、必須設定「partnie-sysid」參數。對於node4、「合作夥伴- sysid」必須是node3。驗證node3的「合作夥伴- sysid」：
+. [[[auto_install4_step21]]在新節點的開機載入程式中、必須設定「partner-sysid」參數。對於node4、「合作夥伴sysid」必須是node3的。驗證node3的"合作 夥伴sysid"：
 +
-《王子》合作夥伴sysid》
+《prontenv合作夥伴sysid》
 
 . [[step22]請採取下列其中一項行動：
 +

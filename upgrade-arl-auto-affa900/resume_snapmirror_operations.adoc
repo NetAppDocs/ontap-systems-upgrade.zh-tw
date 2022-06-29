@@ -23,6 +23,6 @@ summary: 在將SnapMirror傳輸和關係AFF 升級到AFF 還原A900的過程中�
 
 . 恢復SnapMirror關係：
 +
-「napmirror resume -destination–vserver <vserver_name>」
+' napmirror resume -destination–vserver _vserver_name_'
 
 

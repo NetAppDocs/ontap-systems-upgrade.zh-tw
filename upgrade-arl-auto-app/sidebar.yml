@@ -21,6 +21,7 @@ entries:
 - title: ARL升級總覽
   url: "/upgrade-arl-auto-app/overview_of_the_arl_upgrade.html"
 - title: 第1階段：準備升級
+  pdf-filename: 第1階段：準備升級（ONTAP 升級時請使用「系統控制器更換」功能、請參考《》（更新版本）
   entries:
   - title: 總覽
     url: "/upgrade-arl-auto-app/stage_1_index.html"
@@ -29,6 +30,7 @@ entries:
   - title: 取得外部金鑰管理伺服器的IP位址以進行儲存加密
     url: "/upgrade-arl-auto-app/get_ip_address_of_external_kms_for_storage_encryption.html"
 - title: 第2階段：重新部署和淘汰節點1
+  pdf-filename: 第2階段：重新部署和淘汰節點1（ONTAP 升級至支援更新版本的「系統控制器更換」）
   entries:
   - title: 總覽
     url: "/upgrade-arl-auto-app/stage_2_index.html"
@@ -41,6 +43,7 @@ entries:
   - title: 準備netboot
     url: "/upgrade-arl-auto-app/prepare_for_netboot.html"
 - title: 階段3.安裝及開機節點3
+  pdf-filename: 階段3.安裝並開機節點3（ONTAP 升級至《更新版本》中的「系統控制器更換」）
   entries:
   - title: 總覽
     url: "/upgrade-arl-auto-app/stage_3_index.html"
@@ -63,6 +66,7 @@ entries:
   - title: 淘汰節點2
     url: "/upgrade-arl-auto-app/retire_node2.html"
 - title: 階段5.安裝及開機節點4
+  pdf-filename: 階段5.安裝並開機節點4（ONTAP 在更新版本的版本中使用「系統控制器更換」進行升級）
   entries:
   - title: 總覽
     url: "/upgrade-arl-auto-app/stage_5_index.html"
@@ -77,6 +81,7 @@ entries:
   - title: 將節點2擁有的非根Aggregate和NAS資料lifs從節點3移至節點4
     url: "/upgrade-arl-auto-app/move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html"
 - title: 階段6.完成升級
+  pdf-filename: 階段6.完成升級（ONTAP 升級至「系統控制器更換」、請參考《》（更新版本）
   entries:
   - title: 總覽
     url: "/upgrade-arl-auto-app/stage_6_index.html"
@@ -91,6 +96,7 @@ entries:
   - title: 恢復SnapMirror作業
     url: "/upgrade-arl-auto-app/resume_snapmirror_operations.html"
 - title: 疑難排解
+  pdf-filename: 疑難排解（ONTAP 升級至「系統控制器更換」、請參閱《更新版本》）
   entries:
   - title: 總覽
     url: "/upgrade-arl-auto-app/troubleshoot_index.html"

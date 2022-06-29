@@ -11,11 +11,11 @@
 .步驟
 . 將合作夥伴節點目前擁有的Aggregate傳回主擁有者節點：
 +
-「torage Aggregate regate or搬 移開始節點<來源節點>-目的地<目的地節點>- Aggregate清單*」
+「torage Aggregate regate or搬 移開始節點_source_node_-destination-node_-aggregation-list *」
 
 . 驗證node1和node2是否仍擁有當前擁有者（但不是主擁有者）的Aggregate：
 +
-「torage Aggregate show -nodes <node_name>-is主目錄假欄位擁有者名稱、主目錄名稱、狀態」
+「torage Aggregate show -nodes _norme_name_-is主目錄錯誤欄位擁有者名稱、主目錄名稱、狀態」
 
 +
 以下範例顯示當節點同時是Aggregate的目前擁有者和主擁有者時、命令的輸出：
@@ -41,4 +41,4 @@ aggr4       node1      node1       online
 
 您必須重新啟動控制器更換程序：
 
-「System Controller replace start -nodes <node_names>'（系統控制器取代start節點<node_names>
+「System Controller replace start -nodes _norme_names」（系統控制器取代start節點_node_names）

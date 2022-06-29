@@ -22,7 +22,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.
 . 請檢查EMS記錄、以判斷集合體為何無法重新定位或遭否決。
 . 重新部署任何故障或被否決的集合體：
 +
-「torage Aggregate regate regate or搬 移開始節點<node1>-destate <node2> Aggregate-list *-ndos控制 器升級true」
+「torage Aggregate regate or搬 移開始節點_node1_-destate _node2_ aggregate list *-ndocu控制 器升級true」
 
 . 出現提示時、請輸入「y」。
 . 您可以使用下列其中一種方法來強制重新配置：

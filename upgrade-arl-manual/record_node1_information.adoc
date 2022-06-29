@@ -61,7 +61,7 @@ summary: 在執行ONTAP Es9.7或更早版本的控制器上進行手動ARL升級
 ----
 . [[man_recipal_node1_step3]]在節點1上輸入下列命令、尋找叢集網路和節點管理連接埠：
 +
-「network interface show -curr-node-node1>-role cluster、intercluster、node-mgmt、cluster-mgmt」
+「網路介面show -curr-node-node1_-role cluster、intercluster、node-mgmt、cluster-mgmt」
 
 +
 系統會顯示叢集中節點的叢集、叢集間、節點管理和叢集管理生命體、如下列範例所示：
@@ -94,7 +94,7 @@ NOTE: 您的系統可能沒有叢集間的LIF。
 
 . 在節點1上輸入下列命令：
 +
-「network port show -node1>-type Physical（網路連接埠顯示節點）」
+「網路連接埠show -node1_-type Physical」
 
 +
 系統會顯示節點上的實體連接埠、如下列範例所示：
@@ -127,7 +127,7 @@ NOTE: 您的系統可能沒有叢集間的LIF。
 
 . 在節點1上輸入下列命令：
 +
-「網路FCP介面卡show -node1>'
+「網路FCP介面卡顯示-node1_」
 
 +
 系統會在節點上顯示FC連接埠、如下列範例所示：
@@ -177,7 +177,7 @@ NOTE: 您的系統可能沒有叢集間的LIF。
 |===
 . [[man_recipal_node1_step11]]在任一控制器上輸入下列命令：
 +
-「ystem nodeshow -instance -node1>'」（系統節點顯示-instance -node1>'）
+「System Node show -instance -node1_」
 
 +
 系統會顯示節點1的相關資訊、如下列範例所示：

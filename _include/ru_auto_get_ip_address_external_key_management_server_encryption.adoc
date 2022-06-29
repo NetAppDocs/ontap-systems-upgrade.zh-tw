@@ -15,7 +15,7 @@
 
 . 新增每個金鑰管理伺服器的IP位址：
 +
-「安全金鑰管理程式外部附加伺服器-金鑰伺服器<key_manager_server_ip_address>」
+「安全金鑰管理程式外部附加伺服器-金鑰伺服器_key_manager_server_ip_address_」
 
 . 確認叢集中所有節點上都已設定並可使用相同的金鑰管理伺服器：
 +
@@ -28,6 +28,6 @@
 . 記下新的驗證金鑰ID。
 . 使用新的驗證金鑰重新輸入所有自我加密磁碟機的金鑰：
 +
-「torage加密磁碟modify -disk *-data-key-id <imiting_key_id>'」
+「torage加密磁碟modify -disk *-data-key-id _imalization_key_id_」
 
 

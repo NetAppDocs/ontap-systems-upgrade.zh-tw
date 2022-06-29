@@ -19,7 +19,7 @@ summary: 在ONTAP 執行更新版本的控制器上進行手動ARL升級時、�
 .步驟
 . [man重新定位_3_4_Step1]]在任一控制器上輸入下列命令、然後檢查輸出以識別要重新定位的非根Aggregate：
 +
-「torage Aggregate show -Owner-name <node3>-home-id <node2_system_id>`」
+「torage Aggregate show -Owner-name _node3_-home-id _node2_system_id_」
 
 . 完成下列子步驟、重新配置集合體：
 +
@@ -29,7 +29,7 @@ summary: 在ONTAP 執行更新版本的控制器上進行手動ARL升級時、�
 
 .. 輸入下列命令：
 +
-「torage Aggregate regate regate regulationstart -node3>-destination <node4>-Aggregate-list <aggr_name1、aggr_name2...>-ne-控制 器升級true」
+「torage Aggregate regate regate regulationstart -node3_-destate _node4_-aggregate-list _aggr_name1、aggr_name2..._-ne-控制 器升級true」
 
 +
 Aggregate清單是您在中取得的node4所擁有的Aggregate清單 <<man_relocate_3_4_Step1,步驟1.>>。
@@ -46,7 +46,7 @@ Aggregate清單是您在中取得的node4所擁有的Aggregate清單 <<man_reloc
 
 . [[step3]檢查重新配置狀態：
 +
-「torage Aggregate regate reg搬 移顯示-node3>'
+「torage Aggregate regate reg搬 移顯示-node3_」
 
 +
 在重新放置集合體之後、輸出會顯示「Done」。
@@ -74,7 +74,7 @@ NOTE: 請等到所有節點2集合體都已重新放置到節點4之後、再繼
 
 .. 重新部署任何故障或被否決的集合體：
 +
-「torage Aggregate regate regate regulationstart -node3> destination <node4>-Aggregate-list <aggr_name1、aggr_name2...> ne-控制 器升級true」
+「torage Aggregate regate regate regulationstart -node3_ destate _node4_-aggregate-list _aggr_name1、aggr_name2..._ ne-控制 器升級true」
 
 +
 Aggregate清單是故障或被否決的Aggregate清單。
@@ -103,25 +103,25 @@ Aggregate清單是故障或被否決的Aggregate清單。
 |===
 . [[man_allocation_3_4_Step5]]確認所有節點2非根Aggregate均處於線上狀態、以及節點4上的狀態：
 +
-「torage Aggregate show -node4>-state offline -root false」
+「torage Aggregate show -node4_-state offline -root false」
 
 +
 node2 Aggregate列在中命令的輸出中 <<man_relocate_3_4_Step1,步驟1.>>。
 
 . 如果有任何Aggregate已離線或變成外部、請針對每個Aggregate使用下列命令使其上線：
 +
-「torage Aggregate online -gregate <agger_name>」
+'線上儲存Aggregate -Agggr_name_'
 
 . 驗證node2 Aggregate中的所有磁碟區都在節點4上處於線上狀態：
 +
-Volume show -node4>-state offline（Volume show -node4>-state offline）
+「Volume show -node4_-state offline」
 
 . 如果節點4上有任何磁碟區離線、請將其上線：
 +
-「Volume online -vserver <vserver_name>-volume <volume <volume．name>'
+「Volume online -vserver _vserver_name_-volume _volume _name_」
 
 . 將升級後AutoSupport 的資訊訊息傳送給NetApp for node4：
 +
-「系統節點AutoSupport 無法叫用節點<node4>-type all -m則 訊息"<node2>已成功從<platform _old>升級至<platfore_new>""。
+「系統節點AutoSupport 無法叫用-node_node4_-type all -m則 訊息「_node2_ cSuccessfully eved from _platform _old_ to _platform _new_」
 
 

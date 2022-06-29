@@ -15,6 +15,7 @@ entries:
 - title: ARL升級總覽
   url: "/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html"
 - title: 第1階段：準備升級
+  pdf-filename: 第1階段：準備升級（升級AFF 至FASA900或FAS9500）
   entries:
   - title: 驗證升級硬體
     url: "/upgrade-arl-auto-affa900/verify_upgrade_hardware.html"
@@ -77,6 +78,7 @@ entries:
   - title: 恢復SnapMirror作業
     url: "/upgrade-arl-auto-affa900/resume_snapmirror_operations.html"
 - title: 疑難排解
+  pdf-filename: 疑難排解（升級AFF 至FASA900或FAS9500）
   entries:
   - title: 總覽
     url: "/upgrade-arl-auto-affa900/troubleshoot_index.html"

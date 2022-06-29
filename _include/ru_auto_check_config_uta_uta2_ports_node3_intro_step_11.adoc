@@ -106,14 +106,14 @@ Adapter  Mode     Type        Mode      Type       Status
 |===
 . [[step6]如果介面卡處於啟動器模式、且UTA/UTA2連接埠處於線上狀態、請將UTA/UTA2連接埠離線：
 +
-「torage disableAdapter <adapter_name>」（停用介面卡）
+「停用介面卡_adapter_name_」
 
 +
 目標模式中的介面卡會在維護模式中自動離線。
 
 . [[auto_checks3_step7]如果目前的組態不符合所需用途、請視需要變更組態：
 +
-「ucadmin modify -m fc|cna -t啟動器| target <適 配器名稱>'
+「ucadmin modify -m fc|cna -t啟動器| target _adapter_name_」
 
 +
 ** 「m」是指個人化模式、「光纖通道」或「cna」。
@@ -162,10 +162,10 @@ Adapter  Mode       Type        Mode     Type        Status
 | 如果系統... | 然後… 
 
 
-| 具有儲存磁碟 | 「網路FCP介面卡修改節點<node_name>-Adapter <adapter_name>-state up」 
+| 具有儲存磁碟 | 網路FCP介面卡修改-node_node_name_-介 面卡_adapter_name_-state up 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 「FCP config <adapter_name> up」 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | "FCP config _adapter_name_ up（FCP組態介面卡名稱_啟動）" 
 |===
 . [[step11]連接連接埠。
 

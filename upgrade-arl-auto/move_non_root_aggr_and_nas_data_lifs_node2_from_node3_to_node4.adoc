@@ -69,7 +69,7 @@ To complete the "Network Reachability" phase, ONTAP network configuration must b
 +
 .. 輸入下列命令並檢查其輸出：
 +
-「網路介面show -data-Protocol iscsiSCSI|FCP -home-Node <node4>'
+「網路介面show -data傳輸協定iscsiSCSI|FCP -home-node4_」
 
 +
 系統會傳回類似下列範例的輸出：
@@ -94,25 +94,25 @@ vs1
 +
 ... 輸入下列命令、將LIF狀態設為向下：
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>-STATUS-admin DOUTE」
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-stue-admin down」
 
 ... 從連接埠集移除LIF：
 +
-「portset移除-vserver <vserver_name>-portset <portSet_name>-port-name <port_name>」
+「portset移除-vserver _vserver_name_-portset _portset_name_-port-name _port_name_」
 
 ... 輸入下列其中一個命令：
 +
 **** 輸入下列命令來移動單一LIF：
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-port <new_home_port>`
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-port _new_home_port_」
 
 **** 輸入下列命令、將單一不存在或不正確連接埠上的所有LIF移至新連接埠：
 +
-「網路介面修改｛-home-port <port_on_node1>-home-Node <node1>-role data｝-home-port <new_home_port_on_node3>'
+「網路介面修改｛-home-port _port_on_node1_-home-node_node1_-role data｝-home-port _new_home_port_on_node3_」
 
 **** 將lifs新增回連接埠集：
 +
-「portset add -vserver <vserver_name>-portset <portset_name>-port-name <port_name>'
+「portset add -vserver _vserver_name_-portset _portset_name_-port-name _port_name_」
 
 +
 
@@ -124,7 +124,7 @@ NOTE: 您必須確認將SAN LIF移至與原始連接埠具有相同連結速度�
 
 .. 輸入下列命令、將所有lifs的狀態修改為「up」、以便lifs可以接受及傳送節點上的流量：
 +
-「網路介面修改-home-port <port_name>-home-node<node4>-lIF DATA -statusadmin up」
+「網路介面修改-home-port _port_name_-home-node4_-lifdata -statusadmin up」
 
 .. 輸入以下命令並檢查其輸出、確認已將l生命 移至正確的連接埠、並在任一節點上輸入下列命令、檢查輸出、確認l生命 狀態為「up」：
 +
@@ -132,7 +132,7 @@ NOTE: 您必須確認將SAN LIF移至與原始連接埠具有相同連結速度�
 
 .. 如果有任何LIF當機、請輸入下列命令、將LIF的管理狀態設為UP（開啟）、每個LIF只需輸入一次：
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>-STATUS-admin up」
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-stue-admin up」
 
 
 

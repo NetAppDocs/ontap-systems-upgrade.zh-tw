@@ -21,7 +21,7 @@ summary: 在執行ONTAP 更新版本的控制器上進行手動ARL升級時、�
 .步驟
 . [[step1]]在任一節點上輸入下列命令並擷取輸出、即可列出節點2擁有的所有NAS資料lifs：
 +
-「網路介面show -data-protocol nfs | CIFS -home-Node <node2>'
+「網路介面show -data傳輸協定nfs | CIFS -home-node2_」
 
 +
 以下範例顯示node2的命令輸出：
@@ -58,19 +58,19 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 +
 .. [[man_move_lif_2_3_substepa]]將節點2介面群組上裝載的任何資料lifs移轉到節點3上的連接埠、以便在同一個網路上裝載lifs、方法是輸入下列命令（每個LIF一次）：
 +
-「網路介面移轉-vserver <vserver_name>-lif<lif_name>-destite-node<node3>–destite-port <netport|ifgrp>'
+「網路介面移轉-vserver _vserver_name_-lIF _LIF_name_-dest-node-node3_–dest-port _netport|ifgrp_」
 
 .. 修改中的lifs主連接埠和主節點 <<man_move_lif_2_3_substepa,子步驟A>> 輸入下列命令（每個節點一次）、即可將目前裝載l生命 的連接埠和節點移至：
 +
-「網路介面修改-vserver <vserver_name>-lif <lif_name>-home-node3>-homeport <netport|ifgrp>`
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node3_-homestport _netport|ifgrp_」
 
 .. [[man_move_lif_2_3_substepc]]]<將節點2上VLAN上裝載的任何LIF移轉至節點3上的連接埠、以便在與VLAN相同的網路上裝載LIF、只需輸入下列命令一次、即可針對每個LIF：
 +
-「網路介面移轉-vserver <vserver_name>-lif<lif_name>-destite-node<node3>–destite-port <netport|ifgrp>'
+「網路介面移轉-vserver _vserver_name_-lIF _LIF_name_-dest-node-node3_–dest-port _netport|ifgrp_」
 
 .. 修改中的lifs主連接埠和主節點 <<man_move_lif_2_3_substepc,子步驟c>> 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
 +
-「網路介面修改-vserver <vserver_name>-lif <lif_name>-home-node3>-homeport <netport|ifgrp>`
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node3_-homestport _netport|ifgrp_」
 
 
 
@@ -91,7 +91,7 @@ cluster::> network interface show -data-protocol nfs|cifs -home-node node2
 |===
 . [[man_move_lif_2_3_step5]]如果您的平台上有不同的資料連接埠、請將連接埠新增至廣播網域：
 +
-「網路連接埠廣播網域附加連接埠-IPSpace <IPspace_name>-broadcast網域管理-ports <node:port>'
+「網路連接埠廣播網域附加連接埠-IPSpace _IPspace_name_-broadcast網域管理-連接埠_node:port_」
 
 +
 下列範例將節點「6280-1」上的連接埠「e0a」和節點「8060-1」上的連接埠「e0i」新增至IPspace「預設」中的廣播網域「mgmt」：
@@ -104,25 +104,25 @@ cluster::> network port broadcast-domain add-ports -ipspace Default
 ----
 . [[step6]]輸入下列命令、將每個NAS資料LIF移轉至節點3、每個LIF一次：
 +
-「網路介面移轉-vserver <vserver_name>-lif<lif_name>-dite-node<node3>-dite-port <netport|ifgrp>'
+「網路介面移轉-vserver _vserver_name_-lIF _LIF_name_-dest-node-node3_-dest-port _netport|ifgrp_」
 
 . [[step7]在任一節點上輸入下列命令、檢查輸出、確認NAS lifs已移至正確的連接埠、而且lifs的狀態為up：
 +
-「網路介面show -curr-Node <node3>-data-Protocol CIFS/NFS」
+「網路介面show -curr-node3_-data-Protocol CIFS|NFS」
 
 . [[man_move_lif_2_3_step8]如果有任何LIF當機、請輸入下列命令、將LIF的管理狀態設為「up」、每個LIF一次：
 +
-「網路介面修改-vserver <vserver_name>-lIF <LIF_name>-STATUS-admin up」
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-stue-admin up」
 
 . [[man_move_lif_2_3_step9]如果已設定介面群組或VLAN、請完成下列子步驟：
 +
 .. 從介面群組移除VLAN：
 +
-「網路連接埠VLAN刪除節點<node_name>-port <ifgrp>-vlan-id <vlan_ID>'
+「網路連接埠VLAN刪除-node_node_name_-port _ifgrp_-vlan-id _vlan_ID_」
 
 .. 輸入下列命令並檢查其輸出、以判斷節點上是否已設定任何介面群組：
 +
-「網路連接埠ifgrp show -node<node_name>-ifgrp <ifgrp_name>-instance」
+「網路連接埠ifgrp show -node_node_name_-ifgrp _ifgrp_name_-instance」
 
 +
 系統會顯示節點的介面群組資訊、如下列範例所示：
@@ -143,7 +143,7 @@ Distribution Function: ip
 ----
 .. 如果節點上已設定任何介面群組、請記錄介面群組的名稱及指派給它們的連接埠、然後輸入下列命令刪除連接埠、每個連接埠一次：
 +
-「network port ifgrp remove-port -node<node_name>-ifgrp <ifgrp_name>-port <port_name>」
+「網路連接埠ifgrp remove-port -node_node_name_-ifgrp _ifgrp_name_-port _port_name_」
 
 
 

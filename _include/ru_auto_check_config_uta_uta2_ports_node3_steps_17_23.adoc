@@ -15,7 +15,7 @@ Boot_ONTAP maint
 將連接埠改回啟動器模式：
 
 +
-「ucadmin modify -m fs -t initiator -f <介面卡名稱>」
+「ucadmin modify -m fs -t initiator -f _Adapter name_'」
 
 . [[step20]確認連接埠已變更為啟動器模式：
 +
@@ -25,7 +25,15 @@ Boot_ONTAP maint
 +
 《停止》
 
-. [[auto_checks3_step22]在載入程式提示下開機：
++
+[NOTE]
+====
+如果您要從支援外部磁碟的系統升級至也支援外部磁碟的系統、請前往 <<auto_check3_step22,步驟22>>。
+
+如果您要從支援外部磁碟的系統升級至同時支援內部和外部磁碟的系統、例如AFF 、一個支援內部和外部磁碟的系統、請前往 <<auto_check3_step23,步驟23>>。
+
+====
+. [[auto_checks3_step22]在載入程式提示下、開機：
 +
 Boot_ONTAP
 
@@ -55,15 +63,15 @@ Boot_ONTAP maint
 
 .. 如有必要、請將node1 Aggregate上線：
 +
-「aggr_online root_aggr_from _」
+"aggr_online root_aggr_from __node1__（aggr_online root_aggr_from __node1__）"
 
 .. 防止節點3從其原始根Aggregate開機：
 +
-「aggr offline <root_aggr_on_node3>'」
+「aggr offline _root_aggr_on_node3_」
 
 .. 將node1根Aggregate設為節點3的新根Aggregate：
 +
-「aggr options aggr_ffrom _」（aggr_from _）<節點1> root（根）
+"aggr options aggr_fe__ node1__ root"
 
 .. 確認節點3的根Aggregate為離線狀態、且從節點1移轉的磁碟根Aggregate為線上狀態、並設定為root：
 +

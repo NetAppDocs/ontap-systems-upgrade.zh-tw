@@ -21,7 +21,7 @@ summary: 如果您有雙節點叢集、請將節點1的資料l生命 週期移�
 .步驟
 . 輸入下列命令並擷取輸出、列出節點1上裝載的所有NAS資料lifs：
 +
-「網路介面show -data-Protocol nfs | CIFS -curr-node1>'
+「網路介面show -data傳輸協定nfs | CIFS -curr-node1_」
 
 +
 [listing]
@@ -42,17 +42,17 @@ summary: 如果您有雙節點叢集、請將節點1的資料l生命 週期移�
 ----
 . [[step2]]修改node1和node2上所有lifs的自動恢復設定：
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>-auto-revert假」
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-auto-revert假」
 
 . [[step3]]請採取下列步驟、移轉節點1上介面群組和VLAN上裝載的任何NAS資料lifs：
 +
 .. [Substepa]輸入下列命令、將節點1上任何介面群組和VLAN上裝載的LIF移轉到節點2上的連接埠、以便在與介面群組相同的網路上裝載LIF：
 +
-「網路介面移轉-vserver <vserver_name>-lif<lif_name>-dest-node-node2>–destite-port <netport|ifgrp>'
+「網路介面移轉-vserver _vserver_name_-lif_lif_name_-dest-node-node2_–dest-port _netport|ifgrp_」
 
 .. 在中修改lifs和VLAN的主連接埠和主節點 <<substepa,子步驟A>> 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-node2>- home-port <netport|ifgrp>'
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node2_- home-port _netport|ifgrp_」
 
 
 
@@ -66,44 +66,44 @@ summary: 如果您有雙節點叢集、請將節點1的資料l生命 週期移�
 | NAS | 完成 <<man_lif_1_2_step5,步驟5.>> 透過 <<man_lif_1_2_step8,步驟8.>>。 
 
 
-| SAN | 停用節點上的所有SAN LIF、以便進行升級：「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-Node <node_to _upgrade >-home-port <netport|ifgrp>-station-admin drod' 
+| SAN | 停用節點上的所有SAN LIF、以便進行升級：「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node-node_to _upgrade _-home-port _netport|ifgrp_-stuse-admin drod' 
 |===
 . [[man_lif_1_2_step5]]輸入下列命令、將NAS資料LIF從節點1移轉至節點2、每個資料LIF一次：
 +
-「網路介面移轉-vserver <vserver_name>-lif<lif_name>-dest-node-node2>-dest-port <data_port>`
+「網路介面移轉-vserver _vserver_name_-lif_lif_name_-dest-node-node2_-dest-port _data_port_」
 
 . [[step6]輸入下列命令並檢查其輸出、以確認已將l生命 移至正確的連接埠、並在任一節點上輸入下列命令檢查輸出、確認lIF的狀態為up：
 +
-「network interface show -curr-node-node2>-data-protocol nfs | CIFS」
+「網路介面show -curr-node-node2_-data-Protocol NFS|CIFS」
 
 . [[step7]修改移轉LIF的主節點：
 +
-「網路介面修改-vserver <vserver_name>-lIF <LIF_name>-home-Node <node2>-home-port <port_name>」
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node2_-home-port _port_name_」
 
 . [[man_lif_1_2_step8]]驗證LIF是否使用連接埠作為其主連接埠或目前連接埠。如果連接埠不是主連接埠或目前連接埠、請前往 <<man_lif_1_2_step9,步驟9.>>：
 +
-「網路介面show -home-Node <node2>-home-port <port_name>」
+「網路介面show -home-node_node2_-home-port _port_name_'
 
 +
-「網路介面show -curr-node<node_name>-curr-port <port_name>」
+「網路介面show -curr-node_node_name_-curr-port _port_name_」
 
 . [[man_lif_1_2_step9]]如果lifs使用連接埠做為主連接埠或目前連接埠、請修改LIF以使用不同的連接埠：
 +
-「網路介面移轉-vserver <vserver_name>-lif<lif_name>-destination–節點<node_name>-destination-port <port_name>」
+「網路介面移轉-vserver _vserver_name_-lif_lif_name_-destination–節點_norme_name_-destination-port _port_name_」
 
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-node<node_name>-home-port <port_name>」
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node_node_name_-home-port _port_name_」
 
 . [[step10]如果有任何lifs當機、請輸入下列命令、將lifs的管理狀態設為「up」（開啟）、每個LIF只需輸入一次：
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-node-node>-STATUS-admin up」
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-nodeame_-stale-admin up」
 
 +
 
-NOTE: 對於VMware組態、您可能無法變更連接埠的廣播網域、因為它與裝載目的地儲存虛擬機器（SVM）LIF的連接埠相關聯。MetroCluster從遠端站台上的對應來源SVM輸入下列命令、將目的地LIF重新分配至適當的連接埠：「MetroCluster Sesvserver resSync -vserver <vserver_name>」
+NOTE: 對於VMware組態、您可能無法變更連接埠的廣播網域、因為它與裝載目的地儲存虛擬機器（SVM）LIF的連接埠相關聯。MetroCluster從遠端站台上的對應來源SVM輸入下列命令、將目的地LIF重新分配至適當的連接埠：MetroCluster 「Sesvserver resSync -vserver _vserver_name_」
 
 . [[step11]]輸入下列命令並檢查其輸出、以確認節點1上沒有剩餘的資料lifs：
 +
-「網路介面show -curr-node-node1>-role data」
+「網路介面show -curr-node-node1_-role data」
 
 

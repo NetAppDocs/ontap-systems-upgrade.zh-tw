@@ -40,7 +40,7 @@ NOTE: 不會修改集合體和lifs的主擁有者、只會修改目前擁有者�
 
 . 在作業仍暫停的情況下、確認節點2上的所有非根Aggregate狀態均處於線上狀態：
 +
-「torage Aggregate show -node2>-state online -root假」
+「torage Aggregate show -node2_-state online -root假」
 
 +
 以下範例顯示節點2上的非根Aggregate處於線上狀態：
@@ -60,20 +60,20 @@ aggr_2     825.0GB  825.0GB    0%     online     1  node2  raid_dp,normal
 如果Aggregate已離線或成為節點2上的外部節點、請在節點2上使用下列命令將其上線、每個Aggregate一次：
 
 +
-「torage Aggregate online -gregate <agger_name>」
+'線上儲存Aggregate -Agggr_name_'
 
 . 在節點2上使用下列命令並檢查其輸出、以確認節點2上的所有磁碟區都已上線：
 +
-「Volume show -node2>-state offline」（Volume show -node2>-state offline）
+「Volume show -node2_-state offline」
 
 +
 如果節點2上有任何磁碟區離線、請在節點2上使用下列命令將其上線、每個磁碟區一次：
 
 +
-「Volume online -vserver <vserver_name>-volume <volume <volume．name>'
+"Volume online -vserver _vserver_name_-volume _volume _name_"
 
 +
-與此命令搭配使用的「<vserver_name>」可在先前的「Volume show」命令輸出中找到。
+與此命令一起使用的"_vserver_name_"可在先前的"volume show"命令輸出中找到。
 
 
 

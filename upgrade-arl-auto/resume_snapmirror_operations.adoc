@@ -23,6 +23,6 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行《SES9.5》�
 
 . 恢復SnapMirror關係：
 +
-「napmirror resume -destination–vserver <vserver_name>」
+' napmirror resume -destination–vserver _vserver_name_'
 
 

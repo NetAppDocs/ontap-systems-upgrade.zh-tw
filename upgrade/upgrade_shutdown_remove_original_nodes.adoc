@@ -16,7 +16,7 @@ summary: 關閉和移除原始節點時、您必須傳送AutoSupport 有關升�
 .步驟
 . 從AutoSupport node1和node2傳送一份資訊、通知技術支援人員升級：
 +
-「系統節點AutoSupport 無法叫用節點<node_name>-type all -messing「MAn=2h competing_name from <platforte_原始> to <platforte_new>""」（將節點名稱從<platforte_原始>升級至<platforte_new>""）。
+「系統節點AutoSupport 無法叫用-node_node_name_-type all -messing "MAn=2h正在將_node_name_從_platforte_ORIGIN__升級至_platfort_new_"。
 
 . 停用節點1和節點2上的高可用度或儲存容錯移轉：
 +
@@ -29,7 +29,7 @@ summary: 關閉和移除原始節點時、您必須傳送AutoSupport 有關升�
 雙節點叢集
  a| 
 .. 「叢集ha modify -configured假」
-.. 「torage容錯移轉修改-Node <node_name>-enabled假」
+.. 「torage容錯移轉修改-node_node_name_-enabled_false」
 
 
 
@@ -37,12 +37,12 @@ summary: 關閉和移除原始節點時、您必須傳送AutoSupport 有關升�
  a| 
 具有兩個以上節點的叢集
  a| 
-「torage容錯移轉修改-Node <node_name>-enabled假」
+「torage容錯移轉修改-node_node_name_-enabled_false」
 
 |===
 . 停止節點：
 +
-「System Node halt -Node <node_name>」（系統節點停止節點<節點名稱>）
+'系統節點停止節點節點_norme_name_'
 
 +
 您可以使用「-ignore -quorum - warnings」選項、在重新開機期間隱藏仲裁檢查。

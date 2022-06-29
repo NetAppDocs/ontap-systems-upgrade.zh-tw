@@ -55,7 +55,7 @@ node3的軟體組態必須符合node3的實體連線能力、而且必須先還�
 +
 .. 修改將成為叢集廣播網域一部分的連接埠：
 +
-「網路連接埠修改節點<node_name>-port <port_name>-MTU 9000 -IPSpace叢集」
+「網路連接埠修改-node_node_name_-port _port_name_-MTU 9000 -IPSpace叢集」
 
 +
 此範例在「node1」上新增叢集連接埠e1b：
@@ -67,22 +67,22 @@ network port modify -node node1 -port e1b -ipspace Cluster -mtu 9000
 ----
 .. 針對每個LIF、將叢集生命區移轉至新的連接埠一次：
 +
-「網路介面移轉-vserver <vserver_name>-lif<lif_name>-source-Node <node1>-dite-node<node1>-destite-port <port_name>」
+「網路介面移轉-vserver _vserver_name_-lif_lif_name_-source-node-node1_-dest-node1_-destation-port _port_name_」
 
 +
 移轉所有叢集生命量並建立叢集通訊時、叢集應達到仲裁。
 
 .. 修改叢集lifs的主連接埠：
 +
-「網路介面修改-vserver叢集-lIF <lif_name>–home-port <port_name>'
+「網路介面修改-vserver叢集-lif_lif_name_–home-port _port_name_`
 
 .. 從叢集廣播網域移除舊連接埠：
 +
-「網路連接埠廣播網域移除連接埠-IPSpace叢集-broadcast網域叢集-ports <node1:port>」
+「網路連接埠廣播網域移除連接埠-IPSpace叢集-broadcast網域叢集-ports _node1:port_」
 
 .. 顯示節點1和節點3的健全狀況：
 +
-「cluster show -node1>-Fields health」
+「cluster show -node1_-Fields heal衛生」
 
 .. 每個叢集LIF都必須偵聽連接埠7700。驗證叢集LIF是否正在偵聽連接埠7700：
 +
@@ -107,7 +107,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 .. 如有必要、請針對未接聽連接埠7700的每個叢集LIF、將LIF的管理狀態設為「自己」、然後設定為「UP」：
 +
-：`:>net int modify -vserver cluster -lif<cluster－lif>-STATUS-admin down；net int modify -vserver cluster -lIF <cluster－lif>-STATUS-admin up（net int modify -vserver Cluster -lIF <cluster－lif>-STATUS-admin up）
+：`:>net int modify -vserver cluster -lif_cluster－lif_-stue-admin down；net int modify -vserver cluster -lif_cluster－lif_-stue-admin up（net int修改-vserver叢集-lif_cluster－lif_-stue-admin up）
 
 +
 重複子步驟（f）、確認叢集LIF現在正在連接埠7700上偵聽。
@@ -122,7 +122,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 
 .. 修復實體連接埠的可連線性、接著在每個連接埠上執行下列命令（一次一個連接埠）：
 +
-「可到達性修復-Node <node_name>-port <port_name>」
+"n連通 性修復-node_node_name_-port _port_name_"
 
 +
 預期會出現類似以下的警告。請視需要檢閱並輸入「y」或「n」：
@@ -139,30 +139,30 @@ WARNING: Repairing port "node_name:port" might cause it to move into a different
 
 .. 執行可連線性修復時ONTAP 、嘗試將連接埠放在正確的廣播網域中。但是、如果無法判斷連接埠的連線能力、而且與任何現有的廣播網域不相符、ONTAP 則無法針對這些連接埠建立新的廣播網域。如果新建立的廣播網域的所有成員連接埠都會成為介面群組的成員連接埠、您可以視需要刪除這些網域。刪除廣播網域：
 +
-「broadcast網域刪除-broadcast網域<broadcast網域>」
+「廣播網域刪除-廣播網域_broadcast網域_網域_」
 
 .. 檢閱介面群組組態、並視需要新增或刪除成員連接埠。
 +
 新增成員連接埠至介面群組連接埠：
 
 +
-"ifgrp add-port -node<node_name>-ifgrp <ifgrp_port>-port <port_name>
+"ifgrp add-port -node_node_name_-ifgrp _ifgrp_port_-port _port_name_"
 
 +
 從介面群組連接埠移除成員連接埠：
 
 +
-「ifgrp disfile-port -node_<node_name>_-ifgrp <ifgrp_port>-port <port_name>」
+「ifgrp dise-port -node_node_name_-ifgrp _ifgrp_port_-port _port_name_」
 
 .. 視需要刪除並重新建立VLAN連接埠。刪除VLAN連接埠：
 +
-「VLAN刪除節點<node_name>-vlan-name <vla_port>_」
+「vlan DELETE -node_node_name_-vlan-name _vla_port_」
 
 +
 建立VLAN連接埠：
 
 +
-「vlan create -node_name>-vlan-name<vla_port>`
+「vlan create -node_node_name_-vlan-name_vla_port_」
 
 +
 
@@ -178,7 +178,7 @@ NOTE: 視所升級系統的網路組態複雜度而定、您可能需要重複�
 
 .. 將移除的VLAN還原至所需的目的地連接埠：
 +
-「Dislocation-vlans還原-node<node_name>-port <port_name>-dite-port <dite_port>'
+「Dis放置VLAN還原-node_node_name_-port _port_name_-destination-port _destination_port_」
 
 .. 確認所有已移除的VLAN均已還原：
 +
@@ -198,7 +198,7 @@ NOTE: 視所升級系統的網路組態複雜度而定、您可能需要重複�
 
 .. 還原每個LIF的主連接埠：
 +
-「顯示介面還原-vserver <vserver_name>-lif-name <LIF_name>」
+「Dis放置 介面還原-vserver _vserver_name_-lif-name _lif_name_」
 
 .. 確認所有LIF主連接埠均已還原：
 +
@@ -213,15 +213,15 @@ NOTE: 視所升級系統的網路組態複雜度而定、您可能需要重複�
 +
 .. 檢查是否有任何管理性停機的生命生命：
 +
-「網路介面show -vserver <vserver_name>-STATUS-admin down」
+「網路介面show -vserver _vserver_name_-stue-admin down」
 
 .. 檢查是否有任何運作中斷的生命：
 +
-「網路介面show -vserver <vserver_name>-STATUS-oper down」
+「網路介面show -vserver _vserver_name_-stue-oper down」
 
 .. 修改任何需要修改的生命期、使其具有不同的主連接埠：
 +
-「網路介面修改-vserver <vserver_name>-lIF <LIF_name>-home-port <home_port>'
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-port _home_port_」
 
 +
 

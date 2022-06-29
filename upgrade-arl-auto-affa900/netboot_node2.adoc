@@ -48,7 +48,7 @@ NOTE: 您必須使用管理連接埠和IP做為netboot連線。請勿使用資�
 
 
 | 未執行  a| 
-在開機環境提示字元中使用下列命令手動設定連線：「ifconfige0M -addr=<filer_addr>-mask=<網路遮罩>-gateway=- dns =<dns _addr> domain=<dns網域>'<filer_addr>'是儲存系統的IP位址。「網路遮罩」是儲存系統的網路遮罩。「<閘道>」是儲存系統的閘道。'<DNs_addr>'是網路上名稱伺服器的IP位址。此參數為選用項目。'<DNs_domain>'是網域名稱服務（DNS）網域名稱。此參數為選用項目。
+在開機環境提示字元中使用下列命令手動設定連線：「ifconfige0M -addr=_filer_addr_-mask=_netmask_-gateway_-dns =_dns _addr_-domain=_dns _domain_`_filer_addr_」是儲存系統的IP位址。「網路遮罩」是儲存系統的網路遮罩。「_gateway_」是儲存系統的閘道。'_DNs_addr_'是網路上名稱伺服器的IP位址。此參數為選用項目。「DNS網域名稱服務」（DNS）網域名稱。此參數為選用項目。
 
 
 NOTE: 您的介面可能需要其他參數。在韌體提示字元中輸入「Help ifconfig」以取得詳細資料。
@@ -167,7 +167,7 @@ node2應在loader>提示符下停止。
 
 . 如有必要、請在節點2上設定日期：
 +
-「et date <mm/dd/yed>'
+"et date _mm/dd/yed_"
 
 +
 
@@ -179,7 +179,7 @@ NOTE: 在節點2上設定對應的UTC日期。
 
 . 如有必要、請在節點2上設定時間：
 +
-「設定時間<hh：mm：ss>」
+"et time _hh：mm:ss_"
 
 +
 
@@ -191,7 +191,7 @@ NOTE: 在節點2上設定對應的UTC時間。
 NOTE: 這是您要升級AFF 至E4A900之節點1的系統ID。
 
 +
-「etenv PARTNER-sysid <node1_sysid>'」
+"etenv PARTNER-sysid _node1_sysid_"
 
 +
 .. 儲存設定：

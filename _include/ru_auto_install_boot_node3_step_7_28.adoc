@@ -98,7 +98,7 @@ NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。�
 
 . [[step17]如有必要、請在節點3上設定日期：
 +
-「et date <mm/dd/yed>'
+"et date _mm/dd/yed_"
 
 . [[step18]在node3上、在開機環境提示字元中使用下列命令檢查時間：
 +
@@ -106,11 +106,11 @@ NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。�
 
 . [[step19]如有必要、請在節點3上設定時間：
 +
-「設定時間<hh：mm：ss>」
+"et time _hh：mm:ss_"
 
 . [[step20]如有必要、請在節點3上設定合作夥伴系統ID：
 +
-「etenv PARTNER-sysid <node2_sysid>'」
+"etenv PARTNER-sysid _node2_sysid_"
 
 +
 .. 儲存設定：

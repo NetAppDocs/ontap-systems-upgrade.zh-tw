@@ -23,13 +23,13 @@ summary: 在您對系統進行網路開機之前、請先在執行ONTAP 版本�
 
 +
 
-NOTE: 如果狀態為「Transferring（正在傳輸）」、您必須中止這些傳輸：「napmirror abort-dite-vserver <vserver name>'（napmirror abort-dite-vserver <vserver名稱>）」
+NOTE: 如果狀態為「Transferring（正在傳輸）」、您必須中止傳輸：「napmirror abort-destination-vserver _vserver name_」
 
 +
 如果SnapMirror關係未處於「Transferring（傳輸）」狀態、則中止將會失敗。
 
 . 停止叢集之間的所有關係：
 +
-「napmirror quiesce -dite-vserver <vserver-name>」
+「napmirror quiesce -destination-vserver _vserver-name_」
 
 

@@ -13,7 +13,7 @@
 
 .. 輸入下列命令：
 +
-「torage Aggregate regate or搬 移開始節點<node1>-destination <node2>-Aggregate-list *-NDA-控制 器升級true」
+「torage Aggregate regate or搬 移開始節點_node1_-destate _node2_-Aggregate-list *-n控制器升級true」
 
 .. 出現提示時、請輸入「y」。
 +
@@ -27,7 +27,7 @@
 
 . 在節點1上輸入下列命令、檢查重新配置狀態：
 +
-「torage Aggregate regate reg搬 移顯示-node1>'
+「torage Aggregate regate reg搬 移顯示-node1_」
 
 +
 在重新放置集合體之後、輸出會顯示「Done」。
@@ -49,7 +49,7 @@ NOTE: 請等到節點1擁有的所有非根集合體都已重新定位至節點2
 | 任何集合體的故障或被否決  a| 
 .. 檢查EMS記錄以瞭解修正行動。
 .. 執行修正行動。
-.. 重新定位任何故障或被否決的Aggregate：「torage Aggregate relocationstart -node1>- destination <node2>-Aggregate-list *-n控制器升級true」
+.. 重新定位任何故障或被否決的Aggregate：「torage Aggregate relocationstart -node1_- destate _node2_-Aggregate-list *-n控制器升級true」
 .. 出現提示時、請輸入「y」。
 .. 返回管理員層級：「et -priv. admin」（設定權限管理員）如有必要、您可以使用下列其中一種方法強制重新配置：
 +
@@ -64,7 +64,7 @@ NOTE: 請等到節點1擁有的所有非根集合體都已重新定位至節點2
 |===
 . [[man_allocation_1_2_step4]]確認所有非根Aggregate都在線上、且其狀態位於節點2：
 +
-「torage Aggregate show -node2>-state online -root假」
+「torage Aggregate show -node2_-state online -root假」
 
 +
 以下範例顯示節點2上的非根Aggregate處於線上狀態：
@@ -86,24 +86,24 @@ aggr_2     825.0GB 825.0GB      0% online       1 node2            raid_dp,
 如果Aggregate已離線或成為節點2上的外部節點、請在節點2上使用下列命令將其上線、每個Aggregate一次：
 
 +
-「torage Aggregate online -gregate <agger_name>」
+'線上儲存Aggregate -Agggr_name_'
 
 . 在node2上輸入下列命令並檢查其輸出、以確認節點2上的所有磁碟區均已上線：
 +
-「Volume show -node2>-state offline」（Volume show -node2>-state offline）
+「Volume show -node2_-state offline」
 
 +
 如果節點2上有任何磁碟區離線、請在節點2上使用下列命令將其上線、每個磁碟區一次：
 
 +
-「Volume online -vserver <vserver-name>-volume <Volume <Volume名稱>'
+「Volume online -vserver _vserver-name_-volume _volume名稱_」
 
 +
 與此命令搭配使用的「vserver名稱」可在先前的「volume show」命令輸出中找到。
 
 . 在節點2上輸入下列命令：
 +
-「torage容錯移轉show -Node <node2>'」
+「torage容錯移轉show -node2_」
 
 +
 輸出應顯示下列訊息：
@@ -115,7 +115,7 @@ Node owns partner's aggregates as part of the nondisruptive controller upgrade p
 ----
 . 驗證node1是否沒有任何線上的非根Aggregate：
 +
-「torage Aggregate show -Owner-name <node1>-ha-policy SFO -state online」
+「torage Aggregate show -Owner-name _node1_-ha-policy SFO -state online」
 
 +
 輸出不應顯示任何已重新定位到節點2的線上非根Aggregate。

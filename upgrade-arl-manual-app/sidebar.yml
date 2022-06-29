@@ -15,6 +15,7 @@ entries:
 - title: 工作表：在控制器升級之前和期間收集的資訊
   url: "/upgrade-arl-manual-app/worksheet_information_before_during_upgrade.html"
 - title: 第1階段：準備升級
+  pdf-filename: 第1階段：準備升級（ONTAP 以人手動方式升級、以更新版本為準）
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual-app/stage_1_index.html"
@@ -33,6 +34,7 @@ entries:
   - title: 準備netboot
     url: "/upgrade-arl-manual-app/prepare_for_netboot.html"
 - title: 第2階段：重新部署和淘汰節點1
+  pdf-filename: 第2階段：重新定位並淘汰節點1（ONTAP 手動升級至版本號不支援版本9.8）
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual-app/stage_2_index.html"
@@ -45,6 +47,7 @@ entries:
   - title: 淘汰節點1
     url: "/upgrade-arl-manual-app/retire_node1.html"
 - title: 階段3.安裝及開機節點3
+  pdf-filename: 階段3.安裝及開機節點3（ONTAP 手動升級至32個版本）
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual-app/stage_3_index.html"
@@ -63,6 +66,7 @@ entries:
   - title: 將節點2擁有的NAS資料lifs移至節點3
     url: "/upgrade-arl-manual-app/move_nas_lifs_node2_node3.html"
 - title: 第4階段：記錄資訊並淘汰節點2
+  pdf-filename: 第4階段：記錄資訊並淘汰node2（ONTAP 手動升級至版本號不含更新版本）
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual-app/stage_4_index.html"
@@ -71,6 +75,7 @@ entries:
   - title: 淘汰節點2
     url: "/upgrade-arl-manual-app/retire_node2.html"
 - title: 階段5.安裝及開機節點4
+  pdf-filename: 階段5.安裝及開機節點4（ONTAP 手動升級至僅限更新版本的版本）
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual-app/stage_5_index.html"
@@ -87,6 +92,7 @@ entries:
   - title: 將node2的非根Aggregate從node3重新定位到node4
     url: "/upgrade-arl-manual-app/relocate_node2_non_root_aggr_node3_node4.html"
 - title: 階段6.完成升級
+  pdf-filename: 階段6.完成升級（ONTAP 以人手動方式升級、以更新版本提供）
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual-app/stage_6_index.html"
@@ -101,6 +107,7 @@ entries:
   - title: 恢復SnapMirror作業
     url: "/upgrade-arl-manual-app/resume_snapmirror_ops.html"
 - title: 疑難排解
+  pdf-filename: 疑難排解（ONTAP 手動升級至VMware版9.8或更新版本）
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual-app/troubleshoot_index.html"

@@ -28,6 +28,6 @@
 . 記下新的驗證金鑰ID。
 . 使用新的驗證金鑰重新輸入所有自我加密磁碟機的金鑰：
 +
-「torage加密磁碟modify -disk *-data-key-id <imiting_key_id>'」
+「torage加密磁碟modify -disk *-data-key-id _imalization_key_id_」
 
 

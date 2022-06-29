@@ -43,11 +43,11 @@
 
 ** 若要設定目標連接埠：
 +
-「ucadmin modify -m fc-t target <適 配器>」
+「ucadmin modify -m sfc-t target _adapter-'」
 
 ** 設定啟動器連接埠：
 +
-「ucadmin modify -m fc-t initiator <adapter>'」
+「ucadmin modify -m光纖通道-t啟動器_adapter-'」
 
 
 
@@ -55,7 +55,7 @@
 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 視需要修改節點4上的FC連接埠：「ucadmin modify -m fs -t initiator -f <adapter_port_name>'`-t'是FC4類型、目標或啟動器。*附註*：FC連接埠必須設定為啟動器。 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 視需要修改節點4上的FC連接埠：「ucadmin modify -m ft initiator -f _adapter_port_name_'`-t'是FC4類型、目標或啟動器。*附註*：FC連接埠必須設定為啟動器。 
 |===
 . 結束維護模式：
 +

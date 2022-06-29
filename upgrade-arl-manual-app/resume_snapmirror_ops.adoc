@@ -23,6 +23,6 @@ summary: 在執行ONTAP 版本號為9.8或更新版本的控制器上進行手�
 
 . 恢復SnapMirror關係：
 +
-「napmirror resume -destination–vserver <vserver_name>」
+' napmirror resume -destination–vserver _vserver_name_'
 
 

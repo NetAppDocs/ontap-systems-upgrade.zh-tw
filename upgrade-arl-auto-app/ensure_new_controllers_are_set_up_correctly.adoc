@@ -40,7 +40,7 @@ node4    node3    true       Connected to node3
 
 . 使用下列命令檢查輸出、確認節點3和節點4可以存取彼此的儲存設備：
 +
-「torage容錯移轉顯示欄位local-missing磁碟、合作夥伴遺失磁碟」
+「torage容錯移轉顯示-欄位、本機磁碟遺失、合作夥伴磁碟遺失」
 
 . 使用下列命令檢查輸出、確認節點3和節點4都不擁有叢集中其他節點所擁有的資料lifs主目錄：
 +
@@ -54,25 +54,25 @@ node4    node3    true       Connected to node3
 
 . 驗證node3是否擁有node1的集合體、以及node4是否擁有node2的集合體：
 +
-「torage Aggregate show -Owner-name <node3>'
+「torage Aggregate show -Owner-name _node3_」
 
 +
-「torage Aggregate show -Owner-name <node4>'
+「torage Aggregate show -Owner-name _node4_」
 
 . 判斷是否有任何磁碟區離線：
 +
-「Volume show -node3>-state offline」（Volume show -node3>-state offline）
+「Volume show -node3_-state offline」
 
 +
-Volume show -node4>-state offline（Volume show -node4>-state offline）
+「Volume show -node4_-state offline」
 
 . 如果有任何磁碟區離線、請將它們與您在一節中擷取的離線磁碟區清單進行比較 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]並在每個Volume上使用一次下列命令、視需要將任何離線磁碟區上線：
 +
-「Volume online -vserver <vserver_name>-volume <volume <volume．name>'
+"Volume online -vserver _vserver_name_-volume _volume _name_"
 
 . 針對每個節點使用下列命令、安裝新節點的新授權：
 +
-「系統授權新增-授權代碼<lite_code,liter_code,liter_code...>'
+「系統授權新增-授權碼_license代碼、license代碼、license代碼、license代碼…_」
 
 +
 授權代碼參數接受28個大寫字母字元金鑰的清單。您可以一次新增一個授權、也可以一次新增多個授權、以英文分隔每個授權金鑰。
@@ -82,7 +82,7 @@ Volume show -node4>-state offline（Volume show -node4>-state offline）
 「系統授權清除-未使用-過期」
 
 +
-「系統授權刪除-序號<node_sSerial_number>-package<sitedable套件>」
+「系統授權刪除-序號_node_sSerial_number_-套件_licensee_package_」
 
 +
 --
@@ -96,10 +96,10 @@ Volume show -node4>-state offline（Volume show -node4>-state offline）
 
 ** 在節點上使用下列命令、從叢集刪除特定授權：
 +
-「系統授權刪除-序號<node1_sSerial_number>-package *」
+「系統授權刪除-序號_node1_sSerial_number_-package *」
 
 +
-「系統授權刪除-序號<node2_sSerial_number>-package *」
+「系統授權刪除-序號_node2_sSerial_number_-package *」
 
 
 
@@ -123,15 +123,15 @@ Do you want to continue? {y|n}: y
 +
 您可以比較輸出與您在區段中擷取的輸出 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]。
 
-. 如果在組態中使用NetApp儲存加密（NSE）、您可以使用'<kmip.init.maxwait>`變數'off'（在中）將'采 用'采 用'true（真）'命令來設定'setenv bootarg.storageEncryption.support'命令 link:install_boot_node4.html#step27["安裝並開機節點4、步驟27"]）、您需要重設變數：
+. 如果在組態中使用NetApp儲存加密（NSE）、而您使用「_kmip.init.maxwait_`」變數「Off」（在中）、將「show bootarg.storageEncryption.support.support」命令設為「true」（真） link:install_boot_node4.html#step27["安裝並開機節點4、步驟27"]）、您需要重設變數：
 +
-「et diag; systemShell -node<node_name>-command Sudo kenv -u -p kmip.init.maxwait`」
+「et diag; systemShell -node_node_name_-command sudo kenv -u -p kmip.init.maxwait`」
 
 
 
 . [[Step13]在兩個節點上使用下列命令來設定SP：
 +
-「系統服務處理器網路修改節點<node_name>」
+「系統服務處理器網路修改-node_node_name_」
 
 +
 請參閱 link:other_references.html["參考資料"] 如需SP及_SURE9.8 ONTAP 命令的相關資訊、請連結至_System Administration Reference（系統管理參考資料）：Manual Page Reference（手冊頁參考）_、以取得有關係統「服務處理器網路修改」命令的詳細資訊。
@@ -144,7 +144,7 @@ Do you want to continue? {y|n}: y
 
 .. 輸入下列命令：
 +
-「儲存容錯移轉修改節點<node_name>- CIF- ne-duration預設值|中|低」
+「儲存容錯移轉修改-node_node_name_-CIF- ne-duration _default| medium | low _」
 
 +
 *** 如果系統的工作負載達到50%至75%的作業量、則輸入「管理」。

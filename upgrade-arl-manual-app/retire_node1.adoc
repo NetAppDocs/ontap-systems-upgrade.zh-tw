@@ -50,11 +50,11 @@ node2                 true    true
 .. 停用儲存容錯移轉：
 
 
-「torage容錯移轉修改-node1>-enabled假」
+「torage容錯移轉修改-node1_-enabled假」
 
 
 
-| 具有兩個以上節點的叢集 | 停用儲存容錯移轉：「儲存容錯移轉修改節點<node1>-enabled假」 
+| 具有兩個以上節點的叢集 | 停用儲存容錯移轉：「儲存容錯移轉修改-node1_-enabled假」 
 |===
 . 確認儲存容錯移轉已停用：
 +
@@ -82,7 +82,7 @@ node2                 true    true
 ----
 . 驗證資料LIF狀態：
 +
-「網路介面show -role data -curr-node2>-home-node1>'
+「網路介面show -role data -curr-node-node2_-home-node1_」
 
 +
 查看「*狀態管理/每*」欄、查看是否有任何生命期中斷。如果有任何生命中斷、請參閱 link:troubleshoot.html["故障"] 區段。
@@ -148,11 +148,11 @@ High Availability Configured: false
 ----
 . 如果node1持有epsilon、則在節點上標記epsilon「假」、以便將其傳輸至node2：
 +
-「cluster modify -node1>-epsilon假」
+「cluster modify -node1_-epsilon假」
 
 . 將epsilon傳輸到node2、在node2上標記epsilon「true（真））：
 +
-「cluster modify -node2>-epsilon true」
+「cluster modify -node2_-epsilon true」
 
 . 驗證是否發生了對node2的變更：
 +
@@ -190,7 +190,7 @@ node2的epsilon現在應該是true、node1的epsilon應該是假的。
 
 . 從node1提示字元中停止node1：
 +
-「System Node halt -Node <node1>'」（系統節點停止節點<node1>'）
+'系統節點停止-節點節點節點1_'
 
 +
 

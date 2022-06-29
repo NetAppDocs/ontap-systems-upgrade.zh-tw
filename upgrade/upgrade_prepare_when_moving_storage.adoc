@@ -40,7 +40,7 @@ summary: 在移轉儲存設備進行升級之前、您必須從原始節點收�
  a| 
 磁碟櫃、每個磁碟櫃中的磁碟數目、Flash儲存設備詳細資料、記憶體、NVRAM和網路卡
  a| 
-「系統節點執行節點<node_name> sysconfig」
+'系統節點執行節點節點_node_name_ sysconfig'
 
 
 
@@ -54,14 +54,14 @@ summary: 在移轉儲存設備進行升級之前、您必須從原始節點收�
  a| 
 實體連接埠
  a| 
-「network port show -node<node_name>-type Physical（網路連接埠顯示節點<node_name>類型實體）」
+「網路連接埠show -node_node_name_-type Physical」
 
 
 
  a| 
 容錯移轉群組
  a| 
-「網路介面容錯移轉群組show -vserver <vserver_name>」
+「網路介面容錯移轉群組」顯示-vserver _vserver_name_
 
 記錄非叢集範圍的容錯移轉群組名稱和連接埠。
 
@@ -70,7 +70,7 @@ summary: 在移轉儲存設備進行升級之前、您必須從原始節點收�
  a| 
 VLAN組態
  a| 
-「網路連接埠VLAN show -Node <node_name>」
+「網路連接埠VLAN show -node_node_name_」
 
 記錄每個網路連接埠和VLAN ID配對。
 
@@ -79,7 +79,7 @@ VLAN組態
  a| 
 介面群組組態
  a| 
-「網路連接埠ifgrp show -node<node_name>-instance」
+「網路連接埠ifgrp show -node_node_name_-instance」
 
 記錄介面群組的名稱及指派給它們的連接埠。
 

@@ -152,7 +152,7 @@ node2          node1          true     Connected to node1
 
 . [[man_prepe_node_step9]]確認節點1和節點2均不擁有其目前擁有者（但不擁有主擁有者）的Aggregate：
 +
-「torage Aggregate show -node<node_name>-is主目錄假欄位擁有者名稱、主名稱、狀態」
+「torage Aggregate show -nodes _norme_name_-is主目錄錯誤欄位擁有者名稱、主目錄名稱、狀態」
 
 +
 如果node1和node2都不擁有當前擁有者（但不是主擁有者）的Aggregate、系統將傳回類似下列範例的訊息：
@@ -195,11 +195,11 @@ aggr4         node1        node2        online
 +
 .. 將合作夥伴節點目前擁有的Aggregate傳回主擁有者節點：
 +
-「儲存容錯移轉還原-ofnode<home_node_name>」
+儲存容錯移轉恢復-ofnode_home_node_name_`
 
 .. 驗證node1和node2是否仍擁有當前擁有者（但不是主擁有者）的Aggregate：
 +
-「torage Aggregate show -nodes <node_name>-is主目錄假欄位擁有者名稱、主目錄名稱、狀態」
+「torage Aggregate show -nodes _norme_name_-is主目錄錯誤欄位擁有者名稱、主目錄名稱、狀態」
 
 +
 以下範例顯示當節點同時是Aggregate的目前擁有者和主擁有者時、命令的輸出：
@@ -261,7 +261,7 @@ node2                 true    true
 
 . [[man_prepe_node_step15]]確認node1和node2執行相同ONTAP 的版本：
 +
-「ystem nodem image show -node1、node2 >-iscurrent true」
+「系統節點映像顯示-node1、node2_-iscurrent true」
 
 +
 下列範例顯示命令的輸出：
@@ -282,7 +282,7 @@ node2
 ....
 . 驗證node1和node2是否都不擁有屬於叢集中其他節點的任何資料生命週期、並檢查輸出中的「Current Node（目前節點）」和「is Home（原為主節點）」欄位：
 +
-「網路介面show -role data -is主目錄假-curr-node<node_name>」
+「網路介面show -role data -is主目錄假-curr-node_node_name_」
 
 +
 以下範例顯示節點1沒有由叢集中其他節點擁有的lifs時的輸出：
@@ -317,7 +317,7 @@ vs0
 
 . 檢查node1或node2是否擁有任何故障磁碟：
 +
-「torage disk show -nodelist <node1、node2 >-disbed」
+「torage disk show -nodelist _node1、node2_-disbed」
 
 +
 如果有任何磁碟發生故障、請依照_Disk中的指示、使用CLI進行Aggregate管理。（請參閱 link:other_references.html["參考資料"] 使用CLI連結至_磁碟與集合管理。）

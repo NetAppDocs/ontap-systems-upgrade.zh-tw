@@ -183,7 +183,7 @@ node2_node4
 
 . [[auto_reest_4_Step4]]修復節點4上每個連接埠的連線狀態、其連線狀態並非「OK」。先在任何實體連接埠上執行下列命令、然後在任何VLAN連接埠上執行一次一個：
 +
-「網路連接埠可連線性修復-節點<node_name>-port <port_name>」
+"network port re連通 性修復-node_node_name_-port _port_name_"
 
 +
 輸出內容如下所示：
@@ -215,22 +215,22 @@ Warning: Repairing port "node2_node4: e0h" may cause it to move into a different
 +
 .. 您必須先從其廣播網域成員資格中移除應該是介面群組成員連接埠的實體連接埠。您可以使用下列命令來執行此作業：
 +
-「網路連接埠、廣播網域、移除連接埠、廣播網域、<廣播網域名稱>-連接埠、<節點名稱：連接埠名稱>」
+「網路連接埠、廣播網域、移除連接埠、廣播網域、廣播網域、網域名稱、連接埠、節點名稱、連接埠名稱、連接埠名稱_」
 
 .. 將成員連接埠新增至介面群組：
 +
-「network port ifgrp add-port -node<node_name>- ifgrp <ifgrp>-port <port_name>」
+「網路連接埠ifgrp add-port -node_node_name_-ifgrp _ifgrp_-port _port_name_」
 
 .. 介面群組會在新增第一個成員連接埠約一分鐘後自動新增至廣播網域。
 .. 確認介面群組已新增至適當的廣播網域：
 +
-「網路連接埠可連線性show -node<node_name>-port <ifgrp>'
+「網路連接埠可連線性」顯示-node_node_name_-port _ifgrp_
 
 +
 如果介面群組的連線狀態不是「正常」、請將其指派給適當的廣播網域：
 
 +
-「網路連接埠、廣播網域、附加連接埠、廣播網域、<廣播網域名稱>-連接埠<節點：連接埠>」
+「網路連接埠廣播網域附加連接埠-broadcast網域_broadcast網域_domain_name_-ports _norme:port_」
 
 
 
@@ -242,13 +242,13 @@ Warning: Repairing port "node2_node4: e0h" may cause it to move into a different
 
 .. 如果「叢集」廣播網域的連線狀態不是「正常」、請修復任何可連線的連接埠：
 +
-「網路連接埠可連線性修復-節點<node_name>-port <port_name>」
+"network port re連通 性修復-node_node_name_-port _port_name_"
 
 
 
 . 使用下列其中一項命令、將其餘的實體連接埠移至正確的廣播網域：
 +
-「網路連接埠可連線性修復-節點<node_name>-port <port_name>」
+"network port re連通 性修復-node_node_name_-port _port_name_"
 
 +
 「網路連接埠廣播網域移除連接埠」
@@ -310,7 +310,7 @@ Cluster::*> displaced-vlans restore -node node2_node4 -port e0e -destination-por
 
 . 完成所有連接埠修復後、請刪除任何空白的廣播網域：
 +
-「broadcast網域刪除-broadcast網域<broadcast網域名稱>」
+「廣播網域刪除-broadcast網域_broadcast網域_網域名稱_」
 
 . 驗證連接埠可連線性：
 +
@@ -335,7 +335,7 @@ Cluster::*> displaced-vlans restore -node node2_node4 -port e0e -destination-por
 
 .. 還原LIF主連接埠：
 +
-「顯示介面還原主節點節點-node<node_name>-vserver <vserver_name >-lif-name <LIF_name>」
+「顯示介面還原主節點節點節點_norme_name_-vserver _vserver_name_-lif-name _lif_name_」
 
 
 

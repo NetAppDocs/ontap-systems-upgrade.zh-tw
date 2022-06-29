@@ -35,7 +35,7 @@ summary: 如有需要、請使用ONTAP 「系統控制器更換」命令、將�
 +
 .. 新增金鑰管理伺服器：
 +
-「安全金鑰管理程式-新增<key_manager_server_ip_address>」
+「安全金鑰管理程式- add _key_manager_server_ip_address_」
 
 .. 針對每個列出的金鑰管理伺服器重複上一步。
 +
@@ -54,7 +54,7 @@ summary: 如有需要、請使用ONTAP 「系統控制器更換」命令、將�
 +
 .. 在新節點上啟動金鑰管理伺服器設定精靈：
 +
-「安全金鑰管理程式設定節點<new_manager_name>'」
+「安全金鑰管理程式設定節點_new_manager_name_」
 
 .. 完成精靈中的步驟以設定金鑰管理伺服器。
 
@@ -78,7 +78,7 @@ summary: 如有需要、請使用ONTAP 「系統控制器更換」命令、將�
 | 部分9.6或9.7 ONTAP | 「安全金鑰管理程式內建同步」 
 
 
-| 版本9.5 ONTAP | 「安全金鑰管理程式設定節點<node_name>」 
+| 版本9.5 ONTAP | 「安全金鑰管理程式設定節點_norme_name_」 
 |===
 
 

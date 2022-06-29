@@ -39,6 +39,6 @@ summary: 在執行ONTAP 更新版本的控制器手動升級ARL時、設定儲�
 . 記下新的驗證金鑰ID。
 . 使用新的驗證金鑰重新輸入所有自我加密磁碟機的金鑰：
 +
-「torage加密磁碟modify -disk *-data-key-id <imiting_key_id>'」
+「torage加密磁碟modify -disk *-data-key-id _imalization_key_id_」
 
 

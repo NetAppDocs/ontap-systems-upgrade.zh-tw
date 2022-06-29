@@ -38,7 +38,7 @@
 當節點1進入「等待恢復」狀態時、節點2會傳回所有節點1非根Aggregate。
 
 .步驟
-. 節點1開機後、節點1的所有非根Aggregate都會移回節點1。您必須手動將Aggregate從node1重新配置為node2："torage aggregate regate reg搬 移開始節點節點1 - destination node2 -gregate-list *- ndocu控制 器升級為true "
+. 節點1開機後、節點1的所有非根Aggregate都會移回節點1。您必須手動將Aggregate從node1重新配置為node2：「torage Aggregate regate reg搬 移起始節點節點1 -目的地節點2 - Aggregate -list *-ndocu控制 器升級為true」
 . 繼續執行節點配對升級程序。
 
 

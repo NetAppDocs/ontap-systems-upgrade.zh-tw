@@ -35,6 +35,7 @@ entries:
   - title: 驗證切換、修復及切換
     url: "/upgrade-arl-manual/verify_swtichover_healing_switchback.html"
 - title: 第1階段：準備升級
+  pdf-filename: 第1階段：準備升級（ONTAP 以更新版本為準）
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual/stage_1_index.html"
@@ -53,6 +54,7 @@ entries:
   - title: 準備netboot
     url: "/upgrade-arl-manual/prepare_for_netboot.html"
 - title: 第2階段：重新部署和淘汰節點1
+  pdf-filename: 第2階段：重新定位並淘汰節點1（ONTAP 以更新版本更新至更新版本的版本）
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual/stage_2_index.html"
@@ -65,6 +67,7 @@ entries:
   - title: 淘汰節點1
     url: "/upgrade-arl-manual/retire_node1.html"
 - title: 階段3.安裝及開機節點3
+  pdf-filename: 階段3.安裝並開機節點3（ONTAP 以更新版本為參考9.7或更新版本的手動升級）
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual/stage_3_index.html"
@@ -85,6 +88,7 @@ entries:
   - title: 將節點2擁有的NAS資料lifs移至節點3
     url: "/upgrade-arl-manual/move_nas_lifs_node2_node3.html"
 - title: 第4階段：記錄資訊並淘汰節點2
+  pdf-filename: 第4階段：記錄資訊並淘汰node2（ONTAP 以更新版本更新至更新版本的版本）
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual/stage_4_index.html"
@@ -93,6 +97,7 @@ entries:
   - title: 淘汰節點2
     url: "/upgrade-arl-manual/retire_node2.html"
 - title: 階段5.安裝及開機節點4
+  pdf-filename: 階段5.安裝並開機節點4（ONTAP 以更新版本為參考9.7或更新版本的手動升級）
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual/stage_5_index.html"
@@ -111,6 +116,7 @@ entries:
   - title: 將node2的非根Aggregate從node3重新定位到node4
     url: "/upgrade-arl-manual/relocate_node2_non_root_aggr_node3_node4.html"
 - title: 階段6.完成升級
+  pdf-filename: 階段6.完成升級（ONTAP 以更新版本為參考9.7或更新版本的手動升級）
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual/stage_6_index.html"
@@ -125,6 +131,7 @@ entries:
   - title: 恢復SnapMirror作業
     url: "/upgrade-arl-manual/resume_snapmirror_ops.html"
 - title: 疑難排解
+  pdf-filename: 疑難排解（ONTAP 手動升級至VMware版本9.7或更早版本）
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual/troubleshoot_index.html"

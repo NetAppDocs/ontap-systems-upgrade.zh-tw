@@ -71,11 +71,11 @@ NOTE: 如果您要升級具有多個HA配對的叢集中的HA配對、則必須�
 
 . 如果node2保留epsilon、請在節點上將epsilon標記為「假」、以便傳輸至node3：
 +
-「cluster modify -node2>-epsilon假」
+「cluster modify -node2_-epsilon假」
 
 . 將epsilon傳輸到node3、在node3上標記epsilon「true（真））：
 +
-「cluster modify -node3>-epsilon true」
+「cluster modify -node3_-epsilon true」
 
 . 確認設定是否為雙節點無交換器叢集：
 +
@@ -107,6 +107,6 @@ Enable Switchless Cluster: false/true
 +
 「et -priv. admin」
 
-. 在任一控制器上輸入下列命令、以停止節點2：「ystem nodem Node halt -node2>'（系統節點停止節點<node2>'）」
+. 在任一控制器上輸入下列命令來停止節點2：「ystem Node halt -node2_」
 . 節點2完全關機後、請將其從機箱或機架中移除。您可以在升級完成後取消委任節點2。請參閱 link:decommission_old_system.html["取消委任舊系統"]。
 

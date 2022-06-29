@@ -97,7 +97,6 @@ summary: 瞭解AFF 如何AFF 執行從NetApp A700升級到Ar900 ARL控制器的�
 第4階段結束時的Aggregate所有權：
 
 * 升級的node1是原屬於node1的Aggregate的主擁有者和目前擁有者
-* node2是node2 Aggregate的主擁有者
 * 升級的node1是node2 Aggregate的目前擁有者
 
 
@@ -110,7 +109,7 @@ summary: 瞭解AFF 如何AFF 執行從NetApp A700升級到Ar900 ARL控制器的�
 
 第5階段結束時的Aggregate所有權：
 
-* node1是原屬於node1的Aggregate的主擁有者和目前擁有者。
+* 升級的node1是原屬於node1的Aggregate的主擁有者和目前擁有者。
 * 升級的node2是原屬於node2的Aggregate的主擁有者和目前擁有者。
 
 

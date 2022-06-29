@@ -32,7 +32,7 @@ https://hwu.netapp.com["NetApp Hardware Universe"^]
 .. 如果您尚未將節點3和節點4開機至叢集提示字元、請將其開機。
 .. 將正確的連接埠新增至「叢集（叢集）”廣播網域：
 +
-「網路連接埠修改節點<node_name>-port <port_name>-MTU 9000 -IPSpace叢集」
+「網路連接埠修改-node_node_name_-port _port_name_-MTU 9000 -IPSpace叢集」
 
 +
 此範例在「節點1」上新增「叢集」連接埠e1b：
@@ -42,22 +42,22 @@ https://hwu.netapp.com["NetApp Hardware Universe"^]
 
 .. 針對每個LIF、將LIF移轉至新連接埠一次：
 +
-「網路介面移轉-vserver <vserver_name>-lif<lif_name>-source-Node node1 -dite-Node node1 -dite-port <port_name>」
+「網路介面移轉-vserver _vserver_name_-lif_lif_name_-source-Node node1 -dest-Node node1 -destation-port _port_name_'
 
 +
 SAN資料生命量只能在離線時移轉。
 
 .. 修改叢集lifs的主連接埠：
 +
-「網路介面修改-vserver叢集-lIF <lif_name>–home-port <port_name>'
+「網路介面修改-vserver叢集-lif_lif_name_–home-port _port_name_`
 
 .. 從叢集廣播網域移除舊連接埠：
 +
-「網路連接埠廣播網域移除連接埠-IPSpace叢集-broadcast網域叢集-ports <node1:port>」
+「網路連接埠廣播網域移除連接埠-IPSpace叢集-broadcast網域叢集-ports _node1:port_」
 
 .. 顯示節點3和節點4的健全狀況：
 +
-「cluster show -node1>-Fields health」
+「cluster show -node1_-Fields heal衛生」
 
 .. 每個叢集LIF都必須偵聽連接埠7700。驗證叢集LIF是否正在偵聽連接埠7700：
 +
@@ -82,7 +82,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 .. 如有必要、請針對未接聽連接埠7700的每個叢集LIF、將LIF的管理狀態設為「自己」、然後設定為「UP」：
 +
-：`:>net int modify -vserver cluster -lif<cluster－lif>-STATUS-admin down；net int modify -vserver cluster -lIF <cluster－lif>-STATUS-admin up（net int modify -vserver Cluster -lIF <cluster－lif>-STATUS-admin up）
+：`:>net int modify -vserver cluster -lif_cluster－lif_-stue-admin down；net int modify -vserver cluster -lif_cluster－lif_-stue-admin up（net int修改-vserver叢集-lif_cluster－lif_-stue-admin up）
 
 +
 重複子步驟（g）、確認叢集LIF現在正在偵聽連接埠7700。
@@ -92,7 +92,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 . 修改VLAN和"ifgrp config"以符合新的控制器實體連接埠配置。
 . 刪除節點3和節點4上不再存在的節點1和節點2連接埠（進階權限層級）：
 +
-「網路連接埠刪除-node1>-port <port_name>'
+"network port delete -node_node1_-port _port_name_"（網路連接埠刪除-node_node1_-port _port_name_）
 
 . [map_97_7]視需要調整節點管理廣播網域、並移轉節點管理和叢集管理生命週年：
 +
@@ -102,7 +102,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 
 .. 顯示包含連接埠的廣播網域：
 +
-「網路連接埠廣播網域show -port <node_name:port_name>'
+「網路連接埠廣播網域show -ports_node_name:port_name_'
 
 .. 視需要新增或移除廣播網域的連接埠：
 +
@@ -113,7 +113,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 
 .. 如有必要、請修改LIF的主連接埠：
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>–home-port <port_name>'
+「網路介面修改-vserver _vserver_name_-lif_lif_name_–home-port _port_name_」
 
 
 
@@ -121,7 +121,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 . 如有必要、請使用中的命令來調整任何其他廣播網域、並移轉資料生命量 <<map_97_7,步驟7.>>。
 . 調整所有LIF容錯移轉群組：
 +
-「網路介面修改-容錯移轉群組<容錯移轉群組>-容錯移轉原則<容錯移轉原則>」
+「網路介面修改-容錯移轉群組_容 錯移轉群組_-容錯移轉原則_容 錯移轉原則_」
 
 +
 下列命令會將容錯移轉原則設定為廣播網域範圍、並使用容錯移轉群組「fg1」中的連接埠作為「節點1」上LIF「data1」的容錯移轉目標：

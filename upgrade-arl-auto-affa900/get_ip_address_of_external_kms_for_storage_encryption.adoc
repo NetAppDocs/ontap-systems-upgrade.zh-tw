@@ -27,7 +27,7 @@ summary: 在AFF 從靜止A700 AFF 升級到靜止A900的過程中、設定及管
 
 . 新增每個金鑰管理伺服器的IP位址：
 +
-「安全金鑰管理程式外部附加伺服器-金鑰伺服器<key_manager_server_ip_address>」
+「安全金鑰管理程式外部附加伺服器-金鑰伺服器_key_manager_server_ip_address_」
 
 . 確認叢集中所有節點上都已設定並可使用相同的金鑰管理伺服器：
 +
@@ -40,7 +40,7 @@ summary: 在AFF 從靜止A700 AFF 升級到靜止A900的過程中、設定及管
 . 記下新的驗證金鑰ID。
 . 使用新的驗證金鑰重新輸入所有自我加密磁碟機的金鑰：
 +
-「torage加密磁碟modify -disk *-data-key-id <imiting_key_id>'」
+「torage加密磁碟modify -disk *-data-key-id _imalization_key_id_」
 
 
 
@@ -57,7 +57,7 @@ summary: 在AFF 從靜止A700 AFF 升級到靜止A900的過程中、設定及管
 
 . 新增金鑰管理程式：
 +
-「安全金鑰管理程式外部附加伺服器-金鑰伺服器<key_manager_server_ip_address>」
+「安全金鑰管理程式外部附加伺服器-金鑰伺服器_key_manager_server_ip_address_」
 
 . 驗證金鑰管理伺服器是否已設定、且可供叢集中的所有節點使用：
 +
@@ -65,7 +65,7 @@ summary: 在AFF 從靜止A700 AFF 升級到靜止A900的過程中、設定及管
 
 . 將驗證金鑰從所有連結的金鑰管理伺服器還原至新節點：
 +
-「安全金鑰管理程式外部還原節點<新控制器名稱>」
+「安全金鑰管理程式外部還原-node_new_控制 器名稱_」
 
 . 使用新的驗證金鑰重新輸入所有自我加密磁碟：
 +
@@ -105,7 +105,7 @@ summary: 在AFF 從靜止A700 AFF 升級到靜止A900的過程中、設定及管
 +
 [NOTE]
 ====
-如果狀態為「Transferring（正在傳輸）」、您必須中止傳輸：「napmirror abort-dite-vserver <vserver_name>」
+如果狀態為「Transferring（正在傳輸）」、您必須中止傳輸：「napmirror abort-destination-vserver _vserver_name_」
 
 ====
 +
@@ -113,6 +113,6 @@ summary: 在AFF 從靜止A700 AFF 升級到靜止A900的過程中、設定及管
 
 . 停止叢集之間的所有關係：
 +
-「napmirror quiesce -dite-vserver <vserver_name>」
+「napmirror quiesce -destination-vserver _vserver_name_」
 
 

@@ -7,7 +7,7 @@
 .步驟
 . [[step1]]在任一節點上輸入下列命令並擷取輸出、列出節點2未擁有的所有NAS資料生命量：
 +
-「network interface show -role data -curr-node2>-is主目錄假主節點<node3>'
+「網路介面show -role data -curr-node2_-is主目錄假-home-node3_」
 
 . [[Worksheet_step2]]如果叢集是針對SAN lifs進行設定、請在此記錄SAN lifs「介面卡」和「切換連接埠」組態資訊 link:worksheet_information_before_moving_san_lifs_node3.html["工作表"] 以供稍後的程序使用。
 +
@@ -91,19 +91,19 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 .. [[man_lif_VERIF_3_substepa]將先前屬於介面群組節點1的節點2上裝載的任何資料LIF移轉至節點3上的連接埠、只要輸入下列命令、即可在同一個網路上裝載LIF：
 +
-「網路介面移轉-vserver <vserver_name>-lif<lif_name>-destite-node<node3>–destite-port <netport|ifgrp>'
+「網路介面移轉-vserver _vserver_name_-lIF _LIF_name_-dest-node-node3_–dest-port _netport|ifgrp_」
 
 .. 在中修改LIF的主連接埠和主節點 <<man_lif_verify_3_substepa,子步驟A>> 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-node3>-home-port <netport|ifgrp>`
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node3_-home-port _netport|ifgrp_」
 
 .. [[man_lif_VERIF_3_substepc]將先前屬於VLAN連接埠節點1的節點2上裝載的任何資料LIF移轉至節點3上的連接埠、只要輸入下列命令、即可在同一個網路上裝載LIF：
 +
-「網路介面移轉-vserver <vserver_name>-lif<lif_name>-destite-node<node3>–destite-port <netport|ifgrp>'
+「網路介面移轉-vserver _vserver_name_-lIF _LIF_name_-dest-node-node3_–dest-port _netport|ifgrp_」
 
 .. 修改中的lifs主連接埠和主節點 <<man_lif_verify_3_substepc,子步驟c>> 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-node3>-home-port <netport|ifgrp>`
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node3_-home-port _netport|ifgrp_」
 
 
 
@@ -117,6 +117,6 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 | NAS | 完成 <<man_lif_verify_3_step5,步驟6.>> 和 <<man_lif_verify_3_step6,步驟7.>>、跳過步驟8、然後完成 <<man_lif_verify_3_step8,步驟9.>> 透過 <<man_lif_verify_3_step11,步驟12.>>。 
 
 
-| SAN | 停用節點上的所有SAN LIF、以便進行升級：「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-Node <node_to _upgrade >-home-port <netport|ifgrp>-station-admin drod' 
+| SAN | 停用節點上的所有SAN LIF、以便進行升級：「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node-node_to _upgrade _-home-port _netport|ifgrp_-stuse-admin drod' 
 |===
 

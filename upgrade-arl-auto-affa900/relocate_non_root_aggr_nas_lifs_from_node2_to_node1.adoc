@@ -45,7 +45,7 @@ aggr_2	      825.0GB	    825.0GB	 0%	 online	  1	 node1	  raid_dp  normal
 如果Aggregate已離線或成為節點1上的異位節點、請在新節點1上使用下列命令將其上線、每個Aggregate一次：
 
 +
-「torage Aggregate online -gregate <agger_name>」
+'線上儲存Aggregate -Agggr_name_'
 
 . 在節點1上使用下列命令並檢查其輸出、以確認節點1上的所有磁碟區都已上線：
 +
@@ -55,17 +55,17 @@ aggr_2	      825.0GB	    825.0GB	 0%	 online	  1	 node1	  raid_dp  normal
 如果節點1上有任何磁碟區離線、請在節點1上使用下列命令將其上線、每個磁碟區一次：
 
 +
-「Volume online -vserver <vserver-name>-volume <Volume <Volume名稱>'
+「Volume online -vserver _vserver-name_-volume _volume名稱_」
 
 +
 與此命令搭配使用的「<vserver名稱>」可在先前的「volume show」命令輸出中找到。
 
 . 驗證是否已將lifs移至正確的連接埠、且狀態為「up」。如果有任何LIF當機、請輸入下列命令、將LIF的管理狀態設為UP（開啟）、每個LIF只需輸入一次：
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-Node <nodename>- STATUS-admin up」
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-nodename_- STATUS-admin up」
 
 . 使用下列命令檢查輸出、確認節點2上沒有剩餘的資料lifs：
 +
-「network interface show -curr-node-node2>-role data」（網路介面顯示-curr-node-node2>-role data）
+「網路介面show -curr-node-node2_-role data」
 
 

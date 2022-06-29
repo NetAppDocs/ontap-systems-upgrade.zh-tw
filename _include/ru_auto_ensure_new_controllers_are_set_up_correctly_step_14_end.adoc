@@ -10,7 +10,7 @@
 
 .. 輸入下列命令：
 +
-「儲存容錯移轉修改節點<node_name>- CIF- ne-duration預設值|中|低」
+「儲存容錯移轉修改-node_node_name_-CIF- ne-duration _default| medium | low _」
 
 +
 *** 如果系統的工作負載達到50%至75%的作業量、則輸入「管理」。

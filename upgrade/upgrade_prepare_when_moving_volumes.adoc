@@ -46,6 +46,6 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["使用NetApp CN161
 
 . 從AutoSupport 每個原始節點傳送一個消息、通知技術支援人員升級：
 +
-「系統節點AutoSupport 無法叫用節點<node_name>-type all -messing node_name from <platform _entite> to <platform _new>""（將節點名稱從<platform _entiture>升級至<platform _new>""）」
+「系統節點AutoSupport 無法叫用-node_node_name_-type all -messing node_name from _platform _instite_to _platform _new_"（將節點名稱從_platform _instite_升級 至_platform _new_"）」
 
 

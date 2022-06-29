@@ -21,18 +21,18 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.
 .步驟
 . 使用中記錄的節點2資訊、在節點4上重新建立VLAN link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["將非根Aggregate和NAS資料LIF從節點2重新定位至節點3"] 區段：
 +
-「網路連接埠VLAN create -node4>-vlan <vlan-names>」
+「網路連接埠VLAN create -node4_-vlan _vlan-names _」
 
 . 使用中記錄的node2資訊、在節點4上重新建立介面群組 link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["將非根Aggregate和NAS資料LIF從節點2重新定位至節點3"] 區段：
 +
-「網路連接埠ifgrp create -node4>-ifgrp <port_ifgrp_name>-distr-func'
+「網路連接埠ifgrp create -node_node4_-ifgrp _port_ifgrp_name_-distr-func」
 
 . 使用中記錄的node2資訊、在節點4上重新建立廣播網域 link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["將非根Aggregate和NAS資料LIF從節點2重新定位至節點3"] 區段：
 +
-「網路連接埠廣播網域建立-IPSpace預設值-broadcast網域<廣播網域名稱>-MTU <MTU大小>-port <node_name:port_name、node_name:port_name>'
+「網路連接埠廣播網域建立-IPSpace預設值-broadcast網域_broadcast網域名稱_-MTU _MTU大小_-連接埠_node_name:port_name、node_name:port_name_」
 
 . 將node4連接埠新增至新重新建立的廣播網域：
 +
-「網路連接埠、廣播網域、附加連接埠、廣播網域<廣播網域名稱>-連接埠<節點名稱：連接埠名稱、節點名稱：連接埠名稱>」
+「網路連接埠廣播網域附加連接埠-broadcast網域_broadcast網域名稱_-連接埠_norme_name:port_name、node_name:port_name_」
 
 

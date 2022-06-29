@@ -7,7 +7,7 @@
 .步驟
 . 在其中一個節點上輸入下列命令以啟用儲存容錯移轉：
 +
-「torage容錯移轉修改啟用的true節點<node3>'」
+「torage容錯移轉修改啟用的true -node3_」
 
 . 確認已啟用儲存容錯移轉：
 +
@@ -54,27 +54,27 @@ node4          node3          true     Connected to node3
 
 . 驗證node3是否擁有node1的集合體、以及node4是否擁有node2的集合體：
 +
-"torage Aggregate show -Owner-name <node3>'"scorage gregate show -Owner-name <node4>'
+"torage Aggregate show -Owner-name _node3_'"storage aggregate show -Owner-name _node4_"
 
 . 判斷是否有任何磁碟區離線：
 +
-Volume show -node<node3>-state offline（Volume show -node4>-state offline）
+「Volume show -node3_-state offline」（Volume show -node4_-state offline）
 
 . 如果有任何磁碟區離線、請將它們與您在中擷取的離線磁碟區清單進行比較 link:prepare_nodes_for_upgrade.html#step19d["步驟19（d）"] 在_準備要升級的節點_中、輸入下列命令（針對每個Volume一次）、並視需要將任何離線磁碟區上線：
 +
-「Volume online -vserver <vserver_name>-volume <volume <volume．name>'
+"Volume online -vserver _vserver_name_-volume _volume _name_"
 
 . 為每個節點輸入下列命令、以安裝新節點的新授權：
 +
-「系統授權新增-授權代碼<lite_code,liter_code,liter_code...>'
+「系統授權新增-授權碼_license代碼、license代碼、license代碼、license代碼..._」
 
 +
 授權代碼參數接受28個大寫字母字元金鑰的清單。您可以一次新增一個授權、也可以一次新增多個授權、每個授權金鑰都以逗號分隔。
 
-. 如果在組態中使用NetApp儲存加密（NSE）、您可以使用「kmip.init.maxwait` variable "Off"（在中）、將「setenv bootarg.storageEncryption.support"命令設為「true」（真） link:install_boot_node3.html#step16["步驟16"] 在_Install and boot node3_）中、您需要重設變數：「et diag; systemShell -node<node_name>-command sudo kenv -u -p kmip.init.maxwait`
+. 如果在組態中使用NetApp儲存加密（NSE）、您可以使用「kmip.init.maxwait` variable "Off"（在中）、將「setenv bootarg.storageEncryption.support"命令設為「true」（真） link:install_boot_node3.html#step16["步驟16"] 在_Install and boot node3_）中、您需要重設變數：「et diag; systemShell -node_node_name_-command sudo kenv -u -p kmip.init.maxwait`
 . 若要從原始節點移除所有舊授權、請輸入下列其中一個命令：
 +
-「系統授權清理-未使用的-過期」「系統授權刪除-序號<node_sSerial_number>-package<sited_package>」
+「系統授權清理-未使用的-過期」「系統授權刪除-序號_normite_sSerial_number_-套件_licensee_package_」
 
 +
 ** 若要刪除所有過期的授權、請輸入：
@@ -87,7 +87,7 @@ Volume show -node<node3>-state offline（Volume show -node4>-state offline）
 
 ** 若要從叢集刪除特定授權、請在節點上輸入下列命令：
 +
-「系統授權刪除-序號<node1_sSerial_number>-package *」「系統授權刪除-序號<node2_sSerial_number>-package *」
+「系統授權刪除-序號_node1_sSerial_number_-package *」「系統授權刪除-序號_node2_sSerial_number_-package *」
 
 +
 將顯示下列輸出：
@@ -113,7 +113,7 @@ Do you want to continue? {y|n}: y
 
 . 在兩個節點上執行下列命令來設定SP：
 +
-「系統服務處理器網路修改節點<node_name>」
+「系統服務處理器網路修改-node_node_name_」
 
 +
 前往 link:other_references.html["參考資料"] 如需SP和_SUR9 ONTAP 命令的相關資訊、請連結至_System Administration Reference（系統管理參考）：Manual Page Reference（手冊頁參考）_、以取得有關「系統服務-處理器網路修改」命令的詳細資訊。
@@ -126,7 +126,7 @@ Do you want to continue? {y|n}: y
 
 .. 輸入下列命令：
 +
-「儲存容錯移轉修改節點<節點名稱>-CIFS/NDA-duration預設值|中|低」
+「儲存容錯移轉修改-node-name_-CIFS/n持續時間預設值|中|低」
 
 +
 *** 如果系統的工作負載達到50%至75%的作業量、則輸入「管理」。

@@ -16,7 +16,7 @@
 +
 [NOTE]
 ====
-如果狀態為「Transferring（正在傳輸）」、您必須中止傳輸：「napmirror abort-dite-vserver <vserver_name>」
+如果狀態為「Transferring（正在傳輸）」、您必須中止傳輸：「napmirror abort-destination-vserver _vserver_name_」
 
 ====
 +
@@ -24,6 +24,6 @@
 
 . 停止叢集之間的所有關係：
 +
-「napmirror quiesce -dite-vserver <vserver_name>」
+「napmirror quiesce -destination-vserver _vserver_name_」
 
 

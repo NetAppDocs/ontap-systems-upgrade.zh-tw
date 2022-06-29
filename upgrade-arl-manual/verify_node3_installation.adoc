@@ -23,7 +23,7 @@ summary: 在執行ONTAP 更新版本的控制器上進行手動ARL升級時、�
 
 . [[step2]]確認node3可以與node2通訊、而且所有LIF都已啟動：
 +
-「網路介面show -curr-node3>'
+「網路介面show -curr-node-node3_」
 
 . [[step3]請採取下列其中一項行動：
 +

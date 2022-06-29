@@ -18,7 +18,7 @@ summary: 將磁碟區從原始節點移出之後、您需要將非SAN資料生�
 .步驟
 . 從裝載叢集LIF的節點、將非SAN資料LIF的主連接埠從原始節點變更為新節點：
 +
-「網路介面修改-vserver <vserver_name>-lif<lif_name>-home-node<new_nnode_name>-home-port｛<netport|ifgrp>｝」
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node_new_norme_name_-home-port｛<netport|ifgrp>｝」
 
 . 請採取下列其中一項行動：
 +
@@ -30,14 +30,14 @@ summary: 將磁碟區從原始節點移出之後、您需要將非SAN資料生�
  a| 
 特定LIF
  a| 
-「網路介面移轉-vserver <vserver_name>-lif<lif_name>-source-Node <source_node_name>-dite-node<dest_nnode_name>-dite-port <dest_port_name>」
+「網路介面移轉-vserver _vserver_name_-lif_lif_name_-source-node_source_node_name_-destination-node_node_dest_no_name_-dest-port _dest_port_name_」
 
 
 
  a| 
 所有非SAN資料生命體與叢集管理生命體
  a| 
-「network interface migration-all -node<node_name>」（網路介面移轉-all節點<node_name>）
+「網路介面移轉-all -node_node_name_」
 
 |===
 +
@@ -61,11 +61,11 @@ cluster::> network interface migrate-all -node local
 +
 .. 將叢集管理LIF的主節點切換至其中一個新節點：
 +
-「網路介面修改-vserver <叢集名稱>-lIF叢集管理-home-Node <新節點名稱>-home-port｛<netport|ifgrp>｝」
+「網路介面修改-vserver _cluster名稱_-lifcluster管理-home-node_new_nnode_name_-home-port｛<netport | ifgrp>｝」
 
 .. 將叢集管理LIF移轉至其中一個新節點：
 +
-「網路介面移轉-vserver <vserver_name>-lIF叢集管理-dite-node-nodes <new_nnode_name>-dite-port {<netport|ifgrp>}」
+「網路介面移轉-vserver _vserver_name_-lIF叢集管理-destination-node-node_new_node_name_-destination-port｛<netport|ifgrp>｝」
 
 
 

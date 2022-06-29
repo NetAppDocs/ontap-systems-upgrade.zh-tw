@@ -112,7 +112,7 @@ node3的軟體組態必須符合node3的實體連線能力、而且必須先還�
 .. 開機節點3。請參閱 link:install_boot_node3.html["安裝及開機節點3"] 如果您尚未啟動節點、請將其開機。
 .. 確認新的叢集連接埠位於叢集廣播網域中：
 +
-「網路連接埠show -node-name>-port <port-name>-Fields broadcast Domain」
+「網路連接埠show -node-name_-port _port-name_-Fields broadcast網域」
 
 +
 下列範例顯示連接埠「e0a」位於節點3的「叢集」網域中：
@@ -128,7 +128,7 @@ node3的軟體組態必須符合node3的實體連線能力、而且必須先還�
 ----
 .. 將正確的連接埠新增至叢集廣播網域：
 +
-「網路連接埠修改-node-name>-port <port-name>-IPSpace Cluster -MTU 9000」
+「網路連接埠修改-node-name_-port _port-name_-IPSpace叢集-MTU 9000」
 
 +
 此範例在節點3上新增叢集連接埠「e1b」：
@@ -151,19 +151,19 @@ command failed: This operation is not permitted on a Vserver that is configured 
 從遠端站台上對應的sync-sSource SVM輸入下列命令、將sync-destination LIF重新分配至適當的連接埠：
 
 +
-「MetroCluster 功能伺服器重新同步-vserver <vserver-name>」
+「MetroCluster Sesvserver resSync -vserver _vserver-name_」
 
 .. 針對每個LIF、將叢集生命區移轉至新的連接埠一次：
 +
-「網路介面移轉-vserver叢集-lIF <LIF-name>-SOURation-node<node3>-destite-node<node3>-destite-port <port-name>」
+「網路介面移轉-vserver叢集-lif_lif-name_-source-node3_-dest-node3_-dest-port _port-name_」
 
 .. 修改叢集lifs的主連接埠：
 +
-「網路介面修改-vserver叢集-lif<lif-name>–home-port <port-name>」
+「網路介面修改-vserver叢集-lif_lif-name_–home-port _port-name_」
 
 .. 如果叢集連接埠不在叢集廣播網域中、請新增它們：
 +
-「網路連接埠廣播網域附加連接埠-IPSpace叢集-broadcast網域叢集-ports <nodes:port>」
+「網路連接埠廣播網域附加連接埠-IPSpace叢集-broadcast網域叢集-ports _normal:port_」
 
 .. 從叢集廣播網域移除舊連接埠：
 +
@@ -179,7 +179,7 @@ network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cl
 ----
 .. 驗證node3是否已重新加入仲裁：
 +
-「cluster show -node3>-Fields health」
+「cluster show -node3_-Fields healm狀況」
 
 
 
@@ -187,11 +187,11 @@ network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cl
 +
 .. 顯示LIF的主連接埠：
 +
-「網路介面show -功能 變數<home-node, home-port>'
+「網路介面顯示-Fields _home-node, home-port_'
 
 .. 顯示包含此連接埠的廣播網域：
 +
-「網路連接埠廣播網域show -port <node_name:port_name>'
+「網路連接埠廣播網域show -ports_node_name:port_name_'
 
 .. 新增或移除廣播網域的連接埠：
 +
@@ -202,7 +202,7 @@ network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cl
 
 .. 修改LIF的主連接埠：
 +
-「網路介面修改-vserver <vserver-name>-lif<lif-name>–home-port <port-name>」
+「網路介面修改-vserver _vserver-name_-lif_lif-name_–home-port _port-name_」
 
 
 
@@ -216,7 +216,7 @@ network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cl
 
 .. 刪除連接埠：
 +
-「網路連接埠刪除節點<節點名稱>-port <連接埠名稱>」
+「網路連接埠刪除-node-name_-port _port-name_」
 
 .. 返回管理層級：
 +
@@ -226,7 +226,7 @@ network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cl
 
 . [[step9]]調整所有LIF容錯移轉群組：
 +
-「網路介面修改-容錯移轉群組<容錯移轉群組>-容錯移轉原則<容錯移轉原則>」
+「網路介面修改-容錯移轉群組_容 錯移轉群組_-容錯移轉原則_容 錯移轉原則_」
 
 +
 下列範例將容錯移轉原則設定為「廣播網域範圍」、並使用容錯移轉群組「fg1」中的連接埠作為「節點3」上LIF「data1」的容錯移轉目標：
@@ -266,7 +266,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 . 如有必要、請針對未接聽連接埠7700的每個叢集LIF、將LIF的管理狀態設為「自己」、然後設定為「UP」：
 +
-：`:>net int modify -vserver cluster -lif<cluster－lif>-STATUS-admin down；net int modify -vserver cluster -lIF <cluster－lif>-STATUS-admin up（net int modify -vserver Cluster -lIF <cluster－lif>-STATUS-admin up）
+：`:>net int modify -vserver cluster -lif_cluster－lif_-stue-admin down；net int modify -vserver cluster -lif_cluster－lif_-stue-admin up（net int修改-vserver叢集-lif_cluster－lif_-stue-admin up）
 
 +
 重複步驟11、確認叢集LIF現在正在偵聽連接埠7700。

@@ -22,6 +22,5 @@ summary: ARL升級的第5階段程序順序、使用「系統控制器更換」�
 . link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"]
 . link:join_quorum_node_has_different_ports_stage5.html["當節點具有不同的網路連接埠集時、請加入仲裁"]
 . link:verify_node4_installation.html["驗證node4安裝"]
-. link:restore_key-manager_config_node4.html["還原節點4上的金鑰管理程式組態"]
 . link:move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html["將節點2擁有的非根Aggregate和NAS資料lifs從節點3移至節點4"]
 

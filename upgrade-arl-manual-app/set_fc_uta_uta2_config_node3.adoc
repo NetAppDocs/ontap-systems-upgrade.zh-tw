@@ -98,15 +98,15 @@ Boot_ONTAP maint
 | 具有儲存磁碟  a| 
 輸入下列命令之一、視需要修改節點3上的FC連接埠：
 
-** 若要設定目標連接埠：「系統節點硬體統一連接修改-type |-t target -Adapter <port_name>」
-** 若要設定啟動器連接埠：「系統節點硬體統一連線修改-類型|-t啟動器-介面卡<連接埠名稱>」
+** 若要設定目標連接埠：「系統節點硬體統一連接修改-type |-t target -介 面卡_port_name_」
+** 若要設定啟動器連接埠：「系統節點硬體統一連線修改-類型|-t啟動器-介面卡_port_name_」
 
 
 「-t」是FC4類型：目標或啟動器。
 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 輸入下列命令、視需要修改節點3上的FC連接埠：「ucadmin modify -m fs -t initiator -f <adapter_port_name>'`-t'是FC4類型、目標或啟動器。*附註*：FC連接埠必須設定為啟動器。 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 輸入下列命令、視需要修改節點3上的FC連接埠：「ucadmin modify -m ft initiator -f _adapter_port_name_'`-t'是FC4類型、目標或啟動器。*附註*：FC連接埠必須設定為啟動器。 
 |===
 . [[step7]採取下列其中一項行動：
 +
@@ -295,14 +295,14 @@ Adapter  Mode     Type       Mode     Type     Status
 |===
 . [man檢查_3_step7]如果介面卡處於啟動器模式、而且UTA / UTA2連接埠處於線上狀態、請將UTA / UTA2連接埠離線：
 +
-「torage disableAdapter <adapter_name>」（停用介面卡）
+「停用介面卡_adapter_name_」
 
 +
 目標模式中的介面卡會在維護模式中自動離線。
 
 . [[man_check_3_step8]如果目前的組態不符合所需用途、請視需要變更組態：
 +
-「ucadmin modify -m fc|cna -t啟動器| target <適 配器名稱>'
+「ucadmin modify -m fc|cna -t啟動器| target _adapter_name_」
 
 +
 ** 「m」是指個人化模式、「光纖通道」或「cna」。
@@ -392,10 +392,10 @@ Adapter  Mode     Type       Mode     Type       Status
 | 如果系統... | 然後... 
 
 
-| 具有儲存磁碟 | 「網路FCP介面卡修改節點<node_name>-Adapter <adapter_name>-state up」 
+| 具有儲存磁碟 | 網路FCP介面卡修改-node_node_name_-介 面卡_adapter_name_-state up 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 「FCP config <adapter_name> up」 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | "FCP config _adapter_name_ up（FCP組態介面卡名稱_啟動）" 
 |===
 . [[man_check_3_step13]連接連接埠。
 . [[step14]請採取下列其中一項行動：

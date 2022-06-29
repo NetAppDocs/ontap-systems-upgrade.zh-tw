@@ -19,14 +19,14 @@ summary: 使用ONTAP 「系統控制器更換」命令來準備節點、並在�
 .步驟
 . 在VMware命令列輸入下列命令、開始控制器更換程序ONTAP ：
 +
-「System Controller replace start -nodes <node_names>'（系統控制器取代start節點<node_names>
+「System Controller replace start -nodes _norme_names」（系統控制器取代start節點_node_names）
 
 +
 [NOTE]
 ====
 ** 從ONTAP S廳9.10.1開始、自動交涉切換（NSO）型升級程序是四節點MetroCluster 的SFC組態的預設值。如果您要升級四節點MetroCluster 的現象FC組態、當您發出「系統控制器更換啟動」命令時、必須將「-NSO」參數設定為「假」、以防止以NSO為基礎的程序啟動：
 +
-「系統控制器取代start節點<node_names>-NSO假」
+「系統控制器取代start節點_nnode_names _-NSO假」
 
 ** 只能在進階權限層級執行「系統控制器置換start（start）命令：
 +
@@ -122,17 +122,17 @@ NOTE: 如果您的系統每個節點有兩個以上的叢集連接埠、例如FA
 
 +
 ** 「Vserver服務名稱服務DNS節目」
-** 「網路介面show -curr-nodes>-role <叢集、叢集間、節點管理、叢集管理、資料>」
-** 「network port show -node<node_name>-type Physical（網路連接埠顯示節點<node_name>類型實體）」
+** 「網路介面show -curr-noderame_-role _cluster、叢集間、節點管理、叢集管理、data_」
+** 「網路連接埠show -node_node_name_-type Physical」
 ** 「ervice處理器show -Node *-instance」
-** 「網路FCP介面卡顯示節點<node_name>」
+** 「網路FCP介面卡顯示-node_node_name_」
 ** 「網路連接埠ifgrp show」
-** 「System Node show -instance -node<node_name>」（系統節點顯示-instance -node<node_name>）
-** 「run -node<node_name> sysconfig」
-** 「torage Aggregate show -Node <node_name>」
-** 「Volume show -node<node_name>」
-** 「torage Array config show -switch<switch_name>」
-** 「System license show -Owner<node_name>」（系統授權顯示擁有者<node_name>）
+** 「系統節點顯示-instance -node_node_name_」
+** "run -node_node_name_ sysconfig"
+** 「torage Aggregate show -node_node_name_」
+** 「Volume show -node_node_name_」
+** 「torage Array config show -switch_switch_name_」
+** 「System license show -Oner_node_name_」（系統授權顯示擁有者節點名稱）
 ** 「torage加密磁碟顯示」
 ** 「安全金鑰管理程式內建show Backup」
 ** 「安全關鍵經理外部秀」
@@ -154,11 +154,11 @@ NOTE: 如果正在使用使用Onboard Key Manager（OKM）的NetApp Volume Encry
 .步驟
 . 將合作夥伴節點目前擁有的Aggregate傳回主擁有者節點：
 +
-「torage Aggregate regate or搬 移開始節點<來源節點>-目的地<目的地節點>- Aggregate清單*」
+「torage Aggregate regate or搬 移開始節點_source_node_-destination-node_-aggregation-list *」
 
 . 驗證node1和node2是否仍擁有當前擁有者（但不是主擁有者）的Aggregate：
 +
-「torage Aggregate show -nodes <node_name>-is主目錄假欄位擁有者名稱、主目錄名稱、狀態」
+「torage Aggregate show -nodes _norme_name_-is主目錄錯誤欄位擁有者名稱、主目錄名稱、狀態」
 
 +
 以下範例顯示當節點同時是Aggregate的目前擁有者和主擁有者時、命令的輸出：
@@ -184,7 +184,7 @@ aggr4       node1      node1       online
 
 您必須重新啟動控制器更換程序：
 
-「System Controller replace start -nodes <node_names>'（系統控制器取代start節點<node_names>
+「System Controller replace start -nodes _norme_names」（系統控制器取代start節點_node_names）
 
 
 

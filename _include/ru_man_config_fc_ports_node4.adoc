@@ -60,18 +60,18 @@ Boot_ONTAP maint
 ** 若要設定目標連接埠：
 
 
-「系統節點硬體統一連線修改-type |-t target -Adapter <port_name>」
+「系統節點硬體統一連線修改類型|-t target -介 面卡_port_name_」
 
 ** 設定啟動器連接埠：
 
 
-「系統節點統一連線修改類型|-t啟動器-Adapter <port_name>」
+「系統節點統一連線修改類型」|-t啟動器-Adapter _port_name_
 
 「-type」是FC4類型、目標或啟動器。
 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 視需要修改節點4上的FC連接埠：「ucadmin modify -m fs -t initiator -f <adapter_port_name>'`-t'是FC4類型、目標或啟動器。*附註*：FC連接埠必須設定為啟動器。 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 視需要修改節點4上的FC連接埠：「ucadmin modify -m ft initiator -f _adapter_port_name_'`-t'是FC4類型、目標或啟動器。*附註*：FC連接埠必須設定為啟動器。 
 |===
 . 請採取下列其中一項行動：
 +

@@ -129,7 +129,7 @@ Node2
 
 . [[reest_node2_step4]]使用下列命令、以「ok」以外的連線狀態、修復節點2上每個連接埠的連線能力、順序如下：
 +
-「網路連接埠可連線性修復-節點<node_name>-port <port_name>」
+"network port re連通 性修復-node_node_name_-port _port_name_"
 
 +
 --
@@ -186,7 +186,7 @@ Warning: Repairing port "node2:e9d" may cause it to move into a different broadc
 
 .. 還原LIF主節點和主連接埠：
 +
-「顯示介面還原主節點節點節點節點<node_name>-vserver <vserver_name>-lif-name <LIF_name>」
+「顯示介面還原主節點節點節點_norme_name_-vserver _vserver_name_-lif-name _lif_name_」
 
 
 
