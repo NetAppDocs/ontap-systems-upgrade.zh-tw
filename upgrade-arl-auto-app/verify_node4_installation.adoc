@@ -61,7 +61,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 ----
 . 如有必要、請針對未接聽連接埠7700的每個叢集LIF、將LIF的管理狀態設為「自己」、然後設定為「UP」：
 +
-：`:>net int modify -vserver cluster -lif<cluster－lif>-STATUS-admin down；net int modify -vserver cluster -lIF <cluster－lif>-STATUS-admin up（net int modify -vserver Cluster -lIF <cluster－lif>-STATUS-admin up）
+：`:>net int modify -vserver cluster -lif_cluster－lif_-stue-admin down；net int modify -vserver cluster -lif_cluster－lif_-stue-admin up（net int修改-vserver叢集-lif_cluster－lif_-stue-admin up）
 
 +
 重複步驟3、確認叢集LIF現在正在偵聽連接埠7700。
@@ -266,7 +266,7 @@ Warning: Repairing port "node2_node4: e0h" may cause it to move into a different
 +
 .. 列出已移離的VLAN：
 +
-「顯示虛擬區域網路」
+顯示「叢集控制器更換網路置換VLAN」
 
 +
 應顯示如下輸出：
@@ -283,7 +283,7 @@ Node1       a0a           822, 823
 ....
 .. 還原從先前基礎連接埠移出的VLAN：
 +
-「Dis放置VLAN還原」
+「叢集控制器更換網路置換VLAN還原」
 
 +
 以下是將已從介面群組a0a移出的VLAN還原回相同介面群組的範例：
@@ -305,7 +305,7 @@ Cluster::*> displaced-vlans restore -node node2_node4 -port e0e -destination-por
 +
 等待約一分鐘、將新還原的VLAN放入適當的廣播網域。
 
-.. 如果VLAN連接埠不在「dis放置VLAN show」輸出中、但應在其他實體連接埠上設定、請視需要建立新的VLAN連接埠。
+.. 如果VLAN連接埠不在「叢集控制器取代網路的V現 用VLAN show」輸出中、但應在其他實體連接埠上設定、請視需要建立新的VLAN連接埠。
 
 
 . 完成所有連接埠修復後、請刪除任何空白的廣播網域：

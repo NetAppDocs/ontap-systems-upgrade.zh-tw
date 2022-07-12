@@ -434,7 +434,7 @@ Boot_ONTAP maint
 
 .. 防止節點4從其原始根Aggregate開機：
 +
-「aggr offline離線根目錄_aggr_on_node4_」
+「aggr offline _root_aggr_on_node4_」
 
 .. 將node2根Aggregate設為節點4的新根Aggregate：
 +

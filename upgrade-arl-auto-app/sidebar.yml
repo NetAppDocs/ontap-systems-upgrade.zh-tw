@@ -58,6 +58,7 @@ entries:
   - title: 將節點1擁有的非根Aggregate和NAS資料lifs從節點2移至節點3
     url: "/upgrade-arl-auto-app/move_non-root_aggr_and_nas_data_lifs_node1_from_node2_to_node3.html"
 - title: 第4階段：重新部署和淘汰節點2
+  pdf-filename: 第4階段：重新部署和淘汰節點2（ONTAP 升級到位於NetApp 9.8或更新版本的「系統控制器更換」）
   entries:
   - title: 總覽
     url: "/upgrade-arl-auto-app/stage_4_index.html"

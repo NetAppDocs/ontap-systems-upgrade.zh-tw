@@ -58,7 +58,7 @@ aggr_2	      825.0GB	    825.0GB	 0%	 online	  1	 node1	  raid_dp  normal
 「Volume online -vserver _vserver-name_-volume _volume名稱_」
 
 +
-與此命令搭配使用的「<vserver名稱>」可在先前的「volume show」命令輸出中找到。
+與此命令一起使用的"_vserver_name_"可在先前的"volume show"命令輸出中找到。
 
 . 驗證是否已將lifs移至正確的連接埠、且狀態為「up」。如果有任何LIF當機、請輸入下列命令、將LIF的管理狀態設為UP（開啟）、每個LIF只需輸入一次：
 +

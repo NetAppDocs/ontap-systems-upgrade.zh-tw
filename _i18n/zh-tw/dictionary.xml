@@ -410,7 +410,6 @@
   <block id="b8dabd137df5202c83400e4fde74838d" category="paragraph">：「：&gt;網路連線偵聽show -vserver叢集」</block>
   <block id="9c26c389cd17f0bf0da92eb4d2187822" category="paragraph">連接埠7700偵聽叢集連接埠是預期結果、如下列雙節點叢集範例所示：</block>
   <block id="17a934761f44517e9bcc906e1eb8bfe9" category="list-text">如有必要、請針對未接聽連接埠7700的每個叢集LIF、將LIF的管理狀態設為「自己」、然後設定為「UP」：</block>
-  <block id="4839ad4e20e071cacb55dad56989809b" category="paragraph">：`:&gt;net int modify -vserver cluster -lif&lt;cluster－lif&gt;-STATUS-admin down；net int modify -vserver cluster -lIF &lt;cluster－lif&gt;-STATUS-admin up（net int modify -vserver Cluster -lIF &lt;cluster－lif&gt;-STATUS-admin up）</block>
   <block id="8f6f15e3cd3793ad38c3214c75a0a348" category="paragraph">重複步驟11、確認叢集LIF現在正在偵聽連接埠7700。</block>
   <block id="5bdbb43d43b87ee9a46fa95fea36388f" category="summary">使用ONTAP 「系統控制器更換」命令、將執行版本號為9.5的控制器升級至9.7的控制器時、請將節點2上的節點1 NAS資料LIF從節點2移至節點3。</block>
   <block id="840820d31f6c078aeb1567ce302bdd05" category="doc">將節點1擁有的非根Aggregate和NAS資料lifs從節點2移至節點3</block>
@@ -982,7 +981,6 @@
   <block id="14fc1fec490b9f5ad23d58c3c55d4441" category="paragraph">如果您想要使用內部磁碟機來升級入門級控制器、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要透過移動磁碟區或儲存設備來連結至_Upgrade、請移Data ONTAP 至「移動磁碟區」以升級執行叢集式VMware的一對節點」程序。</block>
   <block id="231cf4c70d866b616c21baddaeed0696" category="section-title">疑難排解</block>
   <block id="d60c463bb4096f3ed4bd1618626dfe10" category="inline-link-macro">疑難排解</block>
-  <block id="bc11cb73d84dd1ca35d5b999ca9afb54" category="paragraph">如果在升級控制器時發生任何問題、請參閱 <block ref="5b03d19ea0e9e656b77e7538c0164f96" category="inline-link-macro-rx"></block> 本節將於程序結束時提供更多資訊和可能的解決方案。</block>
   <block id="59af70dd915dcdb0e4027b17846b1638" category="paragraph">如果您找不到解決所遇到問題的解決方案、請聯絡技術支援部門。</block>
   <block id="7588408bbfed0416d38b98777ec4d4bc" category="summary">使用ONTAP 「系統控制器更換」命令、將執行《SES9.5》的控制器升級至9.7時、請恢復SnapMirror傳輸與關係。</block>
   <block id="5f561bedca26d8d072e51e5a351d1918" category="paragraph">您可以恢復在升級之前靜止的SnapMirror傳輸、並恢復SnapMirror關係。升級完成後、更新會如期進行。</block>
@@ -1472,15 +1470,12 @@
   <block id="add7de11dea94372ab92280144dd2eae" category="paragraph">「網路連接埠連線能力顯示-詳細資料」</block>
   <block id="67d13fe1d5e641d73d6e558118a0902a" category="list-text">使用下列步驟還原任何可能已被取代的VLAN：</block>
   <block id="cb91f704c28ecf5de2f29274ef6bf62e" category="list-text">列出已移離的VLAN：</block>
-  <block id="81a71f7b68d86411acd35a0832051632" category="paragraph">「顯示虛擬區域網路」</block>
   <block id="551f04031696758c1c256f1c90e57b39" category="paragraph">應顯示如下輸出：</block>
   <block id="a806d4909353769619f495a130cabdbd" category="list-text">還原從先前基礎連接埠移出的VLAN：</block>
-  <block id="7e13cce614ffd7f318255684f22d3da9" category="paragraph">「Dis放置VLAN還原」</block>
   <block id="e08a0549a69b4bf0d4b807833ac0b586" category="paragraph">以下是將已從介面群組a0a移出的VLAN還原回相同介面群組的範例：</block>
   <block id="5382f5bbbe74b198aaaf36efb0dd9ef3" category="paragraph">以下是將連接埠「e0e」上的已移轉VLAN還原為「e0小時」的範例：</block>
   <block id="2a31dfadfe9a33da55e9d278be8596a4" category="paragraph">當VLAN還原成功時、會在指定的目的地連接埠上建立移出的VLAN。如果目的地連接埠是介面群組的成員、或目的地連接埠當機、則VLAN還原會失敗。</block>
   <block id="aad2ee0340b449143fc7eaa87d78ba8b" category="paragraph">等待約一分鐘、將新還原的VLAN放入適當的廣播網域。</block>
-  <block id="3dd496dea37dae38c9dc7eb802d64409" category="list-text">如果VLAN連接埠不在「dis放置VLAN show」輸出中、但應在其他實體連接埠上設定、請視需要建立新的VLAN連接埠。</block>
   <block id="9ba5961a2332be610ae3121c25c32aeb" category="list-text">完成所有連接埠修復後、請刪除任何空白的廣播網域：</block>
   <block id="6fbbdf7318a95fb2400613497f103b75" category="list-text">驗證連接埠可連線性：</block>
   <block id="e3d6faf783eff413421d5abeaf1dad48" category="paragraph">當所有連接埠均已正確設定並新增至正確的廣播網域時、「network port re連通 性show」命令會針對所有連接的連接埠、將連線狀態報告為「ok」、對於沒有實體連線的連接埠、狀態應顯示為「不可到達性」。如果有任何連接埠報告這兩個以外的狀態、請依照中的指示執行連線能力修復、並新增或移除廣播網域中的連接埠 <block ref="4f595e600f8320b4ad2d574fa1a9fe37" category="inline-xref-macro-rx"></block>。</block>
@@ -2764,7 +2759,6 @@
   <block id="2adf18e995507a97d0d1e8af8c85e4f0" category="paragraph">以下範例顯示停用節點的儲存容錯移轉時、「儲存容錯移轉show」命令的輸出：</block>
   <block id="c4b530495164ce1eeaab4b08e9534859" category="list-text">驗證資料LIF狀態：</block>
   <block id="5fbed693cb6b31f11a703890fc87d45f" category="inline-link-macro">故障</block>
-  <block id="1337205e844f111a9850e68ab7fe85fb" category="paragraph">查看「*狀態管理/每*」欄、查看是否有任何生命期中斷。如果有任何生命中斷、請參閱 <block ref="f37de8559f00b8ef58b12c6857d24513" category="inline-link-macro-rx"></block> 區段。</block>
   <block id="8405f8a611485472bfa1ab420a9a9a02" category="cell">前往 <block ref="caeb7d58e7293f2d87a762ba5d4df397" category="inline-xref-macro-rx"></block>。</block>
   <block id="a4749d514e1548558e90fda0a15746ff" category="cell">前往 <block ref="242f372e62d4ec9b0208b2bd3cc69817" category="inline-xref-macro-rx"></block>。</block>
   <block id="9cd28d632d37554bc6b8bc94ae2073e5" category="list-text">[[man_retar_1_step6]]存取任一節點上的進階權限層級：</block>
@@ -2876,7 +2870,6 @@
   <block id="8ffd93ea6386b629720c74b50bc25c2e" category="list-text">在節點1上使用下列命令並檢查其輸出、以確認節點1上的所有磁碟區都已上線：</block>
   <block id="30c92ab6acc222d81011f6b7ee804f3f" category="paragraph">「Volume show -node1 -state offline」</block>
   <block id="85e5ea53a85c7a28840f38eea6491b3c" category="paragraph">如果節點1上有任何磁碟區離線、請在節點1上使用下列命令將其上線、每個磁碟區一次：</block>
-  <block id="a3b6690b513bd53e12723fa3f48d8134" category="paragraph">與此命令搭配使用的「&lt;vserver名稱&gt;」可在先前的「volume show」命令輸出中找到。</block>
   <block id="8977859bd55d40dd07f2cd92a82b410d" category="list-text">驗證是否已將lifs移至正確的連接埠、且狀態為「up」。如果有任何LIF當機、請輸入下列命令、將LIF的管理狀態設為UP（開啟）、每個LIF只需輸入一次：</block>
   <block id="6e13fc9d1e75c160461788f1b750083d" category="list-text">使用下列命令檢查輸出、確認節點2上沒有剩餘的資料lifs：</block>
   <block id="5c29a1b28ae2f684e62d4c2276e7e8e6" category="summary">交換相應AFF 的E4A900 node2控制器模組和NVRAM模組之後、您可能需要將它們以網路開機。</block>
@@ -3155,7 +3148,6 @@
   <block id="68e6b44b3a749a5a92b3130b283a8d5c" category="paragraph">此工作必須在每MetroCluster 個站台上執行。</block>
   <block id="2582e010e97c2f1b4ef7a684672e4598" category="list-text">登入叢集。</block>
   <block id="ee4b431a595989bb32df666099e34bf8" category="list-text">叫出AutoSupport 指示維護開始的消息：</block>
-  <block id="000be743e2bbedc544736fd887cacf7b" category="paragraph">「系統節點AutoSupport 不支援呼叫節點*-type all -Message mainten=&lt;maintenance window-in hours &gt;」</block>
   <block id="8b8313711f50dddf1be23555c3e398af" category="paragraph">"maintenance window-in-hours（維護時間間隔）"值指定維護時間的長度、最長可達72小時。如果維護作業在時間結束之前完成、您可以叫用AutoSupport 指示維護期間結束的資訊消息：</block>
   <block id="538f577c4284d097aef57681a2acf728" category="paragraph">「系統節點AutoSupport 不完整地叫用節點*-type all -most MAn=end」</block>
   <block id="047c004f2f53364ce170133f533be47f" category="list-text">在合作夥伴網站上重複這些步驟。</block>
@@ -3924,7 +3916,6 @@
   <block id="dd490b81914dd945601e442a41cb4222" category="sidebar">NetApp社群</block>
   <block id="d087c3faf4708dbb3c8dfcfefd9745e9" category="sidebar">使用「系統控制器更換」命令、將執行ONTAP E9.5的控制器硬體升級至9.7</block>
   <block id="7502f8f780af629ea69a176b286f5472" category="sidebar">決定是否使用Aggregate重新配置內容</block>
-  <block id="a0f8aeff2834e59d628ba56c42b411bc" category="sidebar">第4階段：重新部署和淘汰節點</block>
   <block id="42b2cb9f9e1a3cf15145887e95d849a8" category="sidebar">工作表：在控制器升級之前和期間收集的資訊</block>
   <block id="0df71f161bb7f6f4a1dd4c0ceefcb245" category="sidebar">第4階段：記錄資訊並淘汰節點2</block>
   <block id="79f3abfd76c996d707b348dbfb91c42b" category="sidebar">在節點4上設定FC或UTA/UTA2組態</block>
@@ -4113,7 +4104,6 @@
   <block id="e031a855de8a6709ad76ee26da7e1409" category="paragraph">「網路介面修改-vserver _vserver_name_-lif_lif_name_–home-port _port_name_」</block>
   <block id="b81db1e95a382ce3628dd1e8a693ba94" category="paragraph">「網路介面修改-容錯移轉群組_容 錯移轉群組_-容錯移轉原則_容 錯移轉原則_」</block>
   <block id="91b0b9d75ab5100fdef2cc4b9abcbf78" category="paragraph">「網路介面移轉-vserver _vserver_name_-lif_lif_name_-source-node-node1_-dest-node1_-destation-port _port_name_」</block>
-  <block id="7026ec6e9e64d0cd954f925dea928b75" category="paragraph">「vlan create -node_node_name_-vlan-name_vla_port_」</block>
   <block id="bd804b237ebb8835d7e3b85da5d2132b" category="paragraph">「Dis放置 介面還原-vserver _vserver_name_-lif-name _lif_name_」</block>
   <block id="aad098d45c08b648ea491886918a7403" category="paragraph">「網路介面show -vserver _vserver_name_-stue-admin down」</block>
   <block id="0c50d3945bcacd6caf3b39ff87c93171" category="paragraph">「網路介面show -vserver _vserver_name_-stue-oper down」</block>
@@ -4354,7 +4344,6 @@
   <block id="7f88c1930a909f734d7a128aa7ac5c0d" category="paragraph">如果您使用NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、加密組態必須同步至新節點。如果您沒有還原金鑰管理程式、當您使用ARL將節點2集合體從節點3重新定位至節點4時、加密的磁碟區將會離線。</block>
   <block id="11f09c937d4460ab0e473a33da9b1ab8" category="paragraph">「網路介面show -curr-node-node2_-role data」</block>
   <block id="5dad8f32e66b8ee8eadc502efd8b13f1" category="paragraph">「網路連接埠ifgrp show -node_node2_-ifgrp _ifgrp_name_-instance」</block>
-  <block id="977f3dd1a310456c777f225b9b32f0ba" category="paragraph">「aggr offline離線根目錄_aggr_on_node4_」</block>
   <block id="9b7d57d0483912f37373984d2377cd38" category="paragraph">「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-nodename_-stale-admin up」</block>
   <block id="be169d5dec3b5782fc54ffe06db0f01d" category="paragraph">「網路介面show -data-protocol _iscsi|FCP _-home-node3_」</block>
   <block id="de16a1a2e971f09625e82410defe17a1" category="paragraph">「網路介面修改-vserver _vserver_name_-lif_lif_name_-stue-admin down」</block>
@@ -4451,4 +4440,10 @@
   <block id="c7f6c7edba62aeb0070664af2982188f" category="sidebar">階段5.安裝並開機節點4（ONTAP 在更新版本的版本中使用「系統控制器更換」進行升級）</block>
   <block id="a7bb4f4bc15b3845dcbe4dd85398882a" category="sidebar">階段6.完成升級（ONTAP 升級至「系統控制器更換」、請參考《》（更新版本）</block>
   <block id="ad783963276a8d71cfdce2a0884ea6fe" category="sidebar">疑難排解（ONTAP 升級至「系統控制器更換」、請參閱《更新版本》）</block>
+  <block id="8ec9dcb34f09496bfb877249e8b20474" category="paragraph">如果在升級控制器時發生任何問題、請參閱 <block ref="8b711d7eff849b62a32d0b2d66f85a6c" category="inline-link-macro-rx"></block> 本節將於程序結束時提供更多資訊和可能的解決方案。</block>
+  <block id="06f03bd659c1d709e9f3635dd299f179" category="paragraph">查看「*狀態管理/每*」欄、查看是否有任何生命期中斷。如果有任何生命中斷、請參閱 <block ref="ee9e7ed4648f930256981fc705ceec06" category="inline-link-macro-rx"></block> 區段。</block>
+  <block id="9513edce58e5f4ee5ec2d01f6e5957ea" category="paragraph">「系統節點AutoSupport 不支援呼叫節點*-type all -most maints=_maintening-window-in-thing__」</block>
+  <block id="8ae18c4ca2d925d74bcd4990d28f04f0" category="paragraph">與此命令一起使用的"_vserver_name_"可在先前的"volume show"命令輸出中找到。</block>
+  <block id="deb8c459cd0f080a7a777d2ba3e57215" category="sidebar">第4階段：重新部署和淘汰節點2（ONTAP 升級到位於NetApp 9.8或更新版本的「系統控制器更換」）</block>
+  <block id="d0a53cd31cb7e1982b0b4b4350530c07" category="sidebar">第4階段：重新部署和淘汰節點2（ONTAP 從版本9.5升級到9.7、使用「系統控制器更換」）</block>
 </blocks>

@@ -22,7 +22,7 @@ summary: 通知NetApp技術支援部門、在ONTAP 執行更新版本的控制�
 . 登入叢集。
 . 叫出AutoSupport 指示維護開始的消息：
 +
-「系統節點AutoSupport 不支援呼叫節點*-type all -Message mainten=<maintenance window-in hours >」
+「系統節點AutoSupport 不支援呼叫節點*-type all -most maints=_maintening-window-in-thing__」
 
 +
 "maintenance window-in-hours（維護時間間隔）"值指定維護時間的長度、最長可達72小時。如果維護作業在時間結束之前完成、您可以叫用AutoSupport 指示維護期間結束的資訊消息：

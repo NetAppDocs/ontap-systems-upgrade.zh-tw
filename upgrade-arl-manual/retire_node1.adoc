@@ -85,7 +85,7 @@ node2                 true    true
 「網路介面show -role data -curr-node-node2_-home-node1_」
 
 +
-查看「*狀態管理/每*」欄、查看是否有任何生命期中斷。如果有任何生命中斷、請參閱 link:troubleshoot.html["故障"] 區段。
+查看「*狀態管理/每*」欄、查看是否有任何生命期中斷。如果有任何生命中斷、請參閱 link:troubleshoot_index.html["故障"] 區段。
 
 . 請採取下列其中一項行動：
 +
