@@ -268,7 +268,6 @@
   <block id="48d957729e77cbd1ec1cf772f951270a" category="list-text">此程序假設更換的控制器硬體是新的、而且尚未使用。此程序不包含使用wpeconfig命令準備已用控制器所需的步驟。如果先前使用替換控制器硬體、尤其是控制器以Data ONTAP 7-Mode執行時、您必須聯絡技術支援部門。</block>
   <block id="e5e0e33438e3e93b68faec10a86b2f1c" category="list-text">您可以使用此程序來升級具有兩個以上節點之叢集中的控制器硬體、但是您需要針對叢集中的每個HA配對分別執行程序。</block>
   <block id="8aa258d7d2576cff89b65debb971736d" category="list-text">本程序適用於FAS 包含AFF 「支援整合式虛擬化軟體」的各種系統、V系列系統、支援各種系統。FlexArray如果安裝所需的授權、則在發行完Solide9.5之後發行的系統可附加至儲存陣列。FAS ONTAP現有的V系列系統在ONTAP 支援方面、請參考《S25：如需儲存陣列和V系列機型的詳細資訊、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要連結至_SUR__ Hardware Universe 、請前往V系列支援對照表。</block>
-  <block id="01cc348d995c86d2845e5e78e5e9c63a" category="list-text">從版本號為9.6開始ONTAP 、此程序適用於執行4節點MetroCluster 版本的版本。由於這個組態站台可位於兩個實體位置、因此必須在每個站台個別執行自動化控制器升級、才能進行HA配對。MetroCluster MetroCluster</block>
   <block id="eff04d06fc1c15ba7f721c6eb771ca87" category="list-text">如果您要從AFF 某個不支援的A320系統進行升級、您可以使用Volume Moves來升級控制器硬體、或聯絡技術支援部門。如果您願意進行Volume移動、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要透過移動磁碟區或儲存設備連結至_Upgrade。</block>
   <block id="6d23265c57ba430c404cc6f3a940e117" category="doc">還原節點4上的金鑰管理程式組態</block>
   <block id="28ee1efc4e85d8c498824b6d179e810b" category="list-text">若要同步Onboard Key Manager的加密組態、請在叢集提示字元中執行下列命令：</block>
@@ -869,7 +868,6 @@
   <block id="54279af53279de10320508d0526f332e" category="paragraph">您可以使用OKM來管理加密金鑰。如果您打算使用OKM、則必須在開始升級之前記錄密碼和備份資料。</block>
   <block id="259c8a53b900b4102babb5d05e113f67" category="list-text">將通關密碼儲存至安全位置。</block>
   <block id="19077cc2690337623f542cbef7fae627" category="list-text">建立備份以供還原之用。執行下列命令並儲存輸出：</block>
-  <block id="d1599347e2c1e8206cd8017da7de3ee0" category="paragraph">「金鑰管理程式內建展示備份」</block>
   <block id="c497a6b930105164567b744840c21e94" category="paragraph">「安全金鑰管理程式內建show Backup」</block>
   <block id="5055165524bf9c633a40b424396e9008" category="section-title">靜止SnapMirror關係（選用）</block>
   <block id="4c8b55d155015695884299d539ae7e00" category="paragraph">在繼續執行此程序之前、您必須確認所有SnapMirror關係均已靜止。當SnapMirror關係靜止時、它會在重新開機和容錯移轉之間保持靜止。</block>
@@ -1805,7 +1803,6 @@
   <block id="472aa5d8ae9d1d5726cc523100b48335" category="list-text">將移除的VLAN還原至所需的目的地連接埠：</block>
   <block id="0bb998238231c13a494cdbd3689c6d25" category="list-text">確認所有已移除的VLAN均已還原：</block>
   <block id="47520b16706f00daa0983c140c0ad715" category="list-text">VLAN會在建立後約一分鐘內自動置入適當的廣播網域。確認還原的VLAN已置於適當的廣播網域中：</block>
-  <block id="5b16c41785a8844c7ae2d2b5c45588ec" category="list-text">[[man_map_1_step5]]從ONTAP 版本號9.8開始、ONTAP 當連接埠在網路連接埠可連線性修復程序期間於廣播網域之間移動時、會自動修改lifs的主連接埠。如果LIF的主連接埠已移至其他節點、或未指派、則LIF會顯示為已移除的LIF。還原主連接埠不再存在或重新放置到其他節點的已移轉LIF主連接埠。</block>
   <block id="5f8dfcaae8cea23af1ab8bab1c7c23ad" category="list-text">顯示其主連接埠可能移至其他節點或不再存在的LIF：</block>
   <block id="5f6447c81c91c2a68fcce7c90bfd253a" category="list-text">還原每個LIF的主連接埠：</block>
   <block id="25d37c99a98fed25bef30e1dc9dfbbc2" category="list-text">確認所有LIF主連接埠均已還原：</block>
@@ -2800,7 +2797,6 @@
   <block id="6897b79e7e86c3bf656b3cf8bb05bc85" category="list-text">[[man_map_2_Step3]]修改裝載資料lifs之實體連接埠的廣播網域成員資格。</block>
   <block id="322b25940728d29a26180978d33a75a7" category="paragraph">預期會出現類似以下的警告。視需要檢閱並輸入y或n：</block>
   <block id="28ffee9aa7a190ca41675de91fb9710b" category="list-text">如果系統上未設定任何VLAN、請前往 <block ref="f0f83db123b2b495e546349e9d3200d8" category="inline-xref-macro-rx"></block>。如果已設定VLAN、請還原先前在不再存在的連接埠上設定或是在移至另一個廣播網域的連接埠上設定的已移除VLAN。</block>
-  <block id="88979d326c7ea690819e5ebc2c65edb9" category="list-text">[[man_map_2_Step5]]從ONTAP 發行版本號為9.8開始、ONTAP 如果在網路連接埠可連線性修復程序期間、連接埠在廣播網域之間移動、則會自動修改lifs的主連接埠。如果LIF的主連接埠已移至其他節點、或未指派、則LIF會顯示為已移除的LIF。還原主連接埠不再存在或重新放置到其他節點的已移轉LIF主連接埠。</block>
   <block id="c5c3d54cdf6631e2e290953a91dcd842" category="paragraph">當所有連接埠均已正確設定並新增至正確的廣播網域時、「network port re連通 性show」命令會針對所有連接的連接埠、將連線狀態報告為「ok」、對於沒有實體連線的連接埠、狀態應顯示為「不可到達性」。如果有任何連接埠報告的狀態不是這兩個連接埠、請依照中所述修復連線能力 <block ref="42e2bf4f4ef15f603bcc30bc206d35c3" category="inline-xref-macro-rx"></block>。</block>
   <block id="db548c254460f5243399043fe56f9785" category="list-text">驗證所有生命體都在屬於正確廣播網域的連接埠上以管理方式啟動。</block>
   <block id="2fd90d60a25deece3a4d5127856e8967" category="summary">決定是否使用ARL程序將AFF 某個部分升級至AFF 某個部分。</block>
@@ -2908,9 +2904,6 @@
   <block id="edb3af1551b6e96be7f9b204f3cec480" category="summary">將故障或被否決的Aggregate在AFF 進行更新時重新部署至AFF 更新版的32位元組。</block>
   <block id="b8083dfb29da686812e3bafb3a73f823" category="summary">在將節點2升級至EsceA700時、請關閉節點2、並將其從機架或機箱中移除AFF 。AFF</block>
   <block id="7bd08b5c3a9e3849e82a1fef790d117b" category="summary">使用AFF EsceeA900控制器模組和NVRAM模組來開機節點1。</block>
-  <block id="a9e10fdb71bd2ac495122a9187fd9483" category="list-text">如果在此組態中使用NetApp儲存加密（NSE）、則必須將「setenv bootarg.storageEncryption.supports」命令設定為「true」、並將「kmip.init.maxwait`變數」設定為「Off」、以避免在載入node1組態後發生開機迴圈：</block>
-  <block id="22d219ca4c61aa27b2616b43ecd9678a" category="list-text">將節點開機至「boot_menu」：</block>
-  <block id="9b043fdaedad96364338df4b458e563e" category="paragraph">在前述主控台輸出範例中、ONTAP 如果系統使用進階磁碟分割（ADP）磁碟、則會提示您輸入合作夥伴節點名稱。</block>
   <block id="939b677a0e4df037cd999a739cd94317" category="paragraph">上例所示的系統ID為範例ID。您要升級之節點的實際系統ID會有所不同。</block>
   <block id="5952acedcc143d30a19364d245887b58" category="paragraph">在提示輸入節點名稱與登入提示之間、節點會重新開機數次、以還原環境變數、更新系統卡上的韌體、以及進行其他ONTAP 的更新。</block>
   <block id="fa5b7598ff79398479188d836810f48d" category="summary">支援AFF 從功能性到AFF 功能性的更新的參考內容和網站。</block>
@@ -3014,7 +3007,6 @@
   <block id="1b8060cb5ae9dd21090d2ec07cc376b2" category="paragraph">您必須有接地線才能執行升級、而且在升級過程中需要參考其他文件。</block>
   <block id="d72e37445f435123c47c01a1bd03271c" category="paragraph">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 存取此升級所需的參考文件和參考網站清單。</block>
   <block id="e57d7ba8fb9b97ff4cc0b7b8c4a0b876" category="summary">使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2。</block>
-  <block id="3891297e49eacc493b7b08dbb7fa3f93" category="list-text">[[boot_node2_step1]]如果此組態正在使用NetApp儲存加密（NSE）、則必須將「setenv bootarg.storageEncryption.support'命令設定為「true」、並將「kmip.init.maxwait`變數」設定為「Off」、以避免在節點2組態載入後發生開機迴圈：</block>
   <block id="4aa5a5226abeed57a9e86a4cdbd74335" category="summary">如有需要、可在AFF 升級到AFF 更新版的過程中設定儲存加密、安裝SSL憑證、以及設定金鑰管理伺服器。</block>
   <block id="74d87258605a34730c51b53265d130eb" category="summary">將非根Aggregate和NAS資料lifs從節點1移至節點2、AFF 並在將節點1的資源還原至AFF 更新版的過程中、將節點1的資源還原至更新版的支援區。</block>
   <block id="4cc41ac3ff89b0e0d88cacedf58eb50d" category="summary">讓NetApp知道、升級AFF 至更新版的更新版後、舊系統已不再運作。</block>
@@ -3468,10 +3460,8 @@
   <block id="e2235c37305cb98ad3fd9aa58c7fad4b" category="doc">使用ONTAP 更新版本的更新版本來對應網路連接埠</block>
   <block id="03004a754e91e01bc54b3719dea50cd1" category="paragraph">若要讓節點3和節點4在升級後與叢集中的其他端口和網路進行通訊、您必須確認實體連接埠已正確設定為適合特定用途的設定、例如叢集、資料等。</block>
   <block id="88b8cfb0eb0372af5622adb072f8536f" category="inline-xref-macro">使用ONTAP NET9.8對應網路連接埠</block>
-  <block id="7e00c0ffb3f4f8002976d8431b57d3f0" category="paragraph">這些步驟適用於執行ONTAP 下列版本的系統：如果您執行ONTAP 的是效能不正常的9.8、則必須使用中的程序 <block ref="7523ee9f03a6fb590a93b67219c26179" category="inline-xref-macro-rx"></block>。</block>
   <block id="1e9be7aa46166eca7db0fc1c4e7a887b" category="paragraph">您必須在節點3和節點4上執行這些步驟。</block>
   <block id="7f0307060728fe46960f5901c576848b" category="admonition">下列命令範例是指「node1」、因為在程序的這個階段、替換節點「node3」和「node4」實際上是命名為「node1」和「node2」。</block>
-  <block id="348d1bc957542f25e2e2871b40cfd26f" category="list-text">如果您的系統執行ONTAP 的是*停止* S498。您必須使用中的程序 <block ref="7523ee9f03a6fb590a93b67219c26179" category="inline-xref-macro-rx"></block>。</block>
   <block id="3098dc1e81196ed0a5c7526536b21dc6" category="list-text">找到節點1和節點2的連接埠和LIF組態資訊、這些資訊記錄在_移動儲存設備時準備升級_、 <block ref="54c74de3517b342dfae1a3129a67e9ec" category="inline-link-macro-rx"></block>。</block>
   <block id="8b6679d6197b72adb78dae0febbb41a1" category="list-text">找到您在_準備在移動儲存設備時升級_中記錄的連接埠、廣播網域和IPspaces資訊、 <block ref="54c74de3517b342dfae1a3129a67e9ec" category="inline-link-macro-rx"></block>。</block>
   <block id="1a8639e4c8ee9656522efd4a2b9f58d0" category="list-text">如果您尚未將節點3和節點4開機至叢集提示字元、請將其開機。</block>
@@ -3630,10 +3620,8 @@
   <block id="8f2f5cebfa6b4e869a159dbf3cedb773" category="inline-link">尋找Data ONTAP 適用於您的版本的《叢集擴充快速指南》（Cluster Expansion Express Guide）</block>
   <block id="9d9192129e1b9a1e59bd50fc144f8867" category="paragraph"><block ref="9d9192129e1b9a1e59bd50fc144f8867" category="inline-link-rx"></block></block>
   <block id="4d3a4f006fa6b11c769a39a41cac5793" category="summary">若要透過移動儲存設備來完成升級程序、您必須從新節點刪除任何未使用的連接埠和LIF、重新啟用儲存容錯移轉或高可用度、設定服務處理器（SP\）、安裝新授權、以及設定AutoSupport Re。您可能還需要設定儲存設備或Volume Encryption、並設定FC或CNA連接埠。</block>
-  <block id="38e9bf55ae23722d14604ba35ee5bcd1" category="doc">執行ONTAP 更新步驟、請參考以更新</block>
   <block id="de87a7c00dcfcf1112ca50efd583f924" category="paragraph">若要透過移動儲存設備來完成升級程序、您必須從新節點刪除任何未使用的連接埠和LIF、重新啟用儲存容錯移轉或高可用度、設定服務處理器（SP）、安裝新的授權、以及設定AutoSupport Re。您可能還需要設定儲存設備或Volume Encryption、並設定FC或CNA連接埠。</block>
   <block id="0bde8f7cae6f7006cf8059b9d923c0a4" category="inline-xref-macro">在更新版本的更新版本中執行ONTAP 最終升級步驟</block>
-  <block id="3891cdc6868c6f151d43254aeaf389d9" category="paragraph">這些步驟適用於執行ONTAP 效能不正常的系統。如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 <block ref="91f2c94dbfb488703dd443559499d8cb" category="inline-xref-macro-rx"></block>。</block>
   <block id="a1aef6bc19056065e0e5c87b39d71b96" category="list-text">如果您的系統執行ONTAP 的是效能不高的版本、*停止*。您必須使用中的程序 <block ref="91f2c94dbfb488703dd443559499d8cb" category="inline-xref-macro-rx"></block>。</block>
   <block id="83e8f1a7c1a2c10d90059989f69becc7" category="list-text">在儲存系統提示字元中、顯示關於LIF的資訊：</block>
   <block id="89bd08809cd5f941c4bb2cc6687fe212" category="list-text">如果您在SAN環境中、請從連接埠集刪除未使用的lifs、以便移除它們：</block>
@@ -3706,14 +3694,9 @@
   <block id="e568219783dc2975662f32e6665b9312" category="paragraph">更新Flash程序會執行數分鐘、然後系統重新開機。</block>
   <block id="64c7b7b950f686aaa9399673582360b1" category="list-text">當系統提示您確認系統ID不相符時、請輸入「y」。</block>
   <block id="e4c1c828d40a575431492bab6401d8ae" category="paragraph">啟動順序會正常運作。</block>
-  <block id="bb0c96213a94c4304b5c450772cc0659" category="summary">完成ONTAP 更新、請參閱《更新版（更新ONTAP 版本）：更新版（更新版本：）、更新版（更新版本：</block>
   <block id="f5b49dd631a7fa0c45fc2aea8bcfa384" category="paragraph">您必須使用ONTAP 適用於您版本的更新程序。</block>
-  <block id="f2190862dcb9dfdb205bb24e6c66cace" category="inline-xref-macro">完成ONTAP 更新、請使用更新功能升級</block>
-  <block id="e2be5a85f52a3a5f613d4aadf4e57e2f" category="list-text">若要完成ONTAP 更新、請前往 <block ref="92fec23dfa4ff2645c1b7d56969a9e86" category="inline-xref-macro-rx"></block>。</block>
   <block id="0c297b93e672c9bc05e823d846073d38" category="inline-xref-macro">完成ONTAP 更新、請參閱《更新版本</block>
-  <block id="188912cb793d3e0c2cd2b15edb10057a" category="list-text">若要完成ONTAP 更新、請前往 <block ref="a6085d08f51c0f7b45dd12344b481637" category="inline-xref-macro-rx"></block>。</block>
   <block id="28b82aeb57b341ad6d877342a1ec8842" category="summary">若要讓節點3和節點4在升級後與叢集中的其他節點和網路進行通訊、您必須確保實體連接埠已正確設定為適合特定用途的設定、例如叢集、資料等。</block>
-  <block id="acf19a04295768ba1ad8e06c738b60d8" category="paragraph">這些步驟適用於執行ONTAP 效能不正常的系統。如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 <block ref="02cafea91ec73e57361f0e2559069996" category="inline-xref-macro-rx"></block>。</block>
   <block id="49b95b3a1c8fd0bd354de5fc2ec2b96e" category="list-text">如果您的系統執行ONTAP 的是效能不高的版本、*停止*。您必須使用中的程序 <block ref="02cafea91ec73e57361f0e2559069996" category="inline-xref-macro-rx"></block>。</block>
   <block id="785fd52ca2c4957e9caba4406db084c0" category="list-text">找到您在_準備在移動儲存設備時升級_中記錄的連接埠、廣播網域和IPspaces資訊、 <block ref="54c74de3517b342dfae1a3129a67e9ec" category="inline-link-macro-rx"></block>。</block>
   <block id="757ee83d9d913287174eb13a32791a9a" category="list-text">如果您尚未引導並登錄到node3和node4，請執行此操作。</block>
@@ -3724,14 +3707,9 @@
   <block id="991ac44bc0f4b09cc233a9a79f867f55" category="list-text">檢閱介面群組組態、並視需要新增或刪除成員連接埠。新增成員連接埠至介面群組連接埠：</block>
   <block id="244220515525d7bbce7364431256c704" category="admonition">視所升級系統的網路組態複雜度而定、您可能需要重複步驟5、子步驟（A）到（g）、直到所有連接埠都正確放置在所需位置。</block>
   <block id="b27e1f5014645cf6a835fb2e11524da4" category="list-text">如果系統上未設定任何VLAN、請前往 <block ref="44c817ee9110592f40577b67e8940aff" category="inline-xref-macro-rx"></block>。如果已設定VLAN、請還原先前在不再存在的連接埠上設定或是在移至另一個廣播網域的連接埠上設定的已移除VLAN。</block>
-  <block id="ebabbc1ebee66becea669b0e9c3afadc" category="list-text">[[map_98_7]*從ONTAP VMware 9.8開始、ONTAP 如果在網路連接埠可到達性修復程序期間、連接埠在廣播網域之間移動、則會自動修改lifs的主連接埠。如果LIF的主連接埠已移至其他節點、或未指派、則LIF會顯示為已移除的LIF。還原主連接埠不再存在或重新放置到其他節點的已移轉LIF主連接埠。</block>
   <block id="72a19323d192a6a70bcf03b98d5355ae" category="paragraph">當所有連接埠均已正確設定並新增至正確的廣播網域時、網路連接埠可連線性show命令應針對所有連接的連接埠、將連線狀態報告為「正常」、對於沒有實體連線的連接埠、狀態應顯示為「不可連線」。如果有任何連接埠報告的狀態不是這兩個連接埠、請依照中所述修復連線能力 <block ref="84a764803e273063ea87749716b7c654" category="inline-xref-macro-rx"></block>。</block>
-  <block id="e5d91a7fa665e8fe97e2979e274c9883" category="paragraph">您已完成實體連接埠的對應。若要完成升級、請前往 <block ref="362f5b69398efdd58c711f175ac3611b" category="inline-xref-macro-rx"></block>。</block>
   <block id="2f22c527d871517945ac34102d2f6931" category="summary">若要透過移動儲存設備來完成升級程序、您必須從新節點刪除任何未使用的連接埠和LIF、重新啟用儲存容錯移轉或高可用度、設定服務處理器（SP）、安裝新授權、以及設定AutoSupport NetApp。您可能還需要設定儲存設備或Volume Encryption、並設定FC或CNA連接埠。</block>
   <block id="5112ce36807c8e031c9ab063bc28ce71" category="doc">執行ONTAP 更新步驟以更新版本更新至更新版本</block>
-  <block id="6afad8777741cb158249cdcde37c14fe" category="inline-xref-macro">執行ONTAP 《更新步驟（更新步驟）</block>
-  <block id="253783c6125a504d15d61a091415d8d8" category="paragraph">這些步驟適用於執行ONTAP 下列版本的系統：如果您執行ONTAP 的是效能不正常的9.8、則必須使用中的程序 <block ref="b47981dbddf657334d68e85ddce9d886" category="inline-xref-macro-rx"></block>。</block>
-  <block id="50aee2f4fc79ea5e0b4ababa4a4889b1" category="list-text">如果您的系統執行ONTAP 的是*停止* S498。您必須使用中的程序 <block ref="362f5b69398efdd58c711f175ac3611b" category="inline-xref-macro-rx"></block>。</block>
   <block id="de11c3d9da699c5b0528297ad39e25cb" category="list-text">從新節點刪除任何未使用的連接埠（進階權限層級）：</block>
   <block id="1edc30c9cec2665a01f0a9cc7910d9fc" category="paragraph">網路連接埠刪除</block>
   <block id="7315714b19f21e9ad91dfa8b10b194f9" category="cell">重新啟用高可用度：「叢集ha modify -configured true」</block>
@@ -3809,10 +3787,6 @@
   <block id="1c21d383507612a44944a4ef460798a2" category="list-text">[move_int_drive_5]關閉CAM握把、使托架完全就位在中間板上、並將握把卡入定位。</block>
   <block id="aa6a7c81aeaad5ec8cef068df556cb9d" category="paragraph">您必須緩慢關閉握把、使其與機層面正確對齊。</block>
   <block id="4d388dae867b0a86458ede8119b8865e" category="list-text">重複 <block ref="267cbc67ee851d16fc5833a2bb2eacbb" category="inline-xref-macro-rx"></block> 透過 <block ref="07cb79f26065ce7eb3e55fb46a8c9f8b" category="inline-xref-macro-rx"></block> 適用於您要移至新系統的所有磁碟機。</block>
-  <block id="308dc930942875f893b863a55b973e8a" category="summary">請使用下列步驟完成ONTAP 更新、請參考《產品介紹9：8：</block>
-  <block id="f88d69698129a6371fe8a552c1380b8a" category="paragraph">請使用下列步驟完成ONTAP 更新：</block>
-  <block id="3ffb7b6a90c761ac843e42b770d3b80c" category="list-text"><block ref="3ffb7b6a90c761ac843e42b770d3b80c" category="inline-link-macro-rx"></block></block>
-  <block id="9f17fc6c1046f4722f2d0dff8c12c850" category="list-text"><block ref="9f17fc6c1046f4722f2d0dff8c12c850" category="inline-link-macro-rx"></block></block>
   <block id="be560856af220999f45b0e64a842465a" category="summary">將磁碟區移至新節點之後、您就會從叢集中取消加入原始節點。當您取消加入節點時、節點的組態會被清除、且所有磁碟都會初始化。</block>
   <block id="f61d9690213fcb44fc551adab505eb85" category="paragraph">將磁碟區移至新節點之後、您就會從叢集中取消加入原始節點。當您取消加入節點時、節點的組態會被清除、而且所有磁碟都會初始化。</block>
   <block id="72992cc1c16f1dbbbcb7cc77a55977d9" category="list-text">存取進階權限層級：</block>
@@ -4044,15 +4018,12 @@
   <block id="b0ce3e25b9ec3a13c13ca9a6fa5323b7" category="list-text">您正在FlexArray 使用的是AFF 功能不實的虛擬化軟體來搭配使用於功能不實的A700或FAS9000系統。</block>
   <block id="c72ac68ecc63380b07ba76bc038edf2e" category="paragraph">您必須使用AFF EscoreA900或FAS9500控制器和NVRAM模組來驗證node2安裝。由於實體連接埠沒有變更、因此您不需要將實體連接埠從舊節點2對應至替換節點2。</block>
   <block id="fbb88f36cd542fa5f9d7d9b7989c4fa9" category="paragraph">使用AFF E4A900或FAS9500控制器模組開機節點1之後、您必須確認其安裝正確。您必須等待節點2加入仲裁、然後繼續執行控制器更換作業。</block>
-  <block id="2547b168178c27dad563f660708cda35" category="list-text">如果在組態中使用NetApp儲存加密（NSE）、而您使用「kmip.init.maxwait`」變數「Off」（在_Boot node2中、搭配AFF 使用NetApp A900或FAS9500控制器和NVRAM模組）、將「show」bootarg.storageEncryption.supports命令設為「true」、 <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>）、您必須重設變數：</block>
   <block id="0b67bd45e44a6983f2e329371f92a85c" category="paragraph">交換相應AFF 的E4A900或FAS9500節點1控制器和NVRAM模組之後、您必須使用netboot node1。「netboot」一詞表示您是從ONTAP 儲存在遠端伺服器上的鏡像進行開機。準備網路開機時、您必須在ONTAP 系統可以存取的網路伺服器上新增一份《支援》9開機映像。</block>
   <block id="6bc5a701ba593a754b9fc417aacb558c" category="paragraph">除非安裝在機箱中並已開啟電源、否則無法檢查ONTAP 安裝在AFF 架構套件上的支援媒體版本、例如：在不支援支援更新的支援基礎架構成本的支援基礎架構成本。ONTAP AFF ONTAP AFF您可以在開機功能表中執行netboot、然後執行wappeconfig命令來設定映像。如果控制器模組先前曾在另一個叢集中使用、則「wifeconfig」命令會清除開機媒體上的任何剩餘組態。</block>
   <block id="fed5188660beab0c1ca98ade1cf9e488" category="list-text">請等待AFF 執行於EscoreA900或FAS9500控制器模組上的節點1開機、並顯示開機功能表選項、如下所示：</block>
   <block id="2fef7d8ad2c6da5a6bfc7b0d1cb4d82f" category="doc">使用AFF FASA900或FAS9500控制器和NVRAM模組來開機節點2</block>
   <block id="85a900d149967784a6d6e1061792097f" category="paragraph">節點2搭配AFF EscoreA900或FAS9500控制器和NVRAM模組、現在已準備好升級。透過交換控制器和NVRAM模組、將「從A 700升級至e a 900」或「FAS9000升級至FAS9500」只需移動主控台和管理連線即可。AFF AFF本節提供使用AFF E4A900或FAS9500控制器和NVRAM模組來開機節點2所需的步驟。</block>
-  <block id="29af000d792467e009d5e082d6fb2b1e" category="list-text">節點會在開機功能表停止。輸入「22/7」、然後選取隱藏選項「boot_after控制器置換」。若要重新指派AFF EscoreA700或FAS9000節點1磁碟到AFF EsceA900或FAS9500節點1、請在提示字元下輸入節點2的實際節點名稱。請參考下列範例：</block>
   <block id="5e1956d6adc0bdab37f993d5b46e373b" category="paragraph">節點1搭配AFF EscoreA900或FAS9500控制器和NVRAM模組、現在可以開機了。透過交換控制器和NVRAM模組、將某個從處理器升級到FASA700至FASA900或FAS9000至FAS9500、只需移動主控台和管理連線即可。AFF AFF本節提供使用AFF E4A900或FAS9500控制器和NVRAM模組來開機節點1所需的步驟。</block>
-  <block id="def24406017cbdd73b740bba1a1e6765" category="list-text">節點會在開機功能表停止。輸入「22/7」、然後選取隱藏選項「boot_after控制器置換」。若要重新指派節點1磁碟、請AFF 在提示字元下、輸入節點1的實際節點名稱、將節點1磁碟從支援功能的EsceA700重新指派至AFF EsceA900或從FAS9000重新指派至FAS9500。請參考下列範例：</block>
   <block id="5fa38b455ca95ac213888d230b770ee7" category="paragraph">在開始升級之前、您必須先確認AFF 您擁有的是正確的硬體、可讓您進行從故障到AFF 故障的修復A700升級、或是從FAS9000升級到FAS9500升級。對於要升級的每個HA配對、您必須有兩個系統控制器模組和兩個NVRAM模組。如果零件遺失、請聯絡技術支援部門或NetApp銷售聯絡人以尋求協助。</block>
   <block id="ba5bb93bf3745b7b90abb302dc84dab9" category="sidebar">使用「系統控制器更換」命令、將AFF E4A700升級至AFF E4A900或FAS9000升級至FAS9500</block>
   <block id="cec0ad56d161fd372b8f511ac2258e91" category="sidebar">第2階段：重新部署資源、並淘汰AFF EsceeA700或FAS9000節點1</block>
@@ -4446,4 +4417,55 @@
   <block id="8ae18c4ca2d925d74bcd4990d28f04f0" category="paragraph">與此命令一起使用的"_vserver_name_"可在先前的"volume show"命令輸出中找到。</block>
   <block id="deb8c459cd0f080a7a777d2ba3e57215" category="sidebar">第4階段：重新部署和淘汰節點2（ONTAP 升級到位於NetApp 9.8或更新版本的「系統控制器更換」）</block>
   <block id="d0a53cd31cb7e1982b0b4b4350530c07" category="sidebar">第4階段：重新部署和淘汰節點2（ONTAP 從版本9.5升級到9.7、使用「系統控制器更換」）</block>
+  <block id="cef52224881fd5dedd26a040c1359ee9" category="inline-xref-macro">執行ONTAP 更新版本的最終升級步驟</block>
+  <block id="c2acf33141c1e1d2087c7bc181c42bb7" category="paragraph">這些步驟適用於執行ONTAP 下列版本的系統：如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 <block ref="3b2ec221cc352b28fa15c204e2ae21f2" category="inline-xref-macro-rx"></block>。</block>
+  <block id="c8ff2d709da7bd973a342d6eb7c6952c" category="inline-xref-macro">請執行ONTAP 更新版本的最終升級步驟</block>
+  <block id="8369511a77d2231fe0dc2666b1eb7bc3" category="list-text">如果您的系統執行ONTAP 的是*停止*版本9.8或更新版本。您必須使用中的程序 <block ref="9755845ab3f2cc4f5f51d0cd1be3153b" category="inline-xref-macro-rx"></block>。</block>
+  <block id="be1c64568381eb09df4f452433b584eb" category="inline-xref-macro">使用ONTAP 更新版本的版本資訊來對應網路連接埠</block>
+  <block id="1e6def9e9dd4f1f64f3de8b0a57f2778" category="paragraph">這些步驟適用於執行ONTAP 下列版本的系統：如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 <block ref="ccd35a957ce7354dac1b2737d83bc4f4" category="inline-xref-macro-rx"></block>。</block>
+  <block id="2fdb8263a29ca795ef82322d81fda239" category="list-text">如果您的系統執行ONTAP 的是*停止*版本9.8或更新版本。您必須使用中的程序 <block ref="ccd35a957ce7354dac1b2737d83bc4f4" category="inline-xref-macro-rx"></block>。</block>
+  <block id="8b793a703e41666db1139bfcac16c982" category="inline-xref-macro">已重新指派任何管理或叢集間生命體</block>
+  <block id="619d3ee4d9d03f1c8e85902faacf818d" category="admonition">如果您執行就地控制器升級至使用連接埠「e0a」和「e0b」做為高可用度（HA）互連連接埠的系統、例如FAS8300、AFF ESIA400或FAS8700、 請確認您擁有 <block ref="5b2064061510a35b81a212ddd1a165e7" category="inline-xref-macro-rx"></block> 在開始升級程序之前、請先在原始系統的連接埠「e0a」和「e0b」上設定。</block>
+  <block id="7389b01d5fe0e17f5523a7fb85295f91" category="inline-link-macro">這篇知識庫文章</block>
+  <block id="2ee5a2dd85f4cccb6dbb3701b2a263ba" category="paragraph">如果控制器升級失敗並報告「rlib_port_IPspace_assign」錯誤訊息、您必須還原升級、並刪除原始系統上作為HA連接埠的網路連接埠上的LIF。如需詳細資訊、請參閱 <block ref="48beba1570dcc6cd04554aaa6118327f" category="inline-link-macro-rx"></block>。</block>
+  <block id="209c912a443f069511053cb5ed7c8175" category="paragraph">這些步驟適用於執行ONTAP 不含更新版本的系統。如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 <block ref="91f2c94dbfb488703dd443559499d8cb" category="inline-xref-macro-rx"></block>。</block>
+  <block id="81115b2b20b22282416f6d252f1227a9" category="summary">請依照下列步驟完成ONTAP 更新、以更新版本更新。</block>
+  <block id="7b416fb3b0ecbf485baebef5aa26f421" category="doc">完成ONTAP 更新、請使用更新版本的更新版本</block>
+  <block id="7a67102068269b1046a62f34688d751f" category="paragraph">請使用下列步驟完成ONTAP 更新：</block>
+  <block id="910c99c10b2b8f326ca77c1b3e34eb83" category="list-text"><block ref="910c99c10b2b8f326ca77c1b3e34eb83" category="inline-link-macro-rx"></block></block>
+  <block id="479694184a7596b8d654b4519a939fb4" category="list-text"><block ref="479694184a7596b8d654b4519a939fb4" category="inline-link-macro-rx"></block></block>
+  <block id="6502ece9e464ee9b76872ac1891890b1" category="paragraph">這些步驟適用於執行ONTAP 不含更新版本的系統。如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 <block ref="02cafea91ec73e57361f0e2559069996" category="inline-xref-macro-rx"></block>。</block>
+  <block id="7893bfa78df90b820f889d3721889827" category="list-text">[[map_98_7]*從ONTAP VMware 9.8開始、ONTAP 如果在網路連接埠可到達性修復程序期間、連接埠在廣播網域之間移動、則會自動修改lifs的主連接埠。如果LIF的主連接埠已移至其他節點、或未指派、則LIF會顯示為已移除的LIF。還原主連接埠不再存在或重新放置到其他節點的已移轉LIF主連接埠。</block>
+  <block id="4a78c0c542d23d6fb37a4fe36a2eadfa" category="paragraph">您已完成實體連接埠的對應。若要完成升級、請前往 <block ref="9755845ab3f2cc4f5f51d0cd1be3153b" category="inline-xref-macro-rx"></block>。</block>
+  <block id="ef29cfe4123c7b4d36dffdb01aac77fc" category="summary">完成ONTAP 更新、請參閱《更新版本、更新版本、ONTAP 或《更新版本、更新版本、更新版本、更新版本、更新版本、更新版本</block>
+  <block id="a728e0150a3319c807decfef9fd8b00c" category="list-text"><block ref="a728e0150a3319c807decfef9fd8b00c" category="inline-xref-macro-rx"></block></block>
+  <block id="a6085d08f51c0f7b45dd12344b481637" category="list-text"><block ref="a6085d08f51c0f7b45dd12344b481637" category="inline-xref-macro-rx"></block></block>
+  <block id="ee4259e7fa1dc73036cc58b6216ac26d" category="list-text">[[assign_lifs]特定系統AFF 、例如FAS8300、SureA400或FAS8700系統、 使用連接埠「e0a」和「e0b」作為高可用度（HA）互連連接埠。如果您要從FAS8200或AFF E4A300等系統升級至使用連接埠「e0a」和「e0b」做為HA互連連接埠的系統、 您必須將在原始系統上這些連接埠上設定的管理和叢集間LIF重新指派給替換系統上的替代連接埠。</block>
+  <block id="bb90459e9b4aa7c112f4569c2ec19b97" category="admonition">當取代系統上的連接埠「e0a」和「e0b」被用作HA互連連接埠時、在這些連接埠上設定的任何管理或叢集間生命體、可能會導致升級失敗、因為HA組態無法使用連接埠「e0a」和「e0b」開機至替換系統。</block>
+  <block id="6e739de8c1925a6779ee076df8d4a525" category="list-text">驗證您的替換系統是否使用連接埠「e0a」和「e0b」作為HA連接埠：<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block></block>
+  <block id="894aba2fe8eca246912b5f6b167c23c7" category="list-text">如有必要、請識別在原始系統的連接埠「e0a」和「e0b」上設定的管理或叢集間LIF：</block>
+  <block id="2852e76cc043363d809f6bf5b5528cc8" category="paragraph">「網路介面show -home-port _port_name_」</block>
+  <block id="d76cdfb6e1e829cf1a8b29cf0365bb25" category="list-text">如有必要、請僅將受影響的管理或叢集間生命體重新指派給未在替換系統上做為HA連接埠的網路連接埠：</block>
+  <block id="868d1b2090ba0cdd2fdfac75d3678175" category="paragraph">「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-port _new_port_name_」</block>
+  <block id="8764c983c6cbb2a9680fb3a948850423" category="paragraph">「網路介面回復-vserver _vserver_name_-lIF _LIF_name_」</block>
+  <block id="e413e03d3c6a379c74dbb9834ed46b76" category="paragraph">在下列範例中、網路連接埠「e0a」和「e0b」上的管理和叢集間LIF會重新指派給網路連接埠「e1a」和「e1b」。您的節點可能使用不同的網路連接埠、因為它們會因系統而異。</block>
+  <block id="82d8cfa6b0eabc1385f0c7a740d05580" category="image-alt">將LIF重新指派給替換系統上的網路連接埠</block>
+  <block id="2052b0cdd036221aef35041d554abfe3" category="example-title">展開主控台輸出範例</block>
+  <block id="9bcbfad54c93824c94a6b85331bed53e" category="list-text">從ONTAP 功能更新至功能更新至功能更新至功能更新至功能更新MetroCluster 的版本。由於這個組態站台可位於兩個實體位置、因此必須在每個站台個別執行自動化控制器升級、才能進行HA配對。MetroCluster MetroCluster</block>
+  <block id="17c47d164b7fe13ac454c776902ff45f" category="list-text">[[man_map_2_Step5]"從ONTAP 發行版本號9.8開始、ONTAP 如果在網路連接埠可連線性修復程序期間、連接埠在廣播網域之間移動、則會自動修改lifs的主連接埠。如果LIF的主連接埠已移至其他節點、或未指派、則LIF會顯示為已移除的LIF。還原主連接埠不再存在或重新放置到其他節點的已移轉LIF主連接埠。</block>
+  <block id="b4e995bdd78b40e4a973dab2bcf9ed16" category="list-text">[[man_map_1_step5]]從ONTAP 發行版本號為9.8開始、ONTAP 當連接埠在網路連接埠可連線性修復程序期間於廣播網域之間移動時、會自動修改正式作業階段的主連接埠。如果LIF的主連接埠已移至其他節點、或未指派、則LIF會顯示為已移除的LIF。還原主連接埠不再存在或重新放置到其他節點的已移轉LIF主連接埠。</block>
+  <block id="9fba1587cf9ecb10691d38652754afe6" category="list-text">如果在組態中使用NetApp儲存加密（NSE）、而您使用「kmip.init.maxwait`」變數「Off」（在_Boot node2中、搭配AFF 使用NetApp A900或FAS9500控制器和NVRAM模組）、將「show」bootarg.storageEncryption.supports命令設為「true」、 <block ref="78c38799df1e07e5f585fe434be2c744" category="inline-link-macro-rx"></block>）、您必須重設變數：</block>
+  <block id="e532a21bf2c2e3d3ecd97106f9267054" category="list-text">[[A900_boot_node1]]如果此組態使用NetApp儲存加密（NSE）、則必須將「setenv bootarg.storageEncryption.support'命令設定為「true」、並將「kmip.init.maxwait`變數」設定為「Off」、以避免在節點1組態載入後發生開機迴圈：</block>
+  <block id="b20fa92767a639ebf6c7b69aac21e88f" category="list-text">將節點開機至開機功能表：</block>
+  <block id="50a538d5879b1b2e51ce2921f4a4ee75" category="list-text">輸入「22/7」並在節點停止於開機功能表時選取隱藏的選項「boot_after控制器置換」、即可將AFF 該站台1磁碟重新指派給AFF Efestha900節點1。</block>
+  <block id="c1ff3d9c3e793a92f67d6a17048a954d" category="paragraph">短暫延遲之後、系統會提示您輸入要取代的節點名稱。如果有共享磁碟（也稱為進階磁碟分割（ADP）或分割磁碟）、系統會提示您輸入HA合作夥伴的節點名稱。</block>
+  <block id="01b22e2b8dff1191395f34f0d45cdd7e" category="paragraph">這些提示可能會被隱藏在主控台訊息中。如果您未輸入節點名稱或輸入不正確的名稱、系統會提示您再次輸入名稱。</block>
+  <block id="bca73eff7b855bcc19e7f22f49e2b8a3" category="paragraph">如果「[localhost:disk.encrectNoSupport:alert]：偵測到FIPS認證的加密磁碟機」、或「[localhost:diskown。errordiningio:error]：發生磁碟錯誤時發生錯誤3（磁碟故障）、請執行下列步驟：</block>
+  <block id="36c8627224211217ec34fd42fe9d5435" category="list-text">在載入程式提示下停止節點。</block>
+  <block id="4881f451a26b5944c6775b5342df3dbd" category="list-text">檢查並重設中所述的儲存加密bootargs <block ref="370a03845d272602c838e3924a658003" category="inline-xref-macro-rx"></block>。</block>
+  <block id="6e44d165d43069030cd99e370aeb5107" category="list-text">在載入程式提示下、開機：</block>
+  <block id="5dd3fadb015da65e82238831e11341c9" category="paragraph">您可以使用下列範例做為參考：</block>
+  <block id="45fbb19b9a72a9e5e763d0da5d76ebf4" category="list-text">[[A900_boot_node2].如果此組態使用NetApp儲存加密（NSE）、則必須將「show bootenv bootarg.storageEncryption.support'命令設定為「true」、並將「kmip.init.maxwait` variable」設定為「Off」、以避免在節點2組態載入後發生開機迴圈：</block>
+  <block id="b76a3b855e625194513f3473a25582fd" category="list-text">輸入「22/7」並在節點停止於開機功能表時選取隱藏的選項「boot_after控制器置換」、即可將AFF 該站台2磁碟重新指派給AFF Efestha900節點2。</block>
+  <block id="3dbb60dab5c1891455791640814da2b9" category="list-text">檢查並重設中所述的儲存加密bootargs <block ref="025202ee75dff38076e126e76d5042ed" category="inline-xref-macro-rx"></block>。</block>
 </blocks>

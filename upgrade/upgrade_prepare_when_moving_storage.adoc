@@ -99,6 +99,34 @@ IPSpace資訊
 
 |===
 . 取得升級至之每個新節點的預設叢集連接埠、資料連接埠和節點管理連接埠資訊： https://hwu.netapp.com["NetApp Hardware Universe"^]
+. [[assign_lifs]特定系統AFF 、例如FAS8300、SureA400或FAS8700系統、 使用連接埠「e0a」和「e0b」作為高可用度（HA）互連連接埠。如果您要從FAS8200或AFF E4A300等系統升級至使用連接埠「e0a」和「e0b」做為HA互連連接埠的系統、 您必須將在原始系統上這些連接埠上設定的管理和叢集間LIF重新指派給替換系統上的替代連接埠。
++
+
+WARNING: 當取代系統上的連接埠「e0a」和「e0b」被用作HA互連連接埠時、在這些連接埠上設定的任何管理或叢集間生命體、可能會導致升級失敗、因為HA組態無法使用連接埠「e0a」和「e0b」開機至替換系統。
+
++
+--
+.. 驗證您的替換系統是否使用連接埠「e0a」和「e0b」作為HA連接埠： https://hwu.netapp.com["NetApp Hardware Universe"^]
+.. 如有必要、請識別在原始系統的連接埠「e0a」和「e0b」上設定的管理或叢集間LIF：
++
+「網路介面show -home-port _port_name_」
+
+.. 如有必要、請僅將受影響的管理或叢集間生命體重新指派給未在替換系統上做為HA連接埠的網路連接埠：
++
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-port _new_port_name_」
+
++
+「網路介面回復-vserver _vserver_name_-lIF _LIF_name_」
+
++
+在下列範例中、網路連接埠「e0a」和「e0b」上的管理和叢集間LIF會重新指派給網路連接埠「e1a」和「e1b」。您的節點可能使用不同的網路連接埠、因為它們會因系統而異。
+
++
+image::../upgrade/media/reassign_lifs.PNG[將LIF重新指派給替換系統上的網路連接埠]
+
+
+
+--
 . [[Prepe_move_store_5]]下載並準備用於執行netboot的檔案。
 +
 安裝新節點之後、您可能需要netboot、以確保新節點執行的ONTAP 版本與原始節點相同。「netboot」一詞是指您從ONTAP 儲存在遠端伺服器上的不實映像進行開機。準備網路開機時、您必須將ONTAP 一份《支援》9開機映像複本放到系統可以存取的網路伺服器上。

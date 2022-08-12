@@ -291,6 +291,8 @@ Boot_ONTAP功能表
 
 . [[auto_check_4_step15]在節點4上、移至開機功能表、然後使用22/7選取隱藏選項「boot_after控制器更換」。在提示符下輸入node2將node2的磁碟重新指派給node4、如下例所示。
 +
+.展開主控台輸出範例
+====
 [listing]
 ----
 LOADER-A> boot_ontap menu ...
@@ -366,6 +368,7 @@ WARNING: System ID mismatch. This usually occurs when replacing a boot device or
 Override system ID? {y|n} y
 Login: ...
 ----
+====
 . 如果系統進入重新開機迴圈、並顯示「找不到磁碟」訊息、這是因為系統已將連接埠重設回目標模式、因此無法看到任何磁碟。繼續 <<auto_check_4_step17,步驟17>> 透過 <<auto_check_4_step22,步驟22>> 以解決此問題。
 . [[auto_check_4_step17]在自動開機期間按下「Ctrl-C」、即可在「loader>」提示字元下停止節點。
 . 在載入程式提示下、進入維護模式：

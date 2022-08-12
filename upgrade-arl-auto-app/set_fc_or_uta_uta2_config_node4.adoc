@@ -291,6 +291,8 @@ Boot_ONTAP功能表。
 
 . [[auto_check_4_step15]]在節點4上、前往開機功能表並使用2/7、然後選取隱藏的選項「boot_after控制器更換」。在提示符下輸入node2將node2的磁碟重新指派給node4、如下例所示。
 +
+.展開主控台輸出範例
+====
 [listing]
 ----
 LOADER-A> boot_ontap menu
@@ -408,6 +410,7 @@ Override system ID? {y|n} y
 .
 Login:
 ----
+====
 +
 
 NOTE: 在上述主控台輸出範例中、ONTAP 如果系統使用進階磁碟分割（ADP）磁碟、則會提示您輸入合作夥伴節點名稱。

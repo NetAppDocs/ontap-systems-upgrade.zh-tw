@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: enable, node3, node4, node, communicate, cluster, network, upgrade, physical, port, correct, configure, setting, data, map network ports using ontap 9.8 
 summary: 若要讓節點3和節點4在升級後與叢集中的其他節點和網路進行通訊、您必須確保實體連接埠已正確設定為適合特定用途的設定、例如叢集、資料等。 
 ---
-= 使用ONTAP NET9.8對應網路連接埠
+= 使用ONTAP 更新版本的版本資訊來對應網路連接埠
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: 若要讓節點3和節點4在升級後與叢集中的其他節點和網
 [role="lead"]
 若要讓節點3和節點4在升級後與叢集中的其他端口和網路進行通訊、您必須確認實體連接埠已正確設定為適合特定用途的設定、例如叢集、資料等。
 
-這些步驟適用於執行ONTAP 效能不正常的系統。如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 xref:upgrade-map-network-ports-ontap-9-7-or-earlier.adoc[使用ONTAP 更新版本的更新版本來對應網路連接埠]。
+這些步驟適用於執行ONTAP 不含更新版本的系統。如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 xref:upgrade-map-network-ports-ontap-9-7-or-earlier.adoc[使用ONTAP 更新版本的更新版本來對應網路連接埠]。
 
 您必須在節點3和節點4上執行這些步驟。
 
@@ -206,4 +206,4 @@ NOTE: 對於iSCSI LIF、若要修改主連接埠、則需要以管理方式關�
 
 
 
-您已完成實體連接埠的對應。若要完成升級、請前往 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[執行ONTAP 更新步驟、請參考以更新]。
+您已完成實體連接埠的對應。若要完成升級、請前往 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[請執行ONTAP 更新版本的最終升級步驟]。

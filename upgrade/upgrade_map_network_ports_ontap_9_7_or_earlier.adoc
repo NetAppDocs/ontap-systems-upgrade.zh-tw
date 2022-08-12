@@ -13,7 +13,7 @@ summary: 若要讓節點3和節點4在升級後與叢集中的其他節點和網
 [role="lead"]
 若要讓節點3和節點4在升級後與叢集中的其他端口和網路進行通訊、您必須確認實體連接埠已正確設定為適合特定用途的設定、例如叢集、資料等。
 
-這些步驟適用於執行ONTAP 下列版本的系統：如果您執行ONTAP 的是效能不正常的9.8、則必須使用中的程序 xref:upgrade-map-network-ports-ontap-9-8.adoc[使用ONTAP NET9.8對應網路連接埠]。
+這些步驟適用於執行ONTAP 下列版本的系統：如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 xref:upgrade-map-network-ports-ontap-9-8.adoc[使用ONTAP 更新版本的版本資訊來對應網路連接埠]。
 
 您必須在節點3和節點4上執行這些步驟。
 
@@ -21,7 +21,7 @@ summary: 若要讓節點3和節點4在升級後與叢集中的其他節點和網
 NOTE: 下列命令範例是指「node1」、因為在程序的這個階段、替換節點「node3」和「node4」實際上是命名為「node1」和「node2」。
 
 .步驟
-. 如果您的系統執行ONTAP 的是*停止* S498。您必須使用中的程序 xref:upgrade-map-network-ports-ontap-9-8.adoc[使用ONTAP NET9.8對應網路連接埠]。
+. 如果您的系統執行ONTAP 的是*停止*版本9.8或更新版本。您必須使用中的程序 xref:upgrade-map-network-ports-ontap-9-8.adoc[使用ONTAP 更新版本的版本資訊來對應網路連接埠]。
 . 找到節點1和節點2的連接埠和LIF組態資訊、這些資訊記錄在_移動儲存設備時準備升級_、 link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3["步驟3."]。
 . 找到您在_準備在移動儲存設備時升級_中記錄的連接埠、廣播網域和IPspaces資訊、 link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3["步驟3."]。
 +

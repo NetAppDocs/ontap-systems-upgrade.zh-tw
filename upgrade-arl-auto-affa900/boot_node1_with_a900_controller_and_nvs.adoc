@@ -17,19 +17,44 @@ summary: 使用AFF EsceeA900控制器模組和NVRAM模組來開機節點1。
 節點1搭配AFF EscoreA900或FAS9500控制器和NVRAM模組、現在可以開機了。透過交換控制器和NVRAM模組、將某個從處理器升級到FASA700至FASA900或FAS9000至FAS9500、只需移動主控台和管理連線即可。AFF AFF本節提供使用AFF E4A900或FAS9500控制器和NVRAM模組來開機節點1所需的步驟。
 
 .步驟
-. 如果在此組態中使用NetApp儲存加密（NSE）、則必須將「setenv bootarg.storageEncryption.supports」命令設定為「true」、並將「kmip.init.maxwait`變數」設定為「Off」、以避免在載入node1組態後發生開機迴圈：
+. [[A900_boot_node1]]如果此組態使用NetApp儲存加密（NSE）、則必須將「setenv bootarg.storageEncryption.support'命令設定為「true」、並將「kmip.init.maxwait`變數」設定為「Off」、以避免在節點1組態載入後發生開機迴圈：
 +
 「etenv bootarg.storageencryption。支援true」
 
 +
 「kmip.init.maxwait關」
 
-. 將節點開機至「boot_menu」：
+. 將節點開機至開機功能表：
 +
 Boot_ONTAP功能表
 
-. 節點會在開機功能表停止。輸入「22/7」、然後選取隱藏選項「boot_after控制器置換」。若要重新指派節點1磁碟、請AFF 在提示字元下、輸入節點1的實際節點名稱、將節點1磁碟從支援功能的EsceA700重新指派至AFF EsceA900或從FAS9000重新指派至FAS9500。請參考下列範例：
+. 輸入「22/7」並在節點停止於開機功能表時選取隱藏的選項「boot_after控制器置換」、即可將AFF 該站台1磁碟重新指派給AFF Efestha900節點1。
 +
+短暫延遲之後、系統會提示您輸入要取代的節點名稱。如果有共享磁碟（也稱為進階磁碟分割（ADP）或分割磁碟）、系統會提示您輸入HA合作夥伴的節點名稱。
+
++
+這些提示可能會被隱藏在主控台訊息中。如果您未輸入節點名稱或輸入不正確的名稱、系統會提示您再次輸入名稱。
+
++
+[NOTE]
+====
+如果「[localhost:disk.encrectNoSupport:alert]：偵測到FIPS認證的加密磁碟機」、或「[localhost:diskown。errordiningio:error]：發生磁碟錯誤時發生錯誤3（磁碟故障）、請執行下列步驟：
+
+.. 在載入程式提示下停止節點。
+.. 檢查並重設中所述的儲存加密bootargs <<A900_boot_node1,步驟1.>>。
+.. 在載入程式提示下、開機：
++
+Boot_ONTAP
+
+
+
+====
++
+您可以使用下列範例做為參考：
+
++
+.展開主控台輸出範例
+====
 [listing]
 ----
 LOADER-A> boot_ontap menu
@@ -153,11 +178,10 @@ Override system ID? {y|n} y
 .
 Login:
 ----
+====
 +
 [NOTE]
 ====
-在前述主控台輸出範例中、ONTAP 如果系統使用進階磁碟分割（ADP）磁碟、則會提示您輸入合作夥伴節點名稱。
-
 上例所示的系統ID為範例ID。您要升級之節點的實際系統ID會有所不同。
 
 在提示輸入節點名稱與登入提示之間、節點會重新開機數次、以還原環境變數、更新系統卡上的韌體、以及進行其他ONTAP 的更新。

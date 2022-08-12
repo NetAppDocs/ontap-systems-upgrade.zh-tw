@@ -13,10 +13,10 @@ summary: 若要透過移動儲存設備來完成升級程序、您必須從新�
 [role="lead"]
 若要透過移動儲存設備來完成升級程序、您必須從新節點刪除任何未使用的連接埠和LIF、重新啟用儲存容錯移轉或高可用度、設定服務處理器（SP）、安裝新的授權、以及設定AutoSupport Re。您可能還需要設定儲存設備或Volume Encryption、並設定FC或CNA連接埠。
 
-這些步驟適用於執行ONTAP 下列版本的系統：如果您執行ONTAP 的是效能不正常的9.8、則必須使用中的程序 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[執行ONTAP 《更新步驟（更新步驟）]。
+這些步驟適用於執行ONTAP 下列版本的系統：如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[執行ONTAP 更新版本的最終升級步驟]。
 
 .步驟
-. 如果您的系統執行ONTAP 的是*停止* S498。您必須使用中的程序 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[執行ONTAP 更新步驟、請參考以更新]。
+. 如果您的系統執行ONTAP 的是*停止*版本9.8或更新版本。您必須使用中的程序 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[請執行ONTAP 更新版本的最終升級步驟]。
 . 在儲存系統提示字元中、顯示關於LIF的資訊：
 +
 「網路介面展示」

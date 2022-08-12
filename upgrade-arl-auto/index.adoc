@@ -36,6 +36,6 @@ summary: 您可以ONTAP 使用「系統控制器更換」命令、重新定位�
 * 此程序假設更換的控制器硬體是新的、而且尚未使用。此程序不包含使用wpeconfig命令準備已用控制器所需的步驟。如果先前使用替換控制器硬體、尤其是控制器以Data ONTAP 7-Mode執行時、您必須聯絡技術支援部門。
 * 您可以使用此程序來升級具有兩個以上節點之叢集中的控制器硬體、但是您需要針對叢集中的每個HA配對分別執行程序。
 * 本程序適用於FAS 包含AFF 「支援整合式虛擬化軟體」的各種系統、V系列系統、支援各種系統。FlexArray如果安裝所需的授權、則在發行完Solide9.5之後發行的系統可附加至儲存陣列。FAS ONTAP現有的V系列系統在ONTAP 支援方面、請參考《S25：如需儲存陣列和V系列機型的詳細資訊、請參閱 link:other_references.html["參考資料"] 若要連結至_SUR__ Hardware Universe 、請前往V系列支援對照表。
-* 從版本號為9.6開始ONTAP 、此程序適用於執行4節點MetroCluster 版本的版本。由於這個組態站台可位於兩個實體位置、因此必須在每個站台個別執行自動化控制器升級、才能進行HA配對。MetroCluster MetroCluster
+* 從ONTAP 功能更新至功能更新至功能更新至功能更新至功能更新MetroCluster 的版本。由於這個組態站台可位於兩個實體位置、因此必須在每個站台個別執行自動化控制器升級、才能進行HA配對。MetroCluster MetroCluster
 * 如果您要從AFF 某個不支援的A320系統進行升級、您可以使用Volume Moves來升級控制器硬體、或聯絡技術支援部門。如果您願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
 

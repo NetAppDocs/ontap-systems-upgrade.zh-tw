@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: complete, procedure, upgrading, upgrade, moving, move, storage, delete, unused, port, lif, re-enable, failover, availability, service, processor, sp, autosupport, volume, encryption, fc, cna, perform final upgrade steps in ontap 9.8 
 summary: 若要透過移動儲存設備來完成升級程序、您必須從新節點刪除任何未使用的連接埠和LIF、重新啟用儲存容錯移轉或高可用度、設定服務處理器（SP\）、安裝新授權、以及設定AutoSupport Re。您可能還需要設定儲存設備或Volume Encryption、並設定FC或CNA連接埠。 
 ---
-= 執行ONTAP 更新步驟、請參考以更新
+= 請執行ONTAP 更新版本的最終升級步驟
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -13,7 +13,7 @@ summary: 若要透過移動儲存設備來完成升級程序、您必須從新�
 [role="lead"]
 若要透過移動儲存設備來完成升級程序、您必須從新節點刪除任何未使用的連接埠和LIF、重新啟用儲存容錯移轉或高可用度、設定服務處理器（SP）、安裝新的授權、以及設定AutoSupport Re。您可能還需要設定儲存設備或Volume Encryption、並設定FC或CNA連接埠。
 
-這些步驟適用於執行ONTAP 效能不正常的系統。如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[在更新版本的更新版本中執行ONTAP 最終升級步驟]。
+這些步驟適用於執行ONTAP 不含更新版本的系統。如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[在更新版本的更新版本中執行ONTAP 最終升級步驟]。
 
 .步驟
 . 如果您的系統執行ONTAP 的是效能不高的版本、*停止*。您必須使用中的程序 xref:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.adoc[在更新版本的更新版本中執行ONTAP 最終升級步驟]。
