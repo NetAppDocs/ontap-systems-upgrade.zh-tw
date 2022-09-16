@@ -206,8 +206,8 @@ network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cl
 
 
 
-. [[man_map_1_step6]]調整叢集間的廣播網域、並視需要使用中所示的相同命令來移轉叢集間的LIF <<man_map_1_step5,步驟5.>>。
-. [[step7]]必要時、請使用中所示的相同命令、調整任何其他廣播網域並移轉資料生命週年 <<man_map_1_step5,步驟5.>>。
+. [[man_map_1_step6]]調整叢集間的廣播網域、並視需要使用中所示的相同命令來移轉叢集間的LIF ,步驟5.。
+. [[step7]]必要時、請使用中所示的相同命令、調整任何其他廣播網域並移轉資料生命週年 ,步驟5.。
 . [[step8]如果節點1上有任何連接埠不再存在於節點3上、請依照下列步驟加以刪除：
 +
 .. 存取任一節點上的進階權限層級：

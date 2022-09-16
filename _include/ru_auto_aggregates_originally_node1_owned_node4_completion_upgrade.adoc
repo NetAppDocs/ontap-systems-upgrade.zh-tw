@@ -40,6 +40,6 @@ Check Alignment of PHs>將Agrage Aggregate重新定位從節點節點節點_node
 「_aggr1、aggr2、aggr3..._」是集合體清單、其中節點1是原始擁有者。
 
 +
-沒有node3做為主擁有者的Aggregate可以使用中相同的重新配置命令、將其重新定位至node3 <<auto_aggr_relocate_fail_Step3,步驟3.>>。
+沒有node3做為主擁有者的Aggregate可以使用中相同的重新配置命令、將其重新定位至node3 ,步驟3.。
 
 

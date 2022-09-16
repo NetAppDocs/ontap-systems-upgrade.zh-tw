@@ -10,7 +10,7 @@
 
 您必須擁有儲存在區段中節點1的FC連接埠設定值 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]。
 
-如果您的系統沒有FC組態、您可以跳過本節。如果您的系統內建UTA/UTA2連接埠或UTA/UTA2卡、請在中設定 <<Check and configure UTA/UTA2 ports on node3>>。
+如果您的系統沒有FC組態、您可以跳過本節。如果您的系統內建UTA/UTA2連接埠或UTA/UTA2卡、請在中設定  and configure UTA/UTA2 ports on node3。
 
 *重要*：如果您的系統有儲存磁碟、請在叢集提示字元下輸入本節中的命令。如果您有「V系列系統」或有FlexArray 「支援虛擬化軟體」、並且已連線至儲存陣列、請在「維護」模式中輸入本節中的命令。
 

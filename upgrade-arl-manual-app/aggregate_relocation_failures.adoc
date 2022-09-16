@@ -64,7 +64,7 @@ summary: 疑難排解執行ONTAP VMware 9.8或更新版本的控制器手動升�
 +
 若要識別未正確重新放置的集合體、請參閱您在一節中取得的節點1主擁有者之集合體清單 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] 並將其與上述命令的輸出進行比較。
 
-. [[step2]]比較的輸出 <<man_aggr_fail_step1,步驟1.>> 您在一節中為節點1擷取的輸出 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] 並記下任何未正確重新定位的集合體。
+. [[step2]]比較的輸出 ,步驟1. 您在一節中為節點1擷取的輸出 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] 並記下任何未正確重新定位的集合體。
 . [[man_aggr_fe_Step3]]重新定位節點4上留下的集合體：
 +
 Check Alignment of PHs>將Agrage Aggregate重新定位從節點節點節點_node4_-aggr _node_1_-destate _node3_
@@ -80,6 +80,6 @@ Check Alignment of PHs>將Agrage Aggregate重新定位從節點節點節點_node
 「_aggr1、aggr2、aggr3..._」是集合體清單、其中節點1是原始擁有者。
 
 +
-沒有node3做為主擁有者的Aggregate可以使用中相同的重新配置命令、將其重新定位至node3 <<man_aggr_fail_Step3,步驟3.>>。
+沒有node3做為主擁有者的Aggregate可以使用中相同的重新配置命令、將其重新定位至node3 ,步驟3.。
 
 

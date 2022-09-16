@@ -3410,11 +3410,8 @@
   <block id="301e2a674920a7bb1b220a6ccd88ce36" category="inline-link">選擇升級或重新整理方法</block>
   <block id="58e1fb49e8eda8dc590e37ebdffc8e85" category="list-text">如果您要升級雙節點MetroCluster 的效能提升組態、請參閱：<block ref="a3f8fb08d450ed0f7b5dc460c9a9149e" category="inline-link-rx"></block></block>
   <block id="f2c81e3dbd5898a4f589948eb2c23e36" category="paragraph">具有內部儲存設備的系統</block>
-  <block id="da7e3567682b36e70ff65421081173d5" category="admonition">下列系統具有內部儲存設備：FAS2220、FAS2240-2、FAS2240-4、FAS2520、FAS2552、 FAS2554、FAS2620、FAS2650、FAS2720、FAS2750、 S20A200、S202220、S20A700s、S20A800、S20A250。AFF AFF AFF AFF AFF</block>
   <block id="32f214bce43cce7090d2126fda118b4f" category="list-text">如果您的系統未列於上方、請參閱<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> 檢查是否有內部磁碟機。</block>
   <block id="2c422b7143016a62faa144bc1c6e89e1" category="list-text">如果您的系統具有內部儲存設備、建議您使用移動磁碟區來升級。</block>
-  <block id="7ed352a3d30fd06459f6bd682d94f397" category="list-text">如果您的系統具有內部儲存設備、您可以將系統轉換成磁碟機櫃、並將其連接至同一叢集中的新節點。FAS2220和FAS2520控制器無法轉換成磁碟機櫃。</block>
-  <block id="f4f3c3690b3eac7a8c0dd6678b738164" category="paragraph">將FAS2240或FAS255x系統轉換成磁碟機櫃、是工作流程中透過移動儲存設備進行升級的一項選擇性工作。</block>
   <block id="b96d37f28c3d7d06841f391d5e809dbd" category="list-text">如果您的系統具有內部儲存設備、或是內部SATA磁碟機或SSD上有磁碟區或集合體的系統、您可以將內部儲存設備移轉至連接至同一叢集中新節點的磁碟機櫃來進行升級。</block>
   <block id="3c62ff9b7896a5eed67cfbeb8bc9bfdf" category="paragraph">傳輸內部儲存設備是工作流程中的一項選用工作、可用來透過移動儲存設備進行升級。</block>
   <block id="ae966ba3c2ce03e0c6c49d4dfc8f5702" category="paragraph">可能需要採取其他步驟的情況</block>
@@ -3493,7 +3490,6 @@
   <block id="9ec9f63f098d105f79f28fc374c9efa9" category="list-text">如果您要升級硬體、則不需要移除磁碟的擁有權、只要在內部磁碟平台上交換舊控制器與新控制器、同時保留舊控制器的機箱和磁碟即可。</block>
   <block id="eece111dbeb75d75a9174395ce77bfe2" category="paragraph">例如、如果您只要將舊的A200控制器模組與新的A220控制器模組交換、同時將舊A200的機箱和磁碟保留在原位、就能將系統從A200升級至A220、 您不會移除新A220控制器模組磁碟的擁有權、如本節_移除附加至新節點的磁碟擁有權_所述。</block>
   <block id="70cb24dc68388db99857a34f097c9997" category="paragraph">如果您對在控制器升級期間移除磁碟擁有權有任何疑問、請聯絡NetApp技術支援。</block>
-  <block id="2b9741a797759c9ecbbb675ca7437fbd" category="paragraph">以下是具有內部儲存設備的系統清單：FAS2220、FAS2240-2、FAS2240-4、FAS2520、FAS2552、 FAS2554、FAS2620、FAS2650、FAS2720、FAS2750、 S20A200、S202220、S20A700s、S20A800、S20A250。AFF AFF AFF AFF AFF</block>
   <block id="bd6c6f37524ad70ce38bbd0fcea22fe4" category="list-text">在節點的載入器提示字元下、輸入命令：</block>
   <block id="1d16d3ddc3b796c6db7da6cbb645757e" category="list-text">在開機功能表提示字元中、輸入「9a」、然後按Enter。</block>
   <block id="8b33e54d0bef1c80ef3462386d101928" category="paragraph">下列畫面顯示開機功能表提示。</block>
@@ -3743,7 +3739,6 @@
   <block id="589fe3c8d827ae39970fa59898cfc3ee" category="summary">一般而言、控制器硬體的升級方式取決於原始節點的平台機型。您可以移動儲存設備（中斷程序）或移動磁碟區（不中斷營運程序）來升級。</block>
   <block id="39b87627b0135db0ab3ea0a8e2f859bd" category="paragraph">一般而言、控制器硬體的升級方式取決於原始節點的平台機型。您可以透過移動儲存設備（中斷程序）或移動磁碟區（不中斷營運程序）來升級。</block>
   <block id="e8617aabffae0af74d02587319a2e105" category="image-alt">升級控制器硬體的方法</block>
-  <block id="dc49ed6b9d1ec56bf48eacc8c90c1a11" category="admonition">採用內部磁碟機的機型包括：FAS2220、FAS2240-2、FAS2240-4、FAS2520、FAS2552、 FAS2554、FAS2620、FAS2650、FAS2720、FAS2750、 S20A200、S202220、S20A700s、S20A800、S20A250。AFF AFF AFF AFF AFF</block>
   <block id="dafbb22fd53a8bbbcd7e0e587f256606" category="inline-link-macro">移動儲存設備進行升級的工作流程</block>
   <block id="268c885d4c1c9189f00bfa017a5b9d17" category="paragraph"><block ref="268c885d4c1c9189f00bfa017a5b9d17" category="inline-link-macro-rx"></block></block>
   <block id="7d466f4faaea4136b0f35ee3a444b2ee" category="inline-link-macro">透過移動磁碟區進行升級的工作流程</block>
@@ -4468,4 +4463,9 @@
   <block id="45fbb19b9a72a9e5e763d0da5d76ebf4" category="list-text">[[A900_boot_node2].如果此組態使用NetApp儲存加密（NSE）、則必須將「show bootenv bootarg.storageEncryption.support'命令設定為「true」、並將「kmip.init.maxwait` variable」設定為「Off」、以避免在節點2組態載入後發生開機迴圈：</block>
   <block id="b76a3b855e625194513f3473a25582fd" category="list-text">輸入「22/7」並在節點停止於開機功能表時選取隱藏的選項「boot_after控制器置換」、即可將AFF 該站台2磁碟重新指派給AFF Efestha900節點2。</block>
   <block id="3dbb60dab5c1891455791640814da2b9" category="list-text">檢查並重設中所述的儲存加密bootargs <block ref="025202ee75dff38076e126e76d5042ed" category="inline-xref-macro-rx"></block>。</block>
+  <block id="e427f9006ac0f6079ad11054809d205e" category="admonition">採用內部磁碟機的機型包括：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 部分A800、部分A250。AFF AFF</block>
+  <block id="db80f5bf265434b9ca90bc5f0cac1f17" category="admonition">下列系統具有內部儲存設備：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 包含A800、VA250和C190。AFF AFF AFF</block>
+  <block id="e908e6e2b5df3efafd19fa616b538a72" category="list-text">如果您的系統具有內部儲存設備、您可以將系統轉換成磁碟機櫃、並將其連接至同一叢集中的新節點。FAS2520控制器無法轉換成磁碟機櫃。</block>
+  <block id="e9ddbc0542fbe11aae2eccf01c4e4a89" category="paragraph">將FAS255x系統轉換成磁碟機櫃是工作流程中的一項選用工作、可用來透過移動儲存設備進行升級。</block>
+  <block id="aa5eafaf3f0b641d5e680da72815213b" category="paragraph">以下是具有內部儲存設備的系統清單：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 部分A800、部分A250。AFF AFF</block>
 </blocks>

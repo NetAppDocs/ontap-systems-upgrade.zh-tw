@@ -102,10 +102,10 @@ node1   e1b-70    e1b     70      00:15:17:76:7b:69
 | 如果介面群組或VLAN ... | 然後... 
 
 
-| 在節點1或節點2上 | 完成 <<man_prepare_nodes_step23,步驟23>> 和 <<man_prepare_nodes_step24,步驟24>>。 
+| 在節點1或節點2上 | 完成 ,步驟23 和 ,步驟24。 
 
 
-| 不在節點1或節點2上 | 前往 <<man_prepare_nodes_step24,步驟24>>。 
+| 不在節點1或節點2上 | 前往 ,步驟24。 
 |===
 .. [man準備節點_step23]如果您不知道節點1和節點2是否位於SAN或非SAN環境中、請輸入下列命令並檢查其輸出：
 +
@@ -184,10 +184,10 @@ node1         node1         in-quorum     true          operational
 | 如果叢集... | 然後... 
 
 
-| 已設定SAN | 前往 <<man_prepare_nodes_step26,步驟26>>。 
+| 已設定SAN | 前往 ,步驟26。 
 
 
-| 未設定SAN | 前往 <<man_prepare_nodes_step29,步驟29>>。 
+| 未設定SAN | 前往 ,步驟29。 
 |===
 .. [[man_prepe_node_step26]]輸入下列命令並檢查其輸出、驗證節點1和節點2上是否有已啟用SAN iSCSI或FC服務的每個SVM的SAN LIF：
 +
@@ -341,7 +341,7 @@ node2            enable    Postmaster    -                 mailhost
 
 
 | 已啟用此功能... AutoSupport  a| 
-... 前往 <<man_prepare_nodes_step34,步驟34>>。
+... 前往 ,步驟34。
 ... 移至區段 link:get_address_key_management_server_encryption.html["取得外部金鑰管理伺服器的IP位址以進行儲存加密"]。
 
 

@@ -22,7 +22,7 @@ summary: 在ONTAP 執行ONTAP 更新版本的控制器上、手動進行ARL升�
 
 *重要資訊：*
 
-* 如果您要升級的是連接FlexArray 至儲存陣列的V系列系統或使用「支援虛擬化軟體」的系統、則必須完成 <<man_install4_Step1,步驟1.>> 透過 <<man_install4_Step7,步驟7.>>請將本節保留在 <<man_install4_Step8,步驟8.>> 並遵循中的指示 link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"] 視需要在維護模式中輸入命令。接著您需要返回本節、並繼續執行中的程序 <<man_install4_Step9,步驟9.>>。
+* 如果您要升級的是連接FlexArray 至儲存陣列的V系列系統或使用「支援虛擬化軟體」的系統、則必須完成 ,步驟1. 透過 ,步驟7.請將本節保留在 ,步驟8. 並遵循中的指示 link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"] 視需要在維護模式中輸入命令。接著您需要返回本節、並繼續執行中的程序 ,步驟9.。
 * 不過、如果您要升級具有儲存磁碟的系統、則必須完成本節的完整內容、然後繼續執行本節 link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"]，在叢集提示字元中輸入命令。
 
 
@@ -34,10 +34,10 @@ summary: 在ONTAP 執行ONTAP 更新版本的控制器上、手動進行ARL升�
 | 如果node4將位於... | 然後... 
 
 
-| 與節點3分開的機箱 | 前往 <<man_install4_Step2,步驟2>>。 
+| 與節點3分開的機箱 | 前往 ,步驟2。 
 
 
-| 同一個機箱與節點3 | 跳過步驟2和3、前往 <<man_install4_Step4,步驟4.>>。 
+| 同一個機箱與節點3 | 跳過步驟2和3、前往 ,步驟4.。 
 |===
 . [[man_install4_Step2]]請確定節點4有足夠的機架空間。
 +
@@ -74,10 +74,10 @@ NOTE: 您不需要將互連卡/FC_VI卡或互連/FC_VI纜線連線從節點2移�
 | 如果節點4位於... | 然後... 
 
 
-| 與節點3相同的機箱 | 前往 <<man_install4_Step8,步驟8.>>。 
+| 與節點3相同的機箱 | 前往 ,步驟8.。 
 
 
-| 與節點3分開的機箱 | 前往 <<man_install4_Step6,步驟6.>>。 
+| 與節點3分開的機箱 | 前往 ,步驟6.。 
 |===
 . [[man_install4_Step6]]開啟節點4的電源、然後按「Ctrl-C」來存取開機環境提示字元、以中斷開機。
 +
@@ -112,12 +112,12 @@ WARNING: *警告：請勿覆寫延遲。若不讓電池充電、可能會導致�
 | 如果您的系統... | 然後... 
 
 
-| 具有磁碟、無後端儲存設備 | 跳過步驟9至步驟14、前往 <<man_install4_Step15,步驟15>>。 
+| 具有磁碟、無後端儲存設備 | 跳過步驟9至步驟14、前往 ,步驟15。 
 
 
 | 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
 .. 移至節點4_上的_設定FC或UTA/UTA2組態區段、然後完成區段 link:set_fc_uta_uta2_config_node4.html#configure-fc-ports-on-node4["在節點4上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node4.html#check-and-configure-utauta2-ports-on-node4["檢查並設定節點4上的UTA/UTA2連接埠"]（視系統而定）。
-.. 返回本節、並完成其餘步驟、從開始 <<man_install4_Step9,步驟9.>>。
+.. 返回本節、並完成其餘步驟、從開始 ,步驟9.。
 
 
 *重要*：您必須重新設定FC內建連接埠、UTA/UTA2內建連接埠和UTA/UTA2卡、才能在Data ONTAP V系列系統上啟動。
@@ -173,10 +173,10 @@ Boot_ONTAP功能表
 | 如果您要升級的系統... | 然後... 
 
 
-| 節點4上沒有正確或最新ONTAP 的版本 | 前往 <<man_install4_Step20,步驟20>>。 
+| 節點4上沒有正確或最新ONTAP 的版本 | 前往 ,步驟20。 
 
 
-| 節點4上有正確或最新版本ONTAP 的資訊 | 前往 <<man_install4_Step25,步驟25>>。 
+| 節點4上有正確或最新版本ONTAP 的資訊 | 前往 ,步驟25。 
 |===
 . [[man_install4_Step20]]選擇下列其中一項動作來設定netboot連線。
 +
@@ -285,7 +285,7 @@ DISK         OWNER                       POOL   SERIAL NUMBER   HOME
 | 無共享 | "Disings disk reassign-s（磁碟重新指派- s）"_node2_sysid_-d _node4_sysid_" 
 |===
 +
-如需「node2_sysid」值、請使用中擷取的資訊 link:record_node2_information.html#man_node2_info_step10["步驟10"] 的「_Record node2 information_」區段。若為「節點4_sysid_」、請使用中擷取的資訊 <<man_install4_step23,步驟23>>。
+如需「node2_sysid」值、請使用中擷取的資訊 link:record_node2_information.html#man_node2_info_step10["步驟10"] 的「_Record node2 information_」區段。若為「節點4_sysid_」、請使用中擷取的資訊 ,步驟23。
 
 +
 
@@ -428,7 +428,7 @@ WARNING: *警告：您必須依照所示的確切順序執行下列子步驟；�
 +
 "et time _hh：mm:ss_"
 
-. 請確認合作夥伴系統ID的設定是否正確、如所述 <<man_install4_Step26,步驟26>> 選項下。
+. 請確認合作夥伴系統ID的設定是否正確、如所述 ,步驟26 選項下。
 +
 《prontenv合作夥伴sysid》
 

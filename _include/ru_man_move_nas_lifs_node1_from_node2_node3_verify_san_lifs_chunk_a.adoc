@@ -82,10 +82,10 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 | 如果節點1... | 然後... 
 
 
-| 已設定介面群組或VLAN | 前往 <<man_lif_verify_3_step3,步驟4.>>。 
+| 已設定介面群組或VLAN | 前往 ,步驟4.。 
 
 
-| 未設定介面群組或VLAN | 跳過步驟4、前往 <<man_lif_verify_3_step4,步驟5.>>。 
+| 未設定介面群組或VLAN | 跳過步驟4、前往 ,步驟5.。 
 |===
 . [[man_lif_VERIF_3_step3]]執行下列子步驟、將原本位於節點1上的介面群組和VLAN上裝載的任何NAS資料LIF、從節點2移轉至節點3：
 +
@@ -93,7 +93,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 「網路介面移轉-vserver _vserver_name_-lIF _LIF_name_-dest-node-node3_–dest-port _netport|ifgrp_」
 
-.. 在中修改LIF的主連接埠和主節點 <<man_lif_verify_3_substepa,子步驟A>> 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
+.. 在中修改LIF的主連接埠和主節點 ,子步驟A 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
 +
 「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node3_-home-port _netport|ifgrp_」
 
@@ -101,7 +101,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 「網路介面移轉-vserver _vserver_name_-lIF _LIF_name_-dest-node-node3_–dest-port _netport|ifgrp_」
 
-.. 修改中的lifs主連接埠和主節點 <<man_lif_verify_3_substepc,子步驟c>> 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
+.. 修改中的lifs主連接埠和主節點 ,子步驟c 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
 +
 「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node3_-home-port _netport|ifgrp_」
 
@@ -114,7 +114,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 | 如果叢集設定為... | 然後... 
 
 
-| NAS | 完成 <<man_lif_verify_3_step5,步驟6.>> 和 <<man_lif_verify_3_step6,步驟7.>>、跳過步驟8、然後完成 <<man_lif_verify_3_step8,步驟9.>> 透過 <<man_lif_verify_3_step11,步驟12.>>。 
+| NAS | 完成 ,步驟6. 和 ,步驟7.、跳過步驟8、然後完成 ,步驟9. 透過 ,步驟12.。 
 
 
 | SAN | 停用節點上的所有SAN LIF、以便進行升級：「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node-node_to _upgrade _-home-port _netport|ifgrp_-stuse-admin drod' 

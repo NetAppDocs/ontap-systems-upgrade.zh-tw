@@ -76,7 +76,7 @@
 
 NOTE: 您的系統可能沒有叢集間的LIF。
 
-. 在中擷取命令輸出中的資訊 <<man_record_node1_step3,步驟3.>> 以供本節使用 link:map_ports_node1_node3.html["將連接埠從節點1對應至節點3"]。
+. 在中擷取命令輸出中的資訊 ,步驟3. 以供本節使用 link:map_ports_node1_node3.html["將連接埠從節點1對應至節點3"]。
 +
 需要輸出資訊、才能將新的控制器連接埠對應至舊的控制器連接埠。
 
@@ -161,7 +161,7 @@ NOTE: 您的系統可能沒有叢集間的LIF。
 | 已在一節中記錄NVRAM系統ID編號 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]。 | 請繼續下一節： link:retire_node1.html["淘汰節點1"]。 
 
 
-| 未在一節中記錄NVRAM系統ID編號 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] | 完成 <<man_record_node1_step11,步驟11.>> 和 <<man_record_node1_step12,步驟12.>> 然後繼續 link:retire_node1.html["淘汰節點1"]。 
+| 未在一節中記錄NVRAM系統ID編號 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] | 完成 ,步驟11. 和 ,步驟12. 然後繼續 link:retire_node1.html["淘汰節點1"]。 
 |===
 . [[man_recipal_node1_step11]]在任一控制器上輸入下列命令：
 +

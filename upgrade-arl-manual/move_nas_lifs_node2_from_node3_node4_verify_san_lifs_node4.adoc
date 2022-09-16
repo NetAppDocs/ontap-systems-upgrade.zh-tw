@@ -96,10 +96,10 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 | 如果node2... | 說明 
 
 
-| 已設定介面群組或VLAN | 前往 <<man_lif_verify_4_Step3,步驟4.>>。 
+| 已設定介面群組或VLAN | 前往 ,步驟4.。 
 
 
-| 未設定介面群組或VLAN | 跳過步驟4、前往 <<man_lif_verify_4_Step4,步驟5.>>。 
+| 未設定介面群組或VLAN | 跳過步驟4、前往 ,步驟5.。 
 |===
 . [[man_lif_VERIF_4_Step3]]請採取下列步驟、將原本位於節點2上的介面群組和VLAN上裝載的任何NAS資料LIF、從節點3移轉至節點4。
 +
@@ -107,7 +107,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 「網路介面移轉-vserver _vserver_name_-lif_lif_name_-dest-node4–dest-port _netport|ifgrp_」
 
-.. 修改中的lifs主連接埠和主節點 <<man_lif_verify_4_substepa,子步驟A>> 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
+.. 修改中的lifs主連接埠和主節點 ,子步驟A 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
 +
 「網路介面修改-vserver _vserver_name_-lif_datalif_name_-home-Node node4 home-port _netport|ifgrp_」
 
@@ -115,7 +115,7 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 +
 「網路介面移轉-vserver _vserver_name_-lif_datalif_name_-dest-Node node4–dest-port _netport|ifgrp_」
 
-.. 修改中的lifs主連接埠和主節點 <<man_lif_verify_4_substepc,子步驟c>> 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
+.. 修改中的lifs主連接埠和主節點 ,子步驟c 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
 +
 「網路介面修改-vserver _vserver_name_-lif_datalif_name_-home-node-node4_ home-port _netport|ifgrp_」
 
@@ -128,13 +128,13 @@ cluster1-02  1b       50:0a:09:82:9c:6c:36:07  ACME Switch:7
 | 如果叢集設定為... | 然後... 
 
 
-| NAS | 完成 <<man_lif_verify_4_Step5,步驟6.>> 透過 <<man_lif_verify_4_Step8,步驟9.>>、跳過步驟10、然後完成 <<man_lif_verify_4_Step10,步驟11.>> 透過 <<man_lif_verify_4_Step13,步驟14>>。 
+| NAS | 完成 ,步驟6. 透過 ,步驟9.、跳過步驟10、然後完成 ,步驟11. 透過 ,步驟14。 
 
 
-| SAN | 跳過步驟6至步驟9、然後完成 <<man_lif_verify_4_Step9,步驟10>> 透過 <<man_lif_verify_4_Step13,步驟14>>。 
+| SAN | 跳過步驟6至步驟9、然後完成 ,步驟10 透過 ,步驟14。 
 
 
-| NAS和SAN | 完成 <<man_lif_verify_4_Step5,步驟6.>> 透過 <<man_lif_verify_4_Step13,步驟14>>。 
+| NAS和SAN | 完成 ,步驟6. 透過 ,步驟14。 
 |===
 . [[man_lif_VERIF_4_Step5]]如果您的平台上有不同的資料連接埠、請輸入下列命令、將連接埠新增至廣播網域：
 +
@@ -227,7 +227,7 @@ vs1
             lif1         up/up    172.17.176.120/24  node4         e0c     true
             lif2         up/up    172.17.176.121/24  node4
 ----
-.. 將「FCP介面卡show」命令的輸出與工作表中記錄的新組態資訊進行比較、確認新的「介面卡」和「切換連接埠」組態正確無誤 <<worksheet_step2_node2,步驟2>>。
+.. 將「FCP介面卡show」命令的輸出與工作表中記錄的新組態資訊進行比較、確認新的「介面卡」和「切換連接埠」組態正確無誤 ,步驟2。
 +
 在節點4上列出新的SAN LIF組態：
 

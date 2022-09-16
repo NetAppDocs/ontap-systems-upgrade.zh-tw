@@ -16,8 +16,8 @@ summary: 在執行ONTAP 版本號為9.7或更早版本的控制器上支援手�
 [role="lead"]
 執行本內容中的程序時、您可能需要諮詢參考內容或前往參考網站。
 
-* <<Reference content>>
-* <<Reference sites>>
+*  content
+*  sites
 
 
 

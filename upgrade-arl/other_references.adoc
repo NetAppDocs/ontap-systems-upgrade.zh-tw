@@ -16,8 +16,8 @@ summary: 您可以連結至此主題中的其他參考內容和網站。
 [role="lead"]
 執行本內容中的程序時、您可能需要諮詢參考內容或前往參考網站。
 
-* <<Reference content>>
-* <<Reference sites>>
+*  content
+*  sites
 
 
 

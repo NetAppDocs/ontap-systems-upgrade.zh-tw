@@ -50,10 +50,10 @@ summary: 如果您有雙節點叢集、請將節點1的NAS資料l生命 週期�
 | 如果節點1... | 然後... 
 
 
-| 已設定介面VLAN群組 | 前往 <<man_move_lif_1_2_step3,步驟3.>>。 
+| 已設定介面VLAN群組 | 前往 ,步驟3.。 
 
 
-| 未設定介面群組或VLAN | 跳過步驟3、前往 <<man_move_lif_1_2_step4,步驟4.>>。 
+| 未設定介面群組或VLAN | 跳過步驟3、前往 ,步驟4.。 
 |===
 +
 使用「network port vlan show」命令來顯示連接到VLAN的網路連接埠資訊、並使用「network port ifgrp show」命令來顯示連接埠介面群組的相關資訊。
@@ -64,7 +64,7 @@ summary: 如果您有雙節點叢集、請將節點1的NAS資料l生命 週期�
 +
 「網路介面移轉-vserver _vserver_name_-lif_lif_name_-dest-node-node2_–dest-port _netport|ifgrp_」
 
-.. 在中修改lifs和VLAN的主連接埠和主節點 <<man_move_lif_1_2_substepa,子步驟A>> 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
+.. 在中修改lifs和VLAN的主連接埠和主節點 ,子步驟A 輸入下列命令、針對每個LIF輸入一次、即可移至目前裝載lifs的連接埠和節點：
 +
 「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node2_- home-port _netport|ifgrp_」
 
@@ -77,7 +77,7 @@ summary: 如果您有雙節點叢集、請將節點1的NAS資料l生命 週期�
 | 如果叢集設定為... | 然後... 
 
 
-| NAS | 完成 <<man_move_lif_1_2_step5,步驟5.>> 透過 <<man_move_lif_1_2_step8,步驟8.>>。 
+| NAS | 完成 ,步驟5. 透過 ,步驟8.。 
 
 
 | SAN | 停用節點上的所有SAN LIF、以便進行升級：「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node-node_to _upgrade _-home-port _netport|ifgrp_-stuse-admin drod' 
@@ -94,7 +94,7 @@ summary: 如果您有雙節點叢集、請將節點1的NAS資料l生命 週期�
 +
 「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node2_-home-port _port_name_」
 
-. [[man_move_lif_1_2_step8]]驗證LIF是否使用連接埠做為其主連接埠或目前連接埠。如果連接埠不是主連接埠或目前連接埠、請前往 <<man_move_lif_1_2_step9,步驟9.>>：
+. [[man_move_lif_1_2_step8]]驗證LIF是否使用連接埠做為其主連接埠或目前連接埠。如果連接埠不是主連接埠或目前連接埠、請前往 ,步驟9.：
 +
 「網路介面show -home-node_node2_-home-port _port_name_'
 

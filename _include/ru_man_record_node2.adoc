@@ -113,7 +113,7 @@ node2
 | 已在中記錄NVRAM系統ID編號 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] | 前往 link:retire_node2.html["淘汰節點2"]。 
 
 
-| 未在中記錄NVRAM系統ID編號 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] | 完成 <<man_record_2_step9,步驟9.>> 和 <<man_record_2_step10,步驟10>> 接著前往下一節： link:retire_node2.html["淘汰節點2"]。 
+| 未在中記錄NVRAM系統ID編號 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] | 完成 ,步驟9. 和 ,步驟10 接著前往下一節： link:retire_node2.html["淘汰節點2"]。 
 |===
 . [[man_recipal_2_step9]顯示節點2的屬性：
 +

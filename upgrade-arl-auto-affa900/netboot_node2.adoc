@@ -95,7 +95,7 @@ Selection (1-11)?
 ====
 . 如果系統提示您繼續此程序、請輸入「y」、然後在系統提示您輸入套件時、輸入URL：「http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz`」
 +
-「<path_to_the_web-易於 存取的目錄>」應該會引導您下載「<ONTAP_VERSION >_image.tgz」 <<netboot_node2_step2,步驟2>>。
+「<path_to_the_web-易於 存取的目錄>」應該會引導您下載「<ONTAP_VERSION >_image.tgz」 ,步驟2。
 
 . 完成下列子步驟以重新啟動控制器模組：
 +

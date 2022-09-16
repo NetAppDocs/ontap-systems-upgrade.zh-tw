@@ -27,7 +27,7 @@ summary: 如果新節點有內部磁碟或附加磁碟櫃連接至系統、這�
 如果您對在控制器升級期間移除磁碟擁有權有任何疑問、請聯絡NetApp技術支援。
 
 +
-以下是具有內部儲存設備的系統清單：FAS2220、FAS2240-2、FAS2240-4、FAS2520、FAS2552、 FAS2554、FAS2620、FAS2650、FAS2720、FAS2750、 S20A200、S202220、S20A700s、S20A800、S20A250。AFF AFF AFF AFF AFF
+以下是具有內部儲存設備的系統清單：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 部分A800、部分A250。AFF AFF
 
 +
 如果您的系統未列於上方、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^] 檢查是否有內部磁碟機。

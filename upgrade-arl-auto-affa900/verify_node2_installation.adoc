@@ -72,7 +72,7 @@ To complete the Network Reachability task, the ONTAP network configuration must 
 
 NOTE: 在此程序中、_重新建立VLAN、ifgrps和廣播網域_一節已重新命名為_在節點2上還原網路組態。
 
-. 在控制器更換處於暫停狀態時、繼續執行 <<Restore network configuration on node2>>。
+. 在控制器更換處於暫停狀態時、繼續執行  network configuration on node2。
 
 
 
@@ -168,7 +168,7 @@ Warning: Repairing port "node2:e9d" may cause it to move into a different broadc
 「網路連接埠連線能力顯示」
 
 +
-當所有連接埠均已正確設定並新增至正確的廣播網域時、「network port re連通 性show」命令會針對所有連接的連接埠、將連線狀態報告為「ok」、對於沒有實體連線的連接埠、狀態應顯示為「不可到達性」。如果有任何連接埠報告這兩個以外的狀態、請執行連線能力修復、並依照中的指示、從廣播網域新增或移除連接埠 <<restore_node2_step4,步驟4.>>。
+當所有連接埠均已正確設定並新增至正確的廣播網域時、「network port re連通 性show」命令會針對所有連接的連接埠、將連線狀態報告為「ok」、對於沒有實體連線的連接埠、狀態應顯示為「不可到達性」。如果有任何連接埠報告這兩個以外的狀態、請執行連線能力修復、並依照中的指示、從廣播網域新增或移除連接埠 ,步驟4.。
 
 . 確認所有連接埠均已置入廣播網域：
 +

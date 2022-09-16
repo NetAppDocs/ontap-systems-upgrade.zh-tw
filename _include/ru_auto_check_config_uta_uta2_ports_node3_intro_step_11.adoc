@@ -87,10 +87,10 @@ Adapter  Mode     Type        Mode      Type       Status
 | 如果UTA/UTA2連接埠... | 然後… 
 
 
-| 沒有您想要的特性 | 前往 <<auto_check3_step5,步驟5.>>。 
+| 沒有您想要的特性 | 前往 ,步驟5.。 
 
 
-| 擁有您想要的個人風格 | 跳過步驟5至步驟12、前往 <<auto_check3_step13,步驟13>>。 
+| 擁有您想要的個人風格 | 跳過步驟5至步驟12、前往 ,步驟13。 
 |===
 . [[auto_checks3_step5]請採取下列其中一項行動：
 +
@@ -99,10 +99,10 @@ Adapter  Mode     Type        Mode      Type       Status
 | 如果您正在設定... | 然後… 
 
 
-| UTA/UTA2卡上的連接埠 | 前往 <<auto_check3_step7,步驟7.>> 
+| UTA/UTA2卡上的連接埠 | 前往 ,步驟7. 
 
 
-| 內建UTA/UTA2連接埠 | 跳過步驟7、前往 <<auto_check3_step8,步驟8.>>。 
+| 內建UTA/UTA2連接埠 | 跳過步驟7、前往 ,步驟8.。 
 |===
 . [[step6]如果介面卡處於啟動器模式、且UTA/UTA2連接埠處於線上狀態、請將UTA/UTA2連接埠離線：
 +

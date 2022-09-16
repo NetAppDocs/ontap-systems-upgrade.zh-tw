@@ -16,7 +16,7 @@ summary: 在執行ONTAP 更新版本的控制器上進行手動ARL升級時、�
 [role="lead"]
 如果節點3具有內建FC連接埠、內建統一化目標介面卡（UTA/UTA2）連接埠或UTA/UTA2卡、則必須先設定設定、才能完成其餘程序。
 
-您可能需要完成 <<Configure FC ports on node3>>或 <<Check and configure UTA/UTA2 ports on node3>>或這兩個區段。
+您可能需要完成  FC ports on node3或  and configure UTA/UTA2 ports on node3或這兩個區段。
 
 
 NOTE: NetApp行銷資料可能會使用「UTA2」一詞來指稱CNA介面卡和連接埠。不過、CLI使用「CNA」一詞。
@@ -26,8 +26,8 @@ NOTE: NetApp行銷資料可能會使用「UTA2」一詞來指稱CNA介面卡和�
 
 
 .選項：
-* <<Configure FC ports on node3>>
-* <<Check and configure UTA/UTA2 ports on node3>>
+*  FC ports on node3
+*  and configure UTA/UTA2 ports on node3
 
 
 
@@ -38,7 +38,7 @@ NOTE: NetApp行銷資料可能會使用「UTA2」一詞來指稱CNA介面卡和�
 
 您必須擁有儲存在節點1中的FC連接埠設定值 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]。
 
-如果您的系統沒有FC組態、您可以跳過本節。如果您的系統內建UTA/UTA2連接埠或UTA/UTA2卡、請在中設定 <<Check and configure UTA/UTA2 ports on node3>>。
+如果您的系統沒有FC組態、您可以跳過本節。如果您的系統內建UTA/UTA2連接埠或UTA/UTA2卡、請在中設定  and configure UTA/UTA2 ports on node3。
 
 
 NOTE: *重要*：如果您的系統有儲存磁碟、請在叢集提示字元下輸入本節中的命令。如果您使用V系列系統或使用FlexArray 支援功能的虛擬化軟體、並已連線至儲存陣列、請在維護模式下於本節輸入命令。
@@ -51,10 +51,10 @@ NOTE: *重要*：如果您的系統有儲存磁碟、請在叢集提示字元下
 | 如果您要升級的系統... | 然後... 
 
 
-| 具有儲存磁碟 | 前往 <<man_config_3_step5,步驟5.>> 
+| 具有儲存磁碟 | 前往 ,步驟5. 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 前往 <<man_config_3_step2,步驟2>> 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 前往 ,步驟2 
 |===
 . [[man_config_3_step2]Boot node3和存取維護模式：
 +
@@ -83,10 +83,10 @@ Boot_ONTAP maint
 | 如果新節點上的預設FC設定為... | 然後... 
 
 
-| 與您在節點1上擷取的相同 | 前往 <<man_config_3_step11,步驟11.>>。 
+| 與您在節點1上擷取的相同 | 前往 ,步驟11.。 
 
 
-| 與您在節點1上擷取的不同 | 前往 <<man_config_3_step6,步驟6.>>。 
+| 與您在節點1上擷取的不同 | 前往 ,步驟6.。 
 |===
 . [[man_config_3_step6]]採取下列其中一項行動：
 +
@@ -145,15 +145,15 @@ Boot_ONTAP maint
 
 
 | 具有儲存磁碟  a| 
-** 如果node3具有UTA/UTA2卡或UTA/UTA2內建連接埠、請前往 <<Check and configure UTA/UTA2 ports on node3>>。
-** 如果節點3沒有UTA/UTA2卡或UTA/UTA2內建連接埠、請跳過 <<Check and configure UTA/UTA2 ports on node3>> 並前往 link:map_ports_node1_node3.html["將連接埠從節點1對應至節點3"]。
+** 如果node3具有UTA/UTA2卡或UTA/UTA2內建連接埠、請前往  and configure UTA/UTA2 ports on node3。
+** 如果節點3沒有UTA/UTA2卡或UTA/UTA2內建連接埠、請跳過  and configure UTA/UTA2 ports on node3 並前往 link:map_ports_node1_node3.html["將連接埠從節點1對應至節點3"]。
 
 
 
 
 | 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
-** 如果node3有卡或內建連接埠、請前往 <<Check and configure UTA/UTA2 ports on node3>>。
-** 如果節點3沒有卡或內建連接埠、請跳過 <<Check and configure UTA/UTA2 ports on node3>>，然後返回_Install and boot node3_並繼續執行 link:install_boot_node3.html#step7["步驟7."]。
+** 如果node3有卡或內建連接埠、請前往  and configure UTA/UTA2 ports on node3。
+** 如果節點3沒有卡或內建連接埠、請跳過  and configure UTA/UTA2 ports on node3，然後返回_Install and boot node3_並繼續執行 link:install_boot_node3.html#step7["步驟7."]。
 
 
 |===
@@ -264,10 +264,10 @@ Adapter  Mode     Type       Mode     Type     Status
 | 如果UTA/UTA2連接埠... | 然後... 
 
 
-| 沒有您想要的特性 | 前往 <<man_check_3_step5,步驟5.>>。 
+| 沒有您想要的特性 | 前往 ,步驟5.。 
 
 
-| 擁有您想要的個人風格 | 跳過步驟5至步驟12、前往 <<man_check_3_step13,步驟13>>。 
+| 擁有您想要的個人風格 | 跳過步驟5至步驟12、前往 ,步驟13。 
 |===
 . [[man_check_3_step5]請採取下列其中一項行動：
 +
@@ -279,7 +279,7 @@ Adapter  Mode     Type       Mode     Type     Status
 | 擁有儲存磁碟、並執行叢集Data ONTAP 式的版本8.3 | 開機節點3並進入維護模式：「boot_ONTAP maint」 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 前往 <<man_check_3_step6,步驟6.>>。您應該已經處於維護模式。 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 前往 ,步驟6.。您應該已經處於維護模式。 
 |===
 . [[man_check_3_step6]]請採取下列其中一項行動：
 +
@@ -288,10 +288,10 @@ Adapter  Mode     Type       Mode     Type     Status
 | 如果您正在設定... | 然後... 
 
 
-| UTA/UTA2卡上的連接埠 | 前往 <<man_check_3_step7,步驟7.>>。 
+| UTA/UTA2卡上的連接埠 | 前往 ,步驟7.。 
 
 
-| 內建UTA/UTA2連接埠 | 跳過步驟7、前往 <<man_check_3_step8,步驟8.>>。 
+| 內建UTA/UTA2連接埠 | 跳過步驟7、前往 ,步驟8.。 
 |===
 . [man檢查_3_step7]如果介面卡處於啟動器模式、而且UTA / UTA2連接埠處於線上狀態、請將UTA / UTA2連接埠離線：
 +

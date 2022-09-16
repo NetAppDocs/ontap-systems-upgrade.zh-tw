@@ -16,14 +16,14 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行《更新》9.
 [role="lead"]
 如果node4具有內建FC連接埠、內建統一化目標介面卡（UTA/UTA2）連接埠或UTA/UTA2卡、則必須先設定這些設定、才能完成其餘程序。
 
-您可能需要完成 <<Configure FC ports on node4>> 部分 <<Check and configure UTA/UTA2 ports on node4>>或這兩個區段。
+您可能需要完成  FC ports on node4 部分  and configure UTA/UTA2 ports on node4或這兩個區段。
 
 
 NOTE: 如果節點4沒有內建FC連接埠、內建UTA/UTA2連接埠或UTA/UTA2卡、而且您正在升級含有儲存磁碟的系統、則可以跳至 link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"] 區段。但是、如果您有V系列系統或使用FlexArray VMware虛擬化軟體、並連接至儲存陣列、而節點4沒有內建FC連接埠、內建UTA/ UTA2連接埠或UTA/ UTA2卡、則必須返回_安裝及開機節點4_一節、然後繼續執行 link:install_boot_node4.html#step22["步驟22"]。確定節點4有足夠的機架空間。如果node4與node2位於不同的機箱中、您可以將node4放在與node3相同的位置。如果節點2和節點4位於同一個機箱中、則節點4已位於適當的機架位置。
 
 .選擇
-* <<Configure FC ports on node4>>
-* <<Check and configure UTA/UTA2 ports on node4>>
+*  FC ports on node4
+*  and configure UTA/UTA2 ports on node4
 
 
 
@@ -34,7 +34,7 @@ NOTE: 如果節點4沒有內建FC連接埠、內建UTA/UTA2連接埠或UTA/UTA2�
 
 您必須擁有儲存在區段中節點2的FC連接埠設定值 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]。
 
-如果您的系統沒有FC組態、您可以跳過本節。如果您的系統有內建UTA/UTA2連接埠或UTA/UTA2介面卡、請在中進行設定 <<Check and configure UTA/UTA2 ports on node4>>。
+如果您的系統沒有FC組態、您可以跳過本節。如果您的系統有內建UTA/UTA2連接埠或UTA/UTA2介面卡、請在中進行設定  and configure UTA/UTA2 ports on node4。
 
 *重要*：如果您的系統有儲存磁碟、您必須在叢集提示字元下輸入本節中的命令。如果您的V系列系統或系統FlexArray 已連接至儲存陣列、請在維護模式下於本節中輸入命令。
 
@@ -183,10 +183,10 @@ f-a    0h       cna      target     -          -        online
 | 如果CNA連接埠... | 然後… 
 
 
-| 沒有您想要的特性 | 前往 <<auto_check_4_step5,步驟5.>>。 
+| 沒有您想要的特性 | 前往 ,步驟5.。 
 
 
-| 擁有您想要的個人風格 | 跳過步驟5至步驟12、前往 <<auto_check_4_step13,步驟13>>。 
+| 擁有您想要的個人風格 | 跳過步驟5至步驟12、前往 ,步驟13。 
 |===
 . [[auto_check_4_step5]]請採取下列其中一項行動：
 +
@@ -195,10 +195,10 @@ f-a    0h       cna      target     -          -        online
 | 如果您正在設定... | 然後… 
 
 
-| UTA/UTA2卡上的連接埠 | 前往 <<auto_check_4_step7,步驟7.>> 
+| UTA/UTA2卡上的連接埠 | 前往 ,步驟7. 
 
 
-| 內建UTA/UTA2連接埠 | 跳過步驟7、前往 <<auto_check_4_step8,步驟8.>>。 
+| 內建UTA/UTA2連接埠 | 跳過步驟7、前往 ,步驟8.。 
 |===
 . 如果介面卡處於啟動器模式、且UTA/UTA2連接埠處於線上狀態、請將UTA/UTA2連接埠離線：
 +
@@ -287,7 +287,7 @@ f-a   2b       fc             target       cna           -             online
 Boot_ONTAP功能表
 
 +
-如果您要升級至A800、請前往 <<auto_check_4_step23,步驟23>>。
+如果您要升級至A800、請前往 ,步驟23。
 
 . [[auto_check_4_step15]在節點4上、移至開機功能表、然後使用22/7選取隱藏選項「boot_after控制器更換」。在提示符下輸入node2將node2的磁碟重新指派給node4、如下例所示。
 +
@@ -369,7 +369,7 @@ Override system ID? {y|n} y
 Login: ...
 ----
 ====
-. 如果系統進入重新開機迴圈、並顯示「找不到磁碟」訊息、這是因為系統已將連接埠重設回目標模式、因此無法看到任何磁碟。繼續 <<auto_check_4_step17,步驟17>> 透過 <<auto_check_4_step22,步驟22>> 以解決此問題。
+. 如果系統進入重新開機迴圈、並顯示「找不到磁碟」訊息、這是因為系統已將連接埠重設回目標模式、因此無法看到任何磁碟。繼續 ,步驟17 透過 ,步驟22 以解決此問題。
 . [[auto_check_4_step17]在自動開機期間按下「Ctrl-C」、即可在「loader>」提示字元下停止節點。
 . 在載入程式提示下、進入維護模式：
 +
@@ -396,9 +396,9 @@ Boot_ONTAP maint
 +
 [NOTE]
 ====
-如果您要從支援外部磁碟的系統升級至也支援外部磁碟的系統、請前往 <<auto_check_4_step22,步驟22>>。
+如果您要從支援外部磁碟的系統升級至也支援外部磁碟的系統、請前往 ,步驟22。
 
-如果您要從使用外部磁碟的系統升級至同時支援內部和外部磁碟的系統、例如AFF 、一個支援內部和外部磁碟的系統、請前往 <<auto_check_4_step23,步驟23>>。
+如果您要從使用外部磁碟的系統升級至同時支援內部和外部磁碟的系統、例如AFF 、一個支援內部和外部磁碟的系統、請前往 ,步驟23。
 
 ====
 . [[auto_check_4_step22]在載入程式提示下、開機：

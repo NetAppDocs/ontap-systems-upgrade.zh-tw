@@ -47,7 +47,7 @@ node4          node3          true     Connected to node3
 | 雙節點叢集 | 在任一節點上輸入下列命令、即可啟用叢集高可用度：「cluster ha modify -configured true」 
 
 
-| 具有兩個以上節點的叢集 | 前往 <<man_ensure_setup_Step4,步驟4.>>。 
+| 具有兩個以上節點的叢集 | 前往 ,步驟4.。 
 |===
 . [[man_ensure_setup_Step4]]輸入下列命令並檢查輸出、確認node3和node4屬於同一個叢集：
 +
