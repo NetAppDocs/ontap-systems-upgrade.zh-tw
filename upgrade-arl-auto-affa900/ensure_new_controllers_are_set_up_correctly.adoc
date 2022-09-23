@@ -133,28 +133,6 @@ Do you want to continue? {y|n}: y
 +
 請參閱 link:other_references.html["參考資料"] 如需SP和_SUR9 ONTAP 命令的相關資訊、請連結至_System Administration Reference（系統管理參考資料）：Manual Page Reference（手冊頁參考）_、以取得有關係統「服務處理器網路修改」命令的詳細資訊。
 
-. 在其中一個新節點上執行下列動作：
-+
-.. 輸入進階權限層級：
-+
-"進階權限"
-
-.. 輸入下列命令：
-+
-「儲存容錯移轉修改-node_node_name_-CIF- ne-duration _default| medium | low _」
-
-+
-*** 如果系統的工作負載達到50%至75%的作業量、則輸入「管理」。
-*** 如果系統的工作負載為75%至100%、則輸入「low」（低）、此值為4 KB或更小。
-
-
-.. 返回管理層級：
-+
-「et -priv. admin」
-
-.. 重新啟動系統以確保變更生效。
-
-
 . 如果您要在新節點上設定無交換器叢集、請參閱 link:other_references.html["參考資料"] 若要連結至_NetApp支援網站_、請遵循_移轉至雙節點無交換器叢集_中的指示。
 
 
