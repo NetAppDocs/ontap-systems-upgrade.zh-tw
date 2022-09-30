@@ -136,8 +136,6 @@ Do you want to continue? {y|n}: y
 +
 請參閱 link:other_references.html["參考資料"] 如需SP及_SURE9.8 ONTAP 命令的相關資訊、請連結至_System Administration Reference（系統管理參考資料）：Manual Page Reference（手冊頁參考）_、以取得有關係統「服務處理器網路修改」命令的詳細資訊。
 
-
-
 . 如果您要在新節點上設定無交換器叢集、請參閱 link:other_references.html["參考資料"] 若要連結至_NetApp支援網站_、請遵循_移轉至雙節點無交換器叢集_中的指示。
 
 

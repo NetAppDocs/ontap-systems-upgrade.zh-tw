@@ -118,8 +118,6 @@ Do you want to continue? {y|n}: y
 +
 前往 link:other_references.html["參考資料"] 如需SP和_SUR9 ONTAP 命令的相關資訊、請連結至_System Administration Reference（系統管理參考）：Manual Page Reference（手冊頁參考）_、以取得有關「系統服務-處理器網路修改」命令的詳細資訊。
 
-
-
 . 如果您要在新節點上設定無交換器叢集、請前往 link:other_references.html["參考資料"] 若要連結至_網路支援站台_、請遵循_移轉至雙節點無交換器叢集_中的指示。
 
 

@@ -35,7 +35,7 @@ entries:
     url: "/upgrade-arl-auto-affa900/netboot_node1.html"
 - title: 階段3.使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點1
   entries:
-  - title: 使用AFF EsceA900控制器和NVRAM模組來開機節點1
+  - title: 使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點1
     url: "/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html"
   - title: 驗證node1安裝
     url: "/upgrade-arl-auto-affa900/verify_node1_installation.html"
