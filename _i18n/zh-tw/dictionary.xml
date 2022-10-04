@@ -310,15 +310,10 @@
   <block id="9dabc4c6addd92ab1be1dd1cd49038f7" category="inline-link-macro">安裝並開機節點4、步驟27</block>
   <block id="2dc628959227b30796539097566ced4e" category="list-text">[[step13]在兩個節點上使用下列命令來設定SP：</block>
   <block id="cffe1635d7e645065b5457e425a54cdd" category="paragraph">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 如需SP和_SUR9 ONTAP 命令的相關資訊、請連結至_System Administration Reference（系統管理參考資料）：Manual Page Reference（手冊頁參考）_、以取得有關係統「服務處理器網路修改」命令的詳細資訊。</block>
-  <block id="c3e44bb7c41d54ab04ed9048fc5b39f1" category="list-text">在其中一個新節點上執行下列動作：</block>
-  <block id="102261de999f6bca12acc79b316dfb42" category="list-text">輸入進階權限層級：</block>
   <block id="5fd1bcc8472b38442961eb87ca3f844a" category="paragraph">"進階權限"</block>
   <block id="6dcd1ebf4390170868ab9bcdfd967581" category="list-text">輸入下列命令：</block>
-  <block id="bdaf872fbb56ca73fe6e9dd9a980aba6" category="list-text">如果系統的工作負載達到50%至75%的作業量、則輸入「管理」。</block>
-  <block id="c347ef9cd4bc7e044fc3d1aa22c41ed4" category="list-text">如果系統的工作負載為75%至100%、則輸入「low」（低）、此值為4 KB或更小。</block>
   <block id="0ac9d40efe1470ec53257470c91f7314" category="list-text">返回管理層級：</block>
   <block id="d260c71f1d73fe6dce24fae82cd28aca" category="paragraph">「et -priv. admin」</block>
-  <block id="0fbda10a905dbd102127a7a65daf7abd" category="list-text">重新啟動系統以確保變更生效。</block>
   <block id="01e6682dee79033af96ab718c5ec6c11" category="list-text">如果您要在新節點上設定無交換器叢集、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要連結至_NetApp支援網站_、請遵循_移轉至雙節點無交換器叢集_中的指示。</block>
   <block id="27af4227ca8acc558df96e2723ec9b37" category="inline-link-macro">在新的控制器模組上設定儲存加密</block>
   <block id="ac616410952c35e808a3c7ce4ea5b4a7" category="inline-link-macro">取消委任舊系統</block>
@@ -1698,7 +1693,6 @@
   <block id="28dd44ad0b0bcceee8ca8498734facba" category="paragraph">欄位「Last Subject sent：」（上次傳送主旨：）和「Last Time sent：」（上次傳送時間：）包含上次傳送訊息的標題、以及傳送訊息的時間。</block>
   <block id="ad7dc11f39fb32e1f4ba6e7e9644fdd2" category="summary">使用手動ARL升級程序來升級執行ONTAP 不含更新版本的控制器硬體、重新定位非根集合體的擁有權。</block>
   <block id="a18ad921f7c87b8c08b808c84ff5bfe6" category="cell">使用ARL手動升級</block>
-  <block id="e2a7cf2eab50dd41c99197aeb0c7dba3" category="cell">9.8或更早版本</block>
   <block id="1124fb2cf4d1e4ab29aa545667f1d946" category="list-text">從系統到系統FAS FAS</block>
   <block id="e083e9919602f31d35ef93e48f70d9cd" category="list-text">將系統支援至採用「虛擬化軟體」或「V系列」系統的系統FAS FlexArray</block>
   <block id="0c3fa4233df158763903bac5cebd18a9" category="list-text">從系統到系統AFF AFF</block>
@@ -2132,10 +2126,6 @@
   <block id="d9128463a6e9a9f5e58f74dfe42dba7b" category="paragraph">您可以將輸出與擷取的輸出進行比較 <block ref="aa31de159a7a7903f22336e05c00b63e" category="inline-link-macro-rx"></block> （_準備節點以進行升級_）。</block>
   <block id="65816664fef74fe3f15406730c518f76" category="list-text">在兩個節點上執行下列命令來設定SP：</block>
   <block id="3d39e72120bdfa8b32eb4183896ece25" category="paragraph">前往 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 如需SP和_SUR9 ONTAP 命令的相關資訊、請連結至_System Administration Reference（系統管理參考）：Manual Page Reference（手冊頁參考）_、以取得有關「系統服務-處理器網路修改」命令的詳細資訊。</block>
-  <block id="8bd516232448307a629aa2ad8fe64430" category="list-text">輸入下列命令、輸入進階權限等級：</block>
-  <block id="ee16bb116206ed27e74abc4888edf806" category="list-text">如果系統的工作負載達到50%至75%的作業量、則輸入「管理」。</block>
-  <block id="93b838bedea5b323f56d1fb4aec030fe" category="list-text">如果系統的工作負載為75%至100%、則輸入「low」（低）、操作量為4 KB或更小。</block>
-  <block id="3adabad83ef7117848b8695e18369de7" category="list-text">重新啟動系統以確認變更生效。</block>
   <block id="52eb8cb5708af7396828abc72517413d" category="list-text">如果您要在新節點上設定無交換器叢集、請前往 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要連結至_網路支援站台_、請遵循_移轉至雙節點無交換器叢集_中的指示。</block>
   <block id="a98b8d21a1cabe96a7d765976c724ace" category="paragraph">如果節點3和節點4上已啟用儲存加密、請完成中的步驟 <block ref="94c0a6a874300fcf012d00a23a1b673f" category="inline-link-macro-rx"></block>。否則、請完成中的步驟 <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>。</block>
   <block id="92f11749596b34888281bb0c579c2d25" category="summary">在執行ONTAP 更新版本的控制器上進行手動ARL升級時、請在節點4內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡上設定節點4。</block>
@@ -3381,12 +3371,10 @@
   <block id="0caecd7c9276edc19599cb97a20eac4d" category="admonition">您不需要擷取「&lt;ONTAP_VERON&gt;_image.tgz」檔案的內容。</block>
   <block id="7d29fb6edb20ce6f3fcde443c39ef137" category="inline-xref-macro">設定新節點</block>
   <block id="ca8b0b541358f7e84a5255015051bf42" category="paragraph">您將使用目錄中的資訊 <block ref="8bfb8dcff60c45f1bd8ce7151db542d5" category="inline-xref-macro-rx"></block>。</block>
-  <block id="1c83ee60998c00cf537e241e2bd00614" category="summary">如果您的原始節點是受支援的機型之一、您可以將其內部SATA磁碟機或SSD移至磁碟機櫃、並在升級過程中移動儲存設備以連接至新節點。您也可以將系統轉換成磁碟機櫃、並將其連接至新節點。</block>
   <block id="0f25f34bbc6624def56436f34d66a8ca" category="doc">選用：移動內部儲存設備或將系統轉換成磁碟機櫃</block>
   <block id="dd49867a2bdd430ef0f1501edf2afc71" category="paragraph">您只能在同一個叢集內移動磁碟機或磁碟機櫃。</block>
   <block id="5445f44c8361f04d7db7417496478290" category="inline-link-macro">從原始節點移動內部磁碟機</block>
   <block id="8aeeee2821310e6e14e76fc1d344c892" category="list-text"><block ref="8aeeee2821310e6e14e76fc1d344c892" category="inline-link-macro-rx"></block></block>
-  <block id="f7ccfa056b989c8b002a462176655b42" category="paragraph">如果您的原始節點是支援的機型之一、在升級期間、您可以將節點的內部SATA磁碟機或SSD移至連接至同一叢集中新節點的磁碟機櫃。您無法將SAS磁碟機傳輸至連接至新節點的磁碟機櫃。</block>
   <block id="32bdc1101e093c57bf74fbd9789794c2" category="inline-link-macro">將原始節點轉換成磁碟機櫃</block>
   <block id="f27c828441c4bcde6d66323e36803847" category="list-text"><block ref="f27c828441c4bcde6d66323e36803847" category="inline-link-macro-rx"></block></block>
   <block id="3fae42f30ee83a6721eb3d8ce8dc8e9e" category="paragraph">如果您的原始節點是支援的機型之一、在升級期間、您可以將節點轉換成磁碟機櫃、然後將其附加至同一叢集中的新節點。</block>
@@ -3765,13 +3753,9 @@
   <block id="6c4c7e577e407c3d612b2254ba5aeaad" category="list-text"><block ref="6c4c7e577e407c3d612b2254ba5aeaad" category="inline-link-macro-rx"></block></block>
   <block id="4a0fbf919570309e7272750b2374a969" category="list-text"><block ref="4a0fbf919570309e7272750b2374a969" category="inline-link-macro-rx"></block></block>
   <block id="7411801636d93c5890addb910d57f9f3" category="list-text"><block ref="7411801636d93c5890addb910d57f9f3" category="inline-link-macro-rx"></block></block>
-  <block id="f78094c2959388f67bc989ba1cae66f1" category="summary">如果您的原始節點是受支援的機型之一、在升級期間、您可以將節點的內部SATA磁碟機或SSD移至連接至同一叢集中新節點的磁碟機櫃。您無法將SAS磁碟機傳輸至連接至新節點的磁碟機櫃。</block>
-  <block id="2bfab688f89dc9f9721b34f9cf812b87" category="paragraph">如果您的原始節點是支援的機型之一、在升級期間、您可以將節點的內部SATA磁碟機或SSD移至連接至同一叢集中新節點的磁碟機櫃。您無法將SAS磁碟機傳輸至連接至新節點的磁碟機櫃。</block>
   <block id="605eb2ff368b7d55e14901ea718fa36c" category="list-text">您必須已檢閱 <block ref="3548781d8fe3c65e8421c7698ed973f9" category="inline-link-macro-rx"></block> 關於移動內部磁碟機。</block>
   <block id="bfa39e83f3483c34263e33d3e5ad162c" category="paragraph">如果您需要特定組態的指引、請聯絡技術支援部門。</block>
-  <block id="48b8c1b9a7f4340b2c4a53567867ba1c" category="list-text">原始節點的SATA或SSD磁碟機載體必須與新的磁碟機櫃相容。</block>
   <block id="84dc193ac12ec0c17e52a119451eb5ee" category="list-text">相容的磁碟機櫃必須已連接至新節點。</block>
-  <block id="5936d4e5bf9684df84f3298fd69c5ff7" category="list-text">磁碟機櫃必須有足夠的可用磁碟槽、才能容納來自原始節點的SATA或SSD磁碟機載體。</block>
   <block id="14118424a52e5faf27de83ea1ae0b462" category="list-text">從系統正面輕移擋板。</block>
   <block id="1009ece53b201ef044edbb499bcabdd6" category="list-text">[[move_int_drive_2]]按下磁碟機承載器左側的釋放按鈕。</block>
   <block id="addb5ded0310559ea0a26d75615eeff4" category="paragraph">托架上的CAM握把部分彈開、並從中間背板釋放托架。</block>
@@ -4023,7 +4007,6 @@
   <block id="ba5bb93bf3745b7b90abb302dc84dab9" category="sidebar">使用「系統控制器更換」命令、將AFF E4A700升級至AFF E4A900或FAS9000升級至FAS9500</block>
   <block id="cec0ad56d161fd372b8f511ac2258e91" category="sidebar">第2階段：重新部署資源、並淘汰AFF EsceeA700或FAS9000節點1</block>
   <block id="3e7ed5dc4e5c354a7d48cc37baefc4ad" category="sidebar">階段3.使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點1</block>
-  <block id="f8963d11fe6453d2060dd15fbe008dd0" category="sidebar">使用AFF EsceA900控制器和NVRAM模組來開機節點1</block>
   <block id="1ed45ea6838f5dd96a4433ce598c8050" category="sidebar">階段5.在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組</block>
   <block id="6c86470db96f676f214aa83001c5a57f" category="sidebar">在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組</block>
   <block id="ae89e936215d96a55c04a947db881581" category="sidebar">階段6.使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點2</block>
@@ -4184,7 +4167,6 @@
   <block id="f8bb98c031da24e788f5f02332ac5bb8" category="paragraph">「系統授權清理-未使用的-過期」「系統授權刪除-序號_normite_sSerial_number_-套件_licensee_package_」</block>
   <block id="e4c31b5f2905d746c57c1b1f1e038eac" category="paragraph">「系統授權刪除-序號_node1_sSerial_number_-package *」「系統授權刪除-序號_node2_sSerial_number_-package *」</block>
   <block id="bb445430e4b0638bdd79f943cd99a597" category="paragraph">「系統服務處理器網路修改-node_node_name_」</block>
-  <block id="55042a11401b6f78df5bb2c76e00d80a" category="paragraph">「儲存容錯移轉修改-node-name_-CIFS/n持續時間預設值|中|低」</block>
   <block id="676d4cfadd30ded5fabdceb082fde10a" category="paragraph">「網路介面show -curr-node-node1_-role cluster、intercluster、node-mgmt、cluster-mgmt」</block>
   <block id="bbbfa87c5efa2321ddc7c2656baf791f" category="paragraph">「網路連接埠show -node1_-type Physical」</block>
   <block id="842f84c9ecff4442b192c3b8a383847f" category="paragraph">「網路FCP介面卡顯示-node1_」</block>
@@ -4270,7 +4252,6 @@
   <block id="786cfe1c4db21c6a96fc7abf3a002267" category="paragraph">「torage Aggregate regate regate regulationstart -node_node1_-destate _node2_-aggregate-list _aggr_name_-ne-控制 器升級true」</block>
   <block id="07d2b82cff600a145725916fee544709" category="cell">使用下列命令：「torage Aggregate regate regulationstart -Node node1 -destination node2 -aggregate-list _aggr_list_-ne-控制 器升級true -override-etoes true」</block>
   <block id="eb3cf479c5f4d8026ff2061e0c748373" category="cell">使用下列命令：「torage Aggregate regate regulationstart -Node node1 -destination node2 -aggregate-list _aggr_list_-ne-控制 器升級true -override-etoes true -override-dest-checkstrue」</block>
-  <block id="76171f8eb9bf6bbe52c1453ffa4a156f" category="paragraph">「儲存容錯移轉修改-node_node_name_-CIF- ne-duration _default| medium | low _」</block>
   <block id="b23b4170fdfdcbdd9354becf14343de7" category="paragraph">「ucadmin modify -m fs -t initiator -f _Adapter name_'」</block>
   <block id="fe1416becf68ed78aa702542213dd3b3" category="paragraph">如果您要從支援外部磁碟的系統升級至也支援外部磁碟的系統、請前往 <block ref="8dac798a0974640f6cae187a1dbe2d57" category="inline-xref-macro-rx"></block>。</block>
   <block id="9395831ce33669d17052a27e98938d9c" category="paragraph">如果您要從支援外部磁碟的系統升級至同時支援內部和外部磁碟的系統、例如AFF 、一個支援內部和外部磁碟的系統、請前往 <block ref="8de8415e5ddf050c51dc9df1ad54385b" category="inline-xref-macro-rx"></block>。</block>
@@ -4468,4 +4449,9 @@
   <block id="e908e6e2b5df3efafd19fa616b538a72" category="list-text">如果您的系統具有內部儲存設備、您可以將系統轉換成磁碟機櫃、並將其連接至同一叢集中的新節點。FAS2520控制器無法轉換成磁碟機櫃。</block>
   <block id="e9ddbc0542fbe11aae2eccf01c4e4a89" category="paragraph">將FAS255x系統轉換成磁碟機櫃是工作流程中的一項選用工作、可用來透過移動儲存設備進行升級。</block>
   <block id="aa5eafaf3f0b641d5e680da72815213b" category="paragraph">以下是具有內部儲存設備的系統清單：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 部分A800、部分A250。AFF AFF</block>
+  <block id="4e54dc85c62992992a1dbefa82b638aa" category="summary">如果您的原始節點是支援的機型之一、在升級期間、您可以移動儲存設備、將節點的內部SATA磁碟機、SSD或SAS磁碟機移至連接至同一叢集中新節點的磁碟機櫃。</block>
+  <block id="fb4b0cb9efc21f6a0b33d6eb082f6db1" category="list-text">原始節點的SATA、SSD或SAS磁碟機載體必須與新的磁碟機櫃相容。</block>
+  <block id="3b95007d4159237fc8935f46a265e025" category="list-text">磁碟機櫃必須有足夠的可用磁碟槽、才能容納來自原始節點的SATA、SSD或SAS磁碟機載體。</block>
+  <block id="1b8d5202659e9a9176d67fd289952994" category="summary">如果您的原始節點是受支援的機型之一、您可以在升級期間、將內部SATA磁碟機、SSD或SAS磁碟機移至連接至新節點的磁碟機櫃、方法是移動儲存設備。您也可以將系統轉換成磁碟機櫃、並將其連接至新節點。</block>
+  <block id="f9327226ba1739cf1ffb9d6b89ba96b7" category="paragraph">如果您的原始節點是支援的機型之一、在升級期間、您可以移動儲存設備、將節點的內部SATA磁碟機、SSD或SAS磁碟機移至連接至同一叢集中新節點的磁碟機櫃。</block>
 </blocks>
