@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: cluster, san, environment, delete, lif, re-create, move san lifs, create 
 summary: 視叢集內容和叢集環境而定、您需要移動、刪除或建立SAN生命期、或重新建立刪除的SAN生命期。 
 ---
-= 移動、刪除或建立SAN LIF
+= 總覽
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

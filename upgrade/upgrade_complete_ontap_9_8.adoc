@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: complete, upgrade, ontap, complete the upgrade in ontap 9.8 
 summary: 請依照下列步驟完成ONTAP 更新、以更新版本更新。 
 ---
-= 完成ONTAP 更新、請使用更新版本的更新版本
+= 總覽
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

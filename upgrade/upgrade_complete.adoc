@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: complete, upgrade, ontap, complete the upgrade 
 summary: 完成ONTAP 更新、請參閱《更新版本、更新版本、ONTAP 或《更新版本、更新版本、更新版本、更新版本、更新版本、更新版本 
 ---
-= 完成升級
+= 總覽
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

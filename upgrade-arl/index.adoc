@@ -4,7 +4,7 @@ permalink: upgrade-arl/index.html
 keywords: aggregate, relocation, moving, manual, upgrade, relocate, hardware 
 summary: 使用Aggregate重新配置來升級控制器硬體 
 ---
-= 使用Aggregate重新配置來升級控制器硬體
+= 總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

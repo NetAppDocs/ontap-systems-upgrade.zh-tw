@@ -3889,7 +3889,6 @@
   <block id="fb96a6f2421e21a53ee4078e03bf0b62" category="sidebar">將節點轉換成磁碟機櫃</block>
   <block id="68274bddbfd931594dff2906c4d537d8" category="sidebar">還原根Volume組態</block>
   <block id="e2328b54876f0cd6379d9fcbc5572e87" category="sidebar">完整升級</block>
-  <block id="d4533ef157c2c7f83b5bc5d9b0283026" category="sidebar">完整內容ONTAP 請填寫於</block>
   <block id="7686c34f0400921210a5e039c6743309" category="sidebar">執行ONTAP 部分中的最後步驟</block>
   <block id="26000c062eace835ce5a8e9b4f5d553a" category="sidebar">完整版本為更新版本ONTAP</block>
   <block id="181a3a0697aaadf877eed027e84ebe7f" category="sidebar">請執行ONTAP 更新版本的步驟</block>
@@ -4452,6 +4451,9 @@
   <block id="4e54dc85c62992992a1dbefa82b638aa" category="summary">如果您的原始節點是支援的機型之一、在升級期間、您可以移動儲存設備、將節點的內部SATA磁碟機、SSD或SAS磁碟機移至連接至同一叢集中新節點的磁碟機櫃。</block>
   <block id="fb4b0cb9efc21f6a0b33d6eb082f6db1" category="list-text">原始節點的SATA、SSD或SAS磁碟機載體必須與新的磁碟機櫃相容。</block>
   <block id="3b95007d4159237fc8935f46a265e025" category="list-text">磁碟機櫃必須有足夠的可用磁碟槽、才能容納來自原始節點的SATA、SSD或SAS磁碟機載體。</block>
-  <block id="1b8d5202659e9a9176d67fd289952994" category="summary">如果您的原始節點是受支援的機型之一、您可以在升級期間、將內部SATA磁碟機、SSD或SAS磁碟機移至連接至新節點的磁碟機櫃、方法是移動儲存設備。您也可以將系統轉換成磁碟機櫃、並將其連接至新節點。</block>
   <block id="f9327226ba1739cf1ffb9d6b89ba96b7" category="paragraph">如果您的原始節點是支援的機型之一、在升級期間、您可以移動儲存設備、將節點的內部SATA磁碟機、SSD或SAS磁碟機移至連接至同一叢集中新節點的磁碟機櫃。</block>
+  <block id="efedd93f47ad7262715836d27d7741ae" category="paragraph">如果您要透過移動磁碟區來升級控制器硬體、請準備原始節點、並將新節點加入叢集。您可以將磁碟區移至新節點、設定lifs、以及從叢集取消連接原始節點。透過移動磁碟區進行升級是不中斷營運的程序。</block>
+  <block id="e992617332e56bffc7c73bb184146d40" category="summary">如果您的原始節點是受支援的機型之一、您可以選擇將其內部SATA磁碟機、SSD或SAS磁碟機移至新節點的磁碟機櫃、並在升級過程中移動儲存設備。您也可以將系統轉換成磁碟機櫃、並將其連接至新節點。</block>
+  <block id="0d19f6d9c6616aec6c0d6fa998fcdc06" category="paragraph">如果您要透過移動儲存設備來升級控制器硬體、請準備原始節點並設定新節點。部分平台機型支援將內部儲存設備傳輸至新節點。您可以重新指派磁碟、並將根磁碟區組態還原至新節點、並設定網路連接埠。透過移動儲存設備進行升級是一項中斷營運的程序。</block>
+  <block id="22e05b02f02d6d6148cff29e1b86d6eb" category="sidebar">完整版本ONTAP ：不含更新版本</block>
 </blocks>
