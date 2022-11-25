@@ -3918,14 +3918,12 @@
   <block id="3987c2b3042faa1f0f41d1ec08f2ed7e" category="cell">部分A400、部分A700 AFF AFF</block>
   <block id="41c1636eb5024bf8b152d1ca09286521" category="paragraph">^2^如果您要在AFF 雙節點無交換式叢集組態中、從Sfzha300升級AFF 至Sf2 A400或FAS8200、則必須選擇暫用叢集連接埠以進行控制器升級。以乙太網路套裝組合形式提供兩種組態：夾層卡連接埠為乙太網路類型、夾層連接埠為FC類型、而以FC套裝組合形式提供夾層連接埠為FC類型。AFF</block>
   <block id="e9dc6fafb0f1f8ce64537ec567468d16" category="paragraph">對於FAS8020、FAS8040、AFF8020和AFF8040系統升級到上表所列的目標替換控制器、替換控制器必須執行與ONTAP 舊控制器相同的版本。請注意、FAS8020、FAS8040、AFF8020和AFF8040系統不支援ONTAP 更新於ONTAP 支援更新版本9.8的版本。</block>
-  <block id="58639a55064ac1eb8afcb76dee256457" category="paragraph">^4^驗證ONTAP 控制器升級所支援的支援的更新版本。</block>
   <block id="a45da96d0bf6575970f2d27af22be28a" category="cell">系統</block>
   <block id="d85bd4eac4ae2ba50be5c03b292af8f8" category="cell">9.9.1或更新版本</block>
   <block id="94869c0e3d68936a54ce1ef1d7459f3e" category="cell">AFF8060</block>
   <block id="a07a923eb6b740023890d052b6fb6e9a" category="cell">9.8P13或更新版本的修補程式</block>
   <block id="728152178b0535e4c7e93f53223fbfff" category="cell">9.8P10或更新版本的修補程式</block>
   <block id="edbeb952c4054f67ce1836afbda00903" category="cell">FAS8060</block>
-  <block id="eb30343e3b73c36d3224c319d83cc2e6" category="cell">9.10.1P3或更新版本</block>
   <block id="8ed24dd5fb292ecefe76fe92a5fc3988" category="cell">FAS8080</block>
   <block id="e2060bf680bf4facfccf3befec69ef04" category="cell">9.8P12或更新版本的修補程式</block>
   <block id="c7f409d27e38c597f7352e5c3444f367" category="list-text">檢查目前如何設定連接埠、在節點3上輸入下列命令：</block>
@@ -4456,4 +4454,11 @@
   <block id="e992617332e56bffc7c73bb184146d40" category="summary">如果您的原始節點是受支援的機型之一、您可以選擇將其內部SATA磁碟機、SSD或SAS磁碟機移至新節點的磁碟機櫃、並在升級過程中移動儲存設備。您也可以將系統轉換成磁碟機櫃、並將其連接至新節點。</block>
   <block id="0d19f6d9c6616aec6c0d6fa998fcdc06" category="paragraph">如果您要透過移動儲存設備來升級控制器硬體、請準備原始節點並設定新節點。部分平台機型支援將內部儲存設備傳輸至新節點。您可以重新指派磁碟、並將根磁碟區組態還原至新節點、並設定網路連接埠。透過移動儲存設備進行升級是一項中斷營運的程序。</block>
   <block id="22e05b02f02d6d6148cff29e1b86d6eb" category="sidebar">完整版本ONTAP ：不含更新版本</block>
+  <block id="e48a139c95341faecb199d5908a54e2e" category="paragraph">^4^下表顯示ONTAP 這些控制器升級組合所支援的最小及更新版本的支援版本。</block>
+  <block id="b8e707d2be1c734648eb91b029352369" category="cell">9.10.1至9.12.1%</block>
+  <block id="4f0b48e1f65ca4ae15a6720f28d58824" category="cell">9.10.1P3至9.12.1</block>
+  <block id="04d01679d16bbccad3f9da82789a187b" category="paragraph">上表所示的升級組合：</block>
+  <block id="1c328c36316a518e9532ed77177daa6c" category="list-text">不需要在ONTAP 現有和替換的控制器上使用相同的版本。透過控制器升級來執行更新ONTAP 。</block>
+  <block id="da74cb1ad73d862a786d9f20938d9c7a" category="list-text">升級時、您必須安裝支援ONTAP 的支援版本和修補程式層級的更換控制器。</block>
+  <block id="dee716592bbae6fdba2b32d2854360ba" category="list-text">在您開始程序並升級第一個節點之後、就無法取消或從控制器升級中恢復。</block>
 </blocks>
