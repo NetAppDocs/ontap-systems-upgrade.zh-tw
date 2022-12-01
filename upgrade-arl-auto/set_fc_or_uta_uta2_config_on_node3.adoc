@@ -305,6 +305,7 @@ Adapter  Mode       Type        Mode     Type        Status
 . [[Auto9597_check_node3_step15]在節點3上、前往開機功能表並使用2/7選取隱藏選項「boot_after控制器置換」。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。
 +
 .展開主控台輸出範例
+[%collapsible]
 ====
 [listing]
 ----

@@ -54,6 +54,7 @@ Boot_ONTAP
 
 +
 .展開主控台輸出範例
+[%collapsible]
 ====
 [listing]
 ----

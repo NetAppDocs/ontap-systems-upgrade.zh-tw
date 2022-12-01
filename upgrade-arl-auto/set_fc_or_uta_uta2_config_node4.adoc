@@ -292,6 +292,7 @@ Boot_ONTAP功能表
 . [[auto_check_4_step15]在節點4上、移至開機功能表、然後使用22/7選取隱藏選項「boot_after控制器更換」。在提示符下輸入node2將node2的磁碟重新指派給node4、如下例所示。
 +
 .展開主控台輸出範例
+[%collapsible]
 ====
 [listing]
 ----

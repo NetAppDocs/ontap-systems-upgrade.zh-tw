@@ -3942,7 +3942,6 @@
   <block id="fceff39b493e10b2b789e99ad15cc406" category="paragraph">請使用下列程序移除AFF 不含功能的A700或FAS9000 NVRAM模組。</block>
   <block id="3d748e41fa426d2025ff3eb80b369ede" category="admonition">FASA700或FAS9000 NVRAM模組位於插槽6中、高度是系統中其他模組的兩倍。AFF</block>
   <block id="1f15728c77802915b0186fe3b48a5405" category="section-title">在AFF 節點1上安裝E4A900或FAS9500 NVRAM和控制器模組</block>
-  <block id="44188a216db4c50ab80d8d6376079f11" category="paragraph">您必須在AFF 節點1上安裝您收到的用於升級的EsceA900或FAS9500 NVRAM和控制器模組。</block>
   <block id="32820fb65b578170b0fc242eb57ba80e" category="list-text">請勿將coredump裝置從AFF ESIEA700 NVRAM模組移至AFF ESIEA900 NVRAM模組。</block>
   <block id="d0106eeb656b11c6a07a8e45dcf1b214" category="list-text">將FAS9000 NVRAM模組中安裝的所有快閃快取模組移至FAS9500 NVRAM模組。</block>
   <block id="c7fecf95820e09d00c74bf86805bc991" category="section-title">安裝AFF 「FASA900」或「FAS9500 NVRAM」模組</block>
@@ -3978,7 +3977,6 @@
   <block id="546138e0b7501a286c581953c65b874d" category="list-text">將一對FAS9000控制器升級至執行ONTAP SHor9.10.1P3或更新版本的FAS9500系統</block>
   <block id="8c3db477300524bd7d8bcf2bba005da2" category="paragraph">支援AFF 的組合包括控制器從功能不完整的A700升級至AFF 功能不完整的A900、或從FAS9000升級至FAS9500、使用ARL和NVRAM模組。如果您已收到AFF 全新的整套系統（包括新機箱）、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要連結至_、請使用「系統控制器更換」命令來升級執行ONTAP 《Estrs9.8或更新版本》內容的控制器硬體。</block>
   <block id="89270eb0a4789198b9486a5396fb9846" category="admonition">此程序嚴格適用於AFF 執行下列項目的從Ar1A700升級AFF 到Ar1A900、ONTAP 以及執行從更新版本的FAS9.10.1或更高版本、以及執行9.10.1P3或更新版本的FAS9000升級到FAS9500。請勿使用此程序在任何其他系統組合之間執行升級。</block>
-  <block id="cf7bed4e96113c76fe71493d087876b9" category="paragraph">您必須在AFF 節點2上安裝您收到的用於升級的EscoreA900或FAS9500 NVRAM和控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。</block>
   <block id="446e34a339be0fda54aae2fe862c868f" category="paragraph">請使用下列程序、將AFF E4A900或FAS9500 NVRAM模組安裝在節點2的插槽6中。</block>
   <block id="b5e3968706cd8f4fee9d9a918b1b867f" category="section-title">在AFF 節點2中安裝E4A900或FAS9500控制器模組</block>
   <block id="43d062a38b70447bd532892c53e0817c" category="paragraph">請使用下列程序、在AFF 節點2中安裝E4A900或FAS9500控制器模組。</block>
@@ -4461,4 +4459,8 @@
   <block id="1c328c36316a518e9532ed77177daa6c" category="list-text">不需要在ONTAP 現有和替換的控制器上使用相同的版本。透過控制器升級來執行更新ONTAP 。</block>
   <block id="da74cb1ad73d862a786d9f20938d9c7a" category="list-text">升級時、您必須安裝支援ONTAP 的支援版本和修補程式層級的更換控制器。</block>
   <block id="dee716592bbae6fdba2b32d2854360ba" category="list-text">在您開始程序並升級第一個節點之後、就無法取消或從控制器升級中恢復。</block>
+  <block id="37ef3103c62f7c4c537260066ec1fcad" category="paragraph">在AFF 節點2上安裝您收到的用於升級的EVA900或FAS9500 NVRAM和控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。</block>
+  <block id="d9e40d62315bfc8bad4f1329f7f9b867" category="paragraph">執行安裝時、您必須注意下列事項：</block>
+  <block id="342f3ca2519e4e92f56675a89236fce6" category="list-text">將插槽6-1和6-2中的所有空白填充模組、從舊的NVRAM模組移至新的NVRAM模組。</block>
+  <block id="97bcf885640a80425f98f36e28630da4" category="paragraph">在AFF 節點1上安裝您收到的用於升級的EVA900或FAS9500 NVRAM和控制器模組。</block>
 </blocks>

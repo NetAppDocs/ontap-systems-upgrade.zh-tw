@@ -124,8 +124,11 @@ image::../media/black_circle_two.png[第二名]
 
 == 在AFF 節點1上安裝E4A900或FAS9500 NVRAM和控制器模組
 
-您必須在AFF 節點1上安裝您收到的用於升級的EsceA900或FAS9500 NVRAM和控制器模組。
+在AFF 節點1上安裝您收到的用於升級的EVA900或FAS9500 NVRAM和控制器模組。
 
+執行安裝時、您必須注意下列事項：
+
+* 將插槽6-1和6-2中的所有空白填充模組、從舊的NVRAM模組移至新的NVRAM模組。
 * 請勿將coredump裝置從AFF ESIEA700 NVRAM模組移至AFF ESIEA900 NVRAM模組。
 * 將FAS9000 NVRAM模組中安裝的所有快閃快取模組移至FAS9500 NVRAM模組。
 
