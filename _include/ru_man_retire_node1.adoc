@@ -82,10 +82,10 @@ node2                 true    true
 | 如果叢集是... | 然後... 
 
 
-| 雙節點叢集 | 前往 ,步驟6.。 
+| 雙節點叢集 | 前往 <<man_retire_1_step6,步驟6.>>。 
 
 
-| 具有兩個以上節點的叢集 | 前往 ,步驟8.。 
+| 具有兩個以上節點的叢集 | 前往 <<man_retire_1_step8,步驟8.>>。 
 |===
 . [[man_retar_1_step6]]存取任一節點上的進階權限層級：
 +
@@ -104,7 +104,7 @@ node2                 true    true
 High Availability Configured: false
 ----
 +
-如果叢集HA尚未停用、請重複執行 ,步驟2。
+如果叢集HA尚未停用、請重複執行 <<man_retire_1_step2,步驟2>>。
 
 . [[man_retare_1_step8]檢查node1目前是否保留epsilon：
 +

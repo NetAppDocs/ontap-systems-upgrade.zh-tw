@@ -16,12 +16,13 @@ summary: 在ONTAP 手動升級ARL期間、在執行ONTAP Es9.7或更早版本的
 [role="lead"]
 您必須在機架中安裝node3、將node1的連線傳輸至node3、開機node3及安裝ONTAP 支援。您也必須重新指派節點1的任何備用磁碟、屬於根磁碟區的任何磁碟、以及先前未重新定位至節點2的任何非根Aggregate。
 
+.關於這項工作
 如果netboot node3的ONTAP 版本與node1上安裝的版本不相同、則必須使用netboot node3。安裝node3之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點3。然後、您可以將正確的檔案下載到開機媒體裝置、以供後續系統開機。請參閱 link:prepare_for_netboot.html["準備netboot"]。
 
 不過、如果netboot node3的ONTAP 版本與node1上安裝的版本相同或更新、則不需要netboot node3。
 
 
-NOTE: *重要事項*：如果您要升級連接至儲存陣列的V系列系統、或是使用FlexArray 連接至儲存陣列的「虛擬化」軟體來升級系統、就必須完成 ,步驟1. 透過 ,步驟5.請將本節保留在 ,步驟6. 並遵循中的指示 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["檢查並設定節點3上的UTA/UTA2連接埠"] 視需要在維護模式中輸入命令。接著您必須返回本節並繼續 ,步驟7.。不過、如果您要升級具有儲存磁碟的系統、則必須完成本節的完整內容、然後前往 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["檢查並設定節點3上的UTA/UTA2連接埠"]，在叢集提示字元中輸入命令。
+NOTE: *重要事項*：如果您要升級連接至儲存陣列的V系列系統、或是使用FlexArray 連接至儲存陣列的「虛擬化」軟體來升級系統、就必須完成 <<man_install3_step1,步驟1.>> 透過 <<man_install3_step5,步驟5.>>請將本節保留在 <<man_install3_step6,步驟6.>> 並遵循中的指示 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["檢查並設定節點3上的UTA/UTA2連接埠"] 視需要在維護模式中輸入命令。接著您必須返回本節並繼續 <<man_install3_step7,步驟7.>>。不過、如果您要升級具有儲存磁碟的系統、則必須完成本節的完整內容、然後前往 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["檢查並設定節點3上的UTA/UTA2連接埠"]，在叢集提示字元中輸入命令。
 
 .步驟
 . [[man_install3_step1]]確定您有節點3的機架空間。
@@ -74,7 +75,7 @@ WARNING: The battery is unfit to retain data during a power outage. This is like
 When the battery is ready, the boot process will complete and services will be engaged.
 To override this delay, press 'c' followed by 'Enter'
 ----
-. [[man_install3_step5]如果您在中看到警告訊息 ,步驟4.、請採取下列行動：
+. [[man_install3_step5]如果您在中看到警告訊息 <<man_install3_step4,步驟4.>>、請採取下列行動：
 +
 .. 檢查可能指出NVRAM電池電量不足以外問題的任何主控台訊息、並視需要採取任何必要的修正行動。
 .. 讓電池充電並完成開機程序。
@@ -91,12 +92,12 @@ NOTE: *注意*：請勿置換延遲；若不允許電池充電、可能導致資
 | 如果您的系統... | 然後... 
 
 
-| 具有磁碟、無後端儲存設備 | 跳過步驟7至步驟12、前往 ,步驟13。 
+| 具有磁碟、無後端儲存設備 | 跳過步驟7至步驟12、前往 <<man_install3_step13,步驟13>>。 
 
 
 | 是連接FlexArray 至儲存陣列的V系列系統或系統、其中含有與之相關的功能完善的虛擬化軟體  a| 
 .. 前往 link:set_fc_uta_uta2_config_node3.html["在節點3上設定FC或UTA/UTA2組態"] 並完成這些小節 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["檢查並設定節點3上的UTA/UTA2連接埠"]（視系統而定）。
-.. 返回本節、並完成其餘步驟、從開始 ,步驟7.。
+.. 返回本節、並完成其餘步驟、從開始 <<man_install3_step7,步驟7.>>。
 
 
 *重要事項*：您必須先重新設定FC內建連接埠、CNA內建連接埠和CNA卡、才能ONTAP 使用FlexArray 「支援虛擬化」軟體在V系列或系統上啟動。
@@ -137,7 +138,7 @@ NOTE: *注意*：請勿置換延遲；若不允許電池充電、可能導致資
 | 如果您要升級的系統位於... | 然後... 
 
 
-| 雙機箱組態（控制器位於不同機箱） | 前往 ,步驟15。 
+| 雙機箱組態（控制器位於不同機箱） | 前往 <<man_install3_step15,步驟15>>。 
 
 
 | 單一機箱組態（控制器位於同一個機箱中）  a| 
@@ -149,9 +150,9 @@ NOTE: *注意*：請勿置換延遲；若不允許電池充電、可能導致資
 +
 *附註*：在開機環境提示字元下保留node4；您將返回中的node4 link:install_boot_node4.html["安裝及開機節點4"]。
 
-.. 如果您在中看到警告訊息 ,步驟4.、請依照中的指示進行 ,步驟5.
+.. 如果您在中看到警告訊息 <<man_install3_step4,步驟4.>>、請依照中的指示進行 <<man_install3_step5,步驟5.>>
 .. 將主控台纜線從節點4切換回節點3。
-.. 前往 ,步驟15。
+.. 前往 <<man_install3_step15,步驟15>>。
 
 
 |===
@@ -182,10 +183,10 @@ WARNING: *警告*：如果此新節點曾經用於任何其他叢集或HA配對�
 | 如果您要升級的系統... | 然後... 
 
 
-| 節點3上是否有正確或最新ONTAP 的版本 | 前往 ,步驟20。 
+| 節點3上是否有正確或最新ONTAP 的版本 | 前往 <<man_install3_step20,步驟20>>。 
 
 
-| 節點3上有正確或最新版本ONTAP 的資訊 | 前往 ,步驟25。 
+| 節點3上有正確或最新版本ONTAP 的資訊 | 前往 <<man_install3_step25,步驟25>>。 
 |===
 . [[man_install3_step20]]選擇下列其中一項動作來設定netboot連線。
 +
@@ -480,7 +481,7 @@ Destroying mailboxes forces a node to create new empty mailboxes, which clears a
 +
 "et time _hh：mm:ss_"
 
-. [[man_install3_step42]]確認合作夥伴系統ID設定正確、如所述 ,步驟28 在-p交換器下：
+. [[man_install3_step42]]確認合作夥伴系統ID設定正確、如所述 <<man_install3_step28,步驟28>> 在-p交換器下：
 +
 《prontenv合作夥伴sysid》
 

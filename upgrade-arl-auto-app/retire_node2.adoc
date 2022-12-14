@@ -26,4 +26,5 @@ summary: 使用ONTAP 「系統控制器更換」命令來升級執行版本號�
 
 
 
+.完成後
 您可以在升級完成後取消委任節點2。請參閱 link:decommission_old_system.html["取消委任舊系統"]。

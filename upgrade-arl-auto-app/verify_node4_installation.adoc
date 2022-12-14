@@ -16,11 +16,12 @@ summary: 使用ONTAP 「系統控制器更換」命令、升級執行版本號�
 [role="lead"]
 您必須驗證節點2的實體連接埠是否正確對應至節點4上的實體連接埠。這將使node4能夠在升級後與叢集中的其他節點和網路進行通訊。
 
+.關於這項工作
 請參閱 link:other_references.html["參考資料"] 可鏈接到_SURE_ Hardware Universe 以獲取有關新節點上端口的信息。您將會使用本節稍後的資訊。
 
 實體連接埠配置可能有所不同、視節點的機型而定。當新節點開機時ONTAP 、為了自動進入仲裁、S庫 會嘗試判斷哪些連接埠應該裝載叢集生命期。
 
-如果節點2上的實體連接埠未直接對應至節點4上的實體連接埠、請參閱後續章節  network configuration on node4 必須用於修復網路連線。
+如果節點2上的實體連接埠未直接對應至節點4上的實體連接埠、請參閱後續章節 <<還原節點4上的網路組態>> 必須用於修復網路連線。
 
 安裝並開機節點4之後、您必須驗證節點是否已正確安裝。您必須等待節點4加入仲裁、然後繼續重新配置作業。
 
@@ -79,7 +80,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 
 . 如果您使用MetroCluster 的是一個發揮作用的系統、請確認已更換的控制器已正確設定MetroCluster 為符合該功能的組態；MetroCluster 該功能應該處於正常狀態。請參閱 link:verify_health_of_metrocluster_config.html["驗MetroCluster 證整個過程的效能狀況"]。
 +
-重新設定MetroCluster 叢集間的LIF on the Synestate node4、然後檢查叢集對等、以恢復MetroCluster 在各個節點之間的通訊、再繼續進行 ,步驟6.。
+重新設定MetroCluster 叢集間的LIF on the Synestate node4、然後檢查叢集對等、以恢復MetroCluster 在各個節點之間的通訊、再繼續進行 <<auto_verify_4_Step6,步驟6.>>。
 
 +
 檢查MetroCluster 此節點狀態：
@@ -130,6 +131,7 @@ NOTE: 在此程序中、_重新建立VLAN、ifgrps和廣播網域_一節已重�
 
 確認node4處於仲裁狀態並可與node3通訊之後、請確認節點2的VLAN、介面群組和廣播網域是否顯示在node4上。此外、請確認所有節點4網路連接埠都已設定在正確的廣播網域中。
 
+.關於這項工作
 如需建立及重新建立VLAN、介面群組及廣播網域的詳細資訊、請參閱 link:other_references.html["參考資料"] 連結至_網路管理_。
 
 .步驟
@@ -317,7 +319,7 @@ Cluster::*> displaced-vlans restore -node node2_node4 -port e0e -destination-por
 「網路連接埠連線能力顯示」
 
 +
-當所有連接埠均已正確設定並新增至正確的廣播網域時、「network port re連通 性show」命令會針對所有連接的連接埠、將連線狀態報告為「ok」、對於沒有實體連線的連接埠、狀態應顯示為「不可到達性」。如果有任何連接埠報告這兩個以外的狀態、請依照中的指示執行連線能力修復、並新增或移除廣播網域中的連接埠 ,步驟4.。
+當所有連接埠均已正確設定並新增至正確的廣播網域時、「network port re連通 性show」命令會針對所有連接的連接埠、將連線狀態報告為「ok」、對於沒有實體連線的連接埠、狀態應顯示為「不可到達性」。如果有任何連接埠報告這兩個以外的狀態、請依照中的指示執行連線能力修復、並新增或移除廣播網域中的連接埠 <<auto_restore_4_Step4,步驟4.>>。
 
 . 確認所有連接埠均已置入廣播網域：
 +

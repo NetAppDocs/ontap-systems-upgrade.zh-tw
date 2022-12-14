@@ -4463,4 +4463,7 @@
   <block id="d9e40d62315bfc8bad4f1329f7f9b867" category="paragraph">執行安裝時、您必須注意下列事項：</block>
   <block id="342f3ca2519e4e92f56675a89236fce6" category="list-text">將插槽6-1和6-2中的所有空白填充模組、從舊的NVRAM模組移至新的NVRAM模組。</block>
   <block id="97bcf885640a80425f98f36e28630da4" category="paragraph">在AFF 節點1上安裝您收到的用於升級的EVA900或FAS9500 NVRAM和控制器模組。</block>
+  <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">關於這項工作</block>
+  <block id="3468b73fe010ca505a63fcddaa4f3601" category="paragraph-title">本資訊所使用的術語</block>
+  <block id="5d022d26a75a4e30fae6648d5bcdd9e5" category="paragraph-title">適用於支援功能的FC組態MetroCluster</block>
 </blocks>

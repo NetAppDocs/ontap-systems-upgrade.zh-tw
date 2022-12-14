@@ -26,6 +26,7 @@ NOTE: 您也可以使用USB開機選項來執行netboot。請參閱 link:https:/
 * 請從ONTAP NetApp支援網站下載系統所需的系統檔案、以及正確版本的支援。請參閱 link:other_references.html["參考資料"] 連結至_NetApp支援網站_。
 
 
+.關於這項工作
 如果新的控制器ONTAP 上安裝的版本與原控制器上安裝的版本不相同、則必須以網路開機。安裝每個新的控制器之後、您可以從ONTAP 儲存在Web伺服器上的Image9映像來啟動系統。然後、您可以將正確的檔案下載到開機媒體裝置、以供後續系統開機。
 
 .步驟
@@ -95,7 +96,7 @@ Selection (1-11)?
 ====
 . 如果系統提示您繼續此程序、請輸入「y」、然後在系統提示您輸入套件時、輸入URL：「http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz`」
 +
-「<path_to_the_web-易於 存取的目錄>」應該會引導您下載「<ONTAP_VERSION >_image.tgz」 ,步驟2。
+「<path_to_the_web-易於 存取的目錄>」應該會引導您下載「<ONTAP_VERSION >_image.tgz」 <<netboot_node1_step2,步驟2>>。
 
 . 完成下列子步驟以重新啟動控制器模組：
 +

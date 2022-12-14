@@ -16,6 +16,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行版本號為9.
 [role="lead"]
 驗證node3安裝之後、在將Aggregate從node2重新定位至node3之前、您必須將屬於node1的NAS資料lIF、目前位於node2上、從node2移至node3。您還必須驗證節點3上是否存在SAN lifs。
 
+.關於這項工作
 在升級過程中、遠端LIF會處理SAN LUN的流量。在升級期間、移轉SAN LIF對於叢集或服務健全狀況並不必要。除非需要將SAN LIF對應至新連接埠、否則不會移動SAN LIF。將node3聯機後，您將驗證生命期是否正常並位於適當的端口上。
 
 .步驟

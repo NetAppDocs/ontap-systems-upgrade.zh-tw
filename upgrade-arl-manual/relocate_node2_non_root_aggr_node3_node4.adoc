@@ -32,7 +32,7 @@ summary: 在ONTAP 執行版本更新至版本更新的控制器上手動升級AR
 「torage Aggregate regate regate regulationstart -node3_-destate _node4_-aggregate-list _aggr_name1、aggr_name2..._-ne-控制 器升級true」
 
 +
-Aggregate清單是您在中取得的node4所擁有的Aggregate清單 ,步驟1.。
+Aggregate清單是您在中取得的node4所擁有的Aggregate清單 <<man_relocate_3_4_Step1,步驟1.>>。
 
 .. 出現提示時、請輸入「y」。
 +
@@ -62,7 +62,7 @@ NOTE: 請等到所有節點2集合體都已重新放置到節點4之後、再繼
 | 如果重新配置... | 然後... 
 
 
-| 所有集合體都成功 | 前往 ,步驟5.。 
+| 所有集合體都成功 | 前往 <<man_relocate_3_4_Step5,步驟5.>>。 
 
 
 | 任何Aggregate都失敗或遭否決  a| 
@@ -106,7 +106,7 @@ Aggregate清單是故障或被否決的Aggregate清單。
 「torage Aggregate show -node4_-state offline -root false」
 
 +
-node2 Aggregate列在中命令的輸出中 ,步驟1.。
+node2 Aggregate列在中命令的輸出中 <<man_relocate_3_4_Step1,步驟1.>>。
 
 . 如果有任何Aggregate已離線或變成外部、請針對每個Aggregate使用下列命令使其上線：
 +

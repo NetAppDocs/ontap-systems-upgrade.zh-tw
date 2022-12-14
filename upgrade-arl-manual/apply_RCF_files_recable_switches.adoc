@@ -16,6 +16,7 @@ summary: 在執行ONTAP 更新版本的控制器上手動升級ARL時、安裝RC
 [role="lead"]
 您必須套用適當的參考組態檔（RCT）、才能重新設定交換器以容納新節點。套用RCFs之後、您就可以重新連接交換器。
 
+.開始之前
 FC交換器連接埠使用量必須符合_架構附加MetroCluster 的《安裝與組態》內容中所述的使用量、才能使用RCW。前往 link:other_references.html["參考資料"] 連結至_Fabric附加MetroCluster 的《安裝與組態》內容。
 
 .步驟

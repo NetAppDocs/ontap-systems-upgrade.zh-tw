@@ -35,7 +35,7 @@ cluster::> net int show -data-protocol iscsi|fcp -home-node node3
               lif1        up/up       172.17.176.120/24   node3          e0c      true
               lif2        up/up       172.17.176.121/24   node3          e1a      true
 ----
-.. 將「FCP介面卡show」命令的輸出與您在工作表中記錄的組態資訊進行比較、確認新的「介面卡」和「切換連接埠」組態正確無誤 ,步驟2。
+.. 將「FCP介面卡show」命令的輸出與您在工作表中記錄的組態資訊進行比較、確認新的「介面卡」和「切換連接埠」組態正確無誤 <<worksheet_step2,步驟2>>。
 +
 在節點3上列出新的SAN LIF組態：
 

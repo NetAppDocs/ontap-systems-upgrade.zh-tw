@@ -16,8 +16,10 @@ summary: 在ONTAP 執行更新版本的控制器上手動升級ARL時、請判�
 [role="lead"]
 您必須確定新控制器模組和新磁碟櫃與現有FC交換器之間的纜線。
 
+.關於這項工作
 此工作必須在每MetroCluster 個站台執行。
 
+.步驟
 使用_Fabric附加MetroCluster 的《安裝與組態》內容來判斷交換器類型的纜線配置、使用連接埠使用方式進行八節點MetroCluster 的《Esp組態》。FC交換器連接埠使用量必須符合內容中所述的使用量、才能使用參考組態檔（RCFC）。
 
 前往 link:other_references.html["參考資料"] 連結至_Fabric附加MetroCluster 的《安裝與組態》內容。

@@ -48,6 +48,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行VMware 9.5的�
 
 在升級程序結束時、node3應該是集合體的新主節點、而該主節點原本是node1作為主節點。您可以在升級後重新配置。
 
+.關於這項工作
 在下列情況下、Aggregate可能無法正確重新定位、將node1當作其主節點、而非node3：
 
 * 在第3階段期間、當Aggregate從節點2重新定位至節點3時。正在重新部署的部分集合體將node1當作其主節點。例如、此類Aggr_nnode_1可稱為Aggr_node_1。如果在第3階段重新配置aggr_node_1失敗、且無法強制重新配置、則會將Aggregate留在node2上。
@@ -80,6 +81,6 @@ Check Alignment of PHs>將Agrage Aggregate重新定位從節點節點節點_node
 「_aggr1、aggr2、aggr3..._」是集合體清單、其中節點1是原始擁有者。
 
 +
-沒有node3做為主擁有者的Aggregate可以使用中相同的重新配置命令、將其重新定位至node3 ,步驟3.。
+沒有node3做為主擁有者的Aggregate可以使用中相同的重新配置命令、將其重新定位至node3 <<auto_aggr_relocate_fail_Step3,步驟3.>>。
 
 

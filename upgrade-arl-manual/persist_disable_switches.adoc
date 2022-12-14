@@ -16,8 +16,10 @@ summary: 在Fabric中停用Brocade和Cisco交換器、並在執行ONTAP 更新�
 [role="lead"]
 您必須持續停用Fabric中的交換器、才能修改其組態。
 
+.關於這項工作
 您可以在交換器命令列上執行命令來停用交換器、而用於此功能的命令並非ONTAP 使用指令。
 
+.步驟
 持續停用交換器：
 
 * 對於Brocade交換器、請使用「shwitchCfgPeristentDisable」命令。

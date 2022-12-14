@@ -8,9 +8,11 @@
 
 如果節點4具有FC連接埠（內建或FC介面卡上）、您必須先在節點上設定連接埠組態、才能將其投入服務、因為連接埠並未預先設定。如果未設定連接埠、可能會導致服務中斷。
 
+.開始之前
 您必須擁有儲存在區段中節點2的FC連接埠設定值 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]。
 
-如果您的系統沒有FC組態、您可以跳過本節。如果您的系統有內建UTA/UTA2連接埠或UTA/UTA2介面卡、請在中進行設定  and configure UTA/UTA2 ports on node4。
+.關於這項工作
+如果您的系統沒有FC組態、您可以跳過本節。如果您的系統有內建UTA/UTA2連接埠或UTA/UTA2介面卡、請在中進行設定 <<檢查並設定節點4上的UTA/UTA2連接埠>>。
 
 *重要*：如果您的系統有儲存磁碟、您必須在叢集提示字元下輸入本節中的命令。如果您的V系列系統或系統FlexArray 已連接至儲存陣列、請在維護模式下於本節中輸入命令。
 
@@ -22,10 +24,10 @@
 | 如果您要升級的系統... | 然後… 
 
 
-| 具有儲存磁碟 | 前往 ,步驟5.。 
+| 具有儲存磁碟 | 前往 <<man_config_4_Step5,步驟5.>>。 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 前往 ,步驟2。 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 前往 <<man_config_4_Step2,步驟2>>。 
 |===
 . [[man_config_4_Step2]]存取維護模式：
 +
@@ -92,10 +94,10 @@ Boot_ONTAP maint
 | 如果新節點上的預設FC設定為... | 然後… 
 
 
-| 與您在原始節點上擷取的相同 | 前往 ,步驟11.。 
+| 與您在原始節點上擷取的相同 | 前往 <<man_config_4_Step11,步驟11.>>。 
 
 
-| 與您在原始節點上擷取的不同 | 前往 ,步驟8.。 
+| 與您在原始節點上擷取的不同 | 前往 <<man_config_4_Step8,步驟8.>>。 
 |===
 . [[man_config_4_step8]結束維護模式：
 +
@@ -122,14 +124,14 @@ Boot_ONTAP maint
 
 
 | 具有儲存磁碟  a| 
-** 前往  and configure UTA/UTA2 ports on node4 如果節點4有UTA/UTA2A卡或UTA/UTA2內建連接埠。
+** 前往 <<檢查並設定節點4上的UTA/UTA2連接埠>> 如果節點4有UTA/UTA2A卡或UTA/UTA2內建連接埠。
 ** 跳過一節、前往 link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"] 如果節點4沒有UTA/UTA2卡或UTA/UTA2內建連接埠。
 
 
 
 
 | 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
-** 前往  and configure UTA/UTA2 ports on node4 如果節點4有UTA/ UTA2卡或UTA/ UTA2內建連接埠。
+** 前往 <<檢查並設定節點4上的UTA/UTA2連接埠>> 如果節點4有UTA/ UTA2卡或UTA/ UTA2內建連接埠。
 ** 跳過_檢查並設定節點4_上的UTA/UTA2連接埠（如果節點4沒有UTA/UTA2卡或UTA/UTA2內建連接埠）一節、返回_安裝與開機節點4_一節、並繼續執行以下步驟： link:install_boot_node4.html#Step9["步驟9."]。
 
 

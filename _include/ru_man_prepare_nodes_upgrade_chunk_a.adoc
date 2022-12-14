@@ -183,13 +183,13 @@ aggr4         node1        node2        online
 +
 [cols="35,65"]
 |===
-| 如果中有命令 ,步驟9.... | 然後... 
+| 如果中有命令 <<man_prepare_nodes_step9,步驟9.>>... | 然後... 
 
 
-| 輸出空白 | 跳過步驟11、前往 ,步驟12.。 
+| 輸出空白 | 跳過步驟11、前往 <<man_prepare_nodes_step12,步驟12.>>。 
 
 
-| 已輸出 | 前往 ,步驟11.。 
+| 已輸出 | 前往 <<man_prepare_nodes_step11,步驟11.>>。 
 |===
 . [man準備節點_step11]如果節點1或節點2擁有的Aggregate是目前擁有者、但不是擁有主擁有者、請完成下列子步驟：
 +
@@ -308,7 +308,7 @@ vs0
 
 2 entries were displayed.
 ....
-. 如果輸出為 ,步驟15 顯示node1或node2擁有叢集中其他節點所擁有的任何資料lifs、將資料lifs從node1或node2移轉至其他節點：
+. 如果輸出為 <<man_prepare_nodes_step15,步驟15>> 顯示node1或node2擁有叢集中其他節點所擁有的任何資料lifs、將資料lifs從node1或node2移轉至其他節點：
 +
 「網路介面還原-vserver *-lif*」
 

@@ -4,6 +4,7 @@
 
 您可以使用Active IQ Config Advisor NetApp支援網站提供的「支援」工具來檢查常見的組態錯誤。
 
+.關於這項工作
 此為組態驗證與健全狀況檢查工具。Active IQ Config Advisor您可以在安全站台和非安全站台上部署、以供資料收集和系統分析之用。
 
 

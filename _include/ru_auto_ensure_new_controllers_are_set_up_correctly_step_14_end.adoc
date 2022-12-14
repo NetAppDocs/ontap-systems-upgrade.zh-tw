@@ -5,4 +5,5 @@
 . 如果您要在新節點上設定無交換器叢集、請參閱 link:other_references.html["參考資料"] 若要連結至_NetApp支援網站_、請遵循_移轉至雙節點無交換器叢集_中的指示。
 
 
+.完成後
 如果節點3和節點4上已啟用儲存加密、請完成一節 link:set_up_storage_encryption_new_module.html["在新的控制器模組上設定儲存加密"]。否則、請完成本節 link:decommission_old_system.html["取消委任舊系統"]。

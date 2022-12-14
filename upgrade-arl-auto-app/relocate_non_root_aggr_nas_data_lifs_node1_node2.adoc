@@ -16,8 +16,10 @@ summary: 使用ONTAP 「系統控制器更換」命令、將非根Aggregate和NA
 [role="lead"]
 在將node1替換成node3之前、您必須先將非根Aggregate和NAS資料lIF從node1移至node2、然後再將node1的資源移至node3。
 
+.開始之前
 當您開始工作時、該作業應該已經暫停；您必須手動恢復該作業。
 
+.關於這項工作
 在移轉集合體和lifs之後、此作業會暫停以供驗證之用。在此階段、您必須驗證是否所有非根Aggregate和非SAN資料生命體都移轉至節點3。
 
 

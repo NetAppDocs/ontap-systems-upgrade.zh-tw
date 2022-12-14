@@ -4,7 +4,8 @@
 
 如果節點3具有內建FC連接埠、內建統一化目標介面卡（UTA/UTA2）連接埠或UTA/UTA2卡、則必須先設定設定、才能完成其餘程序。
 
-您可能需要完成本節  FC ports on node3章節  and configure UTA/UTA2 ports on node3或這兩個區段。
+.關於這項工作
+您可能需要完成本節 <<在節點3上設定FC連接埠>>章節 <<檢查並設定節點3上的UTA/UTA2連接埠>>或這兩個區段。
 
 
 NOTE: NetApp行銷資料可能會使用「UTA2」一詞來指代整合式網路卡（CNA）介面卡和連接埠。不過、CLI使用「CNA」一詞。

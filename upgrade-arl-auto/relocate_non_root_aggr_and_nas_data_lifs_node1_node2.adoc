@@ -16,8 +16,10 @@ summary: 使用ONTAP 「系統控制器更換」命令、將非根Aggregate和NA
 [role="lead"]
 在將node1替換成node3之前、您必須先將非根Aggregate和NAS資料lIF從node1移至node2、然後再將node1的資源移至node3。
 
+.開始之前
 當您開始工作時、必須已暫停該作業；您必須手動恢復該作業。
 
+.關於這項工作
 在升級過程中、遠端LIF會處理SAN LUN的流量。在升級期間、移轉SAN LIF對於叢集或服務健全狀況並不必要。將node3聯機後，您必須驗證生命期是否正常並位於適當的端口上。
 
 

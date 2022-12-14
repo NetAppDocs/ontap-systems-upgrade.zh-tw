@@ -4,4 +4,5 @@
 
 如果node4具有內建FC連接埠、內建統一化目標介面卡（UTA/UTA2）連接埠或UTA/UTA2卡、則必須先設定這些設定、才能完成其餘程序。
 
-您可能需要完成  FC ports on node4 部分  and configure UTA/UTA2 ports on node4或這兩個區段。
+.關於這項工作
+您可能需要完成 <<在節點4上設定FC連接埠>> 部分 <<檢查並設定節點4上的UTA/UTA2連接埠>>或這兩個區段。

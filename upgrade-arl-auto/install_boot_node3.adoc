@@ -16,12 +16,13 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行ONTAP 版本�
 [role="lead"]
 您必須在機架中安裝node3、將node1的連線傳輸至node3、開機node3及安裝ONTAP 支援。接著、您必須重新指派節點1的任何備用磁碟、屬於根磁碟區的任何磁碟、以及任何未在程序中稍早重新放置到節點2的非根Aggregate、如本節所述。
 
+.關於這項工作
 重新配置作業會在此階段開始時暫停。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。此外、您必須驗證SAN LIF是否已成功移至節點3。
 
 如果netboot node3沒有ONTAP 安裝在node1上的相同版本的支援功能、您就需要netboot node3。安裝node3之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點3。接著、您可以依照中的指示、將正確的檔案下載到開機媒體裝置、以供後續系統開機 link:prepare_for_netboot.html["準備netboot"]。
 
 .重要事項：
-* 如果您要升級連接至儲存陣列的V系列系統、或是升級連接FlexArray 至儲存陣列的含有「虛擬化」軟體的系統、則必須完成 ,步驟1. 透過 ,步驟21、然後保留本節、並依照中的指示進行 link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3["檢查並設定節點3上的UTA/UTA2連接埠"] 視需要在維護模式中輸入命令。接著您必須返回本節並繼續 ,步驟23。
+* 如果您要升級連接至儲存陣列的V系列系統、或是升級連接FlexArray 至儲存陣列的含有「虛擬化」軟體的系統、則必須完成 <<auto_install3_step1,步驟1.>> 透過 <<auto_install3_step21,步驟21>>、然後保留本節、並依照中的指示進行 link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3["檢查並設定節點3上的UTA/UTA2連接埠"] 視需要在維護模式中輸入命令。接著您必須返回本節並繼續 <<auto_install3_step23,步驟23>>。
 * 如果您要升級具有儲存磁碟的系統、則必須完成此一整節、然後前往 link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3["檢查並設定節點3上的UTA/UTA2連接埠"] 區段、在叢集提示字元中輸入命令。
 
 
@@ -69,7 +70,7 @@ WARNING: The battery is unfit to retain data during a power outage. This is like
 When the battery is ready, the boot process will complete and services will be engaged.
 To override this delay, press 'c' followed by 'Enter'
 ....
-. [[auto_install3_step5]]如果您在中看到警告訊息 ,步驟4.、請採取下列行動：
+. [[auto_install3_step5]]如果您在中看到警告訊息 <<auto_install3_step4,步驟4.>>、請採取下列行動：
 +
 .. 檢查可能指出NVRAM電池電量不足以外問題的任何主控台訊息、並視需要採取任何必要的修正行動。
 .. 讓電池充電並完成開機程序。
@@ -229,12 +230,12 @@ NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。�
 | 如果您的系統... | 說明 
 
 
-| 具有磁碟、無後端儲存設備 | 前往 ,步驟23 
+| 具有磁碟、無後端儲存設備 | 前往 <<auto_install3_step23,步驟23>> 
 
 
 | 是連接FlexArray 至儲存陣列的V系列系統或系統、其中含有與之相關的功能完善的虛擬化軟體  a| 
 .. 前往章節 link:set_fc_or_uta_uta2_config_on_node3.html["在節點3上設定FC或UTA/UTA2組態"] 並完成本節的小節。
-.. 返回本節、並完成其餘步驟、從開始 ,步驟23。
+.. 返回本節、並完成其餘步驟、從開始 <<auto_install3_step23,步驟23>>。
 
 
 *重要事項*：您必須先重新設定FC內建連接埠、CNA內建連接埠和CNA卡、才能ONTAP 使用FlexArray 「支援虛擬化」軟體在V系列或系統上啟動。
