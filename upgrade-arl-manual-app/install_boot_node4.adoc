@@ -156,13 +156,39 @@ WARNING: *警告：請勿覆寫延遲。若不讓電池充電、可能會導致�
 +
 「預設值」
 
-. 如果在此組態中使用FDE、則必須將「Setenv bootarg.storageencryption支援」變數設為「true」、並將「kmip.init.maxwait`變數」設為「Off」、以避免在節點2組態載入後發生開機迴圈：
+. 設定 `bootarg.storageencryption.support` 和 `kmip.init.maxwait` 在節點2組態載入後、避免開機迴圈的變數。
 +
-「etenv bootarg.storageencryption。支援true」
+如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["如何判斷我安裝了FIPS磁碟機"^] 以判斷使用中的自我加密磁碟機類型。
 
 +
-「kmip.init.maxwait關」
+[cols="35,65"]
+|===
+| 如果下列磁碟機正在使用中… | 然後… 
 
+
+| 符合FIPS 140-2第2級自我加密要求的NetApp儲存加密（NSE）磁碟機  a| 
+** `setenv bootarg.storageencryption.support *true*`
+** 「kmip.init.maxwait關」
+
+
+
+
+| NetApp非FIPS SED  a| 
+** `setenv bootarg.storageencryption.support *false*`
+** 「kmip.init.maxwait關」
+
+
+|===
++
+[NOTE]
+====
+** 您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
+** 您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
+** 如果在設定之後發生停電 `kmip.init.maxwait` 變數至 `off`請聯絡技術支援部門以取得協助、避免可能的資料遺失。
+** 一旦HA配對上的控制器升級完成、您就必須取消設定 `kmip.init.maxwait` 變動。請參閱 link:ensure_controllers_set_up_correctly.html["確認新的控制器已正確設定"]。
+
+
+====
 . 如果ONTAP 節點4上安裝的版本的資訊與ONTAP 節點2上安裝的版本資訊相同或更新、請輸入下列命令：
 +
 Boot_ONTAP功能表
@@ -274,6 +300,10 @@ DISK         OWNER                       POOL   SERIAL NUMBER   HOME
 ......
 ----
 . 重新指派節點2的備援磁碟、屬於根磁碟的磁碟、以及未重新放置到區段前面節點3的任何非根Aggregate link:relocate_non_root_aggr_node2_node3.html["將非根Aggregate從節點2重新部署到節點3"]：
++
+
+NOTE: 如果您的系統上有共享磁碟、混合式Aggregate或兩者、則必須使用正確的 `disk reassign` 下表中的命令。
+
 +
 [cols="35,65"]
 |===

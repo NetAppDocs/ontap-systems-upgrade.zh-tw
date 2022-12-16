@@ -1121,8 +1121,6 @@
   <block id="20285adb42be1ddc0c2df8f7a2de7595" category="list-text">修改與儲存陣列上陣列LUN相關的主機或磁碟區群組中的全球連接埠名稱（WWPN）值。</block>
   <block id="a2b95adba38da1a033c4cae3447040cc" category="paragraph">安裝新的控制器模組會變更與每個內建FC連接埠相關的WWPN值。</block>
   <block id="23eacbaf200afc53fbaaaaa3d6705308" category="list-text">如果您的組態使用交換器型分區、請調整分區以反映新的WWPN值。</block>
-  <block id="d0f7f0151a2068815fb813711817af52" category="list-text">[[step27]如果此組態正在使用NetApp儲存加密（NSE）、則必須將「setenv bootarg.storageEncryption.supports」命令設定為「true」、並將「kmip.init.maxwait`變數」設定為「Off」、以避免在節點2組態載入後發生開機迴圈：</block>
-  <block id="0ab3dc62b58693ac60ff9111f9d60a74" category="paragraph">「etenv bootarg.storageencryption。支援true」</block>
   <block id="461db791196d5961d2d12d83cd09d8ef" category="paragraph">「kmip.init.maxwait關」</block>
   <block id="d1cffd7fada9f21315c30db304bb2ca9" category="list-text">開機節點進入開機功能表：</block>
   <block id="64782ddcc78f95845d4571abdc1d5f5a" category="inline-link-macro">檢查並設定節點4步驟15上的UTA/UTA2連接埠</block>
@@ -1179,7 +1177,6 @@
   <block id="c72fdddc98e37cd5e62f25b9974065fc" category="list-text">[[step24]將FC啟動器連接埠新增至儲存陣列做為新主機、將陣列LUN對應至新主機。</block>
   <block id="3ba1b014c973048d41b40e37b1cfeb69" category="list-text">[[step25]修改與儲存陣列上陣列LUN相關之主機或磁碟區群組中的全球連接埠名稱（WWPN）值。</block>
   <block id="be6df649a349785ed8ec2a552e7c8903" category="list-text">[[step26]如果您的組態使用交換器型分區、請調整分區以反映新的WWPN值。</block>
-  <block id="dd708512790d13fb2f8fa3cff745910d" category="list-text">[[step27]如果此組態正在使用NetApp儲存加密（NSE）、則必須將「setenv bootarg.storageEncryption.supports」命令設定為「true」、並將「kmip.init.maxwait`變數」設定為「Off」、以避免在節點1組態載入後發生開機迴圈：</block>
   <block id="dc19b23ad13df9e69f052ca959f75ad8" category="list-text">[[step28]開機節點進入開機功能表：</block>
   <block id="cae5b224d557c99a0eebcc5cacc40bf4" category="inline-link-macro">檢查並設定節點3步驟15上的UTA/UTA2連接埠</block>
   <block id="a298d19803fc12a7c7efaba3c5bf6f9c" category="paragraph">如果您沒有FC或UTA/UTA2組態、請執行 <block ref="9a0e78facca94ea7347680acb603c7fe" category="inline-link-macro-rx"></block> 這樣節點3就能識別節點1的磁碟。</block>
@@ -2507,7 +2504,6 @@
   <block id="a2835e58397213dc9bedb9afe05d29d2" category="list-text">[[man_install4_Step15]在維護模式提示字元中、輸入下列命令：</block>
   <block id="9b30a77b62fcc76d557f789dd6ce3167" category="list-text">設定node4 ONTAP 以供使用：</block>
   <block id="70dbb49a6cbad96a6befa2a87cf2c5ce" category="paragraph">「預設值」</block>
-  <block id="70fa8a94fae594e32ef99991313ee137" category="list-text">如果在此組態中使用FDE、則必須將「Setenv bootarg.storageencryption支援」變數設為「true」、並將「kmip.init.maxwait`變數」設為「Off」、以避免在節點2組態載入後發生開機迴圈：</block>
   <block id="c769624c49a19cf249ae2dabe50fafd5" category="list-text">如果ONTAP 節點4上安裝的版本的資訊與ONTAP 節點2上安裝的版本資訊相同或更新、請輸入下列命令：</block>
   <block id="bd525e59dc1c481092f22bdaeff4a9cb" category="cell">節點4上沒有正確或最新ONTAP 的版本</block>
   <block id="d4d1f4ca7806007366aa98184f062124" category="inline-xref">步驟20</block>
@@ -2642,9 +2638,7 @@
   <block id="620bed07fd84663ccd35004111b0a13c" category="list-text">如果您在中看到警告訊息 <block ref="189d751c0d059b7e2fcaef080c81111f" category="inline-xref-macro-rx"></block>、請依照中的指示進行 <block ref="593996bb06ec10671cada9089fb35dd4" category="inline-xref-macro-rx"></block></block>
   <block id="a70d58ca96ede2bc6122de5eaba9afaf" category="list-text">將主控台纜線從節點4切換回節點3。</block>
   <block id="7c0d2cf152b2cde561a140a996176952" category="list-text">[[man_install3_step15]]&lt;設定ONTAP 節點3以供參考：</block>
-  <block id="7238df7481760a2449dc9206c452edfe" category="list-text">[[man_install3_step16]如果此組態正在使用NetApp儲存加密（NSE）、則必須將「setenv bootarg.storageEncryption.support'命令設定為「true」、並將「kmip.init.maxwait`變數」設定為「Off」、以避免在節點1組態載入後發生開機迴圈：</block>
   <block id="0546806bd19b344e7d0ca13460d96992" category="list-text">[[man_install3_step17]如果ONTAP 安裝在節點3上的版本與ONTAP 安裝在節點1上的版本相同或更新、請列出磁碟並重新指派給新節點3：</block>
-  <block id="7ce11de7229520360ee33defaf28ec82" category="admonition">*警告*：如果此新節點曾經用於任何其他叢集或HA配對、您必須先執行「wifeconfig」、然後再繼續。否則可能導致服務中斷或資料遺失。如果先前使用的是替換控制器、請聯絡技術支援部門、特別是當控制器以ONTAP 7-Mode執行時。</block>
   <block id="b04b66d312941ba2b1d5910ec5f5fb36" category="list-text">[[man_install3_step18]按下CTRL－C以顯示開機功能表。</block>
   <block id="7be8c6136747afe24ab6f25f931c2451" category="list-text">[[man_install3_step19]執行下列其中一項動作：</block>
   <block id="b65dee077de24058e64aa96e60e2a56a" category="cell">節點3上是否有正確或最新ONTAP 的版本</block>
@@ -2860,8 +2854,6 @@
   <block id="6e13fc9d1e75c160461788f1b750083d" category="list-text">使用下列命令檢查輸出、確認節點2上沒有剩餘的資料lifs：</block>
   <block id="5c29a1b28ae2f684e62d4c2276e7e8e6" category="summary">交換相應AFF 的E4A900 node2控制器模組和NVRAM模組之後、您可能需要將它們以網路開機。</block>
   <block id="f28e6dd67b477412b5b29af155fdd706" category="doc">netboot node2</block>
-  <block id="479797897f076c1b85379ce2582f407d" category="inline-link-macro">NetApp知識庫文章：如何使用boot_recovery loader_command來安裝ONTAP 還原、以進行系統的初始設定</block>
-  <block id="439ee18cc3b8447dc7005ee865a16034" category="admonition">您也可以使用USB開機選項來執行netboot。請參閱 <block ref="bf492b442968a212511cdeeb769ceb71" category="inline-link-macro-rx"></block>。</block>
   <block id="dc4e68dae6f2c9aa089b7b7f44a400c0" category="list-text">請從ONTAP NetApp支援網站下載系統所需的系統檔案、以及正確版本的支援。請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 連結至_NetApp支援網站_。</block>
   <block id="2ba573cec1f6a3141c471fb88430735b" category="list-text">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 可鏈接到_NetApp Support Situ_下載用於執行系統的netboot的文件。</block>
   <block id="68757294a9e11cada8382926574adf4d" category="list-text">[[netboot_node2_step2]]請ONTAP 從NetApp支援網站的軟體下載區段下載適當的支援軟體、並將「&lt;ONTAP_VERSION &gt;_image.tgz」檔案儲存在可從網路存取的目錄中。</block>
@@ -4158,7 +4150,6 @@
   <block id="68c05b65b923848aa186ea69ee9487d7" category="paragraph">「Volume show -node3_-state offline」（Volume show -node4_-state offline）</block>
   <block id="113d7e75ab71ebd9bcdd1155228482fc" category="paragraph">"Volume online -vserver _vserver_name_-volume _volume _name_"</block>
   <block id="d5538e0d48b9561003d2506ab100c330" category="paragraph">「系統授權新增-授權碼_license代碼、license代碼、license代碼、license代碼..._」</block>
-  <block id="3569673b09307688fbb6c3913c894704" category="list-text">如果在組態中使用NetApp儲存加密（NSE）、您可以使用「kmip.init.maxwait` variable "Off"（在中）、將「setenv bootarg.storageEncryption.support"命令設為「true」（真） <block ref="c34adc28d35ee24325c874eba95a8786" category="inline-link-macro-rx"></block> 在_Install and boot node3_）中、您需要重設變數：「et diag; systemShell -node_node_name_-command sudo kenv -u -p kmip.init.maxwait`</block>
   <block id="f8bb98c031da24e788f5f02332ac5bb8" category="paragraph">「系統授權清理-未使用的-過期」「系統授權刪除-序號_normite_sSerial_number_-套件_licensee_package_」</block>
   <block id="e4c31b5f2905d746c57c1b1f1e038eac" category="paragraph">「系統授權刪除-序號_node1_sSerial_number_-package *」「系統授權刪除-序號_node2_sSerial_number_-package *」</block>
   <block id="bb445430e4b0638bdd79f943cd99a597" category="paragraph">「系統服務處理器網路修改-node_node_name_」</block>
@@ -4237,7 +4228,6 @@
   <block id="ee58b8665fc7b6cbed254e1253d5deb9" category="paragraph">「系統授權刪除-序號_node_sSerial_number_-套件_licensee_package_」</block>
   <block id="bcacb0089032ec901277a70c73c0ec1b" category="paragraph">「系統授權刪除-序號_node1_sSerial_number_-package *」</block>
   <block id="4a472f5ad7101a303b004c96117957a1" category="paragraph">「系統授權刪除-序號_node2_sSerial_number_-package *」</block>
-  <block id="3d30fa5d7fe39d5e2138ab00da2976e0" category="list-text">如果在組態中使用NetApp儲存加密（NSE）、而您使用「_kmip.init.maxwait_`」變數「Off」（在中）、將「show bootarg.storageEncryption.support.support」命令設為「true」（真） <block ref="8eec167848fab5c118476094c3efd320" category="inline-link-macro-rx"></block>）、您需要重設變數：</block>
   <block id="0a06fcfc5f0fe34a7f9397c4cfc05b2a" category="paragraph">「et diag; systemShell -node_node_name_-command sudo kenv -u -p kmip.init.maxwait`」</block>
   <block id="82e8b37263a676e6464d77efb5c772fb" category="list-text">[[[auto_install4_step21]]在新節點的開機載入程式中、必須設定「partner-sysid」參數。對於node4、「合作夥伴sysid」必須是node3的。驗證node3的"合作 夥伴sysid"：</block>
   <block id="3bc434e6b7496efb94a7be3c795bee4a" category="paragraph">「torage Aggregate regate or搬 移開始節點_source_node_-destination-node_-aggregation-list *」</block>
@@ -4425,8 +4415,6 @@
   <block id="9bcbfad54c93824c94a6b85331bed53e" category="list-text">從ONTAP 功能更新至功能更新至功能更新至功能更新至功能更新MetroCluster 的版本。由於這個組態站台可位於兩個實體位置、因此必須在每個站台個別執行自動化控制器升級、才能進行HA配對。MetroCluster MetroCluster</block>
   <block id="17c47d164b7fe13ac454c776902ff45f" category="list-text">[[man_map_2_Step5]"從ONTAP 發行版本號9.8開始、ONTAP 如果在網路連接埠可連線性修復程序期間、連接埠在廣播網域之間移動、則會自動修改lifs的主連接埠。如果LIF的主連接埠已移至其他節點、或未指派、則LIF會顯示為已移除的LIF。還原主連接埠不再存在或重新放置到其他節點的已移轉LIF主連接埠。</block>
   <block id="b4e995bdd78b40e4a973dab2bcf9ed16" category="list-text">[[man_map_1_step5]]從ONTAP 發行版本號為9.8開始、ONTAP 當連接埠在網路連接埠可連線性修復程序期間於廣播網域之間移動時、會自動修改正式作業階段的主連接埠。如果LIF的主連接埠已移至其他節點、或未指派、則LIF會顯示為已移除的LIF。還原主連接埠不再存在或重新放置到其他節點的已移轉LIF主連接埠。</block>
-  <block id="9fba1587cf9ecb10691d38652754afe6" category="list-text">如果在組態中使用NetApp儲存加密（NSE）、而您使用「kmip.init.maxwait`」變數「Off」（在_Boot node2中、搭配AFF 使用NetApp A900或FAS9500控制器和NVRAM模組）、將「show」bootarg.storageEncryption.supports命令設為「true」、 <block ref="78c38799df1e07e5f585fe434be2c744" category="inline-link-macro-rx"></block>）、您必須重設變數：</block>
-  <block id="e532a21bf2c2e3d3ecd97106f9267054" category="list-text">[[A900_boot_node1]]如果此組態使用NetApp儲存加密（NSE）、則必須將「setenv bootarg.storageEncryption.support'命令設定為「true」、並將「kmip.init.maxwait`變數」設定為「Off」、以避免在節點1組態載入後發生開機迴圈：</block>
   <block id="b20fa92767a639ebf6c7b69aac21e88f" category="list-text">將節點開機至開機功能表：</block>
   <block id="50a538d5879b1b2e51ce2921f4a4ee75" category="list-text">輸入「22/7」並在節點停止於開機功能表時選取隱藏的選項「boot_after控制器置換」、即可將AFF 該站台1磁碟重新指派給AFF Efestha900節點1。</block>
   <block id="c1ff3d9c3e793a92f67d6a17048a954d" category="paragraph">短暫延遲之後、系統會提示您輸入要取代的節點名稱。如果有共享磁碟（也稱為進階磁碟分割（ADP）或分割磁碟）、系統會提示您輸入HA合作夥伴的節點名稱。</block>
@@ -4436,7 +4424,6 @@
   <block id="4881f451a26b5944c6775b5342df3dbd" category="list-text">檢查並重設中所述的儲存加密bootargs <block ref="370a03845d272602c838e3924a658003" category="inline-xref-macro-rx"></block>。</block>
   <block id="6e44d165d43069030cd99e370aeb5107" category="list-text">在載入程式提示下、開機：</block>
   <block id="5dd3fadb015da65e82238831e11341c9" category="paragraph">您可以使用下列範例做為參考：</block>
-  <block id="45fbb19b9a72a9e5e763d0da5d76ebf4" category="list-text">[[A900_boot_node2].如果此組態使用NetApp儲存加密（NSE）、則必須將「show bootenv bootarg.storageEncryption.support'命令設定為「true」、並將「kmip.init.maxwait` variable」設定為「Off」、以避免在節點2組態載入後發生開機迴圈：</block>
   <block id="b76a3b855e625194513f3473a25582fd" category="list-text">輸入「22/7」並在節點停止於開機功能表時選取隱藏的選項「boot_after控制器置換」、即可將AFF 該站台2磁碟重新指派給AFF Efestha900節點2。</block>
   <block id="3dbb60dab5c1891455791640814da2b9" category="list-text">檢查並重設中所述的儲存加密bootargs <block ref="025202ee75dff38076e126e76d5042ed" category="inline-xref-macro-rx"></block>。</block>
   <block id="e427f9006ac0f6079ad11054809d205e" category="admonition">採用內部磁碟機的機型包括：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 部分A800、部分A250。AFF AFF</block>
@@ -4466,4 +4453,36 @@
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">關於這項工作</block>
   <block id="3468b73fe010ca505a63fcddaa4f3601" category="paragraph-title">本資訊所使用的術語</block>
   <block id="5d022d26a75a4e30fae6648d5bcdd9e5" category="paragraph-title">適用於支援功能的FC組態MetroCluster</block>
+  <block id="b7a63528c3c16b7b7d27e4ac00d7e62e" category="list-text">設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 和<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 在節點2組態載入後、避免開機迴圈的變數。</block>
+  <block id="3c765a72d0082c1baa69be67b3c72b2b" category="inline-link">如何判斷我安裝了FIPS磁碟機</block>
+  <block id="4e56428ee881bef3f54dc3003fa0c53d" category="paragraph">如果您尚未在程序中稍早完成此作業、請參閱知識庫文章<block ref="7c5769e31755fa3efd9b532d734be964" category="inline-link-rx"></block> 以判斷使用中的自我加密磁碟機類型。</block>
+  <block id="e05e5b3ebbe0e2f7ee773e008e2cd7bd" category="cell">如果下列磁碟機正在使用中…</block>
+  <block id="cbfa089efcac1a28956de515cdcbcecc" category="cell">符合FIPS 140-2第2級自我加密要求的NetApp儲存加密（NSE）磁碟機</block>
+  <block id="9a7a5052834bdcd10b9395aaeaf8d876" category="list-text"><block ref="62a739993e7d046df94dbc6dc7c3f174" prefix="" category="inline-code"></block></block>
+  <block id="102a08eb3220b17bfbecbc277298074d" category="cell">NetApp非FIPS SED</block>
+  <block id="ad55a196e6d3053365555c02e73f7628" category="list-text"><block ref="20ac903c04b877a6840785a4ed61d182" prefix="" category="inline-code"></block></block>
+  <block id="aac162ab6399b4219e4bd0e8dc585acb" category="list-text">您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。</block>
+  <block id="31309fab75eee69087d335c5909a3146" category="list-text">您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。</block>
+  <block id="bd32b44cc5545766a5362c0c5b6a2dfc" category="list-text">如果在設定之後發生停電<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變數至<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block>請聯絡技術支援部門以取得協助、避免可能的資料遺失。</block>
+  <block id="655c07fe3ce62eeab4578cf3d2d6e771" category="list-text">一旦HA配對上的控制器升級完成、您就必須取消設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變動。請參閱 <block ref="05a1dd6857d097edce6d7d72bdcd0017" category="inline-link-macro-rx"></block>。</block>
+  <block id="3fa540556eb3ef2ac147e5b415b17e04" category="admonition">如果您的系統上有共享磁碟、混合式Aggregate或兩者、則必須使用正確的<block ref="a5160db2f330101874d96e78b0693369" prefix=" " category="inline-code"></block> 下表中的命令。</block>
+  <block id="286eac86ce936ac4334d34f7232d08ee" category="list-text">[[step27]設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 和<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 在節點1組態載入後、避免開機迴圈的變數。</block>
+  <block id="fec79bb13c2180d76df075734ce3012d" category="list-text">一旦HA配對上的控制器升級完成、您就必須取消設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變動。請參閱 <block ref="cbba924e7a6b5ca74fab65b80c811715" category="inline-link-macro-rx"></block>。</block>
+  <block id="40b95c7c32986ac84f5748670a167d11" category="list-text">如果在組態中使用自我加密磁碟機、且您已設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變數至<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例如、in <block ref="8eec167848fab5c118476094c3efd320" category="inline-link-macro-rx"></block>）、您必須取消設定變數：</block>
+  <block id="c73069b3e9a4e8c157316f5a836df89e" category="admonition">如果不停用儲存容錯移轉、可能會發生控制器升級失敗、進而中斷資料存取並導致資料遺失。</block>
+  <block id="fedc720f31d5713abbb00fe9bcfd0fbd" category="list-text">如果在組態中使用自我加密磁碟機、且您已設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變數至<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例如、in <block ref="c34adc28d35ee24325c874eba95a8786" category="inline-link-macro-rx"></block> 在_Install and boot node3_）中、您必須取消設定變數：</block>
+  <block id="b869b00024c3ac93a41114fb542db637" category="list-text">如果您的系統使用自我加密磁碟機、請參閱知識庫文章<block ref="7c5769e31755fa3efd9b532d734be964" category="inline-link-rx"></block> 以判斷您要升級的HA配對所使用的自我加密磁碟機類型。支援兩種自我加密磁碟機的支援ONTAP ：</block>
+  <block id="e8b7b5e8c418c431f083fc35fbd14230" category="list-text">FIPS認證的NetApp儲存加密（NSE）SAS或NVMe磁碟機</block>
+  <block id="1ca9a18d1e5d777d127f7999796b5bcd" category="list-text">非FIPS自我加密NVMe磁碟機（SED）</block>
+  <block id="e5cc9e8128ded12160c450314ec277ba" category="inline-link">深入瞭解支援的自我加密磁碟機</block>
+  <block id="1bff84f4314291fd02efa6c2f015d30b" category="paragraph"><block ref="0929bcf40cd143b7e05dbdda06c86959" category="inline-link-rx"></block>。</block>
+  <block id="006f1bc5fae53ff97ef17c1e82e53c7d" category="list-text">[[man_install3_step16]設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 和<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 在節點1組態載入後、避免開機迴圈的變數。</block>
+  <block id="9fd2ad6608fb31c52643192f3698b653" category="admonition">如果此新節點曾經用於任何其他叢集或HA配對、您必須執行<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block> 繼續之前。否則可能導致服務中斷或資料遺失。如果先前使用的是替換控制器、請聯絡技術支援部門、特別是當控制器以ONTAP 7-Mode執行時。</block>
+  <block id="e37202a6c528e8aacf3cfa600847c395" category="list-text">[[step27]設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 和<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 在節點2組態載入後、避免開機迴圈的變數。</block>
+  <block id="80c845a7cb29612164101b3b9f54de0c" category="list-text">設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 和<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 在節點1組態載入後、避免開機迴圈的變數。</block>
+  <block id="cf43271b9b370c0f4bddf73ec78aa59f" category="inline-link-macro">如何使用boot_recovery loader命令來安裝ONTAP 用來初始設定系統的支援功能</block>
+  <block id="4afbf28a131dcdda5d774d5742ccdf1e" category="admonition">您也可以使用USB開機選項來執行netboot。請參閱知識庫文章 <block ref="184f8f7294797efad8be0da4fb907563" category="inline-link-macro-rx"></block>。</block>
+  <block id="9d5ce6c4c82bf9a0ff455a50cadc1ab6" category="list-text">如果在組態中使用自我加密磁碟機、且您已設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變數至<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例如、在_Boot node2中搭配AFF 使用SUREA900或FAS9500控制器和NVRAM模組、 <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>）、您必須取消設定變數：</block>
+  <block id="21b9417932c23289b6932c3a0ac2517f" category="list-text">[[boot_node2_step1]]設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 和<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 在節點2組態載入後、避免開機迴圈的變數。</block>
+  <block id="083a0c049526537d6b95a268054814fb" category="list-text">您的系統上有混合式Aggregate。</block>
 </blocks>

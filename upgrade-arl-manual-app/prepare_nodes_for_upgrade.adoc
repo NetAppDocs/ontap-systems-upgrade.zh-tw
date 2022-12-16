@@ -720,6 +720,23 @@ NOTE: 此時請勿傳送AutoSupport 適用於節點2的消息給NetApp；稍後�
 +
 欄位「Last Subject sent：」（上次傳送主旨：）和「Last Time sent：」（上次傳送時間：）包含上次傳送訊息的標題、以及傳送訊息的時間。
 
+.. 如果您的系統使用自我加密磁碟機、請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["如何判斷我安裝了FIPS磁碟機"^] 以判斷您要升級的HA配對所使用的自我加密磁碟機類型。支援兩種自我加密磁碟機的支援ONTAP ：
++
+--
+*** FIPS認證的NetApp儲存加密（NSE）SAS或NVMe磁碟機
+*** 非FIPS自我加密NVMe磁碟機（SED）
+
+
+[NOTE]
+====
+*** 您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
+*** 您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
+
+
+====
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryption-concept.html#supported-self-encrypting-drive-types["深入瞭解支援的自我加密磁碟機"^]。
+
+--
 
 
 

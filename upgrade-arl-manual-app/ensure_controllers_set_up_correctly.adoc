@@ -83,7 +83,10 @@ node4          node3          true     Connected to node3
 +
 授權代碼參數接受28個大寫字母字元金鑰的清單。您可以一次新增一個授權、也可以一次新增多個授權、每個授權金鑰都以逗號分隔。
 
-. 如果在組態中使用NetApp儲存加密（NSE）、您可以使用「kmip.init.maxwait` variable "Off"（在中）、將「setenv bootarg.storageEncryption.support"命令設為「true」（真） link:install_boot_node3.html#step16["步驟16"] 在_Install and boot node3_）中、您需要重設變數：「et diag; systemShell -node_node_name_-command sudo kenv -u -p kmip.init.maxwait`
+. 如果在組態中使用自我加密磁碟機、且您已設定 `kmip.init.maxwait` 變數至 `off` （例如、in link:install_boot_node3.html#step16["步驟16"] 在_Install and boot node3_）中、您必須取消設定變數：
++
+「et diag; systemShell -node_node_name_-command sudo kenv -u -p kmip.init.maxwait`」
+
 . 若要從原始節點移除所有舊授權、請輸入下列其中一個命令：
 +
 「系統授權清理-未使用的-過期」「系統授權刪除-序號_normite_sSerial_number_-套件_licensee_package_」

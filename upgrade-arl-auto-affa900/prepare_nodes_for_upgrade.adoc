@@ -121,10 +121,28 @@ Controller replacement operation has been paused for user intervention.
 ** 「連線能力展示-詳細資料」
 
 
-
-
++
 
 NOTE: 如果正在使用使用Onboard Key Manager的NetApp Volume Encryption、請準備好金鑰管理程式通關密碼、以便在稍後的程序中完成金鑰管理程式重新同步。
+
+. 如果您的系統使用自我加密磁碟機、請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["如何判斷我安裝了FIPS磁碟機"^] 以判斷您要升級的HA配對所使用的自我加密磁碟機類型。支援兩種自我加密磁碟機的支援ONTAP ：
++
+--
+** FIPS認證的NetApp儲存加密（NSE）SAS或NVMe磁碟機
+** 非FIPS自我加密NVMe磁碟機（SED）
+
+
+[NOTE]
+====
+** 您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
+** 您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
+
+
+====
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryption-concept.html#supported-self-encrypting-drive-types["深入瞭解支援的自我加密磁碟機"^]。
+
+--
+
 
 
 

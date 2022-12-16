@@ -19,7 +19,7 @@ summary: 交換相應AFF 的EsceA900 node1控制器模組和NVRAM模組之後、
 除非安裝在機箱中並已開啟電源、否則無法檢查ONTAP 安裝在AFF 架構套件上的支援媒體版本、例如：在不支援支援更新的支援基礎架構成本的支援基礎架構成本。ONTAP AFF ONTAP AFF您可以在開機功能表中執行netboot、然後執行wappeconfig命令來設定映像。如果控制器模組先前曾在另一個叢集中使用、則「wifeconfig」命令會清除開機媒體上的任何剩餘組態。
 
 
-NOTE: 您也可以使用USB開機選項來執行netboot。請參閱 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["NetApp知識庫文章：如何使用boot_recovery loader_command來安裝ONTAP 還原、以進行系統的初始設定"^]。
+NOTE: 您也可以使用USB開機選項來執行netboot。請參閱知識庫文章 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["如何使用boot_recovery loader命令來安裝ONTAP 用來初始設定系統的支援功能"^]。
 
 .開始之前
 * 確認您可以使用系統存取HTTP伺服器。

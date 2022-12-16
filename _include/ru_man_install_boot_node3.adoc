@@ -148,20 +148,46 @@ NOTE: *注意*：請勿置換延遲；若不允許電池充電、可能導致資
 +
 「預設值」
 
-. [[man_install3_step16]如果此組態正在使用NetApp儲存加密（NSE）、則必須將「setenv bootarg.storageEncryption.support'命令設定為「true」、並將「kmip.init.maxwait`變數」設定為「Off」、以避免在節點1組態載入後發生開機迴圈：
+. [[man_install3_step16]設定 `bootarg.storageencryption.support` 和 `kmip.init.maxwait` 在節點1組態載入後、避免開機迴圈的變數。
 +
-「etenv bootarg.storageencryption。支援true」
+如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["如何判斷我安裝了FIPS磁碟機"^] 以判斷使用中的自我加密磁碟機類型。
 
 +
-「kmip.init.maxwait關」
+[cols="35,65"]
+|===
+| 如果下列磁碟機正在使用中… | 然後… 
 
+
+| 符合FIPS 140-2第2級自我加密要求的NetApp儲存加密（NSE）磁碟機  a| 
+** `setenv bootarg.storageencryption.support *true*`
+** 「kmip.init.maxwait關」
+
+
+
+
+| NetApp非FIPS SED  a| 
+** `setenv bootarg.storageencryption.support *false*`
+** 「kmip.init.maxwait關」
+
+
+|===
++
+[NOTE]
+====
+** 您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
+** 您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
+** 如果在設定之後發生停電 `kmip.init.maxwait` 變數至 `off`請聯絡技術支援部門以取得協助、避免可能的資料遺失。
+** 一旦HA配對上的控制器升級完成、您就必須取消設定 `kmip.init.maxwait` 變動。請參閱 link:ensure_controllers_set_up_correctly.html["確認新的控制器已正確設定"]。
+
+
+====
 . [[man_install3_step17]如果ONTAP 安裝在節點3上的版本與ONTAP 安裝在節點1上的版本相同或更新、請列出磁碟並重新指派給新節點3：
 +
 Boot_ONTAP
 
 +
 
-WARNING: *警告*：如果此新節點曾經用於任何其他叢集或HA配對、您必須先執行「wifeconfig」、然後再繼續。否則可能導致服務中斷或資料遺失。如果先前使用的是替換控制器、請聯絡技術支援部門、特別是當控制器以ONTAP 7-Mode執行時。
+WARNING: 如果此新節點曾經用於任何其他叢集或HA配對、您必須執行 `wipeconfig` 繼續之前。否則可能導致服務中斷或資料遺失。如果先前使用的是替換控制器、請聯絡技術支援部門、特別是當控制器以ONTAP 7-Mode執行時。
 
 . [[man_install3_step18]按下CTRL－C以顯示開機功能表。
 . [[man_install3_step19]執行下列其中一項動作：
@@ -288,6 +314,10 @@ NOTE: 您可能會在輸入命令後看到「磁碟顯示：沒有磁碟符合�
 . [[man_install3_step28]重新指派node1的備援磁碟、屬於根的任何磁碟、以及先前未重新部署至節點2的任何非根Aggregate link:relocate_non_root_aggr_node1_node2.html["將非根Aggregate從節點1重新部署到節點2"]。
 +
 根據您的系統是否有共享磁碟、輸入適當形式的「磁碟重新指派」命令：
+
++
+
+NOTE: 如果您的系統上有共享磁碟、混合式Aggregate或兩者、則必須使用正確的 `disk reassign` 下表中的命令。
 
 +
 [cols="35,65"]

@@ -111,7 +111,7 @@ Do you want to continue? {y|n}: y
 +
 您可以比較輸出與您在區段中擷取的輸出 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]。
 
-. 如果在組態中使用NetApp儲存加密（NSE）、而您使用「_kmip.init.maxwait_`」變數「Off」（在中）、將「show bootarg.storageEncryption.support.support」命令設為「true」（真） link:install_boot_node4.html#step27["安裝並開機節點4、步驟27"]）、您需要重設變數：
+. 如果在組態中使用自我加密磁碟機、且您已設定 `kmip.init.maxwait` 變數至 `off` （例如、in link:install_boot_node4.html#step27["安裝並開機節點4、步驟27"]）、您必須取消設定變數：
 +
 「et diag; systemShell -node_node_name_-command sudo kenv -u -p kmip.init.maxwait`」
 
