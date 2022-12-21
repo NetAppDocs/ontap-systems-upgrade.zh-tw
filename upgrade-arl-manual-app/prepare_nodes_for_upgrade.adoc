@@ -335,16 +335,16 @@ vs0
 如果有任何磁碟發生故障、請依照_Disk中的指示、使用CLI進行Aggregate管理。（請參閱 link:other_references.html["參考資料"] 使用CLI連結至_磁碟與集合管理。）
 
 . 完成下列子步驟並記錄每個命令的輸出、以收集節點1和節點2的相關資訊：
-
-
++
 [NOTE]
 ====
-* 您將在稍後的程序中使用此資訊。
-* 如果您的系統每個節點有兩個以上的叢集連接埠、例如FAS8080或AFF8080系統、則在開始升級之前、您必須將叢集生命體移轉並重新主控至每個節點的兩個叢集連接埠。如果您在每個節點上使用兩個以上的叢集連接埠來執行控制器升級、則在升級之後、新控制器上的叢集生命量可能會遺失。
+** 您將在稍後的程序中使用此資訊。
+** 如果您的系統每個節點有兩個以上的叢集連接埠、例如FAS8080或AFF8080系統、則在開始升級之前、您必須將叢集生命體移轉並重新主控至每個節點的兩個叢集連接埠。如果您在每個節點上使用兩個以上的叢集連接埠來執行控制器升級、則在升級之後、新控制器上的叢集生命量可能會遺失。
 
 
 ====
-. 記錄兩個節點的機型、系統ID和序號：
++
+.. 記錄兩個節點的機型、系統ID和序號：
 +
 「系統節點show -node1、node2_-instance」
 
@@ -352,7 +352,7 @@ vs0
 
 NOTE: 您將使用此資訊重新指派磁碟、並取消委任原始節點。
 
-. 在節點1和節點2上輸入下列命令、並從輸出中記錄磁碟櫃、每個磁碟櫃的磁碟數目、Flash儲存詳細資料、記憶體、NVRAM和網路卡的相關資訊：
+.. 在節點1和節點2上輸入下列命令、並從輸出中記錄磁碟櫃、每個磁碟櫃的磁碟數目、Flash儲存詳細資料、記憶體、NVRAM和網路卡的相關資訊：
 +
 "run -node_node_name_ sysconfig"
 
@@ -360,7 +360,7 @@ NOTE: 您將使用此資訊重新指派磁碟、並取消委任原始節點。
 
 NOTE: 您可以使用此資訊來識別可能要傳輸至節點3或節點4的零件或配件。如果您不知道節點是V系列系統、或是使用FlexArray 了「支援虛擬化」軟體、也可以從輸出中學習。
 
-. 在節點1和節點2上輸入下列命令、並記錄兩個節點上線上的Aggregate：
+.. 在節點1和節點2上輸入下列命令、並記錄兩個節點上線上的Aggregate：
 +
 「torage Aggregate show -node_node_name_-state online」
 
@@ -368,7 +368,7 @@ NOTE: 您可以使用此資訊來識別可能要傳輸至節點3或節點4的零
 
 NOTE: 您可以使用此資訊和下列子步驟中的資訊、在整個程序中驗證集合體和磁碟區是否保持線上狀態、但在重新配置期間離線的短暫期間除外。
 
-. [man準備節點_step19]在節點1和節點2上輸入下列命令、並記錄兩個節點上離線的磁碟區：
+.. [man準備節點_step19]在節點1和節點2上輸入下列命令、並記錄兩個節點上離線的磁碟區：
 +
 「Volume show -node_node_name_-st態offline」
 
@@ -376,8 +376,9 @@ NOTE: 您可以使用此資訊和下列子步驟中的資訊、在整個程序�
 
 NOTE: 升級之後、您將再次執行命令、並將此步驟的輸出與輸出進行比較、以查看是否有任何其他磁碟區離線。
 
-+
-.. 輸入下列命令、查看是否在節點1或節點2上設定任何介面群組或VLAN：
+
+
+. 輸入下列命令、查看是否在節點1或節點2上設定任何介面群組或VLAN：
 +
 「網路連接埠ifgrp show」
 
@@ -387,10 +388,9 @@ NOTE: 升級之後、您將再次執行命令、並將此步驟的輸出與輸�
 +
 記下是在節點1或節點2上設定介面群組或VLAN、您需要在下一步及後續程序中提供這些資訊。
 
-.. 在節點1和節點2上完成下列子步驟、以確認稍後程序中的實體連接埠可以正確對應：
-
-
-. 輸入下列命令、查看節點上是否有「clusterwide」以外的容錯移轉群組：
+. 在節點1和節點2上完成下列子步驟、以確認稍後程序中的實體連接埠可以正確對應：
++
+.. 輸入下列命令、查看節點上是否有「clusterwide」以外的容錯移轉群組：
 +
 「網路介面容錯移轉群組顯示」
 
@@ -415,8 +415,8 @@ fg_6210_e0c         Default           node1:e0c, node1:e0d
 
 2 entries were displayed.
 ....
-. 如果故障切換群組並非「clusterwide」、請記錄故障切換群組名稱和屬於故障切換群組的連接埠。
-. 輸入下列命令、查看節點上是否已設定任何VLAN：
+.. 如果故障切換群組並非「clusterwide」、請記錄故障切換群組名稱和屬於故障切換群組的連接埠。
+.. 輸入下列命令、查看節點上是否已設定任何VLAN：
 +
 「網路連接埠VLAN show -node_node_name_」
 
@@ -435,9 +435,10 @@ Node    VLAN Name Port    VLAN ID MAC Address
 ------  --------- ------- ------- ------------------
 node1   e1b-70    e1b     70      00:15:17:76:7b:69
 ....
-. 如果節點上已設定VLAN、請記下每個網路連接埠和VLAN ID配對。
-+
-.. 請採取下列其中一項行動：
+.. 如果節點上已設定VLAN、請記下每個網路連接埠和VLAN ID配對。
+
+
+. 請採取下列其中一項行動：
 +
 [cols="35,65"]
 |===
@@ -449,7 +450,7 @@ node1   e1b-70    e1b     70      00:15:17:76:7b:69
 
 | 不在節點1或節點2上 | 前往 <<man_prepare_nodes_step24,步驟24>>。 
 |===
-.. [man準備節點_step23]如果您不知道節點1和節點2是否位於SAN或非SAN環境中、請輸入下列命令並檢查其輸出：
+. [man準備節點_step23]如果您不知道節點1和節點2是否位於SAN或非SAN環境中、請輸入下列命令並檢查其輸出：
 +
 「網路介面show -vserver _vserver_name_-data-protocol iscsiSCSI|FCP」
 
@@ -476,10 +477,9 @@ Vserver  Interface  Admin/Oper Address/Mask       Node     Port    Home
 -------- ---------- ---------- ------------------ -------- ------- ----
 vs1      vs1_lif1   up/down    172.17.176.20/24   node1    0d      true
 ....
-.. [man準備節點_step24]完成下列子步驟、確認叢集中的所有節點都處於仲裁狀態：
-
-
-. 輸入進階權限層級：
+. [man準備節點_step24]完成下列子步驟、確認叢集中的所有節點都處於仲裁狀態：
++
+.. 輸入進階權限層級：
 +
 "進階權限"
 
@@ -491,8 +491,8 @@ vs1      vs1_lif1   up/down    172.17.176.20/24   node1    0d      true
 Warning: These advanced commands are potentially dangerous; use them only when directed to do so by NetApp personnel.
 Do you wish to continue? (y or n):
 ....
-. 輸入「y」。
-. 針對每個節點、驗證核心中的叢集服務狀態一次：
+.. 輸入「y」。
+.. 針對每個節點、驗證核心中的叢集服務狀態一次：
 +
 「叢集核心服務展示」
 
@@ -514,12 +514,13 @@ node1         node1         in-quorum     true          operational
 +
 叢集中的節點在大多數節點狀況良好且能夠彼此通訊時、都處於仲裁狀態。如需詳細資訊、請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。
 
-. 返回管理權限層級：
+.. 返回管理權限層級：
 +
 「et -priv. admin」
 
-+
-.. 請採取下列其中一項行動：
+
+
+. 請採取下列其中一項行動：
 +
 [cols="35,65"]
 |===
@@ -531,7 +532,7 @@ node1         node1         in-quorum     true          operational
 
 | 未設定SAN | 前往 <<man_prepare_nodes_step29,步驟29>>。 
 |===
-.. [[man_prepe_node_step26]]輸入下列命令並檢查其輸出、驗證節點1和節點2上是否有已啟用SAN iSCSI或FC服務的每個SVM的SAN LIF：
+. [[man_prepe_node_step26]]輸入下列命令並檢查其輸出、驗證節點1和節點2上是否有已啟用SAN iSCSI或FC服務的每個SVM的SAN LIF：
 +
 「網路介面show -data-Protocol iscsiSCSI|FCP -home-node_node_name_」
 
@@ -561,7 +562,7 @@ c_vs_iscsi_fcp data1   up/up      20:0d:00:a0:98:19:9f:b0  node2     0c      tru
 +
 「網路介面顯示-instance -data傳輸協定isciSCSI|FCP」
 
-.. 輸入下列命令並記錄系統的輸出、以擷取原始節點上任何FC連接埠的預設組態：
+. 輸入下列命令並記錄系統的輸出、以擷取原始節點上任何FC連接埠的預設組態：
 +
 「ucadmin show」
 
@@ -588,7 +589,7 @@ node2   0d      fc      initiator -       -         online
 +
 您可以在升級後使用這些資訊來設定新節點上的FC連接埠組態。
 
-.. 如果您要升級V系列系統或使用FlexArray NetApp虛擬化軟體的系統、請輸入下列命令並記錄輸出、以擷取有關原始節點拓撲的資訊：
+. 如果您要升級V系列系統或使用FlexArray NetApp虛擬化軟體的系統、請輸入下列命令並記錄輸出、以擷取有關原始節點拓撲的資訊：
 +
 「torage Array config show -switch'」
 
@@ -613,24 +614,24 @@ node2 0   50  I_1818FAStT_1
                             208600a0b84772da   vgbr6510b:5  vgbr6510s163:4  2a
 7 entries were displayed.
 ....
-.. [[man_prepe_node_step29]完成下列子步驟：
-
-
-. 在其中一個原始節點上輸入下列命令、並記錄輸出：
+. [[man_prepe_node_step29]完成下列子步驟：
++
+.. 在其中一個原始節點上輸入下列命令、並記錄輸出：
 +
 「ervice處理器show -Node *-instance」
 
 +
 系統會在兩個節點上顯示有關SP的詳細資訊。
 
-. 確認SP狀態為「線上」。
-. 確認已設定SP網路。
-. 記錄有關SP的IP位址和其他資訊。
+.. 確認SP狀態為「線上」。
+.. 確認已設定SP網路。
+.. 記錄有關SP的IP位址和其他資訊。
 +
 您可能想要重複使用遠端管理裝置的網路參數、在此案例中、SP會從原始系統、針對新節點上的SP。如需SP的詳細資訊、請參閱 link:other_references.html["參考資料"] 若要連結至_系統管理參考_和_還原ONTAP 9命令：手冊頁參考_。
 
-+
-.. [man準備節點_step30]如果您希望新節點擁有與原始節點相同的授權功能、請輸入下列命令、以查看原始系統上的叢集授權：
+
+
+. [man準備節點_step30]如果您希望新節點擁有與原始節點相同的授權功能、請輸入下列命令、以查看原始系統上的叢集授權：
 +
 「系統授權顯示擁有者*」
 
@@ -653,11 +654,11 @@ FlexClone         site    FlexClone License     -
 SnapVault         site    SnapVault License     -
 6 entries were displayed.
 ....
-.. 在_NetApp Support Site_取得新節點的新授權金鑰。請參閱 link:other_references.html["參考資料"] 連結至_NetApp支援網站_。
+. 在_NetApp Support Site_取得新節點的新授權金鑰。請參閱 link:other_references.html["參考資料"] 連結至_NetApp支援網站_。
 +
 如果網站沒有您需要的授權金鑰、請聯絡您的NetApp銷售代表。
 
-.. 在AutoSupport 每個節點上輸入下列命令並檢查其輸出、以檢查原始系統是否已啟用Efis:
+. 在AutoSupport 每個節點上輸入下列命令並檢查其輸出、以檢查原始系統是否已啟用Efis:
 +
 「系統節點AutoSupport 不支援show -node1、node2_」
 
@@ -675,7 +676,7 @@ node1            enable    Postmaster    admin@netapp.com  mailhost
 node2            enable    Postmaster    -                 mailhost
 2 entries were displayed.
 ....
-.. 請採取下列其中一項行動：
+. 請採取下列其中一項行動：
 +
 [cols="35,65"]
 |===
@@ -683,29 +684,29 @@ node2            enable    Postmaster    -                 mailhost
 
 
 | 已啟用此功能... AutoSupport  a| 
-... 前往 <<man_prepare_nodes_step34,步驟34>>。
-... 移至區段 link:get_address_key_management_server_encryption.html["取得外部金鑰管理伺服器的IP位址以進行儲存加密"]。
+.. 前往 <<man_prepare_nodes_step34,步驟34>>。
+.. 移至區段 link:get_address_key_management_server_encryption.html["取得外部金鑰管理伺服器的IP位址以進行儲存加密"]。
 
 
 
 
 | 未啟用任何功能... AutoSupport  a| 
-... 請遵循_系統管理參考_中的指示來啟用AutoSupport 支援。（請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。）
+.. 請遵循_系統管理參考_中的指示來啟用AutoSupport 支援。（請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。）
 +
 *注意：* AutoSupport 當您第一次設定儲存系統時、預設會啟用此功能。雖然AutoSupport 您可以隨時停用不支援、但仍應保持啟用狀態。啟用AutoSupport 功能可在儲存系統發生問題時、大幅協助識別問題與解決方案。
 
-... 前往 link:get_address_key_management_server_encryption.html["取得外部金鑰管理伺服器的IP位址以進行儲存加密"] 區段。
+.. 前往 link:get_address_key_management_server_encryption.html["取得外部金鑰管理伺服器的IP位址以進行儲存加密"] 區段。
 
 
 |===
-.. [[man_prepe_node_step34]] AutoSupport 在兩個原始節點上輸入下列命令、並檢查輸出、以驗證是否已設定正確的郵件主機詳細資料和收件者電子郵件ID：
+. [[man_prepe_node_step34]] AutoSupport 在兩個原始節點上輸入下列命令、並檢查輸出、以驗證是否已設定正確的郵件主機詳細資料和收件者電子郵件ID：
 +
 「系統節點AutoSupport 不完整地顯示節點node_name -instance」
 
 +
 如需AutoSupport 有關功能的詳細資訊、請參閱 link:other_references.html["參考資料"] 若要連結至_系統管理參考_和_還原ONTAP 9命令：手冊頁參考_。
 
-.. [[man_prepe_node_step35、Step 35] AutoSupport 輸入下列命令、將節點1的支援資訊傳送給NetApp：
+. [[man_prepe_node_step35、Step 35] AutoSupport 輸入下列命令、將節點1的支援資訊傳送給NetApp：
 +
 「系統節點AutoSupport 無法叫用節點節點節點1 -輸入all -messing node1 from platfore_old to platform _new」（將節點1從platfore_old升級為platform _new）
 
@@ -713,30 +714,28 @@ node2            enable    Postmaster    -                 mailhost
 
 NOTE: 此時請勿傳送AutoSupport 適用於節點2的消息給NetApp；稍後請在程序中進行。
 
-.. [[man_prepe_node_step36、Step 36] AutoSupport 輸入下列命令並檢查其輸出、以驗證是否已傳送此資訊：
+. [[man_prepe_node_step36、Step 36] AutoSupport 輸入下列命令並檢查其輸出、以驗證是否已傳送此資訊：
 +
 「系統節點AutoSupport 不支援show -node1_-instance」
 
 +
 欄位「Last Subject sent：」（上次傳送主旨：）和「Last Time sent：」（上次傳送時間：）包含上次傳送訊息的標題、以及傳送訊息的時間。
 
-.. 如果您的系統使用自我加密磁碟機、請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["如何判斷我安裝了FIPS磁碟機"^] 以判斷您要升級的HA配對所使用的自我加密磁碟機類型。支援兩種自我加密磁碟機的支援ONTAP ：
+. 如果您的系統使用自我加密磁碟機、請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["如何判斷我安裝了FIPS磁碟機"^] 以判斷您要升級的HA配對所使用的自我加密磁碟機類型。支援兩種自我加密磁碟機的支援ONTAP ：
 +
 --
-*** FIPS認證的NetApp儲存加密（NSE）SAS或NVMe磁碟機
-*** 非FIPS自我加密NVMe磁碟機（SED）
+** FIPS認證的NetApp儲存加密（NSE）SAS或NVMe磁碟機
+** 非FIPS自我加密NVMe磁碟機（SED）
 
 
 [NOTE]
 ====
-*** 您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
-*** 您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
+** 您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
+** 您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
 
 
 ====
 https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryption-concept.html#supported-self-encrypting-drive-types["深入瞭解支援的自我加密磁碟機"^]。
 
 --
-
-
 
