@@ -3086,7 +3086,6 @@
   <block id="fd6616fb43f706cbccb578942fa320ab" category="paragraph">您可以在不中斷營運的情況下、將非ONTAP 根Aggregate從原始節點移轉至同一個叢集中的新節點、以升級執行支援支援功能的節點配對上的控制器硬體。在升級期間、可存取所要升級節點上的資料。</block>
   <block id="19b4277aa4310fa75687e1f55755a62c" category="summary">第4階段程序順序、可在執行ONTAP 版本為9.7或更早版本的控制器上進行手動ARL升級。</block>
   <block id="de58ee53439e59b040872d736eb4746a" category="summary">在ONTAP 執行「版本資訊」9.7或更早版本的控制器上進行手動ARL升級時、請準備節點、收集資訊、並確認所有叢集節點都處於仲裁狀態。</block>
-  <block id="930e54e1be27588126529911ee1a66bb" category="paragraph">+附註：稍後您將在程序中使用此資訊。</block>
   <block id="82afd892d5c2a9e4e8762a660a4866cd" category="summary">請使用手動ARL升級程序來升級執行ONTAP 版本號為「更新」的控制器硬體、重新定位非根Aggregate的擁有權。</block>
   <block id="edcca90be305577ecf6fd870b41fb37e" category="cell">9.7或更早版本</block>
   <block id="e6063d0ab61b368bdfbca64be36dbd64" category="list-text">此程序適用於MetroCluster 執行ONTAP 版本號為「版本資訊」9.5或更早版本的所有四節點和八節點組態。如需MetroCluster 執行ONTAP 效能不可靠的更新版本、請前往 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 使用「系統控制器更換」命令連結至_、將執行ONTAP VMware 9.5的控制器硬體升級至ONTAP VMware 9.7。</block>
@@ -3941,7 +3940,6 @@
   <block id="830a042377d7fdbd36c48ece8669e61c" category="section-title">在AFF 節點1上安裝E4A900或FAS9500控制器模組。</block>
   <block id="bb0ced2b785386259d517f7ae7bd88d1" category="paragraph">請使用下列程序、在AFF 節點1中安裝E4A900或FAS9500控制器模組。</block>
   <block id="a8785e7ad1cb0d71507bbcb99df9c1f7" category="cell">將AFF 一個不變的A700系統轉換成AFF 一個不變的A900系統、保留A700機箱</block>
-  <block id="e1b003e7f655a9b7177c226f66898500" category="cell">9.10.1 P3或更新版本</block>
   <block id="3029eeb5ee6e861b02eb2a1ffd3d3b8e" category="cell">FAS9000至FAS9500</block>
   <block id="92edbfe3ededa1bb85b931ec295f360d" category="cell">將FAS9000系統轉換成FAS9500系統、保留FAS9000機箱。</block>
   <block id="a5ce3ab443f38c92fc244c3533db25fd" category="paragraph">您可以交換控制器和NVRAM模組、在高可用度（HA）配對上不中斷地升級控制器硬體。首先、您要在舊的控制器節點之間移轉非根Aggregate。安裝之後、您可以將非根集合體從舊的控制器節點移轉到替換的控制器節點。您可以在升級程序期間存取所升級節點上的資料。</block>
@@ -4485,4 +4483,6 @@
   <block id="9d5ce6c4c82bf9a0ff455a50cadc1ab6" category="list-text">如果在組態中使用自我加密磁碟機、且您已設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變數至<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例如、在_Boot node2中搭配AFF 使用SUREA900或FAS9500控制器和NVRAM模組、 <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>）、您必須取消設定變數：</block>
   <block id="21b9417932c23289b6932c3a0ac2517f" category="list-text">[[boot_node2_step1]]設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 和<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 在節點2組態載入後、避免開機迴圈的變數。</block>
   <block id="083a0c049526537d6b95a268054814fb" category="list-text">您的系統上有混合式Aggregate。</block>
+  <block id="5c8ce8c10b94248d147cb23bb490fd9d" category="cell">使用<block ref="0cdc21b7c964923f382c6248332e0a1d" prefix=" " category="inline-code"></block> 命令</block>
+  <block id="6e1f6dfb0fcbfac6c4067f6818568970" category="cell">9.11.1p6或9.10.1P10（目標為2023年2月）</block>
 </blocks>
