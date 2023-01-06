@@ -3962,11 +3962,7 @@
   <block id="25beb58d3a670fb2c16081f902a5bff2" category="inline-link-macro">第6階段：使用AFF E4A900或FAS9500控制器和NVRAM模組來開機節點2</block>
   <block id="82fe66fed743ab06100b56ff7cede89d" category="cell"><block ref="82fe66fed743ab06100b56ff7cede89d" category="inline-link-macro-rx"></block></block>
   <block id="d066afecd32f577c431df88c1a421ca4" category="list-text">使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點2</block>
-  <block id="3d34e56cf21c4a138ab823660c2b5555" category="paragraph">在下列系統組態中使用ARL來升級一對控制器：</block>
-  <block id="2a0a9f74d7fd41063ed18276c24550d5" category="list-text">將AFF 一對用作「更新AFF 版本」的「功能」的「功能性」控制器升級至執行ONTAP 「功能性」的「功能性」系統</block>
-  <block id="546138e0b7501a286c581953c65b874d" category="list-text">將一對FAS9000控制器升級至執行ONTAP SHor9.10.1P3或更新版本的FAS9500系統</block>
   <block id="8c3db477300524bd7d8bcf2bba005da2" category="paragraph">支援AFF 的組合包括控制器從功能不完整的A700升級至AFF 功能不完整的A900、或從FAS9000升級至FAS9500、使用ARL和NVRAM模組。如果您已收到AFF 全新的整套系統（包括新機箱）、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要連結至_、請使用「系統控制器更換」命令來升級執行ONTAP 《Estrs9.8或更新版本》內容的控制器硬體。</block>
-  <block id="89270eb0a4789198b9486a5396fb9846" category="admonition">此程序嚴格適用於AFF 執行下列項目的從Ar1A700升級AFF 到Ar1A900、ONTAP 以及執行從更新版本的FAS9.10.1或更高版本、以及執行9.10.1P3或更新版本的FAS9000升級到FAS9500。請勿使用此程序在任何其他系統組合之間執行升級。</block>
   <block id="446e34a339be0fda54aae2fe862c868f" category="paragraph">請使用下列程序、將AFF E4A900或FAS9500 NVRAM模組安裝在節點2的插槽6中。</block>
   <block id="b5e3968706cd8f4fee9d9a918b1b867f" category="section-title">在AFF 節點2中安裝E4A900或FAS9500控制器模組</block>
   <block id="43d062a38b70447bd532892c53e0817c" category="paragraph">請使用下列程序、在AFF 節點2中安裝E4A900或FAS9500控制器模組。</block>
@@ -3977,8 +3973,6 @@
   <block id="c0bf6385dfa15c204a13d5abb6770653" category="paragraph">在此控制器升級期間、您將AFF 用AFF 一套FASA900控制器或FAS9000控制器來更換一個不正常的A700控制器。本內容提供自動化程序的步驟、使用自動磁碟指派和網路連接埠連線檢查來簡化控制器升級體驗。</block>
   <block id="2a2d4d28b7b0848fbdd189061adaff52" category="paragraph">本內容說明如何在AFF FAS9000 AFF HA配對中、將更新的儲存控制器與全新的FAS9000 HA控制器配對中的全新版塊升級至更新的FAS9500控制器、同時保留所有現有的資料和磁碟。這是一個複雜的程序、只能由經驗豐富的系統管理員使用。</block>
   <block id="3d58d6338cfd5f06b224201846bd6759" category="list-text">您已向NetApp銷售代表確認、您已收到AFF 了《關於更新的知識、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術</block>
-  <block id="58fd942a7ba8a430b491bba397e88d17" category="list-text">您執行ONTAP 的是適用於AFF 某個32位元組控制器的32位元組版本。</block>
-  <block id="7addcb2495004d218f3791cfcb74d41e" category="list-text">您執行ONTAP 的是FAS9500控制器的版本不符合功能的版本。</block>
   <block id="b0ce3e25b9ec3a13c13ca9a6fa5323b7" category="list-text">您正在FlexArray 使用的是AFF 功能不實的虛擬化軟體來搭配使用於功能不實的A700或FAS9000系統。</block>
   <block id="c72ac68ecc63380b07ba76bc038edf2e" category="paragraph">您必須使用AFF EscoreA900或FAS9500控制器和NVRAM模組來驗證node2安裝。由於實體連接埠沒有變更、因此您不需要將實體連接埠從舊節點2對應至替換節點2。</block>
   <block id="fbb88f36cd542fa5f9d7d9b7989c4fa9" category="paragraph">使用AFF E4A900或FAS9500控制器模組開機節點1之後、您必須確認其安裝正確。您必須等待節點2加入仲裁、然後繼續執行控制器更換作業。</block>
@@ -4483,6 +4477,10 @@
   <block id="9d5ce6c4c82bf9a0ff455a50cadc1ab6" category="list-text">如果在組態中使用自我加密磁碟機、且您已設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變數至<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例如、在_Boot node2中搭配AFF 使用SUREA900或FAS9500控制器和NVRAM模組、 <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>）、您必須取消設定變數：</block>
   <block id="21b9417932c23289b6932c3a0ac2517f" category="list-text">[[boot_node2_step1]]設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 和<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 在節點2組態載入後、避免開機迴圈的變數。</block>
   <block id="083a0c049526537d6b95a268054814fb" category="list-text">您的系統上有混合式Aggregate。</block>
-  <block id="5c8ce8c10b94248d147cb23bb490fd9d" category="cell">使用<block ref="0cdc21b7c964923f382c6248332e0a1d" prefix=" " category="inline-code"></block> 命令</block>
   <block id="6e1f6dfb0fcbfac6c4067f6818568970" category="cell">9.11.1p6或9.10.1P10（目標為2023年2月）</block>
+  <block id="53f4933654122c2732aaf29d750ecb9c" category="list-text">您執行ONTAP 的是《2020年2月》（2023年2月）的《銷售統計》（2013年11月1日）。</block>
+  <block id="34fe5db3348c8cff3877298c8c064752" category="paragraph">在ONTAP 下列系統組態中、使用ARL來升級執行《更新版本》的一對控制器、這些控制器執行《更新版本》9.11.1p6或9.10.1P10（目標為2023年2月）：</block>
+  <block id="b99f39b13055b86a7e0146684c21e326" category="list-text">將A700控制器移至一個不只A900系統的系統AFF AFF</block>
+  <block id="9733b2ec9e26adc1936d94dc2a3bb0dd" category="list-text">FAS9000控制器到FAS9500系統</block>
+  <block id="6425a395e3062e0f480ffee2bc19d2f7" category="admonition">此程序嚴格適用於AFF 執行AFF 《更新版本》的從Ara700升級到《更新版本ONTAP 》、從FAS9000升級到FAS95006或9.10.1P10（目標為2023年2月）。請勿使用此程序在任何其他系統組合之間執行升級。</block>
 </blocks>
