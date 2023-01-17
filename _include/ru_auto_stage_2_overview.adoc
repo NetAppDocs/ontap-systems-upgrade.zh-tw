@@ -1,0 +1,12 @@
+= 
+:allow-uri-read: 
+
+
+在第2階段期間、您會將節點1非根Aggregate和NAS資料lifs重新部署至節點2。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。如果需要、您可以重新部署故障或被否決的集合體。您必須記錄必要的node1資訊、然後淘汰node1。您也可以在程序稍後的步驟中準備netboot node3和node4。
+
+.步驟
+. link:relocate_non_root_aggr_nas_data_lifs_node1_node2.html["將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2"]
+. link:relocate_failed_vetoed_aggr.html["重新部署故障或被否決的集合體"]
+. link:retire_node1.html["淘汰節點1"]
+. link:prepare_for_netboot.html["準備netboot"]
+

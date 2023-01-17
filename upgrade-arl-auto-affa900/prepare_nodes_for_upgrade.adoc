@@ -99,31 +99,32 @@ Controller replacement operation has been paused for user intervention.
 . 在控制器更換作業開始並完成預先檢查之後、作業會暫停、以便您收集稍後在控制器升級程序中可能需要的輸出資訊。
 . 依照系統主控台的控制器更換程序指示、執行下列命令集。
 +
-您必須個別執行並儲存下列命令的輸出：
+從連接至每個節點的序列連接埠、分別執行並儲存下列命令的輸出：
 
 +
 ** 「Vserver服務名稱服務DNS節目」
-** 「網路介面show -curr-node-ame _-role cluster、叢集間、節點管理、叢集管理、data」
-** 「網路連接埠show -node_node_name_-type Physical」
-** 「ervice處理器show -Node *-instance」
-** 「網路FCP介面卡顯示-node_node_name_」
+** `network interface show -curr-node _local_ -role cluster,intercluster,node-mgmt,cluster-mgmt,data`
+** `network port show -node _local_ -type physical`
+** `service-processor show -local -instance`
+** `network fcp adapter show -node _local_`
 ** 「網路連接埠ifgrp show」
-** 「系統節點顯示-instance -node_node_name_」
-** "run -node_node_name_ sysconfig"
-** 「torage Aggregate show -node_node_name_」
-** 「Volume show -node_node_name_」
+** `system node show -instance -node _local_`
+** `run -node _local_ sysconfig`
+** `storage aggregate show -node _local_`
+** `volume show -node _local_`
 ** 「torage Array config show -switch_switch_name_」
-** 「System license show -Oner_node_name_」（系統授權顯示擁有者節點名稱）
+** `system license show -owner _local_`
 ** 「torage加密磁碟顯示」
 ** 「安全金鑰管理程式內建show Backup」
 ** 「安全關鍵經理外部秀」
 ** 「安全金鑰管理程式外部顯示狀態」
-** 「連線能力展示-詳細資料」
+** 「網路連接埠連線能力顯示-詳細資料」
 
 
-+
 
-NOTE: 如果正在使用使用Onboard Key Manager的NetApp Volume Encryption、請準備好金鑰管理程式通關密碼、以便在稍後的程序中完成金鑰管理程式重新同步。
+
+
+NOTE: 如果正在使用使用Onboard Key Manager的NetApp Volume Encryption（NVE）或NetApp Aggregate Encryption（NAE）、請準備好金鑰管理程式通關密碼、以便稍後在程序中完成金鑰管理程式重新同步。
 
 . 如果您的系統使用自我加密磁碟機、請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["如何判斷我安裝了FIPS磁碟機"^] 以判斷您要升級的HA配對所使用的自我加密磁碟機類型。支援兩種自我加密磁碟機的支援ONTAP ：
 +

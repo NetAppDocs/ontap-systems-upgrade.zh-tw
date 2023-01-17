@@ -74,7 +74,7 @@ CAUTION: *注意：* MetroCluster 目前階段的不正常設定、您可能會�
 
 == 還原節點4上的金鑰管理程式組態
 
-如果您使用NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、加密組態必須同步至新節點。如果您沒有還原金鑰管理程式、當您使用ARL將節點2集合體從節點3重新定位至節點4時、加密的磁碟區將會離線。
+如果您使用NetApp Aggregate Encryption（NAE）或NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、則加密組態必須同步至新節點。如果您沒有還原金鑰管理程式、當您使用ARL將節點2集合體從節點3重新定位至節點4時、加密的磁碟區將會離線。
 
 .步驟
 . 若要同步Onboard Key Manager的加密組態、請在叢集提示字元中執行下列命令：

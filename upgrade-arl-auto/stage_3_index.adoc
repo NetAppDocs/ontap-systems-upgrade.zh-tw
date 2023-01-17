@@ -14,7 +14,7 @@ summary: ARL升級的第3階段程序順序、使用「系統控制器更換」�
 
 
 [role="lead"]
-在第3階段期間、您會安裝並開機node3、將叢集和節點管理連接埠從node1對應至node3、然後驗證node3安裝。屬於節點1的非SAN資料生命體和非根Aggregate會從節點2移至節點3。
+在第3階段期間、您會安裝並開機node3、將叢集和節點管理連接埠從node1對應至node3、然後驗證node3安裝。如果需要、您可以在節點3上設定FC或UTA/UTA2組態、並確認節點3已加入仲裁。您也可以將節點1 NAS資料lifs和非根Aggregate從節點2重新部署到節點3、並確認節點3上存在SAN lifs。
 
 .步驟
 . link:install_boot_node3.html["安裝及開機節點3"]

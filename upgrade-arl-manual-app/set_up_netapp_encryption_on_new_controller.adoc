@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/set_up_netapp_encryption_on_new_controller.html 
 keywords: set up, netapp volume encryption, encryption, controller, module 
-summary: 如有需要、請在執行ONTAP 《支援升級》（更新版本）的控制器上、於手動升級ARL期間、為NVE設定新的控制器模組。 
+summary: 如有需要、請在執行ONTAP 版本號為ENF9.8或更新版本的控制器上進行手動ARL升級時、為NVE或NAE設定新的控制器模組。 
 ---
-= 在新的控制器模組上設定NetApp Volume Encryption
+= 在新的控制器模組上設定NetApp Volume或Aggegte Encryption
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 如有需要、請在執行ONTAP 《支援升級》（更新版本）�
 
 
 [role="lead"]
-如果新控制器的更換控制器或HA合作夥伴使用NetApp Volume Encryption（NVE）、您必須為NVE設定新的控制器模組。
+如果新控制器的更換控制器或高可用度（HA）合作夥伴使用NetApp Volume Encryption（NVE）或NetApp Aggregate Encryption（NAE）、則您必須為NVE或NAE設定新的控制器模組。
 
 .關於這項工作
 此程序包括在新控制器模組上執行的步驟。您必須在正確的節點上輸入命令。

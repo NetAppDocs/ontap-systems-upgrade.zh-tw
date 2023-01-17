@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: /upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html 
 keywords: moving, non-root, aggregates, nas, lif, node1, node2 
-summary: 驗證節點2上的節點1的NAS資料LIF在AFF 進行從節點2到節點1 AFF 的升級時、是否已從節點2重新定位至節點1。 
+summary: 驗證節點2上的節點1 NAS資料LIF在AFF 進行從節點2到節點1 AFF 的升級時、是否已從節點2重新定位至節點1。 
 ---
 = 將節點1擁有的非根Aggregate和NAS資料lifs從節點2移至升級的節點1
 :hardbreaks:

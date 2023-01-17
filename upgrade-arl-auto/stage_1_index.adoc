@@ -14,9 +14,9 @@ summary: ARL升級的第1階段程序順序、使用執行ONTAP 版本號從9.5�
 
 
 [role="lead"]
-在第1階段期間、您必須準備節點進行升級、並執行一系列預先檢查。您可能需要重新鎖定磁碟以進行儲存加密。您也必須準備好新控制器的網路開機。
+在第1階段期間、您會執行預先檢查、並視需要修正Aggregate所有權。如果您使用OKM管理儲存加密、則必須記錄特定資訊、而且您可以選擇靜止SnapMirror關係。
 
 .步驟
 . link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]
-. link:get_ip_address_of_external_kms_for_storage_encryption.html["取得外部金鑰管理伺服器的IP位址以進行儲存加密"]
+. link:manage_storage_encryption_using_okm.html["使用Onboard Key Manager管理儲存加密"]
 

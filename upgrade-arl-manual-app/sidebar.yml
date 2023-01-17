@@ -23,10 +23,6 @@ entries:
     url: "/upgrade-arl-manual-app/determine_aggregates_on_internal_drives.html"
   - title: 準備節點以進行升級
     url: "/upgrade-arl-manual-app/prepare_nodes_for_upgrade.html"
-  - title: 取得外部金鑰管理伺服器的IP位址以進行儲存加密
-    url: "/upgrade-arl-manual-app/get_address_key_management_server_encryption.html"
-  - title: 使用KMIP伺服器管理驗證
-    url: "/upgrade-arl-manual-app/manage_authentication_kmip.html"
   - title: 使用內建金鑰管理程式來管理驗證
     url: "/upgrade-arl-manual-app/manage_authentication_okm.html"
   - title: 靜止SnapMirror關係
@@ -96,11 +92,16 @@ entries:
   entries:
   - title: 總覽
     url: "/upgrade-arl-manual-app/stage_6_index.html"
-  - title: 請確定新的控制器已正確設定
+  - title: 取得外部金鑰管理伺服器的IP位址以進行儲存加密
+    url: "/upgrade-arl-manual-app/get_address_key_management_server_encryption.html"
+  - title: 使用KMIP伺服器管理驗證
+    url: "/upgrade-arl-manual-app/manage_authentication_kmip.html"
+  - title: 使用內建金鑰管理程式來管理驗證
+  - title: 確認新的控制器已正確設定
     url: "/upgrade-arl-manual-app/ensure_controllers_set_up_correctly.html"
   - title: 在新的控制器模組上設定儲存加密
     url: "/upgrade-arl-manual-app/set_up_storage_encryption_new_controller.html"
-  - title: 在新的控制器模組上設定NetApp Volume Encryption
+  - title: 在新的控制器模組上設定NetApp Volume或Aggregate Encryption
     url: "/upgrade-arl-manual-app/set_up_netapp_encryption_on_new_controller.html"
   - title: 取消委任舊系統
     url: "/upgrade-arl-manual-app/decommission_old_system.html"

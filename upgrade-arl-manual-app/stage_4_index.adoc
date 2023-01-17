@@ -14,7 +14,7 @@ summary: 第4階段程序順序、可在執行ONTAP 了更新版本的控制器�
 
 
 [role="lead"]
-在第4階段期間、您會記錄node2資訊、然後淘汰node2。
+在第4階段期間、您會記錄node2資訊以供稍後在程序中使用、然後淘汰node2。
 
 .步驟
 . link:record_node2_information.html["記錄node2資訊"]

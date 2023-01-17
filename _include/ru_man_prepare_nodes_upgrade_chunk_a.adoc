@@ -13,11 +13,13 @@
 +
 .. 確定診斷使用者帳戶已解除鎖定。
 +
-*重要*：診斷使用者帳戶僅供低階診斷用途使用、僅限在技術支援的指導下使用。
+[IMPORTANT]
+====
+診斷使用者帳戶僅供低階診斷用途使用、僅限在技術支援的指導下使用。
 
-+
-*重要*：如需解除鎖定使用者帳戶的相關資訊、請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。
+如需解除鎖定使用者帳戶的相關資訊、請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。
 
+====
 .. 請參閱 link:other_references.html["參考資料"] 連結至_NetApp支援網站_並下載效能與統計資料收集器（perfstat Converged）。
 +
 Perfstat融合式工具可讓您建立效能基準、以便在升級後進行比較。

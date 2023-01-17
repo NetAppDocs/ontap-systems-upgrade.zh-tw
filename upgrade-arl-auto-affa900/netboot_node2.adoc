@@ -49,7 +49,14 @@ NOTE: 您必須使用管理連接埠和IP做為netboot連線。請勿使用資�
 
 
 | 未執行  a| 
-在開機環境提示字元中使用下列命令手動設定連線：「ifconfige0M -addr=_filer_addr_-mask=_netmask_-gateway_-dns =_dns _addr_-domain=_dns _domain_`_filer_addr_」是儲存系統的IP位址。「網路遮罩」是儲存系統的網路遮罩。「_gateway_」是儲存系統的閘道。'_DNs_addr_'是網路上名稱伺服器的IP位址。此參數為選用項目。「DNS網域名稱服務」（DNS）網域名稱。此參數為選用項目。
+在開機環境提示字元中使用下列命令手動設定連線：
+`ifconfig e0M -addr=_filer_addr_ -mask=_netmask_ -gw=_gateway_ -dns=_dns_addr_ -domain=_dns_domain_`
+
+`_filer_addr_` 為儲存系統的IP位址（必填）。
+`_netmask_` 是儲存系統的網路遮罩（必填）。
+`_gateway_` 是儲存系統的閘道（必填）。
+`_dns_addr_` 為網路上名稱伺服器的IP位址（選用）。
+`_dns_domain_` 為網域名稱服務（DNS）網域名稱（選用）。
 
 
 NOTE: 您的介面可能需要其他參數。在韌體提示字元中輸入「Help ifconfig」以取得詳細資料。
@@ -87,13 +94,18 @@ Selection (1-11)?
 此功能表選項會下載新ONTAP 的功能表映像、並將其安裝至開機裝置。
 
 +
-[NOTE]
-====
-請忽略下列訊息：「HA配對不支援不中斷升級此程序」。本附註適用於不中斷營運ONTAP 的更新版軟體、不適用於控制器升級。
+請忽略下列訊息：
 
-請務必使用netboot將新節點更新為所需映像。如果您使用另一種方法在新控制器上安裝映像、可能會安裝錯誤的映像。此問題適用於ONTAP 所有的版本。
++
+`This procedure is not supported for Non-Disruptive Upgrade on an HA pair`
 
-====
++
+本附註適用於不中斷營運ONTAP 的更新版軟體、不適用於控制器升級。
+
++
+
+NOTE: 請務必使用netboot將新節點更新為所需映像。如果您使用其他方法在新控制器上安裝映像、可能會安裝不正確的映像。此問題適用於ONTAP 所有的版本。netboot程序與選項結合使用 `(7) Install new software` 清除開機媒體、並在ONTAP 兩個影像分割區上放置相同的版本。
+
 . 如果系統提示您繼續此程序、請輸入「y」、然後在系統提示您輸入套件時、輸入URL：「http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz`」
 +
 「<path_to_the_web-易於 存取的目錄>」應該會引導您下載「<ONTAP_VERSION >_image.tgz」 <<netboot_node2_step2,步驟2>>。
@@ -186,13 +198,12 @@ NOTE: 在節點2上設定對應的UTC日期。
 
 NOTE: 在節點2上設定對應的UTC時間。
 
-. 如有必要、請在節點2上設定合作夥伴系統ID：
-+
-
-NOTE: 這是您要升級AFF 至E4A900之節點1的系統ID。
-
+. 在節點2上設定合作夥伴系統ID：
 +
 "etenv PARTNER-sysid _node1_sysid_"
+
++
+對於節點2 `partner-sysid` 必須是您要升級AFF 到E4A900或FAS9500的節點1。
 
 +
 .. 儲存設定：
@@ -201,11 +212,8 @@ NOTE: 這是您要升級AFF 至E4A900之節點1的系統ID。
 
 
 
-. 在node2上的載入程式提示字元中、驗證node1的「合作夥伴sysid」：
+. 在節點2上的載入程式提示字元中、驗證 `partner-sysid` 對於節點2：
 +
 《prontenv合作夥伴sysid》
-
-+
-對於node2、「合作夥伴sysid」必須是node1。
 
 

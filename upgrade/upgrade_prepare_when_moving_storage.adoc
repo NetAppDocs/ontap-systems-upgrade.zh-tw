@@ -129,7 +129,7 @@ image::../upgrade/media/reassign_lifs.PNG[將LIF重新指派給替換系統上�
 --
 . [[Prepe_move_store_5]]下載並準備用於執行netboot的檔案。
 +
-安裝新節點之後、您可能需要netboot、以確保新節點執行的ONTAP 版本與原始節點相同。「netboot」一詞是指您從ONTAP 儲存在遠端伺服器上的不實映像進行開機。準備網路開機時、您必須將ONTAP 一份《支援》9開機映像複本放到系統可以存取的網路伺服器上。
+安裝新節點之後、您可能需要netboot來確認新節點執行的ONTAP 版本與原始節點相同。「netboot」一詞是指您從ONTAP 儲存在遠端伺服器上的不實映像進行開機。準備網路開機時、您必須將ONTAP 一份《支援》9開機映像複本放到系統可以存取的網路伺服器上。
 
 +
 .. 存取 https://mysupport.netapp.com/site/["NetApp 支援網站"^] 可下載用於執行系統netboot的文件。

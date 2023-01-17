@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/move_non-root_aggr_and_nas_data_lifs_node1_from_node2_to_node3.html 
 keywords: moving, non-root, aggregates, nas, lif, node1, node2, node3 
-summary: 使用ONTAP 「系統控制器更換」命令、升級執行版本不支援的控制器時、請確認節點2上的節點1 NAS資料LIF、已從節點2重新定位至節點3。 
+summary: '使用升級執行ONTAP 支援功能的控制器時、請確認節點2上的節點1 NAS資料lifs已從節點2重新定位至節點3 `system controller replace` 命令。' 
 ---
 = 將節點1擁有的非根Aggregate和NAS資料lifs從節點2移至節點3
 :hardbreaks:

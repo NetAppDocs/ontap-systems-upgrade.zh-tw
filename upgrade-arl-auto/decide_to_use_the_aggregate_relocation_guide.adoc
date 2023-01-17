@@ -25,7 +25,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、決定是否使用ARL�
 
 
 
-NOTE: 您可以在本程序中使用NetApp儲存加密（NSE）和NetApp Volume加密（NVE）。
+NOTE: 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume加密（NVE）和NetApp Aggregate加密（NAE）。
 
 [sys_commands_95_97_supported_Systems]下表顯示控制器升級支援的機型對照表。
 

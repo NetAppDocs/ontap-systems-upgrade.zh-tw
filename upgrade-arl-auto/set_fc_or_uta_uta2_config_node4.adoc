@@ -39,7 +39,8 @@ NOTE: 如果節點4沒有內建FC連接埠、內建UTA/UTA2連接埠或UTA/UTA2�
 .關於這項工作
 如果您的系統沒有FC組態、您可以跳過本節。如果您的系統有內建UTA/UTA2連接埠或UTA/UTA2介面卡、請在中進行設定 <<檢查並設定節點4上的UTA/UTA2連接埠>>。
 
-*重要*：如果您的系統有儲存磁碟、您必須在叢集提示字元下輸入本節中的命令。如果您的V系列系統或系統FlexArray 已連接至儲存陣列、請在維護模式下於本節中輸入命令。
+
+IMPORTANT: 如果您的系統有儲存磁碟、您必須在叢集提示字元下輸入本節中的命令。如果您的V系列系統或系統FlexArray 已連接至儲存陣列、請在維護模式下於本節中輸入命令。
 
 .步驟
 . 請採取下列其中一項行動：
@@ -82,7 +83,16 @@ NOTE: 如果節點4沒有內建FC連接埠、內建UTA/UTA2連接埠或UTA/UTA2�
 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 視需要修改節點4上的FC連接埠：「ucadmin modify -m ft initiator -f _adapter_port_name_'`-t'是FC4類型、目標或啟動器。*附註*：FC連接埠必須設定為啟動器。 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
+視需要修改節點4上的FC連接埠：
+
+`ucadmin modify -m fc -t initiator -f _adapter_port_name_`
+
+`-t` 為FC4類型、目標或啟動器。
+
+
+NOTE: FC連接埠必須設定為啟動器。
+
 |===
 . 結束維護模式：
 +
@@ -416,7 +426,7 @@ Boot_ONTAP
 
 
 
-. [[auto_check_4_step23]如果您要從具有外部磁碟的系統升級至支援內部和外部磁碟AFF 的系統（例如、E25A800系統）、請將node2 Aggregate設為根Aggregate、以確保node4從節點2的根Aggregate開機。若要設定根Aggregate、請移至開機功能表、然後選取選項「5」以進入維護模式。
+. [[auto_check_4_step23]如果您要從具有外部磁碟的系統升級至支援內部和外部磁碟AFF 的系統（例如、E25A800系統）、請將node2 Aggregate設為根Aggregate、以確認node4從節點2的根Aggregate開機。若要設定根Aggregate、請前往開機功能表並選取選項 `5` 進入維護模式。
 +
 
 WARNING: *您必須依照所示的確切順序執行下列子步驟；否則可能導致中斷運作、甚至資料遺失。*

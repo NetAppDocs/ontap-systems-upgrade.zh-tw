@@ -26,8 +26,17 @@ NOTE: 請勿中斷開機。
 此功能表選項會下載新ONTAP 的功能表映像、並將其安裝至開機裝置。
 
 +
+請忽略下列訊息：
 
-NOTE: 請忽略下列訊息：「HA配對不支援不中斷升級此程序」。本附註適用於ONTAP 不中斷營運的更新功能、不適用於控制器升級。請務必使用netboot將新節點更新為所需映像。如果您使用另一種方法在新控制器上安裝映像、可能會安裝錯誤的映像。此問題適用於ONTAP 所有的版本。
++
+`This procedure is not supported for Non-Disruptive Upgrade on an HA pair`
+
++
+本附註適用於ONTAP 不中斷營運的更新功能、不適用於控制器升級。
+
++
+
+NOTE: 請務必使用netboot將新節點更新為所需映像。如果您使用其他方法在新控制器上安裝映像、可能會安裝不正確的映像。此問題適用於ONTAP 所有的版本。netboot程序與選項結合使用 `(7) Install new software` 清除開機媒體、並在ONTAP 兩個影像分割區上放置相同的版本。
 
 . [[step9]如果系統提示您繼續此程序、請輸入「y」、並在系統提示您輸入套件時、輸入URL：
 +
@@ -108,9 +117,12 @@ NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。�
 +
 "et time _hh：mm:ss_"
 
-. [[step20]如有必要、請在節點3上設定合作夥伴系統ID：
+. [[step20]在開機載入程式中、在節點3上設定合作夥伴系統ID：
 +
 "etenv PARTNER-sysid _node2_sysid_"
+
++
+對於node3、 `partner-sysid` 必須是node2的。
 
 +
 .. 儲存設定：
@@ -119,7 +131,7 @@ NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。�
 
 
 
-. [[[auto_install3_step21]]在新節點的開機載入程式中、必須設定「partner-sysid」參數。對於node3、「合作夥伴sysid」必須是node2的。驗證node3的"合作 夥伴sysid"：
+. [[[auto_install3_step21]驗證 `partner-sysid` 對於節點3：
 +
 《prontenv合作夥伴sysid》
 
@@ -138,7 +150,8 @@ NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。�
 .. 返回本節、並完成其餘步驟、從開始 <<auto_install3_step23,步驟23>>。
 
 
-*重要事項*：您必須先重新設定FC內建連接埠、CNA內建連接埠和CNA卡、才能ONTAP 使用FlexArray 「支援虛擬化」軟體在V系列或系統上啟動。
+
+IMPORTANT: 您必須重新設定FC內建連接埠、CNA內建連接埠和CNA卡、才能使用ONTAP 「支援虛擬化」軟體在V系列或系統上啟動FlexArray 。
 
 |===
 . [[auto_install3_step23]將新節點的FC啟動器連接埠新增至交換器區域。

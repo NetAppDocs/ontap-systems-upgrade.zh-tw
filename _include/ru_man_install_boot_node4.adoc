@@ -109,7 +109,8 @@ WARNING: *警告：請勿覆寫延遲。若不讓電池充電、可能會導致�
 .. 返回本節、並完成其餘步驟、從開始 <<man_install4_Step9,步驟9.>>。
 
 
-*重要*：您必須重新設定FC內建連接埠、UTA/UTA2內建連接埠和UTA/UTA2卡、才能在Data ONTAP V系列系統上啟動。
+
+IMPORTANT: 在Data ONTAP V系列系統上開機時、您必須重新設定FC內建連接埠、UTA/UTA2內建連接埠和UTA/UTA2卡。
 
 |===
 . [[man_install4_Step9]]將新節點的FC啟動器連接埠新增至交換器區域。
@@ -199,15 +200,29 @@ Boot_ONTAP功能表
 NOTE: 您必須使用管理連接埠和IP位址做為netboot連線。請勿使用資料LIF IP位址、否則在執行升級時可能會發生資料中斷。
 
 +
-[cols="30,70"]
+[cols="35,75"]
 |===
 | 如果動態主機組態傳輸協定（DHCP）是... | 然後... 
 
 
-| 執行中 | 在開機環境提示字元中輸入下列命令、即可自動設定連線：「ifconfige0M -auto」 
+| 執行中  a| 
+在開機環境提示字元中輸入下列命令、即可自動設定連線：「ifconfige0M -auto」
 
 
-| 未執行 | 在開機環境提示字元中輸入下列命令、手動設定連線：「ifconfige0M -addr=_filer_addr_ mask=_netmask_-gateway_dns =_dns _addr_ domain=_dns _domain_`_filer_addr_'是儲存系統的IP位址。「網路遮罩」是儲存系統的網路遮罩。「_gateway_」是儲存系統的閘道。'_DNs_addr_'是網路上名稱伺服器的IP位址。「DNS網域名稱服務」（DNS）網域名稱。如果使用此選用參數、則不需要netboot伺服器URL中的完整網域名稱；您只需要伺服器的主機名稱。*附註*：您的介面可能需要其他參數。在韌體提示字元中輸入「Help ifconfig」以取得詳細資料。 
+
+| 未執行  a| 
+在開機環境提示字元中輸入下列命令、手動設定連線：
+`ifconfig e0M -addr=_filer_addr_ mask=_netmask_ -gw=_gateway_ dns=_dns_addr_ domain=_dns_domain_`
+
+`_filer_addr_` 為儲存系統的IP位址（必填）。
+`_netmask_` 是儲存系統的網路遮罩（必填）。
+`_gateway_` 是儲存系統的閘道（必填）。
+`_dns_addr_` 為網路上名稱伺服器的IP位址（選用）。
+`_dns_domain_` 為網域名稱服務（DNS）網域名稱。如果使用此選用參數、則不需要netboot伺服器URL中的完整網域名稱；您只需要伺服器的主機名稱。
+
+
+NOTE: 您的介面可能需要其他參數。在韌體提示字元中輸入「Help ifconfig」以取得詳細資料。
+
 |===
 . 在節點4上執行netboot：
 +
@@ -236,10 +251,14 @@ NOTE: 請勿中斷開機。
 請忽略下列訊息：
 
 +
-「HA配對不支援此程序進行不中斷升級」
+`This procedure is not supported for Non-Disruptive Upgrade on an HA pair`
 
 +
 本附註適用於Data ONTAP 不中斷營運的更新功能、不適用於控制器升級。
+
++
+
+NOTE: 請務必使用netboot將新節點更新為所需映像。如果您使用其他方法在新控制器上安裝映像、可能會安裝不正確的映像。此問題適用於ONTAP 所有版本的更新版本。netboot程序與選項結合使用 `(7) Install new software` 清除開機媒體、並在ONTAP 兩個影像分割區上放置相同的版本。
 
 . [[man_install4_step23]如果系統提示您繼續此程序、請輸入y、並在系統提示您輸入套件時、輸入URL：
 +

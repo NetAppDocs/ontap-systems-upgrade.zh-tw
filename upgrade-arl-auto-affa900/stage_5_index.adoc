@@ -1,0 +1,22 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/stage_5_index.html 
+keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
+summary: ARL升級的第1階段程序順序、使用「系統控制器更換」命令、在執行ONTAP 版本號為9.8或更新版本的控制器上執行。 
+---
+= 階段5.在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在第5階段期間、您會安裝新的NVRAM和控制器模組、這些模組會針對升級的node2、然後再安裝netboot node2。
+
+.步驟
+. link:install_a900_nvs_and_controller_on_node2.html["在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組"]
+. link:netboot_node2.html["netboot node2"]
+

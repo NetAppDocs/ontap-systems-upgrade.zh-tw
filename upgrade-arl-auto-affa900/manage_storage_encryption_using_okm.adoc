@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/manage_storage_encryption_using_okm.html 
+keywords: storage, encryption, authentication, key, manager, external 
+summary: 在AFF 從靜止A700 AFF 升級到靜止A900的過程中、設定及管理儲存加密、管理驗證金鑰、以及靜止SnapMirror關係。 
+---
+= 使用Onboard Key Manager管理儲存加密
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用OKM來管理加密金鑰。如果您打算使用OKM、則必須在開始升級之前記錄密碼和備份資料。
+
+.步驟
+. 將通關密碼儲存至安全位置。
+. 建立備份以供還原之用。執行下列命令並儲存輸出：
++
+「安全金鑰管理程式內建show Backup」
+
+
+
+
+
+== 靜止SnapMirror關係（選用）
+
+在繼續執行此程序之前、您必須確認所有SnapMirror關係均已靜止。當SnapMirror關係靜止時、它會在重新開機和容錯移轉之間保持靜止。
+
+.步驟
+. 驗證目的地叢集上的SnapMirror關係狀態：
++
+「napmirror show」
+
++
+[NOTE]
+====
+如果狀態為「Transferring（正在傳輸）」、您必須中止傳輸：「napmirror abort-destination-vserver _vserver_name_」
+
+====
++
+如果SnapMirror關係未處於「傳輸」狀態、則中止將會失敗。
+
+. 停止叢集之間的所有關係：
++
+`snapmirror quiesce -destination-vserver *`
+
+

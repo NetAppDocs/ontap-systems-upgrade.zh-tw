@@ -14,11 +14,13 @@ summary: 第6階段程序順序、可在執行ONTAP 了更新版本的控制器�
 
 
 [role="lead"]
-在第6階段期間、您會確認新節點已正確設定。如果其中一個新節點有統一化的目標介面卡、您必須還原任何連接埠組態、而且可能需要變更介面卡的特性。如果新節點已啟用加密、您也必須設定儲存加密。您也必須取消委任舊節點。
+在第6階段期間、您將確認新節點已正確設定、如果新節點已啟用加密、則您可以設定及設定儲存加密或NetApp Volume Encryption。您也應該取消委任舊節點、然後恢復SnapMirror作業。
 
-. link:ensure_controllers_set_up_correctly.html["請確定新的控制器已正確設定"]
+. link:get_address_key_management_server_encryption.html["取得外部金鑰管理伺服器的IP位址以進行儲存加密"]
+. link:manage_authentication_kmip.html["使用KMIP伺服器管理驗證"]
+. link:ensure_controllers_set_up_correctly.html["確認新的控制器已正確設定"]
 . link:set_up_storage_encryption_new_controller.html["在新的控制器模組上設定儲存加密"]
-. link:set_up_netapp_encryption_on_new_controller.html["在新的控制器模組上設定NetApp加密"]
+. link:set_up_netapp_encryption_on_new_controller.html["在新的控制器模組上設定NetApp Volume或Aggregate Encryption"]
 . link:decommission_old_system.html["取消委任舊系統"]
 . link:resume_snapmirror_ops.html["恢復SnapMirror作業"]
 

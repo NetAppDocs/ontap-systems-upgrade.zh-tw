@@ -14,7 +14,7 @@ summary: 如有需要、AFF 請在將節點2 AFF 升級至EsceA700期間、將�
 
 
 [role="lead"]
-如果您使用NetApp Volume Encryption（NVE）來加密要升級的系統上的磁碟區、加密組態必須同步至新節點。如果您沒有還原金鑰管理程式、當您使用ARL將節點2集合體從升級的節點1重新部署到升級的節點2時、加密的磁碟區將會離線。
+如果您使用NetApp Aggregate Encryption（NAE）或NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、則加密組態必須同步至新節點。如果您沒有還原金鑰管理程式、當您使用ARL將節點2集合體從升級的節點1重新部署到升級的節點2時、加密的磁碟區將會離線。
 
 .關於這項工作
 執行下列步驟、將加密組態同步至新節點：

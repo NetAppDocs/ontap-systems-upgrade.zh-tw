@@ -2,13 +2,11 @@
 :allow-uri-read: 
 
 
-在第1階段期間、您必須準備節點進行升級、並執行一系列預先檢查。您可能需要重新鎖定磁碟以進行儲存加密。您也必須準備好新控制器的網路開機。
+在第1階段期間、如果需要、您可以確認內部磁碟機不包含根集合體或資料集合體、準備節點進行升級、並執行一系列預先檢查。您可能還需要重新鎖定磁碟以進行儲存加密、並準備以網路方式開機新的控制器。
 
 .步驟
 . link:determine_aggregates_on_internal_drives.html["確定控制器是否在內部磁碟機上有集合體"]
 . link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]
-. link:get_address_key_management_server_encryption.html["取得外部金鑰管理伺服器的IP位址以進行儲存加密"]
-. link:manage_authentication_kmip.html["使用KMIP伺服器管理驗證"]
 . link:manage_authentication_okm.html["使用內建金鑰管理程式來管理驗證"]
 . link:quiesce_snapmirror_relationships.html["靜止SnapMirror關係"]
 . link:prepare_for_netboot.html["準備netboot"]

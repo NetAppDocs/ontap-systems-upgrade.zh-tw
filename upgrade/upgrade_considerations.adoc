@@ -22,7 +22,7 @@ link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["升級ONTAP"^]
 
 * 您必須觀察最大叢集大小。
 +
-當您透過移動磁碟區進行升級時、新節點會在移除原始節點之前加入叢集。確保叢集中的控制器數量不會超過程序期間所支援的最大叢集大小。
+當您透過移動磁碟區進行升級時、新節點會在移除原始節點之前加入叢集。確認叢集中的控制器數量在程序期間未超過支援的最大叢集大小。
 
 +
 https://hwu.netapp.com["NetApp Hardware Universe"^]

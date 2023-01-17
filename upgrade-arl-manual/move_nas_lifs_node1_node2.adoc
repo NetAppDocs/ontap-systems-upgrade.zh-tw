@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/move_nas_lifs_node1_node2.html 
 keywords: node1, node3, nas, lifs, cluster, san 
-summary: 如果您有雙節點叢集、請將節點1的NAS資料l生命 週期移至節點2；如果叢集有兩個以上的節點、則在ONTAP 執行EAS9.7或更早版本的控制器上進行手動ARL升級時、將節點1的NAS資料lifs移至第三節點。 
+summary: 如果您有雙節點叢集、請將node1 NAS資料l生命 週期移至node2；如果叢集有兩個以上節點、則在ONTAP 執行EAS9.7或更早版本的控制器上進行手動ARL升級時、將節點1 NAS資料lifs移至第三節點。 
 ---
 = 將節點1擁有的NAS資料lifs移至節點2
 :hardbreaks:

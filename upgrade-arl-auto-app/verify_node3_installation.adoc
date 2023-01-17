@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app/verify_node3_installation.html 
 keywords: verifying, verify, node, install, installation 
-summary: 使用ONTAP 「系統控制器更換」命令升級執行版本號為32的控制器時、請確認節點1的實體連接埠正確對應至節點3、並還原節點3上的網路組態。 
+summary: '使用升級執行ONTAP 支援功能的控制器時、請確認節點1實體連接埠正確對應至節點3、並還原節點3上的網路組態 `system controller replace` 命令。' 
 ---
 = 驗證node3安裝
 :hardbreaks:
@@ -138,7 +138,7 @@ NOTE: 在此程序中、_重新建立VLAN、ifgrps和廣播網域_一節已重�
 
 . [[step2]]列出叢集上的廣播網域：
 +
-《廣播網域節目》
+「網路連接埠廣播網域節目」
 
 . [[step3]]列出節點3上所有連接埠的網路連接埠連線性：
 +
@@ -310,7 +310,7 @@ Cluster::*> displaced-vlans restore -node node1_node3 -port e0e -destination-por
 
 . [[step9]]完成所有連接埠修復後、請刪除任何空白的廣播網域：
 +
-「廣播網域刪除-broadcast網域_broadcast網域_網域名稱_」
+`network port broadcast-domain delete -broadcast-domain _broadcast_domain_name_`
 
 . [[step10]驗證連接埠可連線性：
 +

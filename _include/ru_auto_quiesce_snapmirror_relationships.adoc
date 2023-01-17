@@ -24,6 +24,6 @@
 
 . 停止叢集之間的所有關係：
 +
-「napmirror quiesce -destination-vserver _vserver_name_」
+`snapmirror quiesce -destination-vserver *`
 
 

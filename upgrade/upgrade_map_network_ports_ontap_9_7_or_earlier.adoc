@@ -2,7 +2,7 @@
 permalink: upgrade/upgrade-map-network-ports-ontap-9-7-or-earlier.html 
 sidebar: sidebar 
 keywords: enable, node3, node4, node, communicate, cluster, network, upgrade, physical, port, configure, setting, intend, data, map, map network ports using ontap 9.7 or earlier 
-summary: 若要讓節點3和節點4在升級後與叢集中的其他節點和網路進行通訊、您必須確保實體連接埠已正確設定為適合特定用途的設定、例如叢集、資料等。 
+summary: 若要讓節點3和節點4在升級後與叢集中的其他端口和網路進行通訊、您必須確認實體連接埠已正確設定為適合特定用途的設定、例如叢集、資料等。 
 ---
 = 使用ONTAP 更新版本的更新版本來對應網路連接埠
 :allow-uri-read: 

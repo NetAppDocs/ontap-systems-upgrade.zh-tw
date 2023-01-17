@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-在第4階段期間、所有非根Aggregate都會從節點2重新定位至節點3；節點2擁有的非SAN資料lifs會移至節點3。您必須記錄必要的node2資訊、然後淘汰node2。
+在第4階段期間、您將非根Aggregate和NAS資料lifs從節點2重新部署到節點3。您必須記錄必要的node2資訊、然後淘汰node2。
 
 .步驟
 . link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["將非根Aggregate和NAS資料LIF從節點2重新定位至節點3"]

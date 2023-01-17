@@ -43,7 +43,8 @@ NOTE: NetApp行銷資料可能會使用「UTA2」一詞來指代整合式網路�
 .關於這項工作
 如果您的系統沒有FC組態、您可以跳過本節。如果您的系統內建UTA/UTA2連接埠或UTA/UTA2卡、請在中設定 <<檢查並設定節點3上的UTA/UTA2連接埠>>。
 
-*重要*：如果您的系統有儲存磁碟、請在叢集提示字元下輸入本節中的命令。如果您有「V系列系統」或有FlexArray 「支援虛擬化軟體」、並且已連線至儲存陣列、請在「維護」模式中輸入本節中的命令。
+
+IMPORTANT: 如果您的系統有儲存磁碟、請在叢集提示字元下輸入本節中的命令。如果您有「V系列系統」或有FlexArray 「支援虛擬化軟體」、並且已連線至儲存陣列、請在「維護」模式中輸入本節中的命令。
 
 . [[step1]]比較節點3上的FC設定與先前從節點1擷取的設定。
 . [[step2]]請採取下列其中一項行動：
@@ -70,7 +71,16 @@ NOTE: NetApp行銷資料可能會使用「UTA2」一詞來指代整合式網路�
 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 在維護模式（開機功能表選項5）中、視需要修改node3上的FC連接埠：「ucadmin modify -m fs -t mitator -f _adapter_port_name_`-t'是FC4類型、目標或啟動器。*附註*：FC連接埠必須設定為啟動器。 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
+在維護模式（開機功能表中的選項5）中、視需要修改節點3上的FC連接埠：
+
+`ucadmin modify -m fc -t initiator -f _adapter_port_name_`
+
+`-t` 為FC4類型、目標或啟動器。
+
+
+NOTE: FC連接埠必須設定為啟動器。
+
 |===
 . [[step3]請採取下列其中一項行動：
 +
@@ -305,7 +315,7 @@ Adapter  Mode       Type        Mode     Type        Status
 . [[step14]執行「boot_ONTAP功能表」、將節點開機到開機功能表。如果您要升級至A800、請前往 <<auto_check3_step23,步驟23>>。
 
 
-. [[Auto9597_check_node3_step15]在節點3上、前往開機功能表並使用2/7選取隱藏選項「boot_after控制器置換」。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。
+. [[[autos9597_check_node3_step15]在節點3上、移至開機功能表、然後使用22/7選取隱藏選項 `boot_after_controller_replacement`。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。
 +
 .展開主控台輸出範例
 [%collapsible]

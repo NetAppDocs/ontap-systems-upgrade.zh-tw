@@ -24,10 +24,21 @@
 | 適用於... | 然後... 
 
 
-| FAS / AFF8000系列系統 | 將「<ONTAP_VERSION >_image.tgz」檔案的內容解壓縮到目標目錄：「tar -zxvf <ONTAP_VERVERSION >_image.tgz」*附註*：如果您要在Windows上解壓縮內容、請使用7-Zip或WinRAR來擷取netboot映像。您的目錄清單應包含一個netboot資料夾、其中包含一個核心檔案：「netboot/kernel」（netboot/kernel） 
+| FAS / AFF8000系列系統  a| 
+擷取的內容 `<ontap_version>_image.tgz` 檔案至目標目錄：
+
+`tar -zxvf <ontap_version>_image.tgz`
 
 
-| 所有其他系統 | 您的目錄清單應包含下列檔案：「<ONTAP_VERSION >_image.tgz」*附註*：您不需要擷取「<ONTAP_VERSION >_image.tgz」檔案的內容。 
+NOTE: 如果要在Windows上解壓縮內容、請使用7-Zip或WinRAR擷取netboot映像。
+
+您的目錄清單應包含一個含有核心檔案的netboot資料夾：
+
+`netboot/kernel`
+
+
+
+| 所有其他系統 | 您的目錄清單應包含下列檔案： `<ontap_version>_image.tgz`附註：您不需要擷取的內容 `<ontap_version>_image.tgz` 檔案： 
 |===
 +
 您將會使用中目錄中的資訊 link:stage_3_install_boot_node3.html["階段3."]。

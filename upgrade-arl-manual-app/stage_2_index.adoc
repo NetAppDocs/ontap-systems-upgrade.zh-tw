@@ -14,7 +14,7 @@ summary: 階段2在執行ONTAP 版本號為9.8或更新版本的控制器上進�
 
 
 [role="lead"]
-在第2階段期間、您將node1 Aggregate和lifs重新定位至node2、記錄node1資訊、然後淘汰node1。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。
+在第2階段期間、您會將非根Aggregate從節點1重新部署至節點2、並將節點1擁有的非SAN資料lifs移至節點2、包括故障或遭否決的Aggregate。您也可以記錄必要的node1資訊、以便稍後在程序中使用、然後淘汰node1。
 
 .步驟
 . link:relocate_non_root_aggr_node1_node2.html["將節點1擁有的非根Aggregate和NAS資料lifs重新定位至節點2"]

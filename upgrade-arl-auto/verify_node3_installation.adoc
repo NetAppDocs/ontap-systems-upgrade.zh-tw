@@ -70,7 +70,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行更新至9.7�
 
 == 還原節點3上的金鑰管理程式組態
 
-如果您使用NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、加密組態必須同步至新節點。如果您沒有還原金鑰管理程式、當您使用ARL將節點1集合體從節點2重新定位至節點3時、加密的磁碟區將會離線。
+如果您使用NetApp Aggregate Encryption（NAE）或NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、則加密組態必須同步至新節點。如果您沒有還原金鑰管理程式、當您使用ARL將節點1集合體從節點2重新定位至節點3時、加密的磁碟區將會離線。
 
 .步驟
 . 若要同步Onboard Key Manager的加密組態、請在叢集提示字元中執行下列命令：

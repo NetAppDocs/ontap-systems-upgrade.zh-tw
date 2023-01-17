@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html 
 keywords: move, nas, san, lif, ports, broadcast domain, node1, node2, node3 
-summary: 在ONTAP 執行更新版本的控制器上手動升級ARL時、將節點2上的節點1 NAS資料LIF、從節點2移至節點3。 
+summary: 在執行ONTAP EFlash 9.7或更早版本的控制器上進行手動ARL升級時、將節點2上的節點1 NAS資料lifs從節點2移至節點3。 
 ---
 = 將節點1擁有的NAS資料lifs從節點2移至節點3、並驗證節點3上的SAN lifs
 :hardbreaks:

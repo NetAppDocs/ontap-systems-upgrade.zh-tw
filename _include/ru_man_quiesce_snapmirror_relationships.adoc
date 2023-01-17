@@ -18,6 +18,6 @@ NOTE: 如果狀態為「Transferring（正在傳輸）」、您必須中止傳�
 
 . 停止叢集之間的所有關係：
 +
-「napmirror quiesce -destination-vserver _vserver-name_」
+`snapmirror quiesce -destination-vserver *`
 
 

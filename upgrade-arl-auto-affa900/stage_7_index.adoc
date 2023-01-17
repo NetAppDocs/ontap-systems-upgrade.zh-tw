@@ -1,0 +1,26 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/stage_7_index.html 
+keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
+summary: ARL升級的第1階段程序順序、使用「系統控制器更換」命令、在執行ONTAP 版本號為9.8或更新版本的控制器上執行。 
+---
+= 第7階段：完成升級
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在第7階段期間、您將確認新節點已正確設定、如果新節點已啟用加密、則您可以設定及設定儲存加密或NetApp Volume Encryption。您也應該取消委任舊節點、然後恢復SnapMirror作業。
+
+.步驟
+. link:get_ip_address_of_external_kms_for_storage_encryption.html["取得外部金鑰管理伺服器的IP位址以進行儲存加密"]
+. link:ensure_new_controllers_are_set_up_correctly.html["確認新的控制器已正確設定"]
+. link:set_up_storage_encryption_new_module.html["在新的控制器模組上設定儲存加密"]
+. link:set_up_netapp_volume_encryption_new_module.html["在新的控制器模組上設定NetApp Volume或Aggregate Encryption"]
+. link:decommission_old_system.html["取消委任舊系統"]
+. link:resume_snapmirror_operations.html["恢復SnapMirror作業"]
+
