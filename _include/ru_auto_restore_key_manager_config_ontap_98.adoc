@@ -6,9 +6,25 @@
 執行下列步驟、將加密組態同步至新節點：
 
 .步驟
-. 在叢集提示字元中使用下列命令、同步化Onboard Key Manager（OKM）的加密組態：
+. 從節點3執行下列命令：
 +
 「安全金鑰管理程式內建同步」
 
-. 為OKM輸入整個叢集的通關密碼。
+. 在重新部署資料集合體之前、請先確認節點3上的SVM-KEK金鑰已還原為「true」：
++
+[listing]
+----
+::> security key-manager key query -node node3 -fields restored -key-type SVM-KEK
+----
++
+.範例
+[listing]
+----
+::> security key-manager key query -node node3 -fields restored -key-type SVM-KEK
+
+node     vserver   key-server   key-id                                  restored
+-------- --------- -----------  --------------------------------------- --------
+node3    svm1      ""           00000000000000000200000000000a008a81976 true
+                                2190178f9350e071fbb90f00000000000000000
+----
 

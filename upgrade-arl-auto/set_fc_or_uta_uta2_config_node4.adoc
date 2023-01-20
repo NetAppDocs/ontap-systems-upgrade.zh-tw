@@ -419,10 +419,52 @@ Boot_ONTAP maint
 ====
 . [[auto_check_4_step22]在載入程式提示下、開機：
 +
-Boot_ONTAP
+Boot_ONTAP功能表
 
 +
 現在、在開機時、節點可以偵測先前指派給它的所有磁碟、並可依預期開機。
+
++
+當您要更換的叢集節點使用根磁碟區加密時、ONTAP 無法從磁碟讀取磁碟區資訊。還原根磁碟區的金鑰：
+
++
+.. 返回特殊的開機功能表：
+`LOADER> boot_ontap menu`
++
+[listing]
+----
+Please choose one of the following:
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+
+Selection (1-11)? 10
+----
+.. 選取*（10）Set Onboard Key Manager恢復機密*
+.. 輸入 `y` 出現下列提示：
++
+`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
+
+.. 在提示字元下、輸入金鑰管理程式的通關密碼。
+.. 出現提示時輸入備份資料。
++
+
+NOTE: 您必須已取得中的通關密碼和備份資料 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] 本程序的一節。
+
+.. 系統重新開機至特殊開機功能表後、請執行選項*（1）正常開機*
++
+
+NOTE: 您可能會在這個階段遇到錯誤。如果發生錯誤、請重複中的子步驟 <<auto_check_4_step22,步驟22>> 直到系統正常開機為止。
+
+
 
 
 
