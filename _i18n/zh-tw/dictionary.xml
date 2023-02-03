@@ -4274,12 +4274,8 @@
   <block id="9d5ce6c4c82bf9a0ff455a50cadc1ab6" category="list-text">如果在組態中使用自我加密磁碟機、且您已設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變數至<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例如、在_Boot node2中搭配AFF 使用SUREA900或FAS9500控制器和NVRAM模組、 <block ref="30eda0c27e5ac7524ed5f5f264f13489" category="inline-link-macro-rx"></block>）、您必須取消設定變數：</block>
   <block id="21b9417932c23289b6932c3a0ac2517f" category="list-text">[[boot_node2_step1]]設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 和<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 在節點2組態載入後、避免開機迴圈的變數。</block>
   <block id="083a0c049526537d6b95a268054814fb" category="list-text">您的系統上有混合式Aggregate。</block>
-  <block id="6e1f6dfb0fcbfac6c4067f6818568970" category="cell">9.11.1p6或9.10.1P10（目標為2023年2月）</block>
-  <block id="53f4933654122c2732aaf29d750ecb9c" category="list-text">您執行ONTAP 的是《2020年2月》（2023年2月）的《銷售統計》（2013年11月1日）。</block>
-  <block id="34fe5db3348c8cff3877298c8c064752" category="paragraph">在ONTAP 下列系統組態中、使用ARL來升級執行《更新版本》的一對控制器、這些控制器執行《更新版本》9.11.1p6或9.10.1P10（目標為2023年2月）：</block>
   <block id="b99f39b13055b86a7e0146684c21e326" category="list-text">將A700控制器移至一個不只A900系統的系統AFF AFF</block>
   <block id="9733b2ec9e26adc1936d94dc2a3bb0dd" category="list-text">FAS9000控制器到FAS9500系統</block>
-  <block id="6425a395e3062e0f480ffee2bc19d2f7" category="admonition">此程序嚴格適用於AFF 執行AFF 《更新版本》的從Ara700升級到《更新版本ONTAP 》、從FAS9000升級到FAS95006或9.10.1P10（目標為2023年2月）。請勿使用此程序在任何其他系統組合之間執行升級。</block>
   <block id="a2b13d30d388148b28bbb1a43f3d2d52" category="paragraph">擷取的內容<block ref="f466b354adfc3ad817d7c11c037c8797" prefix=" " category="inline-code"></block> 檔案至目標目錄：</block>
   <block id="a9a690b194b002aca2d632eee1a1a1f2" category="paragraph"><block ref="1dfb54a15c6859407fd4c2e52579269b" prefix="" category="inline-code"></block></block>
   <block id="2483e54ca623f46ca2ae8747a545115d" category="admonition">如果要在Windows上解壓縮內容、請使用7-Zip或WinRAR擷取netboot映像。</block>
@@ -4485,4 +4481,8 @@
   <block id="5db260fa0b5fbfacb2534214a3285812" category="paragraph">如果您使用NetApp Aggregate Encryption（NAE）或NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、則加密組態必須同步至新節點。如果您不重新同步金鑰管理程式、當您使用ARL將節點2集合體從升級的節點1重新定位至升級的節點2時、可能會發生故障、因為節點2沒有必要的加密金鑰、無法將加密的磁碟區和集合體上線。</block>
   <block id="593e2ad3d429d61bda399cdc2971b3d5" category="list-text">從節點2執行下列命令：</block>
   <block id="2c44030cea2ae320e19712bb71a7d594" category="list-text">在重新部署資料集合體之前、請先確認節點2上的SVM-KEK金鑰已還原為「true」：</block>
+  <block id="4cbf24460087ed8ef9a50719247b86e9" category="paragraph">在ONTAP 下列系統組態中、使用ARL來升級執行《更新版本》的一對控制器：</block>
+  <block id="582b7c7a6d50cab8d1a4af4c6741e5a6" category="admonition">此程序嚴格適用於AFF 執行AFF 《更新版本》的《ONTAP 從Arp700升級到》、《從FAS900升級到FAS9500》、《從FAS9000升級到》、《從更新版本升級到更新版本》。請勿使用此程序在任何其他系統組合之間執行升級。</block>
+  <block id="c440ffbf92eaebdac0e849314781e4be" category="cell">9.10.1P10、9.11.1p6或更新版本</block>
+  <block id="9088ce39ce36bb44cd73f98337e0bfbc" category="list-text">您執行ONTAP 的是版本號為《更新版本》的《更新版本》（例如：《更新版本》）。</block>
 </blocks>
