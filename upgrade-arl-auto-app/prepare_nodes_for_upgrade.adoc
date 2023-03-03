@@ -140,8 +140,7 @@ NOTE: 如果您的系統每個節點有兩個以上的叢集連接埠、例如FA
 ** 「網路連接埠連線能力顯示-詳細資料」
 
 
-
-
++
 
 NOTE: 如果使用內建金鑰管理程式（OKM）的NetApp Volume Encryption（NVE）或NetApp Aggregate Encryption（NAE）、請準備好金鑰管理程式通關密碼、以便在稍後的程序中完成金鑰管理程式重新同步。
 
@@ -154,9 +153,9 @@ NOTE: 如果使用內建金鑰管理程式（OKM）的NetApp Volume Encryption�
 
 [NOTE]
 ====
-** 您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
-** 您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
+您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
 
+您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
 
 ====
 https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryption-concept.html#supported-self-encrypting-drive-types["深入瞭解支援的自我加密磁碟機"^]。

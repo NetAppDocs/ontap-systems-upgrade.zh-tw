@@ -297,13 +297,15 @@ IMPORTANT: 您必須重新設定FC內建連接埠、CNA內建連接埠和CNA卡�
 
 |===
 +
+
+WARNING: *只要在HA配對上完成控制器升級、您就必須取消設定 `kmip.init.maxwait` 變動。請參閱 link:ensure_new_controllers_are_set_up_correctly.html#unset_maxwait_system_commands["請確認新控制器的設定正確、步驟12"]。如果發生停電、否則可能導致資料遺失。*
+
++
 [NOTE]
 ====
-** 您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
-** 您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
-** 如果在設定之後發生停電 `kmip.init.maxwait` 變數至 `off`請聯絡技術支援部門以取得協助、避免可能的資料遺失。
-** 一旦HA配對上的控制器升級完成、您就必須取消設定 `kmip.init.maxwait` 變動。請參閱 link:ensure_new_controllers_are_set_up_correctly.html["確認新的控制器已正確設定"]。
+您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
 
+您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
 
 ====
 . 開機節點進入開機功能表：

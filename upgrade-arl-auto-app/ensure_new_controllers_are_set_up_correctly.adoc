@@ -123,7 +123,7 @@ Do you want to continue? {y|n}: y
 +
 您可以比較輸出與您在區段中擷取的輸出 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]。
 
-. 如果在組態中使用自我加密磁碟機、且您已設定 `kmip.init.maxwait` 變數至 `off` （例如、in link:install_boot_node4.html#step27["安裝並開機節點4、步驟27"]）、您必須取消設定變數：
+. [[unset_mastwait_system_commands]]如果在組態中使用自我加密磁碟機、且您已設定 `kmip.init.maxwait` 變數至 `off` （例如、in link:install_boot_node4.html#step27["安裝並開機節點4、步驟27"]）、您必須取消設定變數：
 +
 「et diag; systemShell -node_node_name_-command sudo kenv -u -p kmip.init.maxwait`」
 

@@ -732,9 +732,9 @@ NOTE: 此時請勿傳送AutoSupport 適用於節點2的消息給NetApp；稍後�
 
 [NOTE]
 ====
-** 您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
-** 您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
+您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
 
+您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
 
 ====
 https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryption-concept.html#supported-self-encrypting-drive-types["深入瞭解支援的自我加密磁碟機"^]。

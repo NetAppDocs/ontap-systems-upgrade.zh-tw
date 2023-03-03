@@ -124,8 +124,7 @@ Controller replacement operation has been paused for user intervention.
 ** 「torage加密磁碟顯示」
 
 
-
-
++
 
 NOTE: 如果正在使用使用Onboard Key Manager的NetApp Volume Encryption（NVE）或NetApp Aggregate Encryption（NAE）、請準備好金鑰管理程式通關密碼、以便在稍後的程序中完成金鑰管理程式重新同步。
 
@@ -138,9 +137,9 @@ NOTE: 如果正在使用使用Onboard Key Manager的NetApp Volume Encryption（N
 
 [NOTE]
 ====
-** 您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
-** 您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
+您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
 
+您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
 
 ====
 https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryption-concept.html#supported-self-encrypting-drive-types["深入瞭解支援的自我加密磁碟機"^]。

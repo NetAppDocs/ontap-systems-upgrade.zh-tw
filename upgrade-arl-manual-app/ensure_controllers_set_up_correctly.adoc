@@ -83,7 +83,7 @@ node4          node3          true     Connected to node3
 +
 授權代碼參數接受28個大寫字母字元金鑰的清單。您可以一次新增一個授權、也可以一次新增多個授權、每個授權金鑰都以逗號分隔。
 
-. 如果在組態中使用自我加密磁碟機、且您已設定 `kmip.init.maxwait` 變數至 `off` （例如、in link:install_boot_node3.html#step16["步驟16"] 在_Install and boot node3_）中、您必須取消設定變數：
+. [[unset_mastwait_manipal]]如果在組態中使用自我加密磁碟機、且您已設定 `kmip.init.maxwait` 變數至 `off` （例如、in link:install_boot_node3.html#step16["步驟16"] 在_Install and boot node3_）中、您必須取消設定變數：
 +
 「et diag; systemShell -node_node_name_-command sudo kenv -u -p kmip.init.maxwait`」
 
