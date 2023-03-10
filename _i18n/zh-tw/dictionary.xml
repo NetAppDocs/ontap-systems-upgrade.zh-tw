@@ -4487,4 +4487,5 @@
   <block id="976c8c5d2aa0a879266bc997cec248ad" category="inline-link-macro">請確認新控制器的設定正確、步驟11</block>
   <block id="a6b5dd0182841750a8833ae708a7b2f5" category="admonition">*只要在HA配對上完成控制器升級、您就必須取消設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變動。請參閱 <block ref="70709a8592d9d71b5cffa2529c50ab50" category="inline-link-macro-rx"></block>。如果發生停電、否則可能導致資料遺失。*</block>
   <block id="d5252796ebf0e69c5d3078a9ac59bb72" category="list-text">[[unset_mastwait_manipal]]如果在組態中使用自我加密磁碟機、且您已設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變數至<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例如、in <block ref="c34adc28d35ee24325c874eba95a8786" category="inline-link-macro-rx"></block> 在_Install and boot node3_）中、您必須取消設定變數：</block>
+  <block id="ff8e7d9040b97e4276e06db695236077" category="list-text">在node2的loader&gt;提示下、設定預設環境變數：</block>
 </blocks>
