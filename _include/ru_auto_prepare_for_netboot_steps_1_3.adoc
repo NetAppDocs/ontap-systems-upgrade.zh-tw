@@ -31,6 +31,6 @@ NOTE: 您不需要擷取「<ONTAP_VERON>_image.tgz」檔案的內容。
 
 |===
 +
-您將會使用中目錄中的資訊 link:stage_3_install_boot_node3_overview.html["階段3."]。
+您將會使用中目錄中的資訊 link:install_boot_node3.html["階段3."]。
 
 

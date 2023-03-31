@@ -16,7 +16,7 @@ summary: 一般而言、控制器硬體的升級方式取決於原始節點的�
 image::../upgrade/media/methods_for_upgrading_controller_hardware.png[升級控制器硬體的方法]
 
 
-NOTE: 採用內部磁碟機的機型包括：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 部分A800、部分A250。AFF AFF
+NOTE: 採用內部磁碟機的機型包括：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 包含A800、VA250和C250 AFF AFF AFF 。
 
 如果您的系統未列於上方、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^] 檢查是否有內部磁碟機。
 

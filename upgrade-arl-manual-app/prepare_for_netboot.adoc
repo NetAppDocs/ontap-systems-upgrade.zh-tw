@@ -24,7 +24,7 @@ summary: 手動升級至執行ONTAP Esc9.8或更新版本的控制器時、請�
 .關於這項工作
 如果新的控制器ONTAP 上安裝的版本與原控制器上安裝的版本不相同、則必須以網路開機。安裝每個新的控制器之後、您可以從ONTAP 儲存在Web伺服器上的Image9映像來啟動系統。然後、您可以將正確的檔案下載到開機媒體裝置、以供後續系統開機。
 
-不過、如果ONTAP 控制器上安裝的版本與原始控制器相同、則不需要對控制器進行網路開機。如果是、您可以跳過本節並繼續 link:stage_3_install_boot_node3.html["階段3：安裝和開機節點3"]。
+不過、如果ONTAP 控制器上安裝的版本與原始控制器相同、則不需要對控制器進行網路開機。如果是、您可以跳過本節並繼續 link:install_boot_node3.html["階段3：安裝和開機節點3"]。
 
 .步驟
 . [[man_netboot_Step1]]請存取NetApp支援網站、下載用於執行系統網路開機的檔案。
@@ -53,6 +53,6 @@ NOTE: 如果要在Windows上解壓縮內容、請使用7-Zip或WinRAR擷取netbo
 | 所有其他系統 | 您的目錄清單應包含下列檔案： `<ontap_version>_image.tgz`附註：您不需要擷取的內容 `<ontap_version>_image.tgz` 檔案： 
 |===
 +
-您將會使用中目錄中的資訊 link:stage_3_install_boot_node3.html["階段3."]。
+您將會使用中目錄中的資訊 link:stage_3_index.html["階段3."]。
 
 

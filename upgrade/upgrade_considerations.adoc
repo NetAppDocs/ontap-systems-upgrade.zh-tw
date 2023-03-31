@@ -49,7 +49,7 @@ https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["使用CLI進行
 具有內部儲存設備的系統
 
 
-NOTE: 下列系統具有內部儲存設備：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 包含A800、VA250和C190。AFF AFF AFF
+NOTE: 下列系統具有內部儲存設備：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 包含A800、VA250、C250和C190等功能AFF AFF AFF AFF 。
 
 * 如果您的系統未列於上方、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^] 檢查是否有內部磁碟機。
 * 如果您的系統具有內部儲存設備、建議您使用移動磁碟區來升級。
@@ -79,7 +79,7 @@ https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_wi
 
 * 如果您的系統使用頻外ACP、您可能需要從頻外ACP移轉至頻內ACP。
 +
-https://kb.netapp.com/app/answers/answer_view/a_id/1029778["NetApp知識庫文章1029778：頻內ACP設定與支援"^]
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/In-Band_ACP_Setup_and_Support["NetApp知識庫文章：頻內ACP設定與支援"^]
 
 
 

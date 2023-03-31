@@ -18,7 +18,7 @@ summary: ARL升級的第2階段程序順序、使用「系統控制器更換」�
 
 .步驟
 . link:relocate_non_root_aggr_nas_data_lifs_node1_node2.html["將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2"]
-. link:relocate_failed_vetoed_aggr.html["重新部署故障或被否決的集合體"]
+. link:relocate_failed_or_vetoed_aggr.html["重新部署故障或被否決的集合體"]
 . link:retire_node1.html["淘汰節點1"]
 . link:prepare_for_netboot.html["準備netboot"]
 

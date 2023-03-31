@@ -319,7 +319,6 @@
   <block id="3f8c328bf258e454068314be8aac5d75" category="list-text">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 連結至_NetApp支援網站_、並下載適用於您平台及ONTAP 正確版本之更新程式的必要系統檔案。</block>
   <block id="48ab14af4b0090253431ed38e4cc2440" category="paragraph">如果新的控制器ONTAP 上安裝的版本與原控制器上安裝的版本不相同、則必須以網路開機。安裝每個新的控制器之後、您可以從ONTAP 儲存在Web伺服器上的Image9映像來啟動系統。然後、您可以將正確的檔案下載到開機媒體裝置、以供後續系統開機。</block>
   <block id="83e3abbe2d4f63155eff798e62e1a616" category="inline-link-macro">階段3安裝和開機節點3</block>
-  <block id="bb9252c2a7cbae6e0a2014a53400a55c" category="paragraph">不過、如果ONTAP 控制器上安裝的版本與原始控制器相同、則不需要對控制器進行網路開機。如果是、您可以跳過本節並繼續 <block ref="a3940c661e200ff7ee0136ca0ef37651" category="inline-link-macro-rx"></block></block>
   <block id="302937ad7234fe283f1f179989cd1fe0" category="list-text">存取NetApp支援網站、下載用於執行系統網路開機的檔案。</block>
   <block id="103ec41a89beb368e3357fad5f451a92" category="list-text">請ONTAP 從NetApp支援網站的軟體下載區段下載適當的支援軟體、並將「&lt;ONTAP_VERW&gt;_image.tgz」檔案儲存在可從網路存取的目錄中。</block>
   <block id="5b1b8c3f072422a936e63f0d977e41e0" category="list-text">切換至網路存取目錄、並確認您所需的檔案可用。</block>
@@ -327,7 +326,6 @@
   <block id="383b9c142d0ac9c95fc6323618a87c9b" category="cell">FAS / AFF8000系列系統</block>
   <block id="edc91455dc5116cbd53031ff17548c91" category="cell">所有其他系統</block>
   <block id="843ab277685630f82095416c5b9ae5a1" category="inline-link-macro">階段3.</block>
-  <block id="c7b2f3e7dacd4ee5eb9b0618c5079d8f" category="paragraph">您將會使用中目錄中的資訊 <block ref="1f9dd4a8865e8664f884ec11b5f13dfc" category="inline-link-macro-rx"></block>。</block>
   <block id="9b12fafa5a8b1307615caadc9be2c552" category="summary">使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.5的控制器升級至9.7時、請確認節點1上的實體連接埠正確對應至節點3。</block>
   <block id="9bced622fe4463826e54e9d72ffb3105" category="doc">將連接埠從節點1對應至節點3</block>
   <block id="aef0be345c19587a34b9e9c1f46f47df" category="paragraph">您必須驗證節點1上的實體連接埠是否正確對應至節點3上的實體連接埠、如此一來、節點3就能在升級後與叢集中的其他節點和網路進行通訊。</block>
@@ -1269,7 +1267,6 @@
   <block id="330937217378a90989c78312814a4d5c" category="summary">在第2階段、第3階段或第5階段進行移轉之後、如果使用ONTAP 「系統控制器更換」命令來升級執行更新的控制器、則LIF將不會上線。</block>
   <block id="d86fa9c7d1b3bca68c0a69f81f14a78e" category="summary">ARL升級的第2階段程序順序、使用「系統控制器更換」命令來執行ONTAP 更新版本的控制器。</block>
   <block id="22e9bda17d40c1dbdb534fd455e19fcd" category="list-text"><block ref="22e9bda17d40c1dbdb534fd455e19fcd" category="inline-link-macro-rx"></block></block>
-  <block id="650a4c1ea41a0f666ee188ff323d26b9" category="list-text"><block ref="650a4c1ea41a0f666ee188ff323d26b9" category="inline-link-macro-rx"></block></block>
   <block id="338e1133e592584bd1dc26b643cbe02f" category="paragraph">在驗證節點3上的網路組態之後、在將Aggregate從節點2重新定位至節點3之前、您必須驗證屬於節點1的NAS資料lifs目前位於節點2上、是否已從節點2重新定位至節點3。您還必須驗證節點3上是否存在SAN lifs。</block>
   <block id="a29257abbaad84467babad354360d285" category="paragraph">執行這些檢查之後、系統會將節點1擁有的非根Aggregate和NAS資料lifs重新定位至新的控制器節點3。資源重新配置完成後、控制器更換作業會暫停。</block>
   <block id="ff23473696232fd91c1e2dcb460109e4" category="paragraph">如果控制器更換程序暫停、請檢查並修正錯誤（如果有）、然後發出「推入」以繼續操作。</block>
@@ -1667,9 +1664,7 @@
   <block id="c0ff48676f87627f73474db6b1018a88" category="summary">手動升級至執行ONTAP Esc9.8或更新版本的控制器時、請準備好netboot node3和node4。</block>
   <block id="017a287daf9403479607113762fdf28d" category="paragraph">當您在程序稍後的實體機架節點3和節點4之後、可能需要將它們以網路開機。「_netboot_」一詞是指您從ONTAP 儲存在遠端伺服器上的支援影像進行開機。準備網路開機時、您必須將ONTAP 一份《支援》9開機映像複本放到系統可以存取的網路伺服器上。</block>
   <block id="34c13ce480fd28c643a03477e436ea69" category="inline-link-macro">階段3：安裝和開機節點3</block>
-  <block id="3dd228d301de455327861edf46a3a6c7" category="paragraph">不過、如果ONTAP 控制器上安裝的版本與原始控制器相同、則不需要對控制器進行網路開機。如果是、您可以跳過本節並繼續 <block ref="2bff11e37a7944fe4126fc6d0031317c" category="inline-link-macro-rx"></block>。</block>
   <block id="021eb7b60dabf41949ccbeca660311c4" category="list-text">[[man_netboot_Step1]]請存取NetApp支援網站、下載用於執行系統網路開機的檔案。</block>
-  <block id="7704ef8efcd46a7ed3c60b0b5522a4f5" category="paragraph">您將會使用中目錄中的資訊 <block ref="f7260a7bcbdd09edcf840aac6c5a4af7" category="inline-link-macro-rx"></block>。</block>
   <block id="a54f5c2e2731f201663a2d288e5fec98" category="summary">在執行ONTAP 《Esc9.8或更新版本》的控制器上進行手動ARL升級時、請確認節點1上的實體連接埠正確對應至節點3。</block>
   <block id="9207f0d2f15feec52f0acba2d7786a53" category="paragraph">您必須確定節點1上的實體連接埠正確對應至節點3上的實體連接埠、以便節點3在升級後與叢集中的其他節點和網路進行通訊。</block>
   <block id="d22f146c49d95d305653bf62234fdbc9" category="paragraph">您必須已經取得有關_E__新節點上連接埠的資訊Hardware Universe 。（請前往 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至_SURE_ Hardware Universe ）。您可以使用本節稍後和中的資訊 <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block>。</block>
@@ -3235,8 +3230,6 @@
   <block id="31e9ea6f4ed38186085bf9a52128a461" category="inline-link">如何透過iSCSI和FCP解決儲存控制器主機板更換與升級的問題</block>
   <block id="b1ddd6d6d90c80426e14d10c6ded3cc0" category="paragraph"><block ref="b1ddd6d6d90c80426e14d10c6ded3cc0" category="inline-link-rx"></block></block>
   <block id="6125b5468b29015c919d2eaf565415e6" category="list-text">如果您的系統使用頻外ACP、您可能需要從頻外ACP移轉至頻內ACP。</block>
-  <block id="c0ae7629e7bfcf00be0d40631578d6f7" category="inline-link">NetApp知識庫文章1029778：頻內ACP設定與支援</block>
-  <block id="8481ff5a6197df6d5f77cc03a2cc6d88" category="paragraph"><block ref="8481ff5a6197df6d5f77cc03a2cc6d88" category="inline-link-rx"></block></block>
   <block id="d33f2a600ba4fe43084a26e95e4908c0" category="paragraph">*相關資訊*</block>
   <block id="5b0415c2846efde1fb66c48433f25633" category="inline-xref-macro">選擇升級控制器硬體的方法</block>
   <block id="41e8d90d580396f4d1d06d6dcc1e6ff7" category="paragraph"><block ref="41e8d90d580396f4d1d06d6dcc1e6ff7" category="inline-xref-macro-rx"></block></block>
@@ -4215,8 +4208,6 @@
   <block id="5dd3fadb015da65e82238831e11341c9" category="paragraph">您可以使用下列範例做為參考：</block>
   <block id="b76a3b855e625194513f3473a25582fd" category="list-text">輸入「22/7」並在節點停止於開機功能表時選取隱藏的選項「boot_after控制器置換」、即可將AFF 該站台2磁碟重新指派給AFF Efestha900節點2。</block>
   <block id="3dbb60dab5c1891455791640814da2b9" category="list-text">檢查並重設中所述的儲存加密bootargs <block ref="025202ee75dff38076e126e76d5042ed" category="inline-xref-macro-rx"></block>。</block>
-  <block id="e427f9006ac0f6079ad11054809d205e" category="admonition">採用內部磁碟機的機型包括：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 部分A800、部分A250。AFF AFF</block>
-  <block id="db80f5bf265434b9ca90bc5f0cac1f17" category="admonition">下列系統具有內部儲存設備：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 包含A800、VA250和C190。AFF AFF AFF</block>
   <block id="e908e6e2b5df3efafd19fa616b538a72" category="list-text">如果您的系統具有內部儲存設備、您可以將系統轉換成磁碟機櫃、並將其連接至同一叢集中的新節點。FAS2520控制器無法轉換成磁碟機櫃。</block>
   <block id="e9ddbc0542fbe11aae2eccf01c4e4a89" category="paragraph">將FAS255x系統轉換成磁碟機櫃是工作流程中的一項選用工作、可用來透過移動儲存設備進行升級。</block>
   <block id="aa5eafaf3f0b641d5e680da72815213b" category="paragraph">以下是具有內部儲存設備的系統清單：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 部分A800、部分A250。AFF AFF</block>
@@ -4488,4 +4479,12 @@
   <block id="a6b5dd0182841750a8833ae708a7b2f5" category="admonition">*只要在HA配對上完成控制器升級、您就必須取消設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變動。請參閱 <block ref="70709a8592d9d71b5cffa2529c50ab50" category="inline-link-macro-rx"></block>。如果發生停電、否則可能導致資料遺失。*</block>
   <block id="d5252796ebf0e69c5d3078a9ac59bb72" category="list-text">[[unset_mastwait_manipal]]如果在組態中使用自我加密磁碟機、且您已設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變數至<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例如、in <block ref="c34adc28d35ee24325c874eba95a8786" category="inline-link-macro-rx"></block> 在_Install and boot node3_）中、您必須取消設定變數：</block>
   <block id="ff8e7d9040b97e4276e06db695236077" category="list-text">在node2的loader&gt;提示下、設定預設環境變數：</block>
+  <block id="12dd85e558ba4dfcc9dce978f489296a" category="admonition">採用內部磁碟機的機型包括：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 包含A800、VA250和C250 AFF AFF AFF 。</block>
+  <block id="61a0b5df76df0fff1f7315d4d3251795" category="admonition">下列系統具有內部儲存設備：FAS2520、FAS2552、FAS2554、FAS2620、FAS2650、 FAS2720、FAS2750、AFF S4A200、AFF S4A220、AFF S4A700s、 包含A800、VA250、C250和C190等功能AFF AFF AFF AFF 。</block>
+  <block id="91d5a2c546d26762fc836e91700a4d86" category="inline-link">NetApp知識庫文章：頻內ACP設定與支援</block>
+  <block id="0af17efca2dae8b310233b584154a94b" category="paragraph"><block ref="0af17efca2dae8b310233b584154a94b" category="inline-link-rx"></block></block>
+  <block id="00e3434af8f53caecc96a787f100e5fa" category="paragraph">不過、如果ONTAP 控制器上安裝的版本與原始控制器相同、則不需要對控制器進行網路開機。如果是、您可以跳過本節並繼續 <block ref="6ba5630a5f60662e8fc1f03d17393494" category="inline-link-macro-rx"></block>。</block>
+  <block id="f2d3ce1d1db6751407cc3928aac9de0c" category="paragraph">您將會使用中目錄中的資訊 <block ref="17f88a9bcb978d5101977810aab93c38" category="inline-link-macro-rx"></block>。</block>
+  <block id="ab2126455dabf7b57fb465e0cbe0ec41" category="paragraph">您將會使用中目錄中的資訊 <block ref="ab6acaf1648b65fe7eff652317a95a17" category="inline-link-macro-rx"></block>。</block>
+  <block id="85e374a47bd77502ca7ecd58923ec819" category="paragraph">不過、如果ONTAP 控制器上安裝的版本與原始控制器相同、則不需要對控制器進行網路開機。如果是、您可以跳過本節並繼續 <block ref="c6531ef0bbbd2a28b8b9b75b1dc2026b" category="inline-link-macro-rx"></block></block>
 </blocks>
