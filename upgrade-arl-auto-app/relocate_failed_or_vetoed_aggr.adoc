@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-auto-app/relocate_failed_vetoed_aggr.html 
+permalink: upgrade-arl-auto-app/relocate_failed_or_vetoed_aggr.html 
 keywords: relocating, failed, vetoed, aggregates, relocation, operation 
 summary: 使用ONTAP 「系統控制器更換」命令、在升級執行更新版本的控制器時、手動重新定位故障或已被淘汰的集合體。 
 ---
