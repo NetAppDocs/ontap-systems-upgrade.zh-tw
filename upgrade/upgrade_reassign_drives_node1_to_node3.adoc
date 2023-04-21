@@ -1,0 +1,57 @@
+---
+permalink: upgrade/upgrade_reassign_drives_node1_to_node3.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, node3, node1, reassign, drives 
+summary: 在將磁碟機從 node1 重新指派至 node3 之前、請先將 node1 實體連線至 node3 
+---
+= 將驅動器從 node1 重新分配給 node3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將 AFF A250 node1 轉換為 NS224 磁碟機櫃並連線至 AFF A400 node3 之後、您必須將先前屬於 node1 的磁碟機重新指派給 node3 。
+
+.步驟
+. 在載入程式提示字元下、將 node3 開機至維護模式：
++
+Boot_ONTAP maint
+
+. 顯示 100GbE 介面的狀態：
++
+`storage port show`
+
+. 將 100GbE 介面設定為儲存連接埠：
++
+`storage port modify -p e0c -m storage`
+
++
+`storage port modify -p e0d -m storage`
+
+. 驗證 100GbE 介面的模式變更：
++
+`storage port show`
+
+. 顯示所有連接的磁碟機：
++
+「展示-v」
+
+. 記錄本機系統 ID 。
+. 將所有磁碟機從 node1 重新指派至 node3 ：
++
+`disk reassign -s _node1_ -d _node3_ -p _node2_`
+
+. 驗證所有重新分配的磁碟機是否都可以使用新的系統 ID 檢視：
++
+`disk show -s _node3 system ID_`
+
++
+
+NOTE: 如果無法檢視磁碟機、請 * 停止 * 並聯絡技術支援部門以取得協助。
+
+. 結束維護模式：
++
+《停止》
+
+

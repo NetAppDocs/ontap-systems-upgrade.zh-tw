@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: upgrade-arl-manual/manage_authentication_okm.html 
 keywords: manage, authentication, onboard key manager, okm, key, passphrase, fips 
-summary: 在執行ONTAP 更新版本的控制器上、使用內建金鑰管理程式來管理驗證金鑰、以手動方式升級ARL。 
+summary: 在執行 ONTAP 9.7 或更早版本的控制器上手動升級 ARL 時、使用 OKM 來管理驗證金鑰。 
 ---
-= 使用內建金鑰管理程式來管理驗證
+= 使用 Onboard Key Manager 管理驗證金鑰
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,19 +14,12 @@ summary: 在執行ONTAP 更新版本的控制器上、使用內建金鑰管理�
 
 
 [role="lead"]
-您可以使用內建金鑰管理程式來管理驗證金鑰。如果您打算使用內建金鑰管理程式（OKM）、則必須在開始升級之前、先記錄密碼和備份資料。
+您可以使用 Onboard Key Manager （ OKM ）來管理驗證金鑰。如果您已設定 OKM 、則必須在開始升級之前記錄複雜密碼和備份資料。
 
 .步驟
-. 確認叢集中的所有節點均可使用金鑰管理伺服器：
+. 記錄叢集範圍的複雜密碼。
 +
-「安全金鑰管理程式的關鍵展示」
+這是使用 CLI 或 REST API 設定或更新 OKM 時所輸入的複雜密碼。
 
-. 使用新的驗證金鑰重新輸入所有自我加密磁碟：
-+
-「torage加密磁碟修改磁碟*（-data-key-id nonMSID AK>]）」
-
-. 如果您使用聯邦資訊處理標準（FIPS）、請使用新的驗證金鑰重新鎖定所有自我加密磁碟：
-+
-「torage加密磁碟* modify -disk *（修改磁碟*）[-FIPS-KEY-id nonMSID AK]（FIPS金鑰ID非MSID AK）」
-
+. 執行以備份金鑰管理程式資訊 `security key-manager onboard show-backup` 命令。
 

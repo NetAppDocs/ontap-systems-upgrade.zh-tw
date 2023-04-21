@@ -19,12 +19,12 @@ summary: 在ONTAP 執行ONTAP 更新版本的控制器上、手動進行ARL升�
 .關於這項工作
 如果netboot node4的ONTAP 版本與node2上安裝的版本不相同、則必須使用netboot node4。安裝node4之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點4。接著、您可以依照中的指示、將正確的檔案下載到開機媒體裝置、以供後續系統開機 link:prepare_for_netboot.html["準備netboot"]
 
-但是、如果netboot node4的Data ONTAP 版本與node2上安裝的更新版本相同、則不需要netboot node4。
+但是、如果 netboot node4 的 ONTAP 9 版本與 node2 上安裝的版本相同或更新、則不需要使用 netboot node4 。
 
 *重要資訊：*
 
-* 如果您要升級的是連接FlexArray 至儲存陣列的V系列系統或使用「支援虛擬化軟體」的系統、則必須完成 <<man_install4_Step1,步驟1.>> 透過 <<man_install4_Step7,步驟7.>>請將本節保留在 <<man_install4_Step8,步驟8.>> 並遵循中的指示 link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"] 視需要在維護模式中輸入命令。接著您需要返回本節、並繼續執行中的程序 <<man_install4_Step9,步驟9.>>。
-* 不過、如果您要升級具有儲存磁碟的系統、則必須完成本節的完整內容、然後繼續執行本節 link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"]，在叢集提示字元中輸入命令。
+* 如果您要升級的是連接FlexArray 至儲存陣列的V系列系統或使用「支援虛擬化軟體」的系統、則必須完成 <<man_install4_Step1,步驟1.>> 透過 <<man_install4_Step7,步驟7.>>請將本節保留在 <<man_install4_Step8,步驟8.>> 並遵循中的指示 link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"] 視需要在維護模式中輸入命令。接著您必須返回本節、並繼續執行中的程序 <<man_install4_Step9,步驟9.>>。
+* 但是、如果您要升級具有儲存磁碟的系統、則必須完成本節的完整內容、然後繼續執行本節 link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"]，在叢集提示字元中輸入命令。
 
 
 .步驟
@@ -122,7 +122,7 @@ WARNING: *警告：請勿覆寫延遲。若不讓電池充電、可能會導致�
 
 
 
-IMPORTANT: 在Data ONTAP V系列系統上開機時、您必須重新設定FC內建連接埠、UTA/UTA2內建連接埠和UTA/UTA2卡。
+IMPORTANT: 在 V 系列系統上開機 ONTAP 之前、您必須重新設定 FC 內建連接埠、 UTA/UTA2 內建連接埠、以及 UTA/UTA2 卡。
 
 |===
 . [[man_install4_Step9]]將新節點的FC啟動器連接埠新增至交換器區域。
@@ -157,33 +157,26 @@ IMPORTANT: 在Data ONTAP V系列系統上開機時、您必須重新設定FC內�
 +
 「預設值」
 
-. 設定 `bootarg.storageencryption.support` 和 `kmip.init.maxwait` 在節點2組態載入後、避免開機迴圈的變數。
+. 如果您已安裝 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
 +
-如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["如何判斷我安裝了FIPS磁碟機"^] 以判斷使用中的自我加密磁碟機類型。
 
+NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷使用中的自我加密磁碟機類型。
+
++
+.. 設定 `bootarg.storageencryption.support` 至 `true` 或 `false`：
 +
 [cols="35,65"]
 |===
+
+
 | 如果下列磁碟機正在使用中… | 然後… 
 
 
-| 符合FIPS 140-2第2級自我加密要求的NetApp儲存加密（NSE）磁碟機  a| 
-** `setenv bootarg.storageencryption.support *true*`
-** 「kmip.init.maxwait關」
+| 符合 FIPS 140-2 第 2 級自我加密要求的 NSE 磁碟機 | `setenv bootarg.storageencryption.support *true*` 
 
 
-
-
-| NetApp非FIPS SED  a| 
-** `setenv bootarg.storageencryption.support *false*`
-** 「kmip.init.maxwait關」
-
-
+| NetApp非FIPS SED | `setenv bootarg.storageencryption.support *false*` 
 |===
-+
-
-WARNING: *只要在HA配對上完成控制器升級、您就必須取消設定 `kmip.init.maxwait` 變動。請參閱 link:ensure_controllers_set_up_correctly.html#unset_maxwait_manual["請確認新控制器的設定正確、步驟11"]。如果發生停電、否則可能導致資料遺失。*
-
 +
 [NOTE]
 ====
@@ -192,6 +185,12 @@ WARNING: *只要在HA配對上完成控制器升級、您就必須取消設定 `
 您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
 
 ====
+.. 前往特殊開機功能表並選取選項 `(10) Set Onboard Key Manager recovery secrets`。
++
+輸入您先前記錄的複雜密碼和備份資訊。請參閱 link:manage_authentication_okm.html["使用 Onboard Key Manager 管理驗證金鑰"]。
+
+
+
 . 如果ONTAP 節點4上安裝的版本的資訊與ONTAP 節點2上安裝的版本資訊相同或更新、請輸入下列命令：
 +
 Boot_ONTAP功能表

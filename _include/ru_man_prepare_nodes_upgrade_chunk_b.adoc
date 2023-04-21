@@ -341,19 +341,14 @@ node2            enable    Postmaster    -                 mailhost
 
 
 | 已啟用此功能... AutoSupport  a| 
-... 前往 <<man_prepare_nodes_step34,步驟34>>。
-... 移至區段 link:get_address_key_management_server_encryption.html["取得外部金鑰管理伺服器的IP位址以進行儲存加密"]。
-
+前往 <<man_prepare_nodes_step34,步驟34>>。
 
 
 
 | 未啟用任何功能... AutoSupport  a| 
-... 請遵循_系統管理參考_中的指示來啟用AutoSupport 支援。（請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。）
-+
-*注意：* AutoSupport 當您第一次設定儲存系統時、預設會啟用此功能。雖然AutoSupport 您可以隨時停用不支援、但仍應保持啟用狀態。啟用AutoSupport 功能可在儲存系統發生問題時、大幅協助識別問題與解決方案。
+請遵循_系統管理參考_中的指示來啟用AutoSupport 支援。（請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。）
 
-... 前往 link:get_address_key_management_server_encryption.html["取得外部金鑰管理伺服器的IP位址以進行儲存加密"] 區段。
-
++ * 注意： * 首次設定儲存系統時、預設會啟用 AutoSupport 。雖然AutoSupport 您可以隨時停用不支援、但仍應保持啟用狀態。啟用AutoSupport 功能可在儲存系統發生問題時、大幅協助識別問題與解決方案。
 
 |===
 .. [[man_prepe_node_step34]] AutoSupport 在兩個原始節點上輸入下列命令、並檢查輸出、以驗證是否已設定正確的郵件主機詳細資料和收件者電子郵件ID：
@@ -378,7 +373,7 @@ NOTE: 此時請勿傳送AutoSupport 適用於節點2的消息給NetApp；稍後�
 +
 欄位「Last Subject sent：」（上次傳送主旨：）和「Last Time sent：」（上次傳送時間：）包含上次傳送訊息的標題、以及傳送訊息的時間。
 
-.. 如果您的系統使用自我加密磁碟機、請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["如何判斷我安裝了FIPS磁碟機"^] 以判斷您要升級的HA配對所使用的自我加密磁碟機類型。支援兩種自我加密磁碟機的支援ONTAP ：
+.. 如果您的系統使用自我加密磁碟機、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷您要升級的HA配對所使用的自我加密磁碟機類型。支援兩種自我加密磁碟機的支援ONTAP ：
 +
 --
 *** FIPS認證的NetApp儲存加密（NSE）SAS或NVMe磁碟機

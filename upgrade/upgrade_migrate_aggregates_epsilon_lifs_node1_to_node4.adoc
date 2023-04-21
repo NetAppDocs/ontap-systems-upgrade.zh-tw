@@ -1,0 +1,103 @@
+---
+permalink: upgrade/upgrade_migrate_aggregates_epsilon_lifs_node1_to_node4.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs 
+summary: 將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 node4 。 
+---
+= 將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 node4
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在將 AFF A250 node1 轉換為磁碟機櫃之前、請先將 node1 上的資料集合體、 epsilon 和邏輯介面（ lifs ）移轉至 AFF A400 node4 。
+
+.步驟
+. 在節點的載入程式提示下、將節點開機至開機功能表：
++
+Boot_ONTAP功能表
+
+. 選取選項 `6 Update flash from backup config` 將 /var 檔案系統還原至 node4 。
++
+這會以最後一次備份到磁碟的方式取代所有 Flash 型組態。
+
+. 輸入「y」繼續。
++
+[NOTE]
+====
+如預期、節點會自動重新開機、以載入 /var 檔案系統的新複本。
+
+節點報告系統 ID 不相符的警告。輸入 `y` 以覆寫系統 ID 。
+
+====
+. 移轉叢集生命：
++
+"進階權限"
+
++
+「網路連接埠展示」
+
++
+[NOTE]
+====
+如果將 AFF A250 升級至 AFF A400 時系統叢集連接埠不相同、您可能必須暫時將 node4 上的介面變更為叢集連接埠：
+
+.. `network port modify -node _node4_ -port _port_name_ -mtu 9000 -ipspace Cluster`
+.. `network interface migrate -vserver Cluster -lif _cluster_LIF_  -destination-node _node4_ -destination-port _port_name_`
+
+
+====
+. 將 node1 上的資料集合體移轉至 node4 ：
++
+`storage aggregate relocation start -aggregate-list _aggregate_list_name_ -node _node1_ -destination _node4_ -ndo-controller-upgrade true -override-destination-checks true`
+
+. 顯示叢集中所有資料集合體的狀態：
++
+`storage aggregate show`
+
+. 移除 node1 的 IF 、改為將其移至 node4 、以移轉 epsilon 。
++
+.. 從 node1 移除 epsilon ：
++
+`cluster modify -epsilon false -node _local_node_name_`
+
+.. 將 epsilon 移至 node4 ：
++
+`cluster modify -epsilon true -node _partner_node_name_`
+
+
+
+. 顯示叢集狀態：
++
+「叢集展示」
+
+. 顯示所有資料網路生命：
++
+`network interface show -role data`
+
+. 將所有資料生命週期移轉至 node4 ：
++
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_`
+
+. 顯示叢集中所有資料生命的狀態：
++
+`network interface show -role data`
+
+. 如果有任何生命中斷、請輸入下列命令、並針對每個LIF輸入一次、將該生命的管理狀態設定為「UP」：
++
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+
+. 移轉叢集管理 LIF ：
++
+`network interface migrate -vserver _vserver_name_ -lif cluster_mgmt -destination-node _node4_ -destination-port _port_name_`
+
+. 顯示叢集管理 LIF 的狀態：
++
+`network interface show cluster_mgmt`
+
+. 停止節點1：
++
+`halt -node _node1_ -inhibit-takeover true -ignore-quorum-warnings true`
+
+

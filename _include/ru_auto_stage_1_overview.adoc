@@ -6,5 +6,5 @@
 
 .步驟
 . link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]
-. link:manage_storage_encryption_using_okm.html["使用Onboard Key Manager管理儲存加密"]
+. link:manage_storage_encryption_using_okm.html["使用 Onboard Key Manager 管理儲存加密"]
 

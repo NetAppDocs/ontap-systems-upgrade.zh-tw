@@ -23,7 +23,7 @@ entries:
     url: "/upgrade-arl-auto-affa900/verify_upgrade_hardware.html"
   - title: 準備節點以進行升級
     url: "/upgrade-arl-auto-affa900/prepare_nodes_for_upgrade.html"
-  - title: 使用Onboard Key Manager管理儲存加密
+  - title: 使用 Onboard Key Manager 管理儲存加密
     url: "/upgrade-arl-auto-affa900/manage_storage_encryption_using_okm.html"
 - title: 第2階段：重新部署資源、並淘汰AFF EsceeA700或FAS9000節點1
   entries:
@@ -81,8 +81,8 @@ entries:
   entries:
   - title: 總覽
     url: "/upgrade-arl-auto-affa900/stage_7_index.html"
-  - title: 取得外部金鑰管理伺服器的IP位址以進行儲存加密
-    url: "/upgrade-arl-auto-affa900/get_ip_address_of_external_kms_for_storage_encryption.html"
+  - title: 使用KMIP伺服器管理驗證
+    url: "/upgrade-arl-auto-affa900/manage-authentication-using-kmip-servers.html"
   - title: 確認新的控制器已正確設定
     url: "/upgrade-arl-auto-affa900/ensure_new_controllers_are_set_up_correctly.html"
   - title: 在新的控制器模組上設定儲存加密

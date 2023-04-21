@@ -1,0 +1,134 @@
+---
+permalink: upgrade/upgrade_migrate_lIFs_aggregates_node4_node3.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, node3, node4, migrate, aggregates, lif 
+summary: 準備 node3 、將節點 node3 連接至 node4 、然後將 node4 上的資料生命週期和資料集合體移轉至 node3 。 
+---
+= 將 node4 上的生命週期和資料集合體移轉至 node3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要完成升級、請將 node3 連線至 node4 、然後將 node4 上的資料邏輯介面（ lis ）和資料集合體移轉至 node3 。
+
+.步驟
+. 在節點的載入程式提示下、將節點開機至開機功能表：
++
+Boot_ONTAP功能表
+
+. 選取選項 `6 Update flash from backup config` 將 /var 檔案系統還原至 node3 。
++
+這會以最後一次備份到磁碟的方式取代所有 Flash 型組態。
+
+. 輸入「y」繼續。
+. 讓節點正常開機。
++
+[NOTE]
+====
+如預期、節點會自動重新開機、以載入 /var 檔案系統的新複本。
+
+節點報告系統 ID 不相符的警告。輸入 `y` 以覆寫系統 ID 。
+
+====
+. 將 node3 連接至 node4 ：
++
+.. 將多重路徑高可用度（ MPHA ）纜線連接至 NS224 機櫃、以確保備援。
+.. 在節點之間連接 HA 配對纜線（如果是獨立的介面）。
+.. 在節點之間連接叢集纜線（如果是獨立的介面）。
+
+
+. 移轉叢集生命：
++
+"進階權限"
+
++
+「網路連接埠展示」
+
+. 修改叢集廣播網域以包含所需的叢集連接埠：
++
+`network port broadcast-domain remove-ports -broadcast-domain _broadcast_domain_name_ -ports _port_names_`
+
++
+`network port broadcast-domain add-ports -broadcast-domain Cluster -ports _port_names_`
+
++
+
+NOTE: 從 ONTAP 9.8 開始、新的 IPspace 和一個或多個廣播網域可能會指定給現有的實體連接埠、以供叢集連線使用。
+
+. 修改叢集 IPspace 以包含所需的叢集連接埠、並將傳輸單元上限設為 9000 （如果尚未設定）：
++
+「網路連接埠修改-node_node_name_-port _port_name_-MTU 9000 -IPSpace叢集」
+
+. 顯示所有叢集網路生命：
++
+「網路介面show -role cluster」
+
+. 將所有叢集網路生命期移轉至主連接埠：
++
+「網路介面show -role cluster」
+
+. 顯示所有資料網路生命：
++
+`network interface show -role data`
+
+. 將所有資料生命移轉至 node3 ：
++
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_`
+
+. 顯示所有資料網路生命：
++
+`network interface show -role data`
+
++
+叢集與管理階層無法在節點之間移轉。如果有任何生命都停機、請將生命的管理狀態設定為 `up` 輸入下列命令、為每個 LIF 輸入一次：
+
++
+`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+
+. 移轉叢集管理 LIF ：
++
+`network interface migrate -vserver _vserver_name_ -lif cluster_mgmt -destination-node _node3_ -destination-port _port_name_`
+
+. 顯示叢集管理 LIF 的狀態：
++
+`network interface show cluster_mgmt`
+
+. 顯示叢集中所有資料集合體的狀態：
++
+`storage aggregate show`
+
+. 啟用 HA 配對、儲存容錯移轉及自動恢復：
++
+"cluster ha modify -configured true"
+
+. 將 node4 擁有的資料集合體移轉至 node3 ：
++
+`storage aggregate relocation start -aggregate _aggregate_name_ -node _node4_ -destination _node3_`
+
+. 顯示叢集中所有資料集合體的狀態：
++
+`storage aggregate show`
+
+. 啟用跨節點的網路生命體自動還原：
++
+`network interface modify -lif * -auto-revert true`
+
+. 顯示叢集狀態：
++
+「叢集展示」
+
+. 顯示容錯移轉資格：
++
+「容錯移轉顯示」
+
++
+
+NOTE: 在叢集報告輸出中、節點可能會不正確地擁有屬於其他節點的集合體。如果發生這種情況、請從叢集兩側執行接管和恢復、以進行標準化。
+
+. 顯示叢集中所有資料集合體的狀態：
++
+`storage aggregate show`
+
+

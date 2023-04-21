@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/manage-authentication-using-kmip-servers.html 
+keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication 
+summary: 使用ONTAP 「系統控制器更換」命令、在升級執行更新版本的控制器時、設定及管理儲存加密、管理驗證金鑰、以及靜止SnapMirror關係。 
+---
+= 使用KMIP伺服器管理驗證
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+利用更新版本的功能、您可以使用金鑰管理互通性傳輸協定（KMIP）伺服器來管理驗證金鑰。ONTAP
+
+.步驟
+. 新增控制器：
++
+「安全金鑰管理程式外部啟用」
+
+. 新增金鑰管理程式：
++
+「安全金鑰管理程式外部附加伺服器-金鑰伺服器_key_manager_server_ip_address_」
+
+. 驗證金鑰管理伺服器是否已設定、且可供叢集中的所有節點使用：
++
+「安全金鑰管理程式外部顯示狀態」
+
+. 將驗證金鑰從所有連結的金鑰管理伺服器還原至新節點：
++
+「安全金鑰管理程式外部還原-node_new_控制 器名稱_」
+
+

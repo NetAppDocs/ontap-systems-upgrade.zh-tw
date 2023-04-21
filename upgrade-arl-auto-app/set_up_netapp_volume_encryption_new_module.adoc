@@ -74,6 +74,9 @@ summary: '如有需要、ONTAP 使用升級執行《ENF9.8或更新版本》的�
 +
 此命令需要OKM密碼
 
++
+如需詳細資訊、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/dm/Encryption/How_to_restore_external_key_manager_server_configuration_from_the_ONTAP_boot_menu["如何從 ONTAP 開機功能表還原外部金鑰管理程式伺服器組態"^]。
+
 
 
 --

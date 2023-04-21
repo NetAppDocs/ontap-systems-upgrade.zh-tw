@@ -17,41 +17,38 @@ summary: 使用AFF EsceeA900控制器模組和NVRAM模組來開機節點1。
 節點1搭配AFF EscoreA900或FAS9500控制器和NVRAM模組、現在可以開機了。透過交換控制器和NVRAM模組、將某個從處理器升級到FASA700至FASA900或FAS9000至FAS9500、只需移動主控台和管理連線即可。AFF AFF本節提供使用AFF E4A900或FAS9500控制器和NVRAM模組來開機節點1所需的步驟。
 
 .步驟
-. 設定 `bootarg.storageencryption.support` 和 `kmip.init.maxwait` 在節點1組態載入後、避免開機迴圈的變數。
+. 如果已安裝 NetApp 儲存加密磁碟機、請執行下列步驟。
 +
-如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/How_to_tell_I_have_FIPS_drives_installed["如何判斷我安裝了FIPS磁碟機"^] 以判斷使用中的自我加密磁碟機類型。
 
+NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷使用中的自我加密磁碟機類型。
+
++
+.. 設定 `bootarg.storageencryption.support` 至 `true` 或 `false`：
 +
 [cols="35,65"]
 |===
+
+
 | 如果下列磁碟機正在使用中… | 然後… 
 
 
-| 符合FIPS 140-2第2級自我加密要求的NetApp儲存加密（NSE）磁碟機  a| 
-** `setenv bootarg.storageencryption.support *true*`
-** 「kmip.init.maxwait關」
+| 符合 FIPS 140-2 第 2 級自我加密要求的 NSE 磁碟機 | `setenv bootarg.storageencryption.support *true*` 
 
 
-
-
-| NetApp非FIPS SED  a| 
-** `setenv bootarg.storageencryption.support *false*`
-** 「kmip.init.maxwait關」
-
-
+| NetApp非FIPS SED | `setenv bootarg.storageencryption.support *false*` 
 |===
-+
-
-WARNING: *只要在HA配對上完成控制器升級、您就必須取消設定 `kmip.init.maxwait` 變動。請參閱 link:ensure_new_controllers_are_set_up_correctly.html#unset_maxwait["請確認新控制器的設定正確、步驟12"]。如果發生停電、否則可能導致資料遺失。*
-
 +
 [NOTE]
 ====
-您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。
-
-您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
+您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
 
 ====
+.. 前往特殊開機功能表並選取選項 `(10) Set Onboard Key Manager recovery secrets`。
++
+輸入您先前記錄的複雜密碼和備份資訊。請參閱 link:manage_storage_encryption_using_okm.html["使用 Onboard Key Manager 管理儲存加密"]。
+
+
+
 . 將節點開機至開機功能表：
 +
 Boot_ONTAP功能表

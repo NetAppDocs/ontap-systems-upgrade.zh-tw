@@ -27,7 +27,7 @@ entries:
     url: "/upgrade-arl-auto/stage_1_index.html"
   - title: 準備節點以進行升級
     url: "/upgrade-arl-auto/prepare_nodes_for_upgrade.html"
-  - title: 使用Onboard Key Manager管理儲存加密
+  - title: 使用 Onboard Key Manager 管理儲存加密
     url: "/upgrade-arl-auto/manage_storage_encryption_using_okm.html"
 - title: 第2階段：重新部署和淘汰節點1
   pdf-filename: 第2階段：重新部署和淘汰節點1（ONTAP 從版本9.5升級到9.7、使用「系統控制器更換」）
@@ -90,8 +90,8 @@ entries:
   entries:
   - title: 總覽
     url: "/upgrade-arl-auto/stage_6_index.html"
-  - title: 取得外部金鑰管理伺服器的IP位址以進行儲存加密
-    url: "/upgrade-arl-auto/get_ip_address_of_external_kms_for_storage_encryption.html"
+  - title: 使用KMIP伺服器管理驗證
+    url: "/upgrade-arl-auto/manage-authentication-using-kmip-servers.html"
   - title: 確認新的控制器已正確設定
     url: "/upgrade-arl-auto/ensure_new_controllers_are_set_up_correctly.html"
   - title: 在新的控制器模組上設定儲存加密

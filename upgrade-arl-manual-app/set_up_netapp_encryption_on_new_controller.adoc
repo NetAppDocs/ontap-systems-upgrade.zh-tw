@@ -61,9 +61,10 @@ summary: 如有需要、請在執行ONTAP 版本號為ENF9.8或更新版本的�
 
 | 內建金鑰管理程式（OKM） | 「安全金鑰管理程式內建同步」 
 |===
++
+如需詳細資訊、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/dm/Encryption/How_to_restore_external_key_manager_server_configuration_from_the_ONTAP_boot_menu["如何從 ONTAP 開機功能表還原外部金鑰管理程式伺服器組態"^]。
+
 
 
 .完成後
-檢查是否有任何磁碟區因為驗證金鑰無法使用或無法連線到外部金鑰管理伺服器而離線。使用下列命令將這些磁碟區重新連線：
-
-Volume online（線上Volume）
+檢查是否有任何磁碟區因為驗證金鑰無法使用或無法連線到外部金鑰管理伺服器而離線。使用將這些磁碟區重新上線 `volume online` 命令。

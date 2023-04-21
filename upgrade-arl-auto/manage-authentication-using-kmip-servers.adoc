@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-manual/manage_authentication_kmip.html 
-keywords: kmip, authentication, keys, fips 
-summary: 使用KMIP伺服器、在執行ONTAP 版本僅為9.7或更早版本的控制器上進行手動ARL升級時、管理驗證金鑰。 
+permalink: upgrade-arl-auto/manage-authentication-using-kmip-servers.html 
+keywords: IP address, external, key management, server, storage encryption, kmip, onboard key management 
+summary: 使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.5的控制器升級至9.7時、請設定並管理儲存加密、管理驗證金鑰、以及靜止SnapMirror關係。 
 ---
 = 使用KMIP伺服器管理驗證
 :hardbreaks:
@@ -14,9 +14,10 @@ summary: 使用KMIP伺服器、在執行ONTAP 版本僅為9.7或更早版本的�
 
 
 [role="lead"]
-有了NetApp推出的更新版本、您可以使用金鑰管理互通性傳輸協定（KMIP）伺服器來管理驗證金鑰。ONTAP
+利用SKE9.5到9.7、您可以使用金鑰管理互通性傳輸協定（KMIP）伺服器來管理驗證金鑰。ONTAP
 
-.步驟
+步驟
+
 . 新增控制器：
 +
 「安全金鑰管理程式設定節點_new_manager_name_」

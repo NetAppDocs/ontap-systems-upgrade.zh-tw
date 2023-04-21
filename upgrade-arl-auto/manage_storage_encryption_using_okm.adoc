@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/manage_storage_encryption_using_okm.html
 keywords: IP address, external, key management, server, storage encryption, kmip, onboard key management 
 summary: 使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.5的控制器升級至9.7時、請設定並管理儲存加密、管理驗證金鑰、以及靜止SnapMirror關係。 
 ---
-= 使用Onboard Key Manager管理儲存加密
+= 使用 Onboard Key Manager 管理儲存加密
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,14 +14,14 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.
 
 
 [role="lead"]
-您可以使用OKM來管理加密金鑰。如果您打算使用OKM、則必須在開始升級之前記錄密碼和備份資料。
+您可以使用 Onboard Key Manager （ OKM ）來管理加密金鑰。如果您已設定 OKM 、則必須在開始升級之前記錄複雜密碼和備份資料。
 
 .步驟
-. 將通關密碼儲存至安全位置。
-. 建立備份以供還原之用。執行下列命令並儲存輸出：
+. 記錄叢集範圍的複雜密碼。
 +
-「安全金鑰管理程式內建show Backup」
+這是使用 CLI 或 REST API 設定或更新 OKM 時所輸入的複雜密碼。
 
+. 執行以備份金鑰管理程式資訊 `security key-manager onboard show-backup` 命令。
 
 
 

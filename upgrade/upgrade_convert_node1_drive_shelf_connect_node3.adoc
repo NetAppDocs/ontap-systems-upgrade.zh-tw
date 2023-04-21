@@ -1,0 +1,29 @@
+---
+permalink: upgrade/upgrade_convert_node1_drive_shelf_connect_node3.html 
+sidebar: sidebar 
+keywords: ndu, nondisruptive, upgrade, node3, node1, reassign, drives 
+summary: 在將磁碟機從 node1 重新指派至 node3 之前、請先將 node1 實體連線至 node3 
+---
+= 將 node1 轉換為磁碟機櫃、並連線至 node3
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將 AFF A250 node1 轉換為 NS224 磁碟機櫃、然後連線至 AFF A400 node3 、再將磁碟機從 node1 重新指派至 node3 。
+
+.步驟
+. 從 node1 拔下所有網路纜線。
+. 從 AFF A250 機箱中移除 node1 。
+. 將 NVMe 機櫃模組（ NSM ）插入 node1 的機櫃。
+. 將 node3 100GbE 連接埠 e0c 連接至 NSM A 連接埠 e0a 、將 NSM 連接至 node3 。
++
+image::../upgrade/media/a400_with_ns224_shelf.PNG[AFF A400 搭配一個 NS224 機櫃]
+
+. 將 25GbE 纜線從 node1 連接埠 e0c 和 e0d 連接至 node3 上的任何兩個 25GbE 板載連接埠（ e0e 、 e0f 、 e0g 或 e0h ）。
++
+
+NOTE: 如果 node3 上沒有 25GbE 板載連接埠、您可以使用 25GbE PCIe 介面卡進行連線。
+
+

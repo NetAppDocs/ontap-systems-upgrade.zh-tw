@@ -21,12 +21,4 @@
 +
 「安全金鑰管理程式還原-node_new_控制 器名稱_」
 
-. 使用新的驗證金鑰重新輸入所有自我加密磁碟：
-+
-「torage加密磁碟修改磁碟*（-data-key-id nonMSID Ak）」
-
-. 如果您使用聯邦資訊處理標準（FIPS）、請使用新的驗證金鑰重新鎖定所有自我加密磁碟：
-+
-「torage加密磁碟* modify -disk *（修改磁碟*）[-FIPS-KEY-id nonMSID AK]（FIPS金鑰ID非MSID AK）」
-
 

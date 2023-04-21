@@ -4,7 +4,6 @@
 
 在第6階段期間、您將確認新節點已正確設定、如果新節點已啟用加密、則您可以設定及設定儲存加密或NetApp Volume Encryption。您也應該取消委任舊節點、然後恢復SnapMirror作業。
 
-. link:get_address_key_management_server_encryption.html["取得外部金鑰管理伺服器的IP位址以進行儲存加密"]
 . link:manage_authentication_kmip.html["使用KMIP伺服器管理驗證"]
 . link:ensure_controllers_set_up_correctly.html["確認新的控制器已正確設定"]
 . link:set_up_storage_encryption_new_controller.html["在新的控制器模組上設定儲存加密"]

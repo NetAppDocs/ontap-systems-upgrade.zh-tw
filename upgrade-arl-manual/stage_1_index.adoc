@@ -19,7 +19,7 @@ summary: 階段1程序順序、可在執行ONTAP 版本號為9.7或更早版本�
 .步驟
 . link:determine_aggregates_on_internal_drives.html["確定控制器是否在內部磁碟機上有集合體"]
 . link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]
-. link:manage_authentication_okm.html["使用內建金鑰管理程式來管理驗證"]
+. link:manage_authentication_okm.html["使用 Onboard Key Manager 管理驗證金鑰"]
 . link:quiesce_snapmirror_relationships.html["靜止SnapMirror關係"]
 . link:prepare_for_netboot.html["準備netboot"]
 
