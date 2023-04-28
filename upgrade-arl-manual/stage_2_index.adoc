@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual/stage_2_index.html
 keywords: relocate, retire, node1, steps,  stage 2 
 summary: 階段2在執行ONTAP 版本更新的控制器上進行手動ARL升級的程序順序。 
 ---
-= 第2階段：重新部署和淘汰節點1
+= 總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

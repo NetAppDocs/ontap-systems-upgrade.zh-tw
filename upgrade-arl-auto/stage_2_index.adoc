@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/stage_2_index.html
 keywords: Prepare nodes for upgrade, storage encryption, KMS, key management server, stage 2 
 summary: ARL升級的第2階段程序順序、使用執行ONTAP 版本號從9.5到9.7的控制器上的「系統控制器更換」命令。 
 ---
-= 第2階段：重新部署和淘汰節點1
+= 總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

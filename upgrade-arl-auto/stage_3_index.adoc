@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/stage_3_index.html
 keywords: stage 3, install node3, non-SAN data LIFs, non-root aggregates 
 summary: ARL升級的第3階段程序順序、使用「系統控制器更換」命令、在執行ONTAP 版本號從9.5到9.7的控制器上執行。 
 ---
-= 階段3.安裝及開機節點3
+= 總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

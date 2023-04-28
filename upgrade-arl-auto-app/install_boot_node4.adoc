@@ -280,16 +280,16 @@ IMPORTANT: 您必須重新設定FC內建連接埠、CNA內建連接埠和CNA卡�
 . 如果您的組態使用交換器型分區、請調整分區以反映新的WWPN值。
 
 
-. 如果您已安裝 NetApp 儲存加密（ NSE ）磁碟機、請設定 `bootarg.storageencryption.support` 至 `true` 或 `false`。
+. 如果您已安裝 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
 +
 
 NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷使用中的自我加密磁碟機類型。
 
 +
+.. 設定 `bootarg.storageencryption.support` 至 `true` 或 `false`。
++
 [cols="35,65"]
 |===
-
-
 | 如果下列磁碟機正在使用中… | 然後… 
 
 
@@ -304,9 +304,11 @@ NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文�
 您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。
 
 ====
-. 前往特殊開機功能表並選取選項 `(10) Set Onboard Key Manager recovery secrets`。
+.. 前往特殊開機功能表並選取選項 `(10) Set Onboard Key Manager recovery secrets`。
 +
-輸入您先前記錄的複雜密碼和備份資訊。請參閱 link:manage_storage_encryption_using_okm.html["使用 Onboard Key Manager 管理儲存加密"]
+輸入您先前記錄的複雜密碼和備份資訊。請參閱 link:manage_storage_encryption_using_okm.html["使用 Onboard Key Manager 管理儲存加密"]。
+
+
 
 . 開機節點進入開機功能表：
 +

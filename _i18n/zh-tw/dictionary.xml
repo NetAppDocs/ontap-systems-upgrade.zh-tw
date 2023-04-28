@@ -1419,7 +1419,6 @@
   <block id="8fb4b518ce39a0704f920c9d4f2f7b77" category="summary">使用Aggregate重新配置來升級控制器硬體</block>
   <block id="6af6b76d592516d40ca101051c678be3" category="doc">系統升級文件AFF FAS</block>
   <block id="c31caf6cbc86e9844fed547ba5d41897" category="summary">第4階段程序順序、可在執行ONTAP 了更新版本的控制器上進行手動ARL升級。</block>
-  <block id="511701430e4fbf5079759a7c3b7c28ff" category="doc">第4階段：記錄node2資訊並淘汰node2</block>
   <block id="cb01034aedc70b6d88070cceb3ec5fd6" category="inline-link-macro">記錄node2資訊</block>
   <block id="bf281b48b35a7cc176890f2be65ca906" category="list-text"><block ref="bf281b48b35a7cc176890f2be65ca906" category="inline-link-macro-rx"></block></block>
   <block id="ad475825ae83ecbd372fe679f99f127d" category="summary">在執行ONTAP 「更新版本」的控制器上進行手動ARL升級時、請準備節點、收集資訊、並確認所有叢集節點均處於仲裁狀態。</block>
@@ -1556,7 +1555,6 @@
   <block id="82afadce5c137568366e29a810db005a" category="cell">已啟用此功能... AutoSupport</block>
   <block id="c732f1d7a89abd68a48f92313a9b4364" category="inline-xref">步驟34</block>
   <block id="1ab718a04314b36269d3b2b096aac75a" category="list-text">前往 <block ref="395265ffe56efe9e97ae9cc3752b2f60" category="inline-xref-macro-rx"></block>。</block>
-  <block id="e5358fe562a4d74ac4231d8e23d0b088" category="inline-link-macro">取得外部金鑰管理伺服器的IP位址以進行儲存加密</block>
   <block id="9c13f9e2316ce6eb31c97c43c9f42070" category="cell">未啟用任何功能... AutoSupport</block>
   <block id="6fcae9afe7013bc84597d8c4231312ba" category="list-text">請遵循_系統管理參考_中的指示來啟用AutoSupport 支援。（請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 連結至_System Administration Reference。）</block>
   <block id="4179c1d88c83e870ed525f69e82e0369" category="list-text">[[man_prepe_node_step34]] AutoSupport 在兩個原始節點上輸入下列命令、並檢查輸出、以驗證是否已設定正確的郵件主機詳細資料和收件者電子郵件ID：</block>
@@ -1805,7 +1803,6 @@
   <block id="6bdf9080f49ca89e65220e312d51e688" category="list-text">使用下列命令新增金鑰管理伺服器：</block>
   <block id="0dd9d4ff0944e970430f96022e169191" category="list-text">使用下列命令確認已成功新增金鑰管理伺服器：</block>
   <block id="3bf7f9a82df0c130b46780052ca49e4c" category="list-text">使用下列命令、在新節點上啟動金鑰管理伺服器設定精靈：</block>
-  <block id="08ac1a2fb254b60e9c511fe04b6536d0" category="cell">外部金鑰管理程式（EKM）</block>
   <block id="a9849e92b148965a7bbb6c14d0afbcd0" category="cell">內建金鑰管理程式（OKM）</block>
   <block id="20f9ffc49541e7095d1cdcdcdbacdc68" category="summary">系統可能會當機–重新開機、發生緊急狀況、或是在執行ONTAP 《支援升級》（更新版本）的控制器上進行手動ARL升級的不同階段。</block>
   <block id="f7afd5134081c6d88b6809aff0cfe38b" category="paragraph">在升級的不同階段、系統可能會當機–重新開機、發生恐慌或經歷關機循環。這些問題的解決方法取決於何時發生。</block>
@@ -2274,7 +2271,6 @@
   <block id="5d34eef64c7b53994a7dde374d44b94b" category="paragraph">「System Node show -instance -Node node2」</block>
   <block id="bc110b3ccc057d2275d5e8ae87f525b0" category="list-text">[[man_recipal_2_step10]請在一節中記錄要使用的NVRAM系統ID <block ref="f326c815b47f4f2909494bae5cd735d5" category="inline-link-macro-rx"></block>。</block>
   <block id="7311cf26cf7087361501590894ddf505" category="summary">第5階段程序順序、可在執行ONTAP 了更新版本的控制器上進行手動ARL升級。</block>
-  <block id="d21a0858f74e1b40b984bb621122ad41" category="doc">Stage5.安裝及開機節點4</block>
   <block id="488c6e462745f03d8c1dfb3ba61f7258" category="list-text"><block ref="488c6e462745f03d8c1dfb3ba61f7258" category="inline-link-macro-rx"></block></block>
   <block id="433d8081a28a0d8c06bf54d23d4e1297" category="list-text"><block ref="433d8081a28a0d8c06bf54d23d4e1297" category="inline-link-macro-rx"></block></block>
   <block id="1d92796a70af1d22c31d2b64c9064278" category="inline-link-macro">將node2的非根Aggregate從node3重新定位到node4</block>
@@ -2938,7 +2934,6 @@
   <block id="c3ca05cd3954f0276fbe21e438b23691" category="summary">第6階段程序順序、可在執行ONTAP 版本為9.7或更早版本的控制器上進行手動ARL升級。</block>
   <block id="4cb6b559e491ceb7837bbe4029df8647" category="summary">在ONTAP 執行版本更新至版本更新的控制器上手動升級ARL時、將節點2的非根Aggregate從節點3重新定位至節點4。</block>
   <block id="9fe5e1c0bb75be0e3f5f145103e72caa" category="cell">不含更新版本ONTAP</block>
-  <block id="ce647643e8b085a9425f156173190659" category="list-text">還原外部金鑰管理程式（EKD）的驗證：</block>
   <block id="a5e463e5138622ba8c2355b41f67a0ff" category="paragraph">此命令需要Onboard Key Manager（OKM）通關密碼</block>
   <block id="ce4c94d5e669859aacda58a7f2429ddf" category="cell">所有其他ONTAP 版本</block>
   <block id="4e57dcc65e363749f76aef4905047855" category="summary">在執行更新版本的控制器上手動升級ARL時、請使用Config Advisor 「更新工具」來檢查常見的組態錯誤ONTAP 。</block>
@@ -3015,7 +3010,6 @@
   <block id="0e472afa239c2cd65ab6d08bdaa80dff" category="summary">在ONTAP 執行版本號為9.7或更早版本的控制器上進行手動ARL升級時、恢復SnapMirror傳輸和關係。</block>
   <block id="528395f19572aa91b1963f0ea7b6ed6b" category="summary">在執行ONTAP 更新版本的控制器上進行手動ARL升級時、記錄有關節點2叢集網路、管理、FC連接埠和NVRAM系統ID的資訊。</block>
   <block id="165a3ccbddfcc85a81ddf47d09d843d2" category="summary">第5階段程序順序、可在執行ONTAP 版本為9.7或更早版本的控制器上手動進行ARL升級。</block>
-  <block id="c9db4eeeb7068245ea24e65d2b3044b1" category="summary">在執行ONTAP 更新版本的控制器上手動升級ARL時、設定儲存加密。</block>
   <block id="4aea10f3c0d7162a37d57f70bbb18869" category="summary">請告訴NetApp、在執行ONTAP 版本為9.7或更早版本的控制器上完成手動ARL升級之後、舊系統將不再運作。</block>
   <block id="b4828d73e6a54a557f1d9c688f9afada" category="summary">疑難排解執行ONTAP VMware 9.7或更早版本的控制器手動升級ARL時可能發生的Aggregate重新定位故障。</block>
   <block id="a971a57f0ab6432a971f405b5096ea03" category="summary">在執行ONTAP 更新版本的控制器上進行手動ARL升級時、請確認切換、修復及切換作業。</block>
@@ -4187,7 +4181,6 @@
   <block id="3468b73fe010ca505a63fcddaa4f3601" category="paragraph-title">本資訊所使用的術語</block>
   <block id="5d022d26a75a4e30fae6648d5bcdd9e5" category="paragraph-title">適用於支援功能的FC組態MetroCluster</block>
   <block id="e05e5b3ebbe0e2f7ee773e008e2cd7bd" category="cell">如果下列磁碟機正在使用中…</block>
-  <block id="cbfa089efcac1a28956de515cdcbcecc" category="cell">符合FIPS 140-2第2級自我加密要求的NetApp儲存加密（NSE）磁碟機</block>
   <block id="9a7a5052834bdcd10b9395aaeaf8d876" category="list-text"><block ref="62a739993e7d046df94dbc6dc7c3f174" prefix="" category="inline-code"></block></block>
   <block id="102a08eb3220b17bfbecbc277298074d" category="cell">NetApp非FIPS SED</block>
   <block id="ad55a196e6d3053365555c02e73f7628" category="list-text"><block ref="20ac903c04b877a6840785a4ed61d182" prefix="" category="inline-code"></block></block>
@@ -4347,7 +4340,6 @@
   <block id="2c524a09a41084103cfccb89e1e2dd49" category="paragraph">在第6階段期間、您會使用升級的控制器和NVRAM模組來開機node2、並驗證升級的node2安裝。如果您使用NVE、則會還原金鑰管理程式組態。您也可以將節點1非根Aggregate和NAS資料lifs從節點1重新部署到升級的節點2、並確認節點2上存在SAN lifs。</block>
   <block id="2201f8be38de620c7e36cb511d56aa13" category="cell"><block ref="2201f8be38de620c7e36cb511d56aa13" category="inline-link-macro-rx"></block></block>
   <block id="fb13f8b167e25a81b898b43d42165d58" category="paragraph">在第7階段期間、您會確認新節點已正確設定、如果新節點已啟用加密、則您可以設定及設定儲存加密或NVE。您也應該取消委任舊節點、然後恢復SnapMirror作業。</block>
-  <block id="3c71d8aea4515e5bab3212b7c7635c9b" category="doc">第2階段：重新部署節點1的資源、並淘汰AFF EsyneA700或FAS9000節點1</block>
   <block id="98d03c0eb9112cc9024f712528415cd8" category="paragraph">在第2階段期間、您會將節點1非根Aggregate和NAS資料lifs重新部署至節點2。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。如果需要、您可以重新部署故障或被否決的集合體。您必須記錄node1資訊、以便稍後在程序中使用、然後交換對應的node1控制器和NVRAM模組、淘汰node1、並將升級的node1以netboot開機。</block>
   <block id="ba3ed006f5a9fb6f965da2e3e183b4ad" category="inline-link-macro">netboot</block>
   <block id="d7c7c51e5bb760e2570a29b82d44f1bf" category="list-text"><block ref="d7c7c51e5bb760e2570a29b82d44f1bf" category="inline-link-macro-rx"></block></block>
@@ -4419,7 +4411,6 @@
   <block id="85e374a47bd77502ca7ecd58923ec819" category="paragraph">不過、如果ONTAP 控制器上安裝的版本與原始控制器相同、則不需要對控制器進行網路開機。如果是、您可以跳過本節並繼續 <block ref="c6531ef0bbbd2a28b8b9b75b1dc2026b" category="inline-link-macro-rx"></block></block>
   <block id="ec8f42afc125efe6d556f20ecc052848" category="inline-link-macro">使用 Onboard Key Manager 管理驗證金鑰</block>
   <block id="67f80d13cf548292184bc05f4b74227a" category="list-text"><block ref="67f80d13cf548292184bc05f4b74227a" category="inline-link-macro-rx"></block></block>
-  <block id="f4672cbaffd9e421a79615ec725fc37c" category="paragraph">+ * 注意： * 首次設定儲存系統時、預設會啟用 AutoSupport 。雖然AutoSupport 您可以隨時停用不支援、但仍應保持啟用狀態。啟用AutoSupport 功能可在儲存系統發生問題時、大幅協助識別問題與解決方案。</block>
   <block id="905e3cdcc0a66a5627f194c9bef68b48" category="inline-link">如何判斷磁碟機是否已通過 FIPS 認證</block>
   <block id="9a939769a0a1b5b6c994c5ee6a8c23b2" category="list-text">如果您的系統使用自我加密磁碟機、請參閱知識庫文章<block ref="99bc6507ac71bae6bc6755b2bf68f73a" category="inline-link-rx"></block> 以判斷您要升級的HA配對所使用的自我加密磁碟機類型。支援兩種自我加密磁碟機的支援ONTAP ：</block>
   <block id="93cbc4495a566db3a58548f326fa221c" category="paragraph">在以網路開機系統之前、您必須確認所有 SnapMirror 關係均已處於禁用狀態。當SnapMirror關係靜止時、它會在重新開機和容錯移轉之間保持靜止。</block>
@@ -4449,11 +4440,8 @@
   <block id="28556bd95def05fed56f5833d7b0b25b" category="inline-link-macro">使用 Onboard Key Manager 管理儲存加密</block>
   <block id="2b0f9b46416ed6835a9cf4374bf56295" category="list-text"><block ref="2b0f9b46416ed6835a9cf4374bf56295" category="inline-link-macro-rx"></block></block>
   <block id="2f3067e385c13bed8c91d99a529e1f6c" category="paragraph">您可以使用 Onboard Key Manager （ OKM ）來管理加密金鑰。如果您已設定 OKM 、則必須在開始升級之前記錄複雜密碼和備份資料。</block>
-  <block id="56848c85d01c97e89fd91301765bc221" category="list-text">如果已安裝 NetApp 儲存加密磁碟機、請執行下列步驟。</block>
   <block id="03b784c13f464c141a29ed9b7adc0b70" category="paragraph">您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。</block>
   <block id="bbe12f0052143b9b4fa08d13234931ab" category="paragraph">輸入您先前記錄的複雜密碼和備份資訊。請參閱 <block ref="2b0f9b46416ed6835a9cf4374bf56295" category="inline-link-macro-rx"></block>。</block>
-  <block id="08054d649addde697b85edb4a8ffb183" category="list-text">如果您已安裝 NetApp 儲存加密（ NSE ）磁碟機、請設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 至<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 或<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>。</block>
-  <block id="f5da7c2e2634ff80aa6ca2b591dbeb0c" category="paragraph">輸入您先前記錄的複雜密碼和備份資訊。請參閱 <block ref="2b0f9b46416ed6835a9cf4374bf56295" category="inline-link-macro-rx"></block></block>
   <block id="1b2c9b4403be6eaaf7fa2209a153c703" category="list-text"><block ref="1b2c9b4403be6eaaf7fa2209a153c703" category="inline-link-macro-rx"></block></block>
   <block id="eaf73ead47320ec21942b56fd3660eea" category="list-text">如需還原內建金鑰管理資訊的協助、請聯絡 NetApp 支援部門。</block>
   <block id="c5915780f057e573017a845938fc8511" category="summary">準備 node3 、將節點 node3 連接至 node4 、然後將 node4 上的資料生命週期和資料集合體移轉至 node3 。</block>
@@ -4605,10 +4593,11 @@
   <block id="493f827b1132078fbdd11bc0ceceed47" category="list-text">將所有磁碟機從 node2 重新指派至 node4 ：</block>
   <block id="c6de9e9749bb1b9764c879c3f4e55899" category="paragraph"><block ref="d3a7175de7ab1d1112d49ac67a531b10" prefix="" category="inline-code"></block></block>
   <block id="eedfdc7d9365a1f9e29964c35c82e348" category="paragraph"><block ref="8cf81755f02bee986a80060b929f2335" prefix="" category="inline-code"></block></block>
-  <block id="c9c88276ee2c2102cc859c79f38df03f" category="paragraph">&lt;stdin&gt; 中未解決的指令 - 包括： ..//INCLUDE /RU_man_Get_IP_address_external_km_server.adoc []</block>
   <block id="c8e281db9c8a31e8da74e7ff6bc12115" category="summary">在執行 ONTAP 9.7 或更早版本的控制器上手動升級 ARL 時、使用 OKM 來管理驗證金鑰。</block>
-  <block id="e9e0a1f4688f13dee423ee10d2c9cf11" category="list-text">[[man_install3_step16]] 如果已安裝 NetApp 儲存加密磁碟機、請執行下列步驟。</block>
   <block id="20c4be209ec6c65b4221fa6f09f2df42" category="inline-link-macro">使用 Onboard Key Manager 管理儲存加密</block>
   <block id="bd001ad1a159ea8195f2f6877d4e5047" category="list-text"><block ref="bd001ad1a159ea8195f2f6877d4e5047" category="inline-link-macro-rx"></block></block>
   <block id="73d106cd4da3fdbd0b8a8317db146c37" category="list-text">[[boot_node2_step1]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。</block>
+  <block id="04f24e11b658105f38ef40a82c24839e" category="paragraph">*注意：* AutoSupport 當您第一次設定儲存系統時、預設會啟用此功能。雖然AutoSupport 您可以隨時停用不支援、但仍應保持啟用狀態。啟用AutoSupport 功能可在儲存系統發生問題時、大幅協助識別問題與解決方案。</block>
+  <block id="cb6bc72e3e387b19e4fbc2f28ecc2940" category="list-text">設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 至<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 或<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>。</block>
+  <block id="e147253c0010bdd5968cb9b4b9ddf7dc" category="cell">外部金鑰管理程式</block>
 </blocks>

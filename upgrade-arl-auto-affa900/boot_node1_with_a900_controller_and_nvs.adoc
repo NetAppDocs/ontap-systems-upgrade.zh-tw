@@ -17,7 +17,7 @@ summary: 使用AFF EsceeA900控制器模組和NVRAM模組來開機節點1。
 節點1搭配AFF EscoreA900或FAS9500控制器和NVRAM模組、現在可以開機了。透過交換控制器和NVRAM模組、將某個從處理器升級到FASA700至FASA900或FAS9000至FAS9500、只需移動主控台和管理連線即可。AFF AFF本節提供使用AFF E4A900或FAS9500控制器和NVRAM模組來開機節點1所需的步驟。
 
 .步驟
-. 如果已安裝 NetApp 儲存加密磁碟機、請執行下列步驟。
+. 如果您已安裝 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
 +
 
 NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷使用中的自我加密磁碟機類型。
@@ -27,8 +27,6 @@ NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文�
 +
 [cols="35,65"]
 |===
-
-
 | 如果下列磁碟機正在使用中… | 然後… 
 
 

@@ -42,6 +42,8 @@ entries:
   - title: 確定控制器是否在內部磁碟機上有集合體
     url: "/upgrade-arl-manual/determine_aggregates_on_internal_drives.html"
   - title: 準備節點以進行升級
+    url: "/upgrade-arl-manual/prepare_nodes_for_upgrade.html"
+  - title: 使用 Onboard Key Manager 管理驗證金鑰
     url: "/upgrade-arl-manual/manage_authentication_okm.html"
   - title: 靜止SnapMirror關係
     url: "/upgrade-arl-manual/quiesce_snapmirror_relationships.html"

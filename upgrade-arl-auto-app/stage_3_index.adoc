@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app/stage_3_index.html
 keywords: installing, booting, node3, install, cluster, stage 3 
 summary: ARL升級的第3階段程序順序、使用「系統控制器更換」命令來執行ONTAP 更新版本的控制器。 
 ---
-= 階段3.安裝及開機節點3
+= 總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -166,7 +166,7 @@ NOTE: 在開機環境提示字元中保留node4、您將返回中的node4 link:i
 +
 「預設值」
 
-. [[man_install3_step16]] 如果已安裝 NetApp 儲存加密磁碟機、請執行下列步驟。
+. [[man_install3_step16]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
 +
 
 NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷使用中的自我加密磁碟機類型。
@@ -179,7 +179,7 @@ NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文�
 | 如果下列磁碟機正在使用中… | 然後… 
 
 
-| 符合FIPS 140-2第2級自我加密要求的NetApp儲存加密（NSE）磁碟機 | `setenv bootarg.storageencryption.support *true*` 
+| 符合 FIPS 140-2 第 2 級自我加密要求的 NSE 磁碟機 | `setenv bootarg.storageencryption.support *true*` 
 
 
 | NetApp非FIPS SED | `setenv bootarg.storageencryption.support *false*` 

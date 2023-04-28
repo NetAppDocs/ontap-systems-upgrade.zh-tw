@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/stage_4_index.html
 keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
 summary: ARL升級的第1階段程序順序、使用「系統控制器更換」命令、在執行ONTAP 版本號為9.8或更新版本的控制器上執行。 
 ---
-= 第4階段：從節點2重新部署資源、並淘汰節點2
+= 總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual-app/stage_4_index.html
 keywords: stage 4, node2, retire, information 
 summary: 第4階段程序順序、可在執行ONTAP 了更新版本的控制器上進行手動ARL升級。 
 ---
-= 第4階段：記錄node2資訊並淘汰node2
+= 總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/stage_6_index.html
 keywords: complete upgrade, node, unified, target, storage, encryption, MetroCluster, stage 6 
 summary: ARL升級的第6階段程序順序、使用「系統控制器更換」命令、在執行ONTAP 版本號從9.5到9.7的控制器上執行。 
 ---
-= 階段6.完成升級
+= 總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

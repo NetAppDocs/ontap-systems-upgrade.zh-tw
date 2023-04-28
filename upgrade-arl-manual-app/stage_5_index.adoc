@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual-app/stage_5_index.html
 keywords: stage 5, install, boot, node3, node4, relocate, aggregates 
 summary: 第5階段程序順序、可在執行ONTAP 了更新版本的控制器上進行手動ARL升級。 
 ---
-= Stage5.安裝及開機節點4
+= 總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

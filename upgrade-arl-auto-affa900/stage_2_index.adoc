@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/stage_2_index.html
 keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
 summary: ARL升級的第2階段程序順序、使用「系統控制器更換」命令來執行ONTAP 更新版本的控制器。 
 ---
-= 第2階段：重新部署節點1的資源、並淘汰AFF EsyneA700或FAS9000節點1
+= 總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
