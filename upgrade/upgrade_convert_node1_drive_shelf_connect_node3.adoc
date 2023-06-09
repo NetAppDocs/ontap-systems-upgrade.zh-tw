@@ -21,9 +21,12 @@ summary: 在將磁碟機從 node1 重新指派至 node3 之前、請先將 node1
 +
 image::../upgrade/media/a400_with_ns224_shelf.PNG[AFF A400 搭配一個 NS224 機櫃]
 
-. 將 25GbE 纜線從 node1 連接埠 e0c 和 e0d 連接至 node3 上的任何兩個 25GbE 板載連接埠（ e0e 、 e0f 、 e0g 或 e0h ）。
+. 將 25GbE 纜線從 node1 連接埠 e0c 和 e0d 移至 node3 上的任何兩個 25GbE 板載連接埠（ e0e 、 e0f 、 e0g 或 e0h ）、將暫存叢集連線移至 node3 。
 +
 
-NOTE: 如果 node3 上沒有 25GbE 板載連接埠、您可以使用 25GbE PCIe 介面卡進行連線。
+NOTE: 如果 AFF A400 系統使用 FC 連接埠做為內建連接埠、請在移轉期間將 25Gb 乙太網路介面卡安裝至每個節點、以進行叢集連線。
 
 
+
+.接下來呢？
+link:upgrade_reassign_drives_node1_to_node3.html["將驅動器從 node1 重新分配給 node3"]

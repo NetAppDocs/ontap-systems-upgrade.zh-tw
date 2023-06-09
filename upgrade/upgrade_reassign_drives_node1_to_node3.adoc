@@ -33,18 +33,40 @@ Boot_ONTAP maint
 +
 `storage port show`
 
++
+應顯示如下範例所示的輸出：
+
++
+[listing]
+----
+*> storage port modify -p e0c -m storage
+Nov 10 16:27:23 [localhost:nvmeof.port.modify:notice]: Changing NVMe-oF port e0c to storage mode.
+
+Nov 10 16:27:29 [localhost:nvmeof.subsystem.add:notice]: NVMe-oF subsystem added at address fe80::2a0:98ff:fefa:8885.
+
+*> storage port modify -p e0d -m storage
+Nov 10 16:27:34 [localhost:nvmeof.port.modify:notice]: Changing NVMe-oF port e0d to storage mode.
+
+Nov 10 16:27:38 [localhost:nvmeof.subsystem.add:notice]: NVMe-oF subsystem added at address fe80::2a0:98ff:fefa:8886.
+
+*> storage port show
+Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
+---- ---- ------- ----------- -------- ------- -------
+e0c  ENET storage 100 Gb/s    enabled  online  30
+e0d  ENET storage 100 Gb/s    enabled  offline 30
+----
 . 顯示所有連接的磁碟機：
 +
 「展示-v」
 
-. 記錄本機系統 ID 。
+. 記錄本機系統 ID 值；這是 node3 的系統 ID 。也請從「擁有者」欄中記錄 node1 和 node2 的系統 ID 。
 . 將所有磁碟機從 node1 重新指派至 node3 ：
 +
-`disk reassign -s _node1_ -d _node3_ -p _node2_`
+`disk reassign -s _node1_system_ID_ -d _node3_system_ID_ -p _node4_system_ID_`
 
 . 驗證所有重新分配的磁碟機是否都可以使用新的系統 ID 檢視：
 +
-`disk show -s _node3 system ID_`
+`disk show -s _node3_system_ID_`
 
 +
 
@@ -55,3 +77,6 @@ NOTE: 如果無法檢視磁碟機、請 * 停止 * 並聯絡技術支援部門�
 《停止》
 
 
+
+.接下來呢？
+link:upgrade_migrate_lIFs_aggregates_node4_node3.html["將 node4 上的生命週期和資料集合體移轉至 node3"]

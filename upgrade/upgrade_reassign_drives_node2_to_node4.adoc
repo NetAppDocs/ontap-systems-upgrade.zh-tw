@@ -14,7 +14,7 @@ summary: 在將磁碟機從 node2 重新指派至 node4 之前、請先將 node2
 將 AFF A250 node2 轉換為 NS224 磁碟機櫃並連線至 AFF A400 node4 之後、您必須將先前屬於 node2 的磁碟機重新指派給 node4 。
 
 .開始之前
-驗證在加載器提示符下 node2 和 node4 均處於待機狀態。
+驗證在加載器提示符下 node3 和 node4 均處於待機狀態。
 
 .關於這項工作
 您可以在 node4 上執行以下步驟。
@@ -40,7 +40,7 @@ Boot_ONTAP maint
 `storage port show`
 
 +
-應顯示如下輸出：
+應顯示如下範例所示的輸出：
 
 +
 [listing]
@@ -59,16 +59,16 @@ Nov 10 16:27:38 [localhost:nvmeof.subsystem.add:notice]: NVMe-oF subsystem added
 Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
 ---- ---- ------- ----------- -------- ------- -------
 e0c  ENET storage 100 Gb/s    enabled  online  30
-e0d  ENET storage 100 Gb/s    enabled  online  30
+e0d  ENET storage 100 Gb/s    enabled  offline 30
 ----
 . 顯示所有連接的磁碟機：
 +
 「展示-v」
 
-. 記錄本機系統 ID 。
+. 記錄本機系統 ID 值；這是 node4 的系統 ID 。也請從「擁有者」欄中記錄 node1 和 node2 的系統 ID 。
 . 將所有磁碟機從 node2 重新指派至 node4 ：
 +
-`disk reassign -s _node2_ -d _node4_ -p _node1_`
+`disk reassign -s _node2_system_ID_ -d _node4_system_ID_ -p _node1_system_ID_`
 
 . 驗證所有重新分配的磁碟機是否都可以使用新的系統 ID 檢視：
 +
@@ -78,8 +78,15 @@ e0d  ENET storage 100 Gb/s    enabled  online  30
 
 NOTE: 如果無法檢視磁碟機、請 * 停止 * 並聯絡技術支援部門以取得協助。
 
+. 驗證輸出中是否報告了 node2 的根聚合，並且該集合是否處於聯機狀態：
++
+「aggr狀態」
+
 . 結束維護模式：
 +
 《停止》
 
 
+
+.接下來呢？
+link:upgrade_migrate_aggregates_epsilon_lifs_node1_to_node4.html["將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 node4"]

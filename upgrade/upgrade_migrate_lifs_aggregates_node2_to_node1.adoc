@@ -16,8 +16,17 @@ summary: 將 node2 上的邏輯介面（生命體）和資料集合體移轉至 
 .開始之前
 確認您符合下列要求：
 
-* AFF A250 和 AFF A400 控制器安裝了相同的 ONTAP 版本和修補程式版本。
-* 兩個 AFF A400 控制器均處於待命狀態 `Maintenance Mode` 提示。
+* AFF A250 和 AFF A400 控制器執行相同的 ONTAP 版本和修補程式版本。
++
+[NOTE]
+====
+** 您必須在每個 AFF A400 上以網路開機並安裝與 AFF A250 上執行的版本相同的 ONTAP 版本。
+** 每個 AFF A400 的主要和備份開機映像都必須具有相同的 ONTAP 版本。
+** 如果先前已設定 AFF A400 叢集、則必須執行來清除任何剩餘叢集組態 `wipeconfig` 從開機功能表。
+
+
+====
+* 兩個 AFF A400 控制器都會在載入程式提示時處於待命狀態。
 * 您手邊有所有適當的纜線。
 
 
@@ -25,9 +34,13 @@ summary: 將 node2 上的邏輯介面（生命體）和資料集合體移轉至 
 以下步驟是在 AFF A250 node1 上執行的。
 
 .步驟
-. 停用叢集容錯移轉自動恢復：
+. 存取進階權限層級：
 +
-`storage failover modify -node _node_name_ -auto-giveback false`
+"進階權限"
+
+. 停用儲存容錯移轉自動恢復：
++
+`storage failover modify -node _node1_ -auto-giveback false`
 
 . 停用 HA 配對兩個節點之間的自動還原：
 +
@@ -39,11 +52,11 @@ summary: 將 node2 上的邏輯介面（生命體）和資料集合體移轉至 
 
 . 顯示叢集管理階層的狀態：
 +
-`network interface show cluster_mgmt`
+`network interface show -role cluster_mgmt`
 
 . 從節點 2 上託管的儲存虛擬機器移轉所有資料生命。
 +
-`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node_name_ -destination-port _port_name_`
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _node1_ -destination-port _port_name_`
 
 +
 
@@ -55,7 +68,7 @@ NOTE: 此命令只會移轉非 SAN 的生命體。您無法使用它來移轉 iS
 
 . 如果有任何生命中斷、請輸入下列命令、並針對每個LIF輸入一次、將該生命的管理狀態設定為「UP」：
 +
-`network interface modify -vserver _vserver_name_ -lif _lif_name_ -home-node _node_name_ -status-admin up`
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-stue-admin up」
 
 . 顯示叢集中所有資料集合體的狀態：
 +
@@ -94,3 +107,6 @@ NOTE: 此命令只會移轉非 SAN 的生命體。您無法使用它來移轉 iS
 `halt -node _node2_ -inhibit-takeover true -ignore-quorum-warnings true`
 
 
+
+.接下來呢？
+link:upgrade_convert_node2_drive_shelf_connect_node4.html["將 node2 轉換為磁碟機櫃、並連線至 node4"]

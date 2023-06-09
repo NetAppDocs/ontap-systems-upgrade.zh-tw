@@ -21,15 +21,14 @@ summary: 將節點 2 （ AFF A250 ）轉換為 NS224 磁碟機櫃、然後連線
 +
 image::../upgrade/media/a400_with_ns224_shelf.PNG[AFF A400 搭配一個 NS224 機櫃]
 
-. 將 25GbE 纜線從 node2 連接埠 e0c 和 e0d 連接至 node4 上的任何兩個 25GbE 板載連接埠（ e0e 、 e0f 、 e0g 或 e0h ）。
+. 將 25GbE 纜線從 node2 連接埠 e0c 和 e0d 連接至 node4 上的任何兩個 25GbE 板載連接埠（ e0e 、 e0f 、 e0g 或 e0h ）、以建立暫時的叢集連線。
 +
 
-NOTE: 如果 node4 上沒有 25GbE 主機板內建連接埠、您可以使用 25GbE PCIe 介面卡進行連線。
+NOTE: 如果 AFF A400 系統使用 FC 連接埠做為內建連接埠、請在移轉期間將 25Gb 乙太網路介面卡安裝至每個節點、以進行叢集連線。
 
-. 如果 AFF A400 系統使用 FC 連接埠做為內建連接埠、請在移轉期間將 25Gb 乙太網路介面卡安裝到每個節點、以進行叢集連線：
-+
-.. 使用連接埠 e0a 和 e0b 、在 AFF A400 節點之間連接 HA 配對纜線。
-.. 使用連接埠 e3a 和 e3b 在 AFF A400 節點之間連接叢集纜線。
+. 使用連接埠 e0a 和 e0b 、在 AFF A400 節點之間連接 25GbE HA 互連纜線。請勿交叉連接連接埠。
+. 使用連接埠 e3a 和 e3b 、在 AFF A400 節點之間連接 100GbE 叢集互連纜線。請勿交叉連接連接埠。
 
 
-
+.接下來呢？
+link:upgrade_reassign_drives_node2_to_node4.html["將 node2 磁碟機重新指派給 node4"]

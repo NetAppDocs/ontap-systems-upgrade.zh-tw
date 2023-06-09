@@ -4447,16 +4447,11 @@
   <block id="c5915780f057e573017a845938fc8511" category="summary">準備 node3 、將節點 node3 連接至 node4 、然後將 node4 上的資料生命週期和資料集合體移轉至 node3 。</block>
   <block id="14c081fe52465ec7ccf2f4a54191e82f" category="doc">將 node4 上的生命週期和資料集合體移轉至 node3</block>
   <block id="05de3b37a54714d747bf2287c86b33a8" category="paragraph">若要完成升級、請將 node3 連線至 node4 、然後將 node4 上的資料邏輯介面（ lis ）和資料集合體移轉至 node3 。</block>
-  <block id="c1b64e6b2dac6bcfd0408bd4a24526c7" category="list-text">在節點的載入程式提示下、將節點開機至開機功能表：</block>
   <block id="6e33572ac852586911bf2ae34e3f5811" category="list-text">選取選項<block ref="1fbad292f1d0674d5769c555d41b2d77" prefix=" " category="inline-code"></block> 將 /var 檔案系統還原至 node3 。</block>
   <block id="c6ea68faeb5eef782dd065f60bd53073" category="paragraph">這會以最後一次備份到磁碟的方式取代所有 Flash 型組態。</block>
   <block id="3f9a85730e6aa38445beae1ddf78208c" category="list-text">讓節點正常開機。</block>
-  <block id="66c4a1c908a97d9c1eb0fa0ae04db414" category="paragraph">如預期、節點會自動重新開機、以載入 /var 檔案系統的新複本。</block>
   <block id="ed5222dac3009de0d14e22c21c0adf23" category="paragraph">節點報告系統 ID 不相符的警告。輸入<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> 以覆寫系統 ID 。</block>
   <block id="de6a33ef3a48198329f4a33ece58f132" category="list-text">將 node3 連接至 node4 ：</block>
-  <block id="113caadcb5e0c32dc402e92ce0e397df" category="list-text">將多重路徑高可用度（ MPHA ）纜線連接至 NS224 機櫃、以確保備援。</block>
-  <block id="9491a56ee04b6c96c003af35a2859c6a" category="list-text">在節點之間連接 HA 配對纜線（如果是獨立的介面）。</block>
-  <block id="d7882ec6d05b95c59c9195c7f3adbfdc" category="list-text">在節點之間連接叢集纜線（如果是獨立的介面）。</block>
   <block id="a0b5ad751866a2018195aa595ae090ff" category="list-text">移轉叢集生命：</block>
   <block id="050a7fd0d3c2ede3b69ba2432774511f" category="list-text">修改叢集廣播網域以包含所需的叢集連接埠：</block>
   <block id="adb4b7912344d67d584552b9dd9ddc8f" category="paragraph"><block ref="6dc01498c5cd366c83995c4944d250b8" prefix="" category="inline-code"></block></block>
@@ -4464,13 +4459,9 @@
   <block id="b91d2190033f094261d455058cfe79e9" category="admonition">從 ONTAP 9.8 開始、新的 IPspace 和一個或多個廣播網域可能會指定給現有的實體連接埠、以供叢集連線使用。</block>
   <block id="f2767cdcca3a202a2753e74e19d9ccc0" category="list-text">修改叢集 IPspace 以包含所需的叢集連接埠、並將傳輸單元上限設為 9000 （如果尚未設定）：</block>
   <block id="53fd9af6e06882afec866439335e5a77" category="list-text">顯示所有叢集網路生命：</block>
-  <block id="49152dbe5fcec0c369a772568ba903c4" category="list-text">將所有叢集網路生命期移轉至主連接埠：</block>
   <block id="5237cceb9c8a1d87dddfba2c9daa3497" category="list-text">顯示所有資料網路生命：</block>
   <block id="0677a94596edc598cdc9d887ed969f0d" category="paragraph"><block ref="5d34967e2c3400a34ca823eae056de33" prefix="" category="inline-code"></block></block>
   <block id="29a8ddc29c73c85061146bccdbb07ae8" category="list-text">將所有資料生命移轉至 node3 ：</block>
-  <block id="e141259d262902e06e74fb034cfa5db8" category="paragraph"><block ref="c06a7e4d4041165a2295fcfe659f0520" prefix="" category="inline-code"></block></block>
-  <block id="8a4223b997363d8fe0f1dc3f2be2c09e" category="paragraph">叢集與管理階層無法在節點之間移轉。如果有任何生命都停機、請將生命的管理狀態設定為<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> 輸入下列命令、為每個 LIF 輸入一次：</block>
-  <block id="22fbac471f05451b14481d901b353112" category="paragraph"><block ref="b7fcd8f633208aafa7c1b0e80e3ca5dd" prefix="" category="inline-code"></block></block>
   <block id="251845cf9ac84826e8f6ab5a27d80c2c" category="list-text">移轉叢集管理 LIF ：</block>
   <block id="03166631394b38903e8e2387f152ab40" category="paragraph"><block ref="72554b9e32d834ceecd34e642cec85e1" prefix="" category="inline-code"></block></block>
   <block id="22c144e9a19a414b679e74f1116a7d65" category="list-text">顯示叢集管理 LIF 的狀態：</block>
@@ -4488,7 +4479,6 @@
   <block id="25eeae4605f08eb0ddb15cbc058a08f4" category="summary">將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 node4 。</block>
   <block id="09fa2e71970bf35d303f7d5117c1ec08" category="doc">將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 node4</block>
   <block id="1fff09525a7ec19070144a8043bfac52" category="paragraph">在將 AFF A250 node1 轉換為磁碟機櫃之前、請先將 node1 上的資料集合體、 epsilon 和邏輯介面（ lifs ）移轉至 AFF A400 node4 。</block>
-  <block id="f72a391078e6a71defad1bb5a201ad96" category="list-text">在節點的載入程式提示下、將節點開機至開機功能表：</block>
   <block id="4159d43758263f7e4d6f789a480f67ff" category="list-text">選取選項<block ref="1fbad292f1d0674d5769c555d41b2d77" prefix=" " category="inline-code"></block> 將 /var 檔案系統還原至 node4 。</block>
   <block id="f6029dd039c2f2751b5b3872ff225887" category="paragraph">節點報告系統 ID 不相符的警告。輸入<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> 以覆寫系統 ID 。</block>
   <block id="8f7942d995bbb58129abd3dace41a7f6" category="paragraph">如果將 AFF A250 升級至 AFF A400 時系統叢集連接埠不相同、您可能必須暫時將 node4 上的介面變更為叢集連接埠：</block>
@@ -4498,9 +4488,7 @@
   <block id="aef9222d1f4054aa30ba3e27d3e31db0" category="paragraph"><block ref="e8efde3213094177ae38d2e89dfa8513" prefix="" category="inline-code"></block></block>
   <block id="0f070b1aad2f1845775a0935d200ee5e" category="list-text">移除 node1 的 IF 、改為將其移至 node4 、以移轉 epsilon 。</block>
   <block id="6e18c14fb79ee607d655fcfd08d2d097" category="list-text">從 node1 移除 epsilon ：</block>
-  <block id="b974b7c454888deb970f6f8527ea60e1" category="paragraph"><block ref="629a08e9700e6d747e177e7c2931f7e0" prefix="" category="inline-code"></block></block>
   <block id="ad9c87b3fd93a445b9b5b9101ac79c9d" category="list-text">將 epsilon 移至 node4 ：</block>
-  <block id="51d735998d1b79a34407f57e1d7783a7" category="paragraph"><block ref="9c8a08cb77d8a658f0ba77cc2a9531f4" prefix="" category="inline-code"></block></block>
   <block id="f090faf8a1364b2c5c3344398469f725" category="list-text">將所有資料生命週期移轉至 node4 ：</block>
   <block id="20dd08ce792e55622e246eb216113e38" category="list-text">顯示叢集中所有資料生命的狀態：</block>
   <block id="8681536b6d1a0653fcb2346458c0f435" category="paragraph"><block ref="2001f06ab7fcd2e18cc3fae82e1bff0a" prefix="" category="inline-code"></block></block>
@@ -4513,8 +4501,6 @@
   <block id="f312852c2228fc5463b754cc0bc1100c" category="list-text">將 NVMe 機櫃模組（ NSM ）插入 node1 的機櫃。</block>
   <block id="edc57374a646e1dd11be34ef97db4a60" category="list-text">將 node3 100GbE 連接埠 e0c 連接至 NSM A 連接埠 e0a 、將 NSM 連接至 node3 。</block>
   <block id="00f53ab497c778aca87b7babb758248e" category="image-alt">AFF A400 搭配一個 NS224 機櫃</block>
-  <block id="cee2bcaa5c5bc92df6198d0d807ff617" category="list-text">將 25GbE 纜線從 node1 連接埠 e0c 和 e0d 連接至 node3 上的任何兩個 25GbE 板載連接埠（ e0e 、 e0f 、 e0g 或 e0h ）。</block>
-  <block id="3751fadae61debeee03f49b1ce3d9b9d" category="admonition">如果 node3 上沒有 25GbE 板載連接埠、您可以使用 25GbE PCIe 介面卡進行連線。</block>
   <block id="9cfc5bc37e7e5bebc0da26c161922b94" category="doc">將驅動器從 node1 重新分配給 node3</block>
   <block id="e519ebb23aa7a4b2837b111a1b7f6e37" category="paragraph">將 AFF A250 node1 轉換為 NS224 磁碟機櫃並連線至 AFF A400 node3 之後、您必須將先前屬於 node1 的磁碟機重新指派給 node3 。</block>
   <block id="703ed6844ecb747111a93208ef26855d" category="list-text">在載入程式提示字元下、將 node3 開機至維護模式：</block>
@@ -4525,16 +4511,12 @@
   <block id="8bdd1c70b3e50cc1b55e8a602553049d" category="paragraph"><block ref="78fbedccc73bd636c3e3fe9bd5d914b1" prefix="" category="inline-code"></block></block>
   <block id="9348afc40821f943f039141fbe06827e" category="list-text">驗證 100GbE 介面的模式變更：</block>
   <block id="b634b70f41f02eed2102392209e4eba2" category="list-text">顯示所有連接的磁碟機：</block>
-  <block id="5a3c27543227c9225728fc79864c2e6b" category="list-text">記錄本機系統 ID 。</block>
   <block id="6425e7e0295d5f579c5a7518ecf877e7" category="list-text">將所有磁碟機從 node1 重新指派至 node3 ：</block>
-  <block id="1a96e7461e6f16036bea36d35244a505" category="paragraph"><block ref="44bdfa7a7b169f56e20cfb7d6e9f4451" prefix="" category="inline-code"></block></block>
   <block id="7cc594bfd85b67196f32c1868f75ba5b" category="list-text">驗證所有重新分配的磁碟機是否都可以使用新的系統 ID 檢視：</block>
-  <block id="8ae7a6323a6ab388ec465c3dc53ed0d4" category="paragraph"><block ref="498974f79bce1a50961fdd2135a9de01" prefix="" category="inline-code"></block></block>
   <block id="d8e70c9c2ae4a4c0cf7be5cd32cfa6d6" category="admonition">如果無法檢視磁碟機、請 * 停止 * 並聯絡技術支援部門以取得協助。</block>
   <block id="b81d07712272425546299d94028eada1" category="list-text">結束維護模式：</block>
   <block id="0d9cedfc5d4329809a5596b4682832d3" category="admonition">下列系統具有內部儲存設備： FAS2520 、 FAS2552 、 FAS2554 、 FAS2620 、 FAS2650 、 FAS2720 、 FAS2750 、 AFF A150 、 AFF A200 、 AFF A220 、 AFF A250 、 AFF A700s 、 AFF A800 、 AFF C190 、 AFF C250 、 和 AFF C800 。</block>
   <block id="6a3104dd603be761e5020da6f96a9944" category="inline-xref-macro">將 AFF A250 轉換為磁碟機櫃、以升級至 AFF A400</block>
-  <block id="2923945103bc9c8457bc8e1bd91f8462" category="list-text">如果您要從 AFF A250 升級至 AFF A400 、請參閱 <block ref="e3a175280cdcc5ca4e2375e1b4099892" category="inline-xref-macro-rx"></block>。</block>
   <block id="15cef8c52a9390a0d7fe3fdbd4c153c8" category="summary">無需購買額外的儲存設備和叢集交換器、即可執行 NDU 至入門級 NetApp AFF 和 FAS 系統。</block>
   <block id="88123ea98247c1cbdb6aca7561de79a7" category="paragraph">您可以將每個 AFF A250 節點轉換為 NS224 磁碟機櫃、然後連線至 AFF A400 替換節點、以執行從 NetApp AFF A250 系統到 AFF A400 系統的不中斷升級。</block>
   <block id="f023a71f63cfb01aeff4e5fe98a66467" category="paragraph">在本程序中、 AFF A250 高可用度（ HA ）配對控制器稱為 node1 和 node2 、而替換的 AFF A400 HA 配對控制器則稱為 node3 和 node4 。</block>
@@ -4553,12 +4535,8 @@
   <block id="a5e24971e7f8bc950fa0e926bf40be01" category="summary">將 node2 上的邏輯介面（生命體）和資料集合體移轉至 node1 。</block>
   <block id="45993060a44a5e6d17ba07cb1a841a66" category="paragraph">在將 AFF A250 node2 轉換為磁碟機櫃之前、請先將 node2 上的邏輯介面（生命體）和資料集合體移轉至 node1 。</block>
   <block id="e291c5603b49506d01779471f77ce7c8" category="paragraph">確認您符合下列要求：</block>
-  <block id="a481d37b4e1be8d55c3f9f05549eb344" category="list-text">AFF A250 和 AFF A400 控制器安裝了相同的 ONTAP 版本和修補程式版本。</block>
-  <block id="c0c747dabc59bf4ef271b7d983aeda02" category="list-text">兩個 AFF A400 控制器均處於待命狀態<block ref="295c54be6a83de7aa3b31efc81ad2604" prefix=" " category="inline-code"></block> 提示。</block>
   <block id="0d44c7acdd1367079b91981b80442797" category="list-text">您手邊有所有適當的纜線。</block>
   <block id="8e9e1246932fe59d1bc52f76ee1575a1" category="paragraph">以下步驟是在 AFF A250 node1 上執行的。</block>
-  <block id="98d05c8fa42d9a030f0f7cec3344a4e6" category="list-text">停用叢集容錯移轉自動恢復：</block>
-  <block id="35754a1a2862a63e50c4ad8d5a95cec5" category="paragraph"><block ref="54843b75f8ce62eaa4167efe291f4360" prefix="" category="inline-code"></block></block>
   <block id="eac6f02df6a7e3c70219adde0a26c9c1" category="list-text">停用 HA 配對兩個節點之間的自動還原：</block>
   <block id="4d71038ff6c6532bb7d82441384470f1" category="paragraph"><block ref="6579825e76cb92aa00ca8ad4f32bae01" prefix="" category="inline-code"></block></block>
   <block id="002e3e6384dcf90dc6e7967cba2ee6c7" category="list-text">顯示所有資料網路生命的狀態：</block>
@@ -4578,20 +4556,13 @@
   <block id="af881ada02a5ff45a792b5132b5dc590" category="list-text">從 AFF A250 機箱中移除 node2 。</block>
   <block id="52885fceb67c760ddf25c2efb185c778" category="list-text">將 NVMe 機櫃模組（ NSM ）插入 node2 的機櫃。</block>
   <block id="bdbdd80897c0788773e2926936349dd7" category="list-text">將 node4 100GbE 連接埠 e0c 連接至 NSM B 連接埠 e0a 、將 NSM 連接至 node4 。</block>
-  <block id="527ab3ebef33024bc87fa623b33eef97" category="list-text">將 25GbE 纜線從 node2 連接埠 e0c 和 e0d 連接至 node4 上的任何兩個 25GbE 板載連接埠（ e0e 、 e0f 、 e0g 或 e0h ）。</block>
-  <block id="165856f47552d3ec2e62dd8130dc4077" category="admonition">如果 node4 上沒有 25GbE 主機板內建連接埠、您可以使用 25GbE PCIe 介面卡進行連線。</block>
-  <block id="5144d88318beae932bc266c9e9647d9c" category="list-text">如果 AFF A400 系統使用 FC 連接埠做為內建連接埠、請在移轉期間將 25Gb 乙太網路介面卡安裝到每個節點、以進行叢集連線：</block>
-  <block id="cd1ec608dfca5c3ad14f852da4327a91" category="list-text">使用連接埠 e0a 和 e0b 、在 AFF A400 節點之間連接 HA 配對纜線。</block>
-  <block id="82a48dbbe4b5f315035f687b5d8a6dec" category="list-text">使用連接埠 e3a 和 e3b 在 AFF A400 節點之間連接叢集纜線。</block>
   <block id="27f43fb944a56ff83e6e461d944a7f41" category="admonition">內含內部磁碟機的機型有： FAS2520 、 FAS2552 、 FAS2554 、 FAS2620 、 FAS2650 、 FAS2720 、 FAS2750 、 AFF A150 、 AFF A200 、 AFF A220 、 AFF A250 、 AFF A700s 、 AFF A800 、 AFF C190 、 AFF C250 、 和 AFF C800 。</block>
   <block id="83a06e5916453976ff0100cc86be2ff9" category="paragraph">如果您要從 AFF A250 升級至 AFF A400 、請參閱 <block ref="16a60590ab4a03950f527e475b265368" category="inline-xref-macro-rx"></block>。</block>
   <block id="530f824f291c9dbf82563102e66eb4ee" category="summary">在將磁碟機從 node2 重新指派至 node4 之前、請先將 node2 實體連接至 node4 。</block>
   <block id="e90f638890adabd702a0e4a41624e1e7" category="paragraph">將 AFF A250 node2 轉換為 NS224 磁碟機櫃並連線至 AFF A400 node4 之後、您必須將先前屬於 node2 的磁碟機重新指派給 node4 。</block>
-  <block id="5111f596a070ad565832003e81ded5cb" category="paragraph">驗證在加載器提示符下 node2 和 node4 均處於待機狀態。</block>
   <block id="f451745de9dc10b2155ba09d2c6a86fa" category="paragraph">您可以在 node4 上執行以下步驟。</block>
   <block id="3ff02d1b5db59825508b26f5c12d7855" category="list-text">在載入程式提示字元下、將 node4 開機至維護模式：</block>
   <block id="493f827b1132078fbdd11bc0ceceed47" category="list-text">將所有磁碟機從 node2 重新指派至 node4 ：</block>
-  <block id="c6de9e9749bb1b9764c879c3f4e55899" category="paragraph"><block ref="d3a7175de7ab1d1112d49ac67a531b10" prefix="" category="inline-code"></block></block>
   <block id="eedfdc7d9365a1f9e29964c35c82e348" category="paragraph"><block ref="8cf81755f02bee986a80060b929f2335" prefix="" category="inline-code"></block></block>
   <block id="c8e281db9c8a31e8da74e7ff6bc12115" category="summary">在執行 ONTAP 9.7 或更早版本的控制器上手動升級 ARL 時、使用 OKM 來管理驗證金鑰。</block>
   <block id="20c4be209ec6c65b4221fa6f09f2df42" category="inline-link-macro">使用 Onboard Key Manager 管理儲存加密</block>
@@ -4600,4 +4571,56 @@
   <block id="04f24e11b658105f38ef40a82c24839e" category="paragraph">*注意：* AutoSupport 當您第一次設定儲存系統時、預設會啟用此功能。雖然AutoSupport 您可以隨時停用不支援、但仍應保持啟用狀態。啟用AutoSupport 功能可在儲存系統發生問題時、大幅協助識別問題與解決方案。</block>
   <block id="cb6bc72e3e387b19e4fbc2f28ecc2940" category="list-text">設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 至<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 或<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>。</block>
   <block id="e147253c0010bdd5968cb9b4b9ddf7dc" category="cell">外部金鑰管理程式</block>
+  <block id="acee5931a95d2a864a2cc97bd35f0778" category="list-text">將 25GbE 纜線從 node2 連接埠 e0c 和 e0d 連接至 node4 上的任何兩個 25GbE 板載連接埠（ e0e 、 e0f 、 e0g 或 e0h ）、以建立暫時的叢集連線。</block>
+  <block id="fe6bc0e7261673653a6a606cad425d7a" category="admonition">如果 AFF A400 系統使用 FC 連接埠做為內建連接埠、請在移轉期間將 25Gb 乙太網路介面卡安裝至每個節點、以進行叢集連線。</block>
+  <block id="6a4be8cf9df45f4c45456ed242281e41" category="list-text">使用連接埠 e0a 和 e0b 、在 AFF A400 節點之間連接 25GbE HA 互連纜線。請勿交叉連接連接埠。</block>
+  <block id="ef5c1b93d72b03ecb85a660acc0e158e" category="list-text">使用連接埠 e3a 和 e3b 、在 AFF A400 節點之間連接 100GbE 叢集互連纜線。請勿交叉連接連接埠。</block>
+  <block id="58eaebf972358f1cf03d386a4ade1a0f" category="paragraph-title">接下來呢？</block>
+  <block id="3c6ba9b5c38f48cb17c85b592674d539" category="paragraph"><block ref="3c6ba9b5c38f48cb17c85b592674d539" category="inline-link-macro-rx"></block></block>
+  <block id="80a4f774da4aad689d87e38d2ee37cec" category="list-text">在 node4 的載入程式提示下、將節點開機至開機功能表：</block>
+  <block id="d831a49d6e9a68e16b03819a4d93d5b3" category="paragraph">節點會自動重新開機、以載入 /var 檔案系統的新複本。</block>
+  <block id="02bee8118e509838b175dc6af02b1656" category="list-text">等待叢集進入仲裁狀態、然後確認叢集節點狀況良好：</block>
+  <block id="997eb7bba8074ae0f85e4289780ffed3" category="paragraph"><block ref="e21dfdb513f3d169faabea3a7c3b4d2e" prefix="" category="inline-code"></block></block>
+  <block id="bda4a4c895c8daf31f2f07c2ea75784a" category="admonition">HA 配對與儲存容錯移轉會在目前狀態中保持停用狀態。</block>
+  <block id="2527cc683b8d8a3f55c18b809cd0d993" category="list-text">將叢集生命週期移至 node4 上的暫存 25G 叢集連接埠：</block>
+  <block id="453a6890d60e4080c71b10898159e292" category="paragraph"><block ref="141f671a5edc94f5cc9316f953bc9ffb" prefix="" category="inline-code"></block></block>
+  <block id="1cc0c4fb70ea4ef3078ace7cb874c670" category="list-text">如果正在升級的 AFF A250 叢集上正在使用介面群組和資料 VLAN 、請執行此步驟。如果沒有、請前往 <block ref="4b16e82b249f06e8e1072980655988c8" category="inline-xref-macro-rx"></block>。</block>
+  <block id="f775e7a110c3b78dc0235ba28c368c60" category="paragraph">AFF A250 和 AFF A400 系統之間的實體網路連接埠名稱不同。因此、在 node4 上可能會有設定錯誤的介面群組和取代的 VLAN 。檢查並視需要修正任何設定不正確的介面群組和移出的 VLAN 。</block>
+  <block id="33698ba306347fd90f01d626d1abfcca" category="paragraph"><block ref="2b1b294cd9d0ee2bd18dd6c40a96b6a5" prefix="" category="inline-code"></block></block>
+  <block id="2b393bdd35aaf14e4786dc05d3d2a2b0" category="paragraph"><block ref="ea2254c44ed515e6bbabb509521b400a" prefix="" category="inline-code"></block></block>
+  <block id="373757bd79d829efe6cd3e1b7bdc29b1" category="paragraph"><block ref="b95325036a6ab6591c8c62dc75aa0c07" prefix="" category="inline-code"></block></block>
+  <block id="e86b9bc23de1f214996444ef551bacb8" category="paragraph"><block ref="e86b9bc23de1f214996444ef551bacb8" category="inline-link-macro-rx"></block></block>
+  <block id="19d2be7671048f96b330174181b1de57" category="list-text">AFF A250 和 AFF A400 控制器執行相同的 ONTAP 版本和修補程式版本。</block>
+  <block id="683887c2109727babcb5b39c0d61e352" category="list-text">您必須在每個 AFF A400 上以網路開機並安裝與 AFF A250 上執行的版本相同的 ONTAP 版本。</block>
+  <block id="f9262bd265958425983bc808f732d39c" category="list-text">每個 AFF A400 的主要和備份開機映像都必須具有相同的 ONTAP 版本。</block>
+  <block id="40b07a60976aa6fcd676d94878f5dad9" category="list-text">如果先前已設定 AFF A400 叢集、則必須執行來清除任何剩餘叢集組態<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block> 從開機功能表。</block>
+  <block id="97e64cb5ae1558cb0463a2970e98dc26" category="list-text">兩個 AFF A400 控制器都會在載入程式提示時處於待命狀態。</block>
+  <block id="4698a416e17d630db63674e447dbfc5f" category="list-text">停用儲存容錯移轉自動恢復：</block>
+  <block id="80095ad672599fa958afdcb8727dacc2" category="paragraph"><block ref="f1c9a22463f8c06461f1da10d7161697" prefix="" category="inline-code"></block></block>
+  <block id="60279cc87ea49c11eaa5d74c4e374034" category="paragraph"><block ref="566d3677c793a945309b816b922e48aa" prefix="" category="inline-code"></block></block>
+  <block id="82cbf9b2779c49bd3e1a89ee2b5f5469" category="paragraph"><block ref="d40c04d5127ca63517b9339e7b3bbe72" prefix="" category="inline-code"></block></block>
+  <block id="89f7cee20d9833c231c0e50fc41ce58d" category="paragraph"><block ref="89f7cee20d9833c231c0e50fc41ce58d" category="inline-link-macro-rx"></block></block>
+  <block id="054943dd272f07ebc51955439845e874" category="list-text">將 25GbE 纜線從 node1 連接埠 e0c 和 e0d 移至 node3 上的任何兩個 25GbE 板載連接埠（ e0e 、 e0f 、 e0g 或 e0h ）、將暫存叢集連線移至 node3 。</block>
+  <block id="2fbb74e3e06daf149b588471e96a56a4" category="paragraph"><block ref="2fbb74e3e06daf149b588471e96a56a4" category="inline-link-macro-rx"></block></block>
+  <block id="a78b7f334ca640e546ff8a35039a2f6d" category="paragraph">應顯示如下範例所示的輸出：</block>
+  <block id="1a8aae2fd970a548f3432fc893e2e2a4" category="list-text">記錄本機系統 ID 值；這是 node3 的系統 ID 。也請從「擁有者」欄中記錄 node1 和 node2 的系統 ID 。</block>
+  <block id="5f4acfc7e9721dc380c9f455a2759335" category="paragraph"><block ref="569b55012f0c87971717dcbb7fe0ce6b" prefix="" category="inline-code"></block></block>
+  <block id="dac641b24757fdc949ee7247c4113ba1" category="paragraph"><block ref="afbb7843b974a758a0b43c8f36ebfe95" prefix="" category="inline-code"></block></block>
+  <block id="bfdfbe3df70ea3584435d9a8c7e7cd9c" category="paragraph"><block ref="bfdfbe3df70ea3584435d9a8c7e7cd9c" category="inline-link-macro-rx"></block></block>
+  <block id="d4475b94edb2d33fc8b6ba888ea6646a" category="paragraph">驗證在加載器提示符下 node3 和 node4 均處於待機狀態。</block>
+  <block id="873758a76f1010f1137e7bd76f1cefbd" category="list-text">記錄本機系統 ID 值；這是 node4 的系統 ID 。也請從「擁有者」欄中記錄 node1 和 node2 的系統 ID 。</block>
+  <block id="c3e43ad38b28cdc94de3fd49e3347b93" category="paragraph"><block ref="991070c54d3d7b822feec6be9693fee8" prefix="" category="inline-code"></block></block>
+  <block id="b02db68cec23a51db526132de61ca05e" category="list-text">驗證輸出中是否報告了 node2 的根聚合，並且該集合是否處於聯機狀態：</block>
+  <block id="e2c52cb2e34e893afee819116adecafb" category="paragraph"><block ref="e2c52cb2e34e893afee819116adecafb" category="inline-link-macro-rx"></block></block>
+  <block id="0d852f04ea9e05e14f3341677cfe1ec3" category="list-text">在 node3 的載入程式提示下、將節點開機至開機功能表：</block>
+  <block id="8871153c553f28f590babbf4847f1774" category="list-text">將多重路徑高可用度（ MPHA ）纜線連接至 NS224 機櫃、以確保備援。將 node3 100GbE 連接埠 e0d 連接至 NSM B 連接埠 e0b 、並將 node4 100GbE 連接埠 e0d 連接至 NSM A 連接埠 e0a 。</block>
+  <block id="8582a774c20e728e955aa1abe472aef0" category="list-text">確認節點之間已連接 HA 連接埠 e0a 和 e0b 。</block>
+  <block id="dba88c9d0ba00806556e1233e41bcf14" category="list-text">確認節點之間已連接叢集連接埠 e3a 和 e3b 。</block>
+  <block id="12ebe392929ef1bc96f493b7c71832c1" category="list-text">將兩個節點上的所有叢集網路生命負載移轉至其主連接埠：</block>
+  <block id="8d590ee6ed5dff34f56afdb6a0802e90" category="list-text">驗證叢集網路生命的主連接埠：</block>
+  <block id="ac74cf8a52d92025e28cd87a3aa57fe5" category="paragraph"><block ref="2bbcd71ec298833035e8f3c13150e697" prefix="" category="inline-code"></block></block>
+  <block id="11945612fb52dde0264600b02ee87b76" category="list-text">設定所有資料生命的主節點和主連接埠。如果有任何生命都停機、請將生命的管理狀態設定為<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block> 輸入下列命令、為每個 LIF 輸入一次：</block>
+  <block id="b2e9444b2e3d3f6bcd5b8053418d9f98" category="paragraph"><block ref="b04273b4623b1fb5400a1445280a00fc" prefix="" category="inline-code"></block></block>
+  <block id="9eaa084ea5e1fc23b5bd8f4e4b31ae16" category="list-text">啟用儲存容錯移轉自動恢復：</block>
+  <block id="452b3b4e54b69d07570137489de879c0" category="paragraph"><block ref="06113f79bc639d145a6e40cfdd6b4211" prefix="" category="inline-code"></block></block>
 </blocks>

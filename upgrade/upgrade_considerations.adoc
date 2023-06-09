@@ -65,7 +65,7 @@ NOTE: 下列系統具有內部儲存設備： FAS2520 、 FAS2552 、 FAS2554 �
 
 可能需要採取其他步驟的情況
 
-* 如果您要從 AFF A250 升級至 AFF A400 、請參閱 xref:upgrade-aff_a250_to_aff_a400_ndu_upgrade_workflow.adoc[將 AFF A250 轉換為磁碟機櫃、以升級至 AFF A400]。
+* 如果您要從 AFF A250 升級至 AFF A400 、請參閱 xref:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.adoc[將 AFF A250 轉換為磁碟機櫃、以升級至 AFF A400]。
 * 如果新系統的插槽比原始系統少、或連接埠類型較少或不同、您可能需要在新系統中新增介面卡。
 +
 https://hwu.netapp.com["NetApp Hardware Universe"^]

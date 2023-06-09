@@ -23,6 +23,8 @@ homepage:
     links:
     - title: 升級控制器硬體
       url: "/upgrade/upgrade-decide-to-use-this-guide.html"
+    - title: 將 AFF A250 轉換為磁碟機櫃、以升級至 AFF A400
+      url: "/upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html"
   - title: 在執行ONTAP 效能不全的系統上移動Aggregate來升級
     links:
     - title: 使用「系統控制器更換」命令AFF （從E4A700到AFF E4A900）
