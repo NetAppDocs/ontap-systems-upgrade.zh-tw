@@ -3790,7 +3790,6 @@
   <block id="3b5280aac62d339d908a3019ce691faa" category="paragraph">「LUN連接埠集移除-vserver _vserver_name_-portset _portset_name_-port-name _lif_name_`</block>
   <block id="6e2a280fc54f306b51d2674e9eea36fc" category="paragraph">網路介面刪除-vserver _vserver_name_-lif_lif_name_`</block>
   <block id="0c7ec176679cf1c9c562b2bc88ed9472" category="paragraph">「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node_new_norme_name_-home-port｛&lt;netport|ifgrp&gt;｝」</block>
-  <block id="83eac7b5032e95adcb3c31f926aca76c" category="paragraph">「網路介面移轉-vserver _vserver_name_-lif_lif_name_-source-node_source_node_name_-destination-node_node_dest_no_name_-dest-port _dest_port_name_」</block>
   <block id="24aef972cbe11a33dc4e5cb93310061b" category="paragraph">「網路介面移轉-all -node_node_name_」</block>
   <block id="b84d32c43b649cc6913dcced9685f6db" category="paragraph">「網路介面修改-vserver _cluster名稱_-lifcluster管理-home-node_new_nnode_name_-home-port｛&lt;netport | ifgrp&gt;｝」</block>
   <block id="6e4f5a3bbafa35688ed0eba9be161169" category="paragraph">「網路介面移轉-vserver _vserver_name_-lIF叢集管理-destination-node-node_new_node_name_-destination-port｛&lt;netport|ifgrp&gt;｝」</block>
@@ -4623,4 +4622,5 @@
   <block id="b2e9444b2e3d3f6bcd5b8053418d9f98" category="paragraph"><block ref="b04273b4623b1fb5400a1445280a00fc" prefix="" category="inline-code"></block></block>
   <block id="9eaa084ea5e1fc23b5bd8f4e4b31ae16" category="list-text">啟用儲存容錯移轉自動恢復：</block>
   <block id="452b3b4e54b69d07570137489de879c0" category="paragraph"><block ref="06113f79bc639d145a6e40cfdd6b4211" prefix="" category="inline-code"></block></block>
+  <block id="b7fb6eb57cd7c0b92ddce1c6b7f38e07" category="paragraph"><block ref="101c5ced41d107d54620027143ba74f3" prefix="" category="inline-code"></block></block>
 </blocks>

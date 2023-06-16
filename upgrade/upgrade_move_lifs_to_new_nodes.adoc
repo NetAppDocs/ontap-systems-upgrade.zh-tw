@@ -31,7 +31,7 @@ summary: 將磁碟區從原始節點移出之後、您需要將非SAN資料生�
  a| 
 特定LIF
  a| 
-「網路介面移轉-vserver _vserver_name_-lif_lif_name_-source-node_source_node_name_-destination-node_node_dest_no_name_-dest-port _dest_port_name_」
+`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _dest_node_name_ -destination-port _dest_port_name_`
 
 
 
