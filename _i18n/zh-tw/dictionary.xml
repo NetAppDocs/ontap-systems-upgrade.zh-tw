@@ -4292,7 +4292,6 @@
   <block id="7841bf38e658f68c682cee2c9eb5472d" category="paragraph">從連接至每個節點的序列連接埠、分別執行並儲存下列命令的輸出：</block>
   <block id="80b1a5ab2f169155be3a834be566f4c2" category="list-text"><block ref="ce640e5cc43dcc2ce28d153a849057d9" prefix="" category="inline-code"></block></block>
   <block id="b31ac11fef9a8af6fa05c2d96463d3e6" category="list-text"><block ref="453aed737e4541e2ea60f38a6b9e5777" prefix="" category="inline-code"></block></block>
-  <block id="aecf19ade983215d48139521cf263910" category="list-text"><block ref="e4161dcc9b0f8f9969edf12d5b6d40b2" prefix="" category="inline-code"></block></block>
   <block id="12ab637b90c6ff7edcbf6b37e16e4e1e" category="list-text"><block ref="28093ee1f500cbf8b88317f983cf2994" prefix="" category="inline-code"></block></block>
   <block id="010377b1df1c147be7660d077da57d34" category="list-text"><block ref="f28132e6412c52c2df71902bccd9fe5d" prefix="" category="inline-code"></block></block>
   <block id="87754b6c588a162a924659bdf775cf20" category="list-text"><block ref="110550f63d97b49878bbbd584e2c3ab1" prefix="" category="inline-code"></block></block>
@@ -4623,4 +4622,7 @@
   <block id="9eaa084ea5e1fc23b5bd8f4e4b31ae16" category="list-text">啟用儲存容錯移轉自動恢復：</block>
   <block id="452b3b4e54b69d07570137489de879c0" category="paragraph"><block ref="06113f79bc639d145a6e40cfdd6b4211" prefix="" category="inline-code"></block></block>
   <block id="b7fb6eb57cd7c0b92ddce1c6b7f38e07" category="paragraph"><block ref="101c5ced41d107d54620027143ba74f3" prefix="" category="inline-code"></block></block>
+  <block id="a48dffce96c7d2cee50452bbbe3c3149" category="list-text"><block ref="f1c84a71e0779351e0f5be10141fff81" prefix="" category="inline-code"></block></block>
+  <block id="1b0afd0b9e1ef791af87236c19a70f16" category="list-text"><block ref="7f5b95324bf0335821a8f979872431c9" prefix="" category="inline-code"></block></block>
+  <block id="6dcc62df7a079d79f6374d9c17d2120e" category="list-text"><block ref="169aa9029e0b9363f74914feb183b562" prefix="" category="inline-code"></block></block>
 </blocks>

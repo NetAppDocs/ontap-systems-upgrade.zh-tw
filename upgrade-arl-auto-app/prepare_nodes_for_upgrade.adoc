@@ -124,9 +124,9 @@ NOTE: 如果您的系統每個節點有兩個以上的叢集連接埠、例如FA
 ** 「Vserver服務名稱服務DNS節目」
 ** `network interface show -curr-node _local_ -role _cluster,intercluster,node-mgmt,cluster-mgmt,data_`
 ** `network port show -node _local_ -type physical`
-** `service-processor show -local -instance`
+** `service-processor show -node _local_ -instance`
 ** `network fcp adapter show -node _local_`
-** 「網路連接埠ifgrp show」
+** `network port ifgrp show -node _local_`
 ** `system node show -instance -node _local_`
 ** `run -node _local_ sysconfig`
 ** `storage aggregate show -node _local_`
@@ -137,7 +137,7 @@ NOTE: 如果您的系統每個節點有兩個以上的叢集連接埠、例如FA
 ** 「安全金鑰管理程式內建show Backup」
 ** 「安全關鍵經理外部秀」
 ** 「安全金鑰管理程式外部顯示狀態」
-** 「網路連接埠連線能力顯示-詳細資料」
+** `network port reachability show -detail -node _local_`
 
 
 +
