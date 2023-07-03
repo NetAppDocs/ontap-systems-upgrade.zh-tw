@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/set_up_netapp_volume_encryption_new_module.html 
 keywords: set up, netapp volume encryption, controller, module, nve, node 
-summary: 如有需要、AFF 可在從E5/A700 AFF 升級至E5/A900的過程中、為NVE或NAE設定新的控制器模組。」 
+summary: 如果需要、請在使用 ARL 升級相同機箱中的控制器機型時、為 NVE 或 NAE 設定新的控制器模組。」 
 ---
 = 在新的控制器模組上設定NetApp Volume或Aggregate Encryption
 :hardbreaks:
@@ -23,7 +23,7 @@ summary: 如有需要、AFF 可在從E5/A700 AFF 升級至E5/A900的過程中、
 ====
 .內建金鑰管理程式
 --
-*使用Onboard Key Manager*設定NVE或NAE
+使用 Onboard Key Manager 設定 NVE 或 NAE 。
 
 .步驟
 . 將驗證金鑰從所有連結的金鑰管理伺服器還原至新節點：
@@ -35,7 +35,7 @@ summary: 如有需要、AFF 可在從E5/A700 AFF 升級至E5/A900的過程中、
 --
 .外部金鑰管理
 --
-*使用外部金鑰管理*設定NVE或NAE
+使用外部金鑰管理設定 NVE 或 NAE 。
 
 .步驟
 . 確認金鑰管理伺服器仍可使用、狀態及驗證金鑰資訊：

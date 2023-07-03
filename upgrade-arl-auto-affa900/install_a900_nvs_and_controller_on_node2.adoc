@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-auto-affa900/install_a900_nvs_and_controller_on_node2.html 
-keywords: install, NVRAM, aff, a900, node2, controller, module 
-summary: ARL控制器升級程序期間、關於Ar4A900 NVRAM模組和控制器模組的安裝說明AFF 。 
+permalink: upgrade-arl-auto-affa900/install_replacement_system_modules_on_node2.html 
+keywords: install, NVRAM, node2, controller, module, modules, replacement 
+summary: 在同一機箱中升級控制器機型的 ARL 期間、在 node2 上安裝替換系統模組。 
 ---
-= 在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組
+= 在 node2 上安裝替換系統模組
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,6 +14,54 @@ summary: ARL控制器升級程序期間、關於Ar4A900 NVRAM模組和控制器�
 
 
 [role="lead"]
+在 node2 上安裝您收到的用於升級的替換系統模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。
+
+* <<在 node2 上安裝 AFF A150 或 FAS2820 控制器模塊>>
+* <<在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組>>
+
+
+
+
+== 在 node2 上安裝 AFF A150 或 FAS2820 控制器模塊
+
+在 node2 上安裝您收到的用於升級的 AFF A150 或 FAS2820 控制器模塊。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。
+
+.開始之前
+* 如果您尚未接地、請正確接地。
+* 從要移除的控制器拔下所有纜線、包括主控台、管理、 SAS 儲存設備和資料網路纜線。
+
+
+.步驟
+. 將控制器模組的一端對準機箱中的托架B、然後將控制器模組輕推至系統的一半。
++
+
+TIP: Bay B 位於機箱底部。
+
++
+
+WARNING: 在程序稍後指示您將控制器模組完全插入機箱之前、請勿將其完全插入機箱。
+
+. 將管理和主控台連接埠連接至節點2控制器模組。
++
+
+NOTE: 由於機箱已開啟電源、因此節點2一旦完全就位、就會立即開始開機。為避免 node2 開機、 NetApp 建議您先將主控台和管理纜線連接至 node2 控制器模組、然後再將控制器模組完全插入插槽。
+
+. 將控制器模組穩固地推入機箱、直到它與中間板完全接入。
++
+控制器模組完全就位時、鎖定鎖定鎖定會上升。
+
++
+
+NOTE: 為避免損壞連接器、請勿在將控制器模組滑入機箱時過度施力。
+
+. 只要模組就位、請立即連接序列主控台、並準備好中斷節點1的自動開機。
+. 中斷自動開機後、 node2 會在載入程式提示下停止。如果您未準時中斷自動開機、且節點2開始開機、請等待提示、然後按* Ctrl-C*進入開機功能表。節點停止在開機功能表後、請使用選項 8 重新啟動節點、並在重新開機期間中斷自動開機。
+
+
+
+
+== 在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組
+
 在AFF 節點2上安裝您收到的用於升級的EVA900或FAS9500 NVRAM和控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。
 
 執行安裝時、您必須注意下列事項：
@@ -28,7 +76,7 @@ summary: ARL控制器升級程序期間、關於Ar4A900 NVRAM模組和控制器�
 
 
 
-== 安裝AFF 「FASA900」或「FAS9500 NVRAM」模組
+=== 安裝AFF 「FASA900」或「FAS9500 NVRAM」模組
 
 請使用下列程序、將AFF E4A900或FAS9500 NVRAM模組安裝在節點2的插槽6中。
 
@@ -39,7 +87,7 @@ summary: ARL控制器升級程序期間、關於Ar4A900 NVRAM模組和控制器�
 
 
 
-== 在AFF 節點2中安裝E4A900或FAS9500控制器模組
+=== 在AFF 節點2中安裝E4A900或FAS9500控制器模組
 
 請使用下列程序、在AFF 節點2中安裝E4A900或FAS9500控制器模組。
 

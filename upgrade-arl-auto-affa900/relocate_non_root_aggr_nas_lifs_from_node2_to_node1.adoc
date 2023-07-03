@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html 
-keywords: relocate, non-root, aggregates, nas, lif, node2, node1. aff, a900, NVRAM, controller 
-summary: 將node2的非根Aggregate升級至node1時、將AFF 其重新定位至AFF 該節點1。 
+keywords: relocate, non-root, aggregates, nas, lif, node2, node1, NVRAM, controller, module, modules 
+summary: 使用 ARL 升級同一機箱中的控制器機型時、請將 node2 的非 root 集合體重新定位至 node1 。 
 ---
 = 將非根Aggregate和NAS資料LIF從節點2重新定位至節點1
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 將node2的非根Aggregate升級至node1時、將AFF 其重新定位至
 
 
 [role="lead"]
-您必須AFF 先將節點2重新定位至節點1、才能將節點2更換為EscoreA900或FAS9500控制器模組和NVRAM模組。
+您必須先將 node2 所擁有的非根集合體重新放置到 node1 、然後才能將 node2 替換為替換系統模組。
 
 .開始之前
 完成上一階段的檢查後、節點2的資源版本會自動啟動。非根Aggregate和非SAN資料LIF會從節點2移轉至新節點1。
@@ -37,10 +37,10 @@ summary: 將node2的非根Aggregate升級至node1時、將AFF 其重新定位至
 ----
 cluster::> storage aggregate show -node node1 state online -root false
 
-Aggregate     Size        Available   Used%   State	 #Vols	 Nodes	  RAID	   Status
+Aggregate     Size        Available   Used%   State	  #Vols	 Nodes	 RAID	  Status
 ----------    ---------   ---------   ------  -----   -----  ------  -------  ------
-aggr_1	      744.9GB      744.8GB	 0%	 online	  5	 node1	  raid_dp  normal
-aggr_2	      825.0GB	    825.0GB	 0%	 online	  1	 node1	  raid_dp  normal
+aggr_1	      744.9GB     744.8GB	  0%	  online	  5	 node1   raid_dp  normal
+aggr_2	      825.0GB	  825.0GB	  0%	  online	  1	 node1   raid_dp  normal
 2 entries were displayed.
 ----
 +
@@ -62,7 +62,7 @@ aggr_2	      825.0GB	    825.0GB	 0%	 online	  1	 node1	  raid_dp  normal
 +
 與此命令一起使用的"_vserver_name_"可在先前的"volume show"命令輸出中找到。
 
-. 驗證是否已將lifs移至正確的連接埠、且狀態為「up」。如果有任何LIF當機、請輸入下列命令、將LIF的管理狀態設為UP（開啟）、每個LIF只需輸入一次：
+. 驗證是否已將lifs移至正確的連接埠、且狀態為「up」。如果有任何生命中斷、請輸入下列命令、並針對每個LIF輸入一次、將該生命的管理狀態設定為「UP」：
 +
 「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-nodename_- STATUS-admin up」
 

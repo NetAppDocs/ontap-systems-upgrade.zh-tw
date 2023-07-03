@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/retire_node2.html 
-keywords: retire, node2 
-summary: 在將節點2升級至EsceA700時、請關閉節點2、並將其從機架或機箱中移除AFF 。AFF 
+keywords: retire, node2, retiring, node 
+summary: 使用 ARL 升級同一機箱中的控制器機型時、請關閉 node2 並將其從機架或機箱中移除。 
 ---
 = 淘汰節點2
 :hardbreaks:

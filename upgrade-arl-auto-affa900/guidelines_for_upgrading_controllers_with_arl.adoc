@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html 
-keywords: guidelines, upgrade, aff, a900, a700, ontap, controllers 
-summary: 瞭解您是否可以使用ARL將AFF 某個地方的版號升級至AFF 某個地方的版號。 
+keywords: guidelines, upgrade, ontap, controllers, old, system, chassis, disk, disks 
+summary: 瞭解您是否可以使用 ARL 、保留舊的系統機箱和磁碟來進行升級組態。 
 ---
 = 升級控制器的準則
 :hardbreaks:
@@ -14,20 +14,15 @@ summary: 瞭解您是否可以使用ARL將AFF 某個地方的版號升級至AFF 
 
 
 [role="lead"]
-在ONTAP 下列系統組態中、使用ARL來升級執行《更新版本》的一對控制器：
-
-* 將A700控制器移至一個不只A900系統的系統AFF AFF
-* FAS9000控制器到FAS9500系統
-
+若要瞭解是否可以使用 Aggregate 重定位（ ARL ）、請保留舊的系統機箱和磁碟、這取決於系統升級組態和 ONTAP 版本。
 
 
 
 == 支援ARL升級
 
-支援AFF 的組合包括控制器從功能不完整的A700升級至AFF 功能不完整的A900、或從FAS9000升級至FAS9500、使用ARL和NVRAM模組。如果您已收到AFF 全新的整套系統（包括新機箱）、請參閱 link:other_references.html["參考資料"] 若要連結至_、請使用「系統控制器更換」命令來升級執行ONTAP 《Estrs9.8或更新版本》內容的控制器硬體。
+某些系統組態支援控制器升級。若要檢視支援的系統和最低 ONTAP 版本清單、請參閱 link:index.html["總覽"]。
 
-
-WARNING: 此程序嚴格適用於AFF 執行AFF 《更新版本》的《ONTAP 從Arp700升級到》、《從FAS900升級到FAS9500》、《從FAS9000升級到》、《從更新版本升級到更新版本》。請勿使用此程序在任何其他系統組合之間執行升級。
+如果您收到全新的 AFF A150 、 FAS2820 、 AFF A900 或 FAS9500 作為完整系統、包括新的機箱、請參閱 link:other_references.html["參考資料"] 若要連結至_、請使用「系統控制器更換」命令來升級執行ONTAP 《Estrs9.8或更新版本》內容的控制器硬體。
 
 使用ARL的控制器升級支援使用SnapLock 「支援」的系統、這些系統均設定了「支援使用者支援使用者支援的功能」和SnapLock 「支援使用者支援
 
@@ -36,6 +31,12 @@ WARNING: 此程序嚴格適用於AFF 執行AFF 《更新版本》的《ONTAP 從
 == 雙節點無交換式叢集
 
 如果您要升級雙節點無交換式叢集中的節點、則可在執行升級時、將節點留在無交換器叢集中。您不需要將它們轉換成交換式叢集。
+
+
+
+== 切換附加叢集
+
+如果您要在連接至叢集交換器的叢集中升級節點、則必須確認交換器上執行的 make 、 model 、韌體版本、 RCF 和 ONTAP 版本、與升級後在替換控制器上執行的版本相同。如有必要、您必須先執行交換器升級、然後才能使用本文件所述的 ARL 程序升級控制器。
 
 
 

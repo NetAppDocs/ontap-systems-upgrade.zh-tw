@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: /upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html 
 keywords: moving, non-root, aggregates, nas, lif, node1, node2 
-summary: 驗證節點2上的節點1 NAS資料LIF在AFF 進行從節點2到節點1 AFF 的升級時、是否已從節點2重新定位至節點1。 
+summary: 使用 ARL 將同一機箱中的控制器機型升級時、請確認 node2 上的 node1 NAS 資料生命體已從 node2 重新定位至 node1 。 
 ---
 = 將節點1擁有的非根Aggregate和NAS資料lifs從節點2移至升級的節點1
 :hardbreaks:
@@ -42,7 +42,7 @@ summary: 驗證節點2上的節點1 NAS資料LIF在AFF 進行從節點2到節點
 
 . 執行網路連線檢查：
 +
-「網路連接埠可連線性- show-detail -node1」
+「網路連接埠可連線性show -node1」
 
 +
 確認所有連接的連接埠（包括介面群組和VLAN連接埠）都顯示為「OK（正常）」狀態。

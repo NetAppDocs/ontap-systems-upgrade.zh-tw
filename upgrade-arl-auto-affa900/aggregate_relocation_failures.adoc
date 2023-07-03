@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/aggregate_relocation_failures.html 
 keywords: aggregate, relocation, failures, arl, stage 2, stage 3, stage 5 
-summary: 疑難排解AFF 在從VMware升級到AFF VMware升級期間可能發生的Aggregate重新定位故障。 
+summary: 疑難排解使用 ARL 升級同一機箱中的控制器機型時、可能發生的集合體重新定位故障。 
 ---
 = Aggregate重新配置失敗
 :hardbreaks:
@@ -55,7 +55,7 @@ summary: 疑難排解AFF 在從VMware升級到AFF VMware升級期間可能發生
 +
 正在重新部署的部分集合體將node1當作其主節點。例如、此類Aggr_nnode_1可稱為Aggr_node_1。如果在第3階段重新配置aggr_node_1失敗、且無法強制重新配置、則會將Aggregate留在node2上。
 
-* 在第4階段之後、當節點2被AFF 取代為EscoreA900或FAS9500控制器和NVRAM模組時。
+* 在第 4 階段之後、當 node2 被新的系統模組取代時。
 +
 當節點2被替換時、aggr_node_1會以node1作為主節點、而非node2連線。
 

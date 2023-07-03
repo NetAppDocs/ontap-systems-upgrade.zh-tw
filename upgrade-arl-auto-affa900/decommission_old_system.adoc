@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: /upgrade-arl-auto-affa900/decommission_old_system.html 
 keywords: decommission, old system, upgrade, databases, netapp, support, site, serial, number, cluster 
-summary: 讓NetApp知道、升級AFF 至更新版的更新版後、舊系統已不再運作。 
+summary: 請告知 NetApp 、舊系統在控制器升級後不再運作。 
 ---
 = 取消委任舊系統
 :hardbreaks:

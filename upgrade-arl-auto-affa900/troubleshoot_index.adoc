@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/troubleshoot_index.html 
-keywords: troubleshooting, node, aggregate, lif, migrate, failure 
-summary: 疑難排解AFF 在從VMware AFF 升級至VMware的過程中可能發生的故障。 
+keywords: troubleshooting, troublehsoot, node, aggregate, lif, migrate, failure 
+summary: 疑難排解使用 ARL 升級同一機箱中的控制器機型時可能發生的故障。 
 ---
 = 疑難排解
 :hardbreaks:

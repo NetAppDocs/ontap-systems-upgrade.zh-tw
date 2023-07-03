@@ -38,7 +38,7 @@ summary: 瞭解ONTAP 如何使用「系統控制器更換」命令、將執行�
 
 
 | link:stage_1_index.html["第1階段：準備升級"]  a| 
-在第1階段期間、您會執行預先檢查、並視需要修正Aggregate所有權。如果您使用OKM管理儲存加密、則必須記錄特定資訊、而且您可以選擇靜止SnapMirror關係。
+在第1階段期間、您會執行預先檢查、並視需要修正Aggregate所有權。如果您使用 Onboard Key Manager 來管理儲存加密、則必須記錄特定資訊、而且您可以選擇靜止 SnapMirror 關係。
 
 第1階段結束時的Aggregate所有權：
 

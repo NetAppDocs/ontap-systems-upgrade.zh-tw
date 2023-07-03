@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/resume_snapmirror_operations.html 
 keywords: resuming, snapmirror, operations, transfer, relationship, updates, schedule, complete 
-summary: 在將SnapMirror傳輸和關係AFF 升級到AFF 還原A900的過程中、恢復SnapMirror傳輸和關係。 
+summary: 使用 ARL 升級同一機箱中的控制器機型時、請恢復 SnapMirror 傳輸和關係。 
 ---
 = 恢復SnapMirror作業
 :hardbreaks:

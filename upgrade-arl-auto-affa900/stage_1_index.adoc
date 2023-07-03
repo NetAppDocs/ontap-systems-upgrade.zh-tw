@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/stage_1_index.html 
 keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
-summary: ARL升級的第1階段程序順序、使用「系統控制器更換」命令、在執行ONTAP 版本號為9.8或更新版本的控制器上執行。 
+summary: '第 1 階段 ARL 升級程序、使用 `system controller replace` 升級相同機箱中的控制器機型。' 
 ---
 = 總覽
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: ARL升級的第1階段程序順序、使用「系統控制器更換」�
 
 
 [role="lead"]
-在第1階段期間、您需要確認AFF 您的硬體是否正確、以便將某個硬體從某個版本升級到AFF 某個版本的FASA700升級到某個版本的FAS9000、執行預先檢查、並視需要修正集合體擁有權。如果您是使用OKM來管理儲存加密、則必須記錄特定資訊、而且您可以選擇靜止SnapMirror關係。
+在第 1 階段期間、您會確認您擁有適合升級的正確硬體、執行預先檢查、並在必要時修正集合擁有權。如果您使用 Onboard Key Manager 來管理儲存加密、則必須記錄特定資訊、而且您可以選擇要禁用 SnapMirror 關係。
 
 .步驟
 . link:verify_upgrade_hardware.html["驗證升級硬體"]

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/ensure_new_controllers_are_set_up_correctly.html 
 keywords: ensure, controllers, new, setup, ha, pair, node1, node2, lif, cluster, high, availability 
-summary: 確認HA配對已啟用、確認節點1和節點2儲存設備存取和LIF、並在將AFF E4A700升級AFF 為EW1A900之後確認Aggregate所有權。 
+summary: 確認 HA 配對已啟用、請驗證 node1 和 node2 儲存設備存取和 LIF 、並在相同機箱中升級控制器機型之後、確認集合擁有權。 
 ---
 = 確認新的控制器已正確設定
 :hardbreaks:
@@ -29,11 +29,11 @@ summary: 確認HA配對已啟用、確認節點1和節點2儲存設備存取和L
 [listing]
 ----
 cluster::> storage failover show
-                                Takeover
-Node	         Partner	        Possible	      State Description
--------------  --------------   --------------  ------------------
-node1	         node2            true	           Connected to node2
-node2	         node1            true	           Connected to node1
+                          Takeover
+Node	    Partner       Possible      State Description
+----------  -----------   ------------  ------------------
+node1	    node2         true	        Connected to node2
+node2	    node1         true	        Connected to node1
 ----
 . 使用下列命令檢查輸出、確認node1和node2屬於同一個叢集：
 +
@@ -122,7 +122,7 @@ Do you want to continue? {y|n}: y
 +
 您可以比較輸出與中擷取的輸出 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] 區段。
 
-. [[unset_mastwait]]如果在組態中使用自我加密磁碟機、且您已設定 `kmip.init.maxwait` 變數至 `off` （例如、在_Boot node2中搭配AFF 使用SUREA900或FAS9500控制器和NVRAM模組、 link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1["步驟1."]）、您必須取消設定變數：
+. [[unset_mastwait]]如果在組態中使用自我加密磁碟機、且您已設定 `kmip.init.maxwait` 變數至 `off` （例如、在 _Boot node2 中使用替換的系統模組 _ 、 link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1["步驟1."]）、您必須取消設定變數：
 +
 「et diag; systemShell -node_node_name_-command sudo kenv -u -p kmip.init.maxwait`」
 

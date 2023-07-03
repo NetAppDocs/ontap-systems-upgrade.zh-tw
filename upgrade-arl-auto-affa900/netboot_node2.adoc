@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/netboot_node2.html 
-keywords: preparing, netboot, ontap, aff, a900, node2 
-summary: 交換相應AFF 的E4A900 node2控制器模組和NVRAM模組之後、您可能需要將它們以網路開機。 
+keywords: preparing, prepare, netboot, ontap, node2 
+summary: 在使用 ARL 升級同一機箱中的控制器機型時、交換對應的更換 node2 系統模組之後、您可能需要將它們以網路開機。 
 ---
 = netboot node2
 :hardbreaks:
@@ -14,12 +14,11 @@ summary: 交換相應AFF 的E4A900 node2控制器模組和NVRAM模組之後、�
 
 
 [role="lead"]
-在交換相應AFF 的E4A900或FAS9500節點2控制器模組和NVRAM之後、您可能需要將其以網路開機。「netboot」一詞表示您是從ONTAP 儲存在遠端伺服器上的鏡像進行開機。準備網路開機時、您必須將ONTAP 一份《支援》9開機映像複本放到系統可以存取的網路伺服器上。
+交換對應的更換 node2 系統模組之後、您可能需要將它們以網路開機。「netboot」一詞表示您是從ONTAP 儲存在遠端伺服器上的鏡像進行開機。準備網路開機時、您必須將ONTAP 一份《支援》9開機映像複本放到系統可以存取的網路伺服器上。
 
-除非安裝在機箱中並已開啟電源、否則無法檢查ONTAP 安裝在AFF 架構套件上的更新版本、例如：在不支援更新的情況下、在不支援更新的情況下、在不支援更新的情況下、在不支援更新的情況下、在不支援更新的情況下、在不支援更新的情況下、更新的更新版本必須與在不支援更新的情況下執行的更新版本相同。ONTAP AFF ONTAP AFF您可以在開機功能表中執行netboot、然後執行wappeconfig命令來設定映像。如果控制器模組先前曾在另一個叢集中使用、則「wifeconfig」命令會清除開機媒體上的任何剩餘組態。
+除非安裝在機箱中並已開啟電源、否則無法檢查更換控制器模組的開機媒體上所安裝的 ONTAP 版本。替換系統開機媒體上的 ONTAP 版本必須與您要升級的舊系統上執行的 ONTAP 版本相同、而且主要開機映像和備份開機映像都必須相符。您可以先執行網路開機、然後再執行、來設定映像 `wipeconfig` 開機功能表中的命令。如果控制器模組先前曾用於其他叢集、則為 `wipeconfig` 命令會清除開機媒體上的任何剩餘組態。
 
-
-NOTE: 您也可以使用USB開機選項來執行netboot。請參閱知識庫文章 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["如何使用boot_recovery loader命令來安裝ONTAP 用來初始設定系統的支援功能"^]。
+您也可以使用USB開機選項來執行netboot。請參閱知識庫文章 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["如何使用boot_recovery loader命令來安裝ONTAP 用來初始設定系統的支援功能"^]。
 
 .開始之前
 * 確認您可以使用系統存取HTTP伺服器。
@@ -70,7 +69,7 @@ NOTE: 您的介面可能需要其他參數。在韌體提示字元中輸入「He
 
 NOTE: 請勿中斷開機。
 
-. 等待AFF 正在執行的節點2啟動、並顯示如下輸出所示的開機功能表選項：
+. 等待更換控制器模組上目前執行的 node2 開機、並顯示開機功能表選項、如下列輸出所示：
 +
 [listing]
 ----
@@ -170,7 +169,7 @@ Controller HA configuration: ha
 +
 node2應在loader>提示符下停止。
 
-. 在節點2上、檢查系統日期、時間和時區：
+. 在 node1 上，檢查系統日期、時間和時區：
 +
 '日期'
 
@@ -203,7 +202,7 @@ NOTE: 在節點2上設定對應的UTC時間。
 "etenv PARTNER-sysid _node1_sysid_"
 
 +
-對於節點2 `partner-sysid` 必須是您要升級AFF 到E4A900或FAS9500的節點1。
+對於節點2 `partner-sysid` 必須是要升級的 node1 。
 
 +
 .. 儲存設定：

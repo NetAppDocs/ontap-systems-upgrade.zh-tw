@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/stage_3_index.html 
-keywords: upgrade, preparing, preparation, prepare, overview, stage 1 
-summary: ARL升級的第1階段程序順序、使用「系統控制器更換」命令、在執行ONTAP 版本號為9.8或更新版本的控制器上執行。 
+keywords: upgrade, boot, node1, verify, restore, overview, stage 3 
+summary: '第 1 階段 ARL 升級程序、使用 `system controller replace` 用於升級同一機箱中的控制器機型的命令。' 
 ---
 = 總覽
 :hardbreaks:
@@ -14,10 +14,10 @@ summary: ARL升級的第1階段程序順序、使用「系統控制器更換」�
 
 
 [role="lead"]
-在第3階段期間、您會使用升級的控制器和NVRAM模組來開機node1、並驗證升級的node1安裝。如果您使用的是NetApp Volume Encryption（NVE）、則會還原金鑰管理程式組態。您也可以將node1非根Aggregate和NAS資料lIF從node2重新部署到升級的node1、並確認節點1上存在SAN lIF。
+在第 3 階段中、您可以使用升級的系統模組來啟動 node1 、並驗證升級後的 node1 安裝。如果您使用的是NetApp Volume Encryption（NVE）、則會還原金鑰管理程式組態。您也可以將node1非根Aggregate和NAS資料lIF從node2重新部署到升級的node1、並確認節點1上存在SAN lIF。
 
 .步驟
-. link:boot_node1_with_a900_controller_and_nvs.html["使用AFF EscoreA900或FAS9500控制器和NVRAM模組來開機節點1"]
+. link:boot_node1_with_a900_controller_and_nvs.html["使用替換的系統模組來啟動 node1"]
 . link:verify_node1_installation.html["驗證node1安裝"]
 . link:restore_key_manager_config_upgraded_node1.html["在升級的節點1上還原金鑰管理程式組態"]
 . link:move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html["將節點1擁有的非根Aggregate和NAS資料lifs從節點2移至升級的節點1"]

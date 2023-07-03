@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/verify_node1_installation.html 
-keywords: verifying, verify, node1, install, installation, aff, a900, NVRAM, controller 
-summary: 使用AFF E4A900控制器模組和NVRAM模組來驗證node1安裝。 
+keywords: verifying, verify, node1, install, installation, NVRAM, controller, module, modules 
+summary: 使用 ARL 升級同一機箱中的控制器型號時、請使用替換模組來驗證 node1 安裝。 
 ---
 = 驗證node1安裝
 :hardbreaks:
@@ -14,10 +14,10 @@ summary: 使用AFF E4A900控制器模組和NVRAM模組來驗證node1安裝。
 
 
 [role="lead"]
-您必須使用AFF EscoreA900或FAS9500控制器和NVRAM模組來驗證node1安裝。由於實體連接埠沒有變更、因此您不需要將舊節點1的實體連接埠對應至替換節點1。
+您必須使用替換的系統模組來驗證 node1 安裝。由於實體連接埠沒有變更、因此您不需要將舊節點1的實體連接埠對應至替換節點1。
 
 .關於這項工作
-使用AFF E4A900或FAS9500控制器模組開機節點1之後、您必須確認其安裝正確。您必須等待節點1加入仲裁、然後繼續執行控制器更換作業。
+使用替換的控制器模組啟動 node1 之後、您必須確認已正確安裝。您必須等待節點1加入仲裁、然後繼續執行控制器更換作業。
 
 在此過程中、當節點1嘗試自動加入仲裁時、控制器升級作業應該會暫停。
 
@@ -141,7 +141,7 @@ Node1
 
 +
 
-NOTE: 在從功能性到功能性的協助下、從FASA700升級至功能性的A900或FAS9000升級至FAS9500控制器時、網路連接埠及其連線能力不應改變。AFF AFF所有連接埠都應位於正確的廣播網域中、而且網路連接埠的連線能力不應改變。不過、在將LIF從節點2移回節點1之前、您必須先確認網路連接埠的連線能力和健全狀況狀態。
+NOTE: 在升級期間、網路連接埠及其連線不應變更。所有連接埠都應位於正確的廣播網域中、而且網路連接埠的連線能力不應改變。不過、在將LIF從節點2移回節點1之前、您必須先確認網路連接埠的連線能力和健全狀況狀態。
 
 . [[reest_node1_step4]]使用下列命令、修復節點1上每個連接埠的可連線性狀態、其可連線性為「ok」以外的狀態：
 +

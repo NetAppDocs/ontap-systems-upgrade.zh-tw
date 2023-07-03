@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/lif_migration_failure.html 
 keywords: lif, migration, failure, mtu 
-summary: 階段2、階段3或階段5移轉到AFF SageA700升級到AFF SageA900之後、LIF將無法上線。 
+summary: 在第 2 階段、第 3 階段或第 5 階段移轉後、使用 ARL 升級同一機箱中的控制器機型時、生命週期不在線上。 
 ---
 = LIF移轉失敗
 :hardbreaks:

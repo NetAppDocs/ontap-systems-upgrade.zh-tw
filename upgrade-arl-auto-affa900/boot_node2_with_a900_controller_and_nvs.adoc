@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html 
-keywords: boot, NVRAM, controller, module, node2, aff, a700, a900 
-summary: 使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2。 
+keywords: boot, NVRAM, controller, module, node2, replacement 
+summary: 使用 ARL 升級同一機箱中的控制器機型時、請使用替換控制器模組來啟動 node2 。 
 ---
-= 使用AFF FASA900或FAS9500控制器和NVRAM模組來開機節點2
+= 使用替換的系統模組來啟動 node2
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,8 +14,27 @@ summary: 使用AFF EsceeA900控制器模組和NVRAM模組來開機節點2。
 
 
 [role="lead"]
-節點2搭配AFF EscoreA900或FAS9500控制器和NVRAM模組、現在已準備好升級。透過交換控制器和NVRAM模組、將「從A 700升級至e a 900」或「FAS9000升級至FAS9500」只需移動主控台和管理連線即可。AFF AFF本節提供使用AFF E4A900或FAS9500控制器和NVRAM模組來開機節點2所需的步驟。
+已準備好使用替換模組的 node2 開機。交換系統模組進行升級時、只需移動主控台和管理連線即可。本節提供使用下列升級組態的替換模組來開機 node2 所需的步驟：
 
+[cols="35,65"]
+|===
+| 舊的 node2 控制器 | 更換 node2 系統模組 
+
+
+| VA220 AFF
+解答200 AFF
+C190 AFF | AFF A150 控制器模組 
+
+
+| FAS2620
+FAS2720 | FAS2820 控制器模組 
+
+
+| AFF A700 | AFF A900 控制器和 NVRAM 模組 
+
+
+| FAS9000 | FAS9500 控制器和 NVRAM 模組 
+|===
 .步驟
 . [[boot_node2_step1]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
 +
@@ -51,7 +70,7 @@ NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文�
 +
 Boot_ONTAP功能表
 
-. 輸入「22/7」並在節點停止於開機功能表時選取隱藏的選項「boot_after控制器置換」、即可將AFF 該站台2磁碟重新指派給AFF Efestha900節點2。
+. 輸入「 22/7 」並選取隱藏選項、將舊的 node2 磁碟重新指派給替換的 node2 `boot_after_controller_replacement` 當節點停止在開機功能表時。
 +
 短暫延遲之後、系統會提示您輸入要取代的節點名稱。如果有共享磁碟（也稱為進階磁碟分割（ADP）或分割磁碟）、系統會提示您輸入HA合作夥伴的節點名稱。
 

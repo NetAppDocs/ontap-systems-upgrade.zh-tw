@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/verify_upgrade_hardware.html 
-keywords: preparing, nodes, upgrade 
-summary: 在開始升級之前、請確認AFF 您擁有正確的硬體、以便進行從故障到AFF 故障的修復升級。 
+keywords: nodes, upgrade, verify, hardware 
+summary: 在開始升級之前、請確認您擁有正確的硬體、以便在同一個機箱中升級控制器機型。 
 ---
 = 驗證升級硬體
 :hardbreaks:
@@ -14,4 +14,23 @@ summary: 在開始升級之前、請確認AFF 您擁有正確的硬體、以便�
 
 
 [role="lead"]
-在開始升級之前、您必須先確認AFF 您擁有的是正確的硬體、可讓您進行從故障到AFF 故障的修復A700升級、或是從FAS9000升級到FAS9500升級。對於要升級的每個HA配對、您必須有兩個系統控制器模組和兩個NVRAM模組。如果零件遺失、請聯絡技術支援部門或NetApp銷售聯絡人以尋求協助。
+在開始升級之前、您必須確認您擁有適合升級的正確硬體。視您的升級而定、您必須針對要升級的每個 HA 配對、擁有兩個控制器模組或兩個控制器模組和兩個 NVRAM 模組。如果零件遺失、請聯絡技術支援部門或NetApp銷售聯絡人以尋求協助。
+
+[cols="50,50"]
+|===
+| 如果您正在升級 ... | 您必須擁有 ... 
+
+
+| AFF A220 至 AFF A150
+AFF A200 至 AFF A150
+AFF C190 至 AFF A150 | 兩個控制器模組 
+
+
+| FAS2620 或 FAS2720 至 FAS2820 | 兩個控制器模組 
+
+
+| 從A700移轉至32 A900 AFF AFF | 兩個控制器和兩個 NVRAM 模組 
+
+
+| FAS9000至FAS9500 | 兩個控制器和兩個 NVRAM 模組 
+|===

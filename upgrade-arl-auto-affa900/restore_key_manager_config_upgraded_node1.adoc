@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html 
 keywords: restore key-manager, configuration, node1, nve, arl, volume, encryption 
-summary: 如有需要、AFF 可在將升級的節點1 AFF 升級到EsceA700期間、將金鑰管理程式組態還原至EsceA900。 
+summary: 如果需要、請在升級的 node1 上還原金鑰管理程式組態、以便使用 ARL 來升級相同機箱中的控制器機型。 
 ---
 = 在升級的節點1上還原金鑰管理程式組態
 :hardbreaks:

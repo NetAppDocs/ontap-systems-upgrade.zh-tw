@@ -23,7 +23,7 @@ summary: '如有需要、ONTAP 使用升級執行《ENF9.8或更新版本》的�
 ====
 .內建金鑰管理程式
 --
-*使用Onboard Key Manager*設定NVE或NAE
+使用 Onboard Key Manager 設定 NVE 或 NAE 。
 
 .步驟
 . 將驗證金鑰從所有連結的金鑰管理伺服器還原至新節點：
@@ -35,7 +35,7 @@ summary: '如有需要、ONTAP 使用升級執行《ENF9.8或更新版本》的�
 --
 .外部金鑰管理
 --
-*使用外部金鑰管理*設定NVE或NAE
+使用外部金鑰管理設定 NVE 或 NAE 。
 
 .步驟
 . 確認金鑰管理伺服器仍可使用、狀態及驗證金鑰資訊：

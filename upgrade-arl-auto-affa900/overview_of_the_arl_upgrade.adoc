@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html 
-keywords: overview, arl, upgrade, owner, controller, hardware 
-summary: 瞭解AFF 如何AFF 執行從NetApp A700升級到Ar900 ARL控制器的程序。 
+keywords: overview, arl, upgrade, owner, controller, hardware, old, system, chassis, disk, disks 
+summary: 瞭解在同一機箱中升級控制器機型的 ARL 程序如何運作。 
 ---
 = ARL升級總覽
 :hardbreaks:
@@ -38,7 +38,7 @@ summary: 瞭解AFF 如何AFF 執行從NetApp A700升級到Ar900 ARL控制器的�
 
 
 | link:stage_1_index.html["階段1：準備升級"]  a| 
-在第2階段期間、您會將節點1非根Aggregate和NAS資料lifs重新部署至節點2。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。如果需要、您可以重新部署故障或被否決的集合體。您必須記錄必要的node1資訊、以便稍後在程序中使用、然後交換對應的node1控制器和NVRAM模組、淘汰node1、並在升級的node1上執行netboot。
+在第 1 階段期間、您會確認您擁有適合升級的正確硬體、執行預先檢查、並在必要時修正集合擁有權。如果您使用 Onboard Key Manager 來管理儲存加密、則必須記錄特定資訊、而且您可以選擇要禁用 SnapMirror 關係。
 
 第1階段結束時的Aggregate所有權：
 
@@ -48,8 +48,8 @@ summary: 瞭解AFF 如何AFF 執行從NetApp A700升級到Ar900 ARL控制器的�
 
 
 
-| link:stage_2_index.html["第2階段：從節點1重新部署資源、並淘汰AFF EsceA700或FAS9000節點1"]  a| 
-在第2階段期間、您會將節點1非根Aggregate和NAS資料lifs重新部署至節點2。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。如果需要、您可以重新部署故障或被否決的集合體。在淘汰node1之前、請先記錄node1資訊以供稍後的程序使用。您也可以稍後在程序中準備netboot node1。
+| link:stage_2_index.html["第 2 階段：重新部署資源並淘汰 node1"]  a| 
+在第 2 階段期間、您將 node1 非 root 集合體和 NAS 資料生命體從 node1 重新定位到 node2 。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。如果需要、您可以重新部署故障或被否決的集合體。在淘汰node1之前、請先記錄node1資訊以供稍後的程序使用。您也可以稍後在程序中準備netboot node1。
 
 第2階段結束時的Aggregate所有權：
 
@@ -59,18 +59,18 @@ summary: 瞭解AFF 如何AFF 執行從NetApp A700升級到Ar900 ARL控制器的�
 
 
 
-| link:stage_3_index.html["第3階段：使用AFF 支援E4A900或FAS9500控制器和NVRAM模組的開機節點1"]  a| 
-在第3階段期間、您會使用升級的控制器和NVRAM模組來開機node1、並驗證升級的node1安裝。如果您使用的是NetApp Volume Encryption（NVE）、則會還原金鑰管理程式組態。您也可以將node1非根Aggregate和NAS資料lIF從node2重新部署到升級的node1、並確認節點1上存在SAN lIF。
+| link:stage_3_index.html["階段 3 ：使用替換系統模組來啟動 node1"]  a| 
+在第 3 階段中、您可以使用升級的系統模組來啟動 node1 、並驗證升級後的 node1 安裝。如果您使用的是NetApp Volume Encryption（NVE）、則會還原金鑰管理程式組態。您也可以將node1非根Aggregate和NAS資料lIF從node2重新部署到升級的node1、並確認節點1上存在SAN lIF。
 
 第3階段結束時的Aggregate所有權：
 
-* 升級AFF 版的E4A900或FAS9500節點1是node1 Aggregate的主擁有者和目前擁有者
+* 升級版 node1 是 node1 集合體的主擁有者和當前擁有者
 * node2是node2 Aggregate的主擁有者和目前擁有者
 
 
 
 
-| link:stage_4_index.html["階段4：從節點2重新部署資源、並淘汰節點2"]  a| 
+| link:stage_4_index.html["第 4 階段：重新部署資源並淘汰 node2"]  a| 
 在第4階段期間、您將非根Aggregate和NAS資料lifs從節點2重新部署到升級的節點1、然後淘汰節點2。
 
 第4階段結束時的Aggregate所有權：
@@ -81,8 +81,8 @@ summary: 瞭解AFF 如何AFF 執行從NetApp A700升級到Ar900 ARL控制器的�
 
 
 
-| link:stage_5_index.html["第5階段：在AFF 節點2上安裝EFASA900或FAS9500 NVRAM和控制器模組"]  a| 
-在第5階段期間、您會安裝新的NVRAM和控制器模組、這些模組會針對升級的node2、然後再安裝netboot node2。
+| link:stage_5_index.html["第 5 階段：在 node2 上安裝替換系統模塊"]  a| 
+在第 5 階段中、您將安裝針對升級後的 node2 和 netboot node2 所收到的新系統模組。
 
 第5階段結束時的Aggregate所有權：
 
@@ -92,8 +92,8 @@ summary: 瞭解AFF 如何AFF 執行從NetApp A700升級到Ar900 ARL控制器的�
 
 
 
-| link:stage_6_index.html["第6階段：使用AFF E4A900或FAS9500控制器和NVRAM模組來開機節點2"]  a| 
-在第6階段期間、您會使用升級的控制器和NVRAM模組來開機node2、並驗證升級的node2安裝。如果您使用NVE、則會還原金鑰管理程式組態。您也可以將節點1非根Aggregate和NAS資料lifs從節點1重新部署到升級的節點2、並確認節點2上存在SAN lifs。
+| link:stage_6_index.html["階段 6 ：使用替換系統模組來啟動 node2"]  a| 
+在第 6 階段中、您可以使用升級的系統模組來啟動 node2 、並驗證升級後的 node2 安裝。如果您使用NVE、則會還原金鑰管理程式組態。您也可以將節點1非根Aggregate和NAS資料lifs從節點1重新部署到升級的節點2、並確認節點2上存在SAN lifs。
 
 
 

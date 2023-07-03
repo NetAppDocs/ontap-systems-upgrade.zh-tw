@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/relocate_failed_or_vetoed_aggr.html 
 keywords: relocate, failed, vetoed, aggregates, relocation, operation 
-summary: 將故障或被否決的Aggregate在AFF 進行更新時重新部署至AFF 更新版的32位元組。 
+summary: 使用 ARL 升級同一機箱中的控制器機型時、請重新定位故障或已遭否決的集合體。 
 ---
 = 重新部署故障或被否決的集合體
 :hardbreaks:

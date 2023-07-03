@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html 
-keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability, aff, a700, a900 
-summary: 決定是否使用ARL程序將AFF 某個部分升級至AFF 某個部分。 
+keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability 
+summary: 決定是否使用可升級同一機箱中控制器機型的 ARL 程序。 
 ---
 = 決定是否使用Aggregate重新配置程序
 :hardbreaks:
@@ -14,12 +14,36 @@ summary: 決定是否使用ARL程序將AFF 某個部分升級至AFF 某個部分
 
 
 [role="lead"]
-本內容說明如何在AFF FAS9000 AFF HA配對中、將更新的儲存控制器與全新的FAS9000 HA控制器配對中的全新版塊升級至更新的FAS9500控制器、同時保留所有現有的資料和磁碟。這是一個複雜的程序、只能由經驗豐富的系統管理員使用。
+本內容說明如何在 HA 配對中升級儲存控制器、同時保留所有現有資料和磁碟。這是一個複雜的程序、只能由經驗豐富的系統管理員使用。
 
 請在下列情況下使用此程序：
 
-* 您已向NetApp銷售代表確認、您已收到AFF 了《關於更新的知識、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術、技術
-* 您執行ONTAP 的是版本號為《更新版本》的《更新版本》（例如：《更新版本》）。
+* 您正在執行下列其中一項控制器升級：
++
+[cols="50,50"]
+|===
+| 舊控制器 | 更換控制器 
+
+
+| AFF A220 、 AFF A200 或 AFF C190 | 解答150 AFF 
+
+
+| FAS2620 或 FAS2720 | FAS2820 
+
+
+| AFF A700 | 解答900 AFF 
+
+
+| FAS9000 | FAS9500 
+|===
+* 您已向 NetApp 銷售代表確認您已收到用於控制器升級的硬體：
++
+** AFF A150 控制器
+** FAS2820 控制器
+** AFF A900 或 FAS9500 控制器和 NVRAM 模組、以及升級所需的零件。
+
+
+* 您正在執行升級所需的最低 ONTAP 版本。如需詳細資訊、請參閱 link:index.html["總覽"]。
 * 您不想將新的控制器新增為叢集的新HA配對、也不想使用Volume Moves來移轉資料。
 * 您在管理ONTAP 方面經驗豐富、而且對於在診斷權限模式下工作的風險感到自在。
 
@@ -30,7 +54,7 @@ summary: 決定是否使用ARL程序將AFF 某個部分升級至AFF 某個部分
 * 您使用的是共享交換器、用於叢集互連和乙太網路附加儲存設備。
 
 
-如需升級Fabric MetroCluster 的靜態MetroCluster 或靜態IP組態、請參閱 link:other_references.html["參考資料"] 連結至_E不明MetroCluster Upgrade and Expansion內容。
+如需升級 AFF A700 或 FAS9000 系統上的 Fabric MetroCluster 或 MetroCluster IP 組態、請參閱 link:other_references.html["參考資料"] 連結至_E不明MetroCluster Upgrade and Expansion內容。
 
 
 NOTE: 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume加密（NVE）和NetApp Aggregate加密（NAE）。

@@ -131,7 +131,7 @@ NOTE: 您必須確認將SAN LIF移至與原始連接埠具有相同連結速度�
 +
 「網路介面show -home-Node <node4>-role data」
 
-.. 如果有任何LIF當機、請輸入下列命令、將LIF的管理狀態設為UP（開啟）、每個LIF只需輸入一次：
+.. 如果有任何生命中斷、請輸入下列命令、並針對每個LIF輸入一次、將該生命的管理狀態設定為「UP」：
 +
 「網路介面修改-vserver _vserver_name_-lif_lif_name_-stue-admin up」
 

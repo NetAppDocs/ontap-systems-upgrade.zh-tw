@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: /upgrade-arl-auto-affa900/move_non_root_aggr_and_nas_data_lifs_back_to_node2.html 
 keywords: moving, non-root, aggregates, nas, lif, node1, node2 
-summary: 驗證節點1上的節點2的NAS資料LIF在AFF 進行從節點1到節點2 AFF 的升級時、是否已從節點1重新定位至節點2。 
+summary: 使用 ARL 將同一機箱中的控制器機型升級時、請確認節點 1 上的 node2 NAS 資料生命體已從 node1 重新定位至 node2 。 
 ---
 = 將非根Aggregate和NAS資料lifs移回節點2
 :hardbreaks:
@@ -55,7 +55,7 @@ summary: 驗證節點1上的節點2的NAS資料LIF在AFF 進行從節點1到節�
 
 --
 +
-執行這些檢查之後、系統會將非根集合體和NAS資料lip重新定位回節點2、節點2現在正在AFF 執行於E4A900或FAS9500控制器上。
+執行這些檢查之後、系統會將非根集合體和 NAS 資料的生命體重新定位回節點 2 、而節點 2 目前正在替換控制器上執行。
 
 +
 資源重新配置完成後、控制器更換作業會暫停。

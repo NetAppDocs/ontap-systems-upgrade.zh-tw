@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/index.html 
-keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology, aff, a700, a900 
-summary: 您可以AFF 交換控制器模組和NVS、將顯示器硬體從處理器A700升級至AFF 顯示器A900。 
+keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology, old, system, chassis, disk, disks 
+summary: 您可以將舊系統轉換為更換系統、以保留舊的系統機箱和磁碟、藉此升級控制器硬體。 
 ---
 = 總覽
 :hardbreaks:
@@ -14,22 +14,64 @@ summary: 您可以AFF 交換控制器模組和NVS、將顯示器硬體從處理�
 
 
 [role="lead"]
-本程序說明如何針對下列系統組態、使用Aggregate重新定位（ARL）來升級控制器硬體：
+本程序說明如何使用 Aggregate 重定位（ ARL ）、在 HA 配對上不中斷地升級控制器硬體、以進行下列系統組態。此程序會將舊系統轉換為更換系統、保留舊系統機箱和磁碟。
 
-[cols="30,20,20,30"]
+
+WARNING: 此程序嚴格適用於下列升級組態。請勿 * 使用此程序在任何其他系統組合之間執行升級。
+
+[cols="20,20,40"]
 |===
-| 方法 | 版本ONTAP | 支援的系統 | 說明 
+| 舊系統 | 更換系統 | 支援 ONTAP 的支援版本 
 
 
-| 使用「系統控制器置換」命令 | 9.10.1P10、9.11.1p6或更新版本 | 從A700移轉至32 A900 AFF AFF | 將AFF 一個不變的A700系統轉換成AFF 一個不變的A900系統、保留A700機箱 
+| VA220 AFF | 解答150 AFF | 9.10.1 P15 、 9.11.1P11 、 9.12.1P5 及更新版本 
 
 
-| 使用「系統控制器置換」命令 | 9.10.1P10、9.11.1p6或更新版本 | FAS9000至FAS9500 | 將FAS9000系統轉換成FAS9500系統、保留FAS9000機箱。 
+| 解答200 AFF | 解答150 AFF  a| 
+9.10.1 P15 、 9.11.1P11 及更新版本（ AFF A200 及 AFF A150 ）
+
+
+NOTE: AFF A200 不支援早於 9.11.1 的 ONTAP 版本。
+
+
+
+| C190 AFF | 解答150 AFF | 9.10.1 P15 、 9.11.1P11 、 9.12.1P5 及更新版本 
+
+
+| FAS2620 | FAS2820  a| 
+9.11.1P7 及更新版本（ FAS2620 ）
+
+
+NOTE: FAS2620 不支援早於 9.11.1 的 ONTAP 版本。
+
+9.13.1 及更新版本（ FAS2820 ）
+
+
+
+| FAS2720 | FAS2820 | 9.13.1 及更新版本 
+
+
+| AFF A700 | 解答900 AFF | 9.10.1 P10 、 9.11.1P6 及更新版本 
+
+
+| FAS9000 | FAS9500 | 9.10.1 P10 、 9.11.1P6 及更新版本 
 |===
-您可以交換控制器和NVRAM模組、在高可用度（HA）配對上不中斷地升級控制器硬體。首先、您要在舊的控制器節點之間移轉非根Aggregate。安裝之後、您可以將非根集合體從舊的控制器節點移轉到替換的控制器節點。您可以在升級程序期間存取所升級節點上的資料。
+[NOTE]
+====
+NetApp 建議您在舊系統和更換系統上使用相同的 ONTAP 版本。
+
+上述表格中的 ONTAP 最低版本為必填。這些 ONTAP 版本具有服務處理器或主機板管理控制器（ BMC ）韌體版本、可在升級期間支援機箱內的混合控制器類型。
+
+====
+在程序期間、您會在舊控制器節點之間移轉非根集合體。安裝之後、您可以將非根集合體從舊的控制器節點移轉到替換的控制器節點。您可以在升級程序期間存取所升級節點上的資料。
 
 .關於這項工作
-在此控制器升級程序期間、AFF 您只能將位於ESATA A700或FAS9000系統上每個節點上的兩個現場可更換單元（FRU）與新的FRU交換。
+在此控制器升級程序期間、您將執行下列其中一項程序：
+
+* 將 AFF A220 、 AFF A200 或 AFF C190 系統上每個節點上的控制器模組更換為新的 AFF A150 模組。
+* 將 FAS2620 或 FAS2720 系統上每個節點上的控制器模組換成新的 FAS2820 模組。
+* 將 AFF A700 或 FAS9000 系統上每個節點上的兩個控制器和 NVRAM 模組交換為新的 AFF A900 或 FAS9500 模組。
+
 
 
 NOTE: 您不需要移動、拔下或重新連接I/O卡、資料纜線、磁碟櫃和磁碟。
@@ -45,7 +87,14 @@ NOTE: 術語* node1*和* node2*僅用作本文檔中的節點名稱參考。執�
 * 此程序相當複雜、假設您具備進階ONTAP 的功能不完整的管理技能。您也應該閱讀並瞭解 link:guidelines_for_upgrading_controllers_with_arl.html["升級控制器的準則"] 和 link:overview_of_the_arl_upgrade.html["ARL升級總覽"] 開始升級之前的章節。
 * 此程序假設更換的控制器硬體是新的、並未在其他系統中使用。此程序不包含使用wpeconfig命令準備已用控制器所需的步驟。如果更換的控制器硬體先前是用作另一個ONTAP 支撐叢集的一部分、或是用作獨立的單一節點系統、您必須聯絡技術支援部門。
 * 您可以使用此程序來升級具有兩個以上節點之叢集中的控制器硬體、但是您需要針對叢集中的每個HA配對分別執行程序。
-* 此程序僅適用於AFF FASA700和FAS9000系統。如需所有其他需要升級AFF 至FASA900或FAS9500系統的控制器機型、請參閱 link:other_references.html["參考資料"] 若要連結至_、請使用「系統控制器更換」命令來升級執行ONTAP VMware 9.8或更新版本的控制器硬體、以及使用集合體重新配置來手動升級執行ONTAP VMware 9.8或更新版本的控制器硬體內容（_Using Aggregate Relocation to Manually Upgrade Controller Hardware）。
+* 如果您的交換器不受 ONTAP 版本支援、且您要升級的替換系統不受支援、請參閱 link:other_references.html["參考資料"] 以連結至_SURE_ Hardware Universe 。
+* 此程序僅適用於 AFF A200 、 AFF A220 、 AFF C190 、 FAS2620 、 FAS2720 、 AFF A700 和 FAS9000 系統。如需升級至 AFF A150 、 FAS2820 、 AFF A900 或 FAS9500 系統的所有其他控制器機型、請參閱 link:other_references.html["參考資料"] 若要連結至 _ 、請使用「系統控制器置換」命令來升級執行 ONTAP 9.8 或更新版本的控制器硬體、以及 _ 使用 Aggregate 重定位來手動升級執行 ONTAP 9.8 或更新版本內容的控制器硬體。
 * 支援高速線路電源（200V至240V）的支援僅有支援FAS900和FAS9500系統。AFF如果AFF 您的FASA700或FAS9000系統是以低線電源（100V至120V）執行、則在AFF 使用此程序之前、您必須先將該功能轉換成使用該功能的電源供應器或FAS9000輸入電源。
-* 如果AFF 您在從無法運作的情況下從某個不支援的A700或FAS9000系統升級、您可以移動儲存設備來升級控制器硬體、或聯絡技術支援部門。請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+* 如果您是從 AFF A200 、 AFF A220 、 AFF C190 、 FAS2620 、 FAS2720 、 AFF A700 或 FAS9000 系統停機、您可以移動儲存設備或聯絡技術支援部門、來升級控制器硬體。請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
 
+
+
+
+== 自動化控制器升級程序
+
+此程序支援下列控制器升級、並提供自動化程序的步驟、此程序使用自動磁碟指派和網路連接埠連線檢查來簡化控制器升級體驗。

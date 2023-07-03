@@ -70,7 +70,7 @@ summary: '如有需要、ONTAP 使用將執行《E9.5》的控制器升級至9.7
 +
 如需詳細資訊、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/dm/Encryption/How_to_restore_external_key_manager_server_configuration_from_the_ONTAP_boot_menu["如何從 ONTAP 開機功能表還原外部金鑰管理程式伺服器組態"^]。
 
-** 還原OKM驗證：
+** 還原 OKM 的驗證：
 +
 「安全金鑰管理程式內建同步」
 

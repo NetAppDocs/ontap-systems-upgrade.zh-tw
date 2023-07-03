@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/reboots_panics_or_power_cycles.html 
 keywords: reboots, panics, power, cycles, node, crash 
-summary: 系統可能會在不同階段當機–重新開機、發生恐慌或經歷關機循環–將AFF 整個過程升級至AFF 整套A700。 
+summary: 使用 ARL 升級同一機箱中的控制器機型時、系統可能會在不同階段當機、例如重新開機、出現緊急情況或經歷關機後的關機循環。 
 ---
 = 重新開機、出現問題或重新開機
 :hardbreaks:

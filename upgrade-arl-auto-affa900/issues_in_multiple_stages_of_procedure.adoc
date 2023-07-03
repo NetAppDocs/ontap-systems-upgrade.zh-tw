@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/issues_in_multiple_stages_of_procedure.html 
 keywords: issues, arise, multiple, stages, procedure 
-summary: 關於從功能性的A700升級到功能性的A900時可能發生的問題資訊AFF 。AFF 
+summary: 使用 ARL 升級同一機箱中的控制器機型時、可能發生的問題資訊。 
 ---
 = 程序的多個階段可能會發生的問題
 :hardbreaks:
