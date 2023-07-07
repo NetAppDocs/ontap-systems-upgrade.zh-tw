@@ -19,7 +19,7 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請準備節點
 .步驟
 . 列出在舊控制器上執行的服務處理器（ SP ）或主機板管理控制器（ BMC ）韌體版本：
 +
-`service-processor show` 命令：
+`service-processor show`
 
 +
 確認您擁有支援的 SP 或 BMC 韌體版本：
@@ -150,7 +150,7 @@ Controller replacement operation has been paused for user intervention.
 
 +
 
-NOTE: 如果正在使用使用Onboard Key Manager的NetApp Volume Encryption（NVE）或NetApp Aggregate Encryption（NAE）、請準備好金鑰管理程式通關密碼、以便稍後在程序中完成金鑰管理程式重新同步。
+NOTE: 如果使用內建金鑰管理程式的 NetApp Volume Encryption （ NVE ）或 NetApp Aggregate Encryption （ NAE ）正在使用中、請在稍後的程序中、將金鑰管理程式複雜密碼保留為完成金鑰管理程式重新同步。
 
 . 如果您的系統使用自我加密磁碟機、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷您要升級的HA配對所使用的自我加密磁碟機類型。支援兩種自我加密磁碟機的支援ONTAP ：
 +

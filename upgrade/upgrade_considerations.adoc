@@ -13,12 +13,15 @@ summary: 若要規劃升級、您應該熟悉一般的升級考量。如有必�
 [role="lead"]
 若要規劃升級、您必須熟悉一般的升級考量。如有必要、請聯絡技術支援部門、以取得叢集組態的特定建議與指引。
 
-要求與限制
-
+.要求與限制
 * 移動儲存設備進行升級的程序會中斷營運。透過移動磁碟區進行升級的程序不中斷營運。
-* 新節點必須支援與原始節點相同的軟體版本。
+* 原始節點必須支援與新節點相同的軟體版本。
 +
 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["升級ONTAP"^]
+
++
+
+NOTE: 如需混合軟體版本叢集升級的詳細資訊、請參閱 https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["混合版本 ONTAP 叢集"^]。
 
 * 您必須觀察最大叢集大小。
 +

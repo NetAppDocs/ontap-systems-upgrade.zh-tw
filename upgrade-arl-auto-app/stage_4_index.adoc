@@ -14,7 +14,7 @@ summary: ARL升級的第4階段程序順序、使用「系統控制器更換」�
 
 
 [role="lead"]
-在第4階段期間、您將非根Aggregate和NAS資料lifs從節點2重新部署到節點3。您必須記錄必要的node2資訊、以便稍後在程序中使用、然後淘汰node2。
+在第4階段期間、您將非根Aggregate和NAS資料lifs從節點2重新部署到節點3。您也可以記錄必要的 node2 資訊、以便稍後在程序中使用、然後淘汰 node2 。
 
 .步驟
 . link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["將非根Aggregate和NAS資料LIF從節點2重新定位至節點3"]

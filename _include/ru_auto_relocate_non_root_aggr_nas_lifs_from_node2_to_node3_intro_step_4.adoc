@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-您必須先將節點2所擁有的非根Aggregate和NAS資料LIF重新定位至節點3、才能將節點2取代為節點4。
+將 node2 取代為 node4 之前、請先將 node2 擁有的非根集合體和 NAS 資料生命週期重新放置到 node3 。
 
 .開始之前
 完成上一階段的檢查後、節點2的資源版本會自動啟動。非根Aggregate和非SAN資料LIF會從節點2移轉至節點3。

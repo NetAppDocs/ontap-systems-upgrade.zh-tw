@@ -106,7 +106,7 @@ summary: 支援使用 ARL 以升級相同機箱中的控制器機型所需的參
 | link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["升級ONTAP"^] | 內含下載及升級ONTAP 功能的說明。 
 
 
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["使用「系統控制器更換」命令來升級相同機箱中的控制器機型"^] | 說明在不中斷系統升級時所需的集合體重新配置程序、以保留舊系統機箱和磁碟。 
+| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["使用「系統控制器更換」命令來升級相同機箱中的控制器機型"^] | 說明在不中斷系統升級、保留舊系統機箱和磁碟所需的集合體重新定位程序。 
 
 
 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html["使用「系統控制器更換」命令來升級執行ONTAP 效能不正常的控制器硬體"^] | 說明ONTAP 使用「系統控制器更換」命令、在不中斷營運的情況下升級執行E9.8的控制器所需的集合體重新配置程序。 

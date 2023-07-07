@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-在第1階段期間、您會執行預先檢查、並視需要修正Aggregate所有權。如果您使用 Onboard Key Manager 來管理儲存加密、則必須記錄特定資訊、而且您可以選擇靜止 SnapMirror 關係。
+在第1階段期間、您會執行預先檢查、並視需要修正Aggregate所有權。如果您使用 Onboard Key Manager 來管理儲存加密、也可以記錄某些資訊、然後選擇靜止 SnapMirror 關係。
 
 .步驟
 . link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]
