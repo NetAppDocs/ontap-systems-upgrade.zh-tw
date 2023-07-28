@@ -3250,7 +3250,6 @@
   <block id="fe82c8b7274d1544ce545c5b1bb60481" category="paragraph">「vserver add-aggregate」</block>
   <block id="39e7eb0e1fd08f1ba6fea6e4df4f0d50" category="paragraph">新的Aggregate和要從中移動磁碟區的舊Aggregate都必須位於相同的SVM中。</block>
   <block id="65c0e65d7f3d4f9b7e59695a5beed439" category="list-text">確認新的Aggregate現在已指派給與原始節點上Aggregate相同的SVM：</block>
-  <block id="d144782c7f277a43532b9873909babed" category="paragraph">「vserver show -vserversvm_name」</block>
   <block id="60ffd94dccfc67beb8507929d59460e3" category="list-text">顯示您要從原始節點移至新節點的磁碟區資訊：</block>
   <block id="045e4ac6df29d2cafc7b15a9d2d9e81e" category="paragraph">您應該保留命令輸出以供日後參考。</block>
   <block id="291a171e8b949620eda68d899d2e3e06" category="paragraph">下列範例顯示「VS1」SVM和「node0」節點上的磁碟區：</block>
@@ -4719,12 +4718,6 @@ AFF C190 至 AFF A150</block>
   <block id="4ca61b6580e69e11b24f59b9ac4072a9" category="list-text">原始節點必須支援與新節點相同的軟體版本。</block>
   <block id="36596c0816df78df5e957f4a98189433" category="inline-link">混合版本 ONTAP 叢集</block>
   <block id="85e5b517efa68824f0234d73603eb6a7" category="admonition">如需混合軟體版本叢集升級的詳細資訊、請參閱<block ref="d823e4718a376dd43333fd0519ed9811" category="inline-link-rx"></block>。</block>
-  <block id="b60ec04bcd2e9c2318176db5554a658d" category="doc">建立 Aggregate 並移動磁碟區</block>
-  <block id="963335c836d3a76f0b7a6fe41a21aa10" category="paragraph">在 ONTAP 軟體升級期間、您可以在新節點上建立集合體、然後移動磁碟區、以移轉資料。</block>
-  <block id="df6a90d1df953a09f0861a13f5b797ac" category="paragraph">如果您的儲存組態包含 SAN 磁碟區或加密磁碟區、您也必須移動這些磁碟區：</block>
-  <block id="2b6df1fd9c8637b8e45b452843b61251" category="inline-xref">移動 SAN 磁碟區</block>
-  <block id="5d3013f3192caf5b6d504d6b74b3c0bd" category="list-text"><block ref="bec3fd5974c2411b73ce484bc58515dc" category="inline-xref-macro-rx"></block></block>
-  <block id="c18328ed9c3f2ac31d9f3c316cc9e737" category="list-text"><block ref="4b487523353dbb4021f9c789f1abd771" category="inline-xref-macro-rx"></block></block>
   <block id="26e45a92e217288c9847a5d2ced10530" category="admonition">對於每個儲存虛擬機器（ SVM ）、 NetApp 建議您在移動根磁碟區之前、先移動叢集中的所有非根磁碟區、然後一次在一個 SVM 上執行此程序。</block>
   <block id="1c36e2804cb1ec373c2a554d3b816849" category="paragraph"><block ref="5f689443af4fd8e259550080d375f644" prefix="" category="inline-code"></block></block>
   <block id="d2d22984b72e7ba1d65fc825394c313c" category="list-text">將新的 Aggregate 新增至與要從中移動磁碟區的原始節點上的 Aggregate 相同的儲存虛擬機器（ SVM ）：</block>
@@ -4735,9 +4728,10 @@ AFF C190 至 AFF A150</block>
   <block id="cc3a467b8580d41426d4329faee0f040" category="paragraph"><block ref="f2384b5c154a2111fb6276b4aca913cf" prefix="" category="inline-code"></block></block>
   <block id="bffd5b081e9a5849648039713909f29e" category="paragraph"><block ref="0b16dbbb7b08013a425b1eda1ac6c38b" prefix="" category="inline-code"></block></block>
   <block id="ce294e2d50479fda57c6fd56279415cc" category="paragraph"><block ref="fb8ac527e5a233ade0c11a4584eca81d" prefix="" category="inline-code"></block></block>
-  <block id="ad6b5250334c326be9a638a7f4693ca4" category="inline-link">將Linux iSCSI主機從MetroCluster 支援功能的FC移至MetroCluster 支援功能的IP節點</block>
-  <block id="0bdc5d6c2eb50e1cec81ff459335b642" category="paragraph">若要移動 SAN 磁碟區、請遵循中的步驟<block ref="5da33795dc988979c1b6bb2285c365f5" category="inline-link-rx"></block>。這適用於在 MetroCluster 和非 MetroCluster 組態中移動 SAN 磁碟區。</block>
-  <block id="2729d03a958013cde2327ff523899d85" category="section-title">在啟用加密的情況下移動磁碟區</block>
   <block id="c773b38bfd21b7a35d0d8783b04fa05f" category="inline-link">使用Volume Move start命令在現有磁碟區上啟用加密</block>
-  <block id="0a770440a8b9e6d0362d3a18060f162d" category="paragraph">若要在啟用 Aggregate 加密的情況下移動磁碟區、請遵循中的步驟<block ref="f72c159bffbf92db3704805be06f351f" category="inline-link-rx"></block>。</block>
+  <block id="7dc9e3aa635e299178bab6d9a48bf453" category="inline-link">將Linux iSCSI主機從MetroCluster 支援功能的FC移至MetroCluster 支援功能的IP節點</block>
+  <block id="0345ed9888a23976d10ee4dbe39e5b1c" category="paragraph">如果您的儲存組態包含 SAN 磁碟區、請遵循中的步驟<block ref="850d31fae3bf8532793cf4bdf951a1e7" category="inline-link-rx"></block> 將這些磁碟區移至新節點。</block>
+  <block id="666b05db74464377ceeeff39f469bcde" category="paragraph"><block ref="e31e4085164f9a5d9e1c0ec1ca25fc65" prefix="" category="inline-code"></block></block>
+  <block id="214d6a2680fcbe83e2c825740dae5888" category="admonition">如果您的儲存組態包含已啟用加密的磁碟區、請遵循中的步驟<block ref="f72c159bffbf92db3704805be06f351f" category="inline-link-rx"></block> 以移動這些磁碟區。</block>
+  <block id="565ead98cf39206ccfb37fb835c84352" category="sidebar">建立 Aggregate 並將磁碟區移至新的 ndoes</block>
 </blocks>

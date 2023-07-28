@@ -64,7 +64,7 @@ entries:
     url: "/upgrade/upgrade-prepare-when-moving-volumes.html"
   - title: 安裝並加入新節點
     url: "/upgrade/upgrade-install-and-join-new-nodes-move-vols.html"
-  - title: 建立 Aggregate 並移動磁碟區
+  - title: 建立 Aggregate 並將磁碟區移至新的 ndoes
     url: "/upgrade/upgrade-create-aggregate-move-volumes.html"
   - title: 移動非SAN資料生命體和叢集管理生命體
     url: "/upgrade/upgrade-move-lifs-to-new-nodes.html"

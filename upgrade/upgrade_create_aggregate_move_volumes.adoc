@@ -4,27 +4,20 @@ sidebar: sidebar
 keywords: create, aggregate, node, store, volume, original, node, identify, aggregate, individually, create an aggregate and moving volumes to the new nodes 
 summary: 您至少在每個新節點上建立一個集合體、以儲存您要從原始節點移動的磁碟區。您必須為每個磁碟區識別一個集合體、然後分別移動每個磁碟區。 
 ---
-= 建立 Aggregate 並移動磁碟區
+= 建立Aggregate並將磁碟區移至新節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-在 ONTAP 軟體升級期間、您可以在新節點上建立集合體、然後移動磁碟區、以移轉資料。
-
-如果您的儲存組態包含 SAN 磁碟區或加密磁碟區、您也必須移動這些磁碟區：
-
-* <<move_san_vols,移動 SAN 磁碟區>>
-* <<在啟用加密的情況下移動磁碟區>>
-
-
-
-
-== 建立Aggregate並將磁碟區移至新節點
-
 您至少在每個新節點上建立一個集合體、以儲存您要從原始節點移動的磁碟區。您必須為每個磁碟區識別一個集合體、然後分別移動每個磁碟區。
 
+[NOTE]
+====
+如果您的儲存組態包含 SAN 磁碟區、請遵循中的步驟 https://docs.netapp.com/us-en/ontap-metrocluster/transition/task_move_linux_iscsi_hosts_from_mcc_fc_to_mcc_ip_nodes.html["將Linux iSCSI主機從MetroCluster 支援功能的FC移至MetroCluster 支援功能的IP節點"^] 將這些磁碟區移至新節點。
+
+====
 .開始之前
 必須先初始化資料保護鏡射關係、才能移動磁碟區。
 
@@ -47,7 +40,7 @@ NOTE: 對於每個儲存虛擬機器（ SVM ）、 NetApp 建議您在移動根�
 
 . 確認新的Aggregate現在已指派給與原始節點上Aggregate相同的SVM：
 +
-「vserver show -vserversvm_name」
+`vserver show -vserver _svm_name_`
 
 . 顯示您要從原始節點移至新節點的磁碟區資訊：
 +
@@ -101,6 +94,10 @@ node12a_aggr4    10.36GB         FCAL
 +
 您無法移動節點根磁碟區（vol0）。其他磁碟區（包括SVM根磁碟區）也可以移動。
 
++
+
+NOTE: 如果您的儲存組態包含已啟用加密的磁碟區、請遵循中的步驟 https://docs.netapp.com/us-en/ontap/encryption-at-rest/encrypt-existing-volume-task.html["使用Volume Move start命令在現有磁碟區上啟用加密"^] 以移動這些磁碟區。
+
 . 顯示「Volume Move（Volume Move）（Volume Move（Volume Move））））））作業的結果、以驗證是否成功移動磁碟區：
 +
 `volume move show -vserver _svm_name_ -volume _vol_name_`
@@ -117,15 +114,3 @@ node12a_aggr4    10.36GB         FCAL
 `volume show -vserver _svm_name_`
 
 
-
-
-
-== 移動 SAN 磁碟區
-
-若要移動 SAN 磁碟區、請遵循中的步驟 https://docs.netapp.com/us-en/ontap-metrocluster/transition/task_move_linux_iscsi_hosts_from_mcc_fc_to_mcc_ip_nodes.html["將Linux iSCSI主機從MetroCluster 支援功能的FC移至MetroCluster 支援功能的IP節點"^]。這適用於在 MetroCluster 和非 MetroCluster 組態中移動 SAN 磁碟區。
-
-
-
-== 在啟用加密的情況下移動磁碟區
-
-若要在啟用 Aggregate 加密的情況下移動磁碟區、請遵循中的步驟 https://docs.netapp.com/us-en/ontap/encryption-at-rest/encrypt-existing-volume-task.html["使用Volume Move start命令在現有磁碟區上啟用加密"^]。
