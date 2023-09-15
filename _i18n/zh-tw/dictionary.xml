@@ -3624,23 +3624,12 @@
   <block id="831816e1924f3edb2d170ec4c291d0f3" category="section-title">移除AFF 「功能不整」或「FAS9000 NVRAM模組」</block>
   <block id="fceff39b493e10b2b789e99ad15cc406" category="paragraph">請使用下列程序移除AFF 不含功能的A700或FAS9000 NVRAM模組。</block>
   <block id="3d748e41fa426d2025ff3eb80b369ede" category="admonition">FASA700或FAS9000 NVRAM模組位於插槽6中、高度是系統中其他模組的兩倍。AFF</block>
-  <block id="32820fb65b578170b0fc242eb57ba80e" category="list-text">請勿將coredump裝置從AFF ESIEA700 NVRAM模組移至AFF ESIEA900 NVRAM模組。</block>
   <block id="d0106eeb656b11c6a07a8e45dcf1b214" category="list-text">將FAS9000 NVRAM模組中安裝的所有快閃快取模組移至FAS9500 NVRAM模組。</block>
-  <block id="c7fecf95820e09d00c74bf86805bc991" category="section-title">安裝AFF 「FASA900」或「FAS9500 NVRAM」模組</block>
-  <block id="1a841cb7f620c7f0684b56a8a034fb65" category="paragraph">請使用下列程序、將AFF E4A900或FAS9500 NVRAM模組安裝在節點1的插槽6中。</block>
-  <block id="830a042377d7fdbd36c48ece8669e61c" category="section-title">在AFF 節點1上安裝E4A900或FAS9500控制器模組。</block>
-  <block id="bb0ced2b785386259d517f7ae7bd88d1" category="paragraph">請使用下列程序、在AFF 節點1中安裝E4A900或FAS9500控制器模組。</block>
   <block id="3029eeb5ee6e861b02eb2a1ffd3d3b8e" category="cell">FAS9000至FAS9500</block>
   <block id="c9df35145886ac45d1457faee2b9dd89" category="admonition">您不需要移動、拔下或重新連接I/O卡、資料纜線、磁碟櫃和磁碟。</block>
   <block id="4ed758f1326f5379f7dc30fe674ce726" category="inline-link-macro">升級控制器的準則</block>
   <block id="61bb0e064fd915427168b2e72e080eff" category="list-text">此程序相當複雜、假設您具備進階ONTAP 的功能不完整的管理技能。您也應該閱讀並瞭解 <block ref="937d04c1dac5501bcacf105e8700fe45" category="inline-link-macro-rx"></block> 和 <block ref="57e14e08755134bb6fef9ad899bb58ee" category="inline-link-macro-rx"></block> 開始升級之前的章節。</block>
-  <block id="f57bde3eaa64080d17b3c49dfac5f25f" category="list-text">支援高速線路電源（200V至240V）的支援僅有支援FAS900和FAS9500系統。AFF如果AFF 您的FASA700或FAS9000系統是以低線電源（100V至120V）執行、則在AFF 使用此程序之前、您必須先將該功能轉換成使用該功能的電源供應器或FAS9000輸入電源。</block>
-  <block id="dbc99796dd5482cbc7660b57b686c30f" category="list-text">在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組</block>
-  <block id="446e34a339be0fda54aae2fe862c868f" category="paragraph">請使用下列程序、將AFF E4A900或FAS9500 NVRAM模組安裝在節點2的插槽6中。</block>
-  <block id="b5e3968706cd8f4fee9d9a918b1b867f" category="section-title">在AFF 節點2中安裝E4A900或FAS9500控制器模組</block>
-  <block id="43d062a38b70447bd532892c53e0817c" category="paragraph">請使用下列程序、在AFF 節點2中安裝E4A900或FAS9500控制器模組。</block>
   <block id="b0ce3e25b9ec3a13c13ca9a6fa5323b7" category="list-text">您正在FlexArray 使用的是AFF 功能不實的虛擬化軟體來搭配使用於功能不實的A700或FAS9000系統。</block>
-  <block id="fed5188660beab0c1ca98ade1cf9e488" category="list-text">請等待AFF 執行於EscoreA900或FAS9500控制器模組上的節點1開機、並顯示開機功能表選項、如下所示：</block>
   <block id="038bf310b30027962de2d4e7d3c544e6" category="paragraph">「系統節點AutoSupport 無法叫用-node_node_name_-type all -messing "MAn=2h正在將_node_name_從_platforte_ORIGIN__升級至_platfort_new_"。</block>
   <block id="10de09f0f92f196f1e5984884c43ba27" category="list-text">「torage容錯移轉修改-node_node_name_-enabled_false」</block>
   <block id="981b4567a35216af18afaec3c97bc50d" category="paragraph">'系統節點停止節點節點_norme_name_'</block>
@@ -4054,10 +4043,8 @@
   <block id="1c328c36316a518e9532ed77177daa6c" category="list-text">不需要在ONTAP 現有和替換的控制器上使用相同的版本。透過控制器升級來執行更新ONTAP 。</block>
   <block id="da74cb1ad73d862a786d9f20938d9c7a" category="list-text">升級時、您必須安裝支援ONTAP 的支援版本和修補程式層級的更換控制器。</block>
   <block id="dee716592bbae6fdba2b32d2854360ba" category="list-text">在您開始程序並升級第一個節點之後、就無法取消或從控制器升級中恢復。</block>
-  <block id="37ef3103c62f7c4c537260066ec1fcad" category="paragraph">在AFF 節點2上安裝您收到的用於升級的EVA900或FAS9500 NVRAM和控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。</block>
   <block id="d9e40d62315bfc8bad4f1329f7f9b867" category="paragraph">執行安裝時、您必須注意下列事項：</block>
   <block id="342f3ca2519e4e92f56675a89236fce6" category="list-text">將插槽6-1和6-2中的所有空白填充模組、從舊的NVRAM模組移至新的NVRAM模組。</block>
-  <block id="97bcf885640a80425f98f36e28630da4" category="paragraph">在AFF 節點1上安裝您收到的用於升級的EVA900或FAS9500 NVRAM和控制器模組。</block>
   <block id="bbe48fb854ea022537208eeeff822f91" category="paragraph-title">關於這項工作</block>
   <block id="3468b73fe010ca505a63fcddaa4f3601" category="paragraph-title">本資訊所使用的術語</block>
   <block id="5d022d26a75a4e30fae6648d5bcdd9e5" category="paragraph-title">適用於支援功能的FC組態MetroCluster</block>
@@ -4518,9 +4505,6 @@ FAS2720</block>
   <block id="e1ea632cab9e8d0f0821fea579334839" category="cell">FAS2620 或 FAS2720</block>
   <block id="cac76ada4fbfca68ed190eb21810e1af" category="cell">FAS2820</block>
   <block id="d12ea131bf417fe3ef7b6423e508e706" category="list-text">您已向 NetApp 銷售代表確認您已收到用於控制器升級的硬體：</block>
-  <block id="8e02c0c89f1b8ab4a56a9c71f0625665" category="list-text">AFF A150 控制器</block>
-  <block id="6378cfc8fa57ccbd128875c2ace0b13d" category="list-text">FAS2820 控制器</block>
-  <block id="7a91ac5d471b05d929d8adc1accb6f07" category="list-text">AFF A900 或 FAS9500 控制器和 NVRAM 模組、以及升級所需的零件。</block>
   <block id="798f018ee352fb079a57a34119747a3b" category="list-text">您正在執行升級所需的最低 ONTAP 版本。如需詳細資訊、請參閱 <block ref="8294b96e46ba28730c909aaac28da089" category="inline-link-macro-rx"></block>。</block>
   <block id="1155b04ebff43df03ca1b9ec1d6b56a7" category="paragraph">如需升級 AFF A700 或 FAS9000 系統上的 Fabric MetroCluster 或 MetroCluster IP 組態、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 連結至_E不明MetroCluster Upgrade and Expansion內容。</block>
   <block id="0ad9e0a8a319618923e172d4571038eb" category="summary">如果需要、請在升級的 node1 上還原金鑰管理程式組態、以便使用 ARL 來升級相同機箱中的控制器機型。</block>
@@ -4532,9 +4516,6 @@ FAS2720</block>
   <block id="644e220a44e1ff19f9d586b2ec3ee2d5" category="summary">在開始升級之前、請確認您擁有正確的硬體、以便在同一個機箱中升級控制器機型。</block>
   <block id="03edb26b26a23464d3e656fd4bb1aa20" category="cell">如果您正在升級 ...</block>
   <block id="010fb6bd96430e7065ef62ecb9af2e9b" category="cell">您必須擁有 ...</block>
-  <block id="c44a10256b9f85d5e800b2ed43581a1f" category="cell">AFF A220 至 AFF A150
-AFF A200 至 AFF A150
-AFF C190 至 AFF A150</block>
   <block id="4e106a6c623eb6811b42be00dbde2ef3" category="cell">兩個控制器模組</block>
   <block id="a96a413dc366d34740f0c82530514332" category="cell">FAS2620 或 FAS2720 至 FAS2820</block>
   <block id="327579b68dffec79f2bcb176142f3d56" category="cell">兩個控制器和兩個 NVRAM 模組</block>
@@ -4560,10 +4541,6 @@ AFF C190 至 AFF A150</block>
   <block id="038a1f98f287c3e58631ad2264c784b5" category="summary">在同一機箱中升級控制器機型的 ARL 期間、在 node2 上安裝替換系統模組。</block>
   <block id="7339c5b8269b308a3bb75b606b220a40" category="doc">在 node2 上安裝替換系統模組</block>
   <block id="34fc38d77d703f82e3ea00d22de0aeb3" category="paragraph">在 node2 上安裝您收到的用於升級的替換系統模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。</block>
-  <block id="5e7fd8c323cf342aa95dc80800a1fdc6" category="list-text"><block ref="97cf05fba75cf4dbb437038017dd54d4" category="inline-xref-macro-rx"></block></block>
-  <block id="ba64144c5d9737bf50bbe571abc9950d" category="list-text"><block ref="969846cffb9e5ea10d5ad5e6bf7f7cb4" category="inline-xref-macro-rx"></block></block>
-  <block id="6758213905204ffa4f80a34952db5e54" category="section-title">在 node2 上安裝 AFF A150 或 FAS2820 控制器模塊</block>
-  <block id="7ceecefaf0c99b73e87c1d5f9cf924ab" category="paragraph">在 node2 上安裝您收到的用於升級的 AFF A150 或 FAS2820 控制器模塊。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。</block>
   <block id="d1cf73ac3312e046217517b06817c8be" category="list-text">從要移除的控制器拔下所有纜線、包括主控台、管理、 SAS 儲存設備和資料網路纜線。</block>
   <block id="d31ea2ed80c8ed7a812def7ec46c2274" category="admonition">Bay B 位於機箱底部。</block>
   <block id="e5c4a336c6c9037915d316eae71744e6" category="admonition">由於機箱已開啟電源、因此節點2一旦完全就位、就會立即開始開機。為避免 node2 開機、 NetApp 建議您先將主控台和管理纜線連接至 node2 控制器模組、然後再將控制器模組完全插入插槽。</block>
@@ -4593,13 +4570,10 @@ AFF C190 至 AFF A150</block>
   <block id="1b96f3aa099b152fc864dedb115af912" category="list-text">壓下CAM把手上的栓鎖直到釋放為止、完全打開CAM把把、以從中間板釋放控制器模組、然後用兩隻手將控制器模組從機箱中拉出。</block>
   <block id="d6daae29261c119313124d1d21a1c267" category="image-alt">DRW 2240 x開啟CAM栓鎖</block>
   <block id="5fb9af22ffedd74df1492c91f96b8d7a" category="list-text">翻轉控制器模組、將其放置在平穩的表面上。</block>
-  <block id="d6b285e69842dbc0d924036d7b995d3b" category="section-title">安裝 AFF A150 或 FAS2820 控制器模組</block>
-  <block id="912a077db1a14ff7e811477241783af6" category="paragraph">使用以下步驟在 node1 中安裝 AFF A150 或 FAS2820 控制器模塊。</block>
   <block id="0dc0820d363c65f7e12beec6160b793f" category="list-text">將控制器模組的一端與機箱的開口對齊、然後將控制器模組輕推至系統的一半。</block>
   <block id="73c39df93369189180566421495bd86b" category="list-text">當 CAM 把手處於開啟位置時、將控制器模組牢牢推入、直到它與中板接觸並完全就位。控制器模組完全就位時、鎖定鎖定鎖定會上升。將凸輪把手關閉至鎖定位置。</block>
   <block id="3d642aff56195f4217e6874d1165bde1" category="list-text">中斷自動開機之後、node1會在載入程式提示字元停止。如果您未準時中斷自動開機、且節點1開始開機、請等待提示、然後按* Ctrl-C*進入開機功能表。節點停止在開機功能表後、請使用選項 8 重新啟動節點、並在重新開機期間中斷自動開機。</block>
   <block id="06fe1e1c3556d47d3a40caee57ba2411" category="section-title">更換 AFF A700 或 FAS9000 控制器和 NVRAM 模組</block>
-  <block id="72066ce06d5938f1862e6c83c33aada4" category="section-title">安裝 AFF A900 或 FAS9500 NVRAM 和控制器模組</block>
   <block id="98b9e41d81ea8470149a461f166a4b92" category="summary">請告知 NetApp 、舊系統在控制器升級後不再運作。</block>
   <block id="fd03f78134ad299c30781abefe876b6e" category="summary">使用 ARL 升級同一機箱中的控制器機型時、請恢復 SnapMirror 傳輸和關係。</block>
   <block id="f941430cfefa788e4cbb0ace9529e703" category="summary">第 1 階段 ARL 升級程序、使用<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 升級相同機箱中的控制器機型。</block>
@@ -4620,9 +4594,7 @@ AFF C190 至 AFF A150</block>
   <block id="9e87e1dea37ce673e27a23a144a4e0ad" category="cell">更換系統</block>
   <block id="eae7ed824c301543a7e09d88d74d7b19" category="cell">支援 ONTAP 的支援版本</block>
   <block id="c0aa270d19e4484079bd0c1488dd7e54" category="cell">9.10.1 P15 、 9.11.1P11 、 9.12.1P5 及更新版本</block>
-  <block id="faa1e7a6bde5d1d403d386d297d27d7d" category="paragraph">9.10.1 P15 、 9.11.1P11 及更新版本（ AFF A200 及 AFF A150 ）</block>
   <block id="1b09c77bbb88991cb420df4ea90eb3b8" category="admonition">AFF A200 不支援早於 9.11.1 的 ONTAP 版本。</block>
-  <block id="d64804559c99c24fbbd319d9bee6abb7" category="paragraph">9.11.1P7 及更新版本（ FAS2620 ）</block>
   <block id="9558d12002264bd41bf4a596c8f8ac1c" category="admonition">FAS2620 不支援早於 9.11.1 的 ONTAP 版本。</block>
   <block id="fe8a27b3504b515f0bd7508cfd89776a" category="paragraph">9.13.1 及更新版本（ FAS2820 ）</block>
   <block id="5abae7190ce598d45fe390e44304cde0" category="cell">9.13.1 及更新版本</block>
@@ -4630,9 +4602,6 @@ AFF C190 至 AFF A150</block>
   <block id="17c022b189bd2857924f4bbe654cb97e" category="paragraph">NetApp 建議您在舊系統和更換系統上使用相同的 ONTAP 版本。</block>
   <block id="9c1e88e5963163799eaba4d977d7d52f" category="paragraph">上述表格中的 ONTAP 最低版本為必填。這些 ONTAP 版本具有服務處理器或主機板管理控制器（ BMC ）韌體版本、可在升級期間支援機箱內的混合控制器類型。</block>
   <block id="48adbf20fd6c8a4139f6b2da13a4ed5b" category="paragraph">在程序期間、您會在舊控制器節點之間移轉非根集合體。安裝之後、您可以將非根集合體從舊的控制器節點移轉到替換的控制器節點。您可以在升級程序期間存取所升級節點上的資料。</block>
-  <block id="a329d0cf2e9de4cf2f5e7d162573f7a5" category="list-text">將 AFF A220 、 AFF A200 或 AFF C190 系統上每個節點上的控制器模組更換為新的 AFF A150 模組。</block>
-  <block id="cc9c49df693f66fdb8e78aaa496a3ca9" category="list-text">將 FAS2620 或 FAS2720 系統上每個節點上的控制器模組換成新的 FAS2820 模組。</block>
-  <block id="6617b5d0f699d4c1d9a03a9a07c8eeab" category="list-text">將 AFF A700 或 FAS9000 系統上每個節點上的兩個控制器和 NVRAM 模組交換為新的 AFF A900 或 FAS9500 模組。</block>
   <block id="1f08ef6e3750d69789334fc412377b8b" category="list-text">如果您的交換器不受 ONTAP 版本支援、且您要升級的替換系統不受支援、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至_SURE_ Hardware Universe 。</block>
   <block id="9016b0ff2820f5a72022aceaaea6350a" category="list-text">此程序僅適用於 AFF A200 、 AFF A220 、 AFF C190 、 FAS2620 、 FAS2720 、 AFF A700 和 FAS9000 系統。如需升級至 AFF A150 、 FAS2820 、 AFF A900 或 FAS9500 系統的所有其他控制器機型、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要連結至 _ 、請使用「系統控制器置換」命令來升級執行 ONTAP 9.8 或更新版本的控制器硬體、以及 _ 使用 Aggregate 重定位來手動升級執行 ONTAP 9.8 或更新版本內容的控制器硬體。</block>
   <block id="373edaf8d573901bcaba4be302784a3b" category="list-text">如果您是從 AFF A200 、 AFF A220 、 AFF C190 、 FAS2620 、 FAS2720 、 AFF A700 或 FAS9000 系統停機、您可以移動儲存設備或聯絡技術支援部門、來升級控制器硬體。請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要透過移動磁碟區或儲存設備連結至_Upgrade。</block>
@@ -4734,4 +4703,49 @@ AFF C190 至 AFF A150</block>
   <block id="666b05db74464377ceeeff39f469bcde" category="paragraph"><block ref="e31e4085164f9a5d9e1c0ec1ca25fc65" prefix="" category="inline-code"></block></block>
   <block id="214d6a2680fcbe83e2c825740dae5888" category="admonition">如果您的儲存組態包含已啟用加密的磁碟區、請遵循中的步驟<block ref="f72c159bffbf92db3704805be06f351f" category="inline-link-rx"></block> 以移動這些磁碟區。</block>
   <block id="565ead98cf39206ccfb37fb835c84352" category="sidebar">建立 Aggregate 並將磁碟區移至新的 ndoes</block>
+  <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">深入瞭解</block>
+  <block id="bfa6cc72f08aa2823167e389b6677da0" category="cell"><block ref="70d1727ffc9c452707805fb17e6a5b52" category="inline-link-macro-rx"></block>
+
+您可以使用此程序、將設定為 All SAN Array （ ASA ）的 AFF 控制器升級至特定機型和 ONTAP 軟體版本的 ASA 控制器。 <block ref="dd8a9320d133fc6bc4cebf159be26035" category="inline-link-macro-rx"></block>。</block>
+  <block id="7fbeff1dd4b772a22c3163f4be820b9c" category="cell">AFF A220 已設定為 ASA</block>
+  <block id="8b3182da28f8002496d5953dd474566c" category="cell">ASA A150 控制器模組</block>
+  <block id="ac8778c8e9d09a5fbedc8eed17a252ae" category="cell">AFF A700 設定為 ASA</block>
+  <block id="04d8a92a6a296cdc3dcff1b84bdc663d" category="cell">ASA A900 控制器和 NVRAM 模組</block>
+  <block id="0814a528a6e09bdfa454da4598d03b6a" category="cell">ASA A150</block>
+  <block id="0e096ce16590ab86950913510752010e" category="cell">ASA A900</block>
+  <block id="0d1ed1043a9669e13b81f70da0ae56bb" category="list-text">ASA A150 、 AFF A150 或 FAS2820 控制器</block>
+  <block id="4ab38fe544b152aed6d17891d6b4942f" category="list-text">ASA A900 、 AFF A900 或 FAS9500 控制器和 NVRAM 模組、以及升級所需的零件</block>
+  <block id="eb33e3b941791062baa1b3c30813ebb4" category="list-text">等待 ASA A900 、 AFF A900 或 FAS9500 控制器模組上目前執行的 node1 啟動並顯示開機功能表選項、如下所示：</block>
+  <block id="93f5e3175d1952ff3357d8c3f9f9ebcc" category="admonition">您也可以使用此程序來取代設定為 ASA 的 AFF A220 。</block>
+  <block id="fe86eeb48c828c1dfa6494efc6b765cd" category="admonition">您也可以使用此程序來取代設定為 ASA 的 AFF A700 。</block>
+  <block id="23025a0dc68c759874f99e85d38e7ede" category="section-title">安裝 ASA A150 、 AFF A150 或 FAS2820 控制器模組</block>
+  <block id="a75c1ab30ac0399f6d1308046a287763" category="paragraph">使用以下步驟在 node1 中安裝 ASA A150 、 AFF A150 或 FAS2820 控制器模塊。</block>
+  <block id="d7a4c6633fbd09856927cf66880d4940" category="section-title">安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 和控制器模組</block>
+  <block id="8c93dbb7f81c4c2f4b51369fa9829a6f" category="paragraph">在 node1 上安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 和控制器模組。</block>
+  <block id="70b323769da32749c57798f0d8e782e5" category="list-text">請勿將 coredump 裝置從 AFF A700 NVRAM 模組移至 ASA A900 或 AFF A900 NVRAM 模組。</block>
+  <block id="74cfe385d1c40d7e412430b003bd358b" category="section-title">安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 模組</block>
+  <block id="ea5c1600c51a21564153c6355d751d45" category="paragraph">使用以下步驟將 ASA A900 、 AFF A900 或 FAS9500 NVRAM 模組安裝在 node1 的插槽 6 中。</block>
+  <block id="ad6cf4baff2cddaf65f868a474f4ace2" category="section-title">在 node1 上安裝 ASA A900 、 AFF A900 或 FAS9500 控制器模組。</block>
+  <block id="1e05d2a5422d862c8080573b0bffa1d7" category="paragraph">請使用下列程序、在 node1 中安裝 ASA A900 、 AFF A900 或 FAS9500 控制器模組。</block>
+  <block id="d98f9591f3c1e658d83adfdac174718a" category="cell">ASA A900 控制器與 NVRAM 模組 ^2^</block>
+  <block id="400a12b5c5627da96b0587ceaacabfa4" category="inline-xref">在 node2 上安裝 ASA A150 、 AFF A150 或 FAS2820 控制器模組</block>
+  <block id="6d3b42496d1ff908492db44e6a7a996a" category="list-text"><block ref="4e16cb21c83d577e1da9298c1d3d7001" category="inline-xref-macro-rx"></block></block>
+  <block id="74cae3e1383e831697d2a89099232c43" category="inline-xref">在 node2 上安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 和控制器模組</block>
+  <block id="4f801783b3b54e6e155c8ba840a7984b" category="list-text"><block ref="090089409a807fc3646805d2e86db88d" category="inline-xref-macro-rx"></block></block>
+  <block id="abb999476ce6c21d1aa738091bf3cc58" category="section-title">在 node2 上安裝 ASA A150 、 AFF A150 或 FAS2820 控制器模組</block>
+  <block id="78bd224431479d8d5cafd763cca39b7c" category="paragraph">在 node2 上安裝您收到的用於升級的 ASA A150 、 AFF A150 或 FAS2820 控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。</block>
+  <block id="a2f2586b0e85eb39267cb5c9d9e043d2" category="paragraph">在 node2 上安裝您收到的 ASA A900 、 AFF A900 或 FAS9500 NVRAM 和控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。</block>
+  <block id="5dc4e3a6479ea8cf51106f2ac874a145" category="paragraph">使用以下步驟將 ASA A900 、 AFF A900 或 FAS9500 NVRAM 模組安裝在 node2 的插槽 6 中。</block>
+  <block id="f457531b113b8b894781ad94a1fa19d3" category="section-title">在 node2 中安裝 ASA A900 、 AFF A900 或 FAS9500 控制器模組</block>
+  <block id="839847d15e69edb34b89aa9634714fd2" category="paragraph">請使用下列程序、在 node2 中安裝 ASA A900 、 AFF A900 或 FAS9500 控制器模組。</block>
+  <block id="86e722dcbc94e4ea341e26dd6af9f76a" category="cell">AFF A220 設定為全 SAN 陣列（ ASA ）</block>
+  <block id="4fdc3efb53d664a8ab709272358f7966" category="cell">9.13.1P1 及更新版本</block>
+  <block id="184f38916b6639f5bdbf7619d90cebc3" category="paragraph">9.10.1 P15 、 9.11.1P11 及更新版本</block>
+  <block id="d243c4c373219990c87996aba8af4741" category="paragraph">9.11.1P7 （ FAS2620 ）</block>
+  <block id="a4e58f4757b38ca2c59f5da9e90013a5" category="list-text">將舊控制器上每個節點上的控制器模組換成新模組。這適用於 AFF A220 、 AFF A200 、 AFF C190 、 FAS2620 或 FAS2720 系統升級。</block>
+  <block id="15f948008082950e48724b1453dd6e11" category="list-text">將舊控制器上每個節點上的控制器和 NVRAM 模組交換為新模組。這適用於 AFF A700 或 FAS9000 系統升級。</block>
+  <block id="6e43ae996b970f40321b42d34dd0b4b8" category="list-text">ASA A900 、 AFF A900 和 FAS9500 系統僅支援高線電力（ 200V 至 240V ）。如果AFF 您的FASA700或FAS9000系統是以低線電源（100V至120V）執行、則在AFF 使用此程序之前、您必須先將該功能轉換成使用該功能的電源供應器或FAS9000輸入電源。</block>
+  <block id="97a6d360c94d9b7bc50b22cbefedff0a" category="cell">AFF A220 已設定為 ASA 至 ASA A150</block>
+  <block id="d6e2de75372db4a1d57d81d7f91749d1" category="cell">AFF A220 、 AFF A200 或 AFF C190 至 AFF A150</block>
+  <block id="6370691b1097dc9c4671ff1a5e381609" category="cell">AFF A700 設定為 ASA 至 ASA A900</block>
 </blocks>

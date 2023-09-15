@@ -31,7 +31,9 @@ ARL利用HA組態、讓您能夠將非根Aggregate的擁有權從一個節點移
 | 如果您執行的ONTAP 是這個版本... | 若要使用系統命令進行升級、請使用… 
 
 
-| 9.10.1或更新版本 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["使用「系統控制器更換」命令來升級相同機箱中的控制器機型"^] 
+| 9.10.1或更新版本 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["使用「系統控制器更換」命令來升級相同機箱中的控制器機型"^]
+
+您可以使用此程序、將設定為 All SAN Array （ ASA ）的 AFF 控制器升級至特定機型和 ONTAP 軟體版本的 ASA 控制器。 link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["深入瞭解"]。 
 
 
 | 9.8或更新版本 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html["使用「系統控制器更換」命令來升級執行ONTAP 效能不正常的控制器硬體"] 

@@ -21,12 +21,16 @@ summary: 在開始升級之前、請確認您擁有正確的硬體、以便在�
 | 如果您正在升級 ... | 您必須擁有 ... 
 
 
-| AFF A220 至 AFF A150
-AFF A200 至 AFF A150
-AFF C190 至 AFF A150 | 兩個控制器模組 
+| AFF A220 已設定為 ASA 至 ASA A150 | 兩個控制器模組 
+
+
+| AFF A220 、 AFF A200 或 AFF C190 至 AFF A150 | 兩個控制器模組 
 
 
 | FAS2620 或 FAS2720 至 FAS2820 | 兩個控制器模組 
+
+
+| AFF A700 設定為 ASA 至 ASA A900 | 兩個控制器和兩個 NVRAM 模組 
 
 
 | 從A700移轉至32 A900 AFF AFF | 兩個控制器和兩個 NVRAM 模組 

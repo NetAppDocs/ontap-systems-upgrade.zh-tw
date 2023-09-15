@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/install_replacement_system_modules_on_node2.html 
-keywords: install, NVRAM, node2, controller, module, modules, replacement 
+keywords: aff, fas, asa, install, NVRAM, node2, controller, module, modules, replacement 
 summary: 在同一機箱中升級控制器機型的 ARL 期間、在 node2 上安裝替換系統模組。 
 ---
 = 在 node2 上安裝替換系統模組
@@ -16,15 +16,15 @@ summary: 在同一機箱中升級控制器機型的 ARL 期間、在 node2 上�
 [role="lead"]
 在 node2 上安裝您收到的用於升級的替換系統模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。
 
-* <<在 node2 上安裝 AFF A150 或 FAS2820 控制器模塊>>
-* <<在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組>>
+* <<install_modules_a,在 node2 上安裝 ASA A150 、 AFF A150 或 FAS2820 控制器模組>>
+* <<install_modules_b,在 node2 上安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 和控制器模組>>
 
 
 
 
-== 在 node2 上安裝 AFF A150 或 FAS2820 控制器模塊
+== 在 node2 上安裝 ASA A150 、 AFF A150 或 FAS2820 控制器模組
 
-在 node2 上安裝您收到的用於升級的 AFF A150 或 FAS2820 控制器模塊。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。
+在 node2 上安裝您收到的用於升級的 ASA A150 、 AFF A150 或 FAS2820 控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。
 
 .開始之前
 * 如果您尚未接地、請正確接地。
@@ -60,14 +60,14 @@ NOTE: 為避免損壞連接器、請勿在將控制器模組滑入機箱時過�
 
 
 
-== 在AFF 節點2上安裝E4A900或FAS9500 NVRAM和控制器模組
+== 在 node2 上安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 和控制器模組
 
-在AFF 節點2上安裝您收到的用於升級的EVA900或FAS9500 NVRAM和控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。
+在 node2 上安裝您收到的 ASA A900 、 AFF A900 或 FAS9500 NVRAM 和控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。
 
 執行安裝時、您必須注意下列事項：
 
 * 將插槽6-1和6-2中的所有空白填充模組、從舊的NVRAM模組移至新的NVRAM模組。
-* 請勿將coredump裝置從AFF ESIEA700 NVRAM模組移至AFF ESIEA900 NVRAM模組。
+* 請勿將 coredump 裝置從 AFF A700 NVRAM 模組移至 ASA A900 或 AFF A900 NVRAM 模組。
 * 將FAS9000 NVRAM模組中安裝的所有快閃快取模組移至FAS9500 NVRAM模組。
 
 
@@ -76,9 +76,9 @@ NOTE: 為避免損壞連接器、請勿在將控制器模組滑入機箱時過�
 
 
 
-=== 安裝AFF 「FASA900」或「FAS9500 NVRAM」模組
+=== 安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 模組
 
-請使用下列程序、將AFF E4A900或FAS9500 NVRAM模組安裝在節點2的插槽6中。
+使用以下步驟將 ASA A900 、 AFF A900 或 FAS9500 NVRAM 模組安裝在 node2 的插槽 6 中。
 
 .步驟
 . 將NVRAM模組對齊插槽6中機箱開孔的邊緣。
@@ -87,9 +87,9 @@ NOTE: 為避免損壞連接器、請勿在將控制器模組滑入機箱時過�
 
 
 
-=== 在AFF 節點2中安裝E4A900或FAS9500控制器模組
+=== 在 node2 中安裝 ASA A900 、 AFF A900 或 FAS9500 控制器模組
 
-請使用下列程序、在AFF 節點2中安裝E4A900或FAS9500控制器模組。
+請使用下列程序、在 node2 中安裝 ASA A900 、 AFF A900 或 FAS9500 控制器模組。
 
 .步驟
 . 將控制器模組的一端對準機箱中的托架B、然後將控制器模組輕推至系統的一半。

@@ -21,6 +21,9 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請使用替換
 | 舊的 node2 控制器 | 更換 node2 系統模組 
 
 
+| AFF A220 已設定為 ASA | ASA A150 控制器模組 
+
+
 | VA220 AFF
 解答200 AFF
 C190 AFF | AFF A150 控制器模組 
@@ -28,6 +31,9 @@ C190 AFF | AFF A150 控制器模組
 
 | FAS2620
 FAS2720 | FAS2820 控制器模組 
+
+
+| AFF A700 設定為 ASA | ASA A900 控制器和 NVRAM 模組 
 
 
 | AFF A700 | AFF A900 控制器和 NVRAM 模組 

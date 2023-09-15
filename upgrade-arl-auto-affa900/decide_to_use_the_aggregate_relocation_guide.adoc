@@ -25,10 +25,16 @@ summary: 決定是否使用可升級同一機箱中控制器機型的 ARL 程序
 | 舊控制器 | 更換控制器 
 
 
+| AFF A220 已設定為 ASA | ASA A150 
+
+
 | AFF A220 、 AFF A200 或 AFF C190 | 解答150 AFF 
 
 
 | FAS2620 或 FAS2720 | FAS2820 
+
+
+| AFF A700 設定為 ASA | ASA A900 
 
 
 | AFF A700 | 解答900 AFF 
@@ -38,9 +44,8 @@ summary: 決定是否使用可升級同一機箱中控制器機型的 ARL 程序
 |===
 * 您已向 NetApp 銷售代表確認您已收到用於控制器升級的硬體：
 +
-** AFF A150 控制器
-** FAS2820 控制器
-** AFF A900 或 FAS9500 控制器和 NVRAM 模組、以及升級所需的零件。
+** ASA A150 、 AFF A150 或 FAS2820 控制器
+** ASA A900 、 AFF A900 或 FAS9500 控制器和 NVRAM 模組、以及升級所需的零件
 
 
 * 您正在執行升級所需的最低 ONTAP 版本。如需詳細資訊、請參閱 link:index.html["總覽"]。

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/replace_node1_system_modules.html 
-keywords: replace, node1, system, modules 
+keywords: aff, asa, fas, replace, node1, system, modules 
 summary: 使用 ARL 升級同一機箱中的控制器機型時、請更換 node1 系統模組。 
 ---
 = 更換 node1 系統模塊
@@ -17,7 +17,15 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請更換 node1
 更換用於升級組態的 node1 系統模組：
 
 * <<replace_modules,更換 AFF A220 、 AFF A200 、 AFF C190 、 FAS2620 或 FAS2720 控制器模組>>
++
+
+NOTE: 您也可以使用此程序來取代設定為 ASA 的 AFF A220 。
+
 * <<更換 AFF A700 或 FAS9000 控制器和 NVRAM 模組>>
++
+
+NOTE: 您也可以使用此程序來取代設定為 ASA 的 AFF A700 。
+
 
 
 
@@ -53,9 +61,9 @@ image::../media/drw_2240_x_opening_cam_latch.png[DRW 2240 x開啟CAM栓鎖]
 
 
 
-=== 安裝 AFF A150 或 FAS2820 控制器模組
+=== 安裝 ASA A150 、 AFF A150 或 FAS2820 控制器模組
 
-使用以下步驟在 node1 中安裝 AFF A150 或 FAS2820 控制器模塊。
+使用以下步驟在 node1 中安裝 ASA A150 、 AFF A150 或 FAS2820 控制器模塊。
 
 .步驟
 . 將控制器模組的一端與機箱的開口對齊、然後將控制器模組輕推至系統的一半。
@@ -178,14 +186,14 @@ image::../media/black_circle_two.png[第二名]
 
 
 
-=== 安裝 AFF A900 或 FAS9500 NVRAM 和控制器模組
+=== 安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 和控制器模組
 
-在AFF 節點1上安裝您收到的用於升級的EVA900或FAS9500 NVRAM和控制器模組。
+在 node1 上安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 和控制器模組。
 
 執行安裝時、您必須注意下列事項：
 
 * 將插槽6-1和6-2中的所有空白填充模組、從舊的NVRAM模組移至新的NVRAM模組。
-* 請勿將coredump裝置從AFF ESIEA700 NVRAM模組移至AFF ESIEA900 NVRAM模組。
+* 請勿將 coredump 裝置從 AFF A700 NVRAM 模組移至 ASA A900 或 AFF A900 NVRAM 模組。
 * 將FAS9000 NVRAM模組中安裝的所有快閃快取模組移至FAS9500 NVRAM模組。
 
 
@@ -194,9 +202,9 @@ image::../media/black_circle_two.png[第二名]
 
 
 
-==== 安裝AFF 「FASA900」或「FAS9500 NVRAM」模組
+==== 安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 模組
 
-請使用下列程序、將AFF E4A900或FAS9500 NVRAM模組安裝在節點1的插槽6中。
+使用以下步驟將 ASA A900 、 AFF A900 或 FAS9500 NVRAM 模組安裝在 node1 的插槽 6 中。
 
 .步驟
 . 將NVRAM模組對齊插槽6中機箱開孔的邊緣。
@@ -222,9 +230,9 @@ image::../media/black_circle_two.png[第二名]
 
 
 
-==== 在AFF 節點1上安裝E4A900或FAS9500控制器模組。
+==== 在 node1 上安裝 ASA A900 、 AFF A900 或 FAS9500 控制器模組。
 
-請使用下列程序、在AFF 節點1中安裝E4A900或FAS9500控制器模組。
+請使用下列程序、在 node1 中安裝 ASA A900 、 AFF A900 或 FAS9500 控制器模組。
 
 .步驟
 . 將控制器模組的一端對準機箱的開啟A、然後將控制器模組輕推至系統的一半。
