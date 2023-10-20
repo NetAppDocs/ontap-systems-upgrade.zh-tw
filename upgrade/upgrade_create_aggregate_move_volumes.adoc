@@ -13,11 +13,6 @@ summary: 您至少在每個新節點上建立一個集合體、以儲存您要�
 [role="lead"]
 您至少在每個新節點上建立一個集合體、以儲存您要從原始節點移動的磁碟區。您必須為每個磁碟區識別一個集合體、然後分別移動每個磁碟區。
 
-[NOTE]
-====
-如果您的儲存組態包含 SAN 磁碟區、請遵循中的步驟 https://docs.netapp.com/us-en/ontap-metrocluster/transition/task_move_linux_iscsi_hosts_from_mcc_fc_to_mcc_ip_nodes.html["將Linux iSCSI主機從MetroCluster 支援功能的FC移至MetroCluster 支援功能的IP節點"^] 將這些磁碟區移至新節點。
-
-====
 .開始之前
 必須先初始化資料保護鏡射關係、才能移動磁碟區。
 

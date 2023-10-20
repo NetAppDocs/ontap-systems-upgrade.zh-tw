@@ -13,52 +13,91 @@ summary: 若要規劃升級、您應該熟悉一般的升級考量。如有必�
 [role="lead"]
 若要規劃升級、您必須熟悉一般的升級考量。如有必要、請聯絡技術支援部門、以取得叢集組態的特定建議與指引。
 
-.要求與限制
-* 移動儲存設備進行升級的程序會中斷營運。透過移動磁碟區進行升級的程序不中斷營運。
-* 原始節點必須支援與新節點相同的軟體版本。
+
+
+== 要求與限制
+
+視您的環境而定、在開始升級之前、您必須考量某些因素。請先檢閱下表、瞭解您需要考量的需求和限制、以開始使用。
+
+
+NOTE: 在開始控制器升級程序之前、您必須檢閱下表中列出的所有問題。
+
+[cols="30,70"]
+|===
+| 請自問... | 如果您的答案是肯定的、請執行此動作。 
+
+
+| 我是否將不同的控制器平台機型組合到叢集中？  a| 
+link:https://hwu.netapp.com["確認您遵循儲存平台混合規則"^]。
+
+HA 配對中的控制器必須是兩個 AFF 、 FAS 或 ASA 機型。
+
+
+
+| 原始節點和新節點上是否執行不同的 ONTAP 版本？  a| 
+. https://hwu.netapp.com["檢查原始節點和新節點所支援的 ONTAP 版本和修補程式層級"^]。
+. NetApp 建議您盡可能在原始節點和新節點上執行相同的 ONTAP 版本。如果不可能、 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["升級 ONTAP 版本"^] 在原始節點上、到支援的最大版本、使原始節點和新節點之間的版本差異不超過四個。例如、支援 ONTAP 9.8 和 9.12.1 ；但是不支援 ONTAP 9.8 和 9.13.1 。
 +
-link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["升級ONTAP"^]
+https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["深入瞭解混合版本 ONTAP 叢集"^]。
+
+
+
+
+
+| 我的系統是否包含內部磁碟機、以及我是否正在移動磁碟區？  a| 
+. link:https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["確認新節點有足夠的儲存空間、以容納與原始節點相關的儲存設備"^]。
+. 當您透過移動磁碟區進行升級時、新節點會在移除原始節點之前加入叢集。您必須觀察最大叢集大小。
++
+https://hwu.netapp.com["確認在程序期間叢集中的控制器總數未超過支援的最大叢集大小"^]。
 
 +
 
-NOTE: 如需混合軟體版本叢集升級的詳細資訊、請參閱 https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["混合版本 ONTAP 叢集"^]。
+NOTE: 如果您要升級八節點叢集、以提供 FCP 、 iSCSI 或 FCoE 等區塊傳輸協定、請確認新節點是否正確通告 LUN 。如需詳細資訊、請參閱 https://docs.netapp.com/us-en/ontap/san-management/index.html["SAN 儲存管理"^]。
 
-* 您必須觀察最大叢集大小。
-+
-當您透過移動磁碟區進行升級時、新節點會在移除原始節點之前加入叢集。確認叢集中的控制器數量在程序期間未超過支援的最大叢集大小。
-
-+
-https://hwu.netapp.com["NetApp Hardware Universe"^]
-
-* 在叢集中結合不同的控制器平台模式時、您必須遵守儲存平台混合規則。
-+
-https://hwu.netapp.com["NetApp Hardware Universe"^]
-
-* 新節點必須有足夠的儲存空間、以容納與原始節點相關的儲存設備。
-+
-https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["使用CLI進行磁碟與Aggregate管理"^]
-
-* 根Aggregate大小和新系統支援的磁碟數量必須等於或大於原始系統支援的磁碟數量。
-+
-如需根Aggregate大小需求、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^]
-
-* HA配對中的控制器必須為兩AFF 個架構或兩FAS 個架構。
-* 如果節點位於同一個叢集中、您可以將磁碟區或實體儲存設備從一個FAS2xxx移至較新的FAS2xxx進行升級。例如、您可以將磁碟區或實體儲存設備從FAS2552移至FAS2750。
-* 如果您要升級具有多個HA配對的叢集中的HA配對、則必須將epsilon移至未進行控制器升級的HA配對節點。例如、如果您要升級叢集中的節點A/nodeB、並使用HA配對組態節點A/nodeB和節點C/noded、則必須將epsilon移至節點C或noded。
-* 如果您使用ONTAP 的是版本號為6、P11、9.7P8或更新版本、建議啟用連線功能、活動功能及可用性監控（恢復）、以便在發生特定節點故障時、將叢集恢復成仲裁。「kernel-service」命令需要進階權限層級存取。如需詳細資訊、請參閱： https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU436["NetApp知識庫文章SU436：恢復接管預設組態已變更"^]。從功能組別9.8開始ONTAP 、預設會啟用「KCS-enable-takeover」參數。
-* 如果您要升級雙節點MetroCluster 的效能提升組態、請參閱： https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["選擇升級或重新整理方法"^]
+. link:upgrade-by-moving-volumes-parent.html["透過移動磁碟區進行升級"] （不中斷營運的程序）。
 
 
-具有內部儲存設備的系統
 
 
-NOTE: 下列系統具有內部儲存設備： FAS2520 、 FAS2552 、 FAS2554 、 FAS2620 、 FAS2650 、 FAS2720 、 FAS2750 、 AFF A150 、 AFF A200 、 AFF A220 、 AFF A250 、 AFF A700s 、 AFF A800 、 AFF C190 、 AFF C250 、 和 AFF C800 。
+| 我是搬移內部儲存設備、還是將系統轉換成磁碟機櫃？  a| 
+. https://hwu.netapp.com/["驗證新系統所支援的根彙總大小和磁碟數量是否等於或大於原始系統所支援的磁碟數量"^]。
+. link:upgrade-by-moving-storage-parent.html["透過移動儲存設備進行升級"] （破壞性程序）。
 
+
+
+
+| 我是否要在具有多個 HA 配對的叢集中升級 HA 配對？ | 將 epsilon 移至未進行控制器升級的 HA 配對節點。例如、如果您要升級叢集中的節點A/nodeB、並使用HA配對組態節點A/nodeB和節點C/noded、則必須將epsilon移至節點C或noded。 
+
+
+| 我執行的是 ONTAP 9.6P11 、 9.7P8 或更新版本嗎？ | NetApp 建議您啟用連線、活躍度和可用度監視器（蛤）接管、以便在發生某些節點故障時、將叢集恢復為仲裁。。 `kernel-service` 命令需要進階權限層級存取。如需詳細資訊、請參閱 NetApp 知識庫文件 https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU436["已變更蛤蜊接管預設組態"^]。
+
+從 ONTAP 9.8 開始 `kcs-enable-takeover` 預設會啟用參數。 
+|===
+
+NOTE: 您可以將資料移至新的儲存設備（移動磁碟區）、或將現有的整合式系統轉換成機櫃、然後將其移轉至新的系統（移動儲存設備）、以升級整合式系統。例如、您可以將 FAS2650 控制器機箱轉換為 DS224C SAS 機櫃、並將其連接至 FAS8000 、將 FAS2650 升級為 FAS8000 。無論是哪種情況、資料移轉或轉換後的機櫃都會保留在同一個交換式叢集中。
+
+
+
+== 具有內部儲存設備的系統
+
+下列系統具有內部儲存設備：
+
+[cols="4*"]
+|===
+4+| 內建磁碟機的系統 
+
+
+ a| 
+FAS2620 、 FAS2650 、 FAS2720 和 FAS2750
+ a| 
+AFF A150 、 AFF A200 、 AFF A220 、 AFF A250 、 AFF A700s 、 和 AFF A800
+| AFF C190 、 AFF C250 和 AFF C800 | ASA A150 、 ASA A250 、 ASA A800 和 ASA AFF A220 
+|===
 * 如果您的系統未列於上方、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^] 檢查是否有內部磁碟機。
-* 如果您的系統具有內部儲存設備、建議您使用移動磁碟區來升級。
-* 如果您的系統具有內部儲存設備、您可以將系統轉換成磁碟機櫃、並將其連接至同一叢集中的新節點。FAS2520控制器無法轉換成磁碟機櫃。
+* 如果您的系統具有內部儲存設備、您可以將系統轉換成磁碟機櫃、並將其連接至同一叢集中的新節點。
 +
-將FAS255x系統轉換成磁碟機櫃是工作流程中的一項選用工作、可用來透過移動儲存設備進行升級。
+
+NOTE: 您無法將 AFF A700s 、 AFF A800 、 AFF C800 或 ASA A800 系統轉換為磁碟機櫃。
 
 * 如果您的系統具有內部儲存設備、或是內部SATA磁碟機或SSD上有磁碟區或集合體的系統、您可以將內部儲存設備移轉至連接至同一叢集中新節點的磁碟機櫃來進行升級。
 +
@@ -66,31 +105,19 @@ NOTE: 下列系統具有內部儲存設備： FAS2520 、 FAS2552 、 FAS2554 �
 
 
 
-可能需要採取其他步驟的情況
-
-* 如果您要從 AFF A250 升級至 AFF A400 、請參閱 xref:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.adoc[將 AFF A250 轉換為磁碟機櫃、以升級至 AFF A400]。
-* 如果新系統的插槽比原始系統少、或連接埠類型較少或不同、您可能需要在新系統中新增介面卡。
-+
-https://hwu.netapp.com["NetApp Hardware Universe"^]
-
-* 如果原始節點或新節點使用FlexArray 「還原虛擬化」軟體。
-+
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/V_Series/What_are_the_specific_steps_involved_in_FlexArray_for_NetApp_controller_upgrades%2F%2Freplacements%3F["NetApp知識庫文章：FlexArray 《關於NetApp控制器升級與更換的具體步驟》"^]
-
-* 如果叢集有SAN主機、您可能需要採取步驟來解決LUN序號變更的問題。
-+
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_with_Infrastructure_Automation/resolve_issues_during_storage_controller_motherboard_replacement_and_head_upgrades_with_iSCSI_and_FCP["如何透過iSCSI和FCP解決儲存控制器主機板更換與升級的問題"^]
-
-* 如果您的系統使用頻外ACP、您可能需要從頻外ACP移轉至頻內ACP。
-+
-https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/In-Band_ACP_Setup_and_Support["NetApp知識庫文章：頻內ACP設定與支援"^]
 
 
+== 可能需要額外步驟的情況
 
-*相關資訊*
+* xref:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.adoc[您正在從 AFF A250 升級至 AFF A400] （不中斷營運的程序）。
+* 如果新系統的插槽比原始系統少、或連接埠類型較少或不同、您可能需要在新系統中新增介面卡。請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^]。
+* 如果原始節點或新節點使用 FlexArray 虛擬化軟體、請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/V_Series/What_are_the_specific_steps_involved_in_FlexArray_for_NetApp_controller_upgrades%2F%2Freplacements%3F["FlexArray 在 NetApp 控制器升級與更換方面的具體步驟為何"^]。
+* 如果叢集有SAN主機、您可能需要採取步驟來解決LUN序號變更的問題。請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_with_Infrastructure_Automation/resolve_issues_during_storage_controller_motherboard_replacement_and_head_upgrades_with_iSCSI_and_FCP["如何透過iSCSI和FCP解決儲存控制器主機板更換與升級的問題"^]。
+* 如果您的系統使用頻外ACP、您可能需要從頻外ACP移轉至頻內ACP。請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/In-Band_ACP_Setup_and_Support["頻內 ACP 設定與支援"^]
 
-xref:upgrade-methods.adoc[選擇升級控制器硬體的方法]
 
-xref:upgrade-by-moving-storage-parent.adoc[移動儲存設備來升級控制器硬體]
+.相關資訊
+* link:../choose_controller_upgrade_procedure.html["選擇升級控制器硬體的方法"]
+* xref:upgrade-by-moving-storage-parent.adoc[移動儲存設備來升級控制器硬體]
+* xref:upgrade-by-moving-volumes-parent.adoc[透過移動磁碟區來升級控制器硬體]
 
-xref:upgrade-by-moving-volumes-parent.adoc[透過移動磁碟區來升級控制器硬體]

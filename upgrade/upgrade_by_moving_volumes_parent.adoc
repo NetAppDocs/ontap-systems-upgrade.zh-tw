@@ -18,6 +18,7 @@ image::../upgrade/media/workflow_for_upgrading_by_moving_volumes.gif[透過移�
 .步驟
 . xref:upgrade-prepare-when-moving-volumes.adoc[準備在移動磁碟區時進行升級]
 . xref:upgrade-install-and-join-new-nodes-move-vols.adoc[安裝新節點並將其加入叢集]
+. xref:upgrade_move_linux_iscsi_hosts_to_new_nodes.html[將 Linux iSCSI 主機移至新節點]
 . xref:upgrade-create-aggregate-move-volumes.adoc[建立Aggregate並將磁碟區移至新節點]
 . xref:upgrade-move-lifs-to-new-nodes.adoc[將非SAN資料生命期和叢集管理生命期移至新節點]
 . xref:upgrade_move_delete_recreate_san_lifs.adoc[移動、刪除或建立SAN LIF]

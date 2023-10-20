@@ -1,0 +1,70 @@
+---
+permalink: choose_controller_upgrade_procedure.html 
+sidebar: sidebar 
+keywords:  
+summary: 一般而言、控制器硬體的升級方式取決於原始節點的平台機型。您可以透過移動集合體或磁碟區儲存設備（不中斷營運的程序）或移動儲存設備（中斷營運的程序）進行升級。 
+---
+= 選擇控制器硬體升級程序
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+一般而言、控制器硬體的升級方式取決於原始節點的平台機型。您可以透過重新配置集合體或移動磁碟區（兩者皆為不中斷程序）、或是移動儲存設備（中斷程序）來進行升級。如果您在原始節點和新節點上執行不同的 ONTAP 版本、則可能需要在開始硬體升級之前執行軟體升級。
+
+[role="tabbed-block"]
+====
+.內建磁碟機的系統
+--
+為具有內部磁碟機的系統選擇升級程序、如下所示：
+
+* FAS2620 、 FAS2650 、 FAS2720 和 FAS2750
+* AFF A150 、 AFF A200 、 AFF A220 、 AFF A250 、 AFF A700s 、 和 AFF A800
+* AFF C190 、 AFF C250 和 AFF C800
+* ASA A150 、 ASA A250 、 ASA A800 和 ASA AFF A220
+
+
+如果您的系統未列出、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^] 檢查是否有內部磁碟機。
+
+image:workflow_internal_drives.png["選擇升級程序的決策工作流程"]
+
+--
+.僅配備外部磁碟機的系統
+--
+請為僅含外部磁碟機的系統選擇升級程序、如下所示：
+
+* FAS8200 、 FAS8300 、 FAS8700 、 FAS9000 和 FAS9500
+* AFF A300 、 AFF A320 、 AFF A400 、 AFF A700 和 AFF A900
+* AFF C400
+* ASA A400 、 ASA A900 和 ASA AFF A700
+
+
+如果您的系統未列出、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^] 檢查是否只有外部磁碟機。
+
+image:workflow_external_drives.png["選擇升級程序的決策工作流程"]
+
+--
+====
+瞭解控制器硬體升級程序：
+
+* link:upgrade-arl/index.html["使用 Aggregate 重定位進行升級"]
++
+Aggregate 重新定位是一種替代程序。您不需要使用新的節點來擴充和縮小叢集、這對雙節點無交換器叢集很有幫助。移動磁碟區時、透過重新定位集合體來移動資料的速度比跨集合體複製資料快。
+
+* link:upgrade/upgrade-decide-to-use-this-guide.html["透過移動磁碟區進行升級"]
+* link:upgrade/upgrade-decide-to-use-this-guide.html["透過移動儲存設備進行升級"]
+
+
+[NOTE]
+====
+* 注意 1* ：新節點必須支援在原始節點上執行的 ONTAP 版本。如有需要、 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["升級 ONTAP 版本"^] 原始節點上的最大支援版本。原始節點與新節點之間的版本差異不能大於四個。例如、支援 ONTAP 9.8 和 9.12.1 ；但是不支援 ONTAP 9.8 和 9.13.1 。 https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["深入瞭解混合版本 ONTAP 叢集"^]。
+
+* 附註 2 * ：不中斷升級需要有自己的儲存設備和機櫃的新系統、才能儲存原始系統的資料。
+
+* 注意 3* ：當您透過移動磁碟區進行升級時、請加入新節點、將磁碟區和生命體移至新節點、然後取消加入您要從叢集移除的節點。如果您要升級雙節點無交換器叢集、請先使用一對叢集交換器將其轉換為交換式附加叢集、然後再新增節點。
+
+====
+如果您要升級 MetroCluster 組態、請參閱 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["升級、重新整理或擴充MetroCluster 此功能"^]。
+
+如果您要更換個別元件、請參閱 https://docs.netapp.com/us-en/ontap-systems/index.html["系統文件AFF FAS"^] 並找出該元件的現場可更換單元（ FRU ）傳單。

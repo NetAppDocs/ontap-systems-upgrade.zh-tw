@@ -15,6 +15,15 @@ summary: 如果您要透過移動儲存設備來升級、請準備原始節點�
 
 image::../upgrade/media/workflow_for_upgrading_by_moving_storage.png[透過移動儲存設備來升級控制器硬體的工作流程]
 
+[NOTE]
+====
+在透過移動儲存設備來升級控制器硬體的步驟中、原始節點稱為節點1和節點2、新節點稱為節點3和節點4。在上述過程中、node1會由node3取代、node2則會由node4取代。
+
+image::../upgrade/media/original_to_new_nodes.png[原始節點至新節點]
+
+術語node1、node2、node3和node4僅用於區分原始節點和新節點。遵循程序時、您必須以原始節點和新節點的真實名稱來取代這些名稱。但是實際上、節點名稱並未變更：節點3的名稱為node1、而節點4的名稱為node2（控制器硬體已升級）。
+
+====
 .步驟
 . xref:upgrade-prepare-when-moving-storage.adoc[準備在移動儲存設備時進行升級]
 . xref:upgrade-shutdown-remove-original-nodes.adoc[關閉原始節點]
@@ -26,4 +35,8 @@ image::../upgrade/media/workflow_for_upgrading_by_moving_storage.png[透過移�
 . xref:upgrade-attach-shelves-reassign-disks.adoc[連接儲存櫃並重新指派磁碟擁有權]
 . xref:upgrade-restore-root-volume-config.adoc[還原根磁碟區組態]
 . xref:upgrade-complete.adoc[完成升級]
+
+
+.相關資訊
+* xref:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.adoc[將 AFF A250 轉換為磁碟機櫃、以升級至 AFF A400] （不中斷營運的程序）。
 

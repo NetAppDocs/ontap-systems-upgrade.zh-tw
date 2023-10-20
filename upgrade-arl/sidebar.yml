@@ -1,6 +1,6 @@
 ---
 section: upgrade-arl
-title: 使用Aggregate重新配置來升級控制器硬體
+title: 使用 Aggregate 重定位進行升級
 entries:
 - title: 總覽
   url: "/upgrade-arl/index.html"

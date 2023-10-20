@@ -1,0 +1,477 @@
+= 步驟 1 ：設定新的 iSCSI 連線
+:allow-uri-read: 
+
+
+
+
+== 步驟 1 ：設定新的 iSCSI 連線
+
+若要移動 iSCSI 連線、請設定新的 iSCSI 連線至新節點。
+
+.步驟
+. 在新節點上建立 iSCSI 介面、並檢查從 iSCSI 主機到新節點上新介面的 ping 連線。
++
+https://docs.netapp.com/us-en/ontap/networking/create_a_lif.html["建立網路介面"^]
+
++
+來自 SVM 的所有 iSCSI 介面應可由 iSCSI 主機存取。
+
+. 在 iSCSI 主機上、識別從主機到舊節點的現有 iSCSI 連線：
++
+[source, cli]
+----
+iscsiadm -m session
+----
++
+[listing]
+----
+[root@scspr1789621001 ~]# iscsiadm -m session
+tcp: [1] 10.230.68.236:3260,1156 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6 (non-flash)
+tcp: [2] 10.230.68.237:3260,1158 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6 (non-flash)
+----
+. 在新節點上、驗證來自新節點的連線：
++
+[source, cli]
+----
+iscsi session show -vserver <svm-name>
+----
++
+[listing]
+----
+node_A_1-new::*> iscsi session show -vserver vsa_1
+ Tpgroup Initiator Initiator
+Vserver Name TSIH Name ISID Alias
+--------- ------- ---- ------------------------ --------- ---------------------
+vsa_1 iscsi_lf__n1_p1_ 4 iqn.2020-01.com.netapp.englab.gdl:scspr1789621001 00:02:3d:00:00:01 scspr1789621001.gdl.englab.netapp.com
+vsa_1 iscsi_lf__n2_p1_ 4 iqn.2020-01.com.netapp.englab.gdl:scspr1789621001 00:02:3d:00:00:02 scspr1789621001.gdl.englab.netapp.com
+2 entries were displayed.
+----
+. 在新節點上、列出 ONTAP 中包含介面的 SVM 的 iSCSI 介面：
++
+[source, cli]
+----
+iscsi interface show -vserver <svm-name>
+----
++
+[listing]
+----
+sti8200mcchtp001htp_siteA::*> iscsi interface show -vserver vsa_1
+ Logical Status Curr Curr
+Vserver Interface  TPGT Admin/Oper IP Address Node Port Enabled
+------- ---------- ---- ---------- --------------- ----------- ---- -------
+vsa_1 iscsi_lf__n1_p1_ 1156 up/up 10.230.68.236 sti8200mcc-htp-001 e0g true
+vsa_1 iscsi_lf__n1_p2_ 1157 up/up fd20:8b1e:b255:805e::78c9 sti8200mcc-htp-001 e0h true
+vsa_1 iscsi_lf__n2_p1_ 1158 up/up 10.230.68.237 sti8200mcc-htp-002 e0g true
+vsa_1 iscsi_lf__n2_p2_ 1159 up/up fd20:8b1e:b255:805e::78ca sti8200mcc-htp-002 e0h true
+vsa_1 iscsi_lf__n3_p1_ 1183 up/up 10.226.43.134 sti8200mccip-htp-005 e0c true
+vsa_1 iscsi_lf__n4_p1_ 1188 up/up 10.226.43.142 sti8200mccip-htp-006 e0c true
+6 entries were displayed.
+----
+. 在 iSCSI 主機上、在 SVM 上的任何一個 iSCSI IP 位址上執行探索、以探索新目標：
++
+[source, cli]
+----
+iscsiadm -m discovery -t sendtargets -p iscsi-ip-address
+----
++
+探索可在SVM的任何IP位址上執行、包括非iSCSI介面。
+
++
+[listing]
+----
+[root@scspr1789621001 ~]# iscsiadm -m discovery -t sendtargets -p 10.230.68.236:3260
+10.230.68.236:3260,1156 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6
+10.226.43.142:3260,1188 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6
+10.226.43.134:3260,1183 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6
+10.230.68.237:3260,1158 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6
+----
+. 在 iSCSI 主機上、登入所有探索到的位址：
++
+[source, cli]
+----
+iscsiadm -m node -L all -T node-address -p portal-address -l
+----
++
+[listing]
+----
+[root@scspr1789621001 ~]# iscsiadm -m node -L all -T iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6 -p 10.230.68.236:3260 -l
+Logging in to [iface: default, target: iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6, portal: 10.226.43.142,3260] (multiple)
+Logging in to [iface: default, target: iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6, portal: 10.226.43.134,3260] (multiple)
+Login to [iface: default, target: iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6, portal: 10.226.43.142,3260] successful.
+Login to [iface: default, target: iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6, portal: 10.226.43.134,3260] successful.
+----
+. 在 iSCSI 主機上、驗證登入和連線：
++
+[source, cli]
+----
+iscsiadm -m session
+----
++
+[listing]
+----
+[root@scspr1789621001 ~]# iscsiadm -m session
+tcp: [1] 10.230.68.236:3260,1156 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6 (non-flash)
+tcp: [2] 10.230.68.237:3260,1158 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6 (non-flash)
+tcp: [3] 10.226.43.142:3260,1188 iqn.1992-08.com.netapp:sn.58d7f6df2cc611eaa9c500a098a71638:vs.6 (non-flash)
+----
+. 在新節點上、驗證登入和與主機的連線：
++
+[source, cli]
+----
+iscsi initiator show -vserver <svm-name>
+----
++
+[listing]
+----
+sti8200mcchtp001htp_siteA::*> iscsi initiator show -vserver vsa_1
+ Tpgroup Initiator
+Vserver Name             TSIH Name                  ISID              Igroup Name
+------- --------         ---- --------------------- ----------------- -----------------
+vsa_1 iscsi_lf__n1_p1_ 4 iqn.2020-01.com.netapp.englab.gdl:scspr1789621001 00:02:3d:00:00:01 igroup_linux
+vsa_1 iscsi_lf__n2_p1_ 4 iqn.2020-01.com.netapp.englab.gdl:scspr1789621001 00:02:3d:00:00:02 igroup_linux
+vsa_1 iscsi_lf__n3_p1_ 1 iqn.2020-01.com.netapp.englab.gdl:scspr1789621001 00:02:3d:00:00:04 igroup_linux
+vsa_1 iscsi_lf__n4_p1_ 1 iqn.2020-01.com.netapp.englab.gdl:scspr1789621001 00:02:3d:00:00:03 igroup_linux
+4 entries were displayed.
+----
+
+
+.結果
+在本工作結束時、主機可以看到所有 iSCSI 介面（在舊節點和新節點上）、並登入所有這些介面。
+
+LUN 和磁碟區仍以實體方式託管在舊節點上。由於 LUN 只會在舊節點介面上報告、因此主機只會在舊節點上顯示路徑。若要查看、請執行 `sanlun lun show -p` 和 `multipath -ll -d` 在主機上執行命令、並檢查命令輸出。
+
+[listing]
+----
+[root@scspr1789621001 ~]# sanlun lun show -p
+ONTAP Path: vsa_1:/vol/vsa_1_vol6/lun_linux_12
+ LUN: 4
+ LUN Size: 2g
+ Product: cDOT
+ Host Device: 3600a098038304646513f4f674e52774b
+ Multipath Policy: service-time 0
+ Multipath Provider: Native
+--------- ---------- ------- ------------ -------------------
+host vserver
+path path /dev/ host vserver
+state     type       node    adapter      LIF
+--------- ---------- ------- ------------ -------------------
+up        primary    sdk     host3        iscsi_lf__n2_p1_
+up        secondary  sdh     host2        iscsi_lf__n1_p1_
+[root@scspr1789621001 ~]# multipath -ll -d
+3600a098038304646513f4f674e52774b dm-5 NETAPP ,LUN C-Mode
+size=2.0G features='4 queue_if_no_path pg_init_retries 50 retain_attached_hw_handle' hwhandler='1 alua' wp=rw
+|-+- policy='service-time 0' prio=50 status=active
+| `- 3:0:0:4 sdk 8:160 active ready running
+`-+- policy='service-time 0' prio=10 status=enabled
+ `- 2:0:0:4 sdh 8:112 active ready running
+----
+
+
+== 步驟 2 ：將新節點新增為報告節點
+
+設定與新節點的連線之後、您可以將新節點新增為報告節點。
+
+.步驟
+. 在新節點上、列出 SVM 上 LUN 的報告節點：
++
+[source, cli]
+----
+lun mapping show -vserver <svm-name> -fields reporting-nodes -ostype linux
+----
++
+下列報告節點是本機節點、因為 LUN 實際位於舊節點 node_a_1-old 和 node_a_2-old 上。
+
++
+[listing]
+----
+node_A_1-new::*> lun mapping show -vserver vsa_1 -fields reporting-nodes -ostype linux
+vserver path                         igroup       reporting-nodes
+------- ---------------------------- ------------ ---------------------------
+vsa_1   /vol/vsa_1_vol1/lun_linux_2  igroup_linux node_A_1-old,node_A_2-old
+.
+.
+.
+vsa_1   /vol/vsa_1_vol9/lun_linux_19 igroup_linux node_A_1-old,node_A_2-old
+12 entries were displayed.
+----
+. 在新節點上、新增報告節點：
++
+[source, cli]
+----
+lun mapping add-reporting-nodes -vserver <svm-name> -path /vol/vsa_1_vol*/lun_linux_* -nodes node1,node2 -igroup <igroup_name>
+----
++
+[listing]
+----
+node_A_1-new::*> lun mapping add-reporting-nodes -vserver vsa_1 -path /vol/vsa_1_vol*/lun_linux_* -nodes node_A_1-new,node_A_2-new
+-igroup igroup_linux
+12 entries were acted on.
+----
+. 在新節點上、確認新增的節點是否存在：
++
+[source, cli]
+----
+lun mapping show -vserver <svm-name> -fields reporting-nodes -ostype linux vserver path igroup reporting-nodes
+----
++
+[listing]
+----
+node_A_1-new::*> lun mapping show -vserver vsa_1 -fields reporting-nodes -ostype linux vserver path igroup reporting-nodes
+------- --------------------------- ------------ -------------------------------------------------------------------------------
+vsa_1 /vol/vsa_1_vol1/lun_linux_2 igroup_linux node_A_1-old,node_A_2-old,node_A_1-new,node_A_2-new
+vsa_1 /vol/vsa_1_vol1/lun_linux_3 igroup_linux node_A_1-old,node_A_2-old,node_A_1-new,node_A_2-new
+.
+.
+.
+12 entries were displayed.
+----
+. 。 `sg3-utils` 套件必須安裝在 Linux 主機上。這可防止 `rescan-scsi-bus.sh utility not found` 使用重新掃描 Linux 主機以取得新對應的 LUN 時發生錯誤 `rescan-scsi-bus` 命令。
++
+在主機上、確認 `sg3-utils` 套件已安裝：
+
++
+--
+** 對於以 Debian 為基礎的發行套件：
++
+[source, cli]
+----
+dpkg -l | grep sg3-utils
+----
+** 對於 Red Hat 型發佈：
++
+[source, cli]
+----
+rpm -qa | grep sg3-utils
+----
+
+
+--
++
+如有需要、請安裝 `sg3-utils` Linux 主機上的套件：
+
++
+[source, cli]
+----
+sudo apt-get install sg3-utils
+----
+. 在主機上、重新掃描主機上的 SCSI 匯流排、並探索新增的路徑：
++
+[source, cli]
+----
+/usr/bin/rescan-scsi-bus.sh -a
+----
++
+[listing]
+----
+[root@stemgr]# /usr/bin/rescan-scsi-bus.sh -a
+Scanning SCSI subsystem for new devices
+Scanning host 0 for SCSI target IDs 0 1 2 3 4 5 6 7, all LUNs
+Scanning host 1 for SCSI target IDs 0 1 2 3 4 5 6 7, all LUNs
+Scanning host 2 for SCSI target IDs 0 1 2 3 4 5 6 7, all LUNs
+ Scanning for device 2 0 0 0 ...
+.
+.
+.
+OLD: Host: scsi5 Channel: 00 Id: 00 Lun: 09
+ Vendor: NETAPP Model: LUN C-Mode Rev: 9800
+ Type: Direct-Access ANSI SCSI revision: 05
+0 new or changed device(s) found.
+0 remapped or resized device(s) found.
+0 device(s) removed.
+----
+. 在 iSCSI 主機上、列出新增的路徑：
++
+[source, cli]
+----
+sanlun lun show -p
+----
++
+每個LUN顯示四個路徑。
+
++
+[listing]
+----
+[root@stemgr]# sanlun lun show -p
+ONTAP Path: vsa_1:/vol/vsa_1_vol6/lun_linux_12
+ LUN: 4
+ LUN Size: 2g
+ Product: cDOT
+ Host Device: 3600a098038304646513f4f674e52774b
+ Multipath Policy: service-time 0
+ Multipath Provider: Native
+------- ---------- ------- ----------- ---------------------
+host vserver
+path path /dev/ host vserver
+state   type       node    adapter     LIF
+------  ---------- ------- ----------- ---------------------
+up      primary    sdk      host3      iscsi_lf__n2_p1_
+up      secondary  sdh     host2       iscsi_lf__n1_p1_
+up      secondary  sdag    host4       iscsi_lf__n4_p1_
+up      secondary  sdah    host5       iscsi_lf__n3_p1_
+----
+. 在新節點上、將包含 LUN 的磁碟區 / 磁碟區從舊節點移至新節點。
++
+[listing]
+----
+node_A_1-new::*> vol move start -vserver vsa_1 -volume vsa_1_vol1 -destination-aggregate sti8200mccip_htp_005_aggr1
+[Job 1877] Job is queued: Move "vsa_1_vol1" in Vserver "vsa_1" to aggregate "sti8200mccip_htp_005_aggr1". Use the "volume move show -vserver
+vsa_1 -volume vsa_1_vol1" command to view the status of this operation.
+node_A_1-new::*> vol move show
+Vserver  Volume      State       Move       Phase            Percent-Complete  Time-To-Complete
+-------- ----------  --------    ---------- ---------------- ----------------  ----------------
+vsa_1    vsa_1_vol1  healthy                initializing     -                 -
+----
+. 當磁碟區移至新節點完成時、請確認該磁碟區已連線：
++
+[source, cli]
+----
+volume show -state
+----
+. LUN 現在所在的新節點上的 iSCSI 介面會更新為主要路徑。如果在磁碟區移動之後沒有更新主要路徑、請執行 `/usr/bin/rescan-scsi-bus.sh -a` 和 `multipath -v3` 在主機上、或只是等待多重路徑重新掃描開始。
++
+在以下範例中、主要路徑是新節點上的 LIF 。
+
++
+[listing]
+----
+[root@stemgr]# sanlun lun show -p
+ONTAP Path: vsa_1:/vol/vsa_1_vol6/lun_linux_12
+ LUN: 4
+ LUN Size: 2g
+ Product: cDOT
+ Host Device: 3600a098038304646513f4f674e52774b
+ Multipath Policy: service-time 0
+ Multipath Provider: Native
+--------- ---------- ------- ------------ -----------------------
+host vserver
+path path /dev/ host vserver
+state     type       node    adapter      LIF
+--------- ---------- ------- ------------ ------------------------
+up        primary    sdag    host4        iscsi_lf__n4_p1_
+up        secondary  sdk     host3        iscsi_lf__n2_p1_
+up        secondary  sdh     host2        iscsi_lf__n1_p1_
+up        secondary  sdah    host5        iscsi_lf__n3_p1_
+----
+
+
+
+
+== 步驟 3 ：移除報告節點並重新掃描路徑
+
+您必須移除報告節點、然後重新掃描路徑。
+
+.步驟
+. 在新節點上、移除 Linux LUN 的遠端報告節點（新節點）：
++
+[source, cli]
+----
+lun mapping remove-reporting-nodes -vserver <svm-name> -path * -igroup <igroup_name> -remote-nodes true
+----
++
+在這種情況下、遠端節點是舊節點。
+
++
+[listing]
+----
+node_A_1-new::*> lun mapping remove-reporting-nodes -vserver vsa_1 -path * -igroup igroup_linux -remote-nodes true
+12 entries were acted on.
+----
+. 在新節點上、檢查 LUN 的報告節點：
++
+[source, cli]
+----
+lun mapping show -vserver <svm-name> -fields reporting-nodes -ostype linux
+----
++
+[listing]
+----
+node_A_1-new::*> lun mapping show -vserver vsa_1 -fields reporting-nodes -ostype linux
+vserver  path                         igroup        reporting-nodes
+-------  ---------------------------  ------------  -------------------------
+vsa_1    /vol/vsa_1_vol1/lun_linux_2  igroup_linux  node_A_1-new,node_A_2-new
+vsa_1    /vol/vsa_1_vol1/lun_linux_3  igroup_linux  node_A_1-new,node_A_2-new
+vsa_1    /vol/vsa_1_vol2/lun_linux_4  group_linux   node_A_1-new,node_A_2-new
+.
+.
+.
+12 entries were displayed.
+----
+. 。 `sg3-utils` 套件必須安裝在 Linux 主機上。這可防止 `rescan-scsi-bus.sh utility not found` 使用重新掃描 Linux 主機以取得新對應的 LUN 時發生錯誤 `rescan-scsi-bus` 命令。
++
+在主機上、確認 `sg3-utils` 套件已安裝：
+
++
+--
+** 對於以 Debian 為基礎的發行套件：
++
+[source, cli]
+----
+dpkg -l | grep sg3-utils
+----
+** 對於 Red Hat 型發佈：
++
+[source, cli]
+----
+rpm -qa | grep sg3-utils
+----
+
+
+--
++
+如有需要、請安裝 `sg3-utils` Linux 主機上的套件：
+
++
+[source, cli]
+----
+sudo apt-get install sg3-utils
+----
+. 在 iSCSI 主機上、重新掃描 SCSI 匯流排：
++
+[source, cli]
+----
+/usr/bin/rescan-scsi-bus.sh -r
+----
++
+移除的路徑是舊節點的路徑。
+
++
+[listing]
+----
+[root@scspr1789621001 ~]# /usr/bin/rescan-scsi-bus.sh -r
+Syncing file systems
+Scanning SCSI subsystem for new devices and remove devices that have disappeared
+Scanning host 0 for SCSI target IDs 0 1 2 3 4 5 6 7, all LUNs
+Scanning host 1 for SCSI target IDs 0 1 2 3 4 5 6 7, all LUNs
+Scanning host 2 for SCSI target IDs 0 1 2 3 4 5 6 7, all LUNs
+sg0 changed: LU not available (PQual 1)
+REM: Host: scsi2 Channel: 00 Id: 00 Lun: 00
+DEL: Vendor: NETAPP Model: LUN C-Mode Rev: 9800
+ Type: Direct-Access ANSI SCSI revision: 05
+sg2 changed: LU not available (PQual 1)
+.
+.
+.
+OLD: Host: scsi5 Channel: 00 Id: 00 Lun: 09
+ Vendor: NETAPP Model: LUN C-Mode Rev: 9800
+ Type: Direct-Access ANSI SCSI revision: 05
+0 new or changed device(s) found.
+0 remapped or resized device(s) found.
+24 device(s) removed.
+ [2:0:0:0]
+ [2:0:0:1]
+.
+.
+.
+----
+. 在 iSCSI 主機上、確認只能看到來自新節點的路徑：
++
+[source, cli]
+----
+sanlun lun show -p
+----
++
+[source, cli]
+----
+multipath -ll -d
+----
+
