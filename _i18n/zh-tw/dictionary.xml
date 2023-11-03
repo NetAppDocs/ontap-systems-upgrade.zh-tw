@@ -2823,7 +2823,6 @@
   <block id="de58ee53439e59b040872d736eb4746a" category="summary">在ONTAP 執行「版本資訊」9.7或更早版本的控制器上進行手動ARL升級時、請準備節點、收集資訊、並確認所有叢集節點都處於仲裁狀態。</block>
   <block id="82afd892d5c2a9e4e8762a660a4866cd" category="summary">請使用手動ARL升級程序來升級執行ONTAP 版本號為「更新」的控制器硬體、重新定位非根Aggregate的擁有權。</block>
   <block id="edcca90be305577ecf6fd870b41fb37e" category="cell">9.7或更早版本</block>
-  <block id="e6063d0ab61b368bdfbca64be36dbd64" category="list-text">此程序適用於MetroCluster 執行ONTAP 版本號為「版本資訊」9.5或更早版本的所有四節點和八節點組態。如需MetroCluster 執行ONTAP 效能不可靠的更新版本、請前往 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 使用「系統控制器更換」命令連結至_、將執行ONTAP VMware 9.5的控制器硬體升級至ONTAP VMware 9.7。</block>
   <block id="ef3c91fa4c8f504ee640cfbd9abd851c" category="summary">在執行ONTAP 更新版本的控制器上手動進行ARL升級時、收集特定資訊。</block>
   <block id="ce9a79ebc7c19f98472942ce9de695aa" category="summary">在執行ONTAP Esce9.7或更早版本的控制器上進行手動ARL升級時、準備netboot node3和node4。</block>
   <block id="05743303a73462ef6d9bbfd30ac4d38e" category="summary">在執行ONTAP 版本更新的控制器上手動升級ARL時、請確認節點1上的實體連接埠正確對應至節點3。</block>
@@ -3509,11 +3508,9 @@
   <block id="c96cad4c802036afa3176e87bcda336b" category="cell"><block ref="c96cad4c802036afa3176e87bcda336b" category="inline-link-macro-rx"></block></block>
   <block id="c83b4e572cf3ae5eb7bac42baed0ac9e" category="summary">您可以連結至此主題中的其他參考內容和網站。</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">開始使用</block>
-  <block id="ec01d482cf394f212f073921cfd9d5bd" category="sidebar">發行說明ONTAP</block>
   <block id="6c54fdf57ce13c518f1cc0d9d5f32820" category="sidebar">升級控制器硬體</block>
   <block id="194cc1951d00be469039af6dbda275d0" category="sidebar">使用「系統控制器更換」命令（大多數系統）</block>
   <block id="b4d25e7f066e6393a7e3a6a7115b4f94" category="sidebar">使用手動命令</block>
-  <block id="5f9c427150012de98abaaa70885c293c" category="sidebar">使用「系統控制器更換」命令（大多數系統）</block>
   <block id="7d94daad2b6e9d77a6320a64c21fbc4a" category="sidebar">以MetroCluster 不更新組態升級系統</block>
   <block id="c6bb96cc8b84319277f00b15adc71d75" category="sidebar">針對MetroCluster 您的需求組態選擇升級程序</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">更多資源</block>
@@ -4759,7 +4756,6 @@ FAS2720</block>
   <block id="c62a490dc179bcb1d44777cba5eb4845" category="paragraph">將 iSCSI SAN 磁碟區移至新節點之前、您必須先建立新的 iSCSI 連線、然後重新掃描通往新節點的 iSCSI 路徑。</block>
   <block id="c19689d06a29f6feeef4510514125400" category="paragraph">如果您不需要在透過移動磁碟區進行升級時移動 iSCSI SAN 磁碟區、可以跳過此程序並前往 <block ref="0187590ed6627836f657d0d4157f4bd9" category="inline-link-macro-rx"></block>。</block>
   <block id="067e2e3846b3b294b518d3f733e2a96b" category="list-text">當您設定新的 iSCSI 連線時、會建立 IPv4 介面。</block>
-  <block id="53c3dbfeb6f99087434e72b6b5c6d75f" category="list-text">主機命令和範例僅適用於 Linux 作業系統。</block>
   <block id="b3b6efa3f6df48fc93b3542c29661f7c" category="inline-xref-macro">將 Linux iSCSI 主機移至新節點</block>
   <block id="184c3f7752a9e68702c55c35faa973db" category="list-text"><block ref="184c3f7752a9e68702c55c35faa973db" category="inline-xref-macro-rx"></block></block>
   <block id="fef2f3438d6db0111e356d7cf9de46ab" category="paragraph">本內容說明如何透過移動儲存設備或磁碟區、來升級叢集中 AFF 、 FAS 或 ASA 系統的控制器硬體。</block>
@@ -4768,7 +4764,6 @@ FAS2720</block>
   <block id="524f05419622851f7f6289320cc91a6e" category="inline-link">升級、重新整理或擴充MetroCluster 此功能</block>
   <block id="54fbf367f6c88f6a32c90b81e113fdbc" category="paragraph">如果您要升級 MetroCluster 組態、請參閱<block ref="ce6e655e9cb4a81012dd5871edda628b" category="inline-link-rx"></block>。</block>
   <block id="30f60d67f457bb040dffde52197a54da" category="list-title">相關資訊</block>
-  <block id="06852d9347cc17e2896148f62d8b43e8" category="list-text"><block ref="06852d9347cc17e2896148f62d8b43e8" category="inline-xref-macro-rx"></block></block>
   <block id="ff13d8bc09b612151174d9b83a1e0634" category="paragraph">術語node1、node2、node3和node4僅用於區分原始節點和新節點。遵循程序時、您必須以原始節點和新節點的真實名稱來取代這些名稱。但是實際上、節點名稱並未變更：節點3的名稱為node1、而節點4的名稱為node2（控制器硬體已升級）。</block>
   <block id="6cbbb16b482dd046bc6d845094f114f9" category="list-text"><block ref="16a60590ab4a03950f527e475b265368" category="inline-xref-macro-rx"></block> （不中斷營運的程序）。</block>
   <block id="608ce5a5400efa8f95d0e8e4878a465d" category="paragraph">例如、如果您要將系統從 AFF A200 升級至 AFF A220 、只需將舊的 AFF A200 控制器模組與新的 AFF A220 控制器模組交換、同時保留舊 AFF A200 的機箱和磁碟、 您不會移除新 AFF A220 控制器模組的磁碟擁有權、如本節所述 _ 移除連接至新節點的磁碟擁有權 _ 。</block>
@@ -4856,4 +4851,9 @@ FAS2720</block>
   <block id="c024cf342a69d8b35b142333f2608aa5" category="sidebar">在執行 ONTAP 9.8 及更新版本的系統上重新部署集合體、以進行升級</block>
   <block id="5d3c4b59db4a991b7c6450c61662dc60" category="sidebar">在執行 ONTAP 9.7 及更早版本的系統上重新部署集合體、以進行升級</block>
   <block id="d58d42ec84ab0189beb36da55893f387" category="sidebar">透過移動儲存設備或磁碟區進行升級</block>
+  <block id="ef69680bc1ee7b1fd5e0950d56699d33" category="list-text">此程序適用於MetroCluster 執行ONTAP 版本號為「版本資訊」9.5或更早版本的所有四節點和八節點組態。如需MetroCluster 執行ONTAP 效能不可靠的更新版本、請前往 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 使用「系統控制器更換」命令連結至 _ 、以將執行 ONTAP 9.5 的控制器硬體升級至 ONTAP 9.7_ 。</block>
+  <block id="187aa569481ce25a564facc34217dda3" category="list-text">主機命令和範例僅適用於 Linux 作業系統。</block>
+  <block id="fcbf56c541d4d283030e94ff96a44848" category="paragraph">您也可以使用 USB 開機選項來執行網路開機。請參閱知識庫文章 <block ref="184f8f7294797efad8be0da4fb907563" category="inline-link-macro-rx"></block>。</block>
+  <block id="626a7cbe056796bcb1c158b143866230" category="sidebar">發行說明 ONTAP</block>
+  <block id="806e982f94b5ab4054aa07ccb047ecdb" category="sidebar">使用「系統控制器置換」命令</block>
 </blocks>

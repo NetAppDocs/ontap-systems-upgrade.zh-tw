@@ -16,6 +16,8 @@ summary: 在移動儲存設備進行升級的過程中、您需要開啟節點3�
 .開始之前
 如果ONTAP 在新節點上執行的版本與原始節點上的版本不同、您必須從NetApp支援網站下載正確的「<ONTAP_VERY>_image.tgz」檔案到可從網路存取的目錄（請參閱「移動儲存設備時、請準備升級」_、 link:upgrade-prepare-when-moving-storage.html#prepare_move_store_5["步驟5."]）。您需要「<ONTAP_VERSION >_image.tgz」檔案來執行系統的網路開機。
 
+您也可以使用 USB 開機選項來執行網路開機。請參閱知識庫文章 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_use_the_boot_recovery_LOADER_command_for_installing_ONTAP_for_initial_setup_of_a_system["如何使用boot_recovery loader命令來安裝ONTAP 用來初始設定系統的支援功能"^]。
+
 .步驟
 . 開啟節點3的電源、然後立即在主控台終端按Ctrl-C存取載入程式提示。
 +

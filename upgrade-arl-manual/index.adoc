@@ -42,5 +42,5 @@ NOTE: 在本文檔中，原始節點稱爲_node1_和_node2_，新節點稱爲_no
 * 本程序適用於FAS 包含AFF 「支援整合式虛擬化軟體」的各種系統、V系列系統、支援各種系統。FlexArray如果安裝了必要的授權、則可將在發行完版本號為Solide9之後的系統附加至儲存陣列。FAS ONTAP現有的V系列系統在ONTAP 支援方面、請參考資料表9。如需儲存陣列和V系列機型的相關資訊、請參閱 link:other_references.html["參考資料"] 若要連結至_ESUR__ Hardware Universe 、請參閱_V系列支援對照表_。
 
 
-* 此程序適用於MetroCluster 執行ONTAP 版本號為「版本資訊」9.5或更早版本的所有四節點和八節點組態。如需MetroCluster 執行ONTAP 效能不可靠的更新版本、請前往 link:other_references.html["參考資料"] 使用「系統控制器更換」命令連結至_、將執行ONTAP VMware 9.5的控制器硬體升級至ONTAP VMware 9.7。
+* 此程序適用於MetroCluster 執行ONTAP 版本號為「版本資訊」9.5或更早版本的所有四節點和八節點組態。如需MetroCluster 執行ONTAP 效能不可靠的更新版本、請前往 link:other_references.html["參考資料"] 使用「系統控制器更換」命令連結至 _ 、以將執行 ONTAP 9.5 的控制器硬體升級至 ONTAP 9.7_ 。
 

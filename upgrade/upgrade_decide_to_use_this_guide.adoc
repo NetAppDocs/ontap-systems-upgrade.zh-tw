@@ -36,7 +36,7 @@ NOTE: 由於推出自動連接埠配置功能、因此在更新過程中、硬�
 
 .相關資訊
 * xref:upgrade-considerations.adoc[升級控制器硬體的考量事項]
-* xref:choose_controller_upgrade_procedure.adoc[選擇升級控制器硬體的方法]
+* link:../choose_controller_upgrade_procedure.html["選擇升級控制器硬體的方法"]
 * https://docs.netapp.com/us-en/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html["哪裡可以找MetroCluster 到執行維護工作的程序"^]
 * https://hwu.netapp.com["NetApp Hardware Universe"^]
 

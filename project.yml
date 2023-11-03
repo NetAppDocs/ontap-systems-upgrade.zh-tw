@@ -21,7 +21,7 @@ homepage:
   tiles:
   - title: 開始使用
     links:
-    - title: 發行說明ONTAP
+    - title: 發行說明 ONTAP
       url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
     - title: 選擇控制器硬體升級程序
       url: "/choose_controller_upgrade_procedure.html"
@@ -35,7 +35,7 @@ homepage:
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
   - title: 在執行 ONTAP 9.7 及更早版本的系統上重新部署集合體、以進行升級
     links:
-    - title: 使用「系統控制器更換」命令（大多數系統）
+    - title: 使用「系統控制器置換」命令
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
     - title: 使用手動命令
       url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
