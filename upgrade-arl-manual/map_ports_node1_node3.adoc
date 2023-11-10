@@ -266,7 +266,7 @@ Cluster          NodeB_clus1:7700               TCP/ctlopcp
 Cluster          NodeB_clus2:7700               TCP/ctlopcp
 4 entries were displayed.
 ----
-. 如有必要、請針對未接聽連接埠7700的每個叢集LIF、將LIF的管理狀態設為「自己」、然後設定為「UP」：
+. 對於每個未在連接埠 7700 上接聽的叢集 LIF 、請將 LIF 的管理狀態設為 `down` 然後 `up`：
 +
 ：`:>net int modify -vserver cluster -lif_cluster－lif_-stue-admin down；net int modify -vserver cluster -lif_cluster－lif_-stue-admin up（net int修改-vserver叢集-lif_cluster－lif_-stue-admin up）
 

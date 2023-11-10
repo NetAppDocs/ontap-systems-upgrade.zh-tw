@@ -388,7 +388,6 @@
   <block id="d86684c09dde7ea5d5d7306c6f674ea3" category="list-text">每個叢集LIF都必須偵聽連接埠7700。驗證叢集LIF是否正在偵聽連接埠7700：</block>
   <block id="b8dabd137df5202c83400e4fde74838d" category="paragraph">：「：&gt;網路連線偵聽show -vserver叢集」</block>
   <block id="9c26c389cd17f0bf0da92eb4d2187822" category="paragraph">連接埠7700偵聽叢集連接埠是預期結果、如下列雙節點叢集範例所示：</block>
-  <block id="17a934761f44517e9bcc906e1eb8bfe9" category="list-text">如有必要、請針對未接聽連接埠7700的每個叢集LIF、將LIF的管理狀態設為「自己」、然後設定為「UP」：</block>
   <block id="8f6f15e3cd3793ad38c3214c75a0a348" category="paragraph">重複步驟11、確認叢集LIF現在正在偵聽連接埠7700。</block>
   <block id="840820d31f6c078aeb1567ce302bdd05" category="doc">將節點1擁有的非根Aggregate和NAS資料lifs從節點2移至節點3</block>
   <block id="31185fb85292c7e722f79c9b5cb9cdde" category="paragraph">驗證node3安裝之後、在將Aggregate從node2重新定位至node3之前、您必須將屬於node1的NAS資料lIF、目前位於node2上、從node2移至node3。您還必須驗證節點3上是否存在SAN lifs。</block>
@@ -4856,4 +4855,22 @@ FAS2720</block>
   <block id="fcbf56c541d4d283030e94ff96a44848" category="paragraph">您也可以使用 USB 開機選項來執行網路開機。請參閱知識庫文章 <block ref="184f8f7294797efad8be0da4fb907563" category="inline-link-macro-rx"></block>。</block>
   <block id="626a7cbe056796bcb1c158b143866230" category="sidebar">發行說明 ONTAP</block>
   <block id="806e982f94b5ab4054aa07ccb047ecdb" category="sidebar">使用「系統控制器置換」命令</block>
+  <block id="32d8f219b2e3b24132bd4923c34c4dc6" category="list-text">對於每個未在連接埠 7700 上接聽的叢集 LIF 、請將 LIF 的管理狀態設為<block ref="74e8333ad11685ff3bdae589c8f6e34d" prefix=" " category="inline-code"></block> 然後<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>：</block>
+  <block id="0f072cf75dad23e085e6786bbfa15ee3" category="list-text">視升級的 HA 配對上執行的 ONTAP 版本而定、請採取下列其中一項動作：</block>
+  <block id="3b7bc6da810fcf3db2d0ac3faf0d4699" category="cell">如果ONTAP 您的版本是...</block>
+  <block id="70d79c0ebfb73d5165d2451382cc4332" category="cell">9.8 至 9.11.1</block>
+  <block id="57d17db025176f211f2601bfb69b294f" category="cell">驗證叢集LIF是否正在偵聽連接埠7700：
+<block ref="478f48a10865c64c029e9fd3cec0523d" prefix=" " category="inline-code"></block></block>
+  <block id="384264f87c50753f2eb17ca87ee9effa" category="cell">9.12.1 或更新版本</block>
+  <block id="57e06e6af76d79b8779f5f6d6d293c4b" category="cell">跳過此步驟、前往 <block ref="42e2bf4f4ef15f603bcc30bc206d35c3" category="inline-xref-macro-rx"></block>。</block>
+  <block id="5b14143915836be17fa2618f3eb7806d" category="cell">跳過此步驟、前往 <block ref="908f101af36ad2335dd086df5698bdbf" category="inline-xref-macro-rx"></block>。</block>
+  <block id="99b3cab751e6822e482e17b1680dd183" category="cell">跳過此步驟、前往 <block ref="50ada5c38dd8312cfb2b5108640c8ce7" category="inline-xref-macro-rx"></block>。</block>
+  <block id="931aa0d9454eeac2242bed266d6ccf39" category="list-text">[[VERIFY_node3_STEP _5]] 切換至進階權限模式：</block>
+  <block id="bb751320dd480e108cbcc56ecb725c59" category="inline-link">NetApp Bug Online Bug ID 1570339</block>
+  <block id="a9881d2bc89c135aee3c1490acc55259" category="inline-link">從 40GbE 轉換為 100GbE 後、 T6 連接埠發生 CRC 錯誤</block>
+  <block id="282e5b40067cab0a2f099fb840c18705" category="admonition">如果您要變更 AFF A800 或 AFF C800 系統上 e0a 和 e1a 叢集連接埠的連接埠速度、您可能會發現速度轉換後收到格式錯誤的封包。請參閱<block ref="6d2ed5cfb453d16c38a7a5c4ec937198" category="inline-link-rx"></block> 以及知識庫文章<block ref="2a93cc61bbc3892324bc1b6369d71212" category="inline-link-rx"></block> 以取得指引。</block>
+  <block id="4a38eadfc2a9ece3d72590e6313fbd6e" category="admonition">如果您要變更 T6 型乙太網路介面卡或主機板連接埠的連接埠速度、您可能會發現在速度轉換之後收到格式錯誤的封包。請參閱<block ref="6d2ed5cfb453d16c38a7a5c4ec937198" category="inline-link-rx"></block> 以及知識庫文章<block ref="2a93cc61bbc3892324bc1b6369d71212" category="inline-link-rx"></block> 以取得指引。</block>
+  <block id="403701bd83bf4b3cf916d0207d89b4e6" category="cell">跳過此步驟、前往 <block ref="8837566debd0bf055ddeb89904e2fbbc" category="inline-xref-macro-rx"></block>。</block>
+  <block id="6fdc0880de0e199aedb20bf62f491976" category="list-text">[[VERIFY_node4_step5] 切換至進階權限模式：</block>
+  <block id="694bd1275df145cf6b146f04be06b773" category="cell">跳過此步驟、前往 <block ref="b6919d088e29a20fea866ec3a396e020" category="inline-xref-macro-rx"></block>。</block>
 </blocks>

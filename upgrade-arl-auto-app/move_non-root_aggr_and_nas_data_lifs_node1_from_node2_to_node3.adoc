@@ -19,6 +19,9 @@ summary: '使用升級執行ONTAP 支援功能的控制器時、請確認節點2
 .關於這項工作
 在升級過程中、遠端LIF會處理SAN LUN的流量。在升級期間、移轉SAN LIF對於叢集或服務健全狀況並不必要。除非需要將SAN LIF對應至新連接埠、否則不會移動SAN LIF。將node3聯機後，您將驗證生命期是否正常並位於適當的端口上。
 
+
+NOTE: 如果您要變更 T6 型乙太網路介面卡或主機板連接埠的連接埠速度、您可能會發現在速度轉換之後收到格式錯誤的封包。請參閱 https://mysupport.netapp.com/site/bugs-online/product/ONTAP/BURT/1570339["NetApp Bug Online Bug ID 1570339"^] 以及知識庫文章 https://kb.netapp.com/onprem/ontap/hardware/CRC_errors_on_T6_ports_after_converting_from_40GbE_to_100GbE["從 40GbE 轉換為 100GbE 後、 T6 連接埠發生 CRC 錯誤"^] 以取得指引。
+
 .步驟
 . 恢復重新定位作業：
 +
