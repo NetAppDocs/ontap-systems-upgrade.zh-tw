@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: move, volume, original, node, migrate, non-san, lif, cluster-management, move non-san data lifs and cluster management lifs to the new nodeas 
 summary: 將磁碟區從原始節點移出之後、您需要將非SAN資料生命期和叢集管理生命期從原始節點移轉到新節點。 
 ---
-= 將非SAN資料生命期和叢集管理生命期移至新節點
+= 將非 SAN 資料生命體和叢集管理生命體移至新節點
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -17,10 +17,18 @@ summary: 將磁碟區從原始節點移出之後、您需要將非SAN資料生�
 您無法移轉LIF、以便使用VMware vStorage API進行陣列整合（VAAI）進行複本卸載作業。
 
 .步驟
-. 從裝載叢集LIF的節點、將非SAN資料LIF的主連接埠從原始節點變更為新節點：
+. 使用叢集管理 LIF 登入、並列出原始節點上的所有生命（以逗號分隔的清單）：
 +
-「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node_new_norme_name_-home-port｛<netport|ifgrp>｝」
-
+[source, cli]
+----
+network interface show -curr-node <list_of_original_node_names>
+----
+. 將非 SAN 資料生命體的主連接埠從原始節點變更為新節點：
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -home-node <new_node_name> -home-port {<netport|ifgrp>}
+----
 . 請採取下列其中一項行動：
 +
 [cols="1,2"]
@@ -31,21 +39,25 @@ summary: 將磁碟區從原始節點移出之後、您需要將非SAN資料生�
  a| 
 特定LIF
  a| 
-`network interface migrate -vserver _vserver_name_ -lif _lif_name_ -destination-node _dest_node_name_ -destination-port _dest_port_name_`
-
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <dest_node_name> -destination-port <dest_port_name>
+----
 
 
  a| 
 所有非SAN資料生命體與叢集管理生命體
  a| 
-「網路介面移轉-all -node_node_name_」
-
+[source, cli]
+----
+network interface migrate-all -node <node_name>
+----
 |===
 +
 下列命令會將SVM「vs0」上名為「dataif1」的LIF移轉到「node0b」上的連接埠「e0d」：
 
 +
-[listing]
+[source, cli]
 ----
 cluster::> network interface migrate -vserver vs0 -lif datalif1 -destination-node node0b -destination-port e0d
 ----
@@ -53,21 +65,30 @@ cluster::> network interface migrate -vserver vs0 -lif datalif1 -destination-nod
 下列命令會從目前（本機）節點移轉所有資料和叢集管理lifs：
 
 +
-[listing]
+[source, cli]
 ----
 cluster::> network interface migrate-all -node local
 ----
-. 檢查叢集管理LIF的主節點是否位於原始節點之一：「network interface show -lIF cluster_mgmt -Fields home-node'
+. 檢查叢集管理 LIF 的主節點是否位於其中一個原始節點上：
++
+[source, cli]
+----
+network interface show -lif cluster_mgmt -fields home-node
+----
 . 如果叢集管理LIF的主節點位於其中一個原始節點上、請完成下列步驟：
 +
 .. 將叢集管理LIF的主節點切換至其中一個新節點：
 +
-「網路介面修改-vserver _cluster名稱_-lifcluster管理-home-node_new_nnode_name_-home-port｛<netport | ifgrp>｝」
-
+[source, cli]
+----
+network interface modify -vserver <cluster_name> -lif cluster_mgmt -home-node <new_node_name> -home-port {<netport|ifgrp>}
+----
 .. 將叢集管理LIF移轉至其中一個新節點：
 +
-「網路介面移轉-vserver _vserver_name_-lIF叢集管理-destination-node-node_new_node_name_-destination-port｛<netport|ifgrp>｝」
-
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif cluster-mgmt -destination-node <new_node_name> -destination-port {<netport|ifgrp>}
+----
 
 
 

@@ -36,7 +36,7 @@ HA 配對中的控制器必須是兩個 AFF 、 FAS 或 ASA 機型。
 
 | 原始節點和新節點上是否執行不同的 ONTAP 版本？  a| 
 . https://hwu.netapp.com["檢查原始節點和新節點所支援的 ONTAP 版本和修補程式層級"^]。
-. NetApp 建議您盡可能在原始節點和新節點上執行相同的 ONTAP 版本。如果不可能、 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["升級 ONTAP 版本"^] 在原始節點上、到支援的最大版本、使原始節點和新節點之間的版本差異不超過四個。例如、支援 ONTAP 9.8 和 9.12.1 ；但是不支援 ONTAP 9.8 和 9.13.1 。
+. NetApp 建議您盡可能在原始節點和新節點上執行相同的 ONTAP 版本。如果不可能、 link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html["升級 ONTAP 版本"^] 在原始節點上、到支援的最大版本、使原始節點和新節點之間的版本差異不超過四個。例如、支援 ONTAP 9.8 和 9.12.1 ；但是不支援 ONTAP 9.8 和 9.13.1 。
 +
 https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["深入瞭解混合版本 ONTAP 叢集"^]。
 

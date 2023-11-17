@@ -14,9 +14,12 @@ summary: 您至少在每個新節點上建立一個集合體、以儲存您要�
 您至少在每個新節點上建立一個集合體、以儲存您要從原始節點移動的磁碟區。您必須為每個磁碟區識別一個集合體、然後分別移動每個磁碟區。
 
 .開始之前
-必須先初始化資料保護鏡射關係、才能移動磁碟區。
-
+* 必須先初始化資料保護鏡射關係、才能移動磁碟區。
++
 https://docs.netapp.com/us-en/ontap/data-protection-disaster-recovery/index.html["尋找所需的資料保護程序"^]。
+
+* 如果您要移動 iSCSI SAN 磁碟區、請確認您擁有 link:upgrade_move_linux_iscsi_hosts_to_new_nodes.html["已建立新的 iSCSI 連線"]。
+
 
 
 NOTE: 對於每個儲存虛擬機器（ SVM ）、 NetApp 建議您在移動根磁碟區之前、先移動叢集中的所有非根磁碟區、然後一次在一個 SVM 上執行此程序。

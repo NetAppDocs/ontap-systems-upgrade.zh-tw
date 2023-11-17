@@ -58,7 +58,7 @@ Aggregate 重新定位是一種替代程序。您不需要使用新的節點來�
 
 [NOTE]
 ====
-* 注意 1* ：新節點必須支援在原始節點上執行的 ONTAP 版本。如有需要、 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["升級 ONTAP 版本"^] 原始節點上的最大支援版本。原始節點與新節點之間的版本差異不能大於四個。例如、支援 ONTAP 9.8 和 9.12.1 ；但是不支援 ONTAP 9.8 和 9.13.1 。 https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["深入瞭解混合版本 ONTAP 叢集"^]。
+* 注意 1* ：新節點必須支援在原始節點上執行的 ONTAP 版本。如有需要、 link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html["升級 ONTAP 版本"^] 原始節點上的最大支援版本。原始節點與新節點之間的版本差異不能大於四個。例如、支援 ONTAP 9.8 和 9.12.1 ；但是不支援 ONTAP 9.8 和 9.13.1 。 https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["深入瞭解混合版本 ONTAP 叢集"^]。
 
 * 附註 2 * ：不中斷升級需要有自己的儲存設備和機櫃的新系統、才能儲存原始系統的資料。
 
