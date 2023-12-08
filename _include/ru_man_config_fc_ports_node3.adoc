@@ -136,7 +136,7 @@ NOTE: FC連接埠必須設定為啟動器。
 
 | 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
 ** 如果node3有卡或內建連接埠、請前往 <<檢查並設定節點3上的UTA/UTA2連接埠>>。
-** 如果節點3沒有卡或內建連接埠、請跳過 <<檢查並設定節點3上的UTA/UTA2連接埠>>，然後返回_Install and boot node3_並繼續執行 link:install_boot_node3.html#step7["步驟7."]。
+** 如果節點3沒有卡或內建連接埠、請跳過 <<檢查並設定節點3上的UTA/UTA2連接埠>>，然後返回_Install and boot node3_並繼續執行 link:install_boot_node3.html#man_install3_step7["步驟7."]。
 
 
 |===

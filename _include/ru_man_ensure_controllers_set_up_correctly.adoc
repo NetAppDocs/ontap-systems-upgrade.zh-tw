@@ -60,7 +60,7 @@ node4          node3          true     Connected to node3
 +
 「Volume show -node3_-state offline」（Volume show -node4_-state offline）
 
-. 如果有任何磁碟區離線、請將它們與您在中擷取的離線磁碟區清單進行比較 link:prepare_nodes_for_upgrade.html#step19d["步驟19（d）"] 在_準備要升級的節點_中、輸入下列命令（針對每個Volume一次）、並視需要將任何離線磁碟區上線：
+. 如果有任何磁碟區離線、請將它們與您在中擷取的離線磁碟區清單進行比較  link:prepare_nodes_for_upgrade.html#man_prepare_nodes_step19["步驟19（d）"] 在_準備要升級的節點_中、輸入下列命令（針對每個Volume一次）、並視需要將任何離線磁碟區上線：
 +
 "Volume online -vserver _vserver_name_-volume _volume _name_"
 
@@ -71,7 +71,7 @@ node4          node3          true     Connected to node3
 +
 授權代碼參數接受28個大寫字母字元金鑰的清單。您可以一次新增一個授權、也可以一次新增多個授權、每個授權金鑰都以逗號分隔。
 
-. [[unset_mastwait_manipal]]如果在組態中使用自我加密磁碟機、且您已設定 `kmip.init.maxwait` 變數至 `off` （例如、in link:install_boot_node3.html#step16["步驟16"] 在_Install and boot node3_）中、您必須取消設定變數：
+. [[unset_mastwait_manipal]]如果在組態中使用自我加密磁碟機、且您已設定 `kmip.init.maxwait` 變數至 `off` （例如、in link:install_boot_node3.html#man_install3_step16["步驟16"] 在_Install and boot node3_）中、您必須取消設定變數：
 +
 「et diag; systemShell -node_node_name_-command sudo kenv -u -p kmip.init.maxwait`」
 
@@ -112,7 +112,7 @@ Do you want to continue? {y|n}: y
 「系統授權展示」
 
 +
-您可以將輸出與擷取的輸出進行比較 link:prepare_nodes_for_upgrade.html#step30["步驟30"] （_準備節點以進行升級_）。
+您可以將輸出與擷取的輸出進行比較 link:prepare_nodes_for_upgrade.html#man_prepare_nodes_step30["步驟30"] （_準備節點以進行升級_）。
 
 . 在兩個節點上執行下列命令來設定SP：
 +

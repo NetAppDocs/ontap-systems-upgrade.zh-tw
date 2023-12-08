@@ -167,4 +167,4 @@ NOTE: 您不需要擷取「<ONTAP_VERON>_image.tgz」檔案的內容。
 |===
 
 
-您將使用目錄中的資訊 xref:upgrade-set-up-new-nodes.adoc[設定新節點]。
+您將使用目錄中的資訊 link:upgrade-set-up-new-nodes.html["設定新節點"]。

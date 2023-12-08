@@ -48,7 +48,7 @@
 . 啟動節點1。
 . 繼續執行節點配對升級程序。
 +
-您可能會看到「儲存容錯移轉show」命令的輸出有一些變更、但這是典型的、不會影響程序。請參閱疑難排解一節 link:issues_multiple_stages_of_procedure.html#Unexpected-storage-failover-show-command-output["非預期的儲存容錯移轉show命令輸出"]。
+您可能會看到的輸出有一些變更 `storage failover show` 命令，但這是典型的，不會影響程序。請參閱疑難排解一節 link:issues_multiple_stages_of_procedure.html#storage-failover-command["非預期的儲存容錯移轉show命令輸出"]。
 
 
 
@@ -193,7 +193,7 @@ node3繼續為所有Aggregate提供資料。HA配對已停用。
 
 .步驟
 . 啟動節點3。
-. 重複重新定位屬於節點2的其餘集合體 link:relocate_node2_non_root_aggr_node3_node4.html#Step1["步驟1."] 透過 link:relocate_node2_non_root_aggr_node3_node4.html#step3["步驟3."] 在_重新部署節點2的非根Aggregate從節點3到節點4_一節中。
+. 重複重新定位屬於節點2的其餘集合體 link:relocate_node2_non_root_aggr_node3_node4.html#man_relocate_3_4_Step1["步驟1."] 透過 link:relocate_node2_non_root_aggr_node3_node4.html#step3["步驟3."] 在_重新部署節點2的非根Aggregate從節點3到節點4_一節中。
 . 繼續執行節點配對升級程序。
 
 

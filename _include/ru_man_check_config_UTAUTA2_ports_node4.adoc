@@ -215,6 +215,6 @@ f-a    2b      fc      target    cna      -          online
 | 具有儲存磁碟 | 前往 link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"]。 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 返回_安裝和開機節點4_區段、並繼續執行以下區段： link:install_boot_node4.html#Step9["步驟9."]。 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 返回_安裝和開機節點4_區段、並繼續執行以下區段： link:install_boot_node4.html#man_install4_Step9["步驟9."]。 
 |===
 

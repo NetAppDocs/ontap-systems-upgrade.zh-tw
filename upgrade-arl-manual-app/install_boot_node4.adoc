@@ -334,7 +334,7 @@ NOTE: 如果您的系統上有共享磁碟、混合式Aggregate或兩者、則�
 | 無共享 | "Disings disk reassign-s（磁碟重新指派- s）"_node2_sysid_-d _node4_sysid_" 
 |===
 +
-如需「node2_sysid」值、請使用中擷取的資訊 link:record_node2_information.html#man_node2_info_step10["步驟10"] 的「_Record node2 information_」區段。若為「節點4_sysid_」、請使用中擷取的資訊 <<man_install4_step23,步驟23>>。
+適用於 `<node2_sysid>` 請使用中擷取的資訊 link:record_node2_information.html#man_record_2_step10["步驟10"] 的「_Record node2 information_」區段。適用於 `_node4_sysid_`、請使用中擷取的資訊 <<man_install4_step23,步驟23>>。
 
 +
 

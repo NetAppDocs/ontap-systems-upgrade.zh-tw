@@ -275,7 +275,7 @@ IMPORTANT: 您必須重新設定FC內建連接埠、CNA內建連接埠和CNA卡�
 . 如果您的組態使用交換器型分區、請調整分區以反映新的WWPN值。
 
 
-. 如果您已安裝 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
+. [[auto_install4_step27]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
 +
 
 NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷使用中的自我加密磁碟機類型。
@@ -307,7 +307,7 @@ NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文�
 Boot_ONTAP功能表
 
 +
-如果您沒有FC或UTA/UTA2組態、請執行 link:set_fc_or_uta_uta2_config_node4.html#auto_check_node4_step15["檢查並設定節點4步驟15上的UTA/UTA2連接埠"] 因此節點4可以識別節點2的磁碟。
+如果您沒有 FC 或 UTA/UTA2 組態、請執行 link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15["檢查並設定節點4步驟15上的UTA/UTA2連接埠"] 因此節點4可以識別節點2的磁碟。
 
-. [[step29]若為MetroCluster 支援功能的全功能組態、請FlexArray 前往。若需使用連接至儲存陣列的虛擬化軟體的V系列系統和系統、請前往 link:set_fc_or_uta_uta2_config_node4.html#auto_check_node4_step15["檢查並設定節點4步驟15上的UTA/UTA2連接埠"]。
+. [[step29]] 對於 MetroCluster 組態、 V 系列系統、以及連接至儲存陣列的 FlexArray 虛擬化軟體系統、請前往連結： set_fc_or_UTA_uta2_config_node4.html# auto_check_4_step15[ 檢查並設定 node4 、步驟 15 上的 UTA/UTA2 連接埠 ] 。
 

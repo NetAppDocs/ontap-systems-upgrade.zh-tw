@@ -11,18 +11,35 @@ summary: 無需購買額外的儲存設備和叢集交換器、即可執行 NDU 
 
 
 [role="lead"]
-您可以將每個 AFF A250 節點轉換為 NS224 磁碟機櫃、然後連線至 AFF A400 替換節點、以執行從 NetApp AFF A250 系統到 AFF A400 系統的不中斷升級。
+您可以將每個 AFF A250 節點轉換為 NS224 磁碟機櫃、然後連線至 AFF A400 替換節點、以執行從 NetApp AFF A250 系統到 NetApp AFF A400 系統的不中斷升級。
 
+.關於這項工作
 在本程序中、 AFF A250 高可用度（ HA ）配對控制器稱為 node1 和 node2 、而替換的 AFF A400 HA 配對控制器則稱為 node3 和 node4 。
 
-image::../upgrade/media/ndu_upgrade_entry_level_systems.PNG[將 AFF A250 轉換為磁碟機櫃、將其升級為 AFF A400 的工作流程]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]link:upgrade_migrate_lifs_aggregates_node2_to_node1.html["將 node2 上的生命體和資料集合體移轉至 node1"]
+[role="quick-margin-para"]
+在將 AFF A250 node2 轉換為磁碟機櫃之前、請先將 node2 上的邏輯介面（生命體）和資料集合體移轉至 node1 。
 
-.步驟。
-. xref:upgrade_migrate_lifs_aggregates_node2_to_node1.adoc[將 node2 上的生命體和資料集合體移轉至 node1]
-. xref:upgrade_convert_node2_drive_shelf_connect_node4.adoc[將 node2 轉換為磁碟機櫃、並連線至 node4]
-. xref:upgrade_reassign_drives_node2_to_node4.adoc[將 node2 磁碟機重新指派給 node4]
-. xref:upgrade_migrate_aggregates_epsilon_lifs_node1_node4.adoc[將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 node4]
-. xref:upgrade_convert_node1_drive_shelf_connect_node3.html[將 node1 轉換為磁碟機櫃、並連線至 node3]
-. xref:upgrade_reassign_drives_node1_to_node3.adoc[將驅動器從 node1 重新分配給 node3]
-. xref:upgrade_migrate_lIFs_aggregates_node4_node3.adoc[將 node4 上的生命週期和資料集合體移轉至 node3]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]link:upgrade_convert_node2_drive_shelf_connect_node4.html["將 node2 轉換為磁碟機櫃、並連線至 node4"]
+[role="quick-margin-para"]
+您可以將 AFF A250 node2 轉換為 NS224 磁碟機櫃、然後連線至 AFF A400 node4 、再將磁碟機從 node2 重新指派至 node4 。
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]link:upgrade_reassign_drives_node2_to_node4.html["將 node2 磁碟機重新指派給 node4"]
+[role="quick-margin-para"]
+將 AFF A250 node2 轉換為 NS224 磁碟機櫃並連線至 AFF A400 node4 之後、您可以將先前屬於 node2 的磁碟機重新指派給 node4
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"]link:upgrade_migrate_aggregates_epsilon_lifs_node1_to_node4.html["將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 node4"]
+[role="quick-margin-para"]
+在將 AFF A250 node1 轉換為磁碟機櫃之前、請先將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 AFF A400 node4 。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]link:upgrade_convert_node1_drive_shelf_connect_node3.html["將 node1 轉換為磁碟機櫃、並連線至 node3"]
+[role="quick-margin-para"]
+將 AFF A250 node1 轉換為 NS224 磁碟機櫃、然後連線至 AFF A400 node3 、再將磁碟機從 node1 重新指派至 node3 。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"]link:upgrade_reassign_drives_node1_to_node3.html["將驅動器從 node1 重新分配給 node3"]
+[role="quick-margin-para"]
+將 AFF A250 node1 轉換為 NS224 磁碟機櫃並連線至 AFF A400 node3 之後、您可以將先前屬於 node1 的磁碟機重新指派給 node3 。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["七"]link:upgrade_migrate_lIFs_aggregates_node4_node3.html["將 node4 上的生命週期和資料集合體移轉至 node3"]
+[role="quick-margin-para"]
+若要完成升級、請將 node3 連接至 node4 、然後將 node4 上的資料生命週期和資料集合體移轉至 node3 。

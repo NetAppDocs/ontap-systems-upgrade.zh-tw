@@ -89,7 +89,7 @@ Boot_ONTAP功能表
 如果「[localhost:disk.encrectNoSupport:alert]：偵測到FIPS認證的加密磁碟機」、或「[localhost:diskown。errordiningio:error]：發生磁碟錯誤時發生錯誤3（磁碟故障）、請執行下列步驟：
 
 .. 在載入程式提示下停止節點。
-.. 檢查並重設中所述的儲存加密bootargs <<A900_boot_node2,步驟1.>>。
+.. 檢查並重設中所述的儲存加密bootargs <<boot_node2_step1,步驟1.>>。
 .. 在載入程式提示下、開機：
 +
 Boot_ONTAP

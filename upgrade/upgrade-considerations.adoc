@@ -109,7 +109,7 @@ NOTE: 您無法將 AFF A700s 、 AFF A800 、 AFF C800 或 ASA A800 系統轉換
 
 == 可能需要額外步驟的情況
 
-* xref:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.adoc[您正在從 AFF A250 升級至 AFF A400] （不中斷營運的程序）。
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html["您正在從 AFF A250 升級至 AFF A400"] （不中斷營運的程序）。
 * 如果新系統的插槽比原始系統少、或連接埠類型較少或不同、您可能需要在新系統中新增介面卡。請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^]。
 * 如果原始節點或新節點使用 FlexArray 虛擬化軟體、請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/V_Series/What_are_the_specific_steps_involved_in_FlexArray_for_NetApp_controller_upgrades%2F%2Freplacements%3F["FlexArray 在 NetApp 控制器升級與更換方面的具體步驟為何"^]。
 * 如果叢集有SAN主機、您可能需要採取步驟來解決LUN序號變更的問題。請參閱知識庫文章 https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FlexPod_with_Infrastructure_Automation/resolve_issues_during_storage_controller_motherboard_replacement_and_head_upgrades_with_iSCSI_and_FCP["如何透過iSCSI和FCP解決儲存控制器主機板更換與升級的問題"^]。
@@ -118,6 +118,6 @@ NOTE: 您無法將 AFF A700s 、 AFF A800 、 AFF C800 或 ASA A800 系統轉換
 
 .相關資訊
 * link:../choose_controller_upgrade_procedure.html["選擇升級控制器硬體的方法"]
-* xref:upgrade-by-moving-storage-parent.adoc[移動儲存設備來升級控制器硬體]
-* xref:upgrade-by-moving-volumes-parent.adoc[透過移動磁碟區來升級控制器硬體]
+* link:upgrade-by-moving-storage-parent.html["移動儲存設備來升級控制器硬體"]
+* link:upgrade-by-moving-volumes-parent.html["透過移動磁碟區來升級控制器硬體"]
 

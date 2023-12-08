@@ -8,7 +8,7 @@ summary: 您可以ONTAP 使用「系統控制器更換」命令來升級執行�
 :allow-uri-read: 
 
 
-[role="lead lead"]
+[role="lead"]
 本程序說明如何針對下列系統組態、使用Aggregate重新定位（ARL）來升級控制器硬體：
 
 [cols="40,20,40"]

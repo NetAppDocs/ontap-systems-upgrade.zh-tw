@@ -316,7 +316,7 @@ NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文�
 Boot_ONTAP功能表
 
 +
-如果您沒有FC或UTA/UTA2組態、請執行 link:set_fc_or_uta_uta2_config_node4.html#auto_check_node4_step15["檢查並設定節點4步驟15上的UTA/UTA2連接埠"] 因此節點4可以識別節點2的磁碟。
+如果您沒有FC或UTA/UTA2組態、請執行 link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15["檢查並設定節點4步驟15上的UTA/UTA2連接埠"] 這樣， node4 就能識別 node2 的磁碟。
 
 . [[step29] MetroCluster 對於連接FlexArray 至儲存陣列的支援靜態虛擬化軟體之V系列系統和系統、您必須在節點3上設定及設定FC或UTA/UTA2連接埠、以偵測連接至節點的磁碟。若要完成此工作、請移至一節 link:set_fc_or_uta_uta2_config_on_node3.html["在節點3上設定FC或UTA/UTA2組態"]。
 

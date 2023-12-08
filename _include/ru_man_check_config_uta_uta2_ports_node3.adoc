@@ -253,6 +253,6 @@ Adapter  Mode     Type       Mode     Type       Status
 | 具有儲存磁碟 | 前往 link:map_ports_node1_node3.html["將連接埠從節點1對應至節點3"]。 
 
 
-| 是V系列系統、或具有FlexArray 「虛擬化軟體」、並連接至儲存陣列 | 返回_Install and boot node3_並繼續執行 link:install_boot_node3.html#step7["步驟7."]。 
+| 是V系列系統、或具有FlexArray 「虛擬化軟體」、並連接至儲存陣列 | 返回_Install and boot node3_並繼續執行 link:install_boot_node3.html#man_install3_step7["步驟7."]。 
 |===
 

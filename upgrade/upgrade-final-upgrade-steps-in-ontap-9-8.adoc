@@ -1,10 +1,10 @@
 ---
-permalink: upgrade/upgrade-final-steps-ontap-9-7-or-earlier-move-storage.html 
+permalink: upgrade/upgrade-final-upgrade-steps-in-ontap-9-8.html 
 sidebar: sidebar 
-keywords: complete, procedure, upgrading, upgrade, moving, move, storage, delete, port, lif, re-enable, service, processor, sp, license, autosupport, fc, cna, por, perform final upgrade steps in ontap 9.7 or earlier 
-summary: 若要透過移動儲存設備來完成升級程序、您必須從新節點刪除任何未使用的連接埠和LIF、重新啟用儲存容錯移轉或高可用度、設定服務處理器（SP）、安裝新授權、以及設定AutoSupport NetApp。您可能還需要設定儲存設備或Volume Encryption、並設定FC或CNA連接埠。 
+keywords: complete, procedure, upgrading, upgrade, moving, move, storage, delete, unused, port, lif, re-enable, failover, availability, service, processor, sp, autosupport, volume, encryption, fc, cna, perform final upgrade steps in ontap 9.8 
+summary: 若要透過移動儲存設備來完成升級程序、您必須從新節點刪除任何未使用的連接埠和LIF、重新啟用儲存容錯移轉或高可用度、設定服務處理器（SP\）、安裝新授權、以及設定AutoSupport Re。您可能還需要設定儲存設備或Volume Encryption、並設定FC或CNA連接埠。 
 ---
-= 執行ONTAP 更新步驟以更新版本更新至更新版本
+= 請執行ONTAP 更新版本的最終升級步驟
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -14,17 +14,13 @@ summary: 若要透過移動儲存設備來完成升級程序、您必須從新�
 若要透過移動儲存設備來完成升級程序、您必須從新節點刪除任何未使用的連接埠和LIF、重新啟用儲存容錯移轉或高可用度、設定服務處理器（SP）、安裝新的授權、以及設定AutoSupport Re。您可能還需要設定儲存設備或Volume Encryption、並設定FC或CNA連接埠。
 
 .開始之前
-這些步驟適用於執行ONTAP 下列版本的系統：如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[執行ONTAP 更新版本的最終升級步驟]。
+這些步驟適用於執行ONTAP 不含更新版本的系統。如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 link:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.html["在更新版本的更新版本中執行ONTAP 最終升級步驟"]。
 
 .步驟
-. 如果您的系統執行ONTAP 的是*停止*版本9.8或更新版本。您必須使用中的程序 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[請執行ONTAP 更新版本的最終升級步驟]。
+. 如果您的系統執行ONTAP 的是效能不高的版本、*停止*。您必須使用中的程序 link:upgrade-final-steps-ontap-9-7-or-earlier-move-storage.html["在更新版本的更新版本中執行ONTAP 最終升級步驟"]。
 . 在儲存系統提示字元中、顯示關於LIF的資訊：
 +
 「網路介面展示」
-
-. 從新節點刪除任何未使用的連接埠（進階權限層級）：
-+
-網路連接埠刪除
 
 . 如果您在SAN環境中、請從連接埠集刪除未使用的lifs、以便移除它們：
 +
@@ -49,10 +45,18 @@ summary: 若要透過移動儲存設備來完成升級程序、您必須從新�
 | 如果您有... | 然後... 
 
 
-| 雙節點叢集 | 重新啟用高可用度：「叢集ha modify -configured true」 
+ a| 
+雙節點叢集
+ a| 
+重新啟用高可用度：「叢集ha modify -configured true」
 
 
-| 具有兩個以上節點的叢集 | 重新啟用儲存容錯移轉：「torage容錯移轉修改-node_name -enabled_true」 
+
+ a| 
+具有兩個以上節點的叢集
+ a| 
+重新啟用儲存容錯移轉：「torage容錯移轉修改-node_name -enabled_true」
+
 |===
 . 視需要在新節點上設定SP：
 +
@@ -70,7 +74,7 @@ summary: 若要透過移動儲存設備來完成升級程序、您必須從新�
 +
 「系統節點AutoSupport 無法叫用節點node_name -type all -m則 訊息「MAn=end node_name custmalled from plate_old to platform _new」（已成功從platfort_old升級至platform _new）。
 
-. 使用中的適當程序還原儲存設備或Volume Encryption功能https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["使用CLI管理加密"^] 內容：
+. 使用中的適當程序還原儲存設備或Volume Encryption功能 https://docs.netapp.com/us-en/ontap/encryption-at-rest/index.html["使用CLI管理加密"^] 內容：
 +
 視您使用的是內建或外部金鑰管理而定、請使用下列其中一個程序：
 

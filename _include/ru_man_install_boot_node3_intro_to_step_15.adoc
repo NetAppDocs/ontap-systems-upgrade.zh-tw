@@ -11,9 +11,9 @@
 
 [IMPORTANT]
 ====
-如果您要升級連接至儲存陣列的V系列系統、或是使用FlexArray 連接至儲存陣列的支援功能之非功能性虛擬化軟體的系統、則必須完成 <<man_install3_step1,步驟1.>> 透過 <<man_install3_step5,步驟5.>>請將本節保留在 <<man_install3_step6,步驟6.>> 並遵循中的指示 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["檢查並設定節點3上的UTA/UTA2連接埠"] 視需要在維護模式中輸入命令。接著您必須返回本節並繼續 <<man_install3_step7,步驟7.>>。
+如果您要升級連接至儲存陣列的V系列系統、或是使用FlexArray 連接至儲存陣列的支援功能之非功能性虛擬化軟體的系統、則必須完成 <<man_install3_step1,步驟1.>> 透過 <<man_install3_step5,步驟5.>>請將本節保留在 <<man_install3_step6,步驟6.>> 並遵循中的指示 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node3.html#uta-ports-node3["檢查並設定節點3上的UTA/UTA2連接埠"] 視需要在維護模式中輸入命令。接著您必須返回本節並繼續 <<man_install3_step7,步驟7.>>。
 
-不過、如果您要升級具有儲存磁碟的系統、則必須完成本節的完整內容、然後前往 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["檢查並設定節點3上的UTA/UTA2連接埠"]，在叢集提示字元中輸入命令。
+不過、如果您要升級具有儲存磁碟的系統、則必須完成本節的完整內容、然後前往 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node3.html#uta-ports-node3["檢查並設定節點3上的UTA/UTA2連接埠"]，在叢集提示字元中輸入命令。
 
 ====
 .步驟
@@ -88,7 +88,7 @@ NOTE: *注意*：請勿置換延遲；若不允許電池充電、可能導致資
 
 
 | 是連接FlexArray 至儲存陣列的V系列系統或系統、其中含有與之相關的功能完善的虛擬化軟體  a| 
-.. 前往 link:set_fc_uta_uta2_config_node3.html["在節點3上設定FC或UTA/UTA2組態"] 並完成這些小節 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node3.html#check-and-configure-UTAUTA2-ports-on-node3["檢查並設定節點3上的UTA/UTA2連接埠"]（視系統而定）。
+.. 前往 link:set_fc_uta_uta2_config_node3.html["在節點3上設定FC或UTA/UTA2組態"] 並完成這些小節 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node3.html#uta-ports-node3["檢查並設定節點3上的UTA/UTA2連接埠"]（視系統而定）。
 .. 返回本節、並完成其餘步驟、從開始 <<man_install3_step7,步驟7.>>。
 
 

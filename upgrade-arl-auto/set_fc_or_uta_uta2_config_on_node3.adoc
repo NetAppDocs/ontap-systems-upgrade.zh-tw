@@ -23,7 +23,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行《更新》9.
 NOTE: NetApp行銷資料可能會使用「UTA2」一詞來指代整合式網路卡（CNA）介面卡和連接埠。不過、CLI使用「CNA」一詞。
 
 * 如果節點3沒有內建FC連接埠、內建UTA/UTA2連接埠或UTA/UTA2卡、而且您正在升級含有儲存磁碟的系統、則可以跳至 link:map_ports_node1_node3.html["將連接埠從節點1對應至節點3"] 區段。
-* 不過、如果您的V系列系統或系統搭載FlexArray 含有儲存陣列的VMware虛擬化軟體、而節點3沒有內建FC連接埠、內建UTA/UTA連接埠或UTA/UTA2卡、請返回_安裝與開機節點3_一節、然後繼續執行 link:install_boot_node3.html#step23["步驟23"]。
+* 不過、如果您的V系列系統或系統搭載FlexArray 含有儲存陣列的VMware虛擬化軟體、而節點3沒有內建FC連接埠、內建UTA/UTA連接埠或UTA/UTA2卡、請返回_安裝與開機節點3_一節、然後繼續執行 link:install_boot_node3.html#auto_install3_step23["步驟23"]。
 
 
 .選擇
@@ -121,7 +121,7 @@ Boot_ONTAP功能表
 
 | 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
 ** 如果node3具有UTA/UTA2卡或UTA/UTA2內建連接埠、請前往部分 <<檢查並設定節點3上的UTA/UTA2連接埠>>。
-** 如果節點3沒有UTA/UTA2卡或UTA/UTA2內建連接埠、請跳過一節 <<檢查並設定節點3上的UTA/UTA2連接埠>> 並返回到中的「安裝與開機節點3_」一節 link:install_boot_node3.html#step23["步驟23"]。
+** 如果節點3沒有UTA/UTA2卡或UTA/UTA2內建連接埠、請跳過一節 <<檢查並設定節點3上的UTA/UTA2連接埠>> 並返回到中的「安裝與開機節點3_」一節 link:install_boot_node3.html#auto_install3_step23["步驟23"]。
 
 
 |===
@@ -308,7 +308,7 @@ Adapter  Mode       Type        Mode     Type        Status
 | 具有儲存磁碟 | 前往 link:map_ports_node1_node3.html["將連接埠從節點1對應至節點3"] 
 
 
-| 是V系列系統、或具有FlexArray 「虛擬化軟體」、並連接至儲存陣列 | 返回_Install and boot node3_、然後繼續執行以下步驟： link:install_boot_node3.html#step23["步驟23"]。 
+| 是V系列系統、或具有FlexArray 「虛擬化軟體」、並連接至儲存陣列 | 返回_Install and boot node3_、然後繼續執行以下步驟： link:install_boot_node3.html#auto_install3_step23["步驟23"]。 
 |===
 . [[auto_checks3_step13]結束維護模式：
 +

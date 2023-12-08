@@ -14,7 +14,7 @@ summary: 若要讓節點3和節點4在升級後與叢集中的其他端口和網
 若要讓節點3和節點4在升級後與叢集中的其他端口和網路進行通訊、您必須確認實體連接埠已正確設定為適合特定用途的設定、例如叢集、資料等。
 
 .開始之前
-這些步驟適用於執行ONTAP 不含更新版本的系統。如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 xref:upgrade-map-network-ports-ontap-9-7-or-earlier.adoc[使用ONTAP 更新版本的更新版本來對應網路連接埠]。
+這些步驟適用於執行ONTAP 不含更新版本的系統。如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 link:upgrade-map-network-ports-ontap-9-7-or-earlier.html["使用ONTAP 更新版本的更新版本來對應網路連接埠"]。
 
 .關於這項工作
 您必須在節點3和節點4上執行這些步驟。
@@ -23,7 +23,7 @@ summary: 若要讓節點3和節點4在升級後與叢集中的其他端口和網
 NOTE: 下列命令範例是指「node1」、因為在程序的這個階段、替換節點「node3」和「node4」實際上是命名為「node1」和「node2」。
 
 .步驟
-. 如果您的系統執行ONTAP 的是效能不高的版本、*停止*。您必須使用中的程序 xref:upgrade-map-network-ports-ontap-9-7-or-earlier.adoc[使用ONTAP 更新版本的更新版本來對應網路連接埠]。
+. 如果您的系統執行ONTAP 的是效能不高的版本、*停止*。您必須使用中的程序 link:upgrade-map-network-ports-ontap-9-7-or-earlier.html["使用ONTAP 更新版本的更新版本來對應網路連接埠"]。
 . 找到節點1和節點2的連接埠和LIF組態資訊、這些資訊記錄在_移動儲存設備時準備升級_、 link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3["步驟3."]。
 . 找到您在_準備在移動儲存設備時升級_中記錄的連接埠、廣播網域和IPspaces資訊、 link:upgrade-prepare-when-moving-storage.html#prepare_move_store_3["步驟3."]。
 +
@@ -73,7 +73,7 @@ https://hwu.netapp.com["NetApp Hardware Universe"^]
 `::> network connections listening show -vserver Cluster` 
 
 
-| 9.12.1 或更新版本 | 跳過此步驟、前往 <<map_9.8_5,步驟5.>>。 
+| 9.12.1 或更新版本 | 跳過此步驟、前往 <<map_98_5,步驟5.>>。 
 |===
 +
 連接埠7700偵聽叢集連接埠是預期結果、如下列雙節點叢集範例所示：
@@ -101,7 +101,7 @@ Cluster          NodeB_clus2:7700               TCP/ctlopcp
 
 
 
-. [[map_9.8_5]<修改裝載資料生命週年之實體連接埠的廣播網域成員資格。您可以手動執行此動作、如所示 link:upgrade-map-network-ports-ontap-9-7-or-earlier.html#map_9.7_7["使用ONTAP VMware版9.7或更早版本對應網路連接埠、步驟7"]。建議使用ONTAP 更新的網路連線能力掃描與修復程序、如下列步驟5（a）至（g）所示。
+. [[map_98_5]] 修改託管資料生命體的實體連接埠的廣播網域成員資格。您可以手動執行此動作、如所示 link:upgrade-map-network-ports-ontap-9-7-or-earlier.html#map_97_7["使用ONTAP VMware版9.7或更早版本對應網路連接埠、步驟7"]。NetApp 建議您使用 ONTAP 9.8 中引進的增強型網路連線能力掃描與修復程序、如下列步驟 5 （ a ）至（ g ）子步驟所示。
 +
 .. 列出所有連接埠的連線狀態：
 +
@@ -218,4 +218,4 @@ NOTE: 對於iSCSI LIF、若要修改主連接埠、則需要以管理方式關�
 
 
 
-您已完成實體連接埠的對應。若要完成升級、請前往 xref:upgrade-final-upgrade-steps-in-ontap-9-8.adoc[請執行ONTAP 更新版本的最終升級步驟]。
+您已完成實體連接埠的對應。若要完成升級、請前往 link:upgrade-final-upgrade-steps-in-ontap-9-8.html["請執行ONTAP 更新版本的最終升級步驟"]。

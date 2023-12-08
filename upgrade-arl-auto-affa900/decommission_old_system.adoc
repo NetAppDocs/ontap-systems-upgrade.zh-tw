@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: /upgrade-arl-auto-affa900/decommission_old_system.html 
+permalink: upgrade-arl-auto-affa900/decommission_old_system.html 
 keywords: decommission, old system, upgrade, databases, netapp, support, site, serial, number, cluster 
 summary: 請告知 NetApp 、舊系統在控制器升級後不再運作。 
 ---

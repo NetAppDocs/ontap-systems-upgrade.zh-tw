@@ -121,7 +121,7 @@ Boot_ONTAP功能表
 
 | 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
 ** 前往 link:set_fc_or_uta_uta2_config_node4.html#check-and-configure-utauta2-ports-on-node4["檢查並設定節點4上的UTA/UTA2連接埠"] 如果節點4有UTA/UTA2卡或UTA/UTA2內建連接埠。
-** 跳過_檢查並設定節點4_上的UTA/UTA2連接埠（如果節點4沒有UTA/UTA2卡或UTA/UTA2內建連接埠）一節、返回_安裝與開機節點4_一節、然後繼續執行 link:install_boot_node4.html#step23["步驟23"]。
+** 跳過_檢查並設定節點4_上的UTA/UTA2連接埠（如果節點4沒有UTA/UTA2卡或UTA/UTA2內建連接埠）一節、返回_安裝與開機節點4_一節、然後繼續執行 link:install_boot_node4.html#auto_install4_step23["步驟23"]。
 
 
 |===
@@ -291,7 +291,7 @@ f-a   2b       fc             target       cna           -             online
 | 具有儲存磁碟 | 移至區段 link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"]。 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 返回_安裝與開機節點4_區段、然後繼續執行 link:install_boot_node4.html#step23["步驟23"]。 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 返回_安裝與開機節點4_區段、然後繼續執行 link:install_boot_node4.html#auto_install4_step23["步驟23"]。 
 |===
 . [[auto_check_4_step13]結束維護模式：
 +

@@ -142,7 +142,7 @@ NOTE: FC連接埠必須設定為啟動器。
 
 | 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
 ** 前往 <<檢查並設定節點4上的UTA/UTA2連接埠>> 如果節點4有UTA/ UTA2卡或UTA/ UTA2內建連接埠。
-** 跳過_檢查並設定節點4_上的UTA/UTA2連接埠（如果節點4沒有UTA/UTA2卡或UTA/UTA2內建連接埠）一節、返回_安裝與開機節點4_一節、並繼續執行以下步驟： link:install_boot_node4.html#Step9["步驟9."]。
+** 跳過_檢查並設定節點4_上的UTA/UTA2連接埠（如果節點4沒有UTA/UTA2卡或UTA/UTA2內建連接埠）一節、返回_安裝與開機節點4_一節、並繼續執行以下步驟： link:install_boot_node4.html#man_install4_Step9["步驟9."]。
 
 
 |===

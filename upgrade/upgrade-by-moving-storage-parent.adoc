@@ -1,0 +1,67 @@
+---
+permalink: upgrade/upgrade-by-moving-storage-parent.html 
+sidebar: sidebar 
+keywords: upgrade 
+summary: 如果您要透過移動儲存設備來升級、請準備原始節點並設定新節點。部分平台機型支援將內部儲存設備傳輸至新節點。您可以重新指派磁碟、並將根磁碟區組態還原至新節點、並設定網路連接埠。透過移動儲存設備進行升級是一項中斷營運的程序。 
+---
+= 工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您要透過移動儲存設備來升級控制器硬體、請準備原始節點並設定新節點。部分平台機型支援將內部儲存設備傳輸至新節點。您可以重新指派磁碟、並將根磁碟區組態還原至新節點、並設定網路連接埠。透過移動儲存設備進行升級是一項中斷營運的程序。
+
+[NOTE]
+====
+在透過移動儲存設備來升級控制器硬體的步驟中、原始節點稱為節點1和節點2、新節點稱為節點3和節點4。在上述過程中、node1會由node3取代、node2則會由node4取代。
+
+image::../upgrade/media/original_to_new_nodes.png[使用 node1 和 node2 替換 node3 和 node4]
+
+術語node1、node2、node3和node4僅用於區分原始節點和新節點。遵循程序時、您必須以原始節點和新節點的真實名稱來取代這些名稱。但是實際上、節點名稱並未變更：節點3的名稱為node1、而節點4的名稱為node2（控制器硬體已升級）。
+
+====
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]link:upgrade-prepare-when-moving-storage.html["準備在移動儲存設備時進行升級"]
+[role="quick-margin-para"]
+在透過移動儲存設備進行升級之前、您可以從原始節點收集授權資訊、規劃網路組態、記錄系統 ID 、以及準備 netboot 所需的檔案。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]link:upgrade-shutdown-remove-original-nodes.html["關閉原始節點"]
+[role="quick-margin-para"]
+當關閉和移除原始節點時、您會傳送有關升級的 AutoSupport 訊息、銷毀信箱、關閉節點電源、然後移除機箱。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]link:upgrade-remove-disk-ownership-new-nodes.html["移除附加至新節點的磁碟擁有權"]
+[role="quick-margin-para"]
+如果新節點有內部磁碟或附加磁碟櫃連接至系統、這些磁碟或附加磁碟櫃可能會干擾控制器升級。  您應該移除 node3/node4 隨附的所有新磁碟。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"]link:upgrade-reset-default-configuration-node3-and-node4.html["在新節點上重設預設組態"]
+[role="quick-margin-para"]
+若要確認開機媒體上的組態資訊不會干擾控制器升級、請將 node3 和 node4 的組態重設為預設組態設定。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]link:upgrade-install-new-nodes.html["安裝新節點"]
+[role="quick-margin-para"]
+當您透過移動儲存設備進行升級時、首先要安裝node3和node4、然後將電源、主控台和網路連線連接至新節點。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"]link:upgrade-set-up-new-nodes.html["設定新節點"]
+[role="quick-margin-para"]
+在移動儲存設備進行升級的過程中、您需要開啟節點3和節點4的電源、開機軟體映像、以及設定節點。原始節點與新節點之間的實體連接埠配置可能有所不同。應在原始節點和替換節點之間對應連接埠、以識別連接埠和連線的適當配置。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["七"]link:upgrade-optional-move-internal-storage.html["選用：移動內部儲存設備或將系統轉換成磁碟機櫃"]
+[role="quick-margin-para"]
+或者、如果您的原始節點是其中一種支援機型、您可以選擇將其內部 SATA 磁碟機、 SSD 或 SAS 磁碟機移至磁碟機櫃、以便在透過移動儲存設備進行升級的過程中連接至新節點。您也可以將系統轉換成磁碟機櫃、並將其連接至新節點。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png["八"]link:upgrade-attach-shelves-reassign-disks.html["連接儲存櫃並重新指派磁碟擁有權"]
+[role="quick-margin-para"]
+您可以將屬於 node1 和 node2 的磁碟分別重新指派給 node3 和 node4 。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-9.png["九"]link:upgrade-restore-root-volume-config.html["還原根磁碟區組態"]
+[role="quick-margin-para"]
+您可以將組態資訊從根磁碟區還原至開機裝置。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-10.png["十"]link:upgrade-complete.html["完成升級"]
+[role="quick-margin-para"]
+完成ONTAP 更新、請參閱《更新版本、更新版本、ONTAP 或《更新版本、更新版本、更新版本、更新版本、更新版本、更新版本
+
+.相關資訊
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html["將 AFF A250 轉換為磁碟機櫃、以升級至 AFF A400"] （不中斷營運的程序）。
+

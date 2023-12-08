@@ -29,7 +29,7 @@ node2
 ----
 +
 
-NOTE: 您的系統可能沒有叢集間的LIF。您只能在節點配對的一個節點上使用叢集管理LIF。叢集管理LIF顯示在的範例輸出中 link:record_node1_information.html#step["步驟1."] 在_Record node1連接埠資訊_中。
+NOTE: 您的系統可能沒有叢集間的LIF。您只能在節點配對的一個節點上使用叢集管理LIF。的範例輸出中會顯示叢集管理 LIF link:record_node1_information.html#step1["步驟1."] 在_Record node1連接埠資訊_中。
 
 . 擷取輸出中的資訊以供區段使用 link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"]。
 +

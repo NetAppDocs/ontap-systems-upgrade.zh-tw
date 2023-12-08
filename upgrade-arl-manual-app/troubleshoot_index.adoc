@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/troubleshoot_index.html 
-keywrods: troubleshoot, failure, aggregate, relocate, lifs 
+keywords: troubleshoot, failure, aggregate, relocate, lifs 
 summary: 在執行ONTAP VMware 9.8或更新版本的控制器上、疑難排解手動升級ARL時可能發生的故障。 
 ---
 = 疑難排解

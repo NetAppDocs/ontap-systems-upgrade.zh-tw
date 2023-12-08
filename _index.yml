@@ -1,0 +1,50 @@
+---
+indexpage:
+  lead: 本網站提供 AFF 與 FAS 儲存系統的升級程序。為您的儲存系統選取適當的升級程序。
+  tiles:
+  - title: 開始使用
+    links:
+    - title: 發行說明 ONTAP
+      url: https://library.netapp.com/ecm/ecm_download_file/ECMLP2492508
+    - title: 選擇控制器硬體升級程序
+      url: "/choose_controller_upgrade_procedure.html"
+  - title: 在執行 ONTAP 9.8 及更新版本的系統上重新部署集合體、以進行升級
+    links:
+    - title: 使用「系統控制器更換」命令來升級相同機箱中的控制器機型
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/
+    - title: 使用「系統控制器更換」命令（大多數系統）
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
+    - title: 使用手動命令
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
+  - title: 在執行 ONTAP 9.7 及更早版本的系統上重新部署集合體、以進行升級
+    links:
+    - title: 使用「系統控制器置換」命令
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
+    - title: 使用手動命令
+      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
+  - title: 透過移動儲存設備或磁碟區進行升級
+    links:
+    - title: 升級控制器硬體
+      url: "/upgrade/upgrade-decide-to-use-this-guide.html"
+    - title: 將 AFF A250 轉換為磁碟機櫃、以升級至 AFF A400
+      url: "/upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html"
+  - title: 以MetroCluster 不更新組態升級系統
+    links:
+    - title: 針對MetroCluster 您的需求組態選擇升級程序
+      url: https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html
+  - title: 更多資源
+    links:
+    - title: 系統文件ONTAP
+      url: https://docs.netapp.com/us-en/ontap-systems/index.html
+    - title: 交換器文件ONTAP
+      url: https://docs.netapp.com/us-en/ontap-systems-switches/index.html
+    - title: 軟體文件ONTAP
+      url: https://docs.netapp.com/us-en/ontap/index.html
+    - title: NetApp Hardware Universe
+      url: https://hwu.netapp.com/
+    - title: NetApp Active IQ Config Advisor
+      url: https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor
+    - title: NetApp 互通性對照表
+      url: https://mysupport.netapp.com/matrix/#welcome
+    - title: NetApp社群
+      url: https://community.netapp.com/t5/ONTAP-and-FAS/ct-p/fas-ontap-oncommand-and-related-plug-ins

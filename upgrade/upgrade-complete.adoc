@@ -17,6 +17,6 @@ summary: 完成ONTAP 更新、請參閱《更新版本、更新版本、ONTAP �
 
 image::../upgrade/media/workflow_completing_upgrade_98_or_97x.png[完成升級]
 
-* xref:upgrade-complete-ontap-9-8.adoc[完成ONTAP 更新、請使用更新版本的更新版本]
-* xref:upgrade-complete-ontap-9-7-or-earlier.adoc[完成ONTAP 更新、請參閱《更新版本]
+* link:upgrade-complete-ontap-9-8.html["完成ONTAP 更新、請使用更新版本的更新版本"]
+* link:upgrade-complete-ontap-9-7-or-earlier.html["完成ONTAP 更新、請參閱《更新版本"]
 

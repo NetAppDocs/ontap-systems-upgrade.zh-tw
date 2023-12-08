@@ -1,0 +1,46 @@
+---
+permalink: upgrade/upgrade-by-moving-volumes-parent.html 
+sidebar: sidebar 
+keywords: upgrade by moving volumes 
+summary: 如果您要透過移動磁碟區來升級、請準備原始節點、並將新節點加入叢集。您可以將磁碟區移至新節點、設定lifs、以及從叢集取消連接原始節點。透過移動磁碟區進行升級是不中斷營運的程序。 
+---
+= 工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您要透過移動磁碟區來升級控制器硬體、請準備原始節點、並將新節點加入叢集。您可以將磁碟區移至新節點、設定lifs、以及從叢集取消連接原始節點。透過移動磁碟區進行升級是不中斷營運的程序。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]link:upgrade-prepare-when-moving-volumes.html["準備在移動磁碟區時進行升級"]
+[role="quick-margin-para"]
+在透過移動磁碟區來升級控制器硬體之前、請先執行幾個準備步驟。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]link:upgrade-install-and-join-new-nodes-move-vols.html["安裝新節點並將其加入叢集"]
+[role="quick-margin-para"]
+您可以安裝新節點、並將它們加入叢集、以便從原始節點中移除磁碟區。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]link:upgrade_move_linux_iscsi_hosts_to_new_nodes.html["將 Linux iSCSI 主機移至新節點"]
+[role="quick-margin-para"]
+在將 iSCSI SAN 磁碟區移至新節點之前、請先建立新的 iSCSI 連線、然後重新掃描通往新節點的 iSCSI 路徑。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"]link:upgrade-create-aggregate-move-volumes.html["建立Aggregate並將磁碟區移至新節點"]
+[role="quick-margin-para"]
+在每個新節點上建立至少一個集合體、以儲存要從原始節點移出的磁碟區。您必須為每個磁碟區識別一個集合體、然後分別移動每個磁碟區
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]link:upgrade-move-lifs-to-new-nodes.html["將非SAN資料生命期和叢集管理生命期移至新節點"]
+[role="quick-margin-para"]
+將磁碟區從原始節點移出之後、您會將非 SAN 資料生命體和叢集管理生命體從原始節點移轉到新節點。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"]link:upgrade_move_delete_recreate_san_lifs.html["移動、刪除或建立SAN LIF"]
+[role="quick-margin-para"]
+根據您的叢集內容和叢集環境、您可以移動、刪除或建立 SAN 生命體、或重新建立刪除的 SAN 生命體。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["七"]link:upgrade-unjoin-original-nodes-move-volumes.html["從叢集取消加入原始節點"]
+[role="quick-margin-para"]
+將磁碟區移至新節點之後、您就會從叢集中取消加入原始節點。當您取消加入節點時、節點的組態會被清除、而且所有磁碟都會初始化。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png["八"]link:upgrade-complete-move-volumes.html["完成升級"]
+[role="quick-margin-para"]
+若要透過移動磁碟區來完成升級程序、請設定服務處理器（ SP ）、安裝新授權、以及設定 AutoSupport 。您可能也需要設定儲存或 Volume Encryption 、並設定 FC 或 NCA 連接埠。

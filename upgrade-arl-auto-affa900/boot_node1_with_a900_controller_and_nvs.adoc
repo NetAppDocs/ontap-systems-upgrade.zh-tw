@@ -45,7 +45,7 @@ FAS2720 | FAS2820 控制器模組 ^1^
 ^2^ 更換控制器和 NVRAM 模組時、只會移動主控台和管理連線。
 
 .步驟
-. 如果您已安裝 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
+. [[A900_boot_node1]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
 +
 
 NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷使用中的自我加密磁碟機類型。

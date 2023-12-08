@@ -313,7 +313,7 @@ NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文�
 Boot_ONTAP功能表
 
 +
-如果您沒有FC或UTA/UTA2組態、請執行 link:set_fc_or_uta_uta2_config_node4.html#auto_check_node4_step15["檢查並設定節點4步驟15上的UTA/UTA2連接埠"] 因此節點4可以識別節點2的磁碟。
+如果您沒有 FC 或 UTA/UTA2 組態、請執行 link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15["檢查並設定節點4步驟15上的UTA/UTA2連接埠"] 因此節點4可以識別節點2的磁碟。
 
 . [[[autos9597_istall3_step29]若需MetroCluster 包含連接FlexArray 至儲存陣列之「支援虛擬化」軟體的支援功能、請前往 link:set_fc_or_uta_uta2_config_on_node3.html#auto9597_check_node3_step15["檢查並設定節點3步驟15上的UTA/UTA2連接埠"]。
 
