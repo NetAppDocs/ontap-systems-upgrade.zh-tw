@@ -1397,7 +1397,6 @@
   <block id="a32dd2ca79d8d8a0056821cb37fed7f4" category="cell">內建金鑰管理程式</block>
   <block id="476ac05553cb9f39ca703fbfa6eee309" category="paragraph">檢查是否有任何磁碟區因為驗證金鑰無法使用或無法連線到EKM伺服器而離線。使用「Volume online」命令將這些磁碟區重新連線。</block>
   <block id="8fb4b518ce39a0704f920c9d4f2f7b77" category="summary">使用Aggregate重新配置來升級控制器硬體</block>
-  <block id="6af6b76d592516d40ca101051c678be3" category="doc">系統升級文件AFF FAS</block>
   <block id="c31caf6cbc86e9844fed547ba5d41897" category="summary">第4階段程序順序、可在執行ONTAP 了更新版本的控制器上進行手動ARL升級。</block>
   <block id="cb01034aedc70b6d88070cceb3ec5fd6" category="inline-link-macro">記錄node2資訊</block>
   <block id="bf281b48b35a7cc176890f2be65ca906" category="list-text"><block ref="bf281b48b35a7cc176890f2be65ca906" category="inline-link-macro-rx"></block></block>
@@ -3453,7 +3452,6 @@
   <block id="7d94daad2b6e9d77a6320a64c21fbc4a" category="sidebar">以MetroCluster 不更新組態升級系統</block>
   <block id="c6bb96cc8b84319277f00b15adc71d75" category="sidebar">針對MetroCluster 您的需求組態選擇升級程序</block>
   <block id="dfcc398099d6a64026e51ab282e16253" category="sidebar">更多資源</block>
-  <block id="aaf23d643347b5921ba9716fa4c13f83" category="sidebar">系統文件ONTAP</block>
   <block id="743b2bde29eae11996923323c6b89672" category="sidebar">交換器文件ONTAP</block>
   <block id="dd032435fa83549d8bf3928550409a3e" category="sidebar">軟體文件ONTAP</block>
   <block id="519131237f79eadb2dc6a1e003a087bc" category="sidebar">NetApp Active IQ Config Advisor</block>
@@ -4747,8 +4745,6 @@ FAS2720</block>
   <block id="8b9b2634fd898f04166a765851aba8f2" category="list-text"><block ref="8b9b2634fd898f04166a765851aba8f2" category="inline-link-macro-rx"></block></block>
   <block id="441e5e19c045de8820e45a5b22e45056" category="paragraph">* 附註 2 * ：不中斷升級需要有自己的儲存設備和機櫃的新系統、才能儲存原始系統的資料。</block>
   <block id="272d55e2adea123757d8811eaaaebd88" category="paragraph">* 注意 3* ：當您透過移動磁碟區進行升級時、請加入新節點、將磁碟區和生命體移至新節點、然後取消加入您要從叢集移除的節點。如果您要升級雙節點無交換器叢集、請先使用一對叢集交換器將其轉換為交換式附加叢集、然後再新增節點。</block>
-  <block id="16319414c65274d365d86327a61ef5dc" category="inline-link">系統文件AFF FAS</block>
-  <block id="c2238e72fe75968b1d2d41e7beba323b" category="paragraph">如果您要更換個別元件、請參閱<block ref="9e966fb68ec771eec4870f18e1909b4f" category="inline-link-rx"></block> 並找出該元件的現場可更換單元（ FRU ）傳單。</block>
   <block id="c024cf342a69d8b35b142333f2608aa5" category="sidebar">在執行 ONTAP 9.8 及更新版本的系統上重新部署集合體、以進行升級</block>
   <block id="5d3c4b59db4a991b7c6450c61662dc60" category="sidebar">在執行 ONTAP 9.7 及更早版本的系統上重新部署集合體、以進行升級</block>
   <block id="d58d42ec84ab0189beb36da55893f387" category="sidebar">透過移動儲存設備或磁碟區進行升級</block>
@@ -4897,5 +4893,15 @@ FAS2720</block>
   <block id="ac5c825456c3417b5a4af98c4f3e915f" category="paragraph">^1^如需AFF 瞭解更多有關支援Arfa800系統的步驟、請參閱第節中提及A800的步驟 <block ref="d7767766539bb5c2349ec33972e353b3" category="inline-link-macro-rx"></block>或 <block ref="1ac9d612a445bb1be7d33490e7f7168c" category="inline-link-macro-rx"></block>。</block>
   <block id="e517f479718742d7735088b63cb4b0a6" category="list-text">[[step5]] 採取下列其中一項行動：</block>
   <block id="1f6c36e4c21adc6fcbbeb1628f0ce398" category="paragraph">如需升級控制器硬體的其他方法、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要透過移動磁碟區或儲存設備連結至_Upgrade。</block>
-  <block id="a8337c93c769b636588431825fedbc33" category="sidebar">本網站提供 AFF 與 FAS 儲存系統的升級程序。為您的儲存系統選取適當的升級程序。</block>
+  <block id="ce334042acf5cdb00aa6b0cacc91188d" category="list-text">如果需要、請重新建立舊系統上的主機板管理控制器（ BMC ）的非預設使用者帳戶：</block>
+  <block id="7cd124c3569d4b8de1ffd3a55e5a0f72" category="list-text">變更或重設 BMC 管理使用者帳戶密碼。</block>
+  <block id="f9c20a87fa881cd6931b55ff9caab40b" category="paragraph">BMC 管理員使用者帳戶密碼為空白（無密碼）、或與系統管理員使用者帳戶密碼相同。</block>
+  <block id="98295c6ad28170a1a290ca42442cdb79" category="list-text">使用重新建立非預設的 BMC 使用者帳戶<block ref="5d6b067bb8a979d6b47c787077dfae6f" prefix=" " category="inline-code"></block> 命令<block ref="3676d55f84497cbeadfc614c1b1b62fc" prefix=" " category="inline-code"></block> 設定為「服務處理器」、如下列範例所示：</block>
+  <block id="715d318a746fe248ce78ec5e2626f09e" category="paragraph"><block ref="95c8ee682558c9e9a0683d5d70ee2be7" prefix="" category="inline-code"></block></block>
+  <block id="b6025c8f8309b4b8106567e8e60f52ac" category="admonition">在 BMC 中建立使用者帳戶時、需要管理員權限。</block>
+  <block id="a64a5798382cc068c2d777ff826bccb5" category="doc">ONTAP 硬體升級文件</block>
+  <block id="646d7d5f93b4a6d7bbbc65acf5ac1077" category="inline-link">ONTAP 硬體系統文件</block>
+  <block id="c2bb4d5f8818bc80f7aa15d94d57c6e3" category="paragraph">如果您要更換個別元件、請參閱<block ref="e18a2433f1085adba8dc86307fee18d1" category="inline-link-rx"></block> 並找出該元件的現場可更換單元（ FRU ）傳單。</block>
+  <block id="dec452d8e293e5516524ae8a86713211" category="sidebar">本網站提供 AFF 、 FAS 和 ASA 儲存系統的升級程序。為您的儲存系統選取適當的升級程序。</block>
+  <block id="ec6e72d1c4bb7dccdc62b6caf35c95f7" category="sidebar">ONTAP 硬體系統文件</block>
 </blocks>

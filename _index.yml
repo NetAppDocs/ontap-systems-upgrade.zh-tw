@@ -1,6 +1,6 @@
 ---
 indexpage:
-  lead: 本網站提供 AFF 與 FAS 儲存系統的升級程序。為您的儲存系統選取適當的升級程序。
+  lead: 本網站提供 AFF 、 FAS 和 ASA 儲存系統的升級程序。為您的儲存系統選取適當的升級程序。
   tiles:
   - title: 開始使用
     links:
@@ -34,7 +34,7 @@ indexpage:
       url: https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html
   - title: 更多資源
     links:
-    - title: 系統文件ONTAP
+    - title: ONTAP 硬體系統文件
       url: https://docs.netapp.com/us-en/ontap-systems/index.html
     - title: 交換器文件ONTAP
       url: https://docs.netapp.com/us-en/ontap-systems-switches/index.html

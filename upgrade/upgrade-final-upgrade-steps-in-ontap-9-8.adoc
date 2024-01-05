@@ -100,6 +100,22 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140536["使用Cisco叢集�
 +
 https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["使用NetApp CN1610叢集交換器移轉至雙節點交換叢集"^]
 
+. 如果需要、請重新建立舊系統上的主機板管理控制器（ BMC ）的非預設使用者帳戶：
++
+.. 變更或重設 BMC 管理使用者帳戶密碼。
++
+BMC 管理員使用者帳戶密碼為空白（無密碼）、或與系統管理員使用者帳戶密碼相同。
+
+.. 使用重新建立非預設的 BMC 使用者帳戶 `security login create` 命令 `application` 設定為「服務處理器」、如下列範例所示：
++
+`security login create -user-or-group-name bmcuser -application service-processor -authentication-method password -role admin`
+
++
+
+NOTE: 在 BMC 中建立使用者帳戶時、需要管理員權限。
+
+
+
 . 如有需要、請透過NetApp支援網站取消委任原始系統、告知NetApp系統已不再運作、且可從支援資料庫中移除：
 +
 .. 登入 https://mysupport.netapp.com/site/global/dashboard["NetApp支援"^] 網站。

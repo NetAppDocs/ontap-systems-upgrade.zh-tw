@@ -9,7 +9,7 @@ settings:
   langs: zh-tw,us-en,ja-jp,ko-kr,zh-cn,de-de,es-es,fr-fr,it-it
 sidebar:
   entries:
-  - title: 系統升級文件AFF FAS
+  - title: ONTAP 硬體升級文件
     url: "/index.html"
   - title: 選擇控制器硬體升級程序
     url: "/choose_controller_upgrade_procedure.html"
@@ -18,5 +18,5 @@ sidebar:
   - title: 法律聲明
     url: "/legal-notices.html"
 product-family:
-  name: AFF and FAS Systems
+  name: ONTAP hardware systems
   repo: ontap-systems-family

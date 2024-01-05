@@ -67,4 +67,4 @@ Aggregate 重新定位是一種替代程序。您不需要使用新的節點來�
 ====
 如果您要升級 MetroCluster 組態、請參閱 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["升級、重新整理或擴充MetroCluster 此功能"^]。
 
-如果您要更換個別元件、請參閱 https://docs.netapp.com/us-en/ontap-systems/index.html["系統文件AFF FAS"^] 並找出該元件的現場可更換單元（ FRU ）傳單。
+如果您要更換個別元件、請參閱 https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAP 硬體系統文件"^] 並找出該元件的現場可更換單元（ FRU ）傳單。
