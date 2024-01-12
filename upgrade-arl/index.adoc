@@ -16,7 +16,7 @@ summary: 使用Aggregate重新配置來升級控制器硬體
 [role="lead"]
 本內容說明如何使用Aggregate重新配置（ARL）、在不中斷營運的情況下升級控制器硬體。
 
-如需升級控制器硬體的其他方法、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+如需升級控制器硬體的其他方法、請參閱 link:../upgrade/upgrade-decide-to-use-this-guide.html["透過移動磁碟區或儲存設備進行升級"]。
 
 您可以在不中斷營運的情況下、將非ONTAP 根集合體從原始節點移轉至同一個叢集中的新節點、以升級執行支援的節點配對上的控制器硬體。在升級期間、可存取所要升級節點上的資料。
 

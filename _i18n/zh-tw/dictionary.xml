@@ -2556,10 +2556,8 @@
   <block id="28ffee9aa7a190ca41675de91fb9710b" category="list-text">如果系統上未設定任何VLAN、請前往 <block ref="f0f83db123b2b495e546349e9d3200d8" category="inline-xref-macro-rx"></block>。如果已設定VLAN、請還原先前在不再存在的連接埠上設定或是在移至另一個廣播網域的連接埠上設定的已移除VLAN。</block>
   <block id="c5c3d54cdf6631e2e290953a91dcd842" category="paragraph">當所有連接埠均已正確設定並新增至正確的廣播網域時、「network port re連通 性show」命令會針對所有連接的連接埠、將連線狀態報告為「ok」、對於沒有實體連線的連接埠、狀態應顯示為「不可到達性」。如果有任何連接埠報告的狀態不是這兩個連接埠、請依照中所述修復連線能力 <block ref="42e2bf4f4ef15f603bcc30bc206d35c3" category="inline-xref-macro-rx"></block>。</block>
   <block id="db548c254460f5243399043fe56f9785" category="list-text">驗證所有生命體都在屬於正確廣播網域的連接埠上以管理方式啟動。</block>
-  <block id="c08f0b6d71108219929095cbd90d111d" category="paragraph">請在下列情況下使用此程序：</block>
   <block id="eb51502469d00e14522e17bfff4124ad" category="list-text">您不想將新的控制器新增為叢集的新HA配對、也不想使用Volume Moves來移轉資料。</block>
   <block id="a3bad37bbfc8cbb39ebdfc42ccfa6bec" category="list-text">您在管理ONTAP 方面經驗豐富、而且對於在診斷權限模式下工作的風險感到自在。</block>
-  <block id="9cc6fc2f026195efe30da793b04e5bd0" category="paragraph">請*不要*在下列情況下使用此程序：</block>
   <block id="d94e9d7914bbd98510d8cb9e0a6d08b1" category="list-text">您使用的是共享交換器、用於叢集互連和乙太網路附加儲存設備。</block>
   <block id="cf76afd058516dd90fe89aedbec6904e" category="doc">將非根Aggregate和NAS資料lifs移回節點2</block>
   <block id="ee2ce060961db1c7ec1f363acef87d91" category="paragraph">在升級過程中、遠端LIF會處理SAN LUN的流量。在升級期間、移轉SAN LIF對於叢集或服務健全狀況並不必要。除非需要將SAN LIF對應至新連接埠、否則不會移動SAN LIF。將node2聯機後，必須驗證該生命段是否正常且位於適當的端口上。</block>
@@ -3076,7 +3074,6 @@
   <block id="e062efd67a70d34c188657c2ffafc80e" category="summary">您必須分別將屬於節點1和節點2的磁碟重新指派給節點3和節點4。</block>
   <block id="43b6e140cee78de5a68c093867c65596" category="doc">連接儲存櫃並重新指派磁碟擁有權</block>
   <block id="507efb4e488acd48724d3f1c3d4b184d" category="paragraph">您可以在節點3和節點4上執行本節中的步驟、完成節點3和節點4上的每個步驟、然後再繼續下一步。</block>
-  <block id="3a1ea4eb792e23021a7c1dcb702a9545" category="list-text">將儲存櫃纜線從節點1/node2連接至節點3/node4。驗證電源供應器和磁碟櫃的實體連線能力。</block>
   <block id="6617e295325d64b4136755492970fe4c" category="list-text">從node3載入器提示字元中、開機至維護模式：</block>
   <block id="533823574e82f810ad592fb31173b543" category="list-text">顯示節點3的系統ID：</block>
   <block id="9d0e35f7d62f6d238b5cb5794b6d495c" category="paragraph">「展示-v」</block>
@@ -3444,7 +3441,6 @@
   <block id="4c41f3a2ec168af1924a7c5a884bdc37" category="cell">9.0至9.7</block>
   <block id="9732e7498adc911676ddbf1eb96c90f1" category="inline-link-macro">手動升級執行ONTAP 效能不低於更新版本的控制器硬體</block>
   <block id="c96cad4c802036afa3176e87bcda336b" category="cell"><block ref="c96cad4c802036afa3176e87bcda336b" category="inline-link-macro-rx"></block></block>
-  <block id="c83b4e572cf3ae5eb7bac42baed0ac9e" category="summary">您可以連結至此主題中的其他參考內容和網站。</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">開始使用</block>
   <block id="6c54fdf57ce13c518f1cc0d9d5f32820" category="sidebar">升級控制器硬體</block>
   <block id="194cc1951d00be469039af6dbda275d0" category="sidebar">使用「系統控制器更換」命令（大多數系統）</block>
@@ -4892,7 +4888,6 @@ FAS2720</block>
   <block id="756e1a7c05678e697a7ba0945d87ed6c" category="paragraph">如果您沒有FC或UTA/UTA2組態、請執行 <block ref="cd67767b7b87c1efe6325584571ce48d" category="inline-link-macro-rx"></block> 這樣， node4 就能識別 node2 的磁碟。</block>
   <block id="ac5c825456c3417b5a4af98c4f3e915f" category="paragraph">^1^如需AFF 瞭解更多有關支援Arfa800系統的步驟、請參閱第節中提及A800的步驟 <block ref="d7767766539bb5c2349ec33972e353b3" category="inline-link-macro-rx"></block>或 <block ref="1ac9d612a445bb1be7d33490e7f7168c" category="inline-link-macro-rx"></block>。</block>
   <block id="e517f479718742d7735088b63cb4b0a6" category="list-text">[[step5]] 採取下列其中一項行動：</block>
-  <block id="1f6c36e4c21adc6fcbbeb1628f0ce398" category="paragraph">如需升級控制器硬體的其他方法、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要透過移動磁碟區或儲存設備連結至_Upgrade。</block>
   <block id="ce334042acf5cdb00aa6b0cacc91188d" category="list-text">如果需要、請重新建立舊系統上的主機板管理控制器（ BMC ）的非預設使用者帳戶：</block>
   <block id="7cd124c3569d4b8de1ffd3a55e5a0f72" category="list-text">變更或重設 BMC 管理使用者帳戶密碼。</block>
   <block id="f9c20a87fa881cd6931b55ff9caab40b" category="paragraph">BMC 管理員使用者帳戶密碼為空白（無密碼）、或與系統管理員使用者帳戶密碼相同。</block>
@@ -4904,4 +4899,10 @@ FAS2720</block>
   <block id="c2bb4d5f8818bc80f7aa15d94d57c6e3" category="paragraph">如果您要更換個別元件、請參閱<block ref="e18a2433f1085adba8dc86307fee18d1" category="inline-link-rx"></block> 並找出該元件的現場可更換單元（ FRU ）傳單。</block>
   <block id="dec452d8e293e5516524ae8a86713211" category="sidebar">本網站提供 AFF 、 FAS 和 ASA 儲存系統的升級程序。為您的儲存系統選取適當的升級程序。</block>
   <block id="ec6e72d1c4bb7dccdc62b6caf35c95f7" category="sidebar">ONTAP 硬體系統文件</block>
+  <block id="1320db1e300a995e122ea5d434b23e9b" category="list-text">將儲存架纜線從先前連接至 node1/node2 的機櫃連接至 node3/node4 。</block>
+  <block id="4e14960b0c5923b866b1398172c14f69" category="admonition">在此升級過程中、您不得將新的機櫃連接至 node3/node4 。完成控制器升級後、您可以不中斷地將新機櫃連接至系統。</block>
+  <block id="c1f694580637b3e597cbb094a01e4f0b" category="list-text">驗證電源供應器和磁碟櫃的實體連線能力。</block>
+  <block id="ed55776ebd74bfbd9eb16e468efd309c" category="paragraph">您可以在下列情況下使用此程序：</block>
+  <block id="3767c7624c68d0c29496b5a31369dec4" category="paragraph">在下列情況下、您無法使用此程序：</block>
+  <block id="30fe187542d0301b8cde168dff779374" category="paragraph">如需升級控制器硬體的其他方法、請參閱 <block ref="9f3bef3f6be14e6a346fc21a2929c802" category="inline-link-macro-rx"></block>。</block>
 </blocks>

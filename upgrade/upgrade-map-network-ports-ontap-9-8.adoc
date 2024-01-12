@@ -218,4 +218,5 @@ NOTE: 對於iSCSI LIF、若要修改主連接埠、則需要以管理方式關�
 
 
 
+.完成後
 您已完成實體連接埠的對應。若要完成升級、請前往 link:upgrade-final-upgrade-steps-in-ontap-9-8.html["請執行ONTAP 更新版本的最終升級步驟"]。
