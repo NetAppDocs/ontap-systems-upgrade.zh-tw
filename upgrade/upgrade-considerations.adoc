@@ -60,7 +60,8 @@ NOTE: 如果您要升級八節點叢集、以提供 FCP 、 iSCSI 或 FCoE 等�
 
 
 | 我是搬移內部儲存設備、還是將系統轉換成磁碟機櫃？  a| 
-. https://hwu.netapp.com/["驗證新系統所支援的根彙總大小和磁碟數量是否等於或大於原始系統所支援的磁碟數量"^]。
+. https://hwu.netapp.com/["確認根 Aggregate 中目前的根 Aggregate 大小和磁碟數量符合或超過新系統的規格"^]。
+. https://hwu.netapp.com/["確認新系統支援的儲存磁碟數量等於或大於原始系統支援的儲存磁碟數量"^]。
 . link:upgrade-by-moving-storage-parent.html["透過移動儲存設備進行升級"] （破壞性程序）。
 
 

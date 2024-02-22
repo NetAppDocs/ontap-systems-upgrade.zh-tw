@@ -4690,8 +4690,6 @@ FAS2720</block>
   <block id="259b1238f7182936d8b9a81032dea1c4" category="admonition">如果您要升級八節點叢集、以提供 FCP 、 iSCSI 或 FCoE 等區塊傳輸協定、請確認新節點是否正確通告 LUN 。如需詳細資訊、請參閱<block ref="cfeb6fd7632aa8a3aff6f995423e20e8" category="inline-link-rx"></block>。</block>
   <block id="e8f22bb9bc721e9d507705c0b5091956" category="list-text"><block ref="7825023d8bc8048cc59c9149895b5f54" category="inline-link-macro-rx"></block> （不中斷營運的程序）。</block>
   <block id="b1c4279027d78fc21fb097c66f6dfeed" category="cell">我是搬移內部儲存設備、還是將系統轉換成磁碟機櫃？</block>
-  <block id="080ce533b4abf86cd2d7593ae49edcf0" category="inline-link">驗證新系統所支援的根彙總大小和磁碟數量是否等於或大於原始系統所支援的磁碟數量</block>
-  <block id="ce65f5cbc22308e362b452a86faafd3b" category="list-text"><block ref="ab539adb97afbc3ff903f6aa5c840d77" category="inline-link-rx"></block>。</block>
   <block id="a896b1815f91ec1823a72e8046b7c9a6" category="list-text"><block ref="8df77a1d078de7fe643ceb436b9ddb19" category="inline-link-macro-rx"></block> （破壞性程序）。</block>
   <block id="40963580c922c5349edccc1df1cec10d" category="cell">我是否要在具有多個 HA 配對的叢集中升級 HA 配對？</block>
   <block id="589715d2ddec2a6045a52a7acc37f9bb" category="cell">將 epsilon 移至未進行控制器升級的 HA 配對節點。例如、如果您要升級叢集中的節點A/nodeB、並使用HA配對組態節點A/nodeB和節點C/noded、則必須將epsilon移至節點C或noded。</block>
@@ -4905,4 +4903,8 @@ FAS2720</block>
   <block id="ed55776ebd74bfbd9eb16e468efd309c" category="paragraph">您可以在下列情況下使用此程序：</block>
   <block id="3767c7624c68d0c29496b5a31369dec4" category="paragraph">在下列情況下、您無法使用此程序：</block>
   <block id="30fe187542d0301b8cde168dff779374" category="paragraph">如需升級控制器硬體的其他方法、請參閱 <block ref="9f3bef3f6be14e6a346fc21a2929c802" category="inline-link-macro-rx"></block>。</block>
+  <block id="e6ade1c19be2f8809c4d245c0dd36ffb" category="inline-link">確認根 Aggregate 中目前的根 Aggregate 大小和磁碟數量符合或超過新系統的規格</block>
+  <block id="ffcd2799f602c109648b4c27aba568da" category="list-text"><block ref="47a924df16a51eabe41998989d3e0fba" category="inline-link-rx"></block>。</block>
+  <block id="1be12058e46f267981f165919be9807c" category="inline-link">確認新系統支援的儲存磁碟數量等於或大於原始系統支援的儲存磁碟數量</block>
+  <block id="d754882e684dd040085cc74dc3abd6e4" category="list-text"><block ref="40d68d018a02788fd741d99e7433a2dc" category="inline-link-rx"></block>。</block>
 </blocks>
