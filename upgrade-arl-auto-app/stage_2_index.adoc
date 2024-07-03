@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-app/stage_2_index.html
 keywords: relocating, retiring, node1, lif, stage 2 
 summary: ARL升級的第2階段程序順序、使用「系統控制器更換」命令來執行ONTAP 更新版本的控制器。 
 ---
-= 總覽
+= 第 2 階段總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

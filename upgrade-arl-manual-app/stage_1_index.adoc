@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual-app/stage_1_index.html
 keywords: stage 1, prepare, upgrade, steps 
 summary: 步驟1：在執行ONTAP 了更新版本的控制器上進行手動ARL升級的程序順序。 
 ---
-= 總覽
+= 第 1 階段總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

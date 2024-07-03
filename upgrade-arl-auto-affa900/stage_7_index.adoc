@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/stage_7_index.html
 keywords: upgrade, authentication, storage, volume, aggregate, encryption, overview, stage 7 
 summary: '第 7 階段 ARL 升級程序、使用 `system controller replace` 用於升級同一機箱中的控制器機型的命令。' 
 ---
-= 總覽
+= 第 7 階段總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

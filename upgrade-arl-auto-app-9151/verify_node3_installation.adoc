@@ -1,0 +1,306 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/verify_node3_installation.html 
+keywords: verifying, verify, node, install, installation 
+summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、請確認 node1 實體連接埠正確對應至 node3 、並還原 node3 上的網路組態 `system controller replace` 。' 
+---
+= 驗證node3安裝
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您必須驗證節點1的實體連接埠是否正確對應至節點3上的實體連接埠。如此一來、節點3就能在升級後與叢集中的其他節點和網路進行通訊。
+
+.關於這項工作
+請參閱 link:other_references.html["參考資料"] 可鏈接到_SURE_ Hardware Universe 以獲取有關新節點上端口的信息。您將會使用本節稍後的資訊。
+
+實體連接埠配置可能有所不同、視節點的機型而定。當新節點開機時ONTAP 、為了自動進入仲裁、S庫 會嘗試判斷哪些連接埠應該裝載叢集生命期。
+
+如果節點1上的實體連接埠未直接對應至節點3上的實體連接埠、請參閱後續章節 <<還原節點3上的網路組態>> 必須用於修復網路連線。
+
+安裝並開機節點3之後、您必須驗證節點是否已正確安裝。您必須等待節點3加入仲裁、然後繼續重新配置作業。
+
+在此過程中、當節點3加入仲裁時、作業將暫停。
+
+.步驟
+. 驗證node3是否已加入仲裁：
++
+「cluster show -node3 -Fields health」
+
++
+保健領域的產出應該是真的。
+
+. 驗證node3是否與node2屬於同一個叢集、而且它是否正常：
++
+「叢集展示」
+
+. [[VERIFY_node3_STEP _5]] 切換至進階權限模式：
++
+《進階設定》
+
+. 檢查控制器更換作業的狀態、並確認它處於暫停狀態、且狀態與節點1停止之前的狀態相同、以執行安裝新控制器和移動纜線的實體工作：
++
+「System Controller replace show」（系統控制器更換顯示）
+
++
+「System Controller replace show-details」（系統控制器取代顯示詳細資料
+
+. 恢復控制器更換作業：
++
+「系統控制器更換恢復」
+
+. 控制器更換將暫停以進行介入、並顯示下列訊息：
++
+....
+Cluster::*> system controller replace show
+Node             Status                       Error-Action
+---------------- ------------------------     ------------------------------------
+Node1(now node3) Paused-for-intervention      Follow the instructions given in
+                                              Step Details
+Node2                      None
+
+Step Details:
+--------------------------------------------
+To complete the Network Reachability task, the ONTAP network configuration must be manually adjusted to match the new physical network configuration of the hardware. This includes:
+
+1. Re-create the interface group, if needed, before restoring VLANs. For detailed commands and instructions, refer to the "Re-creating VLANs, ifgrps, and broadcast domains" section of the upgrade controller hardware guide for the ONTAP version running on the new controllers.
+2. Run the command "cluster controller-replacement network displaced-vlans show" to check if any VLAN is displaced.
+3. If any VLAN is displaced, run the command "cluster controller-replacement network displaced-vlans restore" to restore the VLAN on the desired port.
+
+2 entries were displayed.
+....
++
+
+NOTE: 在此程序中、_重新建立VLAN、ifgrps和廣播網域_一節已重新命名為_在節點3_上還原網路組態。
+
+. 在控制器更換處於暫停狀態時、請繼續執行本文件的下一節、以還原節點上的網路組態。
+
+
+
+
+== 還原節點3上的網路組態
+
+確認node3處於仲裁狀態並可與node2通訊之後、請確認node1的VLAN、介面群組和廣播網域是否顯示在node3上。此外、請確認所有節點3網路連接埠都已設定在正確的廣播網域中。
+
+.關於這項工作
+如需建立及重新建立VLAN、介面群組及廣播網域的詳細資訊、請參閱 link:other_references.html["參考資料"] 連結至_網路管理_。
+
+.步驟
+. 列出升級節點 1 （稱為 node3 ）上的所有實體連接埠：
++
+「網路連接埠show -node3」
+
++
+此時會顯示節點上的所有實體網路連接埠、VLAN連接埠和介面群組連接埠。從這個輸出中、您可以看到ONTAP 任何實體連接埠、這些連接埠已被動作區移至「叢集」廣播網域。您可以使用此輸出來協助決定哪些連接埠必須做為介面群組成員連接埠、VLAN基礎連接埠或獨立實體連接埠、以裝載LIF。
+
+. 列出叢集上的廣播網域：
++
+「網路連接埠廣播網域節目」
+
+. 列出節點 3 上所有連接埠的網路連接埠連線：
++
+「網路連接埠連線能力顯示」
+
++
+您應該會看到如下範例所示的輸出：
+
++
+[listing]
+----
+ClusterA::*> network port reachability show
+Node      Port     Expected Reachability                Reachability Status
+--------- -------- ------------------------------------ ---------------------
+node1_node3
+          e0M      Default:Mgmt                         ok
+          e10a     Default:Default                      ok
+          e10b     -                                    no-reachability
+          e10c     Default:Default                      ok
+          e10d     -                                    no-reachability
+          e1a      Cluster:Cluster                      ok
+          e1b      -                                    no-reachability
+          e7a      Cluster:Cluster                      ok
+          e7b      -                                    no-reachability
+node2_node4
+          e0M      Default:Mgmt                         ok
+          e4a      Default:Default                      ok
+          e4b      -                                    no-reachability
+          e4c      Default:Default                      ok
+          e4d      -                                    no-reachability
+          e3a      Cluster:Cluster                      ok
+          e3b      Cluster:Cluster                      ok
+18 entries were displayed.
+----
++
+在上述範例中、節點1_node3是在更換控制器之後才開機。某些連接埠無法連線至預期的廣播網域、因此必須修復。
+
+. [[auto_Verify（自動驗證）_3_step4]修復節點3上每個連接埠的可連線性、其連線狀態不是「OK（確定）」。先在任何實體連接埠上執行下列命令、然後在任何VLAN連接埠上執行一次一個：
++
+`network port reachability repair -node <node_name>  -port <port_name>`
+
++
+您應該會看到如下範例所示的輸出：
+
++
+[listing]
+----
+Cluster ::> reachability repair -node node1_node3 -port e4a
+----
++
+[listing]
+----
+Warning: Repairing port "node1_node3: e4a" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+----
++
+如前所示、對於連線狀態可能不同於目前所在廣播網域之連線狀態的連接埠、預期會出現一則警告訊息。檢視連接埠的連線能力、並視需要回答「y」或「n」。
+
++
+驗證所有實體連接埠的可連線性是否符合預期：
+
++
+「網路連接埠連線能力顯示」
+
++
+執行可連線性修復時ONTAP 、嘗試將連接埠放在正確的廣播網域中。但是、如果無法判斷連接埠的連線能力、而且不屬於任何現有的廣播網域、ONTAP 則無法使用這些連接埠來建立新的廣播網域。
+
+. 如果介面群組組態與新的控制器實體連接埠配置不符、請使用下列步驟加以修改。
++
+.. 您必須先從其廣播網域成員資格中移除應該是介面群組成員連接埠的實體連接埠。您可以使用下列命令來執行此作業：
++
+`network port broadcast-domain remove-ports -broadcast-domain <broadcast-domain_name> -ports <node_name:port_name>`
+
+.. 將成員連接埠新增至介面群組：
++
+`network port ifgrp add-port -node <node_name> -ifgrp <ifgrp> -port <port_name>`
+
+.. 介面群組會在新增第一個成員連接埠約一分鐘後自動新增至廣播網域。
+.. 確認介面群組已新增至適當的廣播網域：
++
+`network port reachability show -node <node_name> -port <ifgrp>`
+
++
+如果介面群組的連線狀態不是「正常」、請將其指派給適當的廣播網域：
+
++
+`network port broadcast-domain add-ports -broadcast-domain <broadcast_domain_name> -ports <node:port>`
+
+
+
+. 使用下列步驟將適當的實體連接埠指派給 `Cluster` 廣播網域：
++
+.. 確定哪些連接埠可連線至「叢集”廣播網域：
++
+「網路連接埠可連線性顯示-可連線至廣播網域叢集：叢集」
+
+.. 如果「叢集」廣播網域的連線狀態不是「正常」、請修復任何可連線的連接埠：
++
+`network port reachability repair -node <node_name> -port <port_name>`
+
+
+
+. 使用下列其中一項命令、將其餘的實體連接埠移至正確的廣播網域：
++
+`network port reachability repair -node <node_name> -port <port_name>`
+
++
+「網路連接埠廣播網域移除連接埠」
+
++
+「網路連接埠廣播網域附加連接埠」
+
++
+確認沒有無法連線或非預期的連接埠。使用下列命令檢查所有實體連接埠的連線狀態、並檢查輸出以確認狀態為「OK」（正常）：
+
++
+「網路連接埠連線能力顯示-詳細資料」
+
+. 使用下列步驟還原任何可能已被取代的VLAN：
++
+.. 列出已移離的VLAN：
++
+顯示「叢集控制器更換網路置換VLAN」
+
++
+應顯示如下輸出：
+
++
+[listing]
+----
+Cluster::*> displaced-vlans show
+(cluster controller-replacement network displaced-vlans show)
+          Original
+Node      Base Port   VLANs
+--------  ----------  -----------------------------------------
+Node1       a0a       822, 823
+            e4a       822, 823
+2 entries were displayed.
+----
+.. 還原從先前基礎連接埠移出的VLAN：
++
+「叢集控制器更換網路置換VLAN還原」
+
++
+以下是將已從介面群組「a0a」移出的VLAN還原回相同介面群組的範例：
+
++
+[listing]
+----
+Cluster::*> displaced-vlans restore -node node1_node3 -port a0a -destination-port a0a
+----
++
+以下是將連接埠「e9a」上的已移轉VLAN還原為e9d的範例：
+
++
+[listing]
+----
+Cluster::*> displaced-vlans restore -node node1_node3 -port e9a -destination-port e9d
+----
++
+當VLAN還原成功時、會在指定的目的地連接埠上建立移出的VLAN。如果目的地連接埠是介面群組的成員、或目的地連接埠當機、則VLAN還原會失敗。
+
++
+等待約一分鐘、將新還原的VLAN放入適當的廣播網域。
+
+.. 如果VLAN連接埠不在「叢集控制器取代網路的V現 用VLAN show」輸出中、但應在其他實體連接埠上設定、請視需要建立新的VLAN連接埠。
+
+
+. 完成所有連接埠修復後、請刪除任何空白的廣播網域：
++
+`network port broadcast-domain delete -broadcast-domain <broadcast_domain_name>`
+
+. [[step10]驗證連接埠可連線性：
++
+「網路連接埠連線能力顯示」
+
++
+當所有連接埠均已正確設定並新增至正確的廣播網域時、「network port re連通 性show」命令會針對所有連接的連接埠、將連線狀態報告為「ok」、對於沒有實體連線的連接埠、狀態應顯示為「不可到達性」。如果有任何連接埠報告這兩個以外的狀態、請執行連線能力修復、並依照中的指示、從廣播網域新增或移除連接埠 <<auto_verify_3_step4,步驟4.>>。
+
+. 確認所有連接埠均已置入廣播網域：
++
+「網路連接埠展示」
+
+. 確認廣播網域中的所有連接埠均已設定正確的最大傳輸單元（MTU）：
++
+「網路連接埠廣播網域節目」
+
+. 還原LIF主連接埠、指定需要還原的Vserver和LIF主連接埠（如果有）、請執行下列步驟：
++
+.. 列出任何已移出的生命：
++
+「顯示介面」
+
+.. 還原LIF主節點和主連接埠：
++
+`cluster controller-replacement network displaced-interface restore-home-node -node <node_name> -vserver <vserver_name> -lif-name <LIF_name>`
+
+
+
+. 驗證所有生命段是否都有主連接埠、且是否以管理方式啟動：
++
+「網路介面顯示欄位主連接埠、狀態管理」
+
+

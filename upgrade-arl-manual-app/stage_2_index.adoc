@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual-app/stage_2_index.html
 keywords: relocate, retire, node1, steps, stage 2 
 summary: 階段2在執行ONTAP 版本號為9.8或更新版本的控制器上進行手動ARL升級的程序順序。 
 ---
-= 總覽
+= 第 2 階段總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

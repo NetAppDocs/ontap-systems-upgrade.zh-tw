@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/required_tools_and_documentation.html 
+keywords: required, tools, documentation, install, worksheet, ontap 
+summary: '您必須擁有某些工具和文件、才能使用命令來升級執行 ONTAP 9.15.1 或更新版本的控制器 `system controller replace` 。' 
+---
+= 必要的工具與文件
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您必須有特定工具才能安裝新硬體、而且在升級過程中需要參考其他文件。
+
+您需要下列工具來執行升級：
+
+* 接地線
+* 2號十字螺絲起子
+
+
+前往 link:other_references.html["參考資料"] 一節、以存取此升級所需的參考文件和參考網站清單

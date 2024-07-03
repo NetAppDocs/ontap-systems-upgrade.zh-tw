@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/stage_5_index.html
 keywords: install, boot, node4, node2, node-management,  stage 5 
 summary: ARL升級的第5階段程序順序、使用「系統控制器更換」命令、在執行ONTAP 版本號從9.5到9.7的控制器上執行。 
 ---
-= 總覽
+= 第 5 階段總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

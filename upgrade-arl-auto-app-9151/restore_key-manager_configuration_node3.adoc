@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/restore_key-manager_configuration_node3.html 
+keywords: restoring, key-manager, configuration, node3, nve, arl, encryption, netapp, volume 
+summary: '如果需要、請使用命令在 node3 上還原金鑰管理程式組態、以升級執行 ONTAP 9.15.1 或更新版本的控制器 `system controller replace` 。' 
+---
+= 還原節點3上的金鑰管理程式組態
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+如果您使用NetApp Volume Encryption（NVE）和NetApp Aggregate Encryption（NAE）來加密升級系統上的磁碟區、則加密組態必須同步至新節點。如果您不同步金鑰管理程式、當您使用ARL將節點1集合體從節點2重新定位至節點3時、可能會發生故障、因為節點3沒有必要的加密金鑰、無法將加密的磁碟區和集合體上線。
+
+.關於這項工作
+執行下列步驟、將加密組態同步至新節點：
+
+.步驟
+. 從節點3執行下列命令：
++
+「安全金鑰管理程式內建同步」
+
+. 在重新部署資料集合體之前、請先確認節點3上的SVM-KEK金鑰已還原為「true」：
++
+[listing]
+----
+::> security key-manager key query -node node3 -fields restored -key-type SVM-KEK
+----
++
+.範例
+[listing]
+----
+::> security key-manager key query -node node3 -fields restored -key-type SVM-KEK
+
+node     vserver   key-server   key-id                                  restored
+-------- --------- -----------  --------------------------------------- --------
+node3    svm1      ""           00000000000000000200000000000a008a81976 true
+                                2190178f9350e071fbb90f00000000000000000
+----
+

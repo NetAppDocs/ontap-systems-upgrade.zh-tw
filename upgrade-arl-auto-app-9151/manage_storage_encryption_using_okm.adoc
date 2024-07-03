@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/manage_storage_encryption_using_okm.html 
+keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication 
+summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、請設定及管理儲存加密、管理驗證金鑰、以及靜態 SnapMirror 關係 `system controller replace` 。' 
+---
+= 使用 Onboard Key Manager 管理儲存加密
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以使用 Onboard Key Manager （ OKM ）來管理加密金鑰。如果您已設定 OKM 、則必須在開始升級之前記錄複雜密碼和備份資料。
+
+.步驟
+. 記錄叢集範圍的複雜密碼。
++
+這是使用 CLI 或 REST API 設定或更新 OKM 時所輸入的複雜密碼。
+
+. 執行以備份金鑰管理程式資訊 `security key-manager onboard show-backup` 命令。
+
+
+
+
+== 靜止SnapMirror關係（選用）
+
+在繼續執行此程序之前、您必須確認所有SnapMirror關係均已靜止。當SnapMirror關係靜止時、它會在重新開機和容錯移轉之間保持靜止。
+
+.步驟
+. 驗證目的地叢集上的SnapMirror關係狀態：
++
+「napmirror show」
+
++
+[NOTE]
+====
+如果狀態為「Transferring（正在傳輸）」、您必須中止傳輸：「napmirror abort-destination-vserver _vserver_name_」
+
+====
++
+如果SnapMirror關係未處於「傳輸」狀態、則中止將會失敗。
+
+. 停止叢集之間的所有關係：
++
+`snapmirror quiesce -destination-vserver *`
+
+

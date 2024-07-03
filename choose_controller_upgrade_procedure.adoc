@@ -21,6 +21,10 @@ summary: 一般而言、控制器硬體的升級方式取決於原始節點的�
 
 * FAS2620 、 FAS2650 、 FAS2720 和 FAS2750
 * AFF A150 、 AFF A200 、 AFF A220 、 AFF A250 、 AFF A700s 、 和 AFF A800
++
+
+NOTE: 您也可以使用 Aggregate 重定位將 AFF A800 升級至 AFF A70 或 AFF A90 。link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html["深入瞭解"]。
+
 * AFF C190 、 AFF C250 和 AFF C800
 * ASA A150 、 ASA A250 、 ASA A800 和 ASA AFF A220
 
@@ -52,8 +56,7 @@ image:workflow_external_drives.png["選擇升級程序的決策工作流程"]
 +
 Aggregate 重新定位是一種替代程序。您不需要使用新的節點來擴充和縮小叢集、這對雙節點無交換器叢集很有幫助。移動磁碟區時、透過重新定位集合體來移動資料的速度比跨集合體複製資料快。
 
-* link:upgrade/upgrade-decide-to-use-this-guide.html["透過移動磁碟區進行升級"]
-* link:upgrade/upgrade-decide-to-use-this-guide.html["透過移動儲存設備進行升級"]
+* link:upgrade/upgrade-decide-to-use-this-guide.html["透過移動磁碟區或儲存設備進行升級"]
 
 
 [NOTE]

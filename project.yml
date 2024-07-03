@@ -13,7 +13,15 @@ sidebar:
     url: "/index.html"
   - title: 選擇控制器硬體升級程序
     url: "/choose_controller_upgrade_procedure.html"
-  - section: upgrade-arl
+  - title: 使用 ARL 升級
+    entries:
+    - section: upgrade-arl
+    - section: upgrade-arl-auto-app-9151
+    - section: upgrade-arl-auto-affa900
+    - section: upgrade-arl-auto-app
+    - section: upgrade-arl-auto
+    - section: upgrade-arl-manual-app
+    - section: upgrade-arl-manual
   - section: upgrade
   - title: 法律聲明
     url: "/legal-notices.html"

@@ -47,7 +47,37 @@ summary: 使用 ARL 將同一機箱中的控制器機型升級時、請確認 no
 +
 確認所有連接的連接埠（包括介面群組和VLAN連接埠）都顯示為「OK（正常）」狀態。
 
-. 恢復重新定位作業：
+. 若要將 AFF A800 升級至 AFF A70 或 AFF A90 、您必須重新指派 FCP SAN 生命體。對於所有其他系統升級、請前往 <<resume_relocation_step4,步驟4.>>：
++
+.. 將用於 FCP 或 FC-NVMe 資料存取的 FCP SAN 生命體重新指派給正確的主連接埠：
++
+`network interface show -vserver <vserver_hosting_fcp_lifs>`
+
+.. 對於目前節點為升級節點 1 的生命週期、而目前的連接埠會將「狀態 oper 」報告為「 - 」（因為連接埠存在於 AFF A800 節點上、但不存在於 AFF A90 節點上）、請先修改目前的連接埠、然後再將其上線。
++
+驗證是否已建立實體連線至需要移動 FC LIF 的 FC 目標連接埠：
+
++
+... 將LIF狀態設為「向下」：
++
+`network interface modify -vserver <vserver_name> -lif <lif_name>  -status-admin down`
+
+... 修改 LIF 的主連接埠：
++
+`network interface modify -vserver <vserver_name> -lif <lif_name> - home-node <node1> -home-port <FC_target_port>`
+
+... 將 LIF 狀態設定為「 UP 」：
++
+`network interface modify -vserver <vserver> -lif <lif_name>  -status-admin up`
+
+
+
+
+
++
+對節點 1 上的每個主目錄 FC SAN LIF 重複執行子步驟 a 和 b 。
+
+. [[resume_gress_step4]] 恢復重新定位作業：
 +
 「系統控制器更換恢復」
 

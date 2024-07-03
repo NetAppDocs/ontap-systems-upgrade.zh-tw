@@ -1,0 +1,25 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/lif_migration_failure.html 
+keywords: lif, migration, failure, mtu 
+summary: '在階段 2 、階段 3 或階段 5 中移轉後、當使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、生命週期不會在線上 `system controller replace` 。' 
+---
+= LIF移轉失敗
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+移轉生命週期之後、在第2階段、第3階段或第5階段移轉之後、生命週期可能不會上線。
+
+.步驟
+. 確認連接埠MTU大小與來源節點相同。
++
+例如、如果來源節點上的叢集連接埠MTU大小為9000、則目的地節點上的MTU大小應為9000。
+
+. 如果連接埠的實體狀態為「私人」、請檢查網路纜線的實體連線能力。
+

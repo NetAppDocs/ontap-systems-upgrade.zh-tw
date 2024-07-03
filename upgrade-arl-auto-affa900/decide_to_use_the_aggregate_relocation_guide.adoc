@@ -25,6 +25,9 @@ summary: 決定是否使用可升級同一機箱中控制器機型的 ARL 程序
 | 舊控制器 | 更換控制器 
 
 
+| 解答800 AFF | AFF A70 和 AFF A90 
+
+
 | AFF A220 已設定為 ASA | ASA A150 
 
 
@@ -44,6 +47,7 @@ summary: 決定是否使用可升級同一機箱中控制器機型的 ARL 程序
 |===
 * 您已向 NetApp 銷售代表確認您已收到用於控制器升級的硬體：
 +
+** 兩個 AFF A90 或兩個 AFF A70 控制器、以及升級所需的所有 I/O 模組。100GbE 纜線所需長度。
 ** ASA A150 、 AFF A150 或 FAS2820 控制器
 ** ASA A900 、 AFF A900 或 FAS9500 控制器和 NVRAM 模組、以及升級所需的零件
 
@@ -55,11 +59,11 @@ summary: 決定是否使用可升級同一機箱中控制器機型的 ARL 程序
 
 在下列情況下、您無法使用此程序：
 
-* 您正在FlexArray 使用的是AFF 功能不實的虛擬化軟體來搭配使用於功能不實的A700或FAS9000系統。
+* 您正在 AFF A800 、 AFF A700 或 FAS9000 系統上使用 FlexArray 虛擬化軟體。
 * 您使用的是共享交換器、用於叢集互連和乙太網路附加儲存設備。
 
 
-如需升級 AFF A700 或 FAS9000 系統上的 Fabric MetroCluster 或 MetroCluster IP 組態、請參閱 link:other_references.html["參考資料"] 連結至_E不明MetroCluster Upgrade and Expansion內容。
+如需升級 AFF A800 、 AFF A700 或 FAS9000 系統上的 MetroCluster IP 組態、請參閱 link:other_references.html["參考資料"] 連結至 MetroCluster 升級與擴充內容。
 
 
 NOTE: 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume加密（NVE）和NetApp Aggregate加密（NAE）。

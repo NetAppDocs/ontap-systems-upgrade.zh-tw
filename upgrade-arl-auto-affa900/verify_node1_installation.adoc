@@ -14,10 +14,14 @@ summary: 使用 ARL 升級同一機箱中的控制器型號時、請使用替換
 
 
 [role="lead"]
-您必須使用替換的系統模組來驗證 node1 安裝。由於實體連接埠沒有變更、因此您不需要將舊節點1的實體連接埠對應至替換節點1。
+使用替換控制器模組啟動 node1 之後、請確認已正確安裝。
+
+僅適用於 AFF A800 升級、您可以將實體連接埠從現有節點 1 對應至更換節點 1 、因為實體連接埠在 AFF A800 和 AFF A90 或 AFF A70 控制器之間變更。
+
+對於所有其他升級、實體連接埠並無變更、因此您不需要將實體連接埠從舊的 node1 對應到替換的 node1 。
 
 .關於這項工作
-使用替換控制器模組啟動 node1 之後、請確認已正確安裝。您必須等待節點1加入仲裁、然後繼續執行控制器更換作業。
+您必須等待節點1加入仲裁、然後繼續執行控制器更換作業。
 
 在此過程中、當節點1嘗試自動加入仲裁時、控制器升級作業應該會暫停。
 
@@ -33,6 +37,14 @@ summary: 使用 ARL 升級同一機箱中的控制器型號時、請使用替換
 +
 「叢集展示」
 
++
+[NOTE]
+====
+如果在引導後 node1 未加入仲裁，請等待五分鐘，然後再次檢查。視叢集連線而定、連接埠可連線性掃描可能需要一些時間才能完成、並將生命移至各自的主連接埠。
+
+如果在五分鐘後節點 1 仍未達到法定人數、請考慮使用診斷權限命令、將節點放入「叢集 IPSpace 」、以修改新節點的叢集連接埠 `network port modify <port_name> -ipspace Cluster`。
+
+====
 . 切換至進階權限模式：
 +
 《進階設定》
@@ -116,16 +128,14 @@ Node1
           a0a-822  Default:822                          ok
           a0a-823  Default:823                          ok
           e0M      Default:Mgmt                         ok
-          e11a     -                                    no-reachability
-          e11b     -                                    no-reachability
-          e11c     -                                    no-reachability
-          e11d     -                                    no-reachability
+          e1a      Cluster:Cluster                      ok
+          e1b      -                                    no-reachability
+          e2a      -                                    no-reachability
+          e2b      -                                    no-reachability
           e3a      -                                    no-reachability
           e3b      -                                    no-reachability
-          e4a      Cluster:Cluster                      ok
-          e4e      Cluster:Cluster                      ok
-          e5a      -                                    no-reachability
-          e7a      -                                    no-reachability
+          e7a      Cluster:Cluster                      ok
+          e7b      -                                    no-reachability
           e9a      Default:Default                      ok
           e9a-822  Default:822                          ok
           e9a-823  Default:823                          ok
@@ -134,10 +144,10 @@ Node1
           e9b-823  Default:823                          ok
           e9c      Default:Default                      ok
           e9d      Default:Default                      ok
-22 entries were displayed.
+20 entries were displayed.
 ----
 +
-在前面的範例中、節點1會在更換控制器之後開機。某些連接埠無法連線、因為沒有實體連線功能。您必須修復任何連線狀態為「OK」以外的連接埠。
+在上述範例中、 node1 會在更換控制器之後啟動。顯示「不可連線」的連接埠沒有實體連線能力。您必須修復除以外具有連線狀態的任何連接埠 `ok`。
 
 +
 
@@ -160,12 +170,12 @@ NOTE: 在升級期間、網路連接埠及其連線不應變更。所有連接�
 +
 [listing]
 ----
-Cluster ::> reachability repair -node node1 -port e11b
+Cluster ::> reachability repair -node node1 -port e1b
 ----
 +
 [listing]
 ----
-Warning: Repairing port "node1:e11b" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
+Warning: Repairing port "node1:e1b" may cause it to move into a different broadcast domain, which can cause LIFs to be re-homed away from the port. Are you sure you want to continue? {y|n}:
 ----
 +
 如前述範例所示、若連接埠的連線狀態可能與目前所在廣播網域的連線狀態不同、則會出現警告訊息。檢視連接埠的連線能力、並視需要回答「y」或「n」。

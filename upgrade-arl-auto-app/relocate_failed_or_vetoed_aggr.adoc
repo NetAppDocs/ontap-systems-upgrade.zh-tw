@@ -27,8 +27,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、在升級執行更新�
 
 . 出現提示時、請輸入「y」。
 . 您可以使用下列其中一種方法來強制重新配置：
-
-
++
 [cols="35,65"]
 |===
 | 選項 | 說明 
@@ -39,3 +38,4 @@ summary: 使用ONTAP 「系統控制器更換」命令、在升級執行更新�
 
 | 覆寫目的地檢查 | 使用下列命令：「torage Aggregate regate regulationstart -Node node1 -destination node2 -aggregate-list _aggr_list_-ne-控制 器升級true -override-etoes true -override-dest-checkstrue」 
 |===
+

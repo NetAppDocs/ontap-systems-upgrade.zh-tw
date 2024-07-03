@@ -1,0 +1,64 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/guidelines_for_upgrading_controllers_with_arl.html 
+keywords: guidelines, upgrading, controllers, ARL 
+summary: '瞭解您是否可以使用命令來升級執行 ONTAP 9.15.1 或更新版本的控制器 `system controller replace` 。' 
+---
+= 使用ARL升級控制器的準則
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+若要瞭解您是否可以使用 ARL 來升級執行 ONTAP 9.15.1 或更新版本的一對控制器、取決於平台和原始控制器和更換控制器的組態。
+
+
+
+== 支援ARL升級
+
+使用此 ARL 程序升級一對節點之前、請先檢閱下列需求、以確保您的組態受到支援：
+
+* 確認可在原始控制器和更換控制器上執行 ARL 。
+* 檢查原始系統所支援的所有已定義集合體大小和磁碟數量。然後、您可以將支援的磁碟集合大小和數量、與新系統支援的磁碟集合大小和數量進行比較。請參閱 link:other_references.html["參考資料"] 以連結至 _ Hardware Universe _ 、此處提供此資訊。新系統支援的Aggregate大小和磁碟數目必須等於或大於原始系統支援的Aggregate大小和磁碟數目。
+* 在叢集混合規則中驗證新節點是否能在更換原始控制器時成為現有節點的叢集一部分。如需叢集混合規則的詳細資訊、請參閱 link:other_references.html["參考資料"] 連結至 Hardware Universe 。
+* 如果您的系統（例如 AFF 700 ）具有下列組態、請將叢集生命體移轉並重新主控至每個節點兩個叢集連接埠：
+* 每個節點有兩個以上的叢集連接埠
+* 在 SLOT4 中以中斷模式建立連接埠 E4A 、 e4b 、 e4c 和 e4d 的叢集互連卡、以及連接埠 e4e 、 e4f 、 e4g 和 e4H
++
+
+NOTE: 在每個節點上執行超過兩個叢集連接埠的控制器升級、可能會導致新控制器在升級後遺失叢集生命體。
+
++
+有關詳細信息，請參閱知識庫文章 link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_delete_unwanted_or_unnecessary_cluster_LIFs["如何刪除不需要或不必要的叢集生命"^]。
+
+
+
+使用ARL的控制器升級支援使用SnapLock 「支援」的系統、這些系統均設定了「支援使用者支援使用者支援的功能」和SnapLock 「支援使用者支援
+
+
+
+== 雙節點無交換式叢集
+
+如果您要升級雙節點無交換式叢集中的節點、則可在執行升級時、將節點留在無交換器叢集中。您不需要將它們轉換成交換式叢集。
+
+
+
+== 不支援ARL升級
+
+您無法升級不支援連接至原始控制器之磁碟櫃的替換控制器。
+
+請參閱 link:other_references.html["參考資料"] 可連結至_SURE_ Hardware Universe 以取得磁碟支援資訊。
+
+如果您想要升級具有內部磁碟機的入門級控制器、請參閱 link:other_references.html["參考資料"] 透過移動磁碟區或儲存設備進行升級至 _Upgrade 的連結、並前往 _ 透過移動磁碟區來升級執行叢集式 Data ONTAP 的節點對 _ 。
+
+
+
+== 疑難排解
+
+如果在升級控制器時發生任何問題、請參閱 link:troubleshoot_index.html["疑難排解"] 以取得更多資訊和可能的解決方案。
+
+如果您找不到解決所遇到問題的解決方案、請聯絡技術支援部門。

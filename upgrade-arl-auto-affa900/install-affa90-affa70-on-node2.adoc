@@ -1,0 +1,48 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/install-affa90-affa70-on-node2.html 
+keywords: aff, fas, asa, install, NVRAM, node2, controller, module, modules, replacement 
+summary: 在同一機箱中升級控制器機型的 ARL 期間、在 node2 上安裝替換系統模組。 
+---
+= 在 node2 上安裝 AFF A90 或 AFF A70 模組
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+在 node2 上安裝您收到的用於升級的 AFF A90 或 AFF A70 控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。
+
+.步驟
+. 將控制器模組的一端與機箱的開口對齊、然後將控制器模組輕推至系統的一半。
++
+
+NOTE: 在程序稍後指示之前、請勿將控制器模組完全插入機箱。
+
++
+image::../media/drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG[安裝 AFF A90 或 AFF A70]
+
+. 將管理和主控台連接埠連接至節點1控制器模組。
++
+
+NOTE: 由於機箱已開機、因此節點 1 會在完全就位後、立即啟動 BIOS 初始化、接著自動開機。若要中斷節點1開機、在將控制器模組完全插入插槽之前、建議您將序列主控台和管理纜線連接至節點1控制器模組。
+
+. 當 CAM 把手處於開啟位置時、將控制器模組牢牢推入、直到它與中板接觸並完全就位。控制器模組完全就位時、鎖定鎖定鎖定會上升。將凸輪把手關閉至鎖定位置。
++
+
+NOTE: 為避免損壞連接器、請勿在將控制器模組滑入機箱時過度施力。
+
+. 只要模組就位、請立即連接序列主控台、並準備好中斷節點1的自動開機。
+. 中斷自動開機後、 node1 會在載入程式提示下停止。如果您未在時間中斷自動開機、而 node1 開始開機、請等待提示字元、然後按 Ctrl-C 進入開機功能表。節點停止在開機功能表後、請使用選項 `8` 重新啟動節點、並在重新開機期間中斷自動開機。
+. 在node1的loader>提示下、設定預設環境變數：
++
+「預設值」
+
+. 儲存預設環境變數設定：
++
+「aveenv」
+
+

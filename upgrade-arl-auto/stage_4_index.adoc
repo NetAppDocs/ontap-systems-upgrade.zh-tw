@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/stage_4_index.html
 keywords: relocate, retire, node2, LIF, node3, non-root aggregates, stage 4 
 summary: ARL升級的第4階段程序順序、使用「系統控制器更換」命令、在執行ONTAP 版本號從9.5到9.7的控制器上執行。 
 ---
-= 總覽
+= 第 4 階段總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -18,7 +18,10 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請使用替換
 
 [cols="35,65"]
 |===
-| 舊 node1 控制器 | 更換 node1 系統模組 
+| 現有 node1 控制器 | 更換 node1 系統模組 
+
+
+| 解答800 AFF | AFF A90 或 AFF A70 ^1^ 
 
 
 | AFF A220 已設定為 ASA | AFF A150 控制器模組 ^1^ 
@@ -42,9 +45,40 @@ FAS2720 | FAS2820 控制器模組 ^1^
 | FAS9000 | FAS9500 控制器和 NVRAM 模組 ^2^ 
 |===
 ^1^ 更換控制器模組時、您會將所有連線從舊型移至替換控制器模組。
+
 ^2^ 更換控制器和 NVRAM 模組時、只會移動主控台和管理連線。
 
 .步驟
+. （僅限 AFF A800 升級）在載入程式提示下、進入維護模式：
++
+Boot_ONTAP maint
+
++
+.. 回答 `yes` 確認提示。
+.. 顯示 100GbE 介面的狀態：
++
+`storage port show`。
+
++
+所有連接至 NS224 機櫃或儲存交換器的 100GbE 連接埠都應報告為 `storage` 連接埠、如下面的輸出範例所示。
+
++
+[listing]
+----
+*> storage port show
+Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
+---- ---- ------- ----------- -------- ------- -------
+e8a  ENET storage 100 Gb/s    enabled  online  30
+e8b  ENET storage 100 Gb/s    enabled  online  30
+e11a ENET storage 100 Gb/s    enabled  online  30
+e11b ENET storage 100 Gb/s    enabled  online  30
+----
+.. 結束維護模式：
++
+《停止》
+
+
+
 . [[A900_boot_node1]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
 +
 
@@ -92,7 +126,7 @@ Boot_ONTAP功能表
 如果「[localhost:disk.encrectNoSupport:alert]：偵測到FIPS認證的加密磁碟機」、或「[localhost:diskown。errordiningio:error]：發生磁碟錯誤時發生錯誤3（磁碟故障）、請執行下列步驟：
 
 .. 在載入程式提示下停止節點。
-.. 檢查並重設中所述的儲存加密bootargs <<A900_boot_node1,步驟1.>>。
+.. 檢查並重設中提及的儲存加密 <<A900_boot_node1,步驟2>>設備。
 .. 在載入程式提示下、開機：
 +
 Boot_ONTAP

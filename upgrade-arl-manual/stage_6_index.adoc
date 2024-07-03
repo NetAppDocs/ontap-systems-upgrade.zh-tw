@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual/stage_6_index.html
 keywords: stage 6, complete, upgrade, set up, setup, controller, storage encryption, netapp encryption, decommission, resume snapmirror 
 summary: 第6階段程序順序、可在執行ONTAP 版本為9.7或更早版本的控制器上進行手動ARL升級。 
 ---
-= 總覽
+= 第 6 階段總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

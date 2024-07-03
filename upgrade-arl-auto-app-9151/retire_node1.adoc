@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/retire_node1.html 
+keywords: retiring, node 
+summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、請停用 HA 配對與 node2 、並關閉 node1 `system controller replace` 。' 
+---
+= 淘汰節點1
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+若要淘汰節點1、請繼續執行自動化作業、以停用與節點2的HA配對、並正確關閉節點1。稍後在程序中、您將 node1 從機架或機箱中移除。
+
+.步驟
+. 恢復作業：
++
+「系統控制器更換恢復」
+
+. 驗證node1是否已停止：
++
+「System Controller replace show-details」（系統控制器取代顯示詳細資料
+
+
+
+.完成後
+您可以在升級完成後取消委任節點1。請參閱 link:decommission_old_system.html["取消委任舊系統"]。

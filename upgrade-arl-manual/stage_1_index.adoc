@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual/stage_1_index.html
 keywords: stage 1, prepare, upgrade, steps 
 summary: 階段1程序順序、可在執行ONTAP 版本號為9.7或更早版本的控制器上進行手動ARL升級。 
 ---
-= 總覽
+= 第 1 階段總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

@@ -1,0 +1,457 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/install_boot_node4.html 
+keywords: install, boot, node4, install ONTAP 
+summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、請安裝並開機 node4 並安裝 ONTAP 軟體 `system controller replace` 。' 
+---
+= 安裝及開機節點4
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以在機架中安裝 node4 、將 node2 的連線傳輸至 node4 、開機 node4 、然後安裝 ONTAP 。然後重新分配節點 2 的任何備用磁碟、屬於根磁碟區的任何磁碟、以及此程序之前未重新定位至節點 3 的任何非根集合體、如本節所述。
+
+.關於這項工作
+重新配置作業會在此階段開始時暫停。此程序大多是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。
+
+如果netboot node4的版本ONTAP 與node2上安裝的版本不相同、則需要netboot node4。安裝node4之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點4。接著、您可以依照中的指示、將正確的檔案下載到開機媒體裝置、以供後續系統開機 link:prepare_for_netboot.html["準備netboot"]。
+
+.步驟
+. [[[auto_install4_step1]]請確定node4有足夠的機架空間。
++
+如果node4與node2位於不同的機箱中、您可以將node4放在與node3相同的位置。如果節點2和節點4位於同一個機箱中、則節點4已位於適當的機架位置。
+
+. 按照節點機型的安裝與設定說明_中的指示、在機架中安裝節點4。
+. 纜線節點4、將連線從節點2移至節點4。
++
+依照_Installation and Setup Instructions（安裝與設定說明）或_EsceVirtualization FlexArray Installation Requirements and Reference（節點4平台參考資料）、適當的磁碟櫃文件、以及_High Availability management_中的指示、連接下列連線。
+
++
+請參閱 link:other_references.html["參考資料"] 連結至_ FlexArray 《虛擬化安裝要求與參考資料》和_《高可用度管理》。
+
++
+** 主控台（遠端管理連接埠）
+** 叢集和 HA 連接埠
+** 資料連接埠
+** 叢集與節點管理連接埠
+** 序列連接 SCSI （ SAS ）和乙太網路儲存連接埠
+** SAN 組態： iSCSI 乙太網路、 FC 和 NVMe / FC 交換器連接埠
++
+[NOTE]
+====
+您可能需要變更舊控制器和新控制器之間的互連纜線、以允許不同控制器和卡機型之間的互通性。請參閱、 link:https://docs.netapp.com/us-en/ontap-systems/index.html["系統安裝程序"^] 以取得您系統的乙太網路儲存櫃佈線圖。
+
+對於 ONTAP 9.15.1 及更新版本中推出的控制器、叢集和 HA 互連使用相同的連接埠。對於連接交換器的組態、必須將類似連接埠連接至相同的叢集交換器。例如、從現有控制器升級至 AFF A1K 時、您應該將兩個節點上的 e1a 連接埠連接至一台交換器、並將兩個節點上的 e7a 連接埠連接至第二台交換器。
+
+====
+
+
+. 開啟節點4的電源、然後在主控台終端按下「Ctrl-C」來存取開機環境提示字元、以中斷開機程序。
++
+
+NOTE: 當您啟動節點4時、可能會看到下列警告訊息：
+
++
+....
+WARNING: The battery is unfit to retain data during a power outage. This is likely
+         because the battery is discharged but could be due to other temporary
+         conditions.
+         When the battery is ready, the boot process will complete
+         and services will be engaged. To override this delay, press 'c' followed
+         by 'Enter'
+....
+. 如果您在步驟4中看到警告訊息、請採取下列行動：
++
+.. 檢查可能指出NVRAM電池電量不足以外問題的任何主控台訊息、並視需要採取任何必要的修正行動。
+.. 讓電池充電並完成開機程序。
++
+
+WARNING: *注意：請勿置換延遲；若不讓電池充電、可能導致資料遺失。*
+
++
+
+NOTE: 請參閱 link:prepare_for_netboot.html["準備netboot"]。
+
+
+
+. 選擇下列其中一項動作來設定netboot連線。
++
+
+NOTE: 您必須使用管理連接埠和IP做為netboot連線。請勿使用資料LIF IP、否則在執行升級時可能會發生資料中斷。
+
++
+[cols="30,70"]
+|===
+| 如果動態主機組態傳輸協定（DHCP）是... | 然後... 
+
+
+| 執行中 | 在開機環境提示字元中使用下列命令自動設定連線：「ifconfige0M -auto」 
+
+
+| 未執行  a| 
+在開機環境提示字元中輸入下列命令、手動設定連線：
+`ifconfig e0M -addr=_filer_addr_ -mask=_netmask_ -gw=_gateway_ -dns=_dns_addr_ -domain=_dns_domain_`
+
+`_filer_addr_` 為儲存系統的IP位址（必填）。
+`_netmask_` 是儲存系統的網路遮罩（必填）。
+`_gateway_` 是儲存系統的閘道（必填）。
+`_dns_addr_` 為網路上名稱伺服器的IP位址（選用）。
+`_dns_domain_` 為DNS網域名稱（選用）。
+
+
+NOTE: 您的介面可能需要其他參數。在韌體提示字元中輸入「Help ifconfig」以取得詳細資料。
+
+|===
+. 在節點4上執行netboot：
++
+“netboot \http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz`
+
++
+「<path_to the _the_web-易於 存取的目錄>」應該會引導您在本節的步驟1中下載「<ONTAP_VERSION >_image.tgz」 link:prepare_for_netboot.html["準備netboot"]。
+
++
+
+NOTE: 請勿中斷開機。
+
+. 從開機功能表中、選取選項「（7）Install new software first（先安裝新軟體）」。
++
+此功能表選項會下載新ONTAP 的功能表映像、並將其安裝至開機裝置。
+
++
+請忽略下列訊息：
+
++
+`This procedure is not supported for Non-Disruptive Upgrade on an HA pair`
+
++
+本附註適用於ONTAP 不中斷營運的更新功能、不適用於控制器升級。
+
++
+
+NOTE: 請務必使用netboot將新節點更新為所需映像。如果您使用其他方法在新控制器上安裝映像、可能會安裝不正確的映像。此問題適用於ONTAP 所有的版本。netboot程序與選項結合使用 `(7) Install new software` 清除開機媒體、並在ONTAP 兩個影像分割區上放置相同的版本。
+
+. 如果系統提示您繼續此程序、請輸入「y」、並在系統提示您輸入套件時、輸入URL：
++
+http://<web_server_ip/path_to_web-accessible_directory>/<ontap_version>_image.tgz`
+
+. 完成下列子步驟以重新啟動控制器模組：
++
+.. 當您看到下列提示時、請輸入「n」跳過備份恢復：
++
+....
+Do you want to restore the backup configuration now? {y|n}
+....
+.. 當您看到下列提示時、輸入「y」重新開機：
++
+....
+The node must be rebooted to start using the newly installed software. Do you want to reboot now? {y|n}
+....
++
+控制器模組會重新開機、但會在開機功能表停止、因為開機裝置已重新格式化、而且必須還原組態資料。
+
+
+
+. 從開機功能表中選取維護模式「5」、然後在系統提示您繼續開機時輸入「y」。
+. 確認控制器和機箱已設定為HA：
++
+《ha-config show》
+
++
+以下範例顯示「ha-config show」命令的輸出：
+
++
+....
+Chassis HA configuration: ha
+Controller HA configuration: ha
+....
++
+
+NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。獨立式系統或HA配對內的所有元件的狀態必須相同。
+
+. 如果控制器和機箱未設定為HA、請使用下列命令修正組態：
++
+「ha-config modify控制器ha」
+
++
+「ha-config modify機箱ha」
+
+. 確認用於連線至乙太網路機櫃的所有乙太網路連接埠均設定為儲存設備：
++
+`storage port show`
+
++
+顯示的輸出取決於系統組態。下列輸出範例適用於在 slot11 中具有單一儲存卡的節點。系統的輸出可能不同：
+
++
+[listing]
+----
+*> storage port show
+Port Type Mode    Speed(Gb/s) State    Status  VLAN ID
+---- ---- ------- ----------- -------- ------- -------
+e11a ENET storage 100 Gb/s    enabled  online  30
+e11b ENET storage 100 Gb/s    enabled  online  30
+----
+. 修改未設為儲存設備的連接埠：
++
+`storage port modify -p <port> -m storage`
+
++
+所有連接至儲存櫃的乙太網路連接埠都必須設定為儲存設備、才能存取磁碟和機櫃。
+
+. 結束維護模式：
++
+《停止》
+
++
+在開機環境提示字元中按Ctrl-C來中斷自動開機。
+
+. [[[auto_install4_step15]在節點3上、檢查系統日期、時間和時區：
++
+'日期'
+
+. 在節點4上、請在開機環境提示字元中使用下列命令檢查日期：
++
+「如何日期」
+
+. 如有必要、請在節點4上設定日期：
++
+`set date <mm/dd/yyyy>`
+
+. 在節點4上、請在開機環境提示字元中使用下列命令檢查時間：
++
+「時間安排」
+
+. 如有必要、請在節點4上設定時間：
++
+`set time <hh:mm:ss>`
+
+. 在開機載入程式中、在節點4上設定合作夥伴系統ID：
++
+`setenv partner-sysid <node3_sysid>`
+
++
+對於node4、 `partner-sysid` 必須是node3的。
+
++
+儲存設定：
+
++
+「aveenv」
+
+. [[[auto_install4_step21]驗證 `partner-sysid` 對於節點4：
++
+《prontenv合作夥伴sysid》
+
+. [[auto_install4_step24]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
++
+
+NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷使用中的自我加密磁碟機類型。
+
++
+.. 設定 `bootarg.storageencryption.support` 至 `true` 或 `false`。
++
+[cols="35,65"]
+|===
+| 如果下列磁碟機正在使用中… | 然後… 
+
+
+| 符合 FIPS 140-2 第 2 級自我加密要求的 NSE 磁碟機 | `setenv bootarg.storageencryption.support *true*` 
+
+
+| NetApp非FIPS SED | `setenv bootarg.storageencryption.support *false*` 
+|===
+.. 前往特殊開機功能表並選取選項 `(10) Set Onboard Key Manager recovery secrets`。
++
+輸入您先前記錄的複雜密碼和備份資訊。請參閱 link:manage_storage_encryption_using_okm.html["使用 Onboard Key Manager 管理儲存加密"]。
+
+
+
+. 開機節點進入開機功能表：
++
+Boot_ONTAP功能表。
+
+. [[auto_check_4_step11] 在 node4 上、前往開機功能表並使用 22/7 、選取隱藏選項 `boot_after_controller_replacement`。在提示符下輸入node2將node2的磁碟重新指派給node4、如下例所示。
++
+.展開主控台輸出範例
+[%collapsible]
+====
+[listing]
+----
+LOADER-A> boot_ontap menu
+.
+.
+<output truncated>
+.
+All rights reserved.
+*******************************
+*                             *
+* Press Ctrl-C for Boot Menu. *
+*                             *
+*******************************
+.
+<output truncated>
+.
+Please choose one of the following:
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? 22/7
+(22/7)                          Print this secret List
+(25/6)                          Force boot with multiple filesystem disks missing.
+(25/7)                          Boot w/ disk labels forced to clean.
+(29/7)                          Bypass media errors.
+(44/4a)                         Zero disks if needed and create new flexible root volume.
+(44/7)                          Assign all disks, Initialize all disks as SPARE, write DDR labels
+.
+.
+<output truncated>
+.
+.
+(wipeconfig)                        Clean all configuration on boot device
+(boot_after_controller_replacement) Boot after controller upgrade
+(boot_after_mcc_transition)         Boot after MCC transition
+(9a)                                Unpartition all disks and remove their ownership information.
+(9b)                                Clean configuration and initialize node with partitioned disks.
+(9c)                                Clean configuration and initialize node with whole disks.
+(9d)                                Reboot the node.
+(9e)                                Return to main boot menu.
+The boot device has changed. System configuration information could be lost. Use option (6) to
+restore the system configuration, or option (4) to initialize all disks and setup a new system.
+Normal Boot is prohibited.
+Please choose one of the following:
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? boot_after_controller_replacement
+This will replace all flash-based configuration with the last backup to disks. Are you sure
+you want to continue?: yes
+.
+.
+<output truncated>
+.
+.
+Controller Replacement: Provide name of the node you would like to replace:
+<nodename of the node being replaced>
+Changing sysid of node node2 disks.
+Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
+Partner sysid = 4294967295, owner sysid = 536940063
+.
+.
+<output truncated>
+.
+.
+varfs_backup_restore: restore using /mroot/etc/varfs.tgz
+varfs_backup_restore: attempting to restore /var/kmip to the boot device
+varfs_backup_restore: failed to restore /var/kmip to the boot device
+varfs_backup_restore: attempting to restore env file to the boot device
+varfs_backup_restore: successfully restored env file to the boot device wrote
+    key file "/tmp/rndc.key"
+varfs_backup_restore: timeout waiting for login
+varfs_backup_restore: Rebooting to load the new varfs
+Terminated
+<node reboots>
+System rebooting...
+.
+.
+Restoring env file from boot media...
+copy_env_file:scenario = head upgrade
+Successfully restored env file from boot media...
+Rebooting to load the restored env file...
+.
+System rebooting...
+.
+.
+.
+<output truncated>
+.
+.
+.
+.
+WARNING: System ID mismatch. This usually occurs when replacing a
+boot device or NVRAM cards!
+Override system ID? {y|n} y
+.
+.
+.
+.
+Login:
+----
+====
++
+
+NOTE: 在上述主控台輸出範例中、ONTAP 如果系統使用進階磁碟分割（ADP）磁碟、則會提示您輸入合作夥伴節點名稱。
+
+. [[auto_check_4_step27]] 在載入程式提示下開機：
++
+Boot_ONTAP功能表
+
++
+現在、在開機時、節點可以偵測先前指派給它的所有磁碟、並可依預期開機。
+
++
+當您要取代的叢集節點使用根磁碟區加密時、 ONTAP 無法從磁碟讀取磁碟區資訊。還原根磁碟區的金鑰：
+
++
+如果根磁碟區已加密、請恢復內建金鑰管理秘密、以便系統找到根磁碟區。
+
++
+.. 返回特殊的開機功能表：
+`LOADER> boot_ontap menu`
++
+[listing]
+----
+Please choose one of the following:
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+
+Selection (1-11)? 10
+----
+.. 選取*（10）Set Onboard Key Manager恢復機密*
+.. 輸入 `y` 出現下列提示：
++
+`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
+
+.. 在提示字元下、輸入金鑰管理程式的通關密碼。
+.. 出現提示時輸入備份資料。
++
+
+NOTE: 您必須已取得中的通關密碼和備份資料 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] 本程序的一節。
+
+.. 系統重新開機至特殊開機功能表後、請執行選項*（1）正常開機*
++
+
+NOTE: 您可能會在這個階段遇到錯誤。如果發生錯誤、請重複中的子步驟、 <<auto_check_4_step27,步驟 27>> 直到系統正常開機。
+
+
+
+

@@ -1,0 +1,62 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/decide_to_use_the_aggregate_relocation_guide.html 
+keywords: deciding, aggregate, relocation, content, storage, controllers, administrators, ontap, ha, high, availability 
+summary: '使用命令決定是否使用 ARL 來升級執行 ONTAP 9.15.1 或更新版本的控制器 `system controller replace` 。' 
+---
+= 決定是否使用Aggregate重新配置程序
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+本程序說明如何在 HA 配對中升級儲存控制器與新控制器、同時保留現有資料和磁碟。這是一個複雜的程序、只能由經驗豐富的系統管理員使用。
+
+您可以在下列情況下使用此程序：
+
+* 您執行的是 ONTAP 9.15.1 或更新版本。
+* 您不想將新控制器新增為叢集的新 HA 配對、並使用 Volume Move 程序移轉資料。
+* 您在管理ONTAP 方面經驗豐富、而且對於在診斷權限模式下工作的風險感到自在。
+
+
+
+NOTE: 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume加密（NVE）和NetApp Aggregate加密（NAE）。
+
+在下列情況下、您無法使用此程序：
+
+* 您正在將 AFF A800 升級為 AFF A70 或 AFF A90 。若要執行此 AFF A800 升級、請參閱 link:other_references.html["參考資料"] 連結至 _ 使用「系統控制器更換」命令來升級相同機箱中的控制器機型 _ 。
+* 您正在使用外部陣列來升級 V 系列系統或 FlexArray 虛擬化儲存系統、以用於後端儲存設備。如需升級 V 系列或 FlexArray 系統的選項、請聯絡技術支援部門。
+* 您正在升級 MetroCluster FC 或 IP 組態。若要升級 MetroCluster 組態、請參閱 link:other_references.html["參考資料"] 連結至 MetroCluster 升級與擴充說明文件 _ 。
+
+
+[[sys_commands_9151_supported_systems] 下表顯示控制器升級支援的機型對照表。
+
+|===
+| 現有控制器 | 更換控制器 
+
+
+| 部分A300 AFF | AFF A70 、 AFF A90 和 AFF A1K 
+
+
+| 解答400 AFF | AFF A70 、 AFF A90 和 AFF A1K 
+
+
+| AFF A700 | AFF A70 、 AFF A90 和 AFF A1K 
+
+
+| 解答900 AFF | AFF A90 和 AFF A1K 
+|===
+[NOTE]
+====
+AFF A70 和 AFF A90 是內建磁碟的整合式系統。兩個控制器和磁碟位於單一機箱中。如果新控制器具有內部磁碟機、則無法升級現有系統。
+
+如果您的控制器升級模式組合不在上表中、請聯絡技術支援部門。
+
+====
+如果您偏好其他方法來升級控制器硬體、並願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+
+請參閱 link:other_references.html["參考資料"] 連結至_SURF9 ONTAP 文件中心_、您可在此存取ONTAP VMware產品文件。

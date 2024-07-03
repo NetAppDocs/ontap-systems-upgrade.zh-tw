@@ -1,0 +1,30 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/retire_node2.html 
+keywords: retire, node2 
+summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、請關閉 node2 並將其從機架或機箱中移除 `system controller replace` 。' 
+---
+= 淘汰節點2
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+若要淘汰 node2 、請先正確關閉 node2 、然後將其從機架或機箱中移除。
+
+.步驟
+. 恢復作業：
++
+「系統控制器更換恢復」
+
++
+節點會自動停止。
+
+
+
+.完成後
+您可以在升級完成後取消委任節點2。請參閱 link:decommission_old_system.html["取消委任舊系統"]。

@@ -1,0 +1,28 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/resume_snapmirror_operations.html 
+keywords: resuming, snapmirror, operations, transfer, relationship, updates, schedule, complete 
+summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、請恢復 SnapMirror 傳輸和關係 `system controller replace` 。' 
+---
+= 恢復SnapMirror作業
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+您可以恢復在升級之前靜止的SnapMirror傳輸、並恢復SnapMirror關係。升級完成後、更新會如期進行。
+
+.步驟
+. 驗證目的地上的SnapMirror狀態：
++
+「napmirror show」
+
+. 恢復SnapMirror關係：
++
+' napmirror resume -destination–vserver _vserver_name_'
+
+

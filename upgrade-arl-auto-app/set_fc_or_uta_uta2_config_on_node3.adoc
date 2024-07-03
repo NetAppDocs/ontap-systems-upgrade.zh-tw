@@ -315,7 +315,7 @@ Adapter  Mode       Type        Mode     Type        Status
 . [[step14]執行「boot_ONTAP功能表」、將節點開機到開機功能表。如果您要升級至A800、請前往 <<auto_check3_step23,步驟23>>。
 
 
-. [[[autos9597_check_node3_step15]在節點3上、移至開機功能表、然後使用22/7選取隱藏選項 `boot_after_controller_replacement`。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。
+. 在 node3 上，轉至引導菜單並使用 22/7 ，選擇隱藏選項 `boot_after_controller_replacement`。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。
 +
 .展開主控台輸出範例
 [%collapsible]
@@ -421,8 +421,8 @@ Login:
 NOTE: 在上述主控台輸出範例中、ONTAP 如果系統使用進階磁碟分割（ADP）磁碟、則會提示您輸入合作夥伴節點名稱。
 
 . 如果系統進入重新開機迴圈並顯示「找不到磁碟」訊息、表示系統已將FC或UTA/UTA2連接埠重設回目標模式、因此無法看到任何磁碟。若要解決此問題、請繼續 <<auto_check3_step17,步驟17>> 至 <<auto_check3_step22,步驟22>>或移至區段 link:verify_node3_installation.html["驗證node3安裝"]。
-. [[auto_checks3_step17]在自動開機期間按「Ctrl-C」、即可在「loader>」提示字元下停止節點。
-. [[step18]在載入程式提示下、進入維護模式：
+. [[auto_check3_step17]] 在自動開機期間按 Ctrl-C 、在 loader> 提示下停止節點。
+. [[step18]] 在載入程式提示下、進入維護模式：
 +
 Boot_ONTAP maint
 
@@ -452,7 +452,7 @@ Boot_ONTAP maint
 如果您要從支援外部磁碟的系統升級至同時支援內部和外部磁碟的系統、例如AFF 、一個支援內部和外部磁碟的系統、請前往 <<auto_check3_step23,步驟23>>。
 
 ====
-. [[auto_checks3_step22]在載入程式提示下、開機：
+. [[auto_check3_step22]] 在載入程式提示下開機：
 +
 Boot_ONTAP功能表
 
@@ -460,11 +460,17 @@ Boot_ONTAP功能表
 現在、在開機時、節點可以偵測先前指派給它的所有磁碟、並可依預期開機。
 
 +
-當您要更換的叢集節點使用根磁碟區加密時、ONTAP 無法從磁碟讀取磁碟區資訊。還原根磁碟區的金鑰：
+當您要取代的叢集節點使用根磁碟區加密時、 ONTAP 無法從磁碟讀取磁碟區資訊。還原根磁碟區的金鑰。
+
++
+
+NOTE: 這僅適用於根磁碟區使用 NetApp 磁碟區加密時。
 
 +
 .. 返回特殊的開機功能表：
++
 `LOADER> boot_ontap menu`
+
 +
 [listing]
 ----

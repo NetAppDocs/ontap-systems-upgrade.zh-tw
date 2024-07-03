@@ -1,5 +1,8 @@
 ---
 indexpage:
+  title: ONTAP 硬體升級文件
+  summary: 透過重新配置集合體、移動磁碟區或移動儲存設備來升級控制器硬體。
+  keywords: aggregate, relocation, moving, manual, upgrade, relocate
   lead: 本網站提供 AFF 、 FAS 和 ASA 儲存系統的升級程序。為您的儲存系統選取適當的升級程序。
   tiles:
   - title: 開始使用
@@ -10,18 +13,20 @@ indexpage:
       url: "/choose_controller_upgrade_procedure.html"
   - title: 在執行 ONTAP 9.8 及更新版本的系統上重新部署集合體、以進行升級
     links:
+    - title: 使用「系統控制器更換」命令來升級 ONTAP 9.15.1 中引進的控制器硬體
+      url: "/upgrade-arl-auto-app-9151/index.html"
     - title: 使用「系統控制器更換」命令來升級相同機箱中的控制器機型
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/
+      url: "/upgrade-arl-auto-affa900/index.html"
     - title: 使用「系統控制器更換」命令（大多數系統）
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/
+      url: "/upgrade-arl-auto-app/index.html"
     - title: 使用手動命令
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/
+      url: "/upgrade-arl-manual-app/index.html"
   - title: 在執行 ONTAP 9.7 及更早版本的系統上重新部署集合體、以進行升級
     links:
     - title: 使用「系統控制器置換」命令
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto/
+      url: "/upgrade-arl-auto/index.html"
     - title: 使用手動命令
-      url: https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual/
+      url: "/upgrade-arl-manual/index.html"
   - title: 透過移動儲存設備或磁碟區進行升級
     links:
     - title: 升級控制器硬體
@@ -36,7 +41,7 @@ indexpage:
     links:
     - title: ONTAP 硬體系統文件
       url: https://docs.netapp.com/us-en/ontap-systems/index.html
-    - title: 交換器文件ONTAP
+    - title: ONTAP 硬體系統的交換器文件
       url: https://docs.netapp.com/us-en/ontap-systems-switches/index.html
     - title: 軟體文件ONTAP
       url: https://docs.netapp.com/us-en/ontap/index.html

@@ -1,0 +1,203 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app-9151/prepare_nodes_for_upgrade.html 
+keywords: preparing, nodes, upgrade 
+summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、請準備節點並執行一系列預先檢查 `system controller replace` 。' 
+---
+= 準備節點以進行升級
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+控制器更換程序從一系列預先檢查開始。您也可以收集原始節點的相關資訊、以便稍後在程序中使用、並視需要判斷使用中的自我加密磁碟機類型。
+
+.步驟
+. 在VMware命令列輸入下列命令、開始控制器更換程序ONTAP ：
++
+`system controller replace start -nodes <node_names>`
+
++
+
+NOTE: 您只能在進階權限層級執行系統控制器置換啟動命令： `set -privilege advanced`
+
++
+您會看到類似下列範例的輸出。輸出會顯示叢集上執行的 ONTAP 版本：
+
++
+....
+Warning: 1. Current ONTAP version is 9.15.1
+
+2. Verify that NVMEM or NVRAM batteries of the new nodes are charged, and charge them if they are not. You need to physically check the new nodes to see if the NVMEM or NVRAM batteries are charged. You can check the battery status either by connecting to a serial console or using SSH, logging into the Service Processor (SP) or Baseboard Management Controller (BMC) for your system, and use the system sensors to see if the battery has a sufficient charge.
+
+Attention: Do not try to clear the NVRAM contents. If there is a need to clear the contents of NVRAM, contact NetApp technical support.
+
+3. If a controller was previously part of a different cluster, run wipeconfig before using it as the replacement controller.
+
+4. Note: This is not a MetroCluster configuration. Controller replacement supports only ARL based procedure.
+Do you want to continue? {y|n}: y
+....
+. 按「y」、您會看到下列輸出：
++
+....
+Controller replacement operation: Prechecks in progress.
+Controller replacement operation has been paused for user intervention.
+....
++
+系統會執行下列預先檢查、並記錄每個預先檢查的輸出、以便稍後在程序中使用：
+
++
+[cols="35,65"]
+|===
+| 預先檢查 | 說明 
+
+
+| 叢集健全狀況檢查 | 檢查叢集中的所有節點、以確認其正常運作。 
+
+
+| Aggregate重新配置狀態檢查 | 檢查集合體重新配置是否已在進行中。如果另一個集合體重新配置正在進行中、則檢查會失敗。 
+
+
+| 模型名稱檢查 | 檢查此程序是否支援控制器機型。如果不支援模型、工作就會失敗。 
+
+
+| 叢集仲裁檢查 | 檢查要替換的節點是否處於仲裁狀態。如果節點不在仲裁中、則工作會失敗。 
+
+
+| 映像版本檢查 | 檢查要更換的節點是否執行相同版本ONTAP 的Sof Sof。如果ONTAP 不相同的版本、工作就會失敗。新節點上ONTAP 必須安裝相同版本的還原9.x、並安裝在原始節點上。如果新節點ONTAP 安裝了不同版本的支援功能、則安裝新的控制器之後、您必須以網路開機。如需有關如何升級ONTAP 功能的說明、請參閱 link:other_references.html["參考資料"] 連結至_Upgrade ONTAP 
+
+
+| HA狀態檢查 | 檢查要更換的兩個節點是否都是高可用度（HA）配對組態。如果控制器未啟用儲存容錯移轉、工作就會失敗。 
+
+
+| Aggregate狀態檢查 | 如果要替換自己的Aggregate、但這些節點不是主擁有者、則工作會失敗。節點不應擁有任何非本機Aggregate。 
+
+
+| 磁碟狀態檢查 | 如果要更換的任何節點有遺失或故障的磁碟、則工作會失敗。如果有任何磁碟遺失、請參閱 link:other_references.html["參考資料"] 若要使用CLI連結至_磁碟與集合管理、使用CLI進行_邏輯儲存管理、以及_高可用度管理_、以設定HA配對的儲存設備。 
+
+
+| 資料LIF狀態檢查 | 檢查要更換的任何節點是否具有非本機資料生命量。節點不應包含任何非主擁有者的資料LIF。如果其中一個節點包含非本機資料LIF、則工作會失敗。 
+
+
+| 叢集LIF狀態 | 檢查兩個節點的叢集生命點是否都正常運作。如果叢集LIF已關閉、工作就會失敗。 
+
+
+| ASUP狀態檢查 | 如果未設定ASUP通知、工作就會失敗。您必須先啟用ASUP、才能開始執行控制器更換程序。 
+
+
+| CPU使用率檢查 | 檢查要更換的任何節點的CPU使用率是否超過50%。如果CPU使用率在一段相當長的時間內超過50%、工作就會失敗。 
+
+
+| Aggregate Reconstruction Check | 檢查是否在任何資料集合體上進行重建。如果正在進行Aggregate重建、工作就會失敗。 
+
+
+| 節點關聯工作檢查 | 檢查是否有任何節點關聯工作正在執行。如果節點關聯工作正在執行、則檢查會失敗。 
+|===
+. 在控制器更換作業開始並完成預先檢查之後、此作業會暫停、以便您收集稍後設定節點3時可能需要的輸出資訊。
++
+[NOTE]
+====
+在開始升級之前、如果您的系統（例如 AFF 700 ）具有下列組態、您可以將叢集生命體移轉並重新主控至每個節點兩個叢集連接埠：
+
+** 每個節點有兩個以上的叢集連接埠
+** 在 SLOT4 中以中斷模式建立連接埠 E4A 、 e4b 、 e4c 和 e4d 的叢集互連卡、以及連接埠 e4e 、 e4f 、 e4g 和 e4H
+
+
+在每個節點上執行超過兩個叢集連接埠的控制器升級、可能會導致新控制器在升級後遺失叢集生命體。
+
+有關詳細信息，請參閱知識庫文章 link:https://kb.netapp.com/on-prem/ontap/Ontap_OS/OS-KBs/How_to_delete_unwanted_or_unnecessary_cluster_LIFs["如何刪除不需要或不必要的叢集生命"^]。
+
+====
+. 依照系統主控台的控制器更換程序指示、執行下列命令集。
++
+從連接至每個節點的序列連接埠、分別執行並儲存下列命令的輸出：
+
++
+** 「Vserver服務名稱服務DNS節目」
+** `network interface show -curr-node <local> -role <cluster,intercluster,node-mgmt,cluster-mgmt,data>`
+** `network port show -node <local> -type physical`
+** `service-processor show -node <local> -instance`
+** `network fcp adapter show -node <local>`
+** `network port ifgrp show -node <local>`
+** `system node show -instance -node <local>`
+** `run -node <local> sysconfig`
+** `storage aggregate show -r`
+** `storage aggregate show -node <local>`
+** `volume show -node <local>`
+** `system license show -owner <local>`
+** 「torage加密磁碟顯示」
+** 「安全金鑰管理程式內建show Backup」
+** 「安全關鍵經理外部秀」
+** 「安全金鑰管理程式外部顯示狀態」
+** `network port reachability show -detail -node <local>`
+
+
++
+
+NOTE: 如果使用內建金鑰管理程式（ OKM ）的 NetApp Volume Encryption （ NVE ）或 NetApp Aggregate Encryption （ NAE ）正在使用中、請在稍後的程序中、將金鑰管理程式密碼保留為完成金鑰管理程式重新同步。
+
+. 如果您的系統使用自我加密磁碟機、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷您要升級的HA配對所使用的自我加密磁碟機類型。支援兩種自我加密磁碟機的支援ONTAP ：
++
+--
+** FIPS認證的NetApp儲存加密（NSE）SAS或NVMe磁碟機
+** 非FIPS自我加密NVMe磁碟機（SED）
+
+
+https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryption-concept.html#supported-self-encrypting-drive-types["深入瞭解支援的自我加密磁碟機"^]。
+
+--
+
+
+
+
+== 如果ARL預先檢查失敗、請修正Aggregate所有權
+
+如果Aggregate Status Check失敗、您必須將合作夥伴節點擁有的Aggregate傳回主擁有者節點、然後再次啟動預先檢查程序。
+
+.步驟
+. 將合作夥伴節點目前擁有的Aggregate傳回主擁有者節點：
++
+「torage Aggregate regate or搬 移開始節點_source_node_-destination-node_-aggregation-list *」
+
+. 驗證node1和node2是否仍擁有當前擁有者（但不是主擁有者）的Aggregate：
++
+「torage Aggregate show -nodes _norme_name_-is主目錄錯誤欄位擁有者名稱、主目錄名稱、狀態」
+
++
+以下範例顯示當節點同時是Aggregate的目前擁有者和主擁有者時、命令的輸出：
+
++
+[listing]
+----
+cluster::> storage aggregate show -nodes node1 -is-home true -fields owner-name,home-name,state
+aggregate   home-name  owner-name  state
+---------   ---------  ----------  ------
+aggr1       node1      node1       online
+aggr2       node1      node1       online
+aggr3       node1      node1       online
+aggr4       node1      node1       online
+
+4 entries were displayed.
+----
+
+
+
+
+=== 完成後
+
+您必須重新啟動控制器更換程序：
+
+「System Controller replace start -nodes _norme_names」（系統控制器取代start節點_node_names）
+
+
+
+== 授權
+
+如需 ONTAP 授權的詳細資訊、請 https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["授權管理"^]參閱。
+
+
+NOTE: 在控制器上使用未獲授權的功能、可能會使您無法遵守授權合約。

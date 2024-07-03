@@ -11,7 +11,13 @@ summary: 如果您要透過移動磁碟區來升級、請準備原始節點、�
 
 
 [role="lead"]
-如果您要透過移動磁碟區來升級控制器硬體、請準備原始節點、並將新節點加入叢集。您可以將磁碟區移至新節點、設定lifs、以及從叢集取消連接原始節點。透過移動磁碟區進行升級是不中斷營運的程序。
+透過移動磁碟區來升級控制器硬體是一項不中斷營運的程序。開始升級之前、請先檢閱一般升級案例和升級考量事項：
+
+* link:upgrade-decide-to-use-this-guide.html["決定是否要透過移動磁碟區或儲存設備來升級"]
+* link:upgrade-considerations.html["升級控制器硬體的考量事項"]
+
+
+若要透過移動磁碟區進行升級、請準備原始節點並將新節點加入叢集。您可以將磁碟區移至新節點、設定lifs、以及從叢集取消連接原始節點。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]link:upgrade-prepare-when-moving-volumes.html["準備在移動磁碟區時進行升級"]
 [role="quick-margin-para"]

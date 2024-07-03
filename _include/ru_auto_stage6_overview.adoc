@@ -13,5 +13,5 @@
 . link:resume_snapmirror_operations.html["恢復SnapMirror作業"]
 
 
-.適用於支援功能的FC組態MetroCluster
-若要進行此功能、您必須儘快更換災難恢復/容錯移轉站台節點。MetroCluster不支援不支援在支援範圍內不相符的控制器機型MetroCluster 、因為控制器機型不相符可能導致災難恢復鏡像離線。當您在第二個站台更換節點時、請使用命令-"ship-MetroCluster-checkse"（指令-"ship-MetroCluster-checkse"）選項來跳過MetroCluster 檢查。
+.精選FC組態MetroCluster
+在 MetroCluster FC 組態中、您必須盡快更換災難恢復 / 容錯移轉站台節點。不支援不支援在支援範圍內不相符的控制器機型MetroCluster 、因為控制器機型不相符可能導致災難恢復鏡像離線。當您在第二個站台更換節點時、請使用 `-skip-metrocluster-check true` 命令略過 MetroCluster 檢查。

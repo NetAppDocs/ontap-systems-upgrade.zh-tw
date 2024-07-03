@@ -1,0 +1,42 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html 
+keywords:  
+summary:  
+---
+= 纜線 node1 、用於共用叢集 HA 和儲存設備（僅限 AFF A800 升級）
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+所有先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備和資料連線、現在都應該連接至新安裝的 AFF A90 或 AFF A70 node1 。
+
+下表顯示雙節點無交換器叢集組態的交換器連接埠使用量。
+
+|===
+| 連接埠 | AFF A800 節點 | AFF A90 節點 | AFF A70 節點 
+
+
+| 叢集 | e0a | e1a | e1a 
+
+
+| 叢集 | e1a | e7a （如果沒有 e7a 、請使用 e1b ） | e1b 
+
+
+| HA | e0b | 請勿連線 | 請勿連線 
+
+
+| HA | e1b | 請勿連線 | 請勿連線 
+
+
+| SAS 儲存連接埠（若有及使用） | 任何可用連接埠 | 任何可用連接埠 | 任何可用連接埠 
+
+
+| 適用於 NS224 機櫃的乙太網路儲存連接埠 | 任何可用連接埠 | 請參閱乙太網路儲存設備連線對應 | 請參閱乙太網路儲存設備連線對應 
+|===
+對於交換器連接的叢集、 AFF A90 或 AFF A70 節點上相同的叢集連接埠應位於同一台交換器上。例如、升級完成後、節點 1 上的 e1a 和節點 2 上的 e1a 應連接至一個叢集交換器。同樣地、兩個節點的第二個叢集連接埠也應連接至第二個叢集交換器。共享叢集 HA 連接埠的交叉連線、其中 node1 的 e1a 連接到 SwitchA 、 node2 的 e1a 連接到 SwitchB 、可防止 HA 通訊故障。

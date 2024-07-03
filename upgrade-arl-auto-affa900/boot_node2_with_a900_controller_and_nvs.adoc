@@ -18,7 +18,10 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請使用替換
 
 [cols="35,65"]
 |===
-| 舊的 node2 控制器 | 更換 node2 系統模組 
+| 現有 node2 控制器 | 更換 node2 系統模組 
+
+
+| 解答800 AFF | AFF A90 或 AFF A70 
 
 
 | AFF A220 已設定為 ASA | ASA A150 控制器模組 

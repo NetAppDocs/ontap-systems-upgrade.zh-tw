@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/stage_2_index.html
 keywords: upgrade, relocate, retire, replace, netboot, overview, stage 2 
 summary: '第 2 階段 ARL 升級程序、使用 `system controller replace` 用於升級同一機箱中的控制器機型的命令。' 
 ---
-= 總覽
+= 第 2 階段總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -20,6 +20,6 @@ summary: '第 2 階段 ARL 升級程序、使用 `system controller replace` 用
 . link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2"]
 . link:relocate_failed_or_vetoed_aggr.html["重新部署故障或被否決的集合體"]
 . link:retire_node1.html["淘汰節點1"]
-. link:replace_node1_system_modules.html["更換 node1 系統模塊"]
+. link:replace-node1-affa800.html["更換 node1 系統模塊"]
 . link:netboot_node1.html["netboot node1"]
 

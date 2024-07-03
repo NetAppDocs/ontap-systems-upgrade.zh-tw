@@ -4,7 +4,7 @@ permalink: upgrade-arl-manual/stage_4_index.html
 keywords: stage 4, record, node2, information, retire 
 summary: 第4階段程序順序、可在執行ONTAP 版本為9.7或更早版本的控制器上進行手動ARL升級。 
 ---
-= 總覽
+= 第 4 階段總覽
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
