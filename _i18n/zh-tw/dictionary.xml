@@ -4833,7 +4833,6 @@ FAS2720</block>
   <block id="5ffd3baa415444f7f3227edef43b10d9" category="paragraph">在 MetroCluster FC 組態中、您必須盡快更換災難恢復 / 容錯移轉站台節點。不支援不支援在支援範圍內不相符的控制器機型MetroCluster 、因為控制器機型不相符可能導致災難恢復鏡像離線。當您在第二個站台更換節點時、請使用<block ref="bf0b9d28548e0e53fb793faa9566bdc3" prefix=" " category="inline-code"></block> 命令略過 MetroCluster 檢查。</block>
   <block id="df3d0238913361ab2420c20a053ba0d8" category="list-text">[[man_install4_Step6]] 開啟 node4 的電源、然後按 Ctrl-C 存取開機環境提示來中斷開機。</block>
   <block id="5109ad8944e00ebd941b9f7cfd563728" category="list-text">按 Ctrl-C 顯示開機功能表、然後選取維護模式。</block>
-  <block id="bded243b14f6ad1b4c632bdd333e5c2b" category="admonition">您也可以使用 Aggregate 重定位將 AFF A800 升級至 AFF A70 或 AFF A90 。<block ref="d1dba95bc7d2bdf76ec2b452fc9b5611" category="inline-link-macro-rx"></block>。</block>
   <block id="24a28632436fc3dd7e0e4fbde05fdf59" category="paragraph">Aggregate 重新定位是一種替代程序。您不需要使用新的節點來擴充和縮小叢集、這對雙節點無交換器叢集很有幫助。移動磁碟區時、透過重新定位集合體來移動資料的速度比跨集合體複製資料快。</block>
   <block id="21e5a4b07b3d917519fb1f0a2c21d347" category="list-text"><block ref="21e5a4b07b3d917519fb1f0a2c21d347" category="inline-link-macro-rx"></block></block>
   <block id="2c4564f93114738d1a23cefcb9f1a209" category="paragraph">透過移動儲存設備來升級控制器硬體是一項破壞性程序。開始升級之前、請先檢閱一般升級案例和升級考量事項：</block>
@@ -5193,4 +5192,5 @@ FAS2720</block>
   <block id="e53c96ea4b74db1471d45fc6c84eef75" category="sidebar">第 5 階段：安裝並開機 node4 （在 ONTAP 9.15.1 或更新版本中以「系統控制器更換」進行升級）</block>
   <block id="fe9158ff831e80fc9361c4a06ba512f1" category="sidebar">第 6 階段：完成升級（在 ONTAP 9.15.1 或更新版本中使用「系統控制器更換」進行升級）</block>
   <block id="1d2cec084b14c2bb8b27b81dee7eff45" category="sidebar">疑難排解（在 ONTAP 9.15.1 或更新版本中使用「系統控制器更換」進行升級）</block>
+  <block id="f6450b8785035cd4f0854992330d2734" category="admonition">您也可以使用 Aggregate 重定位將 AFF A800 升級至 AFF A70 或 AFF A90 。<block ref="dd8a9320d133fc6bc4cebf159be26035" category="inline-link-macro-rx"></block>。</block>
 </blocks>
