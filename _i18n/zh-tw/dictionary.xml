@@ -4876,7 +4876,6 @@ FAS2720</block>
   <block id="2e1458abf9be810e3c1b32482a2fb654" category="cell">現有 node2 控制器</block>
   <block id="1a68d75a6401790bda4f04fcd5250d89" category="cell">AFF A90 或 AFF A70</block>
   <block id="5f9fde3ed8fab53307d0d33e0b21555f" category="doc">纜線 node1 、用於共用叢集 HA 和儲存設備（僅限 AFF A800 升級）</block>
-  <block id="d7c50b232c0b6695dad67576c458f2b7" category="paragraph">所有先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備和資料連線、現在都應該連接至新安裝的 AFF A90 或 AFF A70 node1 。</block>
   <block id="3f96763067b8ef1bea6f3b7936e59b10" category="paragraph">下表顯示雙節點無交換器叢集組態的交換器連接埠使用量。</block>
   <block id="60aaf44d4b562252c04db7f98497e9aa" category="cell">連接埠</block>
   <block id="ed062d9f9c55cc3a6f727877095b3f8a" category="cell">AFF A800 節點</block>
@@ -4894,7 +4893,6 @@ FAS2720</block>
   <block id="c6d464573f83b68eae557ca5213c2dbe" category="cell">任何可用連接埠</block>
   <block id="1106a2319bc9e3e60b2eb082fdf3e891" category="cell">適用於 NS224 機櫃的乙太網路儲存連接埠</block>
   <block id="bf88a79b7721bdcefd6f46ff3e6e823a" category="cell">請參閱乙太網路儲存設備連線對應</block>
-  <block id="98c565adb9d07742bd39f0d8f62a6a4a" category="paragraph">對於交換器連接的叢集、 AFF A90 或 AFF A70 節點上相同的叢集連接埠應位於同一台交換器上。例如、升級完成後、節點 1 上的 e1a 和節點 2 上的 e1a 應連接至一個叢集交換器。同樣地、兩個節點的第二個叢集連接埠也應連接至第二個叢集交換器。共享叢集 HA 連接埠的交叉連線、其中 node1 的 e1a 連接到 SwitchA 、 node2 的 e1a 連接到 SwitchB 、可防止 HA 通訊故障。</block>
   <block id="b6c0f97a30874aed966651e5abc3c11d" category="cell">AFF A70 和 AFF A90</block>
   <block id="11c23a28b09e8dab4fd29659b5d908e1" category="list-text">兩個 AFF A90 或兩個 AFF A70 控制器、以及升級所需的所有 I/O 模組。100GbE 纜線所需長度。</block>
   <block id="2c379faac9baae13e7fda4f15aafa273" category="list-text">您正在 AFF A800 、 AFF A700 或 FAS9000 系統上使用 FlexArray 虛擬化軟體。</block>
@@ -5193,4 +5191,18 @@ FAS2720</block>
   <block id="fe9158ff831e80fc9361c4a06ba512f1" category="sidebar">第 6 階段：完成升級（在 ONTAP 9.15.1 或更新版本中使用「系統控制器更換」進行升級）</block>
   <block id="1d2cec084b14c2bb8b27b81dee7eff45" category="sidebar">疑難排解（在 ONTAP 9.15.1 或更新版本中使用「系統控制器更換」進行升級）</block>
   <block id="f6450b8785035cd4f0854992330d2734" category="admonition">您也可以使用 Aggregate 重定位將 AFF A800 升級至 AFF A70 或 AFF A90 。<block ref="dd8a9320d133fc6bc4cebf159be26035" category="inline-link-macro-rx"></block>。</block>
+  <block id="d7548e4333d6055e4cfe02fb476e8bb3" category="summary">將先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備和資料連線、連接至新安裝的 AFF A90 或 AFF A70 node1</block>
+  <block id="0640a7d79562f0e5755e3f5b4337aaf0" category="paragraph">將先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備、資料和管理連線、連接至新安裝的 AFF A90 或 AFF A70 node1 。</block>
+  <block id="e41a57de6846f0486a2837efec0a7735" category="section-title">連接 e0M 和 BMC 連接埠</block>
+  <block id="83f9eada4a675baaeaa258974d454974" category="paragraph">AFF A800 具有管理連接埠（ e0M ）和 BMC 連接埠。在 AFF A90 和 AFF A70 上、 e0M 和 BMC 連接埠會透過「扳手」連接埠加以組合和存取。您必須確保 e0M 和 BMC 連接埠已連接至 AFF A800 上的同一交換器和子網路、才能連線至 AFF A90 或 AFF A70 。</block>
+  <block id="71f7c95fc9a5b8a1a847fc0baf3f04a0" category="cell">如果...</block>
+  <block id="31a1d0c3f4eee8e89c1e85f3c2f53402" category="cell">e0M 和 BMC IP 位址位於相同的 IP 子網路上</block>
+  <block id="9fded7c0f0530a23a9a859ba516478e5" category="cell">將 AFF A800 上的 e0M 或 BMC 連接埠連接至 AFF A90 或 AFF A70 上的「扳手」連接埠。</block>
+  <block id="6d317071220219966d4e9dcc83f3c48f" category="cell">e0M 和 BMC IP 位址位於不同的子網路上</block>
+  <block id="06ae0bb86db3eff96d5e95f8377d0658" category="list-text">將 e0M 和 BMC IP 位址合併為一個 IP 子網路。</block>
+  <block id="444178cd590abb095281389d276396fb" category="section-title">連線至雙節點無交換器叢集</block>
+  <block id="17ff48b429522b181dd38c99ad361c90" category="section-title">連線至交換器連接的叢集</block>
+  <block id="642bccb8ea8bf1d5af20ff2b734c1972" category="paragraph">對於交換器連接的叢集、請檢查您是否符合下列需求：</block>
+  <block id="0bc65976ff133ee82e86f9a6d1241bd3" category="list-text">AFF A90 或 AFF A70 節點上相同的叢集連接埠位於同一台交換器上。例如、升級完成後、節點 1 上的 e1a 和節點 2 上的 e1a 應連接至一個叢集交換器。同樣地、兩個節點的第二個叢集連接埠也應連接至第二個叢集交換器。共享叢集 HA 連接埠的交叉連線、其中節點 1 的 e1a 連接到 SwitchA 、節點 2 的 e1a 連接到 SwitchB 、將導致 HA 通訊失敗。</block>
+  <block id="a8ddcf9ff72eca8d08263b606043e793" category="list-text">AFF A90 和 AFF A70 節點使用共享的叢集 HA 乙太網路連接埠。請確定叢集交換器已安裝參考組態檔案（ RCF ）、以支援共用的叢集 HA 連接埠。</block>
 </blocks>

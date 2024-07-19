@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html 
-keywords:  
-summary:  
+keywords: cluster, ha, aff, a800, shared, storage, data, management 
+summary: 將先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備和資料連線、連接至新安裝的 AFF A90 或 AFF A70 node1 
 ---
 = 纜線 node1 、用於共用叢集 HA 和儲存設備（僅限 AFF A800 升級）
 :hardbreaks:
@@ -14,7 +14,31 @@ summary:
 
 
 [role="lead"]
-所有先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備和資料連線、現在都應該連接至新安裝的 AFF A90 或 AFF A70 node1 。
+將先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備、資料和管理連線、連接至新安裝的 AFF A90 或 AFF A70 node1 。
+
+
+
+== 連接 e0M 和 BMC 連接埠
+
+AFF A800 具有管理連接埠（ e0M ）和 BMC 連接埠。在 AFF A90 和 AFF A70 上、 e0M 和 BMC 連接埠會透過「扳手」連接埠加以組合和存取。您必須確保 e0M 和 BMC 連接埠已連接至 AFF A800 上的同一交換器和子網路、才能連線至 AFF A90 或 AFF A70 。
+
+[cols="35,65"]
+|===
+| 如果... | 然後... 
+
+
+| e0M 和 BMC IP 位址位於相同的 IP 子網路上 | 將 AFF A800 上的 e0M 或 BMC 連接埠連接至 AFF A90 或 AFF A70 上的「扳手」連接埠。 
+
+
+| e0M 和 BMC IP 位址位於不同的子網路上  a| 
+. 將 e0M 和 BMC IP 位址合併為一個 IP 子網路。
+. 將 AFF A800 上的 e0M 或 BMC 連接埠連接至 AFF A90 或 AFF A70 上的「扳手」連接埠。
+
+
+|===
+
+
+== 連線至雙節點無交換器叢集
 
 下表顯示雙節點無交換器叢集組態的交換器連接埠使用量。
 
@@ -39,4 +63,12 @@ summary:
 
 | 適用於 NS224 機櫃的乙太網路儲存連接埠 | 任何可用連接埠 | 請參閱乙太網路儲存設備連線對應 | 請參閱乙太網路儲存設備連線對應 
 |===
-對於交換器連接的叢集、 AFF A90 或 AFF A70 節點上相同的叢集連接埠應位於同一台交換器上。例如、升級完成後、節點 1 上的 e1a 和節點 2 上的 e1a 應連接至一個叢集交換器。同樣地、兩個節點的第二個叢集連接埠也應連接至第二個叢集交換器。共享叢集 HA 連接埠的交叉連線、其中 node1 的 e1a 連接到 SwitchA 、 node2 的 e1a 連接到 SwitchB 、可防止 HA 通訊故障。
+
+
+== 連線至交換器連接的叢集
+
+對於交換器連接的叢集、請檢查您是否符合下列需求：
+
+* AFF A90 或 AFF A70 節點上相同的叢集連接埠位於同一台交換器上。例如、升級完成後、節點 1 上的 e1a 和節點 2 上的 e1a 應連接至一個叢集交換器。同樣地、兩個節點的第二個叢集連接埠也應連接至第二個叢集交換器。共享叢集 HA 連接埠的交叉連線、其中節點 1 的 e1a 連接到 SwitchA 、節點 2 的 e1a 連接到 SwitchB 、將導致 HA 通訊失敗。
+* AFF A90 和 AFF A70 節點使用共享的叢集 HA 乙太網路連接埠。請確定叢集交換器已安裝參考組態檔案（ RCF ）、以支援共用的叢集 HA 連接埠。
+
