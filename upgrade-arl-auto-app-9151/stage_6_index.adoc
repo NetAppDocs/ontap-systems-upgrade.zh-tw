@@ -24,3 +24,15 @@ summary: '在執行 ONTAP 9.15.1 或更新版本的控制器上使用命令、�
 . link:decommission_old_system.html["取消委任舊系統"]
 . link:resume_snapmirror_operations.html["恢復SnapMirror作業"]
 
+
+[NOTE]
+====
+AFF A70 、 AFF A90 和 AFF A1K 系統共用 100GbE 網路連接埠、用於叢集和 HA 連線。這些系統可支援 10GbE 或 25GbE 叢集連線至傳統叢集交換器；不過、 NetApp 建議在不再需要 10GbE 和 25GbE 交換器時、更新至 100GbE 叢集速度。如需詳細資訊、請參閱下列知識庫文章：
+
+* link:https://kb.netapp.com/?title=on-prem%2Fontap%2FOHW%2FOHW-KBs%2FHow_to_configure_10G_or_25G_cluster_ports_on_a_new_cluster_setup_on_AFF_A1K%252C_AFF_A90_or_AFF_A70["如何在 AFF A1K 、 AFF A90 或 AFF A70 上的新叢集設定上設定 10G 或 25G 叢集連接埠"^]
+* link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_convert_an_existing_cluster_from_10G_or_25G_cluster_ports_to_40G_or_100G_cluster_ports_on_an_AFF_A1K_AFF_A90_or_AFF_A70["如何將現有叢集從 10G 或 25G 叢集連接埠轉換為 AFF A1K 、 AFF A90 或 AFF A70 上的 40G 或 100g 叢集連接埠"^]
+
+
+如果無法將現有節點上的 e0a 或 e0b 叢集連接埠連結至新節點上的叢集連接埠、請參閱 link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-166978["NetApp Bug Online Bug ID CONTAP-166978"^]。
+
+====

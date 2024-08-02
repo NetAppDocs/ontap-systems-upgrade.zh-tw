@@ -5205,4 +5205,13 @@ FAS2720</block>
   <block id="642bccb8ea8bf1d5af20ff2b734c1972" category="paragraph">對於交換器連接的叢集、請檢查您是否符合下列需求：</block>
   <block id="0bc65976ff133ee82e86f9a6d1241bd3" category="list-text">AFF A90 或 AFF A70 節點上相同的叢集連接埠位於同一台交換器上。例如、升級完成後、節點 1 上的 e1a 和節點 2 上的 e1a 應連接至一個叢集交換器。同樣地、兩個節點的第二個叢集連接埠也應連接至第二個叢集交換器。共享叢集 HA 連接埠的交叉連線、其中節點 1 的 e1a 連接到 SwitchA 、節點 2 的 e1a 連接到 SwitchB 、將導致 HA 通訊失敗。</block>
   <block id="a8ddcf9ff72eca8d08263b606043e793" category="list-text">AFF A90 和 AFF A70 節點使用共享的叢集 HA 乙太網路連接埠。請確定叢集交換器已安裝參考組態檔案（ RCF ）、以支援共用的叢集 HA 連接埠。</block>
+  <block id="95aecbf4d4598d28238d33836d5f1d39" category="list-text">AFF A70 和 AFF A90 系統共用 100GbE 網路連接埠、用於叢集和 HA 連線。這些系統可支援 10GbE 或 25GbE 叢集連線至傳統叢集交換器；不過、 NetApp 建議在不再需要 10GbE 和 25GbE 交換器時、更新至 100GbE 叢集速度。如需詳細資訊、請參閱下列知識庫文章：</block>
+  <block id="46f6c35d9a23403b9b4475860494f7e1" category="inline-link-macro">如何在 AFF A1K 、 AFF A90 或 AFF A70 上的新叢集設定上設定 10G 或 25G 叢集連接埠</block>
+  <block id="d5262d5b7c57ddb8a1bce6f64f715cf1" category="list-text"><block ref="d5262d5b7c57ddb8a1bce6f64f715cf1" category="inline-link-macro-rx"></block></block>
+  <block id="ddafb8accea93e408c3e1081312cd023" category="inline-link-macro">如何將現有叢集從 10G 或 25G 叢集連接埠轉換為 AFF A1K 、 AFF A90 或 AFF A70 上的 40G 或 100g 叢集連接埠</block>
+  <block id="441c3294ac36b4f16260ca4b44ff0ca4" category="list-text"><block ref="441c3294ac36b4f16260ca4b44ff0ca4" category="inline-link-macro-rx"></block></block>
+  <block id="ac431d04c49bd36c09bfbc24a8f894f9" category="inline-link-macro">NetApp Bug Online Bug ID CONTAP-166978</block>
+  <block id="f24d3bbf01666420670f76d88d0728aa" category="paragraph">如果無法將現有節點上的 e0a 或 e0b 叢集連接埠連結至新節點上的叢集連接埠、請參閱 <block ref="7be812dd65bbd3f39bbb06fd50caac76" category="inline-link-macro-rx"></block>。</block>
+  <block id="da56dddfadc94faded5adccdf08f341d" category="list-text">AFF A70 、 AFF A90 和 AFF A1K 系統共用 100GbE 網路連接埠、用於叢集和 HA 連線。這些系統可支援 10GbE 或 25GbE 叢集連線至傳統叢集交換器；不過、 NetApp 建議在不再需要 10GbE 和 25GbE 交換器時、更新至 100GbE 叢集速度。如需詳細資訊、請參閱下列知識庫文章：</block>
+  <block id="9224ff81582fe0027e574d0b62a2ff67" category="list-text">當您升級至 AFF A70 、 AFF A90 或 AFF A1K 系統時、 ONTAP 會轉換所有現有精簡配置磁碟區的儲存效率、包括不使用儲存效率的磁碟區、並套用利用硬體卸載功能的全新儲存效率功能。這是一個自動背景程序、對系統沒有明顯的效能影響。<block ref="7746afbac27a580f36b90211e9daf7d0" category="inline-link-rx"></block></block>
 </blocks>

@@ -38,4 +38,16 @@ NOTE: 您無法使用此程序來升級 MetroCluster FC 或 IP 組態。若要�
 * 此程序假設更換的控制器硬體是新的、而且尚未使用。此程序不包含使用命令準備使用的控制器所需的步驟 `wipeconfig` 。如果之前使用過更換控制器硬體、您必須聯絡技術支援部門。
 * 您可以使用此程序來升級具有兩個以上節點之叢集中的控制器硬體、不過您需要針對叢集中的每個高可用度（HA）配對分別執行此程序。
 * 當您升級至 ONTAP 9.15.1 推出的 AFF A70 、 AFF A90 或 AFF A1K 系統時、 ONTAP 會轉換所有現有精簡配置磁碟區的儲存效率、包括不使用儲存效率的磁碟區、並套用利用硬體卸載功能的全新儲存效率功能。這是一個自動背景程序、對系統沒有明顯的效能影響。 https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html["深入瞭解"^]
+* AFF A70 、 AFF A90 和 AFF A1K 系統共用 100GbE 網路連接埠、用於叢集和 HA 連線。這些系統可支援 10GbE 或 25GbE 叢集連線至傳統叢集交換器；不過、 NetApp 建議在不再需要 10GbE 和 25GbE 交換器時、更新至 100GbE 叢集速度。如需詳細資訊、請參閱下列知識庫文章：
++
+--
+** link:https://kb.netapp.com/?title=on-prem%2Fontap%2FOHW%2FOHW-KBs%2FHow_to_configure_10G_or_25G_cluster_ports_on_a_new_cluster_setup_on_AFF_A1K%252C_AFF_A90_or_AFF_A70["如何在 AFF A1K 、 AFF A90 或 AFF A70 上的新叢集設定上設定 10G 或 25G 叢集連接埠"^]
+** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_convert_an_existing_cluster_from_10G_or_25G_cluster_ports_to_40G_or_100G_cluster_ports_on_an_AFF_A1K_AFF_A90_or_AFF_A70["如何將現有叢集從 10G 或 25G 叢集連接埠轉換為 AFF A1K 、 AFF A90 或 AFF A70 上的 40G 或 100g 叢集連接埠"^]
+
+
+--
++
+如果無法將現有節點上的 e0a 或 e0b 叢集連接埠連結至新節點上的叢集連接埠、請參閱 link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-166978["NetApp Bug Online Bug ID CONTAP-166978"^]。
+
+* 當您升級至 AFF A70 、 AFF A90 或 AFF A1K 系統時、 ONTAP 會轉換所有現有精簡配置磁碟區的儲存效率、包括不使用儲存效率的磁碟區、並套用利用硬體卸載功能的全新儲存效率功能。這是一個自動背景程序、對系統沒有明顯的效能影響。 https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html["深入瞭解"^]
 
