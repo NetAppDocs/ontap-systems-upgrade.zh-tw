@@ -17,9 +17,17 @@ summary: 本內容說明如何AFF 透過移動儲存設備或磁碟區來升級�
 
 [NOTE]
 ====
-當您升級至 ONTAP 9.15.1 推出的 AFF A70 、 AFF A90 或 AFF A1K 系統時、 ONTAP 會轉換所有現有精簡配置磁碟區的儲存效率、包括不使用儲存效率的磁碟區、並套用利用硬體卸載功能的全新儲存效率功能。這是一個自動背景程序、對系統沒有明顯的效能影響。 https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html["深入瞭解"^]
+* 當您升級至 ONTAP 9 ． 15.1 中推出的系統時、 ONTAP 會轉換現有磁碟區的儲存效率、並套用利用硬體卸載功能的新儲存效率功能。這是一個自動背景程序、對系統沒有明顯的效能影響。
++
+** 對於 AFF A70 、 AFF A90 或 AFF A1K 系統、 ONTAP 會轉換所有現有精簡配置磁碟區的儲存效率、包括未使用儲存效率的磁碟區。
+** 對於 FAS70 和 FAS90 系統、 ONTAP 只會轉換現有精簡配置的磁碟區的儲存效率、這些磁碟區在升級之前已啟用儲存效率。
++
+link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html["深入瞭解儲存效率"^]。
 
-由於推出自動連接埠配置功能、因此在更新過程中、硬體升級程序已在ONTAP 更新過程中簡化。
+
+
+* 由於推出自動連接埠配置功能、因此在更新過程中、硬體升級程序已在ONTAP 更新過程中簡化。
+
 
 ====
 * 您的原始和新節點均相容且受支援。

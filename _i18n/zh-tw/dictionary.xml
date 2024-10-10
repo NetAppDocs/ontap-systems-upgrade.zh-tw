@@ -4840,7 +4840,6 @@ FAS2720</block>
   <block id="70df8f2f5459940187f1edf7420f9c6b" category="paragraph">若要透過移動儲存設備進行升級、請準備原始節點並設定新節點。部分平台機型支援將內部儲存設備傳輸至新節點。您可以重新指派磁碟、並將根磁碟區組態還原至新節點、並設定網路連接埠。</block>
   <block id="ffaf71c89815c9497697e87f8d77a27d" category="paragraph">透過移動磁碟區來升級控制器硬體是一項不中斷營運的程序。開始升級之前、請先檢閱一般升級案例和升級考量事項：</block>
   <block id="cf41c84e5298fdad396a8a0dd7eaf0f3" category="paragraph">若要透過移動磁碟區進行升級、請準備原始節點並將新節點加入叢集。您可以將磁碟區移至新節點、設定lifs、以及從叢集取消連接原始節點。</block>
-  <block id="99a62a63bac74233e567cc3137cf29e8" category="paragraph">當您升級至 ONTAP 9.15.1 推出的 AFF A70 、 AFF A90 或 AFF A1K 系統時、 ONTAP 會轉換所有現有精簡配置磁碟區的儲存效率、包括不使用儲存效率的磁碟區、並套用利用硬體卸載功能的全新儲存效率功能。這是一個自動背景程序、對系統沒有明顯的效能影響。<block ref="7746afbac27a580f36b90211e9daf7d0" category="inline-link-rx"></block></block>
   <block id="4b5907b5b5c704438991bdf09784779a" category="list-text">在開機功能表中、輸入 8 重新啟動節點、然後在自動開機期間按 Ctrl-C 、在載入程式提示下停止節點。</block>
   <block id="ee537959cbe6c4957342c94d3801abf7" category="doc">選擇您的 ARL 升級程序</block>
   <block id="7e077786789216bd7864197dde6da988" category="cell">9.15.1 或更新版本</block>
@@ -5010,9 +5009,6 @@ FAS2720</block>
   <block id="d4b6fe12abba1b6202f6eaf9239109fe" category="list-text">您正在升級 MetroCluster FC 或 IP 組態。若要升級 MetroCluster 組態、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 連結至 MetroCluster 升級與擴充說明文件 _ 。</block>
   <block id="11e69ee085d842ce1112f661ea99ca78" category="paragraph">[[sys_commands_9151_supported_systems] 下表顯示控制器升級支援的機型對照表。</block>
   <block id="82a01e528bf5bf2b1b7172eddc250977" category="cell">現有控制器</block>
-  <block id="1a2f740f86d5113f5765d0c0064cc805" category="cell">AFF A70 、 AFF A90 和 AFF A1K</block>
-  <block id="e6f9eb6f48a1c73f8869c3018d94ce49" category="cell">AFF A90 和 AFF A1K</block>
-  <block id="21f38ae66a0904e51060023ca6858959" category="paragraph">AFF A70 和 AFF A90 是內建磁碟的整合式系統。兩個控制器和磁碟位於單一機箱中。如果新控制器具有內部磁碟機、則無法升級現有系統。</block>
   <block id="4de11ced25f5990c0cc8fa95f739e66c" category="summary">請告知 NetApp 、在使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器之後、舊系統不再運作<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
   <block id="05182f39754b99e12a705e61572b4051" category="summary">啟用 HA 配對、驗證 node3 和 node4 儲存設備存取、並在使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器之後、確認 Aggregate 擁有權<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
   <block id="570743d2305de7bd0a4e44c426b2db21" category="paragraph"><block ref="49166cc15e848fc049881c3de5e1d1f8" prefix="" category="inline-code"></block></block>
@@ -5206,12 +5202,26 @@ FAS2720</block>
   <block id="0bc65976ff133ee82e86f9a6d1241bd3" category="list-text">AFF A90 或 AFF A70 節點上相同的叢集連接埠位於同一台交換器上。例如、升級完成後、節點 1 上的 e1a 和節點 2 上的 e1a 應連接至一個叢集交換器。同樣地、兩個節點的第二個叢集連接埠也應連接至第二個叢集交換器。共享叢集 HA 連接埠的交叉連線、其中節點 1 的 e1a 連接到 SwitchA 、節點 2 的 e1a 連接到 SwitchB 、將導致 HA 通訊失敗。</block>
   <block id="a8ddcf9ff72eca8d08263b606043e793" category="list-text">AFF A90 和 AFF A70 節點使用共享的叢集 HA 乙太網路連接埠。請確定叢集交換器已安裝參考組態檔案（ RCF ）、以支援共用的叢集 HA 連接埠。</block>
   <block id="95aecbf4d4598d28238d33836d5f1d39" category="list-text">AFF A70 和 AFF A90 系統共用 100GbE 網路連接埠、用於叢集和 HA 連線。這些系統可支援 10GbE 或 25GbE 叢集連線至傳統叢集交換器；不過、 NetApp 建議在不再需要 10GbE 和 25GbE 交換器時、更新至 100GbE 叢集速度。如需詳細資訊、請參閱下列知識庫文章：</block>
-  <block id="46f6c35d9a23403b9b4475860494f7e1" category="inline-link-macro">如何在 AFF A1K 、 AFF A90 或 AFF A70 上的新叢集設定上設定 10G 或 25G 叢集連接埠</block>
-  <block id="d5262d5b7c57ddb8a1bce6f64f715cf1" category="list-text"><block ref="d5262d5b7c57ddb8a1bce6f64f715cf1" category="inline-link-macro-rx"></block></block>
-  <block id="ddafb8accea93e408c3e1081312cd023" category="inline-link-macro">如何將現有叢集從 10G 或 25G 叢集連接埠轉換為 AFF A1K 、 AFF A90 或 AFF A70 上的 40G 或 100g 叢集連接埠</block>
-  <block id="441c3294ac36b4f16260ca4b44ff0ca4" category="list-text"><block ref="441c3294ac36b4f16260ca4b44ff0ca4" category="inline-link-macro-rx"></block></block>
   <block id="ac431d04c49bd36c09bfbc24a8f894f9" category="inline-link-macro">NetApp Bug Online Bug ID CONTAP-166978</block>
   <block id="f24d3bbf01666420670f76d88d0728aa" category="paragraph">如果無法將現有節點上的 e0a 或 e0b 叢集連接埠連結至新節點上的叢集連接埠、請參閱 <block ref="7be812dd65bbd3f39bbb06fd50caac76" category="inline-link-macro-rx"></block>。</block>
-  <block id="da56dddfadc94faded5adccdf08f341d" category="list-text">AFF A70 、 AFF A90 和 AFF A1K 系統共用 100GbE 網路連接埠、用於叢集和 HA 連線。這些系統可支援 10GbE 或 25GbE 叢集連線至傳統叢集交換器；不過、 NetApp 建議在不再需要 10GbE 和 25GbE 交換器時、更新至 100GbE 叢集速度。如需詳細資訊、請參閱下列知識庫文章：</block>
-  <block id="9224ff81582fe0027e574d0b62a2ff67" category="list-text">當您升級至 AFF A70 、 AFF A90 或 AFF A1K 系統時、 ONTAP 會轉換所有現有精簡配置磁碟區的儲存效率、包括不使用儲存效率的磁碟區、並套用利用硬體卸載功能的全新儲存效率功能。這是一個自動背景程序、對系統沒有明顯的效能影響。<block ref="7746afbac27a580f36b90211e9daf7d0" category="inline-link-rx"></block></block>
+  <block id="894f2e2a32e68afb6c8779c4dd1b6061" category="list-text">當您升級至 ONTAP 9 ． 15.1 中推出的系統時、 ONTAP 會轉換現有磁碟區的儲存效率、並套用利用硬體卸載功能的新儲存效率功能。這是一個自動背景程序、對系統沒有明顯的效能影響。</block>
+  <block id="20a50ea664dd251305adec2bcca06061" category="list-text">對於 AFF A70 、 AFF A90 或 AFF A1K 系統、 ONTAP 會轉換所有現有精簡配置磁碟區的儲存效率、包括未使用儲存效率的磁碟區。</block>
+  <block id="c35161fa14384d510e021a3314063cc1" category="list-text">對於 FAS70 和 FAS90 系統、 ONTAP 只會轉換現有精簡配置的磁碟區的儲存效率、這些磁碟區在升級之前已啟用儲存效率。</block>
+  <block id="33bb7bcaf48f0fdda36a26455a40a230" category="inline-link-macro">深入瞭解儲存效率</block>
+  <block id="6d6b534c9b53f9b5663ea4448a9c5c5a" category="paragraph"><block ref="7e7ac2ea54718abbfde88230c884c797" category="inline-link-macro-rx"></block>。</block>
+  <block id="0db06a4e73b14fd8cb249dd2487fa5a3" category="inline-link-macro">如何在全新的 AFF / ASA A1K 、 A90 、 A70 、 FAS90 、 FAS70 上設定 10G 或 25G 叢集連接埠</block>
+  <block id="4ffac300dc153b14bfe521f43fc61b31" category="list-text"><block ref="4ffac300dc153b14bfe521f43fc61b31" category="inline-link-macro-rx"></block></block>
+  <block id="aceb7b5bd7d7f40aa548f5d1aac76fd5" category="inline-link-macro">如何在 AFF / ASA A1K 、 A90 、 A70 、 FAS90 、 FAS70 上、將現有叢集連接埠從 10G 或 25G 轉換為 40G 或 100g 叢集連接埠</block>
+  <block id="047ca982afd7eda65d342c9845174216" category="list-text"><block ref="047ca982afd7eda65d342c9845174216" category="inline-link-macro-rx"></block></block>
+  <block id="2b05a3de35946226b44f265788b807c9" category="cell">從 ONTAP 開始支援 ...</block>
+  <block id="8643f1ec20c68bd9122a5e9c431fe6fe" category="cell">FAS70 、 FAS90</block>
+  <block id="1a6c927dff2b4164c21b2d570f87ed5c" category="cell">9.15.1P3</block>
+  <block id="649e9f4912bcf4af7efe489c6866eb1d" category="cell">FAS90</block>
+  <block id="f43de3716b79c8e43965aeacd1411a48" category="cell">AFF A300 、 AFF A400 、 AFF A700</block>
+  <block id="5fa70989a3e04b27c407da750f3d94fe" category="cell">AFF A70 、 AFF A90 、 AFF A1K</block>
+  <block id="ccf78fb30997636f483e58875cad308b" category="cell">AFF A90 、 AFF A1K</block>
+  <block id="fd63300d56f60b7a5ff6928593e24ff3" category="paragraph">AFF A70 和 AFF A90 是整合式系統、在單一機箱中有兩個內建磁碟和兩個控制器。</block>
+  <block id="e0acd4a9bc97511cc024bf1c07dc8536" category="list-text">如果您要升級至內建磁碟機的 AFF A70 或 AFF A90 、則必須在升級之前移除這些磁碟機的所有權。完成升級後、您可以將內部磁碟機指派給 AFF A70 或 AFF A90 節點、並使用它們來建立資料集合體。不一定要將根或資料集合體移轉至內部磁碟機。</block>
+  <block id="9f63491a94b75b12a4f685455f82295c" category="list-text">如果您要升級至不含內部磁碟機的 AFF A70 或 AFF A90 、則在完成升級後不需要指派內部磁碟機。</block>
+  <block id="1c6b77da3506137a2164e23d95b49133" category="list-text">AFF A70 、 AFF A90 、 AFF A1K 、 FAS70 和 FAS90 系統共享 100GbE 網絡端口，用於羣集和 HA 連接。這些系統可支援 10GbE 或 25GbE 叢集連線至傳統叢集交換器；不過、 NetApp 建議在不再需要 10GbE 和 25GbE 交換器時、更新至 100GbE 叢集速度。如需詳細資訊、請參閱下列知識庫文章：</block>
 </blocks>
