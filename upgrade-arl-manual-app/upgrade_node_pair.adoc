@@ -10,7 +10,7 @@ summary: 您可以手動準備要升級的原始節點、方法是在執行ONTAP
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: 使用「系統控制器更換」命令、在執行ONTAP 版本號為9.
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

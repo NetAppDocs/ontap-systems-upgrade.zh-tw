@@ -10,7 +10,7 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請更換 AFF A
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -26,7 +26,7 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請更換 AFF A
 .步驟
 . 在機箱正面、用您的拇指將每個磁碟機穩固推入、直到您感覺到有正面的停止為止。如此可確保磁碟機穩固地安裝在機箱中板上。
 +
-image::../media/drw_a800_drive_seated_IEOPS-960.png[將磁碟機推入機箱中板、使其穩固就位]
+image:drw_a800_drive_seated_IEOPS-960.png["將磁碟機推入機箱中板、使其穩固就位"]
 
 . 移至機箱背面。
 
@@ -50,7 +50,7 @@ image::../media/drw_a800_drive_seated_IEOPS-960.png[將磁碟機推入機箱中�
 控制器模組會稍微移出機箱。
 
 +
-image::../media/a800_cable_management.png[卸下纜線管理 ARM]
+image:a800_cable_management.png["卸下纜線管理 ARM"]
 
 +
 [cols="20,80"]
@@ -58,12 +58,12 @@ image::../media/a800_cable_management.png[卸下纜線管理 ARM]
 
 
  a| 
-image::../media/black_circle_one.png[第一名]
+image:black_circle_one.png["第一名"]
 | 鎖定鎖定 
 
 
  a| 
-image::../media/black_circle_two.png[第二名]
+image:black_circle_two.png["第二名"]
 | 鎖定銷 
 |===
 
@@ -81,7 +81,7 @@ image::../media/black_circle_two.png[第二名]
 NOTE: 在程序稍後指示之前、請勿將控制器模組完全插入機箱。
 
 +
-image::../media/drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG[安裝 AFF A90 或 AFF A70]
+image:drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG["安裝 AFF A90 或 AFF A70"]
 
 . 將管理和主控台連接埠連接至節點1控制器模組。
 +

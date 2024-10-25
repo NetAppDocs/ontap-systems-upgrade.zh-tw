@@ -10,7 +10,7 @@ summary: 使用部分自動 ARL 程序來升級執行 ONTAP 9.15.1 或更新版�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

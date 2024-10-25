@@ -10,7 +10,7 @@ summary: 請告訴NetApp、在執行ONTAP 版本為9.7或更早版本的控制�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

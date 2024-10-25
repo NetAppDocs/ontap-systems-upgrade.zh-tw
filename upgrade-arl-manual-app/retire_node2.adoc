@@ -10,7 +10,7 @@ summary: 正確關閉節點2、並在ONTAP 手動升級執行版本號為9.8或�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

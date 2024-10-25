@@ -10,7 +10,7 @@ summary: 在MetroCluster 執行ONTAP 更新版本的控制器上、在手動進�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

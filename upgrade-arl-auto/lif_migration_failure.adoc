@@ -10,7 +10,7 @@ summary: 在第2階段、第3階段或第5階段進行移轉之後、如果使�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

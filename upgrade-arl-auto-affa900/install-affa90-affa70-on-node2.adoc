@@ -10,7 +10,7 @@ summary: 在同一機箱中升級控制器機型的 ARL 期間、在 node2 上�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -23,7 +23,7 @@ summary: 在同一機箱中升級控制器機型的 ARL 期間、在 node2 上�
 NOTE: 在程序稍後指示之前、請勿將控制器模組完全插入機箱。
 
 +
-image::../media/drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG[安裝 AFF A90 或 AFF A70]
+image:drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG["安裝 AFF A90 或 AFF A70"]
 
 . 將管理和主控台連接埠連接至節點1控制器模組。
 +

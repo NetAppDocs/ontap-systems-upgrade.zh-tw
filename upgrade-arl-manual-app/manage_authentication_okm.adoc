@@ -10,7 +10,7 @@ summary: 在執行 ONTAP 9.8 或更新版本的控制器上進行手動 ARL 升�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

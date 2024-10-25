@@ -10,7 +10,7 @@ summary: '如果需要、請使用命令在 node4 上還原金鑰管理程式組
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

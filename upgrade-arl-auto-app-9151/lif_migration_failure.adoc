@@ -10,7 +10,7 @@ summary: '在階段 2 、階段 3 或階段 5 中移轉後、當使用命令升�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

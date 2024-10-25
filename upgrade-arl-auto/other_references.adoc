@@ -10,7 +10,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、參考支援執行《�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

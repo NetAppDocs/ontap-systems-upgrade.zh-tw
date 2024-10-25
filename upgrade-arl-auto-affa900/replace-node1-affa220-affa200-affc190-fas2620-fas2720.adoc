@@ -10,7 +10,7 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請更換 node1
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -32,11 +32,11 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請更換 node1
 
 . 從控制器模組的左側和右側移除纜線管理裝置、並將其放在一邊。
 +
-image::../media/drw_25xx_cable_management_arm.png[卸下纜線管理 ARM]
+image:drw_25xx_cable_management_arm.png["卸下纜線管理 ARM"]
 
 . 壓下CAM把手上的栓鎖直到釋放為止、完全打開CAM把把、以從中間板釋放控制器模組、然後用兩隻手將控制器模組從機箱中拉出。
 +
-image::../media/drw_2240_x_opening_cam_latch.png[打開 CAM 把手]
+image:drw_2240_x_opening_cam_latch.png["打開 CAM 把手"]
 
 . 翻轉控制器模組、將其放置在平穩的表面上。
 

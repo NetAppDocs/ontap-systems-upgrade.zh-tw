@@ -10,7 +10,7 @@ summary: '使用命令決定是否使用 ARL 來升級執行 ONTAP 9.15.1 或更
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

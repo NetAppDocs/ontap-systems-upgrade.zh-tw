@@ -122,7 +122,7 @@ WARNING: 當取代系統上的連接埠「e0a」和「e0b」被用作HA互連連
 在下列範例中、網路連接埠「e0a」和「e0b」上的管理和叢集間LIF會重新指派給網路連接埠「e1a」和「e1b」。您的節點可能使用不同的網路連接埠、因為它們會因系統而異。
 
 +
-image::../upgrade/media/reassign_lifs.PNG[將LIF重新指派給替換系統上的網路連接埠]
+image:reassign_lifs.PNG["將LIF重新指派給替換系統上的網路連接埠"]
 
 
 

@@ -10,7 +10,7 @@ summary: 您必須擁有特定的工具和文件、ONTAP 才能使用「系統�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

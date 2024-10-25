@@ -10,7 +10,7 @@ summary: 針對S廳9.1或更新版本、請重新設定連接埠配置、並在�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

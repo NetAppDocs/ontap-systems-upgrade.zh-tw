@@ -10,7 +10,7 @@ summary: 手動升級執行版本號為S9.8或更新版本的控制器後、重�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

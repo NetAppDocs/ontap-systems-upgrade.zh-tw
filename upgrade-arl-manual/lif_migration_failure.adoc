@@ -10,7 +10,7 @@ summary: 移轉到階段2、階段3或階段5之後、LIF無法連線、在執�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

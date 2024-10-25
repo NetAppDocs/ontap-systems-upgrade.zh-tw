@@ -10,7 +10,7 @@ summary: 在原始節點和新節點上執行工作、準備要升級的原始�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

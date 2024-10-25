@@ -10,7 +10,7 @@ summary: 瞭解ONTAP 如何使用「系統控制器更換」命令、將執行�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

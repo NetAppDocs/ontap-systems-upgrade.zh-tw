@@ -10,7 +10,7 @@ summary: 您可以將舊系統轉換為更換系統、以保留舊的系統機�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

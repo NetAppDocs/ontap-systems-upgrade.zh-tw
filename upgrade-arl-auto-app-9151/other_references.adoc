@@ -10,7 +10,7 @@ summary: '使用命令支援執行 ONTAP 9.15.1 或更新版本之控制器升�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: 在ONTAP 手動升級ARL期間、在執行ONTAP Es9.7或更早版本的
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

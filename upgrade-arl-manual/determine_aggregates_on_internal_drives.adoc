@@ -10,7 +10,7 @@ summary: 請確認內部磁碟機在ONTAP 執行更新版本的控制器上進�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: 如有必要、請使用ONTAP 「系統控制器更換」命令、在�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

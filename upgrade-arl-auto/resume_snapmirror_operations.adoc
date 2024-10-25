@@ -10,7 +10,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行《SES9.5》�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

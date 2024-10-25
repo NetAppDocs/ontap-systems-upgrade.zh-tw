@@ -10,7 +10,7 @@ summary: 將先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備和資
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

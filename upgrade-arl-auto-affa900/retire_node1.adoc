@@ -10,7 +10,7 @@ summary: 停用 HA 配對與 node2 、並在使用 ARL 升級相同機箱中的�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

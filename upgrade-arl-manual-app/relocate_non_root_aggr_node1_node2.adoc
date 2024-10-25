@@ -10,7 +10,7 @@ summary: 將非根Aggregate從node1移至node2、並在執行ONTAP 《Esce9.8或
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

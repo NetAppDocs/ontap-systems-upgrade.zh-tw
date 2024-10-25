@@ -10,7 +10,7 @@ summary: 瞭解在執行ONTAP 《更新版本》的控制器上、手動ARL升�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

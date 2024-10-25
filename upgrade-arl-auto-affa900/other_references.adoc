@@ -10,7 +10,7 @@ summary: 支援使用 ARL 以升級相同機箱中的控制器機型所需的參
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

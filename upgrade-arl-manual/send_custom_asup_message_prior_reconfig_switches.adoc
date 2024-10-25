@@ -10,7 +10,7 @@ summary: 通知NetApp技術支援部門、在ONTAP 執行更新版本的控制�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

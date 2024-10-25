@@ -10,7 +10,7 @@ summary: 決定是否使用手動ARL程序來升級HA配對中的儲存控制器
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: '瞭解您是否可以使用命令來升級執行 ONTAP 9.15.1 或更�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

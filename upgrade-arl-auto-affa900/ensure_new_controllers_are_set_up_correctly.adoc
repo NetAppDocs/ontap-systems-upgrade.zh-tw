@@ -10,7 +10,7 @@ summary: 確認 HA 配對已啟用、請驗證 node1 和 node2 儲存設備存�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

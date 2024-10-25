@@ -10,7 +10,7 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請重新定位
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

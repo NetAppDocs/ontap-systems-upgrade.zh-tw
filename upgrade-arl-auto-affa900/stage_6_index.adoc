@@ -10,7 +10,7 @@ summary: '使用進行 ARL 升級的第 6 階段程序順序 `system controller 
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

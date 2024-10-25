@@ -10,7 +10,7 @@ summary: 第6階段程序順序、可在執行ONTAP 了更新版本的控制器�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

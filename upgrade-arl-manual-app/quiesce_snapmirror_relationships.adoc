@@ -10,7 +10,7 @@ summary: 在您對系統進行網路開機之前、請先在執行ONTAP 版本�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

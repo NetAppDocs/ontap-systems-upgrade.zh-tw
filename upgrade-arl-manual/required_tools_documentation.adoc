@@ -10,7 +10,7 @@ summary: 您必須擁有特定工具和文件、才能在執行ONTAP VMware 9.7�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

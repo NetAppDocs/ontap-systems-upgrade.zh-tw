@@ -10,7 +10,7 @@ summary: 使用手動ARL升級程序來升級執行ONTAP 不含更新版本的�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

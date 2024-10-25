@@ -10,7 +10,7 @@ summary: 請告訴NetApp、使用ONTAP 「系統控制器更換」命令、升�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

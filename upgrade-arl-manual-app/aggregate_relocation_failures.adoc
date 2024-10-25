@@ -10,7 +10,7 @@ summary: 疑難排解執行ONTAP VMware 9.8或更新版本的控制器手動升�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

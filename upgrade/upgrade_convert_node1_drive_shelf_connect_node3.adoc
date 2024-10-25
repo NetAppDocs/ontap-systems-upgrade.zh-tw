@@ -19,7 +19,7 @@ summary: 在將磁碟機從 node1 重新指派至 node3 之前、請先將 node1
 . 將 NVMe 機櫃模組（ NSM ）插入 node1 的機櫃。
 . 將 node3 100GbE 連接埠 e0c 連接至 NSM A 連接埠 e0a 、將 NSM 連接至 node3 。
 +
-image::../upgrade/media/a400_with_ns224_shelf.PNG[AFF A400 搭配一個 NS224 機櫃]
+image:a400_with_ns224_shelf.PNG["AFF A400 搭配一個 NS224 機櫃"]
 
 . 將 25GbE 纜線從 node1 連接埠 e0c 和 e0d 移至 node3 上的任何兩個 25GbE 板載連接埠（ e0e 、 e0f 、 e0g 或 e0h ）、將暫存叢集連線移至 node3 。
 +

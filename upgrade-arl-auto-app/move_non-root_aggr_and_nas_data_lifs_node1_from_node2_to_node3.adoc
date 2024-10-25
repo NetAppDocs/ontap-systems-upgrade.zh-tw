@@ -10,7 +10,7 @@ summary: '使用升級執行ONTAP 支援功能的控制器時、請確認節點2
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

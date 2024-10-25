@@ -10,7 +10,7 @@ summary: 瞭解您是否可以使用 ARL 、保留舊的系統機箱和磁碟來
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

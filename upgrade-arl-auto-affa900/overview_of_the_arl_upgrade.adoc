@@ -10,7 +10,7 @@ summary: 瞭解在同一機箱中升級控制器機型的 ARL 程序如何運作
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

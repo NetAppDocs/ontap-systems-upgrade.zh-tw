@@ -10,7 +10,7 @@ summary: '第 5 階段 ARL 升級程序、使用 `system controller replace` 執
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

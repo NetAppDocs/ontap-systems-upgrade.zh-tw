@@ -10,7 +10,7 @@ summary: 步驟1：在執行ONTAP 了更新版本的控制器上進行手動ARL�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

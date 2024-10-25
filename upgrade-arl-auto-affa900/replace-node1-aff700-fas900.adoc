@@ -10,7 +10,7 @@ summary: 使用 ARL 升級同一機箱中的控制器型號時、請更換 AFF A
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
@@ -35,7 +35,7 @@ WARNING: 當您在節點1上工作時、只能從節點1移除主控台纜線和
 +
 .. 將CAM把手上的橘色按鈕向下推、直到解鎖為止。
 +
-image::../media/drw_9500_remove_PCM.png[卸下控制器模組]
+image:drw_9500_remove_PCM.png["卸下控制器模組"]
 
 +
 [cols="20,80"]
@@ -43,12 +43,12 @@ image::../media/drw_9500_remove_PCM.png[卸下控制器模組]
 
 
  a| 
-image::../media/black_circle_one.png[第一名]
+image:black_circle_one.png["第一名"]
 | CAM握把釋放鈕 
 
 
  a| 
-image::../media/black_circle_two.png[第二名]
+image:black_circle_two.png["第二名"]
 | CAM握把 
 |===
 .. 旋轉CAM握把、使其完全脫離機箱的控制器模組、然後將控制器模組滑出機箱。
@@ -81,7 +81,7 @@ NVRAM模組會從機箱中鬆脫、並移動數英吋。
 
 .. 拉動模組面兩側的拉片、將NVRAM模組從機箱中取出。
 +
-image::../media/drw_a900_move-remove_NVRAM_module.png[卸下NVRAM模組]
+image:drw_a900_move-remove_NVRAM_module.png["卸下NVRAM模組"]
 
 +
 [cols="20,80"]
@@ -89,12 +89,12 @@ image::../media/drw_a900_move-remove_NVRAM_module.png[卸下NVRAM模組]
 
 
  a| 
-image::../media/black_circle_one.png[第一名]
+image:black_circle_one.png["第一名"]
 | I/O CAM栓鎖有編號和編號 
 
 
  a| 
-image::../media/black_circle_two.png[第二名]
+image:black_circle_two.png["第二名"]
 | I/O鎖定完全解除鎖定 
 |===
 
@@ -127,7 +127,7 @@ image::../media/black_circle_two.png[第二名]
 . 將NVRAM模組對齊插槽6中機箱開孔的邊緣。
 . 將NVRAM模組輕推入插槽、直到帶有字母和編號的I/O CAM栓開始與I/O CAM銷接合、然後將I/O CAM栓完全推入、將NVRAM模組鎖定到位。
 +
-image::../media/drw_a900_move-remove_NVRAM_module.png[安裝NVRAM模組]
+image:drw_a900_move-remove_NVRAM_module.png["安裝NVRAM模組"]
 
 +
 [cols="20,80"]
@@ -135,12 +135,12 @@ image::../media/drw_a900_move-remove_NVRAM_module.png[安裝NVRAM模組]
 
 
  a| 
-image::../media/black_circle_one.png[第一名]
+image:black_circle_one.png["第一名"]
 | I/O CAM栓鎖有編號和編號 
 
 
  a| 
-image::../media/black_circle_two.png[第二名]
+image:black_circle_two.png["第二名"]
 | I/O鎖定完全解除鎖定 
 |===
 
@@ -171,7 +171,7 @@ NOTE: 由於機箱已開機、因此節點 1 會在完全就位後、立即啟�
 WARNING: 為避免損壞連接器、請勿在將控制器模組滑入機箱時過度施力。
 
 +
-image::../media/drw_9500_remove_PCM.png[安裝控制器模組]
+image:drw_9500_remove_PCM.png["安裝控制器模組"]
 
 +
 [cols="20,80"]
@@ -179,12 +179,12 @@ image::../media/drw_9500_remove_PCM.png[安裝控制器模組]
 
 
  a| 
-image::../media/black_circle_one.png[第一名]
+image:black_circle_one.png["第一名"]
 | CAM處理鎖定鎖定 
 
 
  a| 
-image::../media/black_circle_two.png[第二名]
+image:black_circle_two.png["第二名"]
 | CAM握把處於解除鎖定位置 
 |===
 . 只要模組就位、請立即連接序列主控台、並準備好中斷節點1的自動開機。

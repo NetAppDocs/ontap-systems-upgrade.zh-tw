@@ -10,7 +10,7 @@ summary: 瞭解執行ONTAP NetApp 9.7或更早版本之控制器配對的手動A
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: 疑難排解使用「系統控制器更換」命令來升級執行ONTAP
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

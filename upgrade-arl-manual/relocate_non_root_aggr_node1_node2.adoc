@@ -10,7 +10,7 @@ summary: 將非根Aggregate從節點1移至節點2、並在執行ONTAP Es9.7或�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

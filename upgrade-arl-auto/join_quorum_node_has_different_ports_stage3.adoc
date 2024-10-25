@@ -10,7 +10,7 @@ summary: 在第3階段中、ONTAP 使用「系統控制器更換」命令、將�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

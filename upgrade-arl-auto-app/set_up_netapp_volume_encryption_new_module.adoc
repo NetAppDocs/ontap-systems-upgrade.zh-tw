@@ -10,7 +10,7 @@ summary: '如有需要、ONTAP 使用升級執行《ENF9.8或更新版本》的�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

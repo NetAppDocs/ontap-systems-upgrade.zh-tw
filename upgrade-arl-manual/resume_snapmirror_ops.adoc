@@ -10,7 +10,7 @@ summary: 在ONTAP 執行版本號為9.7或更早版本的控制器上進行手�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

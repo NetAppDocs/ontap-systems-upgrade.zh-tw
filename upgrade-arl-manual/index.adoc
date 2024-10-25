@@ -10,7 +10,7 @@ summary: 請使用手動ARL升級程序來升級執行ONTAP 版本號為「更�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

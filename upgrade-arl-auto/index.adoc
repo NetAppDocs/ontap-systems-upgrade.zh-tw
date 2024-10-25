@@ -10,7 +10,7 @@ summary: 您可以ONTAP 使用「系統控制器更換」命令、重新定位�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

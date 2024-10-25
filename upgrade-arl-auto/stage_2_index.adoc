@@ -10,7 +10,7 @@ summary: ARL升級的第2階段程序順序、使用執行ONTAP 版本號從9.5�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

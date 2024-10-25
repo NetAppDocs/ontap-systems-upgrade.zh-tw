@@ -10,7 +10,7 @@ summary: 當使用ONTAP 「系統控制器更換」命令將執行版本支援�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

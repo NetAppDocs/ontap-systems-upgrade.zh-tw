@@ -10,7 +10,7 @@ summary: 如果需要、請在節點 2 上還原金鑰管理程式組態、以�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

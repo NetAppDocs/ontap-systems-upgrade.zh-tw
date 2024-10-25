@@ -10,7 +10,7 @@ summary: 系統可能會當機–重新開機、發生緊急狀況、或是在�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

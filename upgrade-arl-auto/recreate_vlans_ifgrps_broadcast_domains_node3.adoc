@@ -10,7 +10,7 @@ summary: '使用將執行ONTAP 《E9.5至9.7》的控制器升級時、請在節
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

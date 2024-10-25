@@ -10,7 +10,7 @@ summary: '第 1 階段 ARL 升級程序、使用 `system controller replace` 升
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

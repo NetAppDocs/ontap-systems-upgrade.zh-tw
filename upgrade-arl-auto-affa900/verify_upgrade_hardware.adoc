@@ -10,7 +10,7 @@ summary: 在開始升級之前、請確認您擁有正確的硬體、以便在�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: 將非根集合體和 NAS 資料生命體從 node1 移至 node2 、並�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

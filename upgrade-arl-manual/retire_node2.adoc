@@ -10,7 +10,7 @@ summary: 在ONTAP 執行版本更新至更新版本的控制器上進行手動AR
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

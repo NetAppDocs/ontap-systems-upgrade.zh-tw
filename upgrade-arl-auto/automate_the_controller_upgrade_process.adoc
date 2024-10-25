@@ -10,7 +10,7 @@ summary: 請使用半自動ARL程序、將執行ONTAP 版本號為「更新版�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

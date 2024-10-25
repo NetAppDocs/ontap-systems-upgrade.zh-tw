@@ -19,7 +19,7 @@ summary: 將節點 2 （ AFF A250 ）轉換為 NS224 磁碟機櫃、然後連線
 . 將 NVMe 機櫃模組（ NSM ）插入 node2 的機櫃。
 . 將 node4 100GbE 連接埠 e0c 連接至 NSM B 連接埠 e0a 、將 NSM 連接至 node4 。
 +
-image::../upgrade/media/a400_with_ns224_shelf.PNG[AFF A400 搭配一個 NS224 機櫃]
+image:a400_with_ns224_shelf.PNG["AFF A400 搭配一個 NS224 機櫃"]
 
 . 將 25GbE 纜線從 node2 連接埠 e0c 和 e0d 連接至 node4 上的任何兩個 25GbE 板載連接埠（ e0e 、 e0f 、 e0g 或 e0h ）、以建立暫時的叢集連線。
 +

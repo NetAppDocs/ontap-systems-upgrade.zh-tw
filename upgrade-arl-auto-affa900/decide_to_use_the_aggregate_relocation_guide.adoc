@@ -10,7 +10,7 @@ summary: 決定是否使用可升級同一機箱中控制器機型的 ARL 程序
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

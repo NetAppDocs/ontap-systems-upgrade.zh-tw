@@ -10,7 +10,7 @@ summary: 第4階段程序順序、可在執行ONTAP 版本為9.7或更早版本�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

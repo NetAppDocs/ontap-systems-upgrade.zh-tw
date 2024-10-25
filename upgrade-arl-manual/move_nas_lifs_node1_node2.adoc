@@ -10,7 +10,7 @@ summary: 如果您有雙節點叢集、請將node1 NAS資料l生命 週期移至
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

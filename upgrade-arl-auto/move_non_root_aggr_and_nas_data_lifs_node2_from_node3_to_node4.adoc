@@ -10,7 +10,7 @@ summary: '使用將執行ONTAP 版本號為9.5的控制器升級至9.7時、請�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

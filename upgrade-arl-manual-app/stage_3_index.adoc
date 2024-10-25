@@ -10,7 +10,7 @@ summary: 第3階段在執行ONTAP 版本號的控制器上進行手動ARL升級�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: 啟用HA配對、驗證node3和node4儲存設備存取、並ONTAP 使�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

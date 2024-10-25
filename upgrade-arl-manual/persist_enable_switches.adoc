@@ -10,7 +10,7 @@ summary: 在執行ONTAP 更新版本的控制器上、在手動升級ARL時、�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

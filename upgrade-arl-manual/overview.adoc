@@ -10,7 +10,7 @@ summary: 瞭解執行ONTAP 效能不正常的控制器手動ARL升級程序如�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

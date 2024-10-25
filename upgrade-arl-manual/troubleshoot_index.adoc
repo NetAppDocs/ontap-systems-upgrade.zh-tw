@@ -10,7 +10,7 @@ summary: 針對執行ONTAP VMware 9.7或更早版本的控制器進行手動ARL�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

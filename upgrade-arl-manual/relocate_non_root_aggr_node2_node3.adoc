@@ -10,7 +10,7 @@ summary: 針對AutoSupport 節點2傳送一個資訊區訊息、並在ONTAP 執�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

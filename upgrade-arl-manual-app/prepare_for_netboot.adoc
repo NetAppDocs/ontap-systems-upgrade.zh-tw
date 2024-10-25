@@ -10,7 +10,7 @@ summary: 手動升級至執行ONTAP Esc9.8或更新版本的控制器時、請�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

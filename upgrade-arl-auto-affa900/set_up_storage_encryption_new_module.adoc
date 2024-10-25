@@ -10,7 +10,7 @@ summary: 必要時、請設定儲存加密、安裝 SSL 憑證、並在使用 AR
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

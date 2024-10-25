@@ -10,7 +10,7 @@ summary: 您必須擁有某些工具和文件、才能使用 ARL 來升級同一
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: '請告知 NetApp 、在使用命令升級執行 ONTAP 9.15.1 或更新
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

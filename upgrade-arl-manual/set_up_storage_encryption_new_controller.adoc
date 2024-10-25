@@ -10,7 +10,7 @@ summary: 如有需要、請在執行ONTAP 更新版本的控制器上手動升�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

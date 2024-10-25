@@ -10,7 +10,7 @@ summary: 在執行 ONTAP 9.7 或更早版本的控制器上手動升級 ARL 時�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

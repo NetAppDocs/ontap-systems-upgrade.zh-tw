@@ -10,7 +10,7 @@ summary: 在第 2 階段、第 3 階段或第 5 階段移轉後、使用 ARL 升
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

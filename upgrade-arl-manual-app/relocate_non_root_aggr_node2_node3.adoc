@@ -10,7 +10,7 @@ summary: 針對AutoSupport 節點2傳送一個訊息、並在執行ONTAP 更新�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: 瞭解執行ONTAP 《NetApp》9.8或更新版本之一對控制器的�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

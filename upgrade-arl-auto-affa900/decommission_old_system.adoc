@@ -10,7 +10,7 @@ summary: 請告知 NetApp 、舊系統在控制器升級後不再運作。
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

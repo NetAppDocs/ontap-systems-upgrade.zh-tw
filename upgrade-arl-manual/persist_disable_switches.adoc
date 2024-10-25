@@ -10,7 +10,7 @@ summary: 在Fabric中停用Brocade和Cisco交換器、並在執行ONTAP 更新�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

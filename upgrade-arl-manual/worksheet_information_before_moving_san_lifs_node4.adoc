@@ -10,7 +10,7 @@ summary: 在執行ONTAP 《Se 9.8或更新版本》的控制器上進行手動AR
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

@@ -10,7 +10,7 @@ summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

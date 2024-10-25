@@ -10,7 +10,7 @@ summary: 瞭解您是否可以使用手動ARL程序來執行ONTAP 一對執行�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]

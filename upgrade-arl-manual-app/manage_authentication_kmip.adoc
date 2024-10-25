@@ -10,7 +10,7 @@ summary: 使用KMIP伺服器、在執行ONTAP 版本號為9.8或更新版本的�
 :nofooter: 
 :icons: font
 :linkattrs: 
-:imagesdir: ./media/
+:imagesdir: ../media/
 
 
 [role="lead"]
