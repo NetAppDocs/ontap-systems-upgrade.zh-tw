@@ -5191,7 +5191,6 @@ FAS2720</block>
   <block id="f43de3716b79c8e43965aeacd1411a48" category="cell">AFF A300 、 AFF A400 、 AFF A700</block>
   <block id="5fa70989a3e04b27c407da750f3d94fe" category="cell">AFF A70 、 AFF A90 、 AFF A1K</block>
   <block id="ccf78fb30997636f483e58875cad308b" category="cell">AFF A90 、 AFF A1K</block>
-  <block id="fd63300d56f60b7a5ff6928593e24ff3" category="paragraph">AFF A70 和 AFF A90 是整合式系統、在單一機箱中有兩個內建磁碟和兩個控制器。</block>
   <block id="e0acd4a9bc97511cc024bf1c07dc8536" category="list-text">如果您要升級至內建磁碟機的 AFF A70 或 AFF A90 、則必須在升級之前移除這些磁碟機的所有權。完成升級後、您可以將內部磁碟機指派給 AFF A70 或 AFF A90 節點、並使用它們來建立資料集合體。不一定要將根或資料集合體移轉至內部磁碟機。</block>
   <block id="9f63491a94b75b12a4f685455f82295c" category="list-text">如果您要升級至不含內部磁碟機的 AFF A70 或 AFF A90 、則在完成升級後不需要指派內部磁碟機。</block>
   <block id="1c6b77da3506137a2164e23d95b49133" category="list-text">AFF A70 、 AFF A90 、 AFF A1K 、 FAS70 和 FAS90 系統共享 100GbE 網絡端口，用於羣集和 HA 連接。這些系統可支援 10GbE 或 25GbE 叢集連線至傳統叢集交換器；不過、 NetApp 建議在不再需要 10GbE 和 25GbE 交換器時、更新至 100GbE 叢集速度。如需詳細資訊、請參閱下列知識庫文章：</block>
@@ -5247,4 +5246,5 @@ FAS2720</block>
   <block id="a8146cc42b0ac83dacd0c674c2e19baa" category="paragraph"><block ref="a8146cc42b0ac83dacd0c674c2e19baa" category="inline-image-macro-rx" type="image"></block></block>
   <block id="fd4a2232b0a4fad7f2f7a5207ee94001" category="sidebar">瞭解 ONTAP 系統與軟體</block>
   <block id="743b2bde29eae11996923323c6b89672" category="sidebar">交換器文件ONTAP</block>
+  <block id="91c8d030b7d32b838af9bb14f227c952" category="paragraph">AFF A70 和 AFF A90 是整合式系統，在 HA 組態中有兩個控制器，在單一機箱中有內建磁碟。</block>
 </blocks>
