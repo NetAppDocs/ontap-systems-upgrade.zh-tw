@@ -34,10 +34,10 @@ summary: 使用ONTAP 「系統控制器更換」命令、在升級執行ONTAP �
 . 按照節點機型的安裝與設定說明_中的指示、在機架中安裝節點4。
 . 纜線節點4、將連線從節點2移至節點4。
 +
-依照_Installation and Setup Instructions（安裝與設定說明）或_EsceVirtualization FlexArray Installation Requirements and Reference（節點4平台參考資料）、適當的磁碟櫃文件、以及_High Availability management_中的指示、連接下列連線。
+請依照 _ 安裝與設定說明 _ 或節點 4 平台的 _ FlexArray 虛擬化安裝要求與參考 _ ，適當的磁碟櫃文件及 _ HA 配對管理 _ 中的指示，連接下列連線。
 
 +
-請參閱 link:other_references.html["參考資料"] 連結至_ FlexArray 《虛擬化安裝要求與參考資料》和_《高可用度管理》。
+請參閱link:other_references.html["參考資料"]連結至 FlexArray 虛擬化安裝需求與參考 _ 和 _HA 配對管理 _ 。
 
 +
 ** 主控台（遠端管理連接埠）

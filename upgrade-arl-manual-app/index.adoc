@@ -25,6 +25,26 @@ summary: 使用手動ARL升級程序來升級執行ONTAP 不含更新版本的�
 * 從系統到系統FAS FAS
 * 將系統支援至採用「虛擬化軟體」或「V系列」系統的系統FAS FlexArray
 * 從系統到系統AFF AFF
++
+您只能升級至相同系列的替換系統：
+
++
+** AFF A 系列系統至 AFF A 系列系統
+** AFF C 系列系統至 AFF C 系列系統
+
+
+* 從系統到系統ASA ASA
++
+不支援 ASA 升級至 ASA R2 更換系統。如需將資料從 ASA 移轉至 ASA R2 的相關資訊，請參閱link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["啟用從 SAN 主機到 ASA R2 儲存系統的資料存取"^]。
+
++
+您只能升級至相同系列的替換系統：
+
++
+** ASA A 系列系統至 ASA A 系列系統
+** ASA C 系列系統至 ASA C 系列系統
+
+
 * 系統若採用FlexArray 「支援虛擬化的軟體FAS 」或「V系列」系統、則只要配備FlexArray 「支援虛擬化的軟體」或「V系列」系統的系統沒有陣列LUN即可。
 * V系列系統移轉至採用FlexArray 「虛擬化軟體」或「V系列」系統的系統
 

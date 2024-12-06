@@ -27,6 +27,10 @@ NOTE: 您也可以使用 Aggregate 重定位將 AFF A800 升級至 AFF A70 或 A
 
 * AFF C190 、 AFF C250 和 AFF C800
 * ASA A150 、 ASA A250 、 ASA A800 和 ASA AFF A220
++
+
+NOTE: 不支援 ASA 升級至 ASA R2 更換系統。如需將資料從 ASA 移轉至 ASA R2 的相關資訊，請參閱link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["啟用從 SAN 主機到 ASA R2 儲存系統的資料存取"^]。
+
 
 
 如果您的系統未列出、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^] 檢查是否有內部磁碟機。
@@ -42,6 +46,10 @@ image:workflow_internal_drives.png["選擇升級程序的決策工作流程"]
 * AFF A300 、 AFF A320 、 AFF A400 、 AFF A700 和 AFF A900
 * AFF C400
 * ASA A400 、 ASA A900 和 ASA AFF A700
++
+
+NOTE: 不支援 ASA 升級至 ASA R2 更換系統。如需將資料從 ASA 移轉至 ASA R2 的相關資訊，請參閱link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["啟用從 SAN 主機到 ASA R2 儲存系統的資料存取"^]。
+
 
 
 如果您的系統未列出、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^] 檢查是否只有外部磁碟機。

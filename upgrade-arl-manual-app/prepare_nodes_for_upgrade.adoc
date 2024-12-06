@@ -19,7 +19,7 @@ summary: 在執行ONTAP 「更新版本」的控制器上進行手動ARL升級�
 .步驟
 . 確認每個原始節點都有足夠的資源、可在接管模式期間充分支援兩個節點的工作負載。
 +
-請參閱 link:other_references.html["參考資料"] 若要連結至_高可用度管理_並遵循_ HA配對最佳實務做法_一節。任何原始節點都不應以超過50%的使用率執行；如果節點的使用率低於50%、則可在控制器升級期間處理兩個節點的負載。
+請參閱link:other_references.html["參考資料"]連結至 _HA 配對管理 _ ，並遵循 _ HA 配對最佳實務做法 _ 一節。任何原始節點都不應以超過50%的使用率執行；如果節點的使用率低於50%、則可在控制器升級期間處理兩個節點的負載。
 
 . 完成下列子步驟、為原始節點建立效能基準：
 +
@@ -162,7 +162,7 @@ node1          node2          true     Connected to node2, Partial giveback
 node2          node1          true     Connected to node1
 ....
 +
-如果任一節點處於部分恢復狀態、請使用「儲存容錯移轉還原」命令來執行恢復、然後使用「儲存容錯移轉show-gorback」命令來確保不需要歸還集合體。如需命令的詳細資訊、請參閱 link:other_references.html["參考資料"] 連結至_高可用度管理_。
+如果任一節點都在部分恢復中，請使用 `storage failover giveback`命令執行恢復，然後使用命令來 `storage failover show-giveback`確保不需要再提供任何集合體。如需命令的詳細資訊，請參閱link:other_references.html["參考資料"]連結至 _HA 配對管理 _ 。
 
 . [[man_prepe_node_step9]]確認節點1和節點2均不擁有其目前擁有者（但不擁有主擁有者）的Aggregate：
 +
@@ -251,7 +251,7 @@ node1    None                None
 node2    None                None
 ....
 +
-如果有任何磁碟遺失、請參閱 link:other_references.html["參考資料"] 若要使用CLI連結至_磁碟與集合管理、使用CLI進行_邏輯儲存管理、以及_高可用度管理_、以設定HA配對的儲存設備。
+如果有任何磁碟遺失，請參閱link:other_references.html["參考資料"]以 CL5_ 連結至磁碟和集合管理，使用 CL5_ 進行邏輯儲存管理，以及使用 HA 配對管理 _ 來設定 HA 配對的儲存設備。
 
 . 確認node1和node2正常且符合參加叢集的資格：
 +

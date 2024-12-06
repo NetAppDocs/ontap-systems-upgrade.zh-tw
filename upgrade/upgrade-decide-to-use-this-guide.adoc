@@ -17,6 +17,7 @@ summary: 本內容說明如何AFF 透過移動儲存設備或磁碟區來升級�
 
 [NOTE]
 ====
+* 不支援 ASA 升級至 ASA R2 更換系統。如需將資料從 ASA 移轉至 ASA R2 的相關資訊，請參閱link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["啟用從 SAN 主機到 ASA R2 儲存系統的資料存取"^]。
 * 當您升級至 ONTAP 9 ． 15.1 中推出的系統時、 ONTAP 會轉換現有磁碟區的儲存效率、並套用利用硬體卸載功能的新儲存效率功能。這是一個自動背景程序、對系統沒有明顯的效能影響。
 +
 ** 對於 AFF A70 、 AFF A90 或 AFF A1K 系統、 ONTAP 會轉換所有現有精簡配置磁碟區的儲存效率、包括未使用儲存效率的磁碟區。

@@ -52,7 +52,7 @@ summary: 在ONTAP 手動升級ARL期間、在執行ONTAP Es9.7或更早版本的
 +
 ** _Installation and Setup Instructions（安裝與設定說明）_或_Estratested FlexArray Virtualization Installation Requirements and Reference（_針對節點4平台的虛擬化安裝要求與參考資料）
 ** 適當的磁碟櫃程序
-** _高可用度管理_文件
+** _HA 配對管理 _ 文件
 +
 纜線連接下列連接：
 

@@ -33,7 +33,7 @@ NOTE: 如果您要升級到同一機箱中同時具有兩個節點的系統、�
 +
 ** _Installation and Setup Instructions（安裝與設定說明）_或_Estratested FlexArray Virtualization Installation Requirements and Reference（_針對節點3平台的虛擬化安裝要求與參考資料）
 ** 適當的磁碟櫃程序
-** _高可用度管理_文件
+** _HA 配對管理 _ 文件
 
 
 +

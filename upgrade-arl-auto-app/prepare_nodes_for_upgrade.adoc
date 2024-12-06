@@ -91,7 +91,7 @@ Controller replacement operation has been paused for user intervention.
 | Aggregate狀態檢查 | 如果要替換自己的Aggregate、但這些節點不是主擁有者、則工作會失敗。節點不應擁有任何非本機Aggregate。 
 
 
-| 磁碟狀態檢查 | 如果要更換的任何節點有遺失或故障的磁碟、則工作會失敗。如果有任何磁碟遺失、請參閱 link:other_references.html["參考資料"] 若要使用CLI連結至_磁碟與集合管理、使用CLI進行_邏輯儲存管理、以及_高可用度管理_、以設定HA配對的儲存設備。 
+| 磁碟狀態檢查 | 如果要更換的任何節點有遺失或故障的磁碟、則工作會失敗。如果有任何磁碟遺失，請參閱link:other_references.html["參考資料"]以 CL5_ 連結至磁碟和集合管理，使用 CL5_ 進行邏輯儲存管理，以及使用 HA 配對管理 _ 來設定 HA 配對的儲存設備。 
 
 
 | 資料LIF狀態檢查 | 檢查要更換的任何節點是否具有非本機資料生命量。節點不應包含任何非主擁有者的資料LIF。如果其中一個節點包含非本機資料LIF、則工作會失敗。 

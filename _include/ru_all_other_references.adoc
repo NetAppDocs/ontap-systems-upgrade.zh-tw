@@ -34,7 +34,7 @@
 | link:https://docs.netapp.com/us-en/ontap-flexarray/install/index.html["介紹虛擬化安裝要求與參考資料FlexArray"^] | 包含FlexArray 有關「非虛擬化」系統的佈線指示和其他資訊。 
 
 
-| link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["高可用度管理"^] | 說明如何安裝及管理高可用度叢集組態、包括儲存容錯移轉及接管/恢復。 
+| link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["HA配對管理"^] | 說明如何安裝及管理高可用度叢集組態、包括儲存容錯移轉及接管/恢復。 
 
 
 | link:https://docs.netapp.com/us-en/ontap/volumes/index.html["使用CLI進行邏輯儲存管理"^] | 說明如何使用磁碟區、FlexClone磁碟區、檔案和LUN來有效管理邏輯儲存資源、 支援多個磁碟區、重複資料刪除、壓縮、qtree和配額。FlexCache 

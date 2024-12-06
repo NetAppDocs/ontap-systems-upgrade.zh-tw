@@ -200,7 +200,6 @@
   <block id="13953a740d52280d2268524a1a4a3535" category="cell">Aggregate狀態檢查</block>
   <block id="d2be5a07810282eec1226ecdcabc0e8d" category="cell">如果要替換自己的Aggregate、但這些節點不是主擁有者、則工作會失敗。節點不應擁有任何非本機Aggregate。</block>
   <block id="6244df7e25591403b0d5255577576eb4" category="cell">磁碟狀態檢查</block>
-  <block id="9b4a7067960efcb28456ef46d4ac8143" category="cell">如果要更換的任何節點有遺失或故障的磁碟、則工作會失敗。如果有任何磁碟遺失、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要使用CLI連結至_磁碟與集合管理、使用CLI進行_邏輯儲存管理、以及_高可用度管理_、以設定HA配對的儲存設備。</block>
   <block id="320bc2c593ebed7e970715ea3832bc2e" category="cell">資料LIF狀態檢查</block>
   <block id="9433521f789681a1a8fd76815674c438" category="cell">檢查要更換的任何節點是否具有非本機資料生命量。節點不應包含任何非主擁有者的資料LIF。如果其中一個節點包含非本機資料LIF、則工作會失敗。</block>
   <block id="eb694fc97d0bfef2c84584a29b318d85" category="cell">叢集LIF狀態</block>
@@ -584,8 +583,6 @@
   <block id="e5c39acdb0f682a22a7b242d48ac3ce5" category="inline-link-macro">介紹虛擬化安裝要求與參考資料FlexArray</block>
   <block id="2894d35f6fa87d4eee09a10919737e2f" category="cell"><block ref="2894d35f6fa87d4eee09a10919737e2f" category="inline-link-macro-rx"></block></block>
   <block id="d1d13e1cdd7f75473f7902868b6ba3d7" category="cell">包含FlexArray 有關「非虛擬化」系統的佈線指示和其他資訊。</block>
-  <block id="9fc34575910b3b930388b5434f515842" category="inline-link-macro">高可用度管理</block>
-  <block id="8b8cdc632b8dd03afd9af9cf3f0bbb00" category="cell"><block ref="8b8cdc632b8dd03afd9af9cf3f0bbb00" category="inline-link-macro-rx"></block></block>
   <block id="8514bd0cded8da51b71a7aba8599153c" category="cell">說明如何安裝及管理高可用度叢集組態、包括儲存容錯移轉及接管/恢復。</block>
   <block id="c1a14ef4c1320caf80e81dff4161eb9b" category="inline-link-macro">使用CLI進行邏輯儲存管理</block>
   <block id="23806251831778e9042b7dc8e04e42d9" category="cell"><block ref="23806251831778e9042b7dc8e04e42d9" category="inline-link-macro-rx"></block></block>
@@ -960,8 +957,6 @@
   <block id="82952c70726b36a56f0651368cd2be05" category="paragraph">如果node4與node2位於不同的機箱中、您可以將node4放在與node3相同的位置。如果節點2和節點4位於同一個機箱中、則節點4已位於適當的機架位置。</block>
   <block id="9ef9fab932162728d06bbfd2862c33d9" category="list-text">按照節點機型的安裝與設定說明_中的指示、在機架中安裝節點4。</block>
   <block id="179ba8fe173567627d42a1a9fc1e6948" category="list-text">纜線節點4、將連線從節點2移至節點4。</block>
-  <block id="2e546c2ae4e7d18e3a62352f7899f8ad" category="paragraph">依照_Installation and Setup Instructions（安裝與設定說明）或_EsceVirtualization FlexArray Installation Requirements and Reference（節點4平台參考資料）、適當的磁碟櫃文件、以及_High Availability management_中的指示、連接下列連線。</block>
-  <block id="96fc3790ed0f779b648493fc7e4b2e7c" category="paragraph">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 連結至_ FlexArray 《虛擬化安裝要求與參考資料》和_《高可用度管理》。</block>
   <block id="7c37472309a8c54b0891c8e95190096e" category="list-text">主控台（遠端管理連接埠）</block>
   <block id="f0012d7dc9fbefbb11bb69cd6932aef8" category="list-text">叢集連接埠</block>
   <block id="b2d2606b76cd5df666c2b6a0f4bfc496" category="list-text">資料連接埠</block>
@@ -1045,7 +1040,6 @@
   <block id="b76de3994341c25067b438fe161926b7" category="list-text">[[[auto_install3_step2]]依照節點機型的安裝與設定指示_、在機架中安裝節點3。</block>
   <block id="e642674ff2b68ba9c6309b786d87c4f9" category="admonition">如果您要升級到同一機箱中同時具有兩個節點的系統、請在機箱中安裝node4以及node3。如果沒有、當您開機節點3時、節點的行為就會如同雙機箱組態、當您開機節點4時、節點之間的互連就不會出現。</block>
   <block id="c558275e7d3a61c5ffa4c89d17138a8e" category="list-text">[[auto_install3_step3]]纜線節點3、將連線從節點1移至節點3。</block>
-  <block id="5ab1ba3aba863ed7175637aaa48e2f73" category="paragraph">使用FlexArray 節點3平台的_安裝與設定說明_或_《_》《虛擬化安裝要求與參考_》、適當的磁碟櫃文件、以及_高可用度管理_來連接下列連線。</block>
   <block id="a237c9d74ab3870e45b318a1071c10f4" category="admonition">您可能不需要將互連卡或叢集互連纜線連線從節點1移至節點3、因為大多數平台機型都有獨特的互連卡模式。若要進行支援、您需要將FC-VI纜線連線從節點1移至節點3。MetroCluster如果新主機沒有FC-VI卡、您可能需要移動FC-VI卡。</block>
   <block id="a5492c1c64c93543c424918fe38a847e" category="list-text">[[auto_install3_step4]]開啟節點3的電源、然後在主控台終端按Ctrl-C存取開機環境提示字元、以中斷開機程序。</block>
   <block id="db32660dfabf573a3553146b10c4b358" category="paragraph">如果您要升級到同一機箱中同時具有兩個節點的系統、節點4也會重新開機。不過、您可以忽略node4開機、直到稍後再執行。</block>
@@ -1187,7 +1181,6 @@
   <block id="1d6e912902b1e30f8b9da52e03335a4b" category="summary">使用ONTAP 「系統控制器更換」命令來準備節點、並在升級執行《指令集》9.8或更新版本的控制器時執行一系列預先檢查。</block>
   <block id="4ba8d4701b7c72b570a63797aff938e0" category="list-text">從ONTAP S廳9.10.1開始、自動交涉切換（NSO）型升級程序是四節點MetroCluster 的SFC組態的預設值。如果您要升級四節點MetroCluster 的現象FC組態、當您發出「系統控制器更換啟動」命令時、必須將「-NSO」參數設定為「假」、以防止以NSO為基礎的程序啟動：</block>
   <block id="b5217a01cec2b264eab0761f085ee2eb" category="list-text">只能在進階權限層級執行「系統控制器置換start（start）命令：</block>
-  <block id="954ad5efed3e43bfb3badad9c505735b" category="cell">如果要更換的任何節點有遺失或故障的磁碟、則工作會失敗。如果有任何磁碟遺失、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要使用CLI連結至_磁碟與集合管理、使用CLI進行_邏輯儲存管理、以及_高可用度管理_、以設定HA配對的儲存設備。</block>
   <block id="17f9514d7bcdbd086bef311b63567524" category="admonition">如果您的系統每個節點有兩個以上的叢集連接埠、例如FAS8080或AFF8080系統、則在開始升級之前、您必須將叢集生命體移轉並重新主控至每個節點的兩個叢集連接埠。如果您在每個節點上使用兩個以上的叢集連接埠來執行控制器升級、則在升級之後、新控制器上的叢集生命量可能會遺失。</block>
   <block id="49bfbad696a2529ef03d859ad9b3f40a" category="list-text">「安全關鍵經理外部秀」</block>
   <block id="f448f5b6d3d32deaf11413ff5379c871" category="list-text">「安全金鑰管理程式外部顯示狀態」</block>
@@ -1395,7 +1388,6 @@
   <block id="ad475825ae83ecbd372fe679f99f127d" category="summary">在執行ONTAP 「更新版本」的控制器上進行手動ARL升級時、請準備節點、收集資訊、並確認所有叢集節點均處於仲裁狀態。</block>
   <block id="0e1dd14206fc60d11a3acb5ef31b4193" category="paragraph">在您更換原始節點之前、您必須先確認這些節點位於HA配對中、沒有遺失或故障的磁碟、可以存取彼此的儲存設備、而且不會擁有指派給叢集中其他節點的資料生命期。您也必須收集有關原始節點的資訊、如果叢集位於SAN環境中、請確認叢集中的所有節點都處於仲裁狀態。</block>
   <block id="b88f4069a24bcdd70aa256d82f95a4a7" category="list-text">確認每個原始節點都有足夠的資源、可在接管模式期間充分支援兩個節點的工作負載。</block>
-  <block id="986991a93176ee231138e71796e3557e" category="paragraph">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要連結至_高可用度管理_並遵循_ HA配對最佳實務做法_一節。任何原始節點都不應以超過50%的使用率執行；如果節點的使用率低於50%、則可在控制器升級期間處理兩個節點的負載。</block>
   <block id="f57ddae179006dfe93c570a9886b51b0" category="list-text">完成下列子步驟、為原始節點建立效能基準：</block>
   <block id="e2ce8b648cf2a8577d2ac0054c830df5" category="list-text">確定診斷使用者帳戶已解除鎖定。</block>
   <block id="8fafe7b0e88d09400ee18fcc9299185e" category="list-text">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 連結至_NetApp支援網站_並下載效能與統計資料收集器（perfstat Converged）。</block>
@@ -1425,7 +1417,6 @@
   <block id="4fd96863c7332ca953dbbdb95b4c0457" category="list-text">確認node1和node2位於HA配對中、並確認節點彼此已連線、而且可以接管：</block>
   <block id="7a309bb6c6af5ef06efe5f48e0c54074" category="paragraph">以下範例顯示節點彼此連線並可進行接管時的輸出：</block>
   <block id="8ad3217d99ee19b408199ad575ffe3af" category="paragraph">兩個節點都不應處於部分恢復狀態。以下範例顯示node1在部分恢復中：</block>
-  <block id="e1cbc9b64c5a195f57ded4409cfe8fbc" category="paragraph">如果任一節點處於部分恢復狀態、請使用「儲存容錯移轉還原」命令來執行恢復、然後使用「儲存容錯移轉show-gorback」命令來確保不需要歸還集合體。如需命令的詳細資訊、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 連結至_高可用度管理_。</block>
   <block id="077bf43ae0702cf4ef1519ff5ec6b8f3" category="list-text">[[man_prepe_node_step9]]確認節點1和節點2均不擁有其目前擁有者（但不擁有主擁有者）的Aggregate：</block>
   <block id="e86a1d7ab77ef690a506c50aeb0e4407" category="paragraph">如果node1和node2都不擁有當前擁有者（但不是主擁有者）的Aggregate、系統將傳回類似下列範例的訊息：</block>
   <block id="b985e562bbb6750dd51f653600fe0a16" category="paragraph">下列範例顯示四個集合體的主擁有者節點2（但不是目前擁有者）之節點的命令輸出：</block>
@@ -1441,7 +1432,6 @@
   <block id="540684201c9c484246cd2060826ea5b6" category="list-text">[man籌備節點_step12]確認節點1和節點2可以存取彼此的儲存設備、並確認沒有磁碟遺失：</block>
   <block id="d4a6afd0a40d578ef1c16c580930990a" category="paragraph">「torage容錯移轉顯示欄位local-missing磁碟、合作夥伴遺失磁碟」</block>
   <block id="9351d7b864e0fec6d8e9ce484c7e1792" category="paragraph">以下範例顯示沒有磁碟遺失時的輸出：</block>
-  <block id="f6ad618b685a2a7a446cddb4787d965d" category="paragraph">如果有任何磁碟遺失、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要使用CLI連結至_磁碟與集合管理、使用CLI進行_邏輯儲存管理、以及_高可用度管理_、以設定HA配對的儲存設備。</block>
   <block id="d951eff85d635d18c7d30d8323f2bfa4" category="list-text">確認node1和node2正常且符合參加叢集的資格：</block>
   <block id="f1178fa107fef2eea6cd954e57dbda27" category="paragraph">以下範例顯示兩個節點都符合資格且狀況良好的輸出：</block>
   <block id="37522abc5c58d8935eb7c6c44799dd5d" category="list-text">[[man_prepe_node_step15]]確認node1和node2執行相同ONTAP 的版本：</block>
@@ -2271,7 +2261,6 @@
   <block id="9f13bb9f267a0b057f115598b95b4a04" category="paragraph">下列參考資料可協助您建立適當的纜線連線。前往 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至他們。</block>
   <block id="da988c28044d8fc8463a4db2336f20f0" category="list-text">_Installation and Setup Instructions（安裝與設定說明）_或_Estratested FlexArray Virtualization Installation Requirements and Reference（_針對節點4平台的虛擬化安裝要求與參考資料）</block>
   <block id="72860e73833a237fd9811df9152c9a7a" category="list-text">適當的磁碟櫃程序</block>
-  <block id="b9b51f95b333e31e76a0f718bee344fa" category="list-text">_高可用度管理_文件</block>
   <block id="19c5c8c6d8397114c1994a6c3eb88f1f" category="paragraph">纜線連接下列連接：</block>
   <block id="6b3c36f97ba6ae6e5b790f8c06f76595" category="admonition">您不需要將互連卡/FC_VI卡或互連/FC_VI纜線連線從節點2移至節點4、因為大多數平台機型都有獨特的互連卡機型。</block>
   <block id="7c6dcbfbd814e3914af912fc227236db" category="cell">如果節點4位於...</block>
@@ -4875,7 +4864,6 @@ FAS2720</block>
   <block id="ef0d9aeefdd01090b7d838fdbc756532" category="cell">AFF A800 ^1^</block>
   <block id="120ae360daecd24b580b71f9f2766bbc" category="cell">9.15.1..</block>
   <block id="f60554150b9183af4229445611dee7e7" category="paragraph">9.10.1P15 、 9.11.1P11 及更新版本 ^2^</block>
-  <block id="b7f5f3e815fc26505623dcbc51f6b401" category="paragraph">9.11.1P7 （ FAS2620 ） ^2^</block>
   <block id="de800e8602c1bb83b0bea67e9b57ae7d" category="paragraph">^1^ 當您升級至 ONTAP 9.15.1 推出的系統時、 ONTAP 會轉換所有現有精簡配置磁碟區的儲存效率、包括不使用儲存效率的磁碟區、並套用利用硬體卸載功能的新儲存效率功能。這是一個自動背景程序、對系統沒有明顯的效能影響。<block ref="7746afbac27a580f36b90211e9daf7d0" category="inline-link-rx"></block></block>
   <block id="43d7379ace473361bbbcf942aef43f03" category="paragraph">^2^ AFF A200 和 FAS2620 系統不支援 9.11.1 以上的 ONTAP 版本。</block>
   <block id="5cfd2d4152e78b9d89cbc6307d966fda" category="cell">在現有的 ...</block>
@@ -5215,7 +5203,6 @@ FAS2720</block>
   <block id="3e44bbb802d299056c9839f8bdfc777a" category="cell">9.15.1 及更新版本</block>
   <block id="184f38916b6639f5bdbf7619d90cebc3" category="paragraph">9.10.1 P15 、 9.11.1P11 及更新版本</block>
   <block id="45b09eba6fe8095ae38635150e57152a" category="paragraph">* 注意 * ： AFF A200 不支援 9.11.1 以上的 ONTAP 版本。</block>
-  <block id="d243c4c373219990c87996aba8af4741" category="paragraph">9.11.1P7 （ FAS2620 ）</block>
   <block id="26ed1ff6e78b37e572170171b4fabc0f" category="paragraph">* 注意 * ： FAS2620 不支援 9.11.1 以上的 ONTAP 版本。</block>
   <block id="074a728bac13ce0b2d079bed92780d8d" category="section-title">使用 ONTAP 9 8 或更新版本的「系統控制器取代」命令</block>
   <block id="bf2f20b69fe364bf3a76fbb262d9c675" category="paragraph">如果您的升級案例列於下列支援系統對照表、請前往<block ref="f597d5199c2cdfe3f660f286188248d5" category="inline-link-macro-rx"></block>開始升級程序。</block>
@@ -5247,4 +5234,25 @@ FAS2720</block>
   <block id="fd4a2232b0a4fad7f2f7a5207ee94001" category="sidebar">瞭解 ONTAP 系統與軟體</block>
   <block id="743b2bde29eae11996923323c6b89672" category="sidebar">交換器文件ONTAP</block>
   <block id="91c8d030b7d32b838af9bb14f227c952" category="paragraph">AFF A70 和 AFF A90 是整合式系統，在 HA 組態中有兩個控制器，在單一機箱中有內建磁碟。</block>
+  <block id="664f9c52f93e2fbf6e801148b0f573ad" category="inline-link-macro">HA配對管理</block>
+  <block id="fc0b22bb38f11521c03de86c56643d5d" category="cell"><block ref="fc0b22bb38f11521c03de86c56643d5d" category="inline-link-macro-rx"></block></block>
+  <block id="89f76e97cb211d84e00c11992dfadf74" category="paragraph">請依照 _ 安裝與設定說明 _ 或節點 4 平台的 _ FlexArray 虛擬化安裝要求與參考 _ ，適當的磁碟櫃文件及 _ HA 配對管理 _ 中的指示，連接下列連線。</block>
+  <block id="26c5c260ce25606c1c0bb202b032dfa3" category="paragraph">請參閱<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>連結至 FlexArray 虛擬化安裝需求與參考 _ 和 _HA 配對管理 _ 。</block>
+  <block id="b082861c64ae79f202957f36b4724f12" category="paragraph">使用節點 3 平台的 _ 安裝與設定說明 _ 或 _ FlexArray 虛擬化安裝要求與參考 _ ，適當的磁碟機櫃文件及 _ HA 配對管理 _ 來連接下列連線。</block>
+  <block id="62e8c46614cda642480e223b008f5dfc" category="list-text">_HA 配對管理 _ 文件</block>
+  <block id="147e1330d5f2538de36e6ee787c5446d" category="paragraph">請參閱<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>連結至 _HA 配對管理 _ ，並遵循 _ HA 配對最佳實務做法 _ 一節。任何原始節點都不應以超過50%的使用率執行；如果節點的使用率低於50%、則可在控制器升級期間處理兩個節點的負載。</block>
+  <block id="270b6acdba0a7f34d4c1dd4dd05525ab" category="paragraph">如果任一節點都在部分恢復中，請使用<block ref="b27ff28f78c71d3027cc2fb76f6fe30c" prefix=" " category="inline-code"></block>命令執行恢復，然後使用命令來<block ref="852ce55a153bc728405ba8a2c95bcdf1" prefix=" " category="inline-code"></block>確保不需要再提供任何集合體。如需命令的詳細資訊，請參閱<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>連結至 _HA 配對管理 _ 。</block>
+  <block id="395d4fd7f065a92548b412c96dbe1faa" category="paragraph">如果有任何磁碟遺失，請參閱<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>以 CL5_ 連結至磁碟和集合管理，使用 CL5_ 進行邏輯儲存管理，以及使用 HA 配對管理 _ 來設定 HA 配對的儲存設備。</block>
+  <block id="7c67b8b9f7d3533c33fb6cecf037204c" category="inline-link-macro">啟用從 SAN 主機到 ASA R2 儲存系統的資料存取</block>
+  <block id="e8a1c12a435b7bb9c68529ddb55c1850" category="admonition">不支援 ASA 升級至 ASA R2 更換系統。如需將資料從 ASA 移轉至 ASA R2 的相關資訊，請參閱<block ref="1aa51bb167bf6182c65d56fb25d15ddf" category="inline-link-macro-rx"></block>。</block>
+  <block id="c8d7e0b6f3e69fd12ca1cfc90687f6a8" category="paragraph">9.11.1P7 或更新版本的修補程式（ FAS2620 ）</block>
+  <block id="8499179dca2bc3203741083d0d24160c" category="cell">如果要更換的任何節點有遺失或故障的磁碟、則工作會失敗。如果有任何磁碟遺失，請參閱<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>以 CL5_ 連結至磁碟和集合管理，使用 CL5_ 進行邏輯儲存管理，以及使用 HA 配對管理 _ 來設定 HA 配對的儲存設備。</block>
+  <block id="96921c9c55ac5491d93180278bb4bc78" category="paragraph">9.11.1P7 或更新版本的修補程式發行版（ FAS2620 ） ^2^</block>
+  <block id="8ac418c9132657ca13947b8d7087efa1" category="cell">如果要更換的任何節點有遺失或故障的磁碟、則工作會失敗。如果有任何磁碟遺失，請參閱<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>以 CL5_ 連結至磁碟和集合管理，使用 CL5_ 進行邏輯儲存管理，以及使用 HA 配對管理 _ 來設定 HA 配對的儲存設備。</block>
+  <block id="66691da5eb04d0eba08bba016646849a" category="paragraph">您只能升級至相同系列的替換系統：</block>
+  <block id="e882986702fe0f326c1fa2d4698be2cd" category="list-text">AFF A 系列系統至 AFF A 系列系統</block>
+  <block id="737115f91c530c4e8ddec392681db510" category="list-text">AFF C 系列系統至 AFF C 系列系統</block>
+  <block id="04a7d3ed17290dfa8c947b7265180931" category="list-text">從系統到系統ASA ASA</block>
+  <block id="6cc3f2b4a05b456b1f754eaf8cb03200" category="list-text">ASA A 系列系統至 ASA A 系列系統</block>
+  <block id="af2a1a7e91ed894338bb4bd32c3e13d0" category="list-text">ASA C 系列系統至 ASA C 系列系統</block>
 </blocks>
