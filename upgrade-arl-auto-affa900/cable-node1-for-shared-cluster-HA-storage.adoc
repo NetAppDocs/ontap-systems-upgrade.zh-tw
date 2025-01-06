@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.ht
 keywords: cluster, ha, aff, a800, shared, storage, data, management 
 summary: 將先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備和資料連線、連接至新安裝的 AFF A90 或 AFF A70 node1 
 ---
-= 纜線 node1 、用於共用叢集 HA 和儲存設備（僅限 AFF A800 升級）
+= 纜線 node1 ，用於共用的叢集 HA 和儲存設備
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,25 +14,41 @@ summary: 將先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備和資
 
 
 [role="lead"]
-將先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備、資料和管理連線、連接至新安裝的 AFF A90 或 AFF A70 node1 。
+如果您執行下列其中一項升級，則必須將先前連接至現有系統上 node1 的叢集， HA ，儲存設備，資料和管理連線，連接至替換系統上新安裝的 node1 。
 
+[cols="35,65"]
+|===
+| 現有系統 | 更換系統 
+
+
+| AFF A250 | AFF A30 、 AFF A50 
+
+
+| AFF C250 | AFF C30 、 AFF C60 
+
+
+| 解答800 AFF | AFF A70 、 AFF A90 
+
+
+| AFF C800 | C80 
+|===
 
 
 == 連接 e0M 和 BMC 連接埠
 
-AFF A800 具有管理連接埠（ e0M ）和 BMC 連接埠。在 AFF A90 和 AFF A70 上、 e0M 和 BMC 連接埠會透過「扳手」連接埠加以組合和存取。您必須確保 e0M 和 BMC 連接埠已連接至 AFF A800 上的同一交換器和子網路、才能連線至 AFF A90 或 AFF A70 。
+如果現有系統具有管理連接埠（ e0M ）和 BMC 連接埠。在替換系統上， e0M 和 BMC 連接埠會透過「扳手」連接埠加以組合和存取。您必須確保 e0M 和 BMC 連接埠已連接至現有系統上的同一交換器和子網路，才能連線至更換系統。
 
 [cols="35,65"]
 |===
 | 如果... | 然後... 
 
 
-| e0M 和 BMC IP 位址位於相同的 IP 子網路上 | 將 AFF A800 上的 e0M 或 BMC 連接埠連接至 AFF A90 或 AFF A70 上的「扳手」連接埠。 
+| e0M 和 BMC IP 位址位於相同的 IP 子網路上 | 將現有系統上的 e0M 或 BMC 連接埠連接至更換系統上的「扳手」連接埠。 
 
 
 | e0M 和 BMC IP 位址位於不同的子網路上  a| 
 . 將 e0M 和 BMC IP 位址合併為一個 IP 子網路。
-. 將 AFF A800 上的 e0M 或 BMC 連接埠連接至 AFF A90 或 AFF A70 上的「扳手」連接埠。
+. 將現有系統上的 e0M 或 BMC 連接埠連接至更換系統上的「扳手」連接埠。
 
 
 |===
@@ -43,7 +59,7 @@ AFF A800 具有管理連接埠（ e0M ）和 BMC 連接埠。在 AFF A90 和 AFF
 下表顯示雙節點無交換器叢集組態的交換器連接埠使用量。
 
 |===
-| 連接埠 | AFF A800 節點 | AFF A90 節點 | AFF A70 節點 
+| 連接埠 | AFF A800 、 AFF C800 | AFF A90 | AFF A70 、 AFF C80 
 
 
 | 叢集 | e0a | e1a | e1a 
@@ -63,12 +79,27 @@ AFF A800 具有管理連接埠（ e0M ）和 BMC 連接埠。在 AFF A90 和 AFF
 
 | 適用於 NS224 機櫃的乙太網路儲存連接埠 | 任何可用連接埠 | 請參閱乙太網路儲存設備連線對應 | 請參閱乙太網路儲存設備連線對應 
 |===
+|===
+| 連接埠 | AFF A250 、 AFF C250 | AFF A30 、 AFF C30 、 AFF C60 | AFF A50 
+
+
+| 叢集與 HA | e0c | e4a | e4a 
+
+
+| 叢集與 HA | e0d | e2a （如果沒有 e2a 、請使用 e4b ） | e2a （如果沒有 e2a 、請使用 e4b ） 
+
+
+| 乙太網路儲存連接埠 | 任何可用連接埠 | E3A、e3b | E3A、e3b 
+
+
+| SAS 儲存連接埠 | 任何可用連接埠 | 3A ， 3b | 3A ， 3b 
+|===
 
 
 == 連線至交換器連接的叢集
 
-對於交換器連接的叢集、請檢查您是否符合下列需求：
+對於交換器連接的叢集，請檢查您是否符合 AFF A30 ， AFF A50 ， AFF A70 ， AFF A90 ， AFF C30 ， AFF C60 或 AFF C80 （更換）節點的下列需求：
 
-* AFF A90 或 AFF A70 節點上相同的叢集連接埠位於同一台交換器上。例如、升級完成後、節點 1 上的 e1a 和節點 2 上的 e1a 應連接至一個叢集交換器。同樣地、兩個節點的第二個叢集連接埠也應連接至第二個叢集交換器。共享叢集 HA 連接埠的交叉連線、其中節點 1 的 e1a 連接到 SwitchA 、節點 2 的 e1a 連接到 SwitchB 、將導致 HA 通訊失敗。
-* AFF A90 和 AFF A70 節點使用共享的叢集 HA 乙太網路連接埠。請確定叢集交換器已安裝參考組態檔案（ RCF ）、以支援共用的叢集 HA 連接埠。
+* 更換節點上相同的叢集連接埠位於同一台交換器上。例如、升級完成後、節點 1 上的 e1a 和節點 2 上的 e1a 應連接至一個叢集交換器。同樣地、兩個節點的第二個叢集連接埠也應連接至第二個叢集交換器。共享叢集 HA 連接埠的交叉連線，其中 node1 的 e1a 連接到 SwitchA ， node2 的 e1a 連接到 SwitchB ，導致 HA 通訊失敗。
+* 替換節點使用共享的叢集 HA 乙太網路連接埠。驗證叢集交換器是否安裝有支援共用叢集 HA 連接埠的參考組態檔案（ RCF ）。
 

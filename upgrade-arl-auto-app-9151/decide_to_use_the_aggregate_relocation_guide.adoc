@@ -16,7 +16,11 @@ summary: '使用命令決定是否使用 ARL 來升級執行 ONTAP 9.15.1 或更
 [role="lead"]
 本程序說明如何在 HA 配對中升級儲存控制器與新控制器、同時保留現有資料和磁碟。這是一個複雜的程序、只能由經驗豐富的系統管理員使用。
 
-您可以在下列情況下使用此程序：
+
+
+== 支援ARL升級
+
+您可以在下列情況下升級一對節點：
 
 * 您執行的是 ONTAP 9.15.1 或更新版本。
 * 您不想將新控制器新增為叢集的新 HA 配對、並使用 Volume Move 程序移轉資料。
@@ -26,17 +30,19 @@ summary: '使用命令決定是否使用 ARL 來升級執行 ONTAP 9.15.1 或更
 
 NOTE: 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume加密（NVE）和NetApp Aggregate加密（NAE）。
 
-在下列情況下、您無法使用此程序：
-
-* 您正在將 AFF A800 升級為 AFF A70 或 AFF A90 。若要執行此 AFF A800 升級、請參閱 link:other_references.html["參考資料"] 連結至 _ 使用「系統控制器更換」命令來升級相同機箱中的控制器機型 _ 。
-* 您正在使用外部陣列來升級 V 系列系統或 FlexArray 虛擬化儲存系統、以用於後端儲存設備。如需升級 V 系列或 FlexArray 系統的選項、請聯絡技術支援部門。
-* 您正在升級 MetroCluster FC 或 IP 組態。若要升級 MetroCluster 組態、請參閱 link:other_references.html["參考資料"] 連結至 MetroCluster 升級與擴充說明文件 _ 。
-
-
 [[sys_commands_9151_supported_systems] 下表顯示控制器升級支援的機型對照表。
 
 |===
 | 現有控制器 | 更換控制器 | 從 ONTAP 開始支援 ... 
+
+
+| 解答400 AFF | AFF A50 ^2^ | 9.16.1. 
+
+
+| 部分A300 AFF | AFF A50 ^2^ | 9.16.1. 
+
+
+| AFF A220 、 AFF A150 | AFF A20 ^2^ | 9.16.1 ^1^ 
 
 
 | FAS8200、FAS8300、FAS8700、FAS9000 | FAS70 、 FAS90 | 9.15.1P3 
@@ -45,22 +51,51 @@ NOTE: 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume�
 | FAS9500 | FAS90 | 9.15.1P3 
 
 
-| AFF A300 、 AFF A400 、 AFF A700 | AFF A70 、 AFF A90 、 AFF A1K | 9.15.1.. 
+| AFF A300 、 AFF A400 、 AFF A700 | AFF A70 ^2^ ， AFF A90 ^2^ ， AFF A1K | 9.15.1.. 
 
 
-| 解答900 AFF | AFF A90 、 AFF A1K | 9.15.1.. 
+| 解答900 AFF | AFF A90 ^2^ ， AFF A1K | 9.15.1.. 
 |===
-[NOTE]
-====
-AFF A70 和 AFF A90 是整合式系統，在 HA 組態中有兩個控制器，在單一機箱中有內建磁碟。
+^1^ 若要升級至 AFF A20 ，您必須先將 AFF A150 或 AFF A220 轉換成 DS224C 機櫃，方法是將控制器模組與 IOM12 模組交換。請參閱。 link:../upgrade/upgrade-convert-node-to-shelf.html["將原始節點轉換成磁碟機櫃"]
 
-* 如果您要升級至內建磁碟機的 AFF A70 或 AFF A90 、則必須在升級之前移除這些磁碟機的所有權。完成升級後、您可以將內部磁碟機指派給 AFF A70 或 AFF A90 節點、並使用它們來建立資料集合體。不一定要將根或資料集合體移轉至內部磁碟機。
-* 如果您要升級至不含內部磁碟機的 AFF A70 或 AFF A90 、則在完成升級後不需要指派內部磁碟機。
+^2^ AFF A20 ， AFF A50 ， AFF A70 和 AFF A90 是整合式系統，在 HA 組態中有兩個控制器，在單一機箱中有內建磁碟：
+
+* 如果您要升級至內建磁碟機的 AFF A20 ， AFF A70 或 AFF A90 ，則必須先移除這些內建磁碟機的擁有權，才能升級。完成升級後，您可以將內部磁碟機指派給 AFF A20 ， AFF A70 或 AFF A90 節點，並使用它們來建立資料集合體。不一定要將根或資料集合體移轉至內部磁碟機。
+* 如果您要升級至不含內部磁碟機的 AFF A20 ， AFF A70 或 AFF A90 ，則在完成升級後不需要指派內部磁碟機。
 
 
 如果您的控制器升級模式組合不在上表中、請聯絡技術支援部門。
 
-====
+
+
+== 不支援ARL升級
+
+在下列情況下，您無法使用 ARL 執行升級：
+
+* 您正在執行下列其中一項升級：
++
+|===
+| 現有控制器 | 更換控制器 
+
+
+| AFF A250 | AFF A50 、 AFF A30 
+
+
+| 解答800 AFF | AFF A70 、 AFF A90 
+
+
+| AFF C250 | AFF C30 、 AFF C60 
+
+
+| AFF C800 | AFF C80 
+|===
++
+若要執行上表所列的升級，請參閱link:other_references.html["參考資料"]連結至 _ 使用「系統控制器更換」命令來升級同一機箱中的控制器機型 _ 。
+
+* 您正在使用外部陣列來升級 V 系列系統或 FlexArray 虛擬化儲存系統、以用於後端儲存設備。如需升級 V 系列或 FlexArray 系統的選項、請聯絡技術支援部門。
+* 您正在升級 MetroCluster FC 或 IP 組態。若要升級 MetroCluster 組態、請參閱 link:other_references.html["參考資料"] 連結至 MetroCluster 升級與擴充說明文件 _ 。
+
+
 如果您偏好其他方法來升級控制器硬體、並願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
 
 請參閱 link:other_references.html["參考資料"] 連結至_SURF9 ONTAP 文件中心_、您可在此存取ONTAP VMware產品文件。

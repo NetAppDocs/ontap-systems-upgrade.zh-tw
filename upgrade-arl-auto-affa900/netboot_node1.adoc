@@ -71,6 +71,23 @@ NOTE: 您的介面可能需要其他參數。在韌體提示字元中輸入「He
 
 NOTE: 請勿中斷開機。
 
+. （僅限 AFF A250 和 AFF C250 升級）當用於替換控制器模組的 node1 正在開機時，會顯示下列警告：
++
+[listing]
+----
+*****************************************************
+* WARNING: Partner is not of the same family/model. *
+* Mixing is only allowed when upgrading the system. *
+* The system will shut down in 24 hours.            *
+*****************************************************
+Do you want to continue (y/n):
+----
++
+ `y`答案。
+
++
+顯示此警告是因為組態包含現有控制器的 node2 。在升級 node2 之前，它會在每次系統開機時顯示。這是預期的行為。
+
 . 等待更換控制器模組上執行的 node1 開機、並顯示開機功能表選項、如下所示：
 +
 [listing]

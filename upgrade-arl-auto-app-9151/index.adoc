@@ -37,16 +37,16 @@ NOTE: 您無法使用此程序來升級 MetroCluster FC 或 IP 組態。若要�
 * 此程序相當複雜、假設您具備進階ONTAP 的功能不完整的管理技能。您也必須閱讀並瞭解 link:guidelines_for_upgrading_controllers_with_arl.html["使用ARL升級控制器的準則"] 和 link:overview_of_the_arl_upgrade.html["ARL升級總覽"] 開始升級之前的章節。
 * 此程序假設更換的控制器硬體是新的、而且尚未使用。此程序不包含使用命令準備使用的控制器所需的步驟 `wipeconfig` 。如果之前使用過更換控制器硬體、您必須聯絡技術支援部門。
 * 您可以使用此程序來升級具有兩個以上節點之叢集中的控制器硬體、不過您需要針對叢集中的每個高可用度（HA）配對分別執行此程序。
-* 當您升級至 ONTAP 9 ． 15.1 中推出的系統時、 ONTAP 會轉換現有磁碟區的儲存效率、並套用利用硬體卸載功能的新儲存效率功能。這是一個自動背景程序、對系統沒有明顯的效能影響。
+* 當您升級至 ONTAP 9.15.1 或更新版本所推出的系統時， ONTAP 會轉換現有磁碟區的儲存效率，並套用利用硬體卸載功能的新儲存效率功能。這是一個自動背景程序、對系統沒有明顯的效能影響。
 +
-** 對於 AFF A70 、 AFF A90 或 AFF A1K 系統、 ONTAP 會轉換所有現有精簡配置磁碟區的儲存效率、包括未使用儲存效率的磁碟區。
+** 對於 AFF A20 ， AFF A30 ， AFF A50 ， ONTAP ， AFF A90 ， AFF A1K ， AFF C30 ， AFF C60 和 AFF C80 系統， AFF A70 會轉換所有現有精簡配置磁碟區的儲存效率，包括不使用儲存效率的磁碟區。
 ** 對於 FAS70 和 FAS90 系統、 ONTAP 只會轉換現有精簡配置的磁碟區的儲存效率、這些磁碟區在升級之前已啟用儲存效率。
 
 
 +
 link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-concept.html["深入瞭解儲存效率"^]。
 
-* AFF A70 、 AFF A90 、 AFF A1K 、 FAS70 和 FAS90 系統共享 100GbE 網絡端口，用於羣集和 HA 連接。這些系統可支援 10GbE 或 25GbE 叢集連線至傳統叢集交換器；不過、 NetApp 建議在不再需要 10GbE 和 25GbE 交換器時、更新至 100GbE 叢集速度。如需詳細資訊、請參閱下列知識庫文章：
+* AFF A20 ， AFF A50 ， AFF A70 ， AFF A90 ， AFF A1K ， FAS70 和 FAS90 系統共享 100GbE 網路連接埠，可同時用於叢集和 HA 連線。這些系統可支援 10GbE 或 25GbE 叢集連線至傳統叢集交換器；不過、 NetApp 建議在不再需要 10GbE 和 25GbE 交換器時、更新至 100GbE 叢集速度。如需詳細資訊、請參閱下列知識庫文章：
 +
 --
 ** link:https://kb.netapp.com/on-prem/ontap/OHW/OHW-KBs/How_to_configure_10G_or_25G_cluster_ports_on_a_new_cluster_setup_on_AFF_ASA_A1K_A90_A70_FAS90_FAS70["如何在全新的 AFF / ASA A1K 、 A90 、 A70 、 FAS90 、 FAS70 上設定 10G 或 25G 叢集連接埠"^]
@@ -54,6 +54,9 @@ link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-con
 
 
 --
++
+AFF A20 系統可共用 10GbE 和 25GbE 網路連接埠，用於叢集和 HA 連線。這是 AFF A20 系統唯一支援的網路連接埠叢集連線。
+
 +
 如果無法將現有節點上的 e0a 或 e0b 叢集連接埠連結至新節點上的叢集連接埠、請參閱 link:https://mysupport.netapp.com/site/bugs-online/product/ONTAP/JiraNgage/CONTAP-166978["NetApp Bug Online Bug ID CONTAP-166978"^]。
 

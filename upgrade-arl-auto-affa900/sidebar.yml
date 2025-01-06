@@ -35,6 +35,8 @@ entries:
     url: "/upgrade-arl-auto-affa900/retire_node1.html"
   - title: 更換 node1 系統模塊
     entries:
+    - title: 更換 AFF A250 或 AFF C250
+      url: "/upgrade-arl-auto-affa900/replace-node1-affa250-affc250.html"
     - title: 更換 AFF A800
       url: "/upgrade-arl-auto-affa900/replace-node1-affa800.html"
     - title: 更換 AFF A220 、 AFF A200 、 AFF C190 、 FAS2620 或 FAS2720
@@ -47,7 +49,7 @@ entries:
   entries:
   - title: 總覽
     url: "/upgrade-arl-auto-affa900/stage_3_index.html"
-  - title: 纜線 node1 、用於共用的叢集 HA 儲存設備（僅限 AFF A800 升級）
+  - title: 纜線 node1 用於共用的叢集 HA 儲存設備
     url: "/upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html"
   - title: 使用替換的系統模組來啟動 node1
     url: "/upgrade-arl-auto-affa900/boot_node1_with_a900_controller_and_nvs.html"
@@ -71,6 +73,8 @@ entries:
     url: "/upgrade-arl-auto-affa900/stage_5_index.html"
   - title: 在 node2 上安裝替換系統模組
     entries:
+    - title: 安裝 AFF A30 ， AFF A50 ， AFF C30 或 AFF C60
+      url: "/upgrade-arl-auto-affa900/install-aff-a30-a50-c30-c50-node2.html"
     - title: 安裝 AFF A90 或 AFF A70
       url: "/upgrade-arl-auto-affa900/install-affa90-affa70-on-node2.html"
     - title: 安裝 ASA A150 、 AFF A150 或 FAS2820

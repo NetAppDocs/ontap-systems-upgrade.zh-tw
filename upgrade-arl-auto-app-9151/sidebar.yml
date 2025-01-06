@@ -1,6 +1,6 @@
 ---
 section: upgrade-arl-auto-app-9151
-title: 使用「系統控制器更換」命令來升級 ONTAP 9.15.1 中引進的控制器硬體
+title: 使用「系統控制器更換」命令來升級 ONTAP 9.15.1 及更新版本中引進的控制器硬體
 entries:
 - title: 總覽
   url: "/upgrade-arl-auto-app-9151/index.html"

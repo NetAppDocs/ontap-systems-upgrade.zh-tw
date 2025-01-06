@@ -14,36 +14,11 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請使用替換
 
 
 [role="lead"]
-帶有替換模組的 node2 現在可以開機了。交換系統模組進行升級時、只需移動主控台和管理連線即可。本節提供使用下列升級組態的替換模組來開機 node2 所需的步驟：
-
-[cols="35,65"]
-|===
-| 現有 node2 控制器 | 更換 node2 系統模組 
+帶有替換模組的 node2 現在可以開機了。支援的替換模組列於link:index.html#supported-systems,["支援的系統對照表"]中。
 
 
-| 解答800 AFF | AFF A90 或 AFF A70 
+NOTE: 只有在您透過交換系統模組進行升級時，才能移動主控台和管理連線。
 
-
-| AFF A220 已設定為 ASA | ASA A150 控制器模組 
-
-
-| VA220 AFF
-解答200 AFF
-C190 AFF | AFF A150 控制器模組 
-
-
-| FAS2620
-FAS2720 | FAS2820 控制器模組 
-
-
-| AFF A700 設定為 ASA | ASA A900 控制器和 NVRAM 模組 
-
-
-| AFF A700 | AFF A900 控制器和 NVRAM 模組 
-
-
-| FAS9000 | FAS9500 控制器和 NVRAM 模組 
-|===
 .步驟
 . [[boot_node2_step1]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
 +

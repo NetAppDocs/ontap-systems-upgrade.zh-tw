@@ -16,40 +16,19 @@ summary: 決定是否使用可升級同一機箱中控制器機型的 ARL 程序
 [role="lead"]
 本內容說明如何在 HA 配對中升級儲存控制器、同時保留所有現有資料和磁碟。這是一個複雜的程序、只能由經驗豐富的系統管理員使用。
 
+
+
+== 支援 ARL 升級
+
 您可以在下列情況下使用此程序：
 
-* 您正在執行下列其中一項控制器升級：
+* 您的控制器升級列於link:index.html#supported-systems,["支援的系統對照表"]中。
+* 您已向 NetApp 銷售代表確認您已收到控制器升級所需的硬體：
 +
-[cols="50,50"]
-|===
-| 舊控制器 | 更換控制器 
-
-
-| 解答800 AFF | AFF A70 和 AFF A90 
-
-
-| AFF A220 已設定為 ASA | ASA A150 
-
-
-| AFF A220 、 AFF A200 或 AFF C190 | 解答150 AFF 
-
-
-| FAS2620 或 FAS2720 | FAS2820 
-
-
-| AFF A700 設定為 ASA | ASA A900 
-
-
-| AFF A700 | 解答900 AFF 
-
-
-| FAS9000 | FAS9500 
-|===
-* 您已向 NetApp 銷售代表確認您已收到用於控制器升級的硬體：
-+
-** 兩個 AFF A90 或兩個 AFF A70 控制器、以及升級所需的所有 I/O 模組。100GbE 纜線所需長度。
+** 兩個 AFF A90 ， AFF A70 或 AFF C80 控制器，以及所有 I/O 模組。100GbE 纜線所需長度。
+** 兩個 AFF A50 ， AFF A30 ， AFF C30 或 AFF C60 控制器和 I/O 模組。必要的纜線。
 ** ASA A150 、 AFF A150 或 FAS2820 控制器
-** ASA A900 、 AFF A900 或 FAS9500 控制器和 NVRAM 模組、以及升級所需的零件
+** ASA A900 ， AFF A900 或 FAS9500 控制器和 NVRAM 模組及其零件
 
 
 * 您正在執行升級所需的最低 ONTAP 版本。如需詳細資訊、請參閱 link:index.html["總覽"]。
@@ -58,12 +37,18 @@ summary: 決定是否使用可升級同一機箱中控制器機型的 ARL 程序
 * 您的系統執行 ONTAP 9.15.1 或更新版本，而且使用乙太網路交換器來連線至乙太網路附加儲存設備。
 
 
+
+
+== 不支援 ARL 升級
+
 在下列情況下、您無法使用此程序：
 
-* 您正在 AFF A800 、 AFF A700 或 FAS9000 系統上使用 FlexArray 虛擬化軟體。
+* 您正在升級的現有系統上使用 FlexArray 虛擬化軟體。
+* 您正在升級 MetroCluster IP 組態。
++
+若要升級 MetroCluster IP 組態，請參閱link:other_references.html["參考資料"]連結至 MetroCluster 升級與擴充內容。
 
 
-如需升級 AFF A800 、 AFF A700 或 FAS9000 系統上的 MetroCluster IP 組態、請參閱 link:other_references.html["參考資料"] 連結至 MetroCluster 升級與擴充內容。
 
 
 NOTE: 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume加密（NVE）和NetApp Aggregate加密（NAE）。

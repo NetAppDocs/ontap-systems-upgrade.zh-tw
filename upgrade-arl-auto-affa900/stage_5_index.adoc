@@ -17,6 +17,6 @@ summary: '第 5 階段 ARL 升級程序、使用 `system controller replace` 用
 在第 5 階段中、您將安裝針對升級後的 node2 和 netboot node2 所收到的新系統模組。
 
 .步驟
-. link:install-affa90-affa70-on-node2.html["在 node2 上安裝替換系統模組"]
+. link:install-aff-a30-a50-c30-c50-node2.html["在 node2 上安裝替換系統模組"]
 . link:netboot_node2.html["netboot node2"]
 

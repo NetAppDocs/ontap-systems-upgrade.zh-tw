@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-auto-affa900/install-affa90-affa70-on-node2.html 
+permalink: upgrade-arl-auto-affa900/install-aff-a30-a50-c30-c50-node2.html 
 keywords: aff, fas, asa, install, NVRAM, node2, controller, module, modules, replacement 
 summary: 在同一機箱中升級控制器機型的 ARL 期間、在 node2 上安裝替換系統模組。 
 ---
-= 在 node2 上安裝 AFF A90 或 AFF A70 模組
+= 在 node2 上安裝 AFF A30 ， AFF A50 ， AFF C30 或 AFF C60 模組
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,16 +14,13 @@ summary: 在同一機箱中升級控制器機型的 ARL 期間、在 node2 上�
 
 
 [role="lead"]
-在 node2 上安裝您收到的用於升級的 AFF A90 或 AFF A70 控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。
+在 node2 上安裝您收到的用於升級的替換控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。
 
 .步驟
-. 將控制器模組的一端與機箱的開口對齊、然後將控制器模組輕推至系統的一半。
+. 將儲存系統放在機櫃或電信機架中央的軌道上、然後從底部支撐儲存系統、並將其滑入定位。
 +
 
 NOTE: 在程序稍後的指示下，請勿將控制器模組完全插入機箱。
-
-+
-image:drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG["安裝 AFF A90 或 AFF A70"]
 
 . 將管理和主控台連接埠連接至節點1控制器模組。
 +
