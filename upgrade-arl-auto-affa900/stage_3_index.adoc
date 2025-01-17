@@ -21,5 +21,5 @@ summary: '第 3 階段 ARL 升級程序、使用 `system controller replace` 用
 . link:boot_node1_with_a900_controller_and_nvs.html["使用替換的系統模組來啟動 node1"]
 . link:verify_node1_installation.html["驗證node1安裝"]
 . link:restore_key_manager_config_upgraded_node1.html["在升級的節點1上還原金鑰管理程式組態"]
-. link:move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html["將節點1擁有的非根Aggregate和NAS資料lifs從節點2移至升級的節點1"]
+. link:move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html["將 node1 非 root 集合體和 NAS 資料生命體從 node2 移至升級的 node1"]
 

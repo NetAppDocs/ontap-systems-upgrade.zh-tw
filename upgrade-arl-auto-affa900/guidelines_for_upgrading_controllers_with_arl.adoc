@@ -22,7 +22,7 @@ summary: 瞭解您是否可以使用 ARL 、保留舊的系統機箱和磁碟來
 
 某些系統組態支援控制器升級。若要檢視支援的系統和最低 ONTAP 版本清單、請參閱 link:index.html["總覽"]。
 
-如果您收到新的 AFF A30 ， AFF A50 ， AFF A70 ， AFF ， AFF A150 ， AFF A900 ， AFF A90 C30 ， AFF C60 ， AFF C80 ， FAS2820 或 FAS9500 作為完整系統，包括新機箱，請參閱link:other_references.html["參考資料"]連結至 _ 使用「系統控制器更換」命令來升級執行 ONTAP 9.8 或更新版本內容的控制器硬體。
+如果您收到新的 AFF A30 ， AFF A50 ， AFF A70 ， AFF ， AFF A150 ， AFF A900 ， AFF A90 C30 ， AFF C60 ， AFF C80 ， FAS2820 或 FAS9500 作為完整系統，包括新機箱，請參閱link:other_references.html["參考資料"]連結至 _ 使用「系統控制器更換」命令來升級執行 ONTAP 9.8 或更新版本的控制器硬體 _ 。
 
 使用ARL的控制器升級支援使用SnapLock 「支援」的系統、這些系統均設定了「支援使用者支援使用者支援的功能」和SnapLock 「支援使用者支援
 

@@ -25,17 +25,19 @@ summary: 決定是否使用可升級同一機箱中控制器機型的 ARL 程序
 * 您的控制器升級列於link:index.html#supported-systems,["支援的系統對照表"]中。
 * 您已向 NetApp 銷售代表確認您已收到控制器升級所需的硬體：
 +
-** 兩個 AFF A90 ， AFF A70 或 AFF C80 控制器，以及所有 I/O 模組。100GbE 纜線所需長度。
-** 兩個 AFF A50 ， AFF A30 ， AFF C30 或 AFF C60 控制器和 I/O 模組。必要的纜線。
+** 兩個 AFF A90 ， AFF A70 或 AFF C80 控制器，以及所有 I/O 模組。所需長度的 100GbE 纜線。
+** 兩個 AFF A50 ， AFF A30 ， AFF C30 或 AFF C60 控制器和 I/O 模組，以及所需的纜線
 ** ASA A150 、 AFF A150 或 FAS2820 控制器
-** ASA A900 ， AFF A900 或 FAS9500 控制器和 NVRAM 模組及其零件
+** ASA A900 ， AFF A900 或 FAS9500 控制器和 NVRAM 模組及零件
 
 
-* 您正在執行升級所需的最低 ONTAP 版本。如需詳細資訊、請參閱 link:index.html["總覽"]。
-* 您不想將新的控制器新增為叢集的新HA配對、也不想使用Volume Moves來移轉資料。
-* 您在管理ONTAP 方面經驗豐富、而且對於在診斷權限模式下工作的風險感到自在。
+* 您正在執行升級所需的最低 ONTAP 版本。如需更多資訊、請參閱 link:index.html["總覽"]。
+* 您有管理 ONTAP 的經驗，而且很熟悉在診斷權限模式下工作的風險。
 * 您的系統執行 ONTAP 9.15.1 或更新版本，而且使用乙太網路交換器來連線至乙太網路附加儲存設備。
 
+
+
+NOTE: 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume加密（NVE）和NetApp Aggregate加密（NAE）。
 
 
 
@@ -43,15 +45,13 @@ summary: 決定是否使用可升級同一機箱中控制器機型的 ARL 程序
 
 在下列情況下、您無法使用此程序：
 
+* 您想要將新控制器新增為叢集的新 HA 配對，並使用 Volume Moves 移轉資料。
 * 您正在升級的現有系統上使用 FlexArray 虛擬化軟體。
 * 您正在升級 MetroCluster IP 組態。
 +
 若要升級 MetroCluster IP 組態，請參閱link:other_references.html["參考資料"]連結至 MetroCluster 升級與擴充內容。
 
 
-
-
-NOTE: 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume加密（NVE）和NetApp Aggregate加密（NAE）。
 
 如果您偏好其他方法來升級控制器硬體、並願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
 

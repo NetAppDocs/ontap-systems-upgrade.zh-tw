@@ -37,7 +37,7 @@ entries:
     entries:
     - title: 更換 AFF A250 或 AFF C250
       url: "/upgrade-arl-auto-affa900/replace-node1-affa250-affc250.html"
-    - title: 更換 AFF A800
+    - title: 更換 AFF A800 或 AFF C800
       url: "/upgrade-arl-auto-affa900/replace-node1-affa800.html"
     - title: 更換 AFF A220 、 AFF A200 、 AFF C190 、 FAS2620 或 FAS2720
       url: "/upgrade-arl-auto-affa900/replace-node1-affa220-affa200-affc190-fas2620-fas2720.html"
@@ -57,7 +57,7 @@ entries:
     url: "/upgrade-arl-auto-affa900/verify_node1_installation.html"
   - title: 在升級的節點1上還原金鑰管理程式組態
     url: "/upgrade-arl-auto-affa900/restore_key_manager_config_upgraded_node1.html"
-  - title: 將節點1擁有的非根Aggregate和NAS資料lifs從節點2移至升級的節點1
+  - title: 將 node1 非 root 集合體和 NAS 資料生命體從 node2 移至升級的 node1
     url: "/upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html"
 - title: 第4階段：重新定位資源並淘汰 node2
   entries:

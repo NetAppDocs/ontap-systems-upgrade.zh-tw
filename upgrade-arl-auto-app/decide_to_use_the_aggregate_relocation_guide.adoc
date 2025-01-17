@@ -18,12 +18,12 @@ summary: 使用ONTAP 「系統控制器更換」命令、決定是否使用ARL�
 
 您可以在下列情況下使用此內容：
 
-* 您執行ONTAP 的是版本不含更新版本的版本。
-* 您不想將新的控制器新增為叢集的新HA配對、也不想使用Volume Moves來移轉資料。
-* 您在管理ONTAP 方面經驗豐富、而且對於在診斷權限模式下工作的風險感到自在。
-* 如果您要升級MetroCluster 某個版本的架構、它是四節點或更高的FC組態、而且所有節點都執行ONTAP 的是更新版本的版本號。
+* 您正在執行 ONTAP 9.8 或更新版本。
+* 您不想將新的控制器新增為叢集的新 HA 配對，並使用 Volume Moves 移轉資料。
+* 您有管理 ONTAP 的經驗，而且很熟悉在診斷權限模式下工作的風險。
+* 如果您要升級 MetroCluster 組態，則是四節點或更高的 FC 組態，而且所有節點都執行 ONTAP 9.8 或更新版本。
 +
-如需升級MetroCluster 靜態IP組態、請參閱 link:other_references.html["參考資料"] 連結至_E不明MetroCluster Upgrade and Expansion內容。
+如需升級 MetroCluster IP 組態，請參閱link:other_references.html["參考資料"]連結至 MetroCluster Upgrade and Expansion _ 。
 
 
 
@@ -63,11 +63,11 @@ NOTE: 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume�
 | 部分A400、部分A700 AFF AFF | 解答900 AFF 
 |===
 
-NOTE: 如果您的控制器升級模式組合不在上表中、請聯絡技術支援部門。
+NOTE: 如果您的控制器升級機型組合不在上表中，請聯絡技術支援部門。
 
 ^1^如需AFF 瞭解更多有關支援Arfa800系統的步驟、請參閱第節中提及A800的步驟 link:set_fc_or_uta_uta2_config_on_node3.html#auto_check3_step23["檢查並設定節點3步驟23上的UTA/UTA2連接埠"]或 link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step23["檢查並設定節點4步驟23上的UTA/UTA2連接埠"]。
 
-^2^如果您要在AFF 雙節點無交換式叢集組態中、從Sfzha300升級AFF 至Sf2 A400或FAS8200、則必須選擇暫用叢集連接埠以進行控制器升級。以乙太網路套裝組合形式提供兩種組態：夾層卡連接埠為乙太網路類型、夾層連接埠為FC類型、而以FC套裝組合形式提供夾層連接埠為FC類型。AFF
+^2^ 如果您要在雙節點無交換器叢集組態中從 AFF A300 升級至 AFF A400 或 FAS8200 升級至 FAS8300 系統，則必須為控制器升級選擇暫存叢集連接埠。以乙太網路套裝組合形式提供兩種組態：夾層卡連接埠為乙太網路類型、夾層連接埠為FC類型、而以FC套裝組合形式提供夾層連接埠為FC類型。AFF
 
 * 對於採用乙太網路類型組態的FASA400或FAS8300、您可以使用兩個夾層連接埠中的任何一個作為暫用叢集連接埠。AFF
 * 若為AFF 採用FC類型組態的Arf-A400或FAS8300、您必須新增四埠10GbE網路介面卡（零件編號X1147A）、以提供暫用叢集連接埠。
@@ -104,12 +104,13 @@ NOTE: 如果您的控制器升級模式組合不在上表中、請聯絡技術�
 ====
 上表所示的升級組合：
 
-* 不需要在ONTAP 現有和替換的控制器上使用相同的版本。透過控制器升級來執行更新ONTAP 。
+* 現有控制器和更換控制器不需要使用相同的 ONTAP 版本。透過控制器升級來執行更新ONTAP 。
 * 升級時、您必須安裝支援ONTAP 的支援版本和修補程式層級的更換控制器。
-* 在您開始程序並升級第一個節點之後、就無法取消或從控制器升級中恢復。
+* 在您開始程序並升級第一個節點之後，無法取消或退出控制器升級。
 
 
 ====
 如果您偏好其他方法來升級控制器硬體、並願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
 
+.相關資訊
 請參閱 link:other_references.html["參考資料"] 連結至_SURF9 ONTAP 文件中心_、您可在此存取ONTAP VMware產品文件。
