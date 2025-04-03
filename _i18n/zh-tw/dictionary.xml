@@ -5310,4 +5310,8 @@
   <block id="ea168cafe9d6c1f639359b30e7152b3d" category="list-text">您正在使用外部陣列來升級 V 系列系統或 FlexArray 虛擬化儲存系統，以用於後端儲存設備。如需升級 V 系列或 FlexArray 系統的選項、請聯絡技術支援部門。</block>
   <block id="3f0336dfa0e5a25ff8e8c549a2b18cef" category="list-text">您正在升級 MetroCluster FC 或 IP 組態。若要升級 MetroCluster 組態、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 連結至 MetroCluster 升級與擴充說明文件 _ 。</block>
   <block id="ebf1d57729bed03eb5fd256caca2fe3f" category="sidebar">更換 AFF A800 或 AFF C800</block>
+  <block id="761e2863e356e8bb23f79549fde56e25" category="cell">FAS8200 、 FAS8300 、 FAS9000</block>
+  <block id="5631dfc64a5dfd9535518e48f79b6c93" category="cell">FAS70 、 FAS90 、 FAS50</block>
+  <block id="179f979e0b97fa0abce7d9de4a3dcf35" category="cell">適用於 FAS70 的 9.15.1P3 ，適用於 FAS50 的 FAS90 9.16.1P2</block>
+  <block id="0588c4f1b58eac9f5062dc1da6e8435a" category="cell">FAS8700</block>
 </blocks>
