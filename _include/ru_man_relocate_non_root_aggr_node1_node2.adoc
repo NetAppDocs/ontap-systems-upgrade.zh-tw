@@ -72,7 +72,7 @@ NOTE: 請等到節點1擁有的所有非根集合體都已重新定位至節點2
 +
 [listing]
 ----
-cluster::> storage aggregate show -node node2 state online -root false
+cluster::> storage aggregate show -node node2 -state online -root false
 Aggregate     Size Available Used% State   #Vols  Nodes            RAID Status
 --------- -------- --------- ----- ------- ------ ---------------- ------------
 aggr_1

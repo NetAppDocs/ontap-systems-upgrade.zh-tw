@@ -51,6 +51,8 @@ entries:
     url: "/upgrade-arl-auto-app/install_boot_node3.html"
   - title: 在節點3上設定FC或UTA/UTA2組態
     url: "/upgrade-arl-auto-app/set_fc_or_uta_uta2_config_on_node3.html"
+  - title: 將 node1 磁碟重新指派給 node3
+    url: "/upgrade-arl-auto-app/reassign-node1-disks-to-node3.html"
   - title: 驗證node3安裝
     url: "/upgrade-arl-auto-app/verify_node3_installation.html"
   - title: 還原節點3上的金鑰管理程式組態
@@ -75,6 +77,8 @@ entries:
     url: "/upgrade-arl-auto-app/install_boot_node4.html"
   - title: 在節點4上設定FC或UTA/UTA2組態
     url: "/upgrade-arl-auto-app/set_fc_or_uta_uta2_config_node4.html"
+  - title: 將 node2 磁碟重新指派給 node4
+    url: "/upgrade-arl-auto-app/reassign-node2-disks-to-node4.html"
   - title: 驗證node4安裝
     url: "/upgrade-arl-auto-app/verify_node4_installation.html"
   - title: 還原節點4上的金鑰管理程式組態

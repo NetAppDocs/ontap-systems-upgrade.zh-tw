@@ -23,7 +23,8 @@ summary: 使用ONTAP 「系統控制器更換」命令、準備節點並執行�
 
 +
 
-NOTE: 此命令只能在進階權限層級執行：「et -priv榮幸advanced」（設定-權限進階）
+NOTE: 您只能在進階權限層級執行此命令：
+`set -privilege advanced`
 
 +
 您會看到下列輸出：

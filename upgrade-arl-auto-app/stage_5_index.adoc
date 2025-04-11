@@ -14,11 +14,12 @@ summary: 使用「系統控制器更換」命令、在執行ONTAP 版本號為9.
 
 
 [role="lead"]
-在第5階段期間、您會安裝並開機node4、檢查node2的叢集和節點管理連接埠是否在node4上處於線上狀態、然後驗證node4安裝。如果您使用NVE、則會還原金鑰管理程式組態。如果需要、您可以在節點4上設定FC或UTA/UTA2組態。您也可以將節點2 NAS資料lifs和非根Aggregate從節點3重新部署到節點4、並確認節點4上存在SAN lifs。
+在第 5 階段中，您將安裝並開機 node4 ，檢查 node2 的叢集和節點管理連接埠是否已在 node4 上上線，將 node2 磁碟重新指派至 node4 ，並驗證 node4 安裝。如果您使用NVE、則會還原金鑰管理程式組態。如果需要、您可以在節點4上設定FC或UTA/UTA2組態。您也可以將節點2 NAS資料lifs和非根Aggregate從節點3重新部署到節點4、並確認節點4上存在SAN lifs。
 
 .步驟
 . link:install_boot_node4.html["安裝及開機節點4"]
 . link:set_fc_or_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"]
+. link:reassign-node2-disks-to-node4.html["將 node2 磁碟重新指派給 node4"]
 . link:verify_node4_installation.html["驗證node4安裝"]
 . link:restore_key-manager_config_node4.html["還原節點4上的金鑰管理程式組態"]
 . link:move_non_root_aggr_and_nas_data_lifs_node2_from_node3_to_node4.html["將節點2擁有的非根Aggregate和NAS資料lifs從節點3移至節點4"]

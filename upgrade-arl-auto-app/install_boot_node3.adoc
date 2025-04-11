@@ -89,7 +89,7 @@ NOTE: 請參閱 link:prepare_for_netboot.html["準備netboot"]。
 . [[step6]]選擇下列其中一項動作來設定netboot連線。
 +
 
-NOTE: 您必須使用管理連接埠和IP做為netboot連線。請勿使用資料LIF IP、否則在執行升級時可能會發生資料中斷。
+NOTE: 您必須使用管理連接埠和IP做為netboot連線。請勿使用資料 LIF IP ，否則在執行升級時可能會發生資料中斷。
 
 +
 [cols="30,70"]
@@ -254,7 +254,7 @@ NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。�
 | 如果您的系統... | 說明 
 
 
-| 具有磁碟、無後端儲存設備 | 前往 <<auto_install3_step23,步驟23>> 
+| 具有磁碟、無後端儲存設備 | 前往<<auto_install3_step27,步驟 27>> 
 
 
 | 是連接FlexArray 至儲存陣列的V系列系統或系統、其中含有與之相關的功能完善的虛擬化軟體  a| 
@@ -281,6 +281,7 @@ IMPORTANT: 您必須重新設定FC內建連接埠、CNA內建連接埠和CNA卡�
 . [[step26]如果您的組態使用交換器型分區、請調整分區以反映新的WWPN值。
 
 
+[[auto_install3_step27]]
 . 如果您已安裝 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
 +
 
@@ -316,7 +317,7 @@ NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文�
 Boot_ONTAP功能表
 
 +
-如果您沒有FC或UTA/UTA2組態、請執行 link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15["檢查並設定節點4步驟15上的UTA/UTA2連接埠"] 這樣， node4 就能識別 node2 的磁碟。
+如果您沒有 FC 或 UTA/UTA2 組態，請執行，link:reassign-node2-disks-to-node4.html#reassign-node1-node3-app-step1["將 node1 磁碟重新指派給 node3 ，步驟 1"]以便 node3 能夠辨識 node1 的磁碟。
 
 . [[step29] MetroCluster 對於連接FlexArray 至儲存陣列的支援靜態虛擬化軟體之V系列系統和系統、您必須在節點3上設定及設定FC或UTA/UTA2連接埠、以偵測連接至節點的磁碟。若要完成此工作、請移至一節 link:set_fc_or_uta_uta2_config_on_node3.html["在節點3上設定FC或UTA/UTA2組態"]。
 

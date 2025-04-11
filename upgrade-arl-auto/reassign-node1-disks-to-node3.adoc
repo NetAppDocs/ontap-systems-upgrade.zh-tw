@@ -1,0 +1,250 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto/reassign-node1-disks-to-node3.html 
+keywords: FC, UTA, UTA2, configure, node3, CNA adapters, onboard ports, FlexArray Virtualization 
+summary: 使用ONTAP 「系統控制器更換」命令、將執行《更新》9.5的控制器升級至9.7時、請設定node3內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡。 
+---
+= 將 node1 磁碟重新指派給 node3
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+在驗證 node3 安裝之前，您需要將屬於 node1 的磁盤重新分配給 node3 。
+
+.關於這項工作
+您可以在 node3 上執行本節中的步驟。
+
+.步驟
+. [[reassign-node1-node3-step1]]] 轉至引導菜單並使用 22/7 ，然後選擇隱藏選項 `boot_after_controller_replacement`。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。
++
+.展開主控台輸出範例
+[%collapsible]
+====
+[listing]
+----
+LOADER-A> boot_ontap menu
+...
+*******************************
+*                             *
+* Press Ctrl-C for Boot Menu. *
+*                             *
+*******************************
+.
+.
+Please choose one of the following:
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+Selection (1-9)? 22/7
+.
+.
+(boot_after_controller_replacement)   Boot after controller upgrade
+(9a)                                  Unpartition all disks and remove their ownership information.
+(9b)                                  Clean configuration and initialize node with partitioned disks.
+(9c)                                  Clean configuration and initialize node with whole disks.
+(9d)                                  Reboot the node.
+(9e)                                  Return to main boot menu.
+
+Please choose one of the following:
+
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+Selection (1-9)? boot_after_controller_replacement
+.
+This will replace all flash-based configuration with the last backup to
+disks. Are you sure you want to continue?: yes
+.
+.
+Controller Replacement: Provide name of the node you would like to replace: <name of the node being replaced>
+.
+.
+Changing sysid of node <node being replaced> disks.
+Fetched sanown old_owner_sysid = 536953334 and calculated old sys id = 536953334
+Partner sysid = 4294967295, owner sysid = 536953334
+.
+.
+.
+Terminated
+<node reboots>
+.
+.
+System rebooting...
+.
+Restoring env file from boot media...
+copy_env_file:scenario = head upgrade
+Successfully restored env file from boot media...
+.
+.
+System rebooting...
+.
+.
+.
+WARNING: System ID mismatch. This usually occurs when replacing a boot device or NVRAM cards!
+Override system ID? {y|n} y
+Login:
+...
+----
+====
+. 如果系統進入重新開機迴圈並顯示訊息 `no disks found`，這是因為它已將連接埠重設回目標模式，因此無法看到任何磁碟。請繼續執行<<auto_check3_step3,步驟3.>> <<auto_check3_step8,步驟8.>>以解決此問題。
+. [[auto_check3_step3]] 在自動開機期間按 Ctrl-C 、在 loader> 提示下停止節點。
+. [[step18]] 在載入程式提示下、進入維護模式：
++
+Boot_ONTAP maint
+
+. [[step19]在維護模式中、顯示所有先前設定的啟動器連接埠、這些連接埠現在處於目標模式：
++
+「ucadmin show」
+
++
+將連接埠改回啟動器模式：
+
++
+「ucadmin modify -m fs -t initiator -f _Adapter name_'」
+
+. [[step20]確認連接埠已變更為啟動器模式：
++
+「ucadmin show」
+
+. [[step21]結束維護模式：
++
+《停止》
+
++
+[NOTE]
+====
+如果您要從支援外部磁碟的系統升級到也支援外部磁碟的系統，請前往<<auto_check3_step8,步驟8.>>。
+
+如果您要從支援外部磁碟的系統升級到同時支援內部和外部磁碟的系統，例如 AFF A800 系統，請前往<<auto_check3_step9,步驟9.>>。
+
+====
+. [[auto_check3_step8]] 在載入程式提示下開機：
++
+Boot_ONTAP功能表
+
++
+現在、在開機時、節點可以偵測先前指派給它的所有磁碟、並可依預期開機。
+
++
+當您要取代的叢集節點使用根磁碟區加密時、 ONTAP 無法從磁碟讀取磁碟區資訊。還原根磁碟區的金鑰：
+
++
+.. 返回特殊的開機功能表：
++
+`LOADER> boot_ontap menu`
+
++
+[listing]
+----
+Please choose one of the following:
+(1) Normal Boot.
+(2) Boot without /etc/rc.
+(3) Change password.
+(4) Clean configuration and initialize all disks.
+(5) Maintenance mode boot.
+(6) Update flash from backup config.
+(7) Install new software first.
+(8) Reboot node.
+(9) Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+
+Selection (1-11)? 10
+----
+.. 選取*（10）Set Onboard Key Manager恢復機密*
+.. 輸入 `y` 出現下列提示：
++
+`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
+
+.. 在提示字元下、輸入金鑰管理程式的通關密碼。
+.. 出現提示時輸入備份資料。
++
+
+NOTE: 您必須已取得中的通關密碼和備份資料 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] 本程序的一節。
+
+.. 系統重新開機至特殊開機功能表後、請執行選項*（1）正常開機*
++
+
+NOTE: 您可能會在這個階段遇到錯誤。如果發生錯誤、請重複中的子步驟、 <<auto_check3_step8,步驟8.>> 直到系統正常開機。
+
+
+
+. [[auto_check3_step9]] 如果您要從具有外部磁碟的系統升級到支援內部和外部磁碟的系統（例如 AFF A800 系統），請將 node1 Aggregate 設為根 Aggregate ，以確認 node3 從 node1 的根集合開機。若要設定根 Aggregate ，請前往開機功能表並選取選項 `5`以進入維護模式。
++
+
+CAUTION: *您必須依照所示的確切順序執行下列子步驟；否則可能導致中斷運作、甚至資料遺失。*
+
++
+下列程序會將node3設定為從節點1的根Aggregate開機：
+
++
+.. 進入維護模式：
++
+Boot_ONTAP maint
+
+.. 檢查node1 Aggregate的RAID、plex和Checksum資訊：
++
+「aggr狀態-r」
+
+.. 檢查node1 Aggregate的狀態：
++
+「aggr狀態」
+
+.. 如有必要、請將node1 Aggregate上線：
++
+"aggr_online root_aggr_from __node1__（aggr_online root_aggr_from __node1__）"
+
+.. 防止節點3從其原始根Aggregate開機：
++
+「aggr offline _root_aggr_on_node3_」
+
+.. 將node1根Aggregate設為節點3的新根Aggregate：
++
+"aggr options aggr_fe__ node1__ root"
+
+.. 確認節點3的根Aggregate為離線狀態、且從節點1移轉的磁碟根Aggregate為線上狀態、並設定為root：
++
+「aggr狀態」
+
++
+
+NOTE: 如果無法執行上一個子步驟、可能會導致節點3從內部根Aggregate開機、或是導致系統假設有新的叢集組態存在、或提示您識別一個。
+
++
+以下是命令輸出的範例：
+
++
+[listing]
+----
+ -----------------------------------------------------------------
+ Aggr                 State    Status             Options
+
+ aggr0_nst_fas8080_15 online   raid_dp, aggr      root, nosnap=on
+                               fast zeroed
+                               64-bit
+
+ aggr0                offline  raid_dp, aggr      diskroot
+                               fast zeroed
+                               64-bit
+ -----------------------------------------------------------------
+----
+
+
+

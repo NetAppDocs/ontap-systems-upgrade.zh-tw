@@ -19,14 +19,15 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行《更新》9.
 .關於這項工作
 您可能需要完成或部分、或是完成 <<在節點4上設定FC連接埠>> <<檢查並設定節點4上的UTA/UTA2連接埠>> 這兩個部分。
 
+[NOTE]
+====
+如果 node4 沒有板載 FC 端口，板載 UTA/UTA2 端口或 UTA/ UTA2 卡，並且您要升級帶有存儲磁盤的系統，則可以跳至link:reassign-node2-disks-to-node4.html["將 node2 磁碟重新指派給 node4"]。
 
-NOTE: 如果節點4沒有內建FC連接埠、內建UTA/UTA2連接埠或UTA/UTA2卡、而且您正在升級含有儲存磁碟的系統、則可以跳至 link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"] 區段。但是、如果您有V系列系統或使用FlexArray VMware虛擬化軟體、並連接至儲存陣列、而節點4沒有內建FC連接埠、內建UTA/ UTA2連接埠或UTA/ UTA2卡、則必須返回_安裝及開機節點4_一節、然後繼續執行 link:install_boot_node4.html#step22["步驟22"]。確定節點4有足夠的機架空間。如果node4與node2位於不同的機箱中、您可以將node4放在與node3相同的位置。如果節點2和節點4位於同一個機箱中、則節點4已位於適當的機架位置。
+但是，如果您有 V 系列系統或擁有 FlexArray 虛擬化軟體，並且連接至儲存陣列，而 node4 則沒有內建 FC 連接埠，內建 UTA/ UTA2 連接埠或 UTA/ UTA2 卡，則必須返回至 _ 安裝並開機 node4_ ，然後在繼續link:install_boot_node4.html#step22["步驟22"]。
 
-.選擇
-* <<在節點4上設定FC連接埠>>
-* <<檢查並設定節點4上的UTA/UTA2連接埠>>
+確定節點4有足夠的機架空間。如果node4與node2位於不同的機箱中、您可以將node4放在與node3相同的位置。如果節點2和節點4位於同一個機箱中、則節點4已位於適當的機架位置。
 
-
+====
 
 
 == 在節點4上設定FC連接埠
@@ -114,14 +115,14 @@ Boot_ONTAP功能表
 
 
 | 具有儲存磁碟  a| 
-** 跳過本節、前往 link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"] 如果節點4沒有UTA/UTA2卡或UTA/UTA2內建連接埠。
+** 如果 node4 沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口，請跳過本節並轉至link:reassign-node2-disks-to-node4.html["將 node2 磁碟重新指派給 node4"]。
 
 
 
 
 | 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
 ** 前往 link:set_fc_or_uta_uta2_config_node4.html#check-and-configure-utauta2-ports-on-node4["檢查並設定節點4上的UTA/UTA2連接埠"] 如果節點4有UTA/UTA2卡或UTA/UTA2內建連接埠。
-** 跳過_檢查並設定節點4_上的UTA/UTA2連接埠（如果節點4沒有UTA/UTA2卡或UTA/UTA2內建連接埠）一節、返回_安裝與開機節點4_一節、然後繼續執行 link:install_boot_node4.html#auto_install4_step23["步驟23"]。
+** 如果 node4 沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口，請跳過 _Check 並在 node4_ 上配置 UTA/UTA2 端口，然後返回至 _Install and boot node4_ ，並在繼續link:install_boot_node4.html#auto_install4_step23["步驟23"]。
 
 
 |===
@@ -288,10 +289,10 @@ f-a   2b       fc             target       cna           -             online
 | 如果系統... | 然後... 
 
 
-| 具有儲存磁碟 | 移至區段 link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"]。 
+| 具有儲存磁碟 | 前往 link:reassign-node2-disks-to-node4.html["將 node2 磁碟重新指派給 node4"]。 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 返回_安裝與開機節點4_區段、然後繼續執行 link:install_boot_node4.html#auto_install4_step23["步驟23"]。 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 返回到 _ 安裝和引導 node4_ ，然後在繼續link:install_boot_node4.html#auto_install4_step23["步驟23"]。 
 |===
 . [[auto_check_4_step13]結束維護模式：
 +
@@ -302,205 +303,6 @@ f-a   2b       fc             target       cna           -             online
 Boot_ONTAP功能表
 
 +
-如果您要升級至A800、請前往 <<auto_check_4_step23,步驟23>>。
-
-. [[auto_check_4_step15]在節點4上、移至開機功能表、然後使用22/7選取隱藏選項「boot_after控制器更換」。在提示符下輸入node2將node2的磁碟重新指派給node4、如下例所示。
-+
-.展開主控台輸出範例
-[%collapsible]
-====
-[listing]
-----
-LOADER-A> boot_ontap menu ...
-*******************************
-*                             *
-* Press Ctrl-C for Boot Menu. *
-*                             *
-*******************************
-.
-.
-Please choose one of the following:
-
-(1) Normal Boot.
-(2) Boot without /etc/rc.
-(3) Change password.
-(4) Clean configuration and initialize all disks.
-(5) Maintenance mode boot.
-(6) Update flash from backup config.
-(7) Install new software first.
-(8) Reboot node.
-(9) Configure Advanced Drive Partitioning.
-Selection (1-9)? 22/7
-.
-.
-(boot_after_controller_replacement) Boot after controller upgrade
-(9a)                                Unpartition all disks and remove their ownership information.
-(9b)                                Clean configuration and initialize node with partitioned disks.
-(9c)                                Clean configuration and initialize node with whole disks.
-(9d)                                Reboot the node.
-(9e)                                Return to main boot menu.
-
-Please choose one of the following:
-
-(1) Normal Boot.
-(2) Boot without /etc/rc.
-(3) Change password.
-(4) Clean configuration and initialize all disks.
-(5) Maintenance mode boot.
-(6) Update flash from backup config.
-(7) Install new software first.
-(8) Reboot node.
-(9) Configure Advanced Drive Partitioning.
-Selection (1-9)? boot_after_controller_replacement
-.
-This will replace all flash-based configuration with the last backup to disks. Are you sure you want to continue?: yes
-.
-.
-Controller Replacement: Provide name of the node you would like to replace: <name of the node being replaced>
-.
-.
-Changing sysid of node <node being replaced> disks.
-Fetched sanown old_owner_sysid = 536953334 and calculated old sys id = 536953334
-Partner sysid = 4294967295, owner sysid = 536953334
-.
-.
-.
-Terminated
-<node reboots>
-.
-.
-System rebooting...
-.
-Restoring env file from boot media...
-copy_env_file:scenario = head upgrade
-Successfully restored env file from boot media...
-.
-.
-System rebooting...
-.
-.
-.
-WARNING: System ID mismatch. This usually occurs when replacing a boot device or NVRAM cards!
-Override system ID? {y|n} y
-Login: ...
-----
-====
-. 如果系統進入重新開機迴圈、並顯示「找不到磁碟」訊息、這是因為系統已將連接埠重設回目標模式、因此無法看到任何磁碟。繼續 <<auto_check_4_step17,步驟17>> 透過 <<auto_check_4_step22,步驟22>> 以解決此問題。
-. [[auto_check_4_step17]] 在自動開機期間按 Ctrl-C 、在 loader> 提示下停止節點。
-. 在載入程式提示下、進入維護模式：
-+
-Boot_ONTAP maint
-
-. 在維護模式中、顯示所有先前設定的啟動器連接埠、這些連接埠現在都處於目標模式：
-+
-「ucadmin show」
-
-+
-將連接埠改回啟動器模式：
-
-+
-「ucadmin modify -m fs -t initiator -f _Adapter name_'」
-
-. 確認連接埠已變更為啟動器模式：
-+
-「ucadmin show」
-
-. 結束維護模式：
-+
-《停止》
-
-+
-[NOTE]
-====
-如果您要從支援外部磁碟的系統升級至也支援外部磁碟的系統、請前往 <<auto_check_4_step22,步驟22>>。
-
-如果您要從使用外部磁碟的系統升級至同時支援內部和外部磁碟的系統、例如AFF 、一個支援內部和外部磁碟的系統、請前往 <<auto_check_4_step23,步驟23>>。
-
-====
-. [[auto_check_4_step22]] 在載入程式提示下開機：
-+
-Boot_ONTAP功能表
-
-+
-現在、在開機時、節點可以偵測先前指派給它的所有磁碟、並可依預期開機。
-
-+
-當您要取代的叢集節點使用根磁碟區加密時、 ONTAP 無法從磁碟讀取磁碟區資訊。還原根磁碟區的金鑰：
-
-+
-.. 返回特殊的開機功能表：
-+
-`LOADER> boot_ontap menu`
-
-+
-[listing]
-----
-Please choose one of the following:
-(1) Normal Boot.
-(2) Boot without /etc/rc.
-(3) Change password.
-(4) Clean configuration and initialize all disks.
-(5) Maintenance mode boot.
-(6) Update flash from backup config.
-(7) Install new software first.
-(8) Reboot node.
-(9) Configure Advanced Drive Partitioning.
-(10) Set Onboard Key Manager recovery secrets.
-(11) Configure node for external key management.
-
-Selection (1-11)? 10
-----
-.. 選取*（10）Set Onboard Key Manager恢復機密*
-.. 輸入 `y` 出現下列提示：
-+
-`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
-
-.. 在提示字元下、輸入金鑰管理程式的通關密碼。
-.. 出現提示時輸入備份資料。
-+
-
-NOTE: 您必須已取得中的通關密碼和備份資料 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] 本程序的一節。
-
-.. 系統重新開機至特殊開機功能表後、請執行選項*（1）正常開機*
-+
-
-NOTE: 您可能會在這個階段遇到錯誤。如果發生錯誤、請重複中的子步驟 <<auto_check_4_step22,步驟22>> 直到系統正常開機為止。
-
-
-
-. [[auto_check_4_step23]如果您要從具有外部磁碟的系統升級至支援內部和外部磁碟AFF 的系統（例如、E25A800系統）、請將node2 Aggregate設為根Aggregate、以確認node4從節點2的根Aggregate開機。若要設定根Aggregate、請前往開機功能表並選取選項 `5` 進入維護模式。
-+
-
-WARNING: *您必須依照所示的確切順序執行下列子步驟；否則可能導致中斷運作、甚至資料遺失。*
-
-+
-下列程序會將node4設定為從節點2的根Aggregate開機：
-
-+
-.. 進入維護模式：
-+
-Boot_ONTAP maint
-
-.. 檢查node2 Aggregate的RAID、plex和Checksum資訊：
-+
-「aggr狀態-r」
-
-.. 檢查node2 Aggregate的狀態：
-+
-「aggr狀態」
-
-.. 如有必要、請將node2 Aggregate上線：
-+
-"aggr_online root_aggr_from __node2__（aggr_online root_aggr_from __node2__）"
-
-.. 防止節點4從其原始根Aggregate開機：
-+
-「aggr offline _root_aggr_on_node4_」
-
-.. 將node2根Aggregate設為節點4的新根Aggregate：
-+
-"aggr options aggr_fe__ node2__ root"
-
-
+如果您要升級至 A800 ，請前往link:reassign-node2-disks-to-node4.html#auto_check_4_step9["將 node2 磁碟重新指派給 node4 ，步驟 9"]。
 
 

@@ -14,11 +14,12 @@ summary: ARL升級的第5階段程序順序、使用「系統控制器更換」�
 
 
 [role="lead"]
-在第5階段期間、您會安裝並開機node4、將叢集和節點管理連接埠從node2對應至node4、然後驗證node4安裝。如果需要、您可以在節點4上設定FC或UTA/UTA2組態、並確認節點4已加入仲裁。您也可以將node2 NAS資料lifs和非根Aggregate從node3重新部署到node4、並驗證節點4上是否存在SAN lifs。
+在第 5 階段中，您將安裝並開機 node4 ，將叢集和節點管理連接埠從 node2 對應至 node4 ，將 node2 磁碟重新指派至 node4 ，並驗證 node4 安裝。如果需要、您可以在節點4上設定FC或UTA/UTA2組態、並確認節點4已加入仲裁。您也可以將node2 NAS資料lifs和非根Aggregate從node3重新部署到node4、並驗證節點4上是否存在SAN lifs。
 
 .步驟
 . link:install_boot_node4.html["安裝及開機節點4"]
 . link:set_fc_or_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"]
+. link:reassign-node2-disks-to-node4.html["將 node2 磁碟重新指派給 node4"]
 . link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"]
 . link:join_quorum_node_has_different_ports_stage5.html["當節點具有不同的網路連接埠集時、請加入仲裁"]
 . link:verify_node4_installation.html["驗證node4安裝"]

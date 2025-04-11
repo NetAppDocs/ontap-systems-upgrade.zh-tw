@@ -246,7 +246,7 @@ NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。�
 | 如果您的系統... | 然後... 
 
 
-| 具有磁碟、無後端儲存設備 | 前往 <<auto_install4_step23,步驟23>>。 
+| 具有磁碟、無後端儲存設備 | 前往 <<auto_install4_step27,步驟 27>>。 
 
 
 | 是連接FlexArray 至儲存陣列的V系列系統或系統、其中含有與之相關的功能完善的虛擬化軟體  a| 
@@ -307,7 +307,7 @@ NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文�
 Boot_ONTAP功能表
 
 +
-如果您沒有 FC 或 UTA/UTA2 組態、請執行 link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15["檢查並設定節點4步驟15上的UTA/UTA2連接埠"] 因此節點4可以識別節點2的磁碟。
+如果您沒有 FC 或 UTA/UTA2 組態，請執行，link:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1["將 node2 磁碟重新指派給 node4 ，步驟 1"]以便 node4 能夠辨識 node2 的磁碟。
 
-. [[step29]] 對於 MetroCluster 組態、 V 系列系統、以及連接至儲存陣列的 FlexArray 虛擬化軟體系統、請前往連結： set_fc_or_UTA_uta2_config_node4.html# auto_check_4_step15[ 檢查並設定 node4 、步驟 15 上的 UTA/UTA2 連接埠 ] 。
+. [[step29]] 對於 MetroCluster 組態， V 系列系統，以及連接至儲存陣列的 FlexArray 虛擬化軟體系統，請前往link:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1["將 node2 磁碟重新指派給 node4 ，步驟 1"]。
 

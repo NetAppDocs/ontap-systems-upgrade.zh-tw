@@ -65,7 +65,7 @@ NOTE: 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume�
 
 NOTE: 如果您的控制器升級機型組合不在上表中，請聯絡技術支援部門。
 
-^1^如需AFF 瞭解更多有關支援Arfa800系統的步驟、請參閱第節中提及A800的步驟 link:set_fc_or_uta_uta2_config_on_node3.html#auto_check3_step23["檢查並設定節點3步驟23上的UTA/UTA2連接埠"]或 link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step23["檢查並設定節點4步驟23上的UTA/UTA2連接埠"]。
+^1^ 如需 AFF A800 系統所需的其他步驟，請前往link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9["將 node1 磁碟重新指派給 node3 ，步驟 9"]或link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step9["將 node2 磁碟重新指派給 node4 ，步驟 9"]一節中參照 A800 的步驟。
 
 ^2^ 如果您要在雙節點無交換器叢集組態中從 AFF A300 升級至 AFF A400 或 FAS8200 升級至 FAS8300 系統，則必須為控制器升級選擇暫存叢集連接埠。以乙太網路套裝組合形式提供兩種組態：夾層卡連接埠為乙太網路類型、夾層連接埠為FC類型、而以FC套裝組合形式提供夾層連接埠為FC類型。AFF
 

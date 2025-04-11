@@ -22,13 +22,8 @@ summary: 使用ONTAP 「系統控制器更換」命令來升級執行《更新�
 
 NOTE: NetApp行銷資料可能會使用「UTA2」一詞來指代整合式網路卡（CNA）介面卡和連接埠。不過、CLI使用「CNA」一詞。
 
-* 如果節點3沒有內建FC連接埠、內建UTA/UTA2連接埠或UTA/UTA2卡、而且您正在升級含有儲存磁碟的系統、則可以跳至 link:verify_node3_installation.html["驗證node3安裝"] 區段。
-* 但是、如果您的V系列系統或系統搭載FlexArray 含有儲存陣列的VMware虛擬化軟體、而節點3沒有內建FC連接埠、內建UTA/ UTA連接埠或UTA/ UTA2卡、請返回_安裝與開機節點3_一節、並繼續執行中的章節 link:install_boot_node3.html#auto_install3_step23["步驟23"]。
-
-
-.選擇
-* <<在節點3上設定FC連接埠>>
-* <<檢查並設定節點3上的UTA/UTA2連接埠>>
+* 如果 node3 沒有板載 FC 端口，板載 UTA/UTA2 端口或 UTA/ UTA2 卡，並且您要升級帶有存儲磁盤的系統，則可以跳至link:reassign-node1-disks-to-node3.html["將 node1 磁碟重新指派給 node3"]。
+* 不過，如果您的 V 系列系統或系統配備 FlexArray 虛擬化軟體與儲存陣列，而 node3 則沒有內建 FC 連接埠，內建 UTA/UTA 連接埠或 UTA/UTA2 卡，請返回 _ 安裝與開機 node3_ ，然後繼續執行中的程序link:install_boot_node3.html#auto_install3_step23["步驟23"]。
 
 
 
@@ -113,15 +108,15 @@ Boot_ONTAP功能表
 
 
 | 具有儲存磁碟  a| 
-** 如果node3具有UTA/UTA2卡或UTA/UTA2內建連接埠、請前往部分 <<檢查並設定節點3上的UTA/UTA2連接埠>>。
-** 如果節點3沒有UTA/UTA2卡或UTA/UTA2內建連接埠、請跳過一節 <<檢查並設定節點3上的UTA/UTA2連接埠>> 然後前往章節 link:verify_node3_installation.html["驗證node3安裝"]。
+** 如果node3具有UTA/UTA2卡或UTA/UTA2內建連接埠、請前往 <<檢查並設定節點3上的UTA/UTA2連接埠>>。
+** 如果 node3 沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口，請跳過 _Check 並在 node3_ 上配置 UTA/UTA2 端口，然後轉至link:reassign-node1-disks-to-node3.html["將 node1 磁碟重新指派給 node3"]。
 
 
 
 
 | 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
-** 如果node3具有UTA/UTA2卡或UTA/UTA2內建連接埠、請前往部分 <<檢查並設定節點3上的UTA/UTA2連接埠>>。
-** 如果節點3沒有UTA/UTA2卡或UTA/UTA2內建連接埠、請跳過一節 <<檢查並設定節點3上的UTA/UTA2連接埠>> 並返回_安裝和開機節點3_一節、然後繼續執行 link:install_boot_node3.html#auto_install3_step23["步驟23"]。
+** 如果node3具有UTA/UTA2卡或UTA/UTA2內建連接埠、請前往 <<檢查並設定節點3上的UTA/UTA2連接埠>>。
+** 如果 node3 沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口，請跳過 _Check 並在 node3_ 上配置 UTA/UTA2 端口，然後返回至 _Install and boot node3_ 並繼續執行中的步驟link:install_boot_node3.html#auto_install3_step23["步驟23"]。
 
 
 |===
@@ -303,269 +298,14 @@ Adapter  Mode       Type        Mode     Type        Status
 | 如果系統... | 然後… 
 
 
-| 具有儲存磁碟 | 前往 link:verify_node3_installation.html["驗證node3安裝"]。 
+| 具有儲存磁碟 | 前往 link:reassign-node1-disks-to-node3.html["將 node1 磁碟重新指派給 node3"]。 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 返回_安裝與開機節點3_區段、然後繼續執行 link:install_boot_node3.html#auto_install3_step23["步驟23"]。 
+| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 返回到 _ 安裝並引導 node3_ ，然後繼續執行過程link:install_boot_node3.html#auto_install3_step23["步驟23"]。 
 |===
 . [[auto_checks3_step13]結束維護模式：
 +
 《停止》
 
-. [[step14]執行「boot_ONTAP功能表」、將節點開機到開機功能表。如果您要升級至A800、請前往 <<auto_check3_step23,步驟23>>。
-
-
-. 在 node3 上，轉至引導菜單並使用 22/7 ，選擇隱藏選項 `boot_after_controller_replacement`。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。
-+
-.展開主控台輸出範例
-[%collapsible]
-====
-....
-LOADER-A> boot_ontap menu
-.
-<output truncated>
-.
-All rights reserved.
-*******************************
-*                             *
-* Press Ctrl-C for Boot Menu. *
-*                             *
-*******************************
-.
-<output truncated>
-.
-Please choose one of the following:
-(1)  Normal Boot.
-(2)  Boot without /etc/rc.
-(3)  Change password.
-(4)  Clean configuration and initialize all disks.
-(5)  Maintenance mode boot.
-(6)  Update flash from backup config.
-(7)  Install new software first.
-(8)  Reboot node.
-(9)  Configure Advanced Drive Partitioning.
-(10) Set Onboard Key Manager recovery secrets.
-(11) Configure node for external key management.
-Selection (1-11)? 22/7
-(22/7) Print this secret List
-(25/6) Force boot with multiple filesystem disks missing.
-(25/7) Boot w/ disk labels forced to clean.
-(29/7) Bypass media errors.
-(44/4a) Zero disks if needed and create new flexible root volume.
-(44/7) Assign all disks, Initialize all disks as SPARE, write DDR labels
-.
-<output truncated>
-.
-(wipeconfig)                        Clean all configuration on boot device
-(boot_after_controller_replacement) Boot after controller upgrade
-(boot_after_mcc_transition)         Boot after MCC transition
-(9a)                                Unpartition all disks and remove their ownership information.
-(9b)                                Clean configuration and initialize node with partitioned disks.
-(9c)                                Clean configuration and initialize node with whole disks.
-(9d)                                Reboot the node.
-(9e)                                Return to main boot menu.
-The boot device has changed. System configuration information could be lost. Use option (6) to restore the system configuration, or option (4) to initialize all disks and setup a new system.
-Normal Boot is prohibited.
-Please choose one of the following:
-(1)  Normal Boot.
-(2)  Boot without /etc/rc.
-(3)  Change password.
-(4)  Clean configuration and initialize all disks.
-(5)  Maintenance mode boot.
-(6)  Update flash from backup config.
-(7)  Install new software first.
-(8)  Reboot node.
-(9)  Configure Advanced Drive Partitioning.
-(10) Set Onboard Key Manager recovery secrets.
-(11) Configure node for external key management.
-Selection (1-11)? boot_after_controller_replacement
-This will replace all flash-based configuration with the last backup to disks. Are you sure you want to continue?: yes
-.
-<output truncated>
-.
-Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
-Changing sysid of node node1 disks.
-Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
-Partner sysid = 4294967295, owner sysid = 536940063
-.
-<output truncated>
-.
-varfs_backup_restore: restore using /mroot/etc/varfs.tgz
-varfs_backup_restore: attempting to restore /var/kmip to the boot device
-varfs_backup_restore: failed to restore /var/kmip to the boot device
-varfs_backup_restore: attempting to restore env file to the boot device
-varfs_backup_restore: successfully restored env file to the boot device wrote key file "/tmp/rndc.key"
-varfs_backup_restore: timeout waiting for login
-varfs_backup_restore: Rebooting to load the new varfs
-Terminated
-<node reboots>
-System rebooting...
-.
-Restoring env file from boot media...
-copy_env_file:scenario = head upgrade
-Successfully restored env file from boot media...
-Rebooting to load the restored env file...
-.
-System rebooting...
-.
-<output truncated>
-.
-WARNING: System ID mismatch. This usually occurs when replacing a boot device or NVRAM cards!
-Override system ID? {y|n} y
-.
-Login:
-....
-====
-+
-
-NOTE: 在上述主控台輸出範例中、ONTAP 如果系統使用進階磁碟分割（ADP）磁碟、則會提示您輸入合作夥伴節點名稱。
-
-. 如果系統進入重新開機迴圈並顯示「找不到磁碟」訊息、表示系統已將FC或UTA/UTA2連接埠重設回目標模式、因此無法看到任何磁碟。若要解決此問題、請繼續 <<auto_check3_step17,步驟17>> 至 <<auto_check3_step22,步驟22>>或移至區段 link:verify_node3_installation.html["驗證node3安裝"]。
-. [[auto_check3_step17]] 在自動開機期間按 Ctrl-C 、在 loader> 提示下停止節點。
-. [[step18]] 在載入程式提示下、進入維護模式：
-+
-Boot_ONTAP maint
-
-. [[step19]在維護模式中、顯示所有先前設定的啟動器連接埠、這些連接埠現在處於目標模式：
-+
-「ucadmin show」
-
-+
-將連接埠改回啟動器模式：
-
-+
-「ucadmin modify -m fs -t initiator -f _Adapter name_'」
-
-. [[step20]確認連接埠已變更為啟動器模式：
-+
-「ucadmin show」
-
-. [[step21]結束維護模式：
-+
-《停止》
-
-+
-[NOTE]
-====
-如果您要從支援外部磁碟的系統升級至也支援外部磁碟的系統、請前往 <<auto_check3_step22,步驟22>>。
-
-如果您要從支援外部磁碟的系統升級至同時支援內部和外部磁碟的系統、例如AFF 、一個支援內部和外部磁碟的系統、請前往 <<auto_check3_step23,步驟23>>。
-
-====
-. [[auto_check3_step22]] 在載入程式提示下開機：
-+
-Boot_ONTAP功能表
-
-+
-現在、在開機時、節點可以偵測先前指派給它的所有磁碟、並可依預期開機。
-
-+
-當您要取代的叢集節點使用根磁碟區加密時、 ONTAP 無法從磁碟讀取磁碟區資訊。還原根磁碟區的金鑰。
-
-+
-
-NOTE: 這僅適用於根磁碟區使用 NetApp 磁碟區加密時。
-
-+
-.. 返回特殊的開機功能表：
-+
-`LOADER> boot_ontap menu`
-
-+
-[listing]
-----
-Please choose one of the following:
-(1) Normal Boot.
-(2) Boot without /etc/rc.
-(3) Change password.
-(4) Clean configuration and initialize all disks.
-(5) Maintenance mode boot.
-(6) Update flash from backup config.
-(7) Install new software first.
-(8) Reboot node.
-(9) Configure Advanced Drive Partitioning.
-(10) Set Onboard Key Manager recovery secrets.
-(11) Configure node for external key management.
-
-Selection (1-11)? 10
-----
-.. 選取*（10）Set Onboard Key Manager恢復機密*
-.. 輸入 `y` 出現下列提示：
-+
-`This option must be used only in disaster recovery procedures. Are you sure? (y or n): y`
-
-.. 在提示字元下、輸入金鑰管理程式的通關密碼。
-.. 出現提示時輸入備份資料。
-+
-
-NOTE: 您必須已取得中的通關密碼和備份資料 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] 本程序的一節。
-
-.. 系統重新開機至特殊開機功能表後、請執行選項*（1）正常開機*
-+
-
-NOTE: 您可能會在這個階段遇到錯誤。如果發生錯誤、請重複中的子步驟 <<auto_check3_step22,步驟22>> 直到系統正常開機為止。
-
-
-
-. [[auto_checks3_step23]如果您要從具有外部磁碟的系統升級至支援內部和外部磁碟AFF 的系統（例如、E4A800系統）、請將node1 Aggregate設為根Aggregate、以確認node3從節點1的根Aggregate開機。若要設定根Aggregate、請移至開機功能表、然後選取選項「5」以進入維護模式。
-+
-
-CAUTION: *您必須依照所示的確切順序執行下列子步驟；否則可能導致中斷運作、甚至資料遺失。*
-
-+
-下列程序會將node3設定為從節點1的根Aggregate開機：
-
-+
-.. 進入維護模式：
-+
-Boot_ONTAP maint
-
-.. 檢查node1 Aggregate的RAID、plex和Checksum資訊：
-+
-「aggr狀態-r」
-
-.. 檢查node1 Aggregate的狀態：
-+
-「aggr狀態」
-
-.. 如有必要、請將node1 Aggregate上線：
-+
-"aggr_online root_aggr_from __node1__（aggr_online root_aggr_from __node1__）"
-
-.. 防止節點3從其原始根Aggregate開機：
-+
-「aggr offline _root_aggr_on_node3_」
-
-.. 將node1根Aggregate設為節點3的新根Aggregate：
-+
-"aggr options aggr_fe__ node1__ root"
-
-.. 確認節點3的根Aggregate為離線狀態、且從節點1移轉的磁碟根Aggregate為線上狀態、並設定為root：
-+
-「aggr狀態」
-
-+
-
-NOTE: 如果無法執行上一個子步驟、可能會導致節點3從內部根Aggregate開機、或是導致系統假設有新的叢集組態存在、或提示您識別一個。
-
-+
-以下是命令輸出的範例：
-
-+
-[listing]
-----
- -----------------------------------------------------------------
- Aggr                 State    Status             Options
-
- aggr0_nst_fas8080_15 online   raid_dp, aggr      root, nosnap=on
-                               fast zeroed
-                               64-bit
-
- aggr0                offline  raid_dp, aggr      diskroot
-                               fast zeroed
-                               64-bit
- -----------------------------------------------------------------
-----
-
-
+. [[step14]] 執行，將開機節點開機至開機功能表 `boot_ontap menu`。如果您要升級至 A800 ，請前往link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9["將 node1 磁碟重新指派給 node3 ，步驟 9"]。
 

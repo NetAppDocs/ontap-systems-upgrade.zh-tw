@@ -254,7 +254,7 @@ NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。�
 | 如果您的系統... | 說明 
 
 
-| 具有磁碟、無後端儲存設備 | 前往 <<auto_install3_step23,步驟23>> 
+| 具有磁碟、無後端儲存設備 | 前往<<auto_install3_step27,步驟 27>> 
 
 
 | 是連接FlexArray 至儲存陣列的V系列系統或系統、其中含有與之相關的功能完善的虛擬化軟體  a| 
@@ -281,6 +281,7 @@ IMPORTANT: 您必須重新設定FC內建連接埠、CNA內建連接埠和CNA卡�
 . [[step26]如果您的組態使用交換器型分區、請調整分區以反映新的WWPN值。
 
 
+[[auto_install3_step27]]
 . 如果您已安裝 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
 +
 
@@ -313,7 +314,7 @@ NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文�
 Boot_ONTAP功能表
 
 +
-如果您沒有 FC 或 UTA/UTA2 組態、請執行 link:set_fc_or_uta_uta2_config_node4.html#auto_check_4_step15["檢查並設定節點4步驟15上的UTA/UTA2連接埠"] 因此節點4可以識別節點2的磁碟。
+如果您沒有 FC 或 UTA/UTA2 組態，請執行，link:reassign-node1-disks-to-node3.html#reassign-node1-node3-step1["將 node1 磁碟重新指派給 node3 ，步驟 1"]以便 node3 能夠辨識 node1 的磁碟。
 
-. [[[autos9597_istall3_step29]若需MetroCluster 包含連接FlexArray 至儲存陣列之「支援虛擬化」軟體的支援功能、請前往 link:set_fc_or_uta_uta2_config_on_node3.html#auto9597_check_node3_step15["檢查並設定節點3步驟15上的UTA/UTA2連接埠"]。
+. [[auto9597_istall3_step29]] 對於 MetroCluster 組態， V 系列系統和系統，以及連接至儲存陣列的 FlexArray 虛擬化軟體，請前往link:reassign-node1-disks-to-node3.html#reassign-node1-node3-step1["將 node1 磁碟重新指派給 node3 ，步驟 1"]。
 
