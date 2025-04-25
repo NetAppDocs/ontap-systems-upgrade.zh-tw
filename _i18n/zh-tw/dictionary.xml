@@ -82,7 +82,6 @@
   <block id="b50635aa317c4f94943cbad3bf2ffdf2" category="list-text">連接連接埠。</block>
   <block id="8eeb6ccf00d6f27741c5b734b3130459" category="list-text">[[step12]請採取下列其中一項行動：</block>
   <block id="4a137bad34f46785824a8100e1c6cba6" category="list-text">[[auto_check_4_step13]結束維護模式：</block>
-  <block id="479951d6e509fddf053f700071fd43a4" category="list-text">[[step14]開機節點進入開機功能表：</block>
   <block id="24655647ccabfd614d439a15f52407aa" category="paragraph">Boot_ONTAP maint</block>
   <block id="82b61383829ad9f7c791ca9adcbe4b1f" category="list-text">在維護模式中、顯示所有先前設定的啟動器連接埠、這些連接埠現在都處於目標模式：</block>
   <block id="0237455b5c9b0d306e2c96ee6c599c24" category="paragraph">將連接埠改回啟動器模式：</block>
@@ -1011,7 +1010,6 @@
   <block id="20285adb42be1ddc0c2df8f7a2de7595" category="list-text">修改與儲存陣列上陣列LUN相關的主機或磁碟區群組中的全球連接埠名稱（WWPN）值。</block>
   <block id="a2b95adba38da1a033c4cae3447040cc" category="paragraph">安裝新的控制器模組會變更與每個內建FC連接埠相關的WWPN值。</block>
   <block id="23eacbaf200afc53fbaaaaa3d6705308" category="list-text">如果您的組態使用交換器型分區、請調整分區以反映新的WWPN值。</block>
-  <block id="d1cffd7fada9f21315c30db304bb2ca9" category="list-text">開機節點進入開機功能表：</block>
   <block id="ada0af4bbf1b59e059dc781cf36c82cc" category="summary">使用ONTAP 「系統控制器更換」命令、將執行ONTAP 版本號從9.5升級至9.7的控制器時、請安裝及開機節點3並安裝效益分析軟體。</block>
   <block id="80f347da1888e440d3f1755d2e9ca001" category="paragraph">您必須在機架中安裝node3、將node1的連線傳輸至node3、開機node3及安裝ONTAP 支援。接著、您必須重新指派節點1的任何備用磁碟、屬於根磁碟區的任何磁碟、以及任何未在程序中稍早重新放置到節點2的非根Aggregate、如本節所述。</block>
   <block id="845a94c1ed34fe833c91b960798ffff2" category="paragraph">重新配置作業會在此階段開始時暫停。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。此外、您必須驗證SAN LIF是否已成功移至節點3。</block>
@@ -1562,7 +1560,6 @@
   <block id="a54f5c2e2731f201663a2d288e5fec98" category="summary">在執行ONTAP 《Esc9.8或更新版本》的控制器上進行手動ARL升級時、請確認節點1上的實體連接埠正確對應至節點3。</block>
   <block id="9207f0d2f15feec52f0acba2d7786a53" category="paragraph">您必須確定節點1上的實體連接埠正確對應至節點3上的實體連接埠、以便節點3在升級後與叢集中的其他節點和網路進行通訊。</block>
   <block id="d22f146c49d95d305653bf62234fdbc9" category="paragraph">您必須已經取得有關_E__新節點上連接埠的資訊Hardware Universe 。（請前往 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至_SURE_ Hardware Universe ）。您可以使用本節稍後和中的資訊 <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block>。</block>
-  <block id="770687a6c0857c42712724895dde4f94" category="paragraph">node3的軟體組態必須符合node3的實體連線能力、而且必須先還原IP連線、才能繼續升級。</block>
   <block id="7ae38f6d8449bab135d62e112d801780" category="paragraph">連接埠設定可能有所不同、視節點的機型而定。</block>
   <block id="18d6cf18e081291f183ebc71cad11449" category="list-text">[[step1]]請執行下列步驟、確認設定是否為雙節點無交換式叢集：</block>
   <block id="0bd1c8991d4969dac07a0c2f2dde50b5" category="paragraph">「網路選項、無交換式叢集展示」</block>
@@ -3503,18 +3500,10 @@
   <block id="5861bf10ae07bb7c0e6218d5663221a4" category="paragraph">「ucadmin modify -m fc|cna -t啟動器| target _adapter_name_」</block>
   <block id="c5fabf666636164983c54a60426edaab" category="cell">網路FCP介面卡修改-node_node_name_-介 面卡_adapter_name_-state up</block>
   <block id="e07e74f9f1df10fa040f36e818e29bd1" category="cell">"FCP config _adapter_name_ up（FCP組態介面卡名稱_啟動）"</block>
-  <block id="d22419a850c185721a903c07372ae503" category="paragraph">「系統節點AutoSupport 無法叫用-node_node2_-type all -messing _node2_ from _platform _old_ to _platform _new_」（將_node2_從_platform _old_升級為_platform _new_）。</block>
-  <block id="0035b3ff85f938e9dcfa6e01d00bacb3" category="paragraph">「系統節點AutoSupport 實體show -node2_-instance」</block>
   <block id="9fb768ad6510fe46b2016783cac8eadb" category="paragraph">「torage Aggregate show -Owner-name _node2_」</block>
-  <block id="340e64569e9690b05ee5812624d5a313" category="paragraph">「torage Aggregate regate or搬 移開始節點節點節點節點2 _-destate _node3_-Aggregate-list *-n控制器升級true」</block>
-  <block id="f161887b8a8315e1921bdd784254366b" category="paragraph">「torage Aggregate regate reg搬 移顯示-node2_」</block>
   <block id="cde8cf801e542566f503970c16a89b61" category="admonition">「EVENT log show」命令會列出發生的任何錯誤。</block>
-  <block id="9ef5127a85127a11a229ac4b55fc672f" category="paragraph">「torage Aggregate regate regate orocationstart -node2_-destate _node3_-Aggregate-list *-n控制器升級true」</block>
-  <block id="841745404f0f5f47ea2e369557646743" category="paragraph">「torage Aggregate show -node3_-state offline -root false」</block>
   <block id="7a4b65a92ad0461916e64e86d4469810" category="paragraph">'線上儲存Aggregate -Agggr_name_'</block>
   <block id="9768bc676d49dbda7bf856a2930c4b52" category="paragraph">「Volume show -node3_-state offline」</block>
-  <block id="091a8eb2e46c040b097f97a81745c527" category="paragraph">「Volume online -vserver _vserver-name_-volume _volume名稱_」</block>
-  <block id="b69d240b40718da8e6f1771cc452c580" category="paragraph">「torage Aggregate show -Owner-name _node2_-ha-policy SFO -state online」</block>
   <block id="ffd863d528f6b76a6f398dd53b185d1d" category="cell">"Disk reassign-s"（磁碟重新指派-s）`_node2_sysid_-d _node_sysid_-p _node_sysid_'</block>
   <block id="9666e158b6e459758482181fdc5caf71" category="cell">"Disings disk reassign-s（磁碟重新指派- s）"_node2_sysid_-d _node4_sysid_"</block>
   <block id="ff573218a71a52e566a9d2cb9c112902" category="paragraph">「磁碟重新指派」命令只會重新指派目前擁有者為「節點2_sysid_」的磁碟。</block>
@@ -5246,23 +5235,14 @@
   <block id="179f979e0b97fa0abce7d9de4a3dcf35" category="cell">適用於 FAS70 的 9.15.1P3 ，適用於 FAS50 的 FAS90 9.16.1P2</block>
   <block id="0588c4f1b58eac9f5062dc1da6e8435a" category="cell">FAS8700</block>
   <block id="5ea464078a881a86e75acbaa27ab0f3f" category="inline-link-macro">將 node1 磁碟重新指派給 node3 ，步驟 9</block>
-  <block id="94832ce088252ec835bf30c1c169417f" category="list-text">[[step14]] 執行，將開機節點開機至開機功能表<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>。如果您要升級至 A800 ，請前往<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>。</block>
   <block id="fb5a9693a9865f2503ac1d604da7e6f1" category="cell">前往 <block ref="9a2314147e61384dcda537891c3f470c" category="inline-xref-macro-rx"></block>。</block>
   <block id="2fdbbb745e51610452548329a23e078d" category="cell">前往<block ref="cc5cb3430eee3043fed71981b076513b" category="inline-xref-macro-rx"></block></block>
   <block id="c66431825370525b71d1cf42669b4ad1" category="paragraph"><block ref="03d492bafa8bfc48b6d8087b415cb7c8" prefix="" category="inline-code"></block></block>
   <block id="cbf9a76a9a31fb5d20cbab55c42d6eb4" category="paragraph">在將 node2 替換爲 node4 之前，您需要爲 node2 發送 AutoSupport 消息，然後將 node2 擁有的非根聚合重新定位到 node3 。</block>
-  <block id="889a8a9b669ca02a5d0afd548c8a5bc9" category="list-text">確認已在 node2 和 node3 上正確設定合作夥伴系統 ID ：</block>
-  <block id="04ad9370712a8951b033d3e79d288b91" category="list-text"><block ref="c4d3ac59e356b264f6335ae353d7f8cf" prefix="" category="inline-code"></block></block>
-  <block id="ae719a4d0999ee899d139c043e1dfb31" category="list-text"><block ref="9651ad056b06027f0f8a09826553c095" prefix="" category="inline-code"></block></block>
-  <block id="331474910fd513c32a8b5468be64110b" category="paragraph">如果 node2 或 node3 的「合作夥伴 ID 」不正確：</block>
-  <block id="1157ffd8c7e3127247707fa870245090" category="list-text">以不正確的值重新啟動節點。</block>
-  <block id="20f3e479666bab0a0edd9ed3b561912d" category="list-text">重新執行中的命令<block ref="0ddf3aeb918097d937dd4c17e43bb51f" category="inline-xref-macro-rx"></block>，確認「合作夥伴 ID 」已變更為正確的值。</block>
   <block id="a2f8774c7412a03482b475c596da177f" category="list-text">傳送 AutoSupport 訊息至 NetApp for node2 ：</block>
   <block id="726243540d365dca09b0baa8a651d18b" category="list-text">重新部署非根集合體：</block>
   <block id="4b183b97df2f1d6ce9c112a7ed3e980c" category="paragraph">重新配置會在背景中進行。重新部署集合體可能需要幾秒鐘到幾分鐘的時間。時間包括用戶端中斷和非中斷部分。此命令不會重新定位任何離線或受限制的集合體。</block>
   <block id="ce3a9a61e80721a6fb4afa31a98b6267" category="paragraph">在重新定位集合之後，輸出會顯示「完成」。</block>
-  <block id="85208ba1bad4c7dc925a1c2728862db6" category="cell">前往 <block ref="08ddf4558683f30c17772ca15a6fb932" category="inline-xref-macro-rx"></block>。</block>
-  <block id="f626c2e9002d46ebfc63c95da060d00a" category="list-text">[[man_region_2_3_step7]] 驗證節點 3 上的所有非根集合體是否均為線上：</block>
   <block id="d8a4c81968f4b397fdbe83d1475d852c" category="list-text">確認 node2 沒有任何線上非根集合體：</block>
   <block id="6eb24316934652e1e079aaa905d2761d" category="inline-link-macro">將 node1 磁碟重新指派給 node3 ，步驟 1</block>
   <block id="694da05c353b1b646b03401140a4677f" category="paragraph">如果您沒有 FC 或 UTA/UTA2 組態，請執行，<block ref="7b43b3c87e448bde55a855b04c4928b3" category="inline-link-macro-rx"></block>以便 node3 能夠辨識 node1 的磁碟。</block>
@@ -5302,7 +5282,6 @@
   <block id="fc62ebdcdad1c598fd567dcc92127be3" category="cell">前往 <block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block>。</block>
   <block id="39ec961403963bac4327f37c3a91e53d" category="cell">返回到 _ 安裝和引導 node4_ ，然後在繼續<block ref="2365e31070f1c277afd5c68b5793121e" category="inline-link-macro-rx"></block>。</block>
   <block id="328a7a0648a6342a4e5d9762596df977" category="inline-link-macro">將 node2 磁碟重新指派給 node4 ，步驟 9</block>
-  <block id="aa35d8be17402f68d91e5a22894b1a0d" category="paragraph">如果您要升級至 A800 ，請前往<block ref="e81929257c1b77de68576a8a37b1e464" category="inline-link-macro-rx"></block>。</block>
   <block id="b08503fa695caa40c403fd4b0a68ee5a" category="list-text">如果 node3 沒有板載 FC 端口，板載 UTA/UTA2 端口或 UTA/ UTA2 卡，並且您要升級帶有存儲磁盤的系統，則可以跳至<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block>。</block>
   <block id="bc6f0afd18b3a2600b507899a377b115" category="list-text">不過，如果您的 V 系列系統或系統配備 FlexArray 虛擬化軟體與儲存陣列，而 node3 則沒有內建 FC 連接埠，內建 UTA/UTA 連接埠或 UTA/UTA2 卡，請返回 _ 安裝並開機 node3_ ，然後在繼續<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>。</block>
   <block id="fc1748891fee59e7ee68e749f479c431" category="list-text">如果 node3 沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口，請跳過<block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>並轉至<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block>。</block>
@@ -5312,13 +5291,11 @@
   <block id="eaad59cad2124997123e3f040ef5cb96" category="list-text"><block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block></block>
   <block id="7578581e3a33edeb6b72193b779ff242" category="paragraph">^1^ 如需 AFF A800 系統所需的其他步驟，請前往<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>或<block ref="a9b70e5969497a28f737eb804f3061d5" category="inline-link-macro-rx"></block>一節中參照 A800 的步驟。</block>
   <block id="ca05d8f8894d6ff273a92135000e282c" category="admonition">您必須使用管理連接埠和IP做為netboot連線。請勿使用資料 LIF IP ，否則在執行升級時可能會發生資料中斷。</block>
-  <block id="913c3a812733a4774d27054bc2740e5e" category="paragraph">如果您沒有 FC 或 UTA/UTA2 組態，請執行，<block ref="3ca6a7fd02b3e66a513c8eda309bc152" category="inline-link-macro-rx"></block>以便 node3 能夠辨識 node1 的磁碟。</block>
   <block id="187e2c8014ea1f526c1b4abd904abf74" category="paragraph">如果您沒有 FC 或 UTA/UTA2 組態，請執行 <block ref="197c7e9b993124512db50edc55b3520e" category="inline-link-macro-rx"></block>node4 ，以便識別 node2 的磁碟。</block>
   <block id="6ce2823803aa2f6a15c6368e9054699b" category="paragraph">在第 3 階段中，您將安裝並開機 node3 ，檢查 node1 的叢集和節點管理連接埠是否已在 node3 上上線，將 node1 磁碟重新指派至 node3 ，並驗證 node3 安裝。如果您使用的是NetApp Volume Encryption（NVE）、則會還原金鑰管理程式組態。如果需要、您可以在節點3上設定FC或UTA/UTA2組態。您也可以將節點1 NAS資料lifs和非根Aggregate從節點2重新部署到節點3、並確認節點3上存在SAN lifs。</block>
   <block id="9603a3cc81e2986384f6025c38748416" category="paragraph">在第 5 階段中，您將安裝並開機 node4 ，檢查 node2 的叢集和節點管理連接埠是否已在 node4 上上線，將 node2 磁碟重新指派至 node4 ，並驗證 node4 安裝。如果您使用NVE、則會還原金鑰管理程式組態。如果需要、您可以在節點4上設定FC或UTA/UTA2組態。您也可以將節點2 NAS資料lifs和非根Aggregate從節點3重新部署到節點4、並確認節點4上存在SAN lifs。</block>
   <block id="11f7f4fd840cd198a2f280c91b7faacb" category="list-text">您只能在進階權限層級執行<block ref="2b4e2bfd3f993678e0b6870d28304a76" prefix=" " category="inline-code"></block>命令：</block>
   <block id="b3936429fa1be4b517a86a16e2b7e505" category="summary">使用命令升級執行 ONTAP 9.8 或更新版本的控制器時，您需要將屬於 node1 的磁碟重新指派給 node3<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
-  <block id="d39e1430bb5637c814347c6472b72c52" category="list-text">前往開機功能表，並使用 22/7 選擇隱藏選項<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。</block>
   <block id="19c333b88ee80d0b1ae8ba1bdf9e539f" category="list-text">如果系統進入重新開機迴圈並顯示訊息<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>，表示系統已將 FC 或 UTA/UTA2 連接埠重設回目標模式，因此無法看到任何磁碟。要解決此問題，請繼續執行<block ref="8266acaa2ec393b5b0120a81f114e7db" category="inline-xref-macro-rx"></block> <block ref="0faed76141a6cb4a723aa66a5d852e5d" category="inline-xref-macro-rx"></block>，或轉至部分<block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block>。</block>
   <block id="bb109c63fb1855fdc41065496c4b5cbc" category="list-text">[[reassign-node1-node3-app-step3]] 自動開機期間按 Ctrl-C 在 Loader &gt; 提示下停止節點。</block>
   <block id="54e3eea9d71b7c4f02d2688c4e6f949e" category="paragraph">如果您要從支援外部磁碟的系統升級到也支援外部磁碟的系統，請前往<block ref="0faed76141a6cb4a723aa66a5d852e5d" category="inline-xref-macro-rx"></block>。</block>
@@ -5339,10 +5316,41 @@
   <block id="ce329eb9bee0d5646d8763528bd98e7e" category="list-text">如果 node4 沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口，請跳過本節並轉至<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block>。</block>
   <block id="ec5c95c32056d74d6a1bcfef9db57ed5" category="list-text">如果 node4 沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口，請跳過 _Check 並在 node4_ 上配置 UTA/UTA2 端口，返回至 _Install and boot node4_ ，然後繼續執行中的步驟<block ref="2365e31070f1c277afd5c68b5793121e" category="inline-link-macro-rx"></block>。</block>
   <block id="09fd616bd129dbb6b064a8d755638ea6" category="inline-link-macro">將節點 2 磁碟重新指派給節點 4 ，步驟 9</block>
-  <block id="86fee9536c0b4315d9e50668d2a3d7ae" category="paragraph">如果您要升級至 A800 ，請前往<block ref="4f039e99f80cf2a7b8236bb5590e739b" category="inline-link-macro-rx"></block>。</block>
   <block id="03cfdc59281567bffdff0dbb6def2026" category="list-text">如果 node3 沒有板載 FC 端口，板載 UTA/UTA2 端口或 UTA/ UTA2 卡，並且您要升級帶有存儲磁盤的系統，則可以跳至<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block>。</block>
   <block id="9444c5a2921797201ef65c5f6bae3196" category="list-text">不過，如果您的 V 系列系統或系統配備 FlexArray 虛擬化軟體與儲存陣列，而 node3 則沒有內建 FC 連接埠，內建 UTA/UTA 連接埠或 UTA/UTA2 卡，請返回 _ 安裝與開機 node3_ ，然後繼續執行中的程序<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>。</block>
   <block id="812ad699d52f740e9c44459a956e3f62" category="list-text">如果 node3 沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口，請跳過 _Check 並在 node3_ 上配置 UTA/UTA2 端口，然後轉至<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block>。</block>
   <block id="bd450dc25cacad31613a3b3330c2ed64" category="list-text">如果 node3 沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口，請跳過 _Check 並在 node3_ 上配置 UTA/UTA2 端口，然後返回至 _Install and boot node3_ 並繼續執行中的步驟<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>。</block>
   <block id="3a5beba976b4dab80c814dbb93201e2d" category="cell">返回到 _ 安裝並引導 node3_ ，然後繼續執行過程<block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>。</block>
+  <block id="efbbd979af9db0d702ab6a5273480e16" category="paragraph">node3 的軟體組態必須符合 node3 的實體連線能力，而且必須先還原網路連線能力，才能繼續升級。</block>
+  <block id="0750b6fd70b5c02e0dc63a82e8430e4a" category="admonition">在此過程中，請勿將集合體從 node3 重新定位至 node2 。如此一來，集合體就會離線，而移轉的集合體則會發生資料中斷。</block>
+  <block id="569f02d62115823f4fea09e43e09614c" category="list-text">驗證是否已在 node3 上正確設置了合作伙伴系統 ID ：</block>
+  <block id="fb0111f9cd842757d08889f0a7863a8b" category="list-text">在 node3 上顯示合作夥伴系統 ID ：</block>
+  <block id="5a17539dbeea2e1642b36b86ee06822c" category="paragraph"><block ref="089ce08d08dd1b75c3f614830a776a5d" prefix="" category="inline-code"></block></block>
+  <block id="6015ee0c3c4dbc37f534783a65239e72" category="example-title">顯示範例</block>
+  <block id="48ceab9868a32c98e5a4a3c1c644f968" category="list-text">如果 node3 的「合作夥伴系統 ID 」不正確：</block>
+  <block id="881c5e320a45f042e678d4b161772fce" category="list-text">停止 node3 ：</block>
+  <block id="7800007d1254bb704e4ae7dfd07804b7" category="list-text">在 Loader 提示字元下，設定正確的「合作夥伴 - 系統」值。</block>
+  <block id="a9de4ba6ab2c96c6e675e4aa27ae5f99" category="paragraph">node3 "合作 夥伴 -sysid" 是 node2<block ref="bf7db627e57d537d277701b30eb920fb" category="inline-xref-macro-rx"></block> 的系統 ID ，您可以在的輸出中找到<block ref="02dc63281e3f95993aa2bd3cbf6cbaaa" prefix=" " category="inline-code"></block>。</block>
+  <block id="dd3d0d406209c2954b2e2784db94b97b" category="list-text">在 Loader 提示符下，將 node3 引導至引導菜單：</block>
+  <block id="d3ddde6e7673239ed55bc11b0d0eb088" category="list-text">登入 node3 。</block>
+  <block id="088fc05a96b10d26c3f25411385117f2" category="paragraph"><block ref="25337ccb7c73e802f2aa2e84f9657883" prefix="" category="inline-code"></block></block>
+  <block id="2e7bb8e758be89869c95ab23b96089a8" category="paragraph"><block ref="e8bddc5e75bda9e006a7808627e02c60" prefix="" category="inline-code"></block></block>
+  <block id="ceb3b4f875043e902ad0c2c7df540ac4" category="paragraph"><block ref="5f763a2ed6c527c7a7c8cdb44b2ef9a1" prefix="" category="inline-code"></block></block>
+  <block id="2a2be3ec611dd374f220ea53bd3e0758" category="paragraph"><block ref="17cc86d87f4cf199b09f90bd5a6c15dc" prefix="" category="inline-code"></block></block>
+  <block id="a6f10385b3e5082eca317137f25e29be" category="paragraph"><block ref="5b8fa3cd936d1ea49819298759fb9f1b" prefix="" category="inline-code"></block></block>
+  <block id="38044567d84e20ec724f63db53b11f1e" category="cell">前往 <block ref="e688aae16bc9e29159c8c5dbe9e1ced4" category="inline-xref-macro-rx"></block>。</block>
+  <block id="3f8dbc42a73ae9a6487e0757b393d2fb" category="paragraph"><block ref="9156be96f14f90b77022cc089e705729" prefix="" category="inline-code"></block></block>
+  <block id="6c434ec98af520797c570f40db8c4a28" category="list-text">[[man_region_2_3_step8]] 驗證節點 3 上的所有非根集合體是否均為線上：</block>
+  <block id="ef54d8b76027ced4d5a36092399b0849" category="paragraph"><block ref="3084412280b7ab74d58fde7f7ea5dcb7" prefix="" category="inline-code"></block></block>
+  <block id="8e3deaabd41a6198e56a6285ff5c48bc" category="paragraph"><block ref="6081a3855c6bc35b60d38be817747a5c" prefix="" category="inline-code"></block></block>
+  <block id="7adac7d8af549857f31077a908e21bf4" category="paragraph"><block ref="9d8096e1c24df88a36631f9f43c1b889" prefix="" category="inline-code"></block></block>
+  <block id="dcc422920951416bc8ad4e66178b7556" category="paragraph"><block ref="5262be8683d7b15cd5f469e52a116209" prefix="" category="inline-code"></block></block>
+  <block id="71b6de83a4e8abd455d17a4d6af4374a" category="list-text">將節點開機至開機功能表：</block>
+  <block id="2177cbe7b3a717ce6d53713b3fc10bd9" category="list-text">[[step14]] 將節點開機至開機功能表：</block>
+  <block id="a4767f09ed98441b185563427dd0a442" category="paragraph">如果您要升級至 AFF A800 系統，請前往<block ref="e81929257c1b77de68576a8a37b1e464" category="inline-link-macro-rx"></block>。</block>
+  <block id="5a7f7aa2acda9d8cf0b886b9d97aa6d5" category="list-text">[[step14]] 執行將節點開機至開機功能表<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>。如果您要升級至 AFF A800 系統，請前往<block ref="13193a83e6d1d3a0ad7f7d39140ab8c7" category="inline-link-macro-rx"></block>。</block>
+  <block id="798d18731b87565ff109b6fed67d6b99" category="paragraph">如果您沒有 FC 或 UTA/UTA2 組態，請執行，<block ref="b7ef417e87a2f1cf82b2e7cf12272083" category="inline-link-macro-rx"></block>以便 node3 能夠辨識 node1 的磁碟。</block>
+  <block id="c8adb5c5421d34e18d5b9558706c9208" category="list-text">[[reassign-node1-node3-app-step1]] 進入開機功能表，並使用 22/7 選擇隱藏選項<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。</block>
+  <block id="4ac432efd1d6ca8f4e73f5783d4f90e6" category="paragraph">如果您要升級至 AFF A800 系統，請前往<block ref="4f039e99f80cf2a7b8236bb5590e739b" category="inline-link-macro-rx"></block>。</block>
+  <block id="8f9ee542e52933f0e31b07c6ca5316b2" category="list-text">[[step14]] 執行將節點開機至開機功能表<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>。如果您要升級至 AFF A800 系統，請前往<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>。</block>
 </blocks>

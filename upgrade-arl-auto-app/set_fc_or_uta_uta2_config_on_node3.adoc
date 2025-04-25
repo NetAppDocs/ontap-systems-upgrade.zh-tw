@@ -307,5 +307,5 @@ Adapter  Mode       Type        Mode     Type        Status
 +
 《停止》
 
-. [[step14]] 執行，將開機節點開機至開機功能表 `boot_ontap menu`。如果您要升級至 A800 ，請前往link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9["將 node1 磁碟重新指派給 node3 ，步驟 9"]。
+. [[step14]] 執行將節點開機至開機功能表 `boot_ontap menu`。如果您要升級至 AFF A800 系統，請前往link:reassign-node1-disks-to-node3.html#reassign-node1-node3-app-step9["將 node1 磁碟重新指派給 node3 ，步驟 9"]。
 

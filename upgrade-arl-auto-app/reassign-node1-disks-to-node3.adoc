@@ -20,7 +20,7 @@ summary: '使用命令升級執行 ONTAP 9.8 或更新版本的控制器時，�
 您可以在 node3 上執行本節中的步驟。
 
 .步驟
-. 前往開機功能表，並使用 22/7 選擇隱藏選項 `boot_after_controller_replacement`。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。
+. [[reassign-node1-node3-app-step1]] 進入開機功能表，並使用 22/7 選擇隱藏選項 `boot_after_controller_replacement`。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。
 +
 .展開主控台輸出範例
 [%collapsible]

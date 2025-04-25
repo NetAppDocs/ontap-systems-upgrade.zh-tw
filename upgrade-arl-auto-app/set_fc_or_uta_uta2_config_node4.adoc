@@ -298,11 +298,11 @@ f-a   2b       fc             target       cna           -             online
 +
 《停止》
 
-. [[step14]開機節點進入開機功能表：
+. [[step14]] 將節點開機至開機功能表：
 +
 Boot_ONTAP功能表。
 
 +
-如果您要升級至 A800 ，請前往link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step9["將節點 2 磁碟重新指派給節點 4 ，步驟 9"]。
+如果您要升級至 AFF A800 系統，請前往link:reassign-node2-disks-to-node4.html#reassign-node2-node4-app-step9["將節點 2 磁碟重新指派給節點 4 ，步驟 9"]。
 
 

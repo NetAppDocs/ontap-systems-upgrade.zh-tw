@@ -7,7 +7,7 @@
 .開始之前
 您必須已經取得有關_E__新節點上連接埠的資訊Hardware Universe 。（請前往 link:other_references.html["參考資料"] 以連結至_SURE_ Hardware Universe ）。您可以使用本節稍後和中的資訊 link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"]。
 
-node3的軟體組態必須符合node3的實體連線能力、而且必須先還原IP連線、才能繼續升級。
+node3 的軟體組態必須符合 node3 的實體連線能力，而且必須先還原網路連線能力，才能繼續升級。
 
 .關於這項工作
 連接埠設定可能有所不同、視節點的機型而定。

@@ -16,41 +16,76 @@ summary: 針對AutoSupport 節點2傳送一個訊息、並在執行ONTAP 更新�
 [role="lead"]
 在將 node2 替換爲 node4 之前，您需要爲 node2 發送 AutoSupport 消息，然後將 node2 擁有的非根聚合重新定位到 node3 。
 
-[[sysconfig-a-command]]
+
+CAUTION: 在此過程中，請勿將集合體從 node3 重新定位至 node2 。如此一來，集合體就會離線，而移轉的集合體則會發生資料中斷。
+
+[[verify-partner-sys-id]]
 .步驟
-. 確認已在 node2 和 node3 上正確設定合作夥伴系統 ID ：
+. 驗證是否已在 node3 上正確設置了合作伙伴系統 ID ：
 +
-** `system node run -node _node2_ -command sysconfig -a`
-** `system node run -node _node3_ -command sysconfig -a`
+.. 輸入進階權限層級：
++
+"進階權限"
+
+.. 在 node3 上顯示合作夥伴系統 ID ：
++
+`ha interconnect config show -node <node3-node1>`
+
 +
 系統會顯示類似下列範例的輸出：
 
 +
-[listing, subs="+quotes"]
+.顯示範例
+[%collapsible]
+====
+[listing]
 ----
-NetApp Release 9.16.1: Mon Feb 10 07:55:45 EST 2025
-System ID: _system-ID_; *partner ID: _partner-system-ID_*
-System Serial Number: _system-serial-number_
-System Rev: A0
-System Storage Configuration: Mixed-Path HA
+cluster::*> ha interconnect config show -node <node>
+  (system ha interconnect config show)
+
+                       Node: node3-node1
+          Interconnect Type: RoCE
+            Local System ID: <node3-system-id>
+          Partner System ID: <node2-system-id>
+       Connection Initiator: local
+                  Interface: external
+
+Port   IP Address
+----   -----------------
+e4a-17   0.0.0.0
+e4b-18   0.0.0.0
 ----
+====
+
+
+. 如果 node3 的「合作夥伴系統 ID 」不正確：
 +
-如果 node2 或 node3 的「合作夥伴 ID 」不正確：
-
+.. 停止 node3 ：
 +
-... 以不正確的值重新啟動節點。
-... 重新執行中的命令<<sysconfig-a-command,步驟1.>>，確認「合作夥伴 ID 」已變更為正確的值。
+《停止》
 
+.. 在 Loader 提示字元下，設定正確的「合作夥伴 - 系統」值。
++
+node3 "合作 夥伴 -sysid" 是 node2<<verify-partner-sys-id,步驟1.>> 的系統 ID ，您可以在的輸出中找到 `ha interconnect config show`。
 
+.. 儲存設定：
++
+「aveenv」
+
+.. 在 Loader 提示符下，將 node3 引導至引導菜單：
++
+Boot_ONTAP功能表
+
+.. 登入 node3 。
 
 
 . 傳送 AutoSupport 訊息至 NetApp for node2 ：
 +
-「系統節點AutoSupport 無法叫用-node_node2_-type all -messing _node2_ from _platform _old_ to _platform _new_」（將_node2_從_platform _old_升級為_platform _new_）。
+`system node autosupport invoke -node <node2> -type all -message "Upgrading <node2> from <platform_old> to <platform_new>"`
 
 . 驗AutoSupport 證是否已傳送此訊息：
 +
-「系統節點AutoSupport 實體show -node2_-instance」
+`system node autosupport show -node <node2> -instance`
 
 +
 「Last Subject sent：」（上次傳送主旨：）和「Last Time sent：」（上次傳送時間：）欄位包含上次傳送訊息的訊息標題、以及訊息傳送時間。
@@ -63,11 +98,11 @@ System Storage Configuration: Mixed-Path HA
 
 .. 列出節點2擁有的Aggregate：
 +
-「torage Aggregate show -Owner-name _node2_」
+`storage aggregate show -owner-name <node2>`
 
 .. 開始進行Aggregate重新配置：
 +
-「torage Aggregate regate or搬 移開始節點節點節點節點2 _-destate _node3_-Aggregate-list *-n控制器升級true」
+`storage aggregate relocation start -node <node2> -destination <node3> -aggregate-list * -ndo-controller-upgrade true`
 
 +
 
@@ -85,7 +120,7 @@ NOTE: 此命令只會尋找非根Aggregate。
 
 . 驗證node2的重新定位狀態：
 +
-「torage Aggregate regate reg搬 移顯示-node2_」
+`storage aggregate relocation show -node <node2>`
 
 +
 在重新定位集合之後，輸出會顯示「完成」。
@@ -101,7 +136,7 @@ NOTE: 您必須等到節點2所擁有的所有集合體都重新放置到節點3
 | 如果重新配置... | 然後... 
 
 
-| 所有集合體都成功 | 前往 <<man_relocate_2_3_step7,步驟7.>>。 
+| 所有集合體都成功 | 前往 <<man_relocate_2_3_step8,步驟8.>>。 
 
 
 | 任何Aggregate都失敗或遭否決  a| 
@@ -123,7 +158,7 @@ NOTE: 「EVENT log show」命令會列出發生的任何錯誤。
 
 .. 重新部署任何故障或被否決的集合體：
 +
-「torage Aggregate regate regate orocationstart -node2_-destate _node3_-Aggregate-list *-n控制器升級true」
+`storage aggregate relocation start -node <node2> -destination <node3> -aggregate-list * -ndo-controllerupgrade true`
 
 .. 出現提示時、請輸入「y」。
 .. 返回管理權限層級：
@@ -147,29 +182,29 @@ NOTE: 「EVENT log show」命令會列出發生的任何錯誤。
 如需儲存Aggregate重新配置命令的詳細資訊、請前往 link:other_references.html["參考資料"] 若要使用CLCLI和_例ONTAP 9命令連結至_磁碟和集合管理：手冊頁參考_。
 
 |===
-. [[man_region_2_3_step7]] 驗證節點 3 上的所有非根集合體是否均為線上：
+. [[man_region_2_3_step8]] 驗證節點 3 上的所有非根集合體是否均為線上：
 +
-「torage Aggregate show -node3_-state offline -root false」
+`storage aggregate show -node <node3> -state offline -root false`
 
 +
 如果有任何Aggregate已經離線或變成外部、您必須將其上線、每個Aggregate一次：
 
 +
-'線上儲存Aggregate -Agggr_name_'
+`storage aggregate online -aggregate <aggregate_name>`
 
 . 驗證節點3上的所有磁碟區是否都處於線上狀態：
 +
-「Volume show -node3_-state offline」
+`volume show -node <node3> -state offline`
 
 +
 如果節點3上有任何磁碟區離線、您必須將其上線、每個磁碟區一次：
 
 +
-「Volume online -vserver _vserver-name_-volume _volume名稱_」
+`volume online -vserver <Vserver-name> -volume <volume-name>`
 
 . 確認 node2 沒有任何線上非根集合體：
 +
-「torage Aggregate show -Owner-name _node2_-ha-policy SFO -state online」
+`storage aggregate show -owner-name <node2> -ha-policy sfo -state online`
 
 +
 命令輸出不應顯示線上非根Aggregate、因為所有非根線上Aggregate都已重新部署至節點3。
