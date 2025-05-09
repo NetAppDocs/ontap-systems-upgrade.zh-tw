@@ -36,7 +36,9 @@ summary: 瞭解您是否可以使用 ARL 、保留舊的系統機箱和磁碟來
 
 == 切換附加叢集
 
-如果您要在連接至叢集交換器的叢集中升級節點、則必須確認交換器上執行的 make 、 model 、韌體版本、 RCF 和 ONTAP 版本、與升級後在替換控制器上執行的版本相同。如有必要、您必須先執行交換器升級、然後才能使用本文件所述的 ARL 程序升級控制器。
+如果您要在連接至叢集交換器的叢集中升級節點、則必須確認交換器上執行的 make 、 model 、韌體版本、 RCF 和 ONTAP 版本、與升級後在替換控制器上執行的版本相同。如有必要，您必須先執行交換器升級，才能使用 ARL 升級控制器。
+
+如需更多資訊、請參閱 link:upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster["連線至交換器連接的叢集"]。
 
 
 

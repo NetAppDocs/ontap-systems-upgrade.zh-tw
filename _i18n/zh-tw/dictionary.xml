@@ -4216,7 +4216,6 @@
   <block id="95144cfdd742178c38add09e40185465" category="paragraph">若要瞭解是否可以使用 Aggregate 重定位（ ARL ）、請保留舊的系統機箱和磁碟、這取決於系統升級組態和 ONTAP 版本。</block>
   <block id="af8278e543c162c1ee0f858b0715d01e" category="paragraph">某些系統組態支援控制器升級。若要檢視支援的系統和最低 ONTAP 版本清單、請參閱 <block ref="8294b96e46ba28730c909aaac28da089" category="inline-link-macro-rx"></block>。</block>
   <block id="5b29cd0b8848fbfc7c43edd22b16cf04" category="section-title">切換附加叢集</block>
-  <block id="4f071a09d7910b1c963c0cf11fa85985" category="paragraph">如果您要在連接至叢集交換器的叢集中升級節點、則必須確認交換器上執行的 make 、 model 、韌體版本、 RCF 和 ONTAP 版本、與升級後在替換控制器上執行的版本相同。如有必要、您必須先執行交換器升級、然後才能使用本文件所述的 ARL 程序升級控制器。</block>
   <block id="38622c9aae2baa5dfb1bdeeb2c31c5a3" category="summary">使用 ARL 將同一機箱中的控制器機型升級時、請確認節點 1 上的 node2 NAS 資料生命體已從 node1 重新定位至 node2 。</block>
   <block id="25c0a64ebb3d4dec1d638d209b3b73a2" category="paragraph">執行這些檢查之後、系統會將非根集合體和 NAS 資料的生命體重新定位回節點 2 、而節點 2 目前正在替換控制器上執行。</block>
   <block id="038a1f98f287c3e58631ad2264c784b5" category="summary">在同一機箱中升級控制器機型的 ARL 期間、在 node2 上安裝替換系統模組。</block>
@@ -5106,7 +5105,6 @@
   <block id="cdce5e983821273e4c7e3414b8097d4e" category="cell">3A ， 3b</block>
   <block id="a789c48b3b7fe1b603ce142ae362e5ae" category="paragraph">對於交換器連接的叢集，請檢查您是否符合 AFF A30 ， AFF A50 ， AFF A70 ， AFF A90 ， AFF C30 ， AFF C60 或 AFF C80 （更換）節點的下列需求：</block>
   <block id="403ccec6840b96b7b18ce39b52e40ae4" category="list-text">更換節點上相同的叢集連接埠位於同一台交換器上。例如、升級完成後、節點 1 上的 e1a 和節點 2 上的 e1a 應連接至一個叢集交換器。同樣地、兩個節點的第二個叢集連接埠也應連接至第二個叢集交換器。共享叢集 HA 連接埠的交叉連線，其中 node1 的 e1a 連接到 SwitchA ， node2 的 e1a 連接到 SwitchB ，導致 HA 通訊失敗。</block>
-  <block id="b5bcf41de93d90fbeb1ad872fa73f5f9" category="list-text">替換節點使用共享的叢集 HA 乙太網路連接埠。驗證叢集交換器是否安裝有支援共用叢集 HA 連接埠的參考組態檔案（ RCF ）。</block>
   <block id="1cc3f304d5e589c069f5fc5ecdc865d1" category="section-title">支援 ARL 升級</block>
   <block id="26c0488d57efd7721cdf50179d2776e0" category="list-text">您的控制器升級列於<block ref="8badcb7c18eeb5ec98f79dc01581f13d" category="inline-link-macro-rx"></block>中。</block>
   <block id="4e793111a4193c7c02d75b240754c4f7" category="list-text">您已向 NetApp 銷售代表確認您已收到控制器升級所需的硬體：</block>
@@ -5353,4 +5351,27 @@
   <block id="c8adb5c5421d34e18d5b9558706c9208" category="list-text">[[reassign-node1-node3-app-step1]] 進入開機功能表，並使用 22/7 選擇隱藏選項<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。</block>
   <block id="4ac432efd1d6ca8f4e73f5783d4f90e6" category="paragraph">如果您要升級至 AFF A800 系統，請前往<block ref="4f039e99f80cf2a7b8236bb5590e739b" category="inline-link-macro-rx"></block>。</block>
   <block id="8f9ee542e52933f0e31b07c6ca5316b2" category="list-text">[[step14]] 執行將節點開機至開機功能表<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>。如果您要升級至 AFF A800 系統，請前往<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>。</block>
+  <block id="007afae70e6899ccd5a02bd1b8e30413" category="list-text">替換節點使用共享的叢集 HA 乙太網路連接埠。</block>
+  <block id="96a4f5b30dbe8d55de9aa12c4b2e6602" category="list-text">驗證叢集交換器是否安裝有支援共用叢集 HA 連接埠的參考組態檔案（ RCF ）：</block>
+  <block id="1ef8dca5df94c49347909211a3845f3f" category="list-text">移除交換器上現有的組態：</block>
+  <block id="ec959032169391b64e7918c7b1c9a04b" category="cell">如果您的交換器機型是 ...</block>
+  <block id="ec434af0a2786fa23b468584c5622fe1" category="cell">前往...</block>
+  <block id="48def1be7a1b40b720ff1892a761e8c8" category="cell">Cisco Nexus</block>
+  <block id="ce8d24a452c1c94c4680d7ce098325a9" category="inline-link-macro">如何在保留遠端連線的同時清除 Cisco 互連交換器上的組態</block>
+  <block id="f79602808677d4d116b317e4c44a8ee5" category="cell">知識庫文章<block ref="862bab57a4acfb616afcae48c16f2cfe" category="inline-link-macro-rx"></block></block>
+  <block id="4dd13a124f96d89e0fd6c36f6d82e131" category="cell">Broadcom Bes - 53248</block>
+  <block id="3a6a9877fc8c73a9267914b786517ca9" category="inline-link-macro">如何清除 Broadcom 互連交換器上的組態、同時保持遠端連線</block>
+  <block id="363e3bb9e22f2f2472a215233919dbf7" category="cell">知識庫文章<block ref="4eb512d9e9a489effcea6ab616ebb791" category="inline-link-macro-rx"></block></block>
+  <block id="b0a38d8703521c30e6e97aed4cde98e8" category="list-text">設定並驗證交換器設定：</block>
+  <block id="5aec304982416461faa5bf9b3a0b2cf3" category="cell">Cisco Nexus 9336C-FX2</block>
+  <block id="b0411eb90c7d5ca211940fcb5d8f219a" category="inline-link-macro">升級參考組態檔案（ RCF ）</block>
+  <block id="0b62f732d6ce50a66f369a7af44d4f34" category="cell"><block ref="0b62f732d6ce50a66f369a7af44d4f34" category="inline-link-macro-rx"></block></block>
+  <block id="f14d39745f2925af01d4497aa53d6677" category="inline-link-macro">升級參考組態檔案（ RCF ）</block>
+  <block id="1223d69b197fdd4739792e2757e36426" category="cell"><block ref="1223d69b197fdd4739792e2757e36426" category="inline-link-macro-rx"></block></block>
+  <block id="94f92369bb57ec3cd50af356ac87615d" category="cell">NVIDIA SN2100</block>
+  <block id="ec65012ad6ac37ed9d5b425acfa4cdea" category="inline-link-macro">安裝或升級參考組態檔案（ RCF ）指令碼</block>
+  <block id="c18748e2481d76fb9941a180443193c9" category="cell"><block ref="c18748e2481d76fb9941a180443193c9" category="inline-link-macro-rx"></block></block>
+  <block id="4cd0d55ba9459c2dab2de91b9c03814c" category="paragraph">如果您要升級雙節點無交換式叢集中的節點、則可在執行升級時、將節點留在無交換器叢集中。您不需要將它們轉換成交換式叢集。</block>
+  <block id="8582dce1fa70b49f5e69ba957a35fc82" category="paragraph">如果您要在連接至叢集交換器的叢集中升級節點、則必須確認交換器上執行的 make 、 model 、韌體版本、 RCF 和 ONTAP 版本、與升級後在替換控制器上執行的版本相同。如有必要，您必須先執行交換器升級，才能使用 ARL 升級控制器。</block>
+  <block id="c508e07c7b7e3a7f9abffdab705049ba" category="paragraph">如需更多資訊、請參閱 <block ref="896b35cb78c99b0406f2809b80c7854f" category="inline-link-macro-rx"></block>。</block>
 </blocks>
