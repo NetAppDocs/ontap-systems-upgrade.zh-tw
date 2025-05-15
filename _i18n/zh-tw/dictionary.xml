@@ -5223,8 +5223,6 @@
   <block id="3ce524daf7c7a462720f07ffe80b1e82" category="list-text">在您開始程序並升級第一個節點之後，無法取消或退出控制器升級。</block>
   <block id="ce8932055faee80499a682eed0006014" category="list-text">您正在執行 ONTAP 9.15.1 或更新版本。</block>
   <block id="6c95aebccb5899bde2beeb8d5d4de872" category="list-text">您不想將新控制器新增為叢集的新 HA 配對，並使用 Volume Move 程序移轉資料。</block>
-  <block id="7f05849af35fe562fdc67050fdcd14e0" category="list-text">如果您要升級至內建磁碟機的 AFF A20 ， AFF A70 或 AFF A90 ，則必須先移除這些內建磁碟機的擁有權，才能升級。完成升級後，您可以將內部磁碟機指派給 AFF A20 ， AFF A70 或 AFF A90 節點，並使用它們來建立資料集合體。您不需要將根或資料集合體移轉至內部磁碟機。</block>
-  <block id="2ee4c5e5378d113fa5c2a1b5e73082ed" category="list-text">如果您升級至不含內部磁碟機的 AFF A20 ， AFF A70 或 AFF A90 ，則在完成升級後不需要指派內部磁碟機。</block>
   <block id="ea168cafe9d6c1f639359b30e7152b3d" category="list-text">您正在使用外部陣列來升級 V 系列系統或 FlexArray 虛擬化儲存系統，以用於後端儲存設備。如需升級 V 系列或 FlexArray 系統的選項、請聯絡技術支援部門。</block>
   <block id="3f0336dfa0e5a25ff8e8c549a2b18cef" category="list-text">您正在升級 MetroCluster FC 或 IP 組態。若要升級 MetroCluster 組態、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 連結至 MetroCluster 升級與擴充說明文件 _ 。</block>
   <block id="ebf1d57729bed03eb5fd256caca2fe3f" category="sidebar">更換 AFF A800 或 AFF C800</block>
@@ -5373,5 +5371,7 @@
   <block id="c18748e2481d76fb9941a180443193c9" category="cell"><block ref="c18748e2481d76fb9941a180443193c9" category="inline-link-macro-rx"></block></block>
   <block id="4cd0d55ba9459c2dab2de91b9c03814c" category="paragraph">如果您要升級雙節點無交換式叢集中的節點、則可在執行升級時、將節點留在無交換器叢集中。您不需要將它們轉換成交換式叢集。</block>
   <block id="8582dce1fa70b49f5e69ba957a35fc82" category="paragraph">如果您要在連接至叢集交換器的叢集中升級節點、則必須確認交換器上執行的 make 、 model 、韌體版本、 RCF 和 ONTAP 版本、與升級後在替換控制器上執行的版本相同。如有必要，您必須先執行交換器升級，才能使用 ARL 升級控制器。</block>
-  <block id="c508e07c7b7e3a7f9abffdab705049ba" category="paragraph">如需更多資訊、請參閱 <block ref="896b35cb78c99b0406f2809b80c7854f" category="inline-link-macro-rx"></block>。</block>
+  <block id="2f89251c5a06d3bb8bdca830855eca15" category="paragraph">如需更多資訊、請參閱 <block ref="e5c6d05601e4c63290544337ac7eb325" category="inline-link-macro-rx"></block>。</block>
+  <block id="8bb38dc1d7700b6a074ec367f4dc7c3c" category="list-text">如果您要升級至內建磁碟機的 AFF A20 ， AFF A50 ， AFF A70 或 AFF A90 ，則必須先移除這些內建磁碟機的擁有權，才能進行升級。完成升級後，您可以將內部磁碟機指派給 AFF A20 ， AFF A50 ， AFF A70 或 AFF A90 節點，並使用它們來建立資料集合體。您不需要將根或資料集合體移轉至內部磁碟機。</block>
+  <block id="04c6529852defdb9c41c0abd42af4189" category="list-text">如果您要升級至不含內部磁碟機的 AFF A20 ， AFF A50 ， AFF A70 或 AFF A90 ，則在完成升級後不需要指派內部磁碟機。</block>
 </blocks>
