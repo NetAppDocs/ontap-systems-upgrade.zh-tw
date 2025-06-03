@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/decide_to_use_the_aggregate_relocation_guide.html
 keywords: aggregate relocation, decide to use, upgrade, model, matrix, replacement, controller 
 summary: 使用ONTAP 「系統控制器更換」命令、決定是否使用ARL來升級執行《SES9.5 to 9.7》的控制器。 
 ---
-= 決定是否使用Aggregate重新配置程序
+= 決定是否使用此聚合遷移程序
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,20 +14,32 @@ summary: 使用ONTAP 「系統控制器更換」命令、決定是否使用ARL�
 
 
 [role="lead"]
-本內容說明如何升級HA配對中的儲存控制器與新的控制器、同時保留所有現有的資料和磁碟。這是一個複雜的程序、只能由經驗豐富的系統管理員使用。
+升級控制器硬體有多種聚合重定位 (ARL) 方法。此流程說明如何在執行 ONTAP 9.7、9.6 或 9.5 的系統上使用「系統控制器取代指令」透過 ARL 升級控制器硬體。只有經驗豐富的 ONTAP 管理員才應使用此複雜程序。
 
-在下列情況下使用此內容：
+為了幫助您確定此 ARL 程式是否適合您的控制器硬體升級，您應該檢查以下所有情況以了解支援的升級：
 
 * 您正在升級執行ONTAP S69.5、9.6或9.7的NetApp控制器。本文件不適用於ONTAP 升級至更新至更新版本。
-* 您不想將新的控制器新增為叢集的新HA配對、也不想使用Volume Moves來移轉資料。
+* 您不想將新的控制器新增為叢集的新 HA 配對，並使用 Volume Moves 移轉資料。
 * 您在管理ONTAP 方面經驗豐富、而且對於在診斷權限模式下工作的風險感到自在。
+* 您的硬體升級組合列在<<sys_commands_95_97_supported_systems,支援模型矩陣>> 。
 * 如果您要升級MetroCluster 的是一個版本為4節點或更高的FC組態、而且所有節點都執行ONTAP 的是版本號為32的9.6或9.7。
 
 
+[NOTE]
+====
+* 如果您透過在同一機箱中交換控制器模組（例如 AFF A800 或 AFF C800）來升級系統，NetApp 強烈建議使用升級程序link:../upgrade-arl-auto-affa900/index.html["使用 ARL 升級控制器模型，保留現有的系統機殼和磁碟"] 。此 ARL 流程包括在升級過程中移除和安裝控制器時確保內部磁碟在機箱中保持安全的步驟。
++
+link:../upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis["了解使用 ARL 支援的系統升級組合，保留現有系統機箱和磁碟"]。
 
-NOTE: 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume加密（NVE）和NetApp Aggregate加密（NAE）。
+* 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume加密（NVE）和NetApp Aggregate加密（NAE）。
 
-[sys_commands_95_97_supported_Systems]下表顯示控制器升級支援的機型對照表。
+
+====
+
+
+== 支援的系統升級組合
+
+下表顯示了使用此 ARL 程式進行控制器升級所支援的型號矩陣。
 
 [cols="50,50"]
 |===
@@ -63,7 +75,13 @@ NOTE: 如果您的控制器升級模式組合不在上表中、請聯絡技術�
 * 使用暫用叢集連接埠完成控制器升級之後、您可以不中斷營運地將叢集LIF移轉至e3a和e3b、AFF 將100GbE連接埠移轉至ESIA400系統、以及將FAS8300系統上的e0c和e0d、100GbE連接埠。
 
 
-如果您偏好其他方法來升級控制器硬體、並願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+
+
+== 選擇不同的硬體升級程序
+
+* link:../upgrade-arl/index.html["查看可用於升級控制器硬體的替代 ARL 方法"]。
+* 如果您偏好其他方法來升級控制器硬體、並願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+
 
 .相關資訊
-請參閱 link:other_references.html["參考資料"] 連結至_SURF9 ONTAP 文件中心_、您可在此存取ONTAP VMware產品文件。
+參考link:other_references.html["參考資料"]連結到_ONTAP 9 文件_。

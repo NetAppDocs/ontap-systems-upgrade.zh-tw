@@ -2,23 +2,21 @@
 section: upgrade-arl-auto-app-9151
 title: 使用「系統控制器更換」命令來升級 ONTAP 9.15.1 及更新版本中引進的控制器硬體
 entries:
-- title: 總覽
+- title: 了解此 ARL 程序
   url: "/upgrade-arl-auto-app-9151/index.html"
 - title: 自動化控制器升級程序
   url: "/upgrade-arl-auto-app-9151/automate_the_controller_upgrade_process.html"
-- title: 決定是否使用Aggregate重新配置內容
+- title: 決定是否使用此 ARL 程序
   url: "/upgrade-arl-auto-app-9151/decide_to_use_the_aggregate_relocation_guide.html"
 - title: 必要的工具與文件
   url: "/upgrade-arl-auto-app-9151/required_tools_and_documentation.html"
 - title: 使用ARL升級控制器的準則
   url: "/upgrade-arl-auto-app-9151/guidelines_for_upgrading_controllers_with_arl.html"
-- title: ARL升級總覽
+- title: 了解 ARL 升級順序
   url: "/upgrade-arl-auto-app-9151/overview_of_the_arl_upgrade.html"
 - title: 第1階段：準備升級
   pdf-filename: 第 1 階段：準備升級（在 ONTAP 9.15.1 或更新版本中使用「系統控制器更換」進行升級）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-app-9151/stage_1_index.html"
   - title: 準備節點以進行升級
     url: "/upgrade-arl-auto-app-9151/prepare_nodes_for_upgrade.html"
   - title: 使用 Onboard Key Manager 管理儲存加密
@@ -26,8 +24,6 @@ entries:
 - title: 第2階段：重新部署和淘汰節點1
   pdf-filename: 第 2 階段：重新定位和淘汰 node1 （在 ONTAP 9.15.1 或更新版本中使用「系統控制器更換」進行升級）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-app-9151/stage_2_index.html"
   - title: 將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2
     url: "/upgrade-arl-auto-app-9151/relocate_non_root_aggr_nas_data_lifs_node1_node2.html"
   - title: 重新部署故障或被否決的集合體
@@ -39,8 +35,6 @@ entries:
 - title: 階段3.安裝及開機節點3
   pdf-filename: 第 3 階段：安裝並開機 node3 （在 ONTAP 9.15.1 或更新版本中以「系統控制器更換」進行升級）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-app-9151/stage_3_index.html"
   - title: 安裝及開機節點3
     url: "/upgrade-arl-auto-app-9151/install_boot_node3.html"
   - title: 驗證node3安裝
@@ -52,8 +46,6 @@ entries:
 - title: 第4階段：重新部署和淘汰節點2
   pdf-filename: 第 4 階段：重新定位和淘汰 node2 （在 ONTAP 9.15.1 或更新版本中以「系統控制器更換」進行升級）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-app-9151/stage_4_index.html"
   - title: 將非根Aggregate和NAS資料LIF從節點2重新定位至節點3
     url: "/upgrade-arl-auto-app-9151/relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html"
   - title: 淘汰節點2
@@ -61,8 +53,6 @@ entries:
 - title: 階段5.安裝及開機節點4
   pdf-filename: 第 5 階段：安裝並開機 node4 （在 ONTAP 9.15.1 或更新版本中以「系統控制器更換」進行升級）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-app-9151/stage_5_index.html"
   - title: 安裝及開機節點4
     url: "/upgrade-arl-auto-app-9151/install_boot_node4.html"
   - title: 驗證node4安裝
@@ -74,8 +64,6 @@ entries:
 - title: 階段6.完成升級
   pdf-filename: 第 6 階段：完成升級（在 ONTAP 9.15.1 或更新版本中使用「系統控制器更換」進行升級）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-app-9151/stage_6_index.html"
   - title: 使用KMIP伺服器管理驗證
     url: "/upgrade-arl-auto-app-9151/manage-authentication-using-kmip-servers.html"
   - title: 確認新的控制器已正確設定
@@ -91,8 +79,6 @@ entries:
 - title: 疑難排解
   pdf-filename: 疑難排解（在 ONTAP 9.15.1 或更新版本中使用「系統控制器更換」進行升級）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-app-9151/troubleshoot_index.html"
   - title: Aggregate重新配置失敗
     url: "/upgrade-arl-auto-app-9151/aggregate_relocation_failures.html"
   - title: 重新開機、出現問題或重新開機

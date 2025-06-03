@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: complete, procedure, upgrading, upgrade, move, moving, volume, configure, service, processor, sp, license, autosupport, storage, encryption, fc, nca, port, complete the upgrade 
 summary: 若要透過移動磁碟區來完成升級程序、您需要設定服務處理器（SP）、安裝新授權、以及設定AutoSupport 更新。您可能還需要設定儲存設備或Volume Encryption、並設定FC或NCA連接埠。 
 ---
-= 完成升級
+= 完成移動卷升級
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -38,7 +38,7 @@ summary: 若要透過移動磁碟區來完成升級程序、您需要設定服�
 ** 「還原外部金鑰管理加密金鑰」
 
 
-. 如果新節點具有FC連接埠（內建或FC介面卡）、內建CNA連接埠或CNA卡、請在儲存系統提示字元中輸入下列命令：
+. 如果新節點具有 FC 連接埠（板載或 FC 適配器上）、板載 CNA 連接埠或 CNA 卡，請透過在儲存系統提示字元下輸入下列命令來設定 FC 或 CNA 連接埠：
 +
 「系統節點硬體統一連線修改節點節點名稱介面卡名稱模式｛fc/cna｝-type｛target | initiator｝」
 

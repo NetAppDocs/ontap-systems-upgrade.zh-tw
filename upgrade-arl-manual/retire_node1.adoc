@@ -89,7 +89,7 @@ WARNING: 如果不停用儲存容錯移轉、可能會發生控制器升級失�
 「網路介面show -role data -curr-node-node2_-home-node1_」
 
 +
-查看「*狀態管理/每*」欄、查看是否有任何生命期中斷。如果有任何生命中斷、請參閱 link:troubleshoot_index.html["故障"] 區段。
+查看「*狀態管理/每*」欄、查看是否有任何生命期中斷。如果任何 LIF 故障，請諮詢link:aggregate_relocation_failures.html["故障"]部分。
 
 . 請採取下列其中一項行動：
 +
@@ -134,7 +134,7 @@ High Availability Configured: false
 ====
 如果您有四節點叢集、則epsilon可能位於叢集中不同HA配對的節點上。
 
-如果您要升級具有多個HA配對的叢集中的HA配對、則必須將epsilon移至未進行控制器升級的HA配對節點。例如、如果您要升級叢集中的節點A/nodeB、並使用HA配對組態節點A/nodeB和節點C/noded、則必須將epsilon移至節點C或noded。
+如果要升級具有多個 HA 對的叢集中的 HA 對，則必須將 epsilon 移至未進行控制器升級的 HA 對的節點。例如、如果您要升級叢集中的節點A/nodeB、並使用HA配對組態節點A/nodeB和節點C/noded、則必須將epsilon移至節點C或noded。
 
 ====
 +

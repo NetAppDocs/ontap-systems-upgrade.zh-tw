@@ -21,21 +21,16 @@ summary: 一般而言、控制器硬體的升級方式取決於原始節點的�
 
 * FAS2620 、 FAS2650 、 FAS2720 和 FAS2750
 * AFF A150 、 AFF A200 、 AFF A220 、 AFF A250 、 AFF A700s 、 和 AFF A800
-+
-
-NOTE: 您也可以使用 Aggregate 重定位將 AFF A800 升級至 AFF A70 或 AFF A90 。link:upgrade-arl-auto-affa900/index.html["深入瞭解"]。
-
 * AFF C190 、 AFF C250 和 AFF C800
-+
-
-NOTE: 您也可以使用 Aggregate 重新定位來升級 AFF A250 和 AFF C250 。link:upgrade-arl-auto-affa900/index.html["深入瞭解"]。
-
 * ASA A150 、 ASA A250 、 ASA A800 和 ASA AFF A220
 +
 
 NOTE: 不支援 ASA 升級至 ASA R2 更換系統。如需將資料從 ASA 移轉至 ASA R2 系統的相關資訊，請參閱link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["啟用從 SAN 主機到 ASA R2 儲存系統的資料存取"^]。
 
 
+
+
+NOTE: 對於某些控制器升級，您可以使用聚合重定位來升級具有內部磁碟機的系統。link:upgrade-arl/index.html["深入瞭解"]。
 
 如果您的系統未列出、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^] 檢查是否有內部磁碟機。
 

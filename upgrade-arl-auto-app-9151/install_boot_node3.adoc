@@ -375,7 +375,7 @@ Login:
 
 NOTE: 在上述主控台輸出範例中、ONTAP 如果系統使用進階磁碟分割（ADP）磁碟、則會提示您輸入合作夥伴節點名稱。
 
-. 如果系統進入重新開機迴圈並顯示訊息、表示磁碟重新 `no disks found`指派有問題。請參閱 link:troubleshoot_index.html["疑難排解"] 以解決此問題。
+. 如果系統進入重新開機迴圈並顯示訊息、表示磁碟重新 `no disks found`指派有問題。請參閱 link:aggregate_relocation_failures.html["疑難排解"] 以解決此問題。
 . 在自動開機期間按下 `Ctrl-C` 、即可在提示時停止節點 `LOADER>` 。
 . 在載入程式提示下、進入維護模式：
 +

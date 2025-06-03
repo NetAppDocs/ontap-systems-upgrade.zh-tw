@@ -5,16 +5,18 @@
 您必須在機架中安裝node4、將node2連線傳輸至node4和開機node4。您也必須重新指派任何節點2備援磁碟、屬於根的任何磁碟、以及先前未重新部署至節點3的任何非根Aggregate。
 
 .關於這項工作
-如果netboot node4的ONTAP 版本與node2上安裝的版本不相同、則必須使用netboot node4。安裝node4之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點4。接著、您可以依照中的指示、將正確的檔案下載到開機媒體裝置、以供後續系統開機 link:prepare_for_netboot.html["準備netboot"]
+如果節點 4 上安裝的 ONTAP 9 版本與節點 2 上安裝的 ONTAP 9 版本不同，則必須安裝node4之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點3。透過網路啟動節點 4。然後，您可以按照link:prepare_for_netboot.html["準備netboot"] 。
 
-但是、如果 netboot node4 的 ONTAP 9 版本與 node2 上安裝的版本相同或更新、則不需要使用 netboot node4 。
+但是，如果 node4 上安裝的 ONTAP 9 與 node2 上安裝的相同或更高版本，則無需透過網路啟動 node4。
 
-*重要資訊：*
+[IMPORTANT]
+====
+* 對於 AFF A800 或 AFF C800 控制器升級，在移除節點 2 之前，必須確保機殼內的所有磁碟機都牢固地固定在中板上。如需更多資訊、請參閱 link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["更換 AFF A800 或 AFF C800 控制器模組"]。
+* 如果您要升級 V 系列系統或連接到儲存陣列的具有 FlexArray 虛擬化軟體的系統，則需要完成<<man_install4_Step1,步驟1.>>透過<<man_install4_Step7,步驟7.>> ，請將此部分保留在<<man_install4_Step8,步驟8.>>並按照link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"]根據需要，在維護模式下輸入命令。然後，您必須返回本節並繼續執行<<man_install4_Step9,步驟9.>> 。
+* 如果您要升級具有儲存磁碟的系統，則必須完成整個部分，然後繼續執行下一節link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"] ，在群集提示符下輸入命令。
 
-* 如果您要升級的是連接FlexArray 至儲存陣列的V系列系統或使用「支援虛擬化軟體」的系統、則必須完成 <<man_install4_Step1,步驟1.>> 透過 <<man_install4_Step7,步驟7.>>請將本節保留在 <<man_install4_Step8,步驟8.>> 並遵循中的指示 link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"] 視需要在維護模式中輸入命令。接著您必須返回本節、並繼續執行中的程序 <<man_install4_Step9,步驟9.>>。
-* 但是、如果您要升級具有儲存磁碟的系統、則必須完成本節的完整內容、然後繼續執行本節 link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"]，在叢集提示字元中輸入命令。
 
-
+====
 .步驟
 . [[man_install4_Step1]]請採取下列其中一項行動：
 +

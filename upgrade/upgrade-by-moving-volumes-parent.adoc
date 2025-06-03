@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: upgrade by moving volumes 
 summary: 如果您要透過移動磁碟區來升級、請準備原始節點、並將新節點加入叢集。您可以將磁碟區移至新節點、設定lifs、以及從叢集取消連接原始節點。透過移動磁碟區進行升級是不中斷營運的程序。 
 ---
-= 工作流程
+= 透過行動卷工作流程進行升級
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

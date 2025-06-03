@@ -16,7 +16,7 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、您必須在交
 [role="lead"]
 交換對應的替換系統模組之後、您必須使用 netboot node1 。「netboot」一詞表示您是從ONTAP 儲存在遠端伺服器上的鏡像進行開機。準備 netboot 時、您可以將 ONTAP 9 開機映像的複本新增到系統可以存取的 Web 伺服器上。
 
-除非安裝在機箱中並已開啟電源、否則無法檢查更換控制器模組的開機媒體上所安裝的 ONTAP 版本。替換系統開機媒體上的 ONTAP 版本必須與您要升級的舊系統上執行的 ONTAP 版本相同、而且開機媒體上的主要開機映像和備份開機映像都必須相符。若要驗證您的升級所支援的最低 ONTAP 版本，請參閱 link:index.html["總覽"]。
+除非將替換控制器模組安裝在機箱中並開啟電源，否則無法檢查其啟動媒體上安裝的 ONTAP 版本。替換系統開機媒體上的 ONTAP 版本必須與您要升級的舊系統上執行的 ONTAP 版本相同、而且開機媒體上的主要開機映像和備份開機映像都必須相符。若要驗證升級所需的最低 ONTAP 版本，請參閱link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems,["支援的系統升級組合"] 。
 
 您可以先執行網路開機、然後再執行、來設定映像 `wipeconfig` 開機功能表中的命令。如果控制器模組先前曾用於其他叢集、則為 `wipeconfig` 命令會清除開機媒體上的任何剩餘組態。
 
@@ -147,8 +147,27 @@ The node must be rebooted to start using the newly installed software. Do you wa
 
 
 
-. 出現提示時、請執行「wecponfig」命令、清除開機媒體上任何先前的組態：
+. 清除啟動媒體上的所有先前配置。
 +
+.. 在以下提示符號下，執行 `wipeconfig`命令，然後按回車鍵：
++
+[listing]
+----
+Please choose one of the following:
+
+(1)  Normal Boot.
+(2)  Boot without /etc/rc.
+(3)  Change password.
+(4)  Clean configuration and initialize all disks.
+(5)  Maintenance mode boot.
+(6)  Update flash from backup config.
+(7)  Install new software first.
+(8)  Reboot node.
+(9)  Configure Advanced Drive Partitioning.
+(10) Set Onboard Key Manager recovery secrets.
+(11) Configure node for external key management.
+Selection (1-11)? wipeconfig
+----
 .. 當您看到以下訊息時、請回答「是」：
 +
 [listing]
@@ -158,6 +177,10 @@ Warning: do not run this option on a HA node that has been taken over.
 Are you sure you want to continue?:
 ----
 .. 節點會重新開機以完成「wecpionfig」、然後在開機功能表停止。
++
+
+NOTE: 等待節點完成啟動選單後停止 `wipeconfig`手術。
+
 
 
 . 從開機功能表中選取「5」選項以進入維護模式。對提示回答「yes」、直到節點在維護模式和命令提示字元「*>」停止為止。

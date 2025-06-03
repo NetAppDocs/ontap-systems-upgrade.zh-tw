@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto/overview_of_the_arl_upgrade.html
 keywords: aggregate relocation, upgrade, process, overview, stages 
 summary: 瞭解ONTAP 如何使用「系統控制器更換」命令、將執行《SES9.5》的控制器升級至9.7。 
 ---
-= ARL升級總覽
+= 了解 ARL 升級順序
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -37,7 +37,7 @@ summary: 瞭解ONTAP 如何使用「系統控制器更換」命令、將執行�
 | 階段 | 步驟 
 
 
-| link:stage_1_index.html["第1階段：準備升級"]  a| 
+| link:prepare_nodes_for_upgrade.html["第1階段：準備升級"]  a| 
 在第1階段期間、您會執行預先檢查、並視需要修正Aggregate所有權。如果您使用 Onboard Key Manager 來管理儲存加密、則必須記錄特定資訊、而且您可以選擇靜止 SnapMirror 關係。
 
 第1階段結束時的Aggregate所有權：
@@ -48,7 +48,7 @@ summary: 瞭解ONTAP 如何使用「系統控制器更換」命令、將執行�
 
 
 
-| link:stage_2_index.html["第2階段：重新部署和淘汰節點1"]  a| 
+| link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["第2階段：重新部署和淘汰節點1"]  a| 
 在第2階段期間、您會將節點1非根Aggregate和NAS資料lifs重新部署至節點2。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。如果需要、您可以重新部署故障或被否決的集合體。您必須記錄必要的node1資訊、以便稍後在程序中使用、然後淘汰node1。您也可以在程序稍後的步驟中準備netboot node3和node4。
 
 第2階段結束時的Aggregate所有權：
@@ -59,7 +59,7 @@ summary: 瞭解ONTAP 如何使用「系統控制器更換」命令、將執行�
 
 
 
-| link:stage_3_index.html["階段3.安裝及開機節點3"]  a| 
+| link:install_boot_node3.html["階段3.安裝及開機節點3"]  a| 
 在第 3 階段中，您將安裝並開機 node3 ，將叢集和節點管理連接埠從 node1 對應至 node3 ，將 node1 磁碟重新指派至 node3 ，並驗證 node3 安裝。如果需要、您可以在節點3上設定FC或UTA/UTA2組態、並確認節點3已加入仲裁。您也可以將節點1 NAS資料lifs和非根Aggregate從節點2重新部署到節點3、並確認節點3上存在SAN lifs。
 
 第3階段結束時的Aggregate所有權：
@@ -70,7 +70,7 @@ summary: 瞭解ONTAP 如何使用「系統控制器更換」命令、將執行�
 
 
 
-| link:stage_4_index.html["第4階段：重新部署和淘汰節點2"]  a| 
+| link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["第4階段：重新部署和淘汰節點2"]  a| 
 在第4階段期間、您將節點2非根集合體和非SAN資料生命週期重新部署到節點3。您也可以記錄必要的node2資訊、然後淘汰node2。
 
 第4階段結束時的Aggregate所有權：
@@ -82,7 +82,7 @@ summary: 瞭解ONTAP 如何使用「系統控制器更換」命令、將執行�
 
 
 
-| link:stage_5_index.html["階段5.安裝及開機節點4"]  a| 
+| link:install_boot_node4.html["階段5.安裝及開機節點4"]  a| 
 在第 5 階段中，您將安裝並開機 node4 ，將叢集和節點管理連接埠從 node2 對應至 node4 ，將 node2 磁碟重新指派至 node4 ，並驗證 node4 安裝。如果需要、您可以在節點4上設定FC或UTA/UTA2組態、並確認節點4已加入仲裁。您也可以將node2 NAS資料lifs和非根Aggregate從node3重新部署到node4、並驗證節點4上是否存在SAN lifs。
 
 第5階段結束時的Aggregate所有權：
@@ -93,7 +93,7 @@ summary: 瞭解ONTAP 如何使用「系統控制器更換」命令、將執行�
 
 
 
-| link:stage_6_index.html["階段6.完成升級"]  a| 
+| link:manage-authentication-using-kmip-servers.html["階段6.完成升級"]  a| 
 在第6階段期間、您將確認新節點已正確設定、如果新節點已啟用加密、則您可以設定及設定儲存加密或NetApp Volume Encryption。您也應該取消委任舊節點、然後恢復SnapMirror作業。
 
 |===

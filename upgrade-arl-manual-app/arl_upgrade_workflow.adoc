@@ -41,7 +41,7 @@ image:arl_upgrade_manual_image1.PNG["顯示ARL程序各階段的圖例"]
 | 階段 | 步驟 
 
 
-| link:stage_1_index.html["階段1：準備升級"]  a| 
+| link:determine_aggregates_on_internal_drives.html["階段1：準備升級"]  a| 
 在第1階段期間、如果需要、您可以確認內部磁碟機不包含根集合體或資料集合體、準備節點進行升級、並執行一系列預先檢查。如有必要、您可以重新輸入磁碟以進行儲存加密、並準備以網路方式開機新的控制器。
 
 第1階段結束時的Aggregate所有權：
@@ -52,7 +52,7 @@ image:arl_upgrade_manual_image1.PNG["顯示ARL程序各階段的圖例"]
 
 
 
-| link:stage_2_index.html["階段2：淘汰節點1"]  a| 
+| link:relocate_non_root_aggr_node1_node2.html["階段2：淘汰節點1"]  a| 
 在第2階段期間、您會將非根Aggregate從節點1重新部署至節點2、並將節點1擁有的非SAN資料lifs移至節點2、包括故障或遭否決的Aggregate。您也可以記錄必要的node1資訊、以便稍後在程序中使用、並淘汰node1。
 
 第2階段結束時的Aggregate所有權：
@@ -64,7 +64,7 @@ image:arl_upgrade_manual_image1.PNG["顯示ARL程序各階段的圖例"]
 
 
 
-| link:stage_3_index.html["階段3：安裝和開機節點3"]  a| 
+| link:install_boot_node3.html["階段3：安裝和開機節點3"]  a| 
 在第3階段期間、您可以安裝並開機node3、將叢集和節點管理連接埠從node1對應至node3、並將屬於node1的資料l生命 期和SAN生命期從node2移至node3。您也可以將節點2上的所有集合體重新定位到節點3、然後將節點2擁有的資料生命體和SAN生命體移到節點3。
 
 第3階段結束時的Aggregate所有權：
@@ -76,12 +76,12 @@ image:arl_upgrade_manual_image1.PNG["顯示ARL程序各階段的圖例"]
 
 
 
-| link:stage_4_index.html["第4階段：淘汰節點2"]  a| 
+| link:record_node2_information.html["第4階段：淘汰節點2"]  a| 
 在第4階段期間、您會記錄必要的node2資訊、以便稍後在程序中使用、然後淘汰node2。集合體擁有權不會發生任何變更。
 
 
 
-| link:stage_5_index.html["階段5：安裝和開機節點4"]  a| 
+| link:install_boot_node4.html["階段5：安裝和開機節點4"]  a| 
 在第5階段期間、您可以安裝並開機node4、將叢集和節點管理連接埠從node2對應至node4、並將屬於node2的資料lifs和SAN lifs從node3移至node4。您也可以將node2 Aggregate從node3重新部署到node4、然後將node2擁有的資料l生命 週期和SAN生命週期移到node3。
 
 第5階段結束時的Aggregate所有權：
@@ -92,7 +92,7 @@ image:arl_upgrade_manual_image1.PNG["顯示ARL程序各階段的圖例"]
 
 
 
-| link:stage_6_index.html["第6階段：完成升級"]  a| 
+| link:manage_authentication_kmip.html["第6階段：完成升級"]  a| 
 在第6階段期間、您確認新節點已正確設定、如果新節點已啟用加密、則可設定儲存加密或NetApp Volume加密。您也應該取消委任舊節點、以恢復SnapMirror作業。
 
 

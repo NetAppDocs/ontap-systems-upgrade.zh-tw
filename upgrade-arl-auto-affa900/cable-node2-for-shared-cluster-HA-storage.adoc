@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html 
+permalink: upgrade-arl-auto-affa900/cable-node2-for-shared-cluster-HA-storage.html 
 keywords: cluster, ha, aff, a800, shared, storage, data, management 
-summary: 將先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備和資料連線、連接至新安裝的 AFF A90 或 AFF A70 node1 
+summary: 將先前連接到 AFF A800 節點 2 的叢集、HA、儲存和資料連接連接到新安裝的 AFF A90 或 AFF A70 節點 1 
 ---
-= 纜線 node1 ，用於共用的叢集 HA 和儲存設備
+= 纜線 node2 ，用於共用的叢集 HA 和儲存設備
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 將先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備和資
 
 
 [role="lead"]
-如果您執行下列其中一項升級，則必須將先前連接至現有系統上 node1 的叢集， HA ，儲存設備，資料和管理連線，連接至替換系統上新安裝的 node1 。
+如果您正在執行以下升級之一，則需要將先前連接到現有系統上的 node2 的叢集、HA、儲存、資料和管理連接連接到替換系統上新安裝的 node2。
 
 [cols="35,65"]
 |===
@@ -80,7 +80,7 @@ summary: 將先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備和資
 | 適用於 NS224 機櫃的乙太網路儲存連接埠 | 任何可用連接埠 | 請參閱乙太網路儲存設備連線對應 | 請參閱乙太網路儲存設備連線對應 
 |===
 |===
-| 連接埠 | AFF A250 、 AFF C250 | AFF A30 、 AFF C30 、 AFF C60 | AFF A50 
+| 連接埠類型 | AFF A250 、 AFF C250 | AFF A30 、 AFF C60 | AFF A50 
 
 
 | 叢集 | e0c | e1a（使用 e1a 進行臨時群集互連） | e1a（使用 e1a 進行臨時群集互連） 
@@ -89,13 +89,16 @@ summary: 將先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備和資
 | 叢集 | e0d | e1b（使用 e1b 進行臨時群集互連） | e1b（使用 e1b 進行臨時群集互連） 
 
 
-| HA | 不需要 | node1 升級不需要 HA 端口 | node1 升級不需要 HA 端口 
+| HA | e0c HA 連接埠與 Cluster 連接埠共用 | 節點 1 上的 e4a 使用 100 GbE 電纜直接連接到節點 2 上的 e4a | 節點 1 上的 e4a 使用 100 GbE 電纜直接連接到節點 2 上的 e4a 
 
 
-| 乙太網路儲存連接埠 | 任何可用連接埠 | E3A、e3b | E3A、e3b 
+| HA | e0d HA 連接埠與 Cluster 連接埠共享 | 節點 1 上的 e2a 使用 100 GbE 電纜直接連接到節點 2 上的 e2a 如果 e2a 不存在或不支援 100 GbE，則使用 100 GbE 電纜直接將節點 1 上的 e4b 連接到節點 2 上的 e4b。 | 節點 1 上的 e2a 使用 100 GbE 電纜直接連接到節點 2 上的 e2a 如果 e2a 不存在或不支援 100 GbE，則使用 100 GbE 電纜直接將節點 1 上的 e4b 連接到節點 2 上的 e4b。 
 
 
-| SAS 儲存連接埠 | 任何可用連接埠 | 3A ， 3b | 3A ， 3b 
+| 乙太網路儲存埠 | 任何可用連接埠 | E3A、e3b | E3A、e3b 
+
+
+| SAS儲存埠 | 任何可用連接埠 | 3A ， 3b | 3A ， 3b 
 |===
 
 

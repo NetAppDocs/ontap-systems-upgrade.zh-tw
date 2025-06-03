@@ -2,11 +2,11 @@
 section: upgrade-arl-auto
 title: 使用「系統控制器更換」命令、將執行ONTAP E9.5的控制器硬體升級至9.7
 entries:
-- title: 總覽
+- title: 了解此 ARL 程序
   url: "/upgrade-arl-auto/index.html"
 - title: 自動化控制器升級程序
   url: "/upgrade-arl-auto/automate_the_controller_upgrade_process.html"
-- title: 決定是否使用Aggregate重新配置內容
+- title: 決定是否使用此 ARL 程序
   url: "/upgrade-arl-auto/decide_to_use_the_aggregate_relocation_guide.html"
 - title: 必要的工具與文件
   url: "/upgrade-arl-auto/required_tools_and_documentation.html"
@@ -18,13 +18,11 @@ entries:
   url: "/upgrade-arl-auto/check_metrocluster_config_errors.html"
 - title: 驗證切換、修復及切換
   url: "/upgrade-arl-auto/verify_switchover_healing_switchback.html"
-- title: ARL升級總覽
+- title: 了解 ARL 升級順序
   url: "/upgrade-arl-auto/overview_of_the_arl_upgrade.html"
 - title: 第1階段：準備升級
   pdf-filename: 第1階段：準備升級（ONTAP 從更新到升級時、請使用「系統控制器更換」（從版本9.5升級到9.7）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto/stage_1_index.html"
   - title: 準備節點以進行升級
     url: "/upgrade-arl-auto/prepare_nodes_for_upgrade.html"
   - title: 使用 Onboard Key Manager 管理儲存加密
@@ -32,8 +30,6 @@ entries:
 - title: 第2階段：重新部署和淘汰節點1
   pdf-filename: 第2階段：重新部署和淘汰節點1（ONTAP 從版本9.5升級到9.7、使用「系統控制器更換」）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto/stage_2_index.html"
   - title: 將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2
     url: "/upgrade-arl-auto/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html"
   - title: 重新部署故障或被否決的集合體
@@ -45,8 +41,6 @@ entries:
 - title: 階段3.安裝及開機節點3
   pdf-filename: 階段3.安裝並開機節點3（ONTAP 從9.5版升級至9.7版、使用「系統控制器更換」）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto/stage_3_index.html"
   - title: 安裝及開機節點3
     url: "/upgrade-arl-auto/install_boot_node3.html"
   - title: 在節點3上設定FC或UTA/UTA2組態
@@ -64,8 +58,6 @@ entries:
 - title: 第4階段：重新部署和淘汰節點2
   pdf-filename: 第4階段：重新部署和淘汰節點2（ONTAP 從版本9.5升級到9.7、使用「系統控制器更換」）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto/stage_4_index.html"
   - title: 將非根Aggregate和NAS資料LIF從節點2重新定位至節點3
     url: "/upgrade-arl-auto/relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html"
   - title: 淘汰節點2
@@ -73,8 +65,6 @@ entries:
 - title: 階段5.安裝及開機節點4
   pdf-filename: 階段5.安裝並開機節點4（ONTAP 從9.5版升級至9.7版、使用「系統控制器更換」）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto/stage_5_index.html"
   - title: 安裝及開機節點4
     url: "/upgrade-arl-auto/install_boot_node4.html"
   - title: 在節點4上設定FC或UTA/UTA2組態
@@ -92,8 +82,6 @@ entries:
 - title: 階段6.完成升級
   pdf-filename: 階段6.完成升級（ONTAP 從更新到升級時、請使用「系統控制器更換」（從版本9.5升級到9.7）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto/stage_6_index.html"
   - title: 使用KMIP伺服器管理驗證
     url: "/upgrade-arl-auto/manage-authentication-using-kmip-servers.html"
   - title: 確認新的控制器已正確設定
@@ -109,8 +97,6 @@ entries:
 - title: 疑難排解
   pdf-filename: 疑難排解（ONTAP 從VMware 9.5升級至9.7、使用「系統控制器更換」）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto/troubleshoot_index.html"
   - title: Aggregate重新配置失敗
     url: "/upgrade-arl-auto/aggregate_relocation_failures.html"
   - title: 重新開機、出現問題或重新開機

@@ -20,7 +20,7 @@ summary: 瞭解您是否可以使用 ARL 、保留舊的系統機箱和磁碟來
 
 == 支援ARL升級
 
-某些系統組態支援控制器升級。若要檢視支援的系統和最低 ONTAP 版本清單、請參閱 link:index.html["總覽"]。
+某些系統組態支援控制器升級。請參閱link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems["支援的系統升級組合"]以取得受支援的系統和最低 ONTAP 版本的清單。
 
 如果您收到新的 AFF A30 ， AFF A50 ， AFF A70 ， AFF ， AFF A150 ， AFF A900 ， AFF A90 C30 ， AFF C60 ， AFF C80 ， FAS2820 或 FAS9500 作為完整系統，包括新機箱，請參閱link:other_references.html["參考資料"]連結至 _ 使用「系統控制器更換」命令來升級執行 ONTAP 9.8 或更新版本的控制器硬體 _ 。
 
@@ -44,6 +44,8 @@ summary: 瞭解您是否可以使用 ARL 、保留舊的系統機箱和磁碟來
 
 == 疑難排解
 
-如果在升級控制器時發生任何問題、請參閱 link:troubleshoot_index.html["疑難排解"] 本節將於程序結束時提供更多資訊和可能的解決方案。
+升級節點配對時可能會發生故障。節點可能會當機、集合體可能不會重新部署、或是生命體可能無法移轉。故障原因及其解決方案取決於升級程序期間何時發生故障。
 
-如果您找不到解決所遇到問題的解決方案、請聯絡技術支援部門。
+如果出現任何問題，請參閱link:aggregate_relocation_failures.html["疑難排解"]請參閱本過程末尾的部分，以了解更多資訊和可能的解決方案。有關可能發生的故障的資訊按過程的階段列出在link:overview_of_the_arl_upgrade.html["ARL 升級序列"] 。
+
+如果您沒有找到所遇到問題的解決方案，請聯絡技術支援。

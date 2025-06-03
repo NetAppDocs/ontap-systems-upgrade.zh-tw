@@ -29,7 +29,36 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請使用替換
 +
 保健領域的產出應該是真的。
 
-. 驗證node2是否與node1屬於同一個叢集、而且它是否正常：
+. 此步驟適用於以下升級配置。對於所有其他系統升級，請跳過此步驟並轉至<<verify-node2-step3,步驟3.>> ：
++
+** 雙節點無交換器集群
+** 將連接的 AFF A250 或 AFF C250 系統升級到 AFF A50、AFF A30、AFF C30 或 AFF C60 系統。
+
+
++
+--
+如果 node2 沒有自動加入仲裁：
+
+.. 檢查連接埠 e1a 和 e1b 的 IP 空間：
++
+「網路連接埠展示」
+
+.. 如果 IP 空間不是“叢集”，請在 e1a 和 e1b 上將 IP 空間變更為“叢集”：
++
+`network port modify -node <node_name> -port <port> -ipspace Cluster`
+
+.. 驗證連接埠 e1a 和 e1b 的 IP 空間是否為「叢集」：
++
+「網路連接埠展示」
+
+.. 將節點 2 叢集 LIF 遷移到 e1a 和 e1b：
++
+`network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node2_name> -destination-port <port_name`
+
+
+
+--
+. [[verify-node2-step3]]驗證 node2 和 node1 是否屬於同一個集群，以及該集群是否健康：
 +
 「叢集展示」
 
@@ -37,7 +66,46 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請使用替換
 +
 《進階設定》
 
-. 檢查控制器更換作業的狀態、並確認它處於暫停狀態、且狀態與節點2停止之前的狀態相同、以執行安裝新控制器和移動纜線的實體工作：
+. 此步驟僅適用於從 AFF A250 或 AFF C250 升級到 AFF A50、AFF A30、AFF C60 或 AFF C30 的雙節點無交換器組態升級。對於所有其他系統升級，請跳過此步驟並轉至<<verify-node2-step6,步驟6.>> ：
++
+驗證 e4a、e2a、e1a、e1b 連接埠或 e4a、e4b、e1a、e1b 連接埠是否為「叢集」廣播域中的叢集連接埠。
+
++
+AFF A50、AFF A30、AFF C30 和 AFF C60 系統共享叢集和 HA 連接埠。您可以安全地將所有叢集 LIF 遷移到節點 1 和節點 2 上的 e4a、e4b 或 e4a、e2a：
+
++
+.. 列出所有叢集 LIF 的主連接埠和目前連接埠：
++
+`network interface show -role Cluster -fields home-port,curr-port`
+
+.. [[migrate-cluster-lif-step-4b]]在節點 1 和節點 2 上，將使用 e1a 作為主連接埠的叢集 LIF 遷移到 e4a：
++
+`network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node> -destination-port e4a`
+
+.. 在節點 1 和節點 2 上，修改遷移到的叢集 LIF <<migrate-cluster-lif-step-4b,子步驟 b>>使用 e4a 作為主連接埠：
++
+`network  interface modify -vserver Cluster -lif <cluster_lif> -home-port e4a`
+
+.. 驗證群集是否符合仲裁：
++
+「叢集展示」
+
+.. 重複<<migrate-cluster-lif-step-4b,子步驟 b 和子步驟 c>>將每個節點上的第二個叢集 LIF 遷移並修改為 e2a 或 e4b：
++
+如果存在 e2a 且其為 100GbE 網路端口，則這是預設的第二個叢集端口。如果 e2a 不是 100GbE 網路端口，則 ONTAP 使用 e4b 作為第二個叢集和 HA 端口。
+
+.. 從「集群」廣播域中刪除 e1a 和 e1b：
++
+`broadcast-domain remove-ports -broadcast-domain Cluster -ipspace Cluster -ports <node_name>:e1a`
+
+.. 驗證只有叢集連接埠 e4a、e2a 或 e4a、e4b 位於「叢集」廣播域中
++
+`broadcast domain show`
+
+.. 移除 e1a 節點 1 和 e1a 節點 2 以及 e1b 節點 1 和 e1b 節點 2 之間的電纜連接，以確保僅使用有效的叢集 HA 連接且沒有冗餘連接。
+
+
+. [[verify-node2-step6]]檢查控制器更換操作的狀態，並驗證它處於暫停狀態，並且與 node2 暫停執行安裝新控制器和移動電纜的物理任務之前的狀態相同：
 +
 「System Controller replace show」（系統控制器更換顯示）
 

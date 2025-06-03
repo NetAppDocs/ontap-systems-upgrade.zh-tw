@@ -2,9 +2,9 @@
 section: upgrade-arl-manual-app
 title: 手動升級執行ONTAP 效能不更新的控制器硬體
 entries:
-- title: 總覽
+- title: 了解此 ARL 程序
   url: "/upgrade-arl-manual-app/index.html"
-- title: 決定是否使用Aggregate重新配置內容
+- title: 決定是否使用此 ARL 程序
   url: "/upgrade-arl-manual-app/decide_to_use_arl_guide.html"
 - title: ARL升級工作流程
   url: "/upgrade-arl-manual-app/arl_upgrade_workflow.html"
@@ -17,8 +17,6 @@ entries:
 - title: 第1階段：準備升級
   pdf-filename: 第1階段：準備升級（ONTAP 以人手動方式升級、以更新版本為準）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-manual-app/stage_1_index.html"
   - title: 確定控制器是否在內部磁碟機上有集合體
     url: "/upgrade-arl-manual-app/determine_aggregates_on_internal_drives.html"
   - title: 準備節點以進行升級
@@ -32,8 +30,6 @@ entries:
 - title: 第2階段：重新部署和淘汰節點1
   pdf-filename: 第2階段：重新定位並淘汰節點1（ONTAP 手動升級至版本號不支援版本9.8）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-manual-app/stage_2_index.html"
   - title: 將非根Aggregate從節點1重新部署到節點2
     url: "/upgrade-arl-manual-app/relocate_non_root_aggr_node1_node2.html"
   - title: 將節點1擁有的NAS資料lifs移至節點2
@@ -45,8 +41,6 @@ entries:
 - title: 階段3.安裝及開機節點3
   pdf-filename: 階段3.安裝及開機節點3（ONTAP 手動升級至32個版本）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-manual-app/stage_3_index.html"
   - title: 安裝及開機節點3
     url: "/upgrade-arl-manual-app/install_boot_node3.html"
   - title: 在節點3上設定FC或UTA/UTA2組態
@@ -64,8 +58,6 @@ entries:
 - title: 第4階段：記錄資訊並淘汰節點2
   pdf-filename: 第4階段：記錄資訊並淘汰node2（ONTAP 手動升級至版本號不含更新版本）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-manual-app/stage_4_index.html"
   - title: 記錄node2資訊
     url: "/upgrade-arl-manual-app/record_node2_information.html"
   - title: 淘汰節點2
@@ -73,8 +65,6 @@ entries:
 - title: 階段5.安裝及開機節點4
   pdf-filename: 階段5.安裝及開機節點4（ONTAP 手動升級至僅限更新版本的版本）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-manual-app/stage_5_index.html"
   - title: 安裝及開機節點4
     url: "/upgrade-arl-manual-app/install_boot_node4.html"
   - title: 在節點4上設定FC或UTA/UTA2組態
@@ -90,8 +80,6 @@ entries:
 - title: 階段6.完成升級
   pdf-filename: 階段6.完成升級（ONTAP 以人手動方式升級、以更新版本提供）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-manual-app/stage_6_index.html"
   - title: 使用KMIP伺服器管理驗證
     url: "/upgrade-arl-manual-app/manage_authentication_kmip.html"
   - title: 確認新的控制器已正確設定
@@ -107,8 +95,6 @@ entries:
 - title: 疑難排解
   pdf-filename: 疑難排解（ONTAP 手動升級至VMware版9.8或更新版本）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-manual-app/troubleshoot_index.html"
   - title: Aggregate重新配置失敗
     url: "/upgrade-arl-manual-app/aggregate_relocation_failures.html"
   - title: 重新開機、出現問題或重新開機

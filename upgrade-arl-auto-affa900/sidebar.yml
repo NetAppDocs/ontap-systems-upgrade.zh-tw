@@ -2,21 +2,19 @@
 section: upgrade-arl-auto-affa900
 title: 使用「系統控制器更換」命令來升級相同機箱中的控制器機型
 entries:
-- title: 總覽
+- title: 了解此 ARL 程序
   url: "/upgrade-arl-auto-affa900/index.html"
-- title: 決定是否使用Aggregate重新配置內容
+- title: 決定是否使用此 ARL 程序
   url: "/upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html"
 - title: 必要的工具與文件
   url: "/upgrade-arl-auto-affa900/required_tools_and_documentation.html"
 - title: 升級控制器的準則
   url: "/upgrade-arl-auto-affa900/guidelines_for_upgrading_controllers_with_arl.html"
-- title: ARL升級總覽
+- title: 了解 ARL 升級順序
   url: "/upgrade-arl-auto-affa900/overview_of_the_arl_upgrade.html"
 - title: 第1階段：準備升級
   pdf-filename: 第1階段：準備升級（升級AFF 至FASA900或FAS9500）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-affa900/stage_1_index.html"
   - title: 驗證升級硬體
     url: "/upgrade-arl-auto-affa900/verify_upgrade_hardware.html"
   - title: 準備節點以進行升級
@@ -25,8 +23,6 @@ entries:
     url: "/upgrade-arl-auto-affa900/manage_storage_encryption_using_okm.html"
 - title: 第 2 階段：重新定位資源並淘汰 node1
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-affa900/stage_2_index.html"
   - title: 將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html"
   - title: 重新部署故障或被否決的集合體
@@ -47,8 +43,6 @@ entries:
     url: "/upgrade-arl-auto-affa900/netboot_node1.html"
 - title: 階段3.使用替換的系統模組來啟動 node1
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-affa900/stage_3_index.html"
   - title: 纜線 node1 用於共用的叢集 HA 儲存設備
     url: "/upgrade-arl-auto-affa900/cable-node1-for-shared-cluster-HA-storage.html"
   - title: 使用替換的系統模組來啟動 node1
@@ -61,16 +55,12 @@ entries:
     url: "/upgrade-arl-auto-affa900/move_non_root_aggr_nas_lifs_node1_from_node2_to_upgraded_node1.html"
 - title: 第4階段：重新定位資源並淘汰 node2
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-affa900/stage_4_index.html"
   - title: 將非根Aggregate和NAS資料LIF從節點2重新定位至節點1
     url: "/upgrade-arl-auto-affa900/relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html"
   - title: 淘汰節點2
     url: "/upgrade-arl-auto-affa900/retire_node2.html"
 - title: 階段 5.在 node2 上安裝替換系統模組
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-affa900/stage_5_index.html"
   - title: 在 node2 上安裝替換系統模組
     entries:
     - title: 安裝 AFF A30 ， AFF A50 ， AFF C30 或 AFF C60
@@ -85,8 +75,8 @@ entries:
     url: "/upgrade-arl-auto-affa900/netboot_node2.html"
 - title: 第 6 階段：使用替換的系統模組來啟動 node2
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-affa900/stage_6_index.html"
+  - title: 纜線 node2 用於共用的叢集 HA 儲存設備
+    url: "/upgrade-arl-auto-affa900/cable-node2-for-shared-cluster-HA-storage.html"
   - title: 使用替換的系統模組來啟動 node2
     url: "/upgrade-arl-auto-affa900/boot_node2_with_a900_controller_and_nvs.html"
   - title: 驗證node2安裝
@@ -97,8 +87,6 @@ entries:
     url: "/upgrade-arl-auto-affa900/move_non_root_aggr_and_nas_data_lifs_back_to_node2.html"
 - title: 第7階段：完成升級
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-affa900/stage_7_index.html"
   - title: 使用KMIP伺服器管理驗證
     url: "/upgrade-arl-auto-affa900/manage-authentication-using-kmip-servers.html"
   - title: 確認新的控制器已正確設定
@@ -114,8 +102,6 @@ entries:
 - title: 疑難排解
   pdf-filename: 疑難排解（升級AFF 至FASA900或FAS9500）
   entries:
-  - title: 總覽
-    url: "/upgrade-arl-auto-affa900/troubleshoot_index.html"
   - title: Aggregate重新配置失敗
     url: "/upgrade-arl-auto-affa900/aggregate_relocation_failures.html"
   - title: 重新開機、出現問題或重新開機

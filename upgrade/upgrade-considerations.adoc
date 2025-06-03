@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: plan, upgrade, consideration, contact, technical, support, recommendation, guidance, cluster, considerations for upgrading controller hardware 
 summary: 若要規劃升級、您應該熟悉一般的升級考量。如有必要、請聯絡技術支援部門、以取得叢集組態的特定建議與指引。 
 ---
-= 升級控制器硬體的考量事項
+= 透過移動磁碟區或儲存升級控制器硬體的注意事項
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
@@ -30,7 +30,7 @@ NOTE: 在開始控制器升級程序之前、您必須檢閱下表中列出的�
 | 我是否將不同的控制器平台機型組合到叢集中？  a| 
 link:https://hwu.netapp.com["確認您遵循儲存平台混合規則"^]。
 
-HA 配對中的控制器必須是兩個 AFF 、 FAS 或 ASA 機型。
+HA 對中的控制器必須是兩個 AFF、FAS 或 ASA 型號。
 
 
 
@@ -67,7 +67,7 @@ NOTE: 如果您要升級八節點叢集、以提供 FCP 、 iSCSI 或 FCoE 等�
 
 
 
-| 我是否要在具有多個 HA 配對的叢集中升級 HA 配對？ | 將 epsilon 移至未進行控制器升級的 HA 配對節點。例如、如果您要升級叢集中的節點A/nodeB、並使用HA配對組態節點A/nodeB和節點C/noded、則必須將epsilon移至節點C或noded。 
+| 我是否要升級具有多個 HA 對的叢集中的 HA 對？ | 將 epsilon 移到未進行控制器升級的 HA 對的節點。例如、如果您要升級叢集中的節點A/nodeB、並使用HA配對組態節點A/nodeB和節點C/noded、則必須將epsilon移至節點C或noded。 
 
 
 | 我執行的是 ONTAP 9.6P11 、 9.7P8 或更新版本嗎？ | NetApp 建議您啟用連線、活躍度和可用度監視器（蛤）接管、以便在發生某些節點故障時、將叢集恢復為仲裁。。 `kernel-service` 命令需要進階權限層級存取。如需詳細資訊、請參閱 NetApp 知識庫文件 https://kb.netapp.com/Support_Bulletins/Customer_Bulletins/SU436["已變更蛤蜊接管預設組態"^]。

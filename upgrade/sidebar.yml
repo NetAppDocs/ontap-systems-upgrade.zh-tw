@@ -2,7 +2,7 @@
 section: upgrade
 title: 透過移動磁碟區或儲存設備進行升級
 entries:
-- title: 總覽
+- title: 決定透過移動磁碟區或儲存進行升級
   url: "/upgrade/upgrade-decide-to-use-this-guide.html"
 - title: 考量
   url: "/upgrade/upgrade-considerations.html"
@@ -24,8 +24,6 @@ entries:
     url: "/upgrade/upgrade-set-up-new-nodes.html"
   - title: 選用：移動內部儲存設備或轉換成磁碟機櫃
     entries:
-    - title: 總覽
-      url: "/upgrade/upgrade-optional-move-internal-storage.html"
     - title: 移動內部磁碟機
       url: "/upgrade/upgrade-move-internal-drives.html"
     - title: 將節點轉換成磁碟機櫃
@@ -36,20 +34,16 @@ entries:
     url: "/upgrade/upgrade-restore-root-volume-config.html"
   - title: 完整升級
     entries:
-    - title: 總覽
+    - title: 工作流程
       url: "/upgrade/upgrade-complete.html"
     - title: 完整版本ONTAP ：不含更新版本
       entries:
-      - title: 總覽
-        url: "/upgrade/upgrade-complete-ontap-9-8.html"
       - title: 使用ONTAP NET9.8對應網路連接埠
         url: "/upgrade/upgrade-map-network-ports-ontap-9-8.html"
       - title: 執行ONTAP 部分中的最後步驟
         url: "/upgrade/upgrade-final-upgrade-steps-in-ontap-9-8.html"
     - title: 完整版本為更新版本ONTAP
       entries:
-      - title: 總覽
-        url: "/upgrade/upgrade-complete-ontap-9-7-or-earlier.html"
       - title: 使用ONTAP 更新版本的更新版本來對應網路連接埠
         url: "/upgrade/upgrade-map-network-ports-ontap-9-7-or-earlier.html"
       - title: 請執行ONTAP 更新版本的步驟
@@ -69,15 +63,7 @@ entries:
   - title: 移動非SAN資料生命體和叢集管理生命體
     url: "/upgrade/upgrade-move-lifs-to-new-nodes.html"
   - title: 移動、刪除或建立SAN LIF
-    entries:
-    - title: 總覽
-      url: "/upgrade/upgrade_move_delete_recreate_san_lifs.html"
-    - title: 移轉SAN LIF的考量
-      url: "/upgrade/upgrade_considerations_move_san_lifs.html"
-    - title: 刪除SAN LIF
-      url: "/upgrade/upgrade-delete-san-lifs.html"
-    - title: 建立新的SAN生命體、或重新建立刪除的SAN生命體
-      url: "/upgrade/upgrade_create_recreate_san_lifs.html"
+    url: "/upgrade/upgrade_move_delete_recreate_san_lifs.html"
   - title: 取消連接原始節點
     url: "/upgrade/upgrade-unjoin-original-nodes-move-volumes.html"
   - title: 完整升級

@@ -4,20 +4,18 @@ permalink: upgrade-arl-auto-app/index.html
 keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology 
 summary: 您可以ONTAP 使用「系統控制器更換」命令來升級執行效能不完全的控制器硬體、重新配置非根集合體的擁有權。 
 ---
-= 總覽
+= 了解 ARL 升級程序
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 [role="lead"]
-本程序說明如何針對下列系統組態、使用Aggregate重新定位（ARL）來升級控制器硬體：
+升級控制器硬體有多種聚合重定位 (ARL) 方法。此流程說明如何在執行 ONTAP 9.8 或更高版本的系統上使用聚合重定位 (ARL) 和「系統控制器替換命令」升級控制器硬體。
 
-[cols="40,20,40"]
-|===
-| 方法 | 版本ONTAP | 支援的系統 
-
-
-| 使用「系統控制器置換」命令 | 9.8或更新版本 | link:decide_to_use_the_aggregate_relocation_guide.html#sys_commands_98_supported_systems["支援的系統對照表連結"] 
-|===
 在過程中、您會使用更換的控制器硬體來升級原始的控制器硬體、以重新定位非根集合體的擁有權。您可以多次從節點移轉Aggregate至節點、以確認在整個升級程序中、至少有一個節點正在處理來自集合體的資料。您也可以移轉資料邏輯介面（LIF）、並在繼續進行時將新控制器上的網路連接埠指派給介面群組。
 
 .本資訊所使用的術語
@@ -26,7 +24,7 @@ summary: 您可以ONTAP 使用「系統控制器更換」命令來升級執行�
 在本資訊中、「系統搭配FlexArray 不支援的虛擬化軟體」一詞係指屬於這些新平台的系統。「V系列系統」一詞是指可附加至儲存陣列的個別硬體系統。
 
 .重要資訊：
-* 此程序相當複雜、假設您具備進階ONTAP 的功能不完整的管理技能。您也必須閱讀並瞭解 link:guidelines_for_upgrading_controllers_with_arl.html["使用ARL升級控制器的準則"] 和 link:overview_of_the_arl_upgrade.html["ARL升級總覽"] 開始升級之前的章節。
+* 此程序相當複雜、假設您具備進階ONTAP 的功能不完整的管理技能。您還必須閱讀並理解link:guidelines_for_upgrading_controllers_with_arl.html["使用 ARL 升級控制器的指南"]和link:overview_of_the_arl_upgrade.html["ARL 升級序列"]在開始升級之前。
 * 此程序假設更換的控制器硬體是新的、而且尚未使用。此程序不包含使用wpeconfig命令準備已用控制器所需的步驟。如果先前使用的是更換控制器硬體、您必須聯絡技術支援部門、尤其是在控制器以Data ONTAP 7-Mode執行時。
 * 您可以使用ARL來執行不中斷營運的簡化控制器升級、以升級至執行更新ONTAP 版本的新控制器、而非升級叢集上執行的版本。舊版與新版控制器的版次組合取決於更新版本的NDU Cadence模式。ONTAP ONTAP例如、如果您的控制器執行ONTAP 的是功能不全的版本號、而該控制器是最後支援的版本、則您可以升級至執行ONTAP 更新ONTAP 版本不高於功能不全的版本號的更新控制器。
 +

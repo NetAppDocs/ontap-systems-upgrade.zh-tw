@@ -1,0 +1,47 @@
+= 連線至交換器連接的叢集
+:allow-uri-read: 
+
+
+
+
+== 連線至交換器連接的叢集
+
+對於交換器連接的叢集，請檢查您是否符合 AFF A30 ， AFF A50 ， AFF A70 ， AFF A90 ， AFF C30 ， AFF C60 或 AFF C80 （更換）節點的下列需求：
+
+* 更換節點上相同的叢集連接埠位於同一台交換器上。例如、升級完成後、節點 1 上的 e1a 和節點 2 上的 e1a 應連接至一個叢集交換器。同樣地、兩個節點的第二個叢集連接埠也應連接至第二個叢集交換器。共享叢集 HA 連接埠的交叉連線，其中 node1 的 e1a 連接到 SwitchA ， node2 的 e1a 連接到 SwitchB ，導致 HA 通訊失敗。
+* 替換節點使用共享的叢集 HA 乙太網路連接埠。
+* 驗證叢集交換器是否安裝有支援共用叢集 HA 連接埠的參考組態檔案（ RCF ）：
++
+.. 移除交換器上現有的組態：
++
+[cols="30,70"]
+|===
+| 如果您的交換器機型是 ... | 前往... 
+
+
+| Cisco Nexus | 知識庫文章link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["如何在保留遠端連線的同時清除 Cisco 互連交換器上的組態"^] 
+
+
+| Broadcom Bes - 53248 | 知識庫文章link:https://kb.netapp.com/on-prem/Switches/Broadcom-KBs/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity["如何清除 Broadcom 互連交換器上的組態、同時保持遠端連線"^] 
+|===
+.. 設定並驗證交換器設定：
++
+[cols="30,70"]
+|===
+| 如果您的交換器機型是 ... | 前往... 
+
+
+| Cisco Nexus 9336C-FX2 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/upgrade-rcf-software-9336c-cluster.html["升級參考組態檔案（ RCF ）"^] 
+
+
+| Broadcom Bes - 53248 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/upgrade-rcf.html["升級參考組態檔案（ RCF ）"^] 
+
+
+| NVIDIA SN2100 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html["安裝或升級參考組態檔案（ RCF ）指令碼"^] 
+|===
+
+
+
+
+
+NOTE: 如果叢集交換器僅支援 10/25 GbE 速度，則必須在替換系統的插槽 1 或插槽 2 中使用 X60130A、4 連接埠 10/25GbE 卡進行叢集互連。

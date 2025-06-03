@@ -4,7 +4,7 @@ sidebar: sidebar
 keywords: upgrade 
 summary: 如果您要透過移動儲存設備來升級、請準備原始節點並設定新節點。部分平台機型支援將內部儲存設備傳輸至新節點。您可以重新指派磁碟、並將根磁碟區組態還原至新節點、並設定網路連接埠。透過移動儲存設備進行升級是一項中斷營運的程序。 
 ---
-= 工作流程
+= 透過行動儲存工作流程進行升級
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/

@@ -21,11 +21,14 @@ summary: 使用ONTAP 「系統控制器更換」命令、在升級執行ONTAP �
 
 如果netboot node3沒有ONTAP 安裝在node1上的相同版本的支援功能、您就需要netboot node3。安裝node3之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點3。接著、您可以依照中的指示、將正確的檔案下載到開機媒體裝置、以供後續系統開機 link:prepare_for_netboot.html["準備netboot"]。
 
-.重要事項：
+[IMPORTANT]
+====
+* 對於 AFF A800 或 AFF C800 控制器升級，在移除節點 1 之前，必須確保機殼內的所有磁碟機都牢固地固定在中板上。如需更多資訊、請參閱 link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["更換 AFF A800 或 AFF C800 控制器模組"]。
 * 如果您要升級連接至儲存陣列的V系列系統、或是升級連接FlexArray 至儲存陣列的含有「虛擬化」軟體的系統、則必須完成 <<auto_install3_step1,步驟1.>> 透過 <<auto_install3_step21,步驟21>>、然後保留本節、並依照中的指示進行 link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3["檢查並設定節點3上的UTA/UTA2連接埠"] 視需要在維護模式中輸入命令。接著您必須返回本節並繼續 <<auto_install3_step23,步驟23>>。
 * 如果您要升級具有儲存磁碟的系統、則必須完成此一整節、然後前往 link:set_fc_or_uta_uta2_config_on_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_or_uta_uta2_config_on_node3.html#check-and-configure-utauta2-ports-on-node3["檢查並設定節點3上的UTA/UTA2連接埠"] 區段、在叢集提示字元中輸入命令。
 
 
+====
 .步驟
 . [[[auto_install3_step1]]請確定您有節點3的機架空間。
 +
@@ -34,7 +37,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、在升級執行ONTAP �
 . [[[auto_install3_step2]]依照節點機型的安裝與設定指示_、在機架中安裝節點3。
 +
 
-NOTE: 如果您要升級到同一機箱中同時具有兩個節點的系統、請在機箱中安裝node4以及node3。如果沒有、當您開機節點3時、節點的行為就會如同雙機箱組態、當您開機節點4時、節點之間的互連就不會出現。
+NOTE: 如果您要升級到同一機箱中同時具有兩個節點的系統、請在機箱中安裝node4以及node3。如果不這樣做，當您啟動 node3 時，該節點的行為將如同處於雙底盤配置中，而當您啟動 node4 時，節點之間的互連將不會出現。
 
 . [[auto_install3_step3]]纜線節點3、將連線從節點1移至節點3。
 +

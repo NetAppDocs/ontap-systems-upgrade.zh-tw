@@ -31,7 +31,36 @@ summary: 使用 ARL 升級同一機箱中的控制器型號時、請使用替換
 +
 保健領域的產出應該是真的。
 
-. 驗證node1是否與node2屬於同一個叢集、而且它是否正常：
+. 此步驟適用於以下升級配置。對於所有其他系統升級，請跳過此步驟並轉至<<verify-node1-step3,步驟3.>> ：
++
+** 雙節點無交換器集群
+** 將連接的 AFF A250 或 AFF C250 系統升級到 AFF A50、AFF A30、AFF C30 或 AFF C60 系統
+
+
++
+--
+如果 node1 沒有自動加入仲裁：
+
+.. 檢查連接埠 e1a 和 e1b 的 IP 空間：
++
+「網路連接埠展示」
+
+.. 如果 IP 空間不是“叢集”，請在 e1a 和 e1b 上將 IP 空間變更為“叢集”：
++
+`network port modify -node <node_name> -port <port> -ipspace Cluster`
+
+.. 驗證連接埠 e1a 和 e1b 的 IP 空間是否為「叢集」：
++
+「網路連接埠展示」
+
+.. 將節點 1 叢集 LIF 遷移到 e1a 和 e1b：
++
+`network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node1_name> -destination-port <port_name>`
+
+
+
+--
+. [[verify-node1-step3]]驗證 node1 和 node2 是否屬於同一個集群，以及該集群是否健康：
 +
 「叢集展示」
 
