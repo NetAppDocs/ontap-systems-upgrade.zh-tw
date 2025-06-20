@@ -55,25 +55,25 @@ node2	    node1         true	        Connected to node1
 
 . 驗證集合體是否為其各自主節點所擁有。
 +
-「torage Aggregate show -Owner-name _node1_」
+`storage aggregate show -owner-name <node1>`
 
 +
-「torage Aggregate show -Owner-name _node2_」
+`storage aggregate show -owner-name <node2>`
 
 . 判斷是否有任何磁碟區離線：
 +
-「Volume show -node1_-state offline」
+`volume show -node <node1> -state offline`
 
 +
-「Volume show -node2_-state offline」
+`volume show -node <node2> -state offline`
 
 . 如果有任何磁碟區離線、請將它們與您在一節中擷取的離線磁碟區清單進行比較 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]並在每個Volume上使用一次下列命令、視需要將任何離線磁碟區上線：
 +
-"Volume online -vserver _vserver_name_-volume _volume _name_"
+`volume online -vserver <vserver_name> -volume <volume_name>`
 
 . 針對每個節點使用下列命令、安裝新節點的新授權：
 +
-「系統授權新增-授權碼_license代碼、license代碼、license代碼、license代碼..._」
+`system license add -license-code <license_code,license_code,license_code...>`
 
 +
 授權代碼參數接受28個大寫字母字元金鑰的清單。您可以一次新增一個授權、也可以一次新增多個授權、以英文分隔每個授權金鑰。
@@ -83,7 +83,7 @@ node2	    node1         true	        Connected to node1
 「系統授權清除-未使用-過期」
 
 +
-「系統授權刪除-序號_node_sSerial_number_-套件_licensee_package_」
+`system license delete -serial-number <node_serial_number> -package <licensable_package>`
 
 +
 --
@@ -97,7 +97,8 @@ node2	    node1         true	        Connected to node1
 
 ** 在節點上使用下列命令、從叢集刪除特定授權：
 +
-「系統授權刪除-序號_node1_sSerial_number_-package *」「系統授權刪除-序號_node2_sSerial_number_-package *」
+`system license delete -serial-number <node1_serial_number> -package *`
+`system license delete -serial-number <node2_serial_number> -package *`
 
 
 
@@ -124,11 +125,11 @@ Do you want to continue? {y|n}: y
 
 . [[unset_mastwait]]如果在組態中使用自我加密磁碟機、且您已設定 `kmip.init.maxwait` 變數至 `off` （例如、在 _Boot node2 中使用替換的系統模組 _ 、 link:boot_node2_with_a900_controller_and_nvs.html#boot_node2_step1["步驟1."]）、您必須取消設定變數：
 +
-「et diag; systemShell -node_node_name_-command sudo kenv -u -p kmip.init.maxwait`」
+`set diag; systemshell -node <node_name> -command sudo kenv -u -p kmip.init.maxwait`
 
 . 在兩個節點上使用下列命令來設定SP：
 +
-「系統服務處理器網路修改-node_node_name_」
+`system service-processor network modify -node <node_name>`
 
 +
 請參閱 link:other_references.html["參考資料"] 如需SP和_SUR9 ONTAP 命令的相關資訊、請連結至_System Administration Reference（系統管理參考資料）：Manual Page Reference（手冊頁參考）_、以取得有關係統「服務處理器網路修改」命令的詳細資訊。

@@ -19,7 +19,7 @@ summary: 啟用HA配對、驗證node3和node4儲存設備存取、並在執行ON
 .步驟
 . 在其中一個節點上輸入下列命令以啟用儲存容錯移轉：
 +
-「torage容錯移轉修改啟用的true -node3_」
+`storage failover modify -enabled true -node <node3>`
 
 . 確認已啟用儲存容錯移轉：
 +
@@ -66,19 +66,21 @@ node4          node3          true     Connected to node3
 
 . 驗證node3是否擁有node1的集合體、以及node4是否擁有node2的集合體：
 +
-"torage Aggregate show -Owner-name _node3_'"storage aggregate show -Owner-name _node4_"
+`storage aggregate show -owner-name <node3>`
+`storage aggregate show -owner-name <node4>`
 
 . 判斷是否有任何磁碟區離線：
 +
-「Volume show -node3_-state offline」（Volume show -node4_-state offline）
+`volume show -node <node3> -state offline`
+`volume show -node <node4> -state offline`
 
 . 如果有任何磁碟區離線、請將它們與您在中擷取的離線磁碟區清單進行比較  link:prepare_nodes_for_upgrade.html#man_prepare_nodes_step19["步驟19（d）"] 在_準備要升級的節點_中、輸入下列命令（針對每個Volume一次）、並視需要將任何離線磁碟區上線：
 +
-"Volume online -vserver _vserver_name_-volume _volume _name_"
+`volume online -vserver <vserver_name> -volume <volume_name>`
 
 . 為每個節點輸入下列命令、以安裝新節點的新授權：
 +
-「系統授權新增-授權碼_license代碼、license代碼、license代碼、license代碼..._」
+`system license add -license-code <license_code,license_code,license_code...>`
 
 +
 授權代碼參數接受28個大寫字母字元金鑰的清單。您可以一次新增一個授權、也可以一次新增多個授權、每個授權金鑰都以逗號分隔。
@@ -89,7 +91,8 @@ node4          node3          true     Connected to node3
 
 . 若要從原始節點移除所有舊授權、請輸入下列其中一個命令：
 +
-「系統授權清理-未使用的-過期」「系統授權刪除-序號_normite_sSerial_number_-套件_licensee_package_」
+`system license clean-up -unused -expired`
+`system license delete -serial-number <node_serial_number> -package <licensable_package>`
 
 +
 ** 若要刪除所有過期的授權、請輸入：
@@ -102,7 +105,8 @@ node4          node3          true     Connected to node3
 
 ** 若要從叢集刪除特定授權、請在節點上輸入下列命令：
 +
-「系統授權刪除-序號_node1_sSerial_number_-package *」「系統授權刪除-序號_node2_sSerial_number_-package *」
+`system license delete -serial-number <node1_serial_number> -package *`
+`system license delete -serial-number <node2_serial_number> -package *`
 
 +
 將顯示下列輸出：
@@ -128,7 +132,7 @@ Do you want to continue? {y|n}: y
 
 . 在兩個節點上執行下列命令來設定SP：
 +
-「系統服務處理器網路修改-node_node_name_」
+`system service-processor network modify -node <node_name>`
 
 +
 前往 link:other_references.html["參考資料"] 如需SP和_SUR9 ONTAP 命令的相關資訊、請連結至_System Administration Reference（系統管理參考）：Manual Page Reference（手冊頁參考）_、以取得有關「系統服務-處理器網路修改」命令的詳細資訊。

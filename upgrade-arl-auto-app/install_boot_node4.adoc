@@ -283,13 +283,13 @@ IMPORTANT: 您必須重新設定FC內建連接埠、CNA內建連接埠和CNA卡�
 . 如果您的組態使用交換器型分區、請調整分區以反映新的WWPN值。
 
 
-. [[auto_install4_step27]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
+. [[auto_install4_step27]]如果您安裝了 NetApp 儲存加密 (NSE) 驅動器，請執行下列步驟：
 +
 
 NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷使用中的自我加密磁碟機類型。
 
 +
-.. 設定 `bootarg.storageencryption.support` 至 `true` 或 `false`。
+.. 設定 `bootarg.storageencryption.support` 至 `true` 或 `false`：
 +
 [cols="35,65"]
 |===

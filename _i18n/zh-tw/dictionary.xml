@@ -1078,7 +1078,6 @@
   <block id="eed577fe70cdcd6a422d81d49e0f94ca" category="paragraph">此命令需要Onboard Key Manager（OKM）通關密碼。</block>
   <block id="57bd5edad2e4a85125aa9528f6fa4cea" category="list-text">還原OKM驗證：</block>
   <block id="0a83ed732b07426c840d56d0ee6e648b" category="cell">「安全金鑰管理程式內建同步」</block>
-  <block id="f52de228b93a6f965c1879aa97b007d6" category="paragraph">檢查是否有任何磁碟區因為驗證金鑰無法使用或無法連線至外部金鑰管理伺服器而離線。使用「Volume online」命令將這些磁碟區重新連線。</block>
   <block id="bc8355e3ba73925a2f4cf661fa66be6a" category="summary">使用ONTAP 「系統控制器更換」命令來升級執行《更新版本》9.8或更新版本的控制器時、請設定node4內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡。</block>
   <block id="403ef226990b83673617ca3be4865d06" category="list-text">前往 <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block> 如果節點4有UTA/UTA2卡或UTA/UTA2內建連接埠。</block>
   <block id="204783b1ca658239a7b205df8e2d83dd" category="paragraph">Boot_ONTAP功能表。</block>
@@ -1452,7 +1451,6 @@
   <block id="72a91a015e8c747a5a63794308310840" category="cell">SP的IP位址</block>
   <block id="c685ef92ee54cacdd0c225fa2bb12fbe" category="cell">第6階段：_確認新控制器已正確設定_</block>
   <block id="e3d8433cfe5569460492707086339074" category="cell">授權金鑰</block>
-  <block id="bb2a59fbd20fec79ac114c7a9f22ead2" category="cell">外部金鑰管理伺服器的IP位址</block>
   <block id="234cfc2e3636ba2a3e5d47da84d5bd32" category="cell">第1階段：_重新輸入磁碟以進行儲存加密_</block>
   <block id="a6bab46fa807f06174c4873c5331a9b2" category="cell">第6階段：_在新節點上設定儲存加密_</block>
   <block id="09c90f884edd2efc00874f9fc863daeb" category="cell">網路存取目錄的名稱和路徑、您可在其中下載檔案以使節點進入網路開機</block>
@@ -3024,11 +3022,6 @@
   <block id="844ad6e55c95a4328e37b5e065b5ff4a" category="paragraph">系統節點AutoSupport 的功能不受限制</block>
   <block id="e31a23cd4ecc24fce8358862c8b9bae7" category="list-text">從每個新節點、傳送升級後AutoSupport 的資訊給技術支援：</block>
   <block id="39f6fe42807470e793eabaa7b4decf63" category="paragraph">「系統節點AutoSupport 無法叫用節點node_name -type all -m則 訊息「MAn=end node_name custmalled from plate_old to platform _new」（已成功從platfort_old升級至platform _new）。</block>
-  <block id="579f7a458ea3f243e9743154fab94bfb" category="inline-link">使用CLI管理加密</block>
-  <block id="fb466db54f62bed3a97d8ba7d3ed2c8e" category="list-text">使用中的適當程序還原儲存設備或Volume Encryption功能<block ref="9dcdd70dc160b50ece72ebdfa01ae45b" category="inline-link-rx"></block> 內容：</block>
-  <block id="e68c8836280fba147b04a2b14b196600" category="paragraph">視您使用的是內建或外部金鑰管理而定、請使用下列其中一個程序：</block>
-  <block id="0ba3cc03b09a456d5100379e45dfaaba" category="list-text">「還原內建金鑰管理加密金鑰」</block>
-  <block id="a96d0d7d353c649cc2f1612f3100f861" category="list-text">「還原外部金鑰管理加密金鑰」</block>
   <block id="ef613ca6be844d20a9465aad12778acf" category="list-text">如果新節點具有FC連接埠（內建或FC介面卡）、內建CNA連接埠或CNA卡、請在儲存系統提示字元中輸入下列命令來設定FC或CNA連接埠：</block>
   <block id="7334dc04c7292582343d824254e622ce" category="paragraph">「系統節點硬體統一連線修改節點節點名稱介面卡名稱模式｛fc/cna｝-type｛target | initiator｝」</block>
   <block id="b50a05f2d30350b2ea8e112696c796d0" category="paragraph">您只能在CNA介面卡離線時修改CNA組態。</block>
@@ -3085,7 +3078,6 @@
   <block id="1edc30c9cec2665a01f0a9cc7910d9fc" category="paragraph">網路連接埠刪除</block>
   <block id="7315714b19f21e9ad91dfa8b10b194f9" category="cell">重新啟用高可用度：「叢集ha modify -configured true」</block>
   <block id="35dece72c7fa8f55fa95338ea53d5bb8" category="cell">重新啟用儲存容錯移轉：「torage容錯移轉修改-node_name -enabled_true」</block>
-  <block id="6aee45ea83745bd29b2b86870d2afe83" category="list-text">使用中的適當程序還原儲存設備或Volume Encryption功能<block ref="713156fa56254a04d458a101e174aa50" category="inline-link-rx"></block> 內容：</block>
   <block id="f6feea768bbf907f8918a30130dc7d38" category="summary">執行診斷之後、您必須重新連接控制器模組的儲存設備和網路連線。</block>
   <block id="ea122bb8fa70f0ea4b180db441cf1abd" category="doc">重新啟用系統</block>
   <block id="3c0c8efee11cd7a51266228208ce0a13" category="paragraph">執行診斷之後、您必須重新連接控制器模組的儲存設備和網路連線。</block>
@@ -3347,10 +3339,8 @@
   <block id="5861bf10ae07bb7c0e6218d5663221a4" category="paragraph">「ucadmin modify -m fc|cna -t啟動器| target _adapter_name_」</block>
   <block id="c5fabf666636164983c54a60426edaab" category="cell">網路FCP介面卡修改-node_node_name_-介 面卡_adapter_name_-state up</block>
   <block id="e07e74f9f1df10fa040f36e818e29bd1" category="cell">"FCP config _adapter_name_ up（FCP組態介面卡名稱_啟動）"</block>
-  <block id="9fb768ad6510fe46b2016783cac8eadb" category="paragraph">「torage Aggregate show -Owner-name _node2_」</block>
   <block id="cde8cf801e542566f503970c16a89b61" category="admonition">「EVENT log show」命令會列出發生的任何錯誤。</block>
   <block id="7a4b65a92ad0461916e64e86d4469810" category="paragraph">'線上儲存Aggregate -Agggr_name_'</block>
-  <block id="9768bc676d49dbda7bf856a2930c4b52" category="paragraph">「Volume show -node3_-state offline」</block>
   <block id="ffd863d528f6b76a6f398dd53b185d1d" category="cell">"Disk reassign-s"（磁碟重新指派-s）`_node2_sysid_-d _node_sysid_-p _node_sysid_'</block>
   <block id="9666e158b6e459758482181fdc5caf71" category="cell">"Disings disk reassign-s（磁碟重新指派- s）"_node2_sysid_-d _node4_sysid_"</block>
   <block id="ff573218a71a52e566a9d2cb9c112902" category="paragraph">「磁碟重新指派」命令只會重新指派目前擁有者為「節點2_sysid_」的磁碟。</block>
@@ -3383,13 +3373,6 @@
   <block id="06c8bee57dd2167bbb1dbfa5749c956a" category="paragraph">「cluster modify -node2_-epsilon true」</block>
   <block id="0814e17724c439ef0cd37ea13167d663" category="paragraph">'系統節點停止-節點節點節點1_'</block>
   <block id="15a27fbf1719df235581c1df85f4770c" category="paragraph">「網路介面show -curr-node-node4_」</block>
-  <block id="7ad7509ea03580dbba4ac42f8a0e9061" category="paragraph">「torage容錯移轉修改啟用的true -node3_」</block>
-  <block id="f95d062b8f3dd313f851677720fd47c0" category="paragraph">"torage Aggregate show -Owner-name _node3_'"storage aggregate show -Owner-name _node4_"</block>
-  <block id="68c05b65b923848aa186ea69ee9487d7" category="paragraph">「Volume show -node3_-state offline」（Volume show -node4_-state offline）</block>
-  <block id="113d7e75ab71ebd9bcdd1155228482fc" category="paragraph">"Volume online -vserver _vserver_name_-volume _volume _name_"</block>
-  <block id="d5538e0d48b9561003d2506ab100c330" category="paragraph">「系統授權新增-授權碼_license代碼、license代碼、license代碼、license代碼..._」</block>
-  <block id="f8bb98c031da24e788f5f02332ac5bb8" category="paragraph">「系統授權清理-未使用的-過期」「系統授權刪除-序號_normite_sSerial_number_-套件_licensee_package_」</block>
-  <block id="e4c31b5f2905d746c57c1b1f1e038eac" category="paragraph">「系統授權刪除-序號_node1_sSerial_number_-package *」「系統授權刪除-序號_node2_sSerial_number_-package *」</block>
   <block id="bb445430e4b0638bdd79f943cd99a597" category="paragraph">「系統服務處理器網路修改-node_node_name_」</block>
   <block id="676d4cfadd30ded5fabdceb082fde10a" category="paragraph">「網路介面show -curr-node-node1_-role cluster、intercluster、node-mgmt、cluster-mgmt」</block>
   <block id="bbbfa87c5efa2321ddc7c2656baf791f" category="paragraph">「網路連接埠show -node1_-type Physical」</block>
@@ -3452,17 +3435,8 @@
   <block id="8909b365f802b24a2d37f4d90ed96920" category="paragraph">「網路連接埠ifgrp remove-port -node_node_name_-ifgrp _ifgrp_name_-port _port_name_」</block>
   <block id="173bdd18bf4da14689baa4b97bbd0911" category="paragraph">「ucadmin modify -m sfc-t target _adapter-'」</block>
   <block id="e963df8c33a142fa50363ce5f3bbcbb9" category="paragraph">「ucadmin modify -m光纖通道-t啟動器_adapter-'」</block>
-  <block id="b552b2e6a2a24270da2f85599d5289a0" category="paragraph">「torage Aggregate show -node3_-state online -root假」</block>
-  <block id="592033840c276a690ab8f96c3c733525" category="paragraph">與此命令一起使用的"_vserver_name_"可在先前的"volume show"命令輸出中找到。</block>
-  <block id="5ae519d56c0326f582652e283c3ea809" category="paragraph">「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node_node_name_-stue-admin up」</block>
   <block id="2d5c970ee87c5df0e21b3a8b9ed88ccb" category="paragraph">「安全金鑰管理程式外部附加伺服器-金鑰伺服器_key_manager_server_ip_address_」</block>
   <block id="cf1e3ade592584c451b16fefa9ffaf61" category="paragraph">「torage容錯移轉顯示-欄位、本機磁碟遺失、合作夥伴磁碟遺失」</block>
-  <block id="0d12a6e9cec4647b5d9b5253b4073e2b" category="paragraph">「torage Aggregate show -Owner-name _node3_」</block>
-  <block id="0e71c4af1c9d433ba1aca904b40b449e" category="paragraph">「torage Aggregate show -Owner-name _node4_」</block>
-  <block id="6041278c5d25ed9c37ecc9a4ba73306b" category="paragraph">「系統授權新增-授權碼_license代碼、license代碼、license代碼、license代碼…_」</block>
-  <block id="ee58b8665fc7b6cbed254e1253d5deb9" category="paragraph">「系統授權刪除-序號_node_sSerial_number_-套件_licensee_package_」</block>
-  <block id="bcacb0089032ec901277a70c73c0ec1b" category="paragraph">「系統授權刪除-序號_node1_sSerial_number_-package *」</block>
-  <block id="4a472f5ad7101a303b004c96117957a1" category="paragraph">「系統授權刪除-序號_node2_sSerial_number_-package *」</block>
   <block id="0a06fcfc5f0fe34a7f9397c4cfc05b2a" category="paragraph">「et diag; systemShell -node_node_name_-command sudo kenv -u -p kmip.init.maxwait`」</block>
   <block id="3bc434e6b7496efb94a7be3c795bee4a" category="paragraph">「torage Aggregate regate or搬 移開始節點_source_node_-destination-node_-aggregation-list *」</block>
   <block id="8723a951ee1fe15da772afbecba7e9cc" category="paragraph">「System Controller replace start -nodes _norme_names」（系統控制器取代start節點_node_names）</block>
@@ -3508,8 +3482,6 @@
   <block id="6ffba319a9343d4d7079cd092fc1731f" category="paragraph">「網路介面移轉-vserver叢集-lif_lif_name_-source-Node node4 dest-Node node4 -dest-port _port_name_」</block>
   <block id="6f6feb1d5079ae856c3e038f36cf5511" category="paragraph">「網路介面修改-vserver _vserver_-lif_lif_name_–home-port _port_name_」</block>
   <block id="714116d25588d456eb2625b3a4e3438f" category="paragraph">「torage Aggregate regate or搬 移開始節點_node1_-destate _node2_ aggregate list *-ndocu控制 器升級true」</block>
-  <block id="c2acdfddae4bd8e19301f3c9da97795f" category="paragraph">「torage Aggregate show -Owner-name _node1_」</block>
-  <block id="782650bc65c7f77fc89c4076c7b6450d" category="paragraph">「Volume show -node1_-state offline」</block>
   <block id="d87163e47ee27f2782fe148edbe3ed57" category="paragraph">"network port re連通 性修復-node_node_name_-port _port_name_"</block>
   <block id="ec14d769131d094d612c9fca445d8baa" category="paragraph">「顯示介面還原主節點節點節點_norme_name_-vserver _vserver_name_-lif-name _lif_name_」</block>
   <block id="5062794872bed9f85f36826d260cf264" category="paragraph">「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-nodename_- STATUS-admin up」</block>
@@ -3780,7 +3752,6 @@
   <block id="93cbc4495a566db3a58548f326fa221c" category="paragraph">在以網路開機系統之前、您必須確認所有 SnapMirror 關係均已處於禁用狀態。當SnapMirror關係靜止時、它會在重新開機和容錯移轉之間保持靜止。</block>
   <block id="1cf6b38ccce07c615f777e8d49040349" category="inline-link">如何從 ONTAP 開機功能表還原外部金鑰管理程式伺服器組態</block>
   <block id="a9021e1b94f8e36032c1a900148d17bf" category="paragraph">如需詳細資訊、請參閱知識庫文章<block ref="d55f681383ef8cdbd5ac64000ea6e309" category="inline-link-rx"></block>。</block>
-  <block id="3e735cdc84f6fab485c4ddb66b026489" category="paragraph">檢查是否有任何磁碟區因為驗證金鑰無法使用或無法連線到外部金鑰管理伺服器而離線。使用將這些磁碟區重新上線<block ref="fcc46ad208d53e4021ecddc4ee333dc3" prefix=" " category="inline-code"></block> 命令。</block>
   <block id="595e785894184e8832420129093393c7" category="summary">在執行 ONTAP 9.8 或更新版本的控制器上進行手動 ARL 升級時、請使用內建金鑰管理器來管理驗證金鑰。</block>
   <block id="7de07b30845475194f5305d135dd504b" category="paragraph">您可以使用 Onboard Key Manager （ OKM ）來管理驗證金鑰。如果您已設定 OKM 、則必須在開始升級之前記錄複雜密碼和備份資料。</block>
   <block id="b57235dcd9249f0e9bf6001eecd99ce5" category="list-text">記錄叢集範圍的複雜密碼。</block>
@@ -3788,7 +3759,6 @@
   <block id="8cada82213a4eb50c1f0cba46389bd44" category="list-text">執行以備份金鑰管理程式資訊<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block> 命令。</block>
   <block id="219d5a10054a3daaa60cc6dc3881a506" category="paragraph">如果節點1和節點2位於不同的機箱中、您可以將節點3放在與節點1相同的機架位置。不過、如果 node1 位於與 node2 相同的機箱中、則您必須將 node3 放入自己的機架空間、最好是靠近 node1 的位置。</block>
   <block id="7abb4d22dfb96ceb2a52ebfc5cef2026" category="admonition">您可能不需要將互連卡或叢集互連纜線連線從節點1移至節點3、因為大多數平台機型都有獨特的互連卡模式。對於 MetroCluster 組態、您必須將 FC-VI 纜線連線從 node1 移至 node3 。如果新主機沒有FC-VI卡、您可能需要移動FC-VI卡。</block>
-  <block id="215bdc272bd2e7402000e545b699610b" category="list-text">[[man_install3_step16]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。</block>
   <block id="28fabaf13c83a39f567169d484c2bdb7" category="admonition">如果您尚未在程序中稍早完成此作業、請參閱知識庫文章<block ref="99bc6507ac71bae6bc6755b2bf68f73a" category="inline-link-rx"></block> 以判斷使用中的自我加密磁碟機類型。</block>
   <block id="c31ef72d8e3bd3a09ff6ce8b371d8d63" category="list-text">設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 至<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 或<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>：</block>
   <block id="f0b1dfc1f82eec89fa61235553e2e4d0" category="cell">符合 FIPS 140-2 第 2 級自我加密要求的 NSE 磁碟機</block>
@@ -3910,7 +3880,6 @@
   <block id="eedfdc7d9365a1f9e29964c35c82e348" category="paragraph"><block ref="8cf81755f02bee986a80060b929f2335" prefix="" category="inline-code"></block></block>
   <block id="c8e281db9c8a31e8da74e7ff6bc12115" category="summary">在執行 ONTAP 9.7 或更早版本的控制器上手動升級 ARL 時、使用 OKM 來管理驗證金鑰。</block>
   <block id="20c4be209ec6c65b4221fa6f09f2df42" category="inline-link-macro">使用 Onboard Key Manager 管理儲存加密</block>
-  <block id="73d106cd4da3fdbd0b8a8317db146c37" category="list-text">[[boot_node2_step1]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。</block>
   <block id="04f24e11b658105f38ef40a82c24839e" category="paragraph">*注意：* AutoSupport 當您第一次設定儲存系統時、預設會啟用此功能。雖然AutoSupport 您可以隨時停用不支援、但仍應保持啟用狀態。啟用AutoSupport 功能可在儲存系統發生問題時、大幅協助識別問題與解決方案。</block>
   <block id="cb6bc72e3e387b19e4fbc2f28ecc2940" category="list-text">設定<block ref="e0224203ce4fa326049e3e770300ce8f" prefix=" " category="inline-code"></block> 至<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 或<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>。</block>
   <block id="e147253c0010bdd5968cb9b4b9ddf7dc" category="cell">外部金鑰管理程式</block>
@@ -4318,11 +4287,9 @@
   <block id="5dac5a25730948f28ff49739852d7be9" category="list-text">NetApp 建議您盡可能在原始節點和新節點上執行相同的 ONTAP 版本。如果不可能、 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 在原始節點上、到支援的最大版本、使原始節點和新節點之間的版本差異不超過四個。例如、支援 ONTAP 9.8 和 9.12.1 ；但是不支援 ONTAP 9.8 和 9.13.1 。</block>
   <block id="d9bec0f0ae398cfc3abbf7091d735c22" category="paragraph">* 注意 1* ：新節點必須支援在原始節點上執行的 ONTAP 版本。如有需要、 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 原始節點上的最大支援版本。原始節點與新節點之間的版本差異不能大於四個。例如、支援 ONTAP 9.8 和 9.12.1 ；但是不支援 ONTAP 9.8 和 9.13.1 。<block ref="ce537934e178c1610dae82a1b82553bf" category="inline-link-rx"></block>。</block>
   <block id="ebf27722a719cbdcb3983568ea50ef42" category="cell">返回_Install and boot node3_、然後繼續執行以下步驟： <block ref="e2938de9a840861d594c77a1743d45f5" category="inline-link-macro-rx"></block>。</block>
-  <block id="06497c4478fee55f8a0ff3319fb722a8" category="list-text">[[auto_install4_step27]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。</block>
   <block id="1e4625a567102c02db411f8ac4403956" category="list-text">[[unset_mastwait_system_commands]]如果在組態中使用自我加密磁碟機、且您已設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變數至<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例如、in <block ref="e646557bd849df21a23243b7031e90bc" category="inline-link-macro-rx"></block>）、您必須取消設定變數：</block>
   <block id="b0da566a6b16767a9a4f6a9815cc8a8c" category="image-alt">卸下纜線管理 ARM</block>
   <block id="df4c49d6d7d92d1a3dd7d374cec6fe02" category="image-alt">打開 CAM 把手</block>
-  <block id="ab8dc73b82108799ac3b6894e5efe57e" category="list-text">[[A900_boot_node1]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。</block>
   <block id="401ec6649ed8fe314eef631a190858b3" category="list-text">檢查並重設中所述的儲存加密bootargs <block ref="d1353daad078803f11ba1627582281b9" category="inline-xref-macro-rx"></block>。</block>
   <block id="e807a193ac5d601655295b7da3f1b093" category="paragraph">但是、如果您有V系列系統或使用FlexArray VMware虛擬化軟體、並連接至儲存陣列、而節點4沒有內建FC連接埠、內建UTA/ UTA2連接埠或UTA/ UTA2卡、則必須返回_安裝與開機節點4_區段、並繼續執行 <block ref="dc87380ee6757ad7d02cae49ae9cdab7" category="inline-link-macro-rx"></block>。確定節點4有足夠的機架空間。如果node4與node2位於不同的機箱中、您可以將node4放在與node3相同的位置。如果節點2和節點4位於同一個機箱中、則節點4已位於適當的機架位置。</block>
   <block id="1e46f02c6c16752b68ae9ed5650557a7" category="list-text">跳過_檢查並設定節點4_上的UTA/UTA2連接埠（如果節點4沒有UTA/UTA2卡或UTA/UTA2內建連接埠）一節、返回_安裝與開機節點4_一節、並繼續執行以下步驟： <block ref="dc87380ee6757ad7d02cae49ae9cdab7" category="inline-link-macro-rx"></block>。</block>
@@ -5294,4 +5261,30 @@
   <block id="8f7d8cd660c3a1288b48778ea72e58a5" category="sidebar">決定是否使用此 ARL 程序</block>
   <block id="8f921903953b3b6717329ab7de1391c1" category="sidebar">纜線 node2 用於共用的叢集 HA 儲存設備</block>
   <block id="76751896989d28875a4eeddf2995da8d" category="sidebar">準備重新配置交換器佈局</block>
+  <block id="9c328071e0321bfbe1d164cac2c22ebd" category="paragraph"><block ref="e6b811afaa94951aac008a53e383ff23" prefix="" category="inline-code"></block></block>
+  <block id="b3b5d42abc670ac795f4b90cfc221655" category="paragraph"><block ref="cb38fc2887221a0ca6581f1d73b29ec5" prefix="" category="inline-code"></block></block>
+  <block id="028c6aaad70991eeba5c4bb66ea88329" category="paragraph">這<block ref="d6d2e75e827fff3babc66bc7cd4d2c4b" prefix=" " category="inline-code"></block>使用此命令的方法可以在上一個命令的輸出中找到<block ref="0c5606ed319753bb2d86a485f23c8f6d" prefix=" " category="inline-code"></block>命令。</block>
+  <block id="7edece7677f8bef06093b6be08879c67" category="paragraph"><block ref="b79a4da2e325c3015ed2f7afe206a96b" prefix="" category="inline-code"></block></block>
+  <block id="a29df3ccd4c80ed70466ab7e616060db" category="paragraph"><block ref="c1415a35d798d0e1bc89dfc239e96300" prefix="" category="inline-code"></block> &lt; <block ref="d6d2e75e827fff3babc66bc7cd4d2c4b" prefix=" " category="inline-code"></block>使用此命令的方法可以在上一個命令的輸出中找到<block ref="0c5606ed319753bb2d86a485f23c8f6d" prefix=" " category="inline-code"></block>命令。</block>
+  <block id="316bb78c78d8c5d743c44432528cc2c4" category="paragraph"><block ref="4221e144bb878e9d4c97a49eaf2eb814" prefix="" category="inline-code"></block></block>
+  <block id="4d090b6b4178c6d326829a98b05a4cd7" category="paragraph"><block ref="534a01a4ca515955efe8376e84615e84" prefix="" category="inline-code"></block></block>
+  <block id="b7836a7a1972d5f8803e2f44bd3cb658" category="paragraph"><block ref="49166cc15e848fc049881c3de5e1d1f8" prefix="" category="inline-code"></block><block ref="6d203e2c19155492a108b65377909131" prefix=" " category="inline-code"></block></block>
+  <block id="4655a1857691d25ac0c12a710dad5454" category="paragraph"><block ref="365695b1d723adf070447422d9e8d907" prefix="" category="inline-code"></block><block ref="5db9f9801ff1015f8f0ec287f1a37e08" prefix=" " category="inline-code"></block></block>
+  <block id="8502756d136a7fbd63f0576ce096751b" category="paragraph"><block ref="e0dd455af4d681c74ccfc9dc72ac81da" prefix="" category="inline-code"></block></block>
+  <block id="a0cc12382dcdc36e42046d83b6c7e109" category="paragraph"><block ref="2599180db5e07a38b13f33bacd678ed0" prefix="" category="inline-code"></block><block ref="cad104e67eebc6460f05ee5386343340" prefix=" " category="inline-code"></block></block>
+  <block id="29d22afc321b012279dd6e65d63787dd" category="paragraph"><block ref="c1691ae4960273f7d983ed570ccc250a" prefix="" category="inline-code"></block><block ref="66730ced80aced888a1e584b32aac885" prefix=" " category="inline-code"></block></block>
+  <block id="dce88c7c89a608000baa31d7f41aafe5" category="cell">外部金鑰管理伺服器的 IP 位址</block>
+  <block id="f861760a9e4b91d9c15f4ed6899c8a67" category="list-text">根據您使用的是板載金鑰管理還是外部金鑰管理，使用下列任一程序還原儲存或磁碟區加密功能：</block>
+  <block id="7b5b637cc082477a9dd4c129c225152e" category="inline-link-macro">還原內建金鑰管理加密金鑰</block>
+  <block id="43a39f2ab9e3339214d6fda05936d597" category="list-text"><block ref="43a39f2ab9e3339214d6fda05936d597" category="inline-link-macro-rx"></block></block>
+  <block id="1ee623098df2f7856a034824be882999" category="inline-link-macro">還原外部金鑰管理加密金鑰</block>
+  <block id="116698f9b98f4e456ff27e95e38fccf3" category="list-text"><block ref="116698f9b98f4e456ff27e95e38fccf3" category="inline-link-macro-rx"></block></block>
+  <block id="18b86b85ac7e74bdaf460ba1e2f65f0e" category="list-text">[[auto_install4_step27]]如果您安裝了 NetApp 儲存加密 (NSE) 驅動器，請執行下列步驟：</block>
+  <block id="bdac4e49f25f09fd22688c1a0aaf704a" category="paragraph">檢查是否有任何磁碟區因為驗證金鑰無法使用或無法連線至外部金鑰管理伺服器而離線。使用<block ref="fcc46ad208d53e4021ecddc4ee333dc3" prefix=" " category="inline-code"></block>命令。</block>
+  <block id="0095109d5b66e24afe910457a637e763" category="list-text">[[A900_boot_node1]]如果您安裝了 NetApp 儲存加密 (NSE) 驅動器，請執行下列步驟：</block>
+  <block id="c79e58170822a59a6dd931336ca868ed" category="list-text">[[boot_node2_step1]]如果您安裝了 NetApp 儲存加密 (NSE) 驅動器，請執行下列步驟：</block>
+  <block id="78afe52f3d782a64e711de589b4df3d3" category="paragraph"><block ref="346db28706192c9274da330f004e695a" prefix="" category="inline-code"></block></block>
+  <block id="ee003f27b169d76d97322f42ff3b1684" category="paragraph"><block ref="fa9973ef8cb7c81f6e65cb1c4e0c12f2" prefix="" category="inline-code"></block></block>
+  <block id="4dfbd3112f049daa92b3b9620a0a23b4" category="list-text">如果您安裝了 NetApp 儲存加密 (NSE) 驅動器，請執行下列步驟：</block>
+  <block id="780d3ce82c06a7096f3d7b6381f35cf4" category="list-text">[[man_install3_step16]]如果您安裝了 NetApp 儲存加密 (NSE) 驅動器，請執行下列步驟：</block>
 </blocks>

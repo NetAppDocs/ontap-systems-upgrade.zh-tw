@@ -54,25 +54,25 @@ node4    node3    true       Connected to node3
 
 . 驗證node3是否擁有node1的集合體、以及node4是否擁有node2的集合體：
 +
-「torage Aggregate show -Owner-name _node3_」
+`storage aggregate show -owner-name <node3>`
 
 +
-「torage Aggregate show -Owner-name _node4_」
+`storage aggregate show -owner-name <node4>`
 
 . 判斷是否有任何磁碟區離線：
 +
-「Volume show -node3_-state offline」
+`volume show -node <node3> -state offline`
 
 +
-「Volume show -node4_-state offline」
+`volume show -node <node4> -state offline`
 
 . 如果有任何磁碟區離線、請將它們與您在一節中擷取的離線磁碟區清單進行比較 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]並在每個Volume上使用一次下列命令、視需要將任何離線磁碟區上線：
 +
-"Volume online -vserver _vserver_name_-volume _volume _name_"
+`volume online -vserver <vserver_name> -volume <volume_name>`
 
 . 針對每個節點使用下列命令、安裝新節點的新授權：
 +
-「系統授權新增-授權碼_license代碼、license代碼、license代碼、license代碼…_」
+`system license add -license-code <license_code,license_code,license_code…>`
 
 +
 授權代碼參數接受28個大寫字母字元金鑰的清單。您可以一次新增一個授權、也可以一次新增多個授權、以英文分隔每個授權金鑰。
@@ -82,7 +82,7 @@ node4    node3    true       Connected to node3
 「系統授權清除-未使用-過期」
 
 +
-「系統授權刪除-序號_node_sSerial_number_-套件_licensee_package_」
+`system license delete -serial-number <node_serial_number> -package <licensable_package>`
 
 +
 --
@@ -96,10 +96,10 @@ node4    node3    true       Connected to node3
 
 ** 在節點上使用下列命令、從叢集刪除特定授權：
 +
-「系統授權刪除-序號_node1_sSerial_number_-package *」
+`system license delete -serial-number <node1_serial_number> -package *`
 
 +
-「系統授權刪除-序號_node2_sSerial_number_-package *」
+`system license delete -serial-number <node2_serial_number> -package *`
 
 
 

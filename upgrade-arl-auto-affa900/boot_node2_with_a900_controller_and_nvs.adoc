@@ -20,7 +20,7 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請使用替換
 NOTE: 只有在您透過交換系統模組進行升級時，才能移動主控台和管理連線。
 
 .步驟
-. [[boot_node2_step1]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。
+. [[boot_node2_step1]]如果您安裝了 NetApp 儲存加密 (NSE) 驅動器，請執行下列步驟：
 +
 
 NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷使用中的自我加密磁碟機類型。

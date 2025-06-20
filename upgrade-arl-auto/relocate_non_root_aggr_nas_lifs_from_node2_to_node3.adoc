@@ -30,7 +30,7 @@ NOTE: 不會修改集合體和lifs的主擁有者、只會修改目前擁有者�
 .步驟
 . 驗證所有非根Aggregate均處於線上狀態、以及節點3上的狀態：
 +
-「torage Aggregate show -node3_-state online -root假」
+`storage aggregate show -node <node3> -state online -root false`
 
 +
 以下範例顯示節點2上的非根Aggregate處於線上狀態：
@@ -49,24 +49,21 @@ aggr_2         825.0GB      825.0GB      0%     online  1      node2  raid_dp  n
 如果Aggregate已離線或成為節點3上的外部節點、請在節點3上使用下列命令將其上線、每個Aggregate一次：
 
 +
-'線上儲存Aggregate -Agggr_name_'
+`storage aggregate online -aggregate <aggregate_name>`
 
 . 在node3上使用以下命令並檢查輸出、以確認節點3上的所有磁碟區都已上線：
 +
-「Volume show -node3_-state offline」
+`volume show -node <node3> -state offline`
 
 +
 如果節點3上有任何磁碟區離線、請在節點3上使用下列命令將其上線、每個磁碟區一次：
 
 +
-"Volume online -vserver _vserver_name_-volume _volume _name_"
-
-+
-與此命令一起使用的"_vserver_name_"可在先前的"volume show"命令輸出中找到。
+`volume online -vserver <vserver_name> -volume <volume_name>` <  `vserver_name`使用此命令的方法可以在上一個命令的輸出中找到 `volume show`命令。
 
 . 驗證是否已將lifs移至正確的連接埠、且狀態為「up」。如果有任何生命中斷、請輸入下列命令、並針對每個LIF輸入一次、將該生命的管理狀態設定為「UP」：
 +
-「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-node_node_name_-stue-admin up」
+`network interface modify -vserver <vserver_name> -lif <LIF_name> -home-node <node_name> -status-admin up`
 
 . 如果新硬體上不存在目前裝載資料生命體的連接埠、請將其從廣播網域中移除：
 +
