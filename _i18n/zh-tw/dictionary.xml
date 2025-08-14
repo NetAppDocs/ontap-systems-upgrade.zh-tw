@@ -4040,7 +4040,6 @@
   <block id="663c963d479132d6dd08963c3d3fa6bc" category="inline-link-macro">第 4 階段：重新部署資源並淘汰 node2</block>
   <block id="02f2f9641c85a8db356647e8893d98f5" category="inline-link-macro">第 5 階段：在 node2 上安裝替換系統模塊</block>
   <block id="74b38fc0176f87b24ddc1621aaae7baa" category="inline-link-macro">階段 6 ：使用替換系統模組來啟動 node2</block>
-  <block id="b93e89e00a33c9eaa3657a6d6718aa61" category="paragraph">在第 6 階段中、您可以使用升級的系統模組來啟動 node2 、並驗證升級後的 node2 安裝。如果您使用NVE、則會還原金鑰管理程式組態。您也可以將節點1非根Aggregate和NAS資料lifs從節點1重新部署到升級的節點2、並確認節點2上存在SAN lifs。</block>
   <block id="826466190f8ccac159cbf60cf120c8fd" category="summary">在使用 ARL 升級同一機箱中的控制器機型時、交換對應的更換 node2 系統模組之後、您可能需要將它們以網路開機。</block>
   <block id="4900049201a6af77c5ee289d1d927b7f" category="list-text">等待更換控制器模組上目前執行的 node2 開機、並顯示開機功能表選項、如下列輸出所示：</block>
   <block id="794cda372e4a8688a690d92ff5d37486" category="list-text">在 node1 上，檢查系統日期、時間和時區：</block>
@@ -4068,7 +4067,6 @@
   <block id="f0ab0f3ccd59172557357748401a0cb3" category="paragraph">當您在程序稍後的實體機架節點3和節點4之後、可能需要將它們以網路開機。「netboot」一詞是指從ONTAP 儲存在遠端伺服器上的ImageImage啟動。準備 netboot 時、您可以將 ONTAP 9 開機映像的複本放到系統可以存取的 Web 伺服器上。</block>
   <block id="8017af71edcef2a167a50b03ad9de6f1" category="paragraph">若要淘汰節點1、請繼續執行自動化作業、以停用與節點2的HA配對、並正確關閉節點1。稍後在程序中、您將 node1 從機架或機箱中移除。</block>
   <block id="fea14900850d7c1ff75c44846767e25e" category="paragraph">將 node2 取代為 node4 之前、請先將 node2 擁有的非根集合體和 NAS 資料生命週期重新放置到 node3 。</block>
-  <block id="2bd4e3852eb146508337046be4d1707c" category="paragraph">若要淘汰 node2 、請先正確關閉 node2 、然後將其從機架或機箱中移除。</block>
   <block id="e9a5b26de7b20b8cdefb00d91a94616b" category="paragraph"><block ref="7679804b715af0ea0e56302f79c4f9b8" prefix="" category="inline-code"></block></block>
   <block id="fcff81c7528d1100eb58e37ad90535bd" category="admonition">如果使用內建金鑰管理程式的 NetApp Volume Encryption （ NVE ）或 NetApp Aggregate Encryption （ NAE ）正在使用中、請在稍後的程序中、將金鑰管理程式複雜密碼保留為完成金鑰管理程式重新同步。</block>
   <block id="1cb0cfe1b06273ad55b3f7189d138bb6" category="paragraph">此程序提供自動化程序的步驟、此程序使用自動磁碟指派和網路連接埠連線檢查來簡化控制器升級體驗。</block>
@@ -5287,4 +5285,25 @@
   <block id="ee003f27b169d76d97322f42ff3b1684" category="paragraph"><block ref="fa9973ef8cb7c81f6e65cb1c4e0c12f2" prefix="" category="inline-code"></block></block>
   <block id="4dfbd3112f049daa92b3b9620a0a23b4" category="list-text">如果您安裝了 NetApp 儲存加密 (NSE) 驅動器，請執行下列步驟：</block>
   <block id="780d3ce82c06a7096f3d7b6381f35cf4" category="list-text">[[man_install3_step16]]如果您安裝了 NetApp 儲存加密 (NSE) 驅動器，請執行下列步驟：</block>
+  <block id="4a1df957cbcb3df9aa2205d817cf2109" category="paragraph">若要淘汰 node2，請正確關閉 node2，然後將其從機架或機箱中移除。</block>
+  <block id="8e0b63c33baeb6a190715db3ff6a5639" category="paragraph">在第 6 階段，您使用升級的系統模組啟動 node2 並驗證升級後的 node2 安裝。如果您正在使用 NVE，您可以還原金鑰管理器配置。如果您要升級具有交換器連接叢集的配置，則需要驗證新控制器的交換器配置。您還將節點 1 的非根聚合和 NAS 資料 LIF 從節點 1 重新定位到升級後的節點 2，並驗證 SAN LIF 是否存在於節點 2 上。</block>
+  <block id="10cace0e3d344387153f687e87f1b288" category="summary">驗證叢集交換器 RCF 是否支援用於交換器連接叢集升級的新控制器的共用叢集/HA 連接埠。</block>
+  <block id="2b1a7f7ae64997f151dc4070b5a3339f" category="doc">驗證叢集交換器上的 RCF 配置</block>
+  <block id="4288bdefdf72b476458de2ae320fd290" category="paragraph">在升級過程的這個階段，所有資料聚合都應位於節點 1 上。如果您要升級具有交換器連接叢集的配置，則需要驗證叢集交換器參考設定檔 (RCF) 是否支援新控制器的共用叢集/HA 連接埠。</block>
+  <block id="7afaed380dc70cadd383153cb0df172c" category="paragraph">如果您要升級到雙節點無交換器叢集配置，則可以跳過本節並前往<block ref="0d500821bdc96d479f52180017fd421c" category="inline-link-macro-rx"></block>。</block>
+  <block id="752f235818174972b18e5041fa403146" category="list-text">檢查“IC RDMA”的狀態：</block>
+  <block id="bc74de8a7baa3f875dd8466d0ec80380" category="paragraph"><block ref="ca4c8649efc0f8c4ac08dd65a4755aae" prefix="" category="inline-code"></block></block>
+  <block id="0e71712a7a686f1ca50aeb1713ddb27d" category="paragraph">在輸出中，「IC RDMA 連接」應具有狀態<block ref="258f49887ef8d14ac268c92b02503aaa" prefix=" " category="inline-code"></block>。</block>
+  <block id="9fc1e13723b1860e3d608f537f403108" category="cell">如果「IC RDMA 連線」狀態為...</block>
+  <block id="f7950b792336917e5134073bda363898" category="cell"><block ref="258f49887ef8d14ac268c92b02503aaa" prefix="" category="inline-code"></block></block>
+  <block id="61decb38566b6125e910fda107613c86" category="cell">前往<block ref="0d500821bdc96d479f52180017fd421c" category="inline-link-macro-rx"></block>。</block>
+  <block id="2b23c6643a7989ea797dcc7318e69941" category="cell"><block ref="08a38277b0309070706f6652eeae9a53" prefix="" category="inline-code"></block></block>
+  <block id="42eed74bc7449c06a58949763bc19a72" category="cell">前往<block ref="5b8028286d92c73a97e17186fd614dd6" category="inline-xref-macro-rx"></block>。</block>
+  <block id="b124461fc46687d506b67d1ab775e491" category="list-text">檢查叢集連接埠和交換器 RCF。</block>
+  <block id="e2ee618006d829a530b146576cce509a" category="list-text">驗證「IC RDMA 連線」狀態是否已變更為<block ref="258f49887ef8d14ac268c92b02503aaa" prefix=" " category="inline-code"></block>：</block>
+  <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">下一步</block>
+  <block id="0d500821bdc96d479f52180017fd421c" category="paragraph"><block ref="0d500821bdc96d479f52180017fd421c" category="inline-link-macro-rx"></block></block>
+  <block id="48b45c4448ac737e7cd5110c5c5ab986" category="paragraph">若要退出節點 1，您可以還原自動操作以停用與節點 2 的 HA 對並正確關閉節點 1。在此過程的稍後部分，您將從機架或機箱中移除節點 1。</block>
+  <block id="fdece49a53b4d22867330bbf853edcbb" category="paragraph">退出節點 1 後，確認其已關閉電源且未連接至網路。將 node1 的舊硬體保留在此狀態，直到完成 node1 和 node2 的升級。然後，您可以在以下情況下停用 node1：<block ref="0f82d37b39d321fc9b25cdd372b37e32" category="inline-link-macro-rx"></block> 。</block>
+  <block id="9385d14007f76e744745739d94bc306a" category="paragraph">退出節點 2 後，確認其已關閉電源且未連接至網路。將 node2 的舊硬體保持此狀態，直到完成 node1 和 node2 的升級。然後，您可以在下列情況下停用 node2<block ref="0f82d37b39d321fc9b25cdd372b37e32" category="inline-link-macro-rx"></block> 。</block>
 </blocks>

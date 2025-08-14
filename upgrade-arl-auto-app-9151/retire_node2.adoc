@@ -14,7 +14,7 @@ summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時�
 
 
 [role="lead"]
-若要淘汰 node2 、請先正確關閉 node2 、然後將其從機架或機箱中移除。
+若要淘汰 node2，請正確關閉 node2，然後將其從機架或機箱中移除。
 
 .步驟
 . 恢復作業：
@@ -27,4 +27,4 @@ summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時�
 
 
 .完成後
-您可以在升級完成後取消委任節點2。請參閱 link:decommission_old_system.html["取消委任舊系統"]。
+退出節點 2 後，確認其已關閉電源且未連接至網路。將 node2 的舊硬體保持此狀態，直到完成 node1 和 node2 的升級。然後，您可以在下列情況下停用 node2link:manage-authentication-using-kmip-servers.html["階段6.完成升級"] 。

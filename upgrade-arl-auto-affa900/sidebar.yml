@@ -83,6 +83,8 @@ entries:
     url: "/upgrade-arl-auto-affa900/verify_node2_installation.html"
   - title: 還原節點2上的金鑰管理程式組態
     url: "/upgrade-arl-auto-affa900/restore_key_manager_config_node2.html"
+  - title: 驗證叢集交換器上的 RCF 配置
+    url: "/upgrade-arl-auto-affa900/verify-rcf-configuration.html"
   - title: 將非根Aggregate和NAS資料lifs移回節點2
     url: "/upgrade-arl-auto-affa900/move_non_root_aggr_and_nas_data_lifs_back_to_node2.html"
 - title: 第7階段：完成升級

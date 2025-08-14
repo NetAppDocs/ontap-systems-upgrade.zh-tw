@@ -1,0 +1,55 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-affa900/verify-rcf-configuration.html 
+keywords: aggregate, relocation, cluster, switch, rcf, shared 
+summary: 驗證叢集交換器 RCF 是否支援用於交換器連接叢集升級的新控制器的共用叢集/HA 連接埠。 
+---
+= 驗證叢集交換器上的 RCF 配置
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+在升級過程的這個階段，所有資料聚合都應位於節點 1 上。如果您要升級具有交換器連接叢集的配置，則需要驗證叢集交換器參考設定檔 (RCF) 是否支援新控制器的共用叢集/HA 連接埠。
+
+如果您要升級到雙節點無交換器叢集配置，則可以跳過本節並前往link:move_non_root_aggr_and_nas_data_lifs_back_to_node2.html["將非根Aggregate和NAS資料lifs移回節點2"]。
+
+.步驟
+. 切換至進階權限模式：
++
+《進階設定》
+
+. 檢查“IC RDMA”的狀態：
++
+`ha interconnect status show`
+
++
+在輸出中，「IC RDMA 連接」應具有狀態 `Up`。
+
++
+[cols="50,50"]
+|===
+| 如果「IC RDMA 連線」狀態為... | 然後… 
+
+
+| `Up` | 前往link:move_non_root_aggr_and_nas_data_lifs_back_to_node2.html["將非根Aggregate和NAS資料lifs移回節點2"]。 
+
+
+| `Down` | 前往<<verify-rcf-step3,步驟3.>>。 
+|===
+. 檢查叢集連接埠和交換器 RCF。
++
+如需更多資訊、請參閱 link:cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster["連線至交換器連接的叢集"]。
+
+. 驗證「IC RDMA 連線」狀態是否已變更為 `Up`：
++
+`ha interconnect status show`
+
+
+
+.下一步
+link:move_non_root_aggr_and_nas_data_lifs_back_to_node2.html["將非根Aggregate和NAS資料lifs移回節點2"]
