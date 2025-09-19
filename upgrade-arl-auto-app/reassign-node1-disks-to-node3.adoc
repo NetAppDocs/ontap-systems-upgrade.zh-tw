@@ -16,11 +16,17 @@ summary: '使用命令升級執行 ONTAP 9.8 或更新版本的控制器時，�
 [role="lead"]
 在驗證 node3 安裝之前，您需要將屬於 node1 的磁盤重新分配給 node3 。
 
-.關於這項工作
-您可以在 node3 上執行本節中的步驟。
-
 .步驟
-. [[reassign-node1-node3-app-step1]] 進入開機功能表，並使用 22/7 選擇隱藏選項 `boot_after_controller_replacement`。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。
+. [[reassign-node1-node3-app-step1]]驗證 node1 是否已在啟動選單處停止。將node1的磁碟重新分配給node3：
++
+`boot_after_controller_replacement`
+
++
+短暫延遲之後、系統會提示您輸入要取代的節點名稱。如果有共享磁碟（也稱為進階磁碟分割（ADP）或分割磁碟）、系統會提示您輸入HA合作夥伴的節點名稱。
+
++
+這些提示可能會被隱藏在主控台訊息中。如果您未輸入節點名稱或輸入不正確的名稱、系統會提示您再次輸入名稱。
+
 +
 .展開主控台輸出範例
 [%collapsible]
@@ -89,6 +95,7 @@ This will replace all flash-based configuration with the last backup to disks. A
 <output truncated>
 .
 Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node node1 disks.
 Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
 Partner sysid = 4294967295, owner sysid = 536940063
@@ -125,7 +132,12 @@ Login:
 
 NOTE: 在上述主控台輸出範例中、ONTAP 如果系統使用進階磁碟分割（ADP）磁碟、則會提示您輸入合作夥伴節點名稱。
 
-. 如果系統進入重新開機迴圈並顯示訊息 `no disks found`，表示系統已將 FC 或 UTA/UTA2 連接埠重設回目標模式，因此無法看到任何磁碟。要解決此問題，請繼續執行<<reassign-node1-node3-app-step3,步驟3.>> <<reassign-node1-node3-app-step8,步驟8.>>，或轉至部分link:verify_node3_installation.html["驗證node3安裝"]。
+. 如果系統進入重新啟動循環並顯示以下訊息 `no disks found`，表示系統已將 FC 或 UTA/UTA2 連接埠重設回目標模式，因此無法看到任何磁碟。選擇以下任務之一來解決此問題：
++
+** 執行<<reassign-node1-node3-app-step3,步驟3.>>到<<reassign-node1-node3-app-step8,步驟8.>>在節點3上
+** 前往章節link:verify_node3_installation.html["驗證node3安裝"]
+
+
 . [[reassign-node1-node3-app-step3]] 自動開機期間按 Ctrl-C 在 Loader > 提示下停止節點。
 . 在載入程式提示下、進入維護模式：
 +

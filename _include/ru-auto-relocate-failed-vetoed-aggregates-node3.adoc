@@ -1,0 +1,31 @@
+= 
+:allow-uri-read: 
+
+
+如果任何聚合無法重新定位或被否決，則需要手動將聚合重新定位到節點 3，或如有必要，覆寫否決或目標檢查。
+
+.關於這項工作
+由於錯誤，系統暫停重定位操作。
+
+.步驟
+. 請檢查事件管理系統（EMS）記錄、以判斷為何無法重新部署或遭否決該集合體。
+. 重新部署任何故障或被否決的集合體：
++
+`storage aggregate relocation start -node <node2> -destination <node3> -aggregate-list <aggregate_name> -ndo-controller-upgrade true`
+
+. 出現提示時、請輸入「y」。
+. 您可以使用下列其中一種方法來強制重新配置：
++
+[cols="35,65"]
+|===
+| 選項 | 說明 
+
+
+| 壓倒一切的否決檢查 | 使用以下命令：
+`storage aggregate relocation start -node node2 -destination node3 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true` 
+
+
+| 覆寫目的地檢查 | 使用以下命令：
+`storage aggregate relocation start -node node2 -destination node3 -aggregate-list <aggregate_list> -ndo-controller-upgrade true -override-vetoes true -override-destination-checks true` 
+|===
+

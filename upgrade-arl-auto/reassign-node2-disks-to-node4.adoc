@@ -16,11 +16,17 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行《更新》9.
 [role="lead"]
 您需要先將屬於 node2 的磁碟重新指派給 node4 ，然後再驗證 node4 安裝。
 
-.關於這項工作
-您可以在 node4 上執行本節中的步驟。
-
 .步驟
-. [[reassign-node2-node4-step1]]] 轉至引導菜單，使用 22/7 選擇隱藏選項 `boot_after_controller_replacement`。在提示符下輸入node2將node2的磁碟重新指派給node4、如下例所示。
+. [[reassign-node2-node4-step1]]驗證node2已在啟動選單停止，並將node2的磁碟重新指派給node4：
++
+`boot_after_controller_replacement`
+
++
+短暫延遲之後、系統會提示您輸入要取代的節點名稱。如果有共享磁碟（也稱為進階磁碟分割（ADP）或分割磁碟）、系統會提示您輸入HA合作夥伴的節點名稱。
+
++
+這些提示可能會被隱藏在主控台訊息中。如果您未輸入節點名稱或輸入不正確的名稱、系統會提示您再次輸入名稱。
+
 +
 .展開主控台輸出範例
 [%collapsible]
@@ -73,8 +79,7 @@ This will replace all flash-based configuration with the last backup to disks. A
 .
 .
 Controller Replacement: Provide name of the node you would like to replace: <name of the node being replaced>
-.
-.
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node <node being replaced> disks.
 Fetched sanown old_owner_sysid = 536953334 and calculated old sys id = 536953334
 Partner sysid = 4294967295, owner sysid = 536953334
@@ -101,7 +106,7 @@ Override system ID? {y|n} y
 Login: ...
 ----
 ====
-. 如果系統進入重新開機迴圈並顯示訊息 `no disks found`，這是因為它已將連接埠重設回目標模式，因此無法看到任何磁碟。繼續執行<<auto_check_4_step3,步驟3.>>至<<auto_check_4_step8,步驟8.>>以解決此問題。
+. 如果系統進入重新啟動循環並顯示以下訊息 `no disks found`，這是因為它已將連接埠重置回目標模式，因此無法看到任何磁碟。執行<<auto_check_4_step3,步驟3.>>透過<<auto_check_4_step8,步驟8.>>在 node4 上解決此問題。
 . [[auto_check_4_step3]] 在自動開機期間按 Ctrl-C 、在 loader> 提示下停止節點。
 . 在載入程式提示下、進入維護模式：
 +
@@ -184,7 +189,7 @@ NOTE: 您可能會在這個階段遇到錯誤。如果發生錯誤、請重複�
 
 
 
-. [[auto_check_4_step9]如果您要從具有外部磁碟的系統升級至支援內部和外部磁碟AFF 的系統（例如、E25A800系統）、請將node2 Aggregate設為根Aggregate、以確認node4從節點2的根Aggregate開機。若要設定根 Aggregate ，請前往開機功能表並選取選項 `5`以進入維護模式。
+. [[auto_check_4_step9]]如果要從具有外部磁碟的系統升級到支援內部和外部磁碟的系統（例如AFF A800系統），請將節點 2 聚合設定為根聚合，以確認節點 4 從節點 2 的根聚合啟動。若要設定根聚合，請前往 node4 上的啟動選單並選擇選項 `5`進入維護模式。
 +
 
 WARNING: *您必須依照所示的確切順序執行下列子步驟；否則可能導致中斷運作、甚至資料遺失。*

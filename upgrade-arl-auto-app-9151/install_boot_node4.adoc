@@ -273,9 +273,18 @@ NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文�
 
 . 將節點開機至開機功能表：
 +
-Boot_ONTAP功能表。
+Boot_ONTAP功能表
 
-. [[auto_check_4_step11] 在 node4 上、前往開機功能表並使用 22/7 、選取隱藏選項 `boot_after_controller_replacement`。在提示符下輸入node2將node2的磁碟重新指派給node4、如下例所示。
+. [[auto_check_4_step11]]當 node4 停止在啟動選單時，透過在 node4 上執行下列命令將 node2 磁碟重新指派給 node4：
++
+`boot_after_controller_replacement`
+
++
+短暫延遲之後、系統會提示您輸入要取代的節點名稱。如果有共享磁碟（也稱為進階磁碟分割（ADP）或分割磁碟）、系統會提示您輸入HA合作夥伴的節點名稱。
+
++
+這些提示可能會被隱藏在主控台訊息中。如果您未輸入節點名稱或輸入不正確的名稱、系統會提示您再次輸入名稱。
+
 +
 .展開主控台輸出範例
 [%collapsible]
@@ -353,6 +362,7 @@ you want to continue?: yes
 .
 Controller Replacement: Provide name of the node you would like to replace:
 <nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node node2 disks.
 Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
 Partner sysid = 4294967295, owner sysid = 536940063

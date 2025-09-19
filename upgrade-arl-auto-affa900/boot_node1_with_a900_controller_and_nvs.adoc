@@ -29,7 +29,7 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請使用替換
 Boot_ONTAP maint
 
 +
-..  `y`請選擇混合式平台確認提示。
+.. 回答 `y`到混合平台確認提示。
 .. 回答 `yes` 確認提示。
 .. 顯示 100GbE 介面的狀態：
 +
@@ -89,7 +89,10 @@ NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文�
 +
 Boot_ONTAP功能表
 
-. 輸入「 22/7 」並選取隱藏選項、將舊的 node1 磁碟重新指派給更換的 node1 `boot_after_controller_replacement` 當節點停止在開機功能表時。
+. 當節點在啟動選單處停止時，透過在 node1 上執行以下命令將舊的 node1 磁碟重新指派給替換 node1：
++
+`boot_after_controller_replacement`
+
 +
 短暫延遲之後、系統會提示您輸入要取代的節點名稱。如果有共享磁碟（也稱為進階磁碟分割（ADP）或分割磁碟）、系統會提示您輸入HA合作夥伴的節點名稱。
 
@@ -196,6 +199,7 @@ This will replace all flash-based configuration with the last backup to disks. A
 .
 .
 Controller Replacement: Provide name of the node you would like to replace:<nodename of the node being replaced>
+Controller Replacement: Provide High Availability partner of node1: <nodename of the partner of the node being replaced>
 Changing sysid of node node1 disks.
 Fetched sanown old_owner_sysid = 536940063 and calculated old sys id = 536940063
 Partner sysid = 4294967295, owner sysid = 536940063

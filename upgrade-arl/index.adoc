@@ -194,8 +194,53 @@ ARL 利用 HA 組態、讓您能夠將非根集合體的擁有權從一個節點
 
 如果您的升級案例不支援使用「系統命令」、您可以使用手動命令來執行 ARL 升級。
 
-選擇 ONTAP 版本的程序以開始升級：
+.顯示支援的系統
+[%collapsible]
+====
+[role="tabbed-block"]
+=====
+.ONTAP 9.8 或更高版本
+--
+以下運行ONTAP 9.8 及更高版本的系統支援手動 ARL 升級：
 
-* link:../upgrade-arl-manual-app/index.html["手動升級執行ONTAP 效能不更新的控制器硬體"]
-* link:../upgrade-arl-manual/index.html["手動升級執行ONTAP 效能不低於更新版本的控制器硬體"]
+* 從系統到系統FAS FAS
+* 從系統到系統AFF AFF
++
+您只能升級至相同系列的替換系統：
 
++
+** AFF A 系列系統至 AFF A 系列系統
+** AFF C 系列系統至 AFF C 系列系統
+
+
+* 從系統到系統ASA ASA
++
+
+NOTE: 不支援 ASA 升級至 ASA R2 更換系統。如需將資料從 ASA 移轉至 ASA R2 的相關資訊，請參閱link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["啟用從 SAN 主機到 ASA R2 儲存系統的資料存取"^]。
+
++
+您只能升級至相同系列的替換系統：
+
++
+** ASA A 系列系統至 ASA A 系列系統
+** ASA C 系列系統至 ASA C 系列系統
+
+
+
+
+link:../upgrade-arl-manual-app/index.html["手動升級執行ONTAP 效能不更新的控制器硬體"]
+
+--
+.ONTAP 9.7 或更早版本
+--
+以下運行ONTAP 9.7 及更早版本的系統支援手動 ARL 升級：
+
+* 從系統到系統FAS FAS
+* 從系統到系統AFF AFF
+
+
+link:../upgrade-arl-manual/index.html["手動升級執行ONTAP 效能不低於更新版本的控制器硬體"]
+
+--
+=====
+====

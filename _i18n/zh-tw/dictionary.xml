@@ -437,7 +437,6 @@
   <block id="63ad3c4d36a1a9f413872ac57af754a7" category="inline-link-macro">驗證node3安裝</block>
   <block id="9415404d53d7363f16891e644c2747f0" category="summary">使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.5的控制器升級至9.7時、請手動重新定位故障或遭否決的集合體。</block>
   <block id="b42a4717030452cc205d4d9947f80c7b" category="paragraph">如果有任何集合體無法重新定位或遭到否決、您必須手動重新定位集合體、或在必要時覆寫檢查結果或目的地檢查。</block>
-  <block id="d5b52813fd23e774f0e560e7d8ecc452" category="paragraph">由於錯誤、重新配置作業將會暫停。</block>
   <block id="70ab34491b1c348e1a029bf39dad5d2c" category="list-text">請檢查EMS記錄、以判斷集合體為何無法重新定位或遭否決。</block>
   <block id="f5bf9910c32ce3468dc3a0f80ee2e47a" category="list-text">重新部署任何故障或被否決的集合體：</block>
   <block id="4f6da995dc4a823a0d6529c9d724b695" category="list-text">出現提示時、請輸入「y」。</block>
@@ -1232,8 +1231,6 @@
   <block id="2a1ffcfd9b3fe851dbeca2f509c1f7a3" category="paragraph">如果您的系統有磁帶SAN、則需要將啟動器分區。如有需要、請參閱、將內建連接埠修改為啟動器 <block ref="1d789633b45165b05bf13f9838060fe6" category="inline-link-macro-rx"></block>。請參閱儲存陣列與分區文件、以取得分區的進一步指示。</block>
   <block id="9f6c1c59e595c7b6b493f92b24930c14" category="inline-link-macro">在節點4上設定FC或UTA/UT2組態</block>
   <block id="cbe290335ddc7c966d9c148980b1ddd5" category="list-text">[[step29]若為MetroCluster 支援靜態組態的V系列系統與系統、且FlexArray 其具備連接至儲存陣列的Escal虛 擬化軟體、您必須在節點4上設定FC或UTA/UTA2連接埠、以偵測連接至節點的磁碟。若要完成此工作、請移至一節 <block ref="39202fc611c1fcac2f1575fc00cb55d3" category="inline-link-macro-rx"></block>。</block>
-  <block id="00c04526ef3b80544bc62192638a9877" category="summary">使用ONTAP 「系統控制器更換」命令、在升級執行更新版本的控制器時、手動重新定位故障或已被淘汰的集合體。</block>
-  <block id="1a246f70242ad6a20257f6b2816e32b7" category="paragraph">如果有任何集合體無法重新定位或遭到否決、您必須手動重新定位集合體、或視需要覆寫檢查結果或目的地檢查。</block>
   <block id="b10c9e2a07f0bd22d85f72c5fb19d122" category="list-text">請檢查事件管理系統（EMS）記錄、以判斷為何無法重新部署或遭否決該集合體。</block>
   <block id="beda7e39626b719165412c5becb115d5" category="summary">使用ONTAP 「系統控制器更換」命令、在升級執行ONTAP 版本號為E9、8或更新版本的控制器時、安裝並啟動節點3並安裝更新軟體。</block>
   <block id="c05c7a2303ef34ab95234ebadd79fc8f" category="cell">在開機環境提示字元中使用下列命令自動設定連線：「ifconfige0M -auto」</block>
@@ -3442,9 +3439,6 @@
   <block id="8723a951ee1fe15da772afbecba7e9cc" category="paragraph">「System Controller replace start -nodes _norme_names」（系統控制器取代start節點_node_names）</block>
   <block id="bf0cc0f414d71ae261bebb6ad521c510" category="list-text">節點1開機後、節點1的所有非根Aggregate都會移回節點1。您必須手動將Aggregate從node1重新配置為node2：「torage Aggregate regate reg搬 移起始節點節點1 -目的地節點2 - Aggregate -list *-ndocu控制 器升級為true」</block>
   <block id="63f803a39905918dce04f857b0dfb805" category="paragraph">「安全金鑰管理程式外部還原-node_new_控制 器名稱_」</block>
-  <block id="786cfe1c4db21c6a96fc7abf3a002267" category="paragraph">「torage Aggregate regate regate regulationstart -node_node1_-destate _node2_-aggregate-list _aggr_name_-ne-控制 器升級true」</block>
-  <block id="07d2b82cff600a145725916fee544709" category="cell">使用下列命令：「torage Aggregate regate regulationstart -Node node1 -destination node2 -aggregate-list _aggr_list_-ne-控制 器升級true -override-etoes true」</block>
-  <block id="eb3cf479c5f4d8026ff2061e0c748373" category="cell">使用下列命令：「torage Aggregate regate regulationstart -Node node1 -destination node2 -aggregate-list _aggr_list_-ne-控制 器升級true -override-etoes true -override-dest-checkstrue」</block>
   <block id="b23b4170fdfdcbdd9354becf14343de7" category="paragraph">「ucadmin modify -m fs -t initiator -f _Adapter name_'」</block>
   <block id="a87ed5e329e9adfa32bf73a93bebebf8" category="paragraph">"aggr_online root_aggr_from __node1__（aggr_online root_aggr_from __node1__）"</block>
   <block id="cfbaacc1ba42cda8c375335500d01240" category="paragraph">「aggr offline _root_aggr_on_node3_」</block>
@@ -3944,10 +3938,8 @@
   <block id="91ff7bbceee45b872acd93e9fe14cf71" category="doc">使用替換的系統模組來啟動 node2</block>
   <block id="56c7968a1d140906ab8313162854322d" category="cell">AFF A700</block>
   <block id="ec5c696a4bc57321a5a79c91b886d5ff" category="cell">FAS9000</block>
-  <block id="ca7b38e374ffc7a29b0753bcb3ef092f" category="list-text">輸入「 22/7 」並選取隱藏選項、將舊的 node2 磁碟重新指派給替換的 node2<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block> 當節點停止在開機功能表時。</block>
   <block id="a40fd127e913949d077070eebd44a757" category="summary">使用 ARL 升級同一機箱中的控制器機型時、請將 node2 的非 root 集合體重新定位至 node1 。</block>
   <block id="c9e9875d10f94682a65eb69de80acd4b" category="paragraph">您必須先將 node2 所擁有的非根集合體重新放置到 node1 、然後才能將 node2 替換為替換系統模組。</block>
-  <block id="392ca5bb795ad675f458b39141bab372" category="summary">使用 ARL 升級同一機箱中的控制器機型時、請重新定位故障或已遭否決的集合體。</block>
   <block id="f435d69757080c1b6c8e0081cb4eb218" category="summary">在第 2 階段、第 3 階段或第 5 階段移轉後、使用 ARL 升級同一機箱中的控制器機型時、生命週期不在線上。</block>
   <block id="23f6a04a70ae620e179c4bb34a6520dc" category="summary">使用 ARL 升級同一機箱中的控制器機型時、請準備節點並執行一系列預先檢查。</block>
   <block id="b42d3a44eaf5edd7cdebe56ca2650ddd" category="paragraph">控制器更換程序從一系列預先檢查開始。您也可以收集原始節點的相關資訊、以便稍後在程序中使用、並視需要判斷使用中的自我加密磁碟機類型。</block>
@@ -4016,7 +4008,6 @@
   <block id="fd03f78134ad299c30781abefe876b6e" category="summary">使用 ARL 升級同一機箱中的控制器機型時、請恢復 SnapMirror 傳輸和關係。</block>
   <block id="0c266b0ddf80e06776f6545018e3be7b" category="summary">使用 ARL 升級同一機箱中的控制器機型時、請關閉 node2 並將其從機架或機箱中移除。</block>
   <block id="a08203ab52ab6d68a5604711cce7c11e" category="summary">使用 ARL 升級同一機箱中的控制器機型時、請使用替換控制器模組來啟動 node1 。</block>
-  <block id="c69bd0ba9f1c79a4e93d2294615d5288" category="list-text">輸入「 22/7 」並選取隱藏選項、將舊的 node1 磁碟重新指派給更換的 node1<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block> 當節點停止在開機功能表時。</block>
   <block id="d667641e845b5f1c132a905ef22a2ba3" category="summary">使用 ARL 升級同一機箱中的控制器機型時、系統可能會在不同階段當機、例如重新開機、出現緊急情況或經歷關機後的關機循環。</block>
   <block id="f5ef11ad502e748c59323d68be5d0747" category="summary">您可以將舊系統轉換為更換系統、以保留舊的系統機箱和磁碟、藉此升級控制器硬體。</block>
   <block id="9e87e1dea37ce673e27a23a144a4e0ad" category="cell">更換系統</block>
@@ -4503,7 +4494,6 @@
   <block id="74e674d644580e69dff298a1089f2ae8" category="cell">兩個控制器模組、兩個 NVRAM 和新的 IO 模組</block>
   <block id="b8499c64cd399582a56bd38ef2f0b689" category="paragraph">當您要取代的叢集節點使用根磁碟區加密時、 ONTAP 無法從磁碟讀取磁碟區資訊。還原根磁碟區的金鑰。</block>
   <block id="4671cfb012ae240f7ddc8f7aaa369dbf" category="admonition">這僅適用於根磁碟區使用 NetApp 磁碟區加密時。</block>
-  <block id="3730c91adaf9920ef1bbd83c941082d5" category="list-text">在 node3 上，轉至引導菜單並使用 22/7 ，選擇隱藏選項<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。</block>
   <block id="1868f9f2297be03938f9d37234c57a9d" category="summary">疑難排解使用命令來升級執行 ONTAP 9.15.1 或更新版本的控制器時、可能發生的 Aggregate 重新定位故障<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
   <block id="a275532e7dc5da455e7d0af51e44e26d" category="summary">使用部分自動 ARL 程序來升級執行 ONTAP 9.15.1 或更新版本的控制器。</block>
   <block id="03b84140205de4279d7e7c6144f8a93a" category="paragraph">在控制器升級期間、控制器會被另一個執行較新或更強大平台的控制器所取代。本內容提供部分自動化程序的步驟、此程序利用自動網路連接埠連線能力檢查、進一步簡化控制器升級體驗。</block>
@@ -4577,7 +4567,6 @@
   <block id="9f3b5fde6efe97f3316b9fdf630f5307" category="paragraph">您可以在機架中安裝 node4 、將 node2 的連線傳輸至 node4 、開機 node4 、然後安裝 ONTAP 。然後重新分配節點 2 的任何備用磁碟、屬於根磁碟區的任何磁碟、以及此程序之前未重新定位至節點 3 的任何非根集合體、如本節所述。</block>
   <block id="eb91daa92a7cd6e3d0f28a92df381e46" category="paragraph"><block ref="0771d944db92b398d28d841edda85128" prefix="" category="inline-code"></block></block>
   <block id="b7b6eb575f44421125712f552d3c6514" category="list-text">[[auto_install4_step24]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。</block>
-  <block id="219b29f671a7863bb64b76a907b40424" category="list-text">[[auto_check_4_step11] 在 node4 上、前往開機功能表並使用 22/7 、選取隱藏選項<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>。在提示符下輸入node2將node2的磁碟重新指派給node4、如下例所示。</block>
   <block id="f16197d10b85eccdd96c289850f6f9a4" category="list-text">[[auto_check_4_step27]] 在載入程式提示下開機：</block>
   <block id="9fd0ed44498deb7ffb633dc1298bafef" category="paragraph">如果根磁碟區已加密、請恢復內建金鑰管理秘密、以便系統找到根磁碟區。</block>
   <block id="0df0b8c9a45c8c96a58c4a6a9c14d3ab" category="inline-xref">步驟 27</block>
@@ -4632,7 +4621,6 @@
   <block id="a00358ba81263d0981cb0be275b2de59" category="paragraph">如需 ONTAP 授權的詳細資訊、請<block ref="c4c2447b404ea8605b7733ab11ccf24b" category="inline-link-rx"></block>參閱。</block>
   <block id="301cf3a06efdb459dfe6498f9ad64dfa" category="admonition">在控制器上使用未獲授權的功能、可能會使您無法遵守授權合約。</block>
   <block id="e2d09f92ab6c7ffd6073273d5ac9f24e" category="summary">當使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、系統可能會在不同階段當機、例如重新開機、驚慌或是經歷關機循環<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
-  <block id="9eb519370a855a625ae18bab03472164" category="summary">使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、請手動重新定位失敗或已遭否決的集合體<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
   <block id="4a3168a934fbe49f2401eb2cd5d5d214" category="summary">使用命令將非根集合體和 NAS 資料生命體從 node1 移至 node2 、並將 node1 的資源移至 node3 、以升級執行 ONTAP 9.15.1 或更新版本的控制器<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
   <block id="b3d6aec1ce754e8455c1b6b3cc346008" category="summary">使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、請將 node2 的非 root 集合體重新定位至 node3<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
   <block id="41d784112ab245c3a5a3845c5d0ddf06" category="summary">您必須擁有某些工具和文件、才能使用命令來升級執行 ONTAP 9.15.1 或更新版本的控制器<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
@@ -4727,7 +4715,6 @@
   <block id="b412f16da28f14611d953df7ec9b215a" category="cell">AFF A700 、 AFF A800 、 AFF A400</block>
   <block id="c57c038bdb2b903ef67865f743dfc52e" category="section-title">使用手動 ARL 命令</block>
   <block id="114c547b8e01b5b1d0aff42924c30c8c" category="paragraph">如果您的升級案例不支援使用「系統命令」、您可以使用手動命令來執行 ARL 升級。</block>
-  <block id="f3fc96e9b0f9e7ce8cc79384852e3e25" category="paragraph">選擇 ONTAP 版本的程序以開始升級：</block>
   <block id="a58e3cec27f318019d650117009a9a1c" category="list-text"><block ref="a58e3cec27f318019d650117009a9a1c" category="inline-link-macro-rx"></block></block>
   <block id="4928666bac61f347373a03116de25bb3" category="list-text"><block ref="4928666bac61f347373a03116de25bb3" category="inline-link-macro-rx"></block></block>
   <block id="261856aec998b0985aebf71d4d5b7db7" category="paragraph"><block ref="261856aec998b0985aebf71d4d5b7db7" category="inline-image-macro-rx" type="image"></block></block>
@@ -4788,7 +4775,6 @@
   <block id="cd021900ed941327c8cbaab423602fea" category="paragraph">更換控制器模組時，請將所有連線從舊連接移至更換的控制器模組。</block>
   <block id="ca76cff03dc67711aed20c19584f555a" category="paragraph">更換控制器和 NVRAM 模組時，請僅移動主控台和管理連線。</block>
   <block id="32fc669b4855ba474461c53a3b65197d" category="list-text">（僅限 AFF A250 ， AFF C250 ， AFF A800 或 AFF C800 升級）在 Loader 提示下，進入維護模式：</block>
-  <block id="d77ff1f1092d207060f82d071d98e6c3" category="list-text"><block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>請選擇混合式平台確認提示。</block>
   <block id="ece7ccdab4b9cd808ab8bec964f41023" category="admonition">只有在您透過交換系統模組進行升級時，才能移動主控台和管理連線。</block>
   <block id="0f4936acdcce8b5de52c6526de01d25c" category="doc">纜線 node1 ，用於共用的叢集 HA 和儲存設備</block>
   <block id="8bb57e3374049ebdebba3212782683e5" category="paragraph">如果您執行下列其中一項升級，則必須將先前連接至現有系統上 node1 的叢集， HA ，儲存設備，資料和管理連線，連接至替換系統上新安裝的 node1 。</block>
@@ -4942,25 +4928,17 @@
   <block id="9ca791f14c256e2e8b46018369acf7a1" category="admonition">您只能在進階權限層級執行此命令：<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block></block>
   <block id="0c4d3b58ff2e613100823069268c0d16" category="doc">將 node1 磁碟重新指派給 node3</block>
   <block id="e03dae441cceacc5aeefb788c4310182" category="paragraph">在驗證 node3 安裝之前，您需要將屬於 node1 的磁盤重新分配給 node3 。</block>
-  <block id="326839aff1f2af22c548d7026c6efc3a" category="paragraph">您可以在 node3 上執行本節中的步驟。</block>
-  <block id="9e1512faa93445529e5add8482a622dc" category="list-text">[[reassign-node1-node3-step1]]] 轉至引導菜單並使用 22/7 ，然後選擇隱藏選項<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。</block>
-  <block id="cb0881f0ebf2b7e381d68e847c30f010" category="list-text">如果系統進入重新開機迴圈並顯示訊息<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>，這是因為它已將連接埠重設回目標模式，因此無法看到任何磁碟。請繼續執行<block ref="af3afcd2ec5c54edc4e5ed75b4a39733" category="inline-xref-macro-rx"></block> <block ref="c9ad15d95077080d869d1e4c8360803a" category="inline-xref-macro-rx"></block>以解決此問題。</block>
   <block id="bbc6b5765d60422b3f276543c9a46e50" category="list-text">[[auto_check3_step3]] 在自動開機期間按 Ctrl-C 、在 loader&gt; 提示下停止節點。</block>
   <block id="d1c18cc75345f4458e86cf6fe5d073d8" category="paragraph">如果您要從支援外部磁碟的系統升級到也支援外部磁碟的系統，請前往<block ref="c9ad15d95077080d869d1e4c8360803a" category="inline-xref-macro-rx"></block>。</block>
   <block id="9951e04650f5035e01daa69eb92bcbbe" category="paragraph">如果您要從支援外部磁碟的系統升級到同時支援內部和外部磁碟的系統，例如 AFF A800 系統，請前往<block ref="507f599b2e258f18809a90b59e54fc15" category="inline-xref-macro-rx"></block>。</block>
   <block id="41d30ffd3871f13ee39a0236a521005a" category="list-text">[[auto_check3_step8]] 在載入程式提示下開機：</block>
   <block id="2d3d40a3970ab0b35029c7b7dc1b15df" category="admonition">您可能會在這個階段遇到錯誤。如果發生錯誤、請重複中的子步驟、 <block ref="c9ad15d95077080d869d1e4c8360803a" category="inline-xref-macro-rx"></block> 直到系統正常開機。</block>
-  <block id="a57c14f2ca2ce1140e446015b96ac29b" category="list-text">[[auto_check3_step9]] 如果您要從具有外部磁碟的系統升級到支援內部和外部磁碟的系統（例如 AFF A800 系統），請將 node1 Aggregate 設為根 Aggregate ，以確認 node3 從 node1 的根集合開機。若要設定根 Aggregate ，請前往開機功能表並選取選項<block ref="e4da3b7fbbce2345d7772b0674a318d5" prefix=" " category="inline-code"></block>以進入維護模式。</block>
   <block id="9f39d1bc4fe5004213872658dec3c1c2" category="doc">將 node2 磁碟重新指派給 node4</block>
   <block id="fd06c7e8210acdd89557164ac47f5808" category="paragraph">您需要先將屬於 node2 的磁碟重新指派給 node4 ，然後再驗證 node4 安裝。</block>
-  <block id="1a8d3229766af0a77a6b1c33a4eed2c4" category="paragraph">您可以在 node4 上執行本節中的步驟。</block>
-  <block id="865016d4236118e278d56b542b42ab56" category="list-text">[[reassign-node2-node4-step1]]] 轉至引導菜單，使用 22/7 選擇隱藏選項<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>。在提示符下輸入node2將node2的磁碟重新指派給node4、如下例所示。</block>
-  <block id="13ccb97109d97b9e4271b18b039d67c2" category="list-text">如果系統進入重新開機迴圈並顯示訊息<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>，這是因為它已將連接埠重設回目標模式，因此無法看到任何磁碟。繼續執行<block ref="ec97abb56cfbce2d136fcc09be065a07" category="inline-xref-macro-rx"></block>至<block ref="3d86a68aa8fb2ef1661a4814f02f3b64" category="inline-xref-macro-rx"></block>以解決此問題。</block>
   <block id="4ef6870c2e23f8f1d078e31a842f2c02" category="list-text">[[auto_check_4_step3]] 在自動開機期間按 Ctrl-C 、在 loader&gt; 提示下停止節點。</block>
   <block id="047c56454996d2aa154d1f6ca4d87eb0" category="paragraph">如果您要從支援外部磁碟的系統升級到也支援外部磁碟的系統，請前往<block ref="3d86a68aa8fb2ef1661a4814f02f3b64" category="inline-xref-macro-rx"></block>。</block>
   <block id="d4e6d4af7a18f0230aee51bbefe6a070" category="paragraph">如果您要從使用外部磁碟的系統升級到同時支援內部和外部磁碟的系統，例如 AFF A800 系統，請前往<block ref="8c0d0b39d1dbad6b09344e6b9dfb08e2" category="inline-xref-macro-rx"></block>。</block>
   <block id="63b1972a97912f5fcb68bfc394d5e9c3" category="list-text">[[auto_check_4_step8]] 在載入程式提示下開機：</block>
-  <block id="3578477afefbd88cd72a239c2576a8ce" category="list-text">[[auto_check_4_step9]如果您要從具有外部磁碟的系統升級至支援內部和外部磁碟AFF 的系統（例如、E25A800系統）、請將node2 Aggregate設為根Aggregate、以確認node4從節點2的根Aggregate開機。若要設定根 Aggregate ，請前往開機功能表並選取選項<block ref="e4da3b7fbbce2345d7772b0674a318d5" prefix=" " category="inline-code"></block>以進入維護模式。</block>
   <block id="31f48890b5f492311b0370002ee80c45" category="paragraph">如果 node4 沒有板載 FC 端口，板載 UTA/UTA2 端口或 UTA/ UTA2 卡，並且您要升級帶有存儲磁盤的系統，則可以跳至<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block>。</block>
   <block id="4039a8202bf701ee008da1c534871be6" category="paragraph">但是，如果您有 V 系列系統或擁有 FlexArray 虛擬化軟體，並且連接至儲存陣列，而 node4 則沒有內建 FC 連接埠，內建 UTA/ UTA2 連接埠或 UTA/ UTA2 卡，則必須返回至 _ 安裝並開機 node4_ ，然後在繼續<block ref="1a99f6ce933cd745b2b02e54c9272506" category="inline-link-macro-rx"></block>。</block>
   <block id="0557ba2404e82e19ae1f9975c3ce6b5f" category="paragraph">確定節點4有足夠的機架空間。如果node4與node2位於不同的機箱中、您可以將node4放在與node3相同的位置。如果節點2和節點4位於同一個機箱中、則節點4已位於適當的機架位置。</block>
@@ -4981,21 +4959,17 @@
   <block id="9603a3cc81e2986384f6025c38748416" category="paragraph">在第 5 階段中，您將安裝並開機 node4 ，檢查 node2 的叢集和節點管理連接埠是否已在 node4 上上線，將 node2 磁碟重新指派至 node4 ，並驗證 node4 安裝。如果您使用NVE、則會還原金鑰管理程式組態。如果需要、您可以在節點4上設定FC或UTA/UTA2組態。您也可以將節點2 NAS資料lifs和非根Aggregate從節點3重新部署到節點4、並確認節點4上存在SAN lifs。</block>
   <block id="11f7f4fd840cd198a2f280c91b7faacb" category="list-text">您只能在進階權限層級執行<block ref="2b4e2bfd3f993678e0b6870d28304a76" prefix=" " category="inline-code"></block>命令：</block>
   <block id="b3936429fa1be4b517a86a16e2b7e505" category="summary">使用命令升級執行 ONTAP 9.8 或更新版本的控制器時，您需要將屬於 node1 的磁碟重新指派給 node3<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
-  <block id="19c333b88ee80d0b1ae8ba1bdf9e539f" category="list-text">如果系統進入重新開機迴圈並顯示訊息<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>，表示系統已將 FC 或 UTA/UTA2 連接埠重設回目標模式，因此無法看到任何磁碟。要解決此問題，請繼續執行<block ref="8266acaa2ec393b5b0120a81f114e7db" category="inline-xref-macro-rx"></block> <block ref="0faed76141a6cb4a723aa66a5d852e5d" category="inline-xref-macro-rx"></block>，或轉至部分<block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block>。</block>
   <block id="bb109c63fb1855fdc41065496c4b5cbc" category="list-text">[[reassign-node1-node3-app-step3]] 自動開機期間按 Ctrl-C 在 Loader &gt; 提示下停止節點。</block>
   <block id="54e3eea9d71b7c4f02d2688c4e6f949e" category="paragraph">如果您要從支援外部磁碟的系統升級到也支援外部磁碟的系統，請前往<block ref="0faed76141a6cb4a723aa66a5d852e5d" category="inline-xref-macro-rx"></block>。</block>
   <block id="ffb7f11c97f67f457a6ac3a320d8d397" category="paragraph">如果您要從支援外部磁碟的系統升級到同時支援內部和外部磁碟的系統，例如 AFF A800 系統，請前往<block ref="061f59b77452fcc2cd32a9dbbcd9197b" category="inline-xref-macro-rx"></block>。</block>
   <block id="3aa4ab2b12da4e819e7bf7d20476cdd2" category="list-text">[[reassign-node1-node3-app-step8]] 在 Loader 提示下，開機：</block>
   <block id="442faffcad9799fb9833e7d0844ed1bb" category="admonition">您可能會在這個階段遇到錯誤。如果發生錯誤、請重複中的子步驟、 <block ref="0faed76141a6cb4a723aa66a5d852e5d" category="inline-xref-macro-rx"></block> 直到系統正常開機。</block>
   <block id="a746be669cb081077101eacb5ad71bf2" category="list-text">[[reassign-node1-node3-app-step9]] 如果您要從具有外部磁碟的系統升級到支援內部和外部磁碟的系統（例如 AFF A800 系統），請將 node1 Aggregate 設為根 Aggregate ，以確認 node3 是從 node1 的根 Aggregate 開機。若要設定根 Aggregate ，請前往開機功能表並選取選項<block ref="e4da3b7fbbce2345d7772b0674a318d5" prefix=" " category="inline-code"></block>以進入維護模式。</block>
-  <block id="875f1b85edce0e7be33ab941efdb6194" category="list-text">[[reassign-node2-node4-app-step1]] 進入開機功能表，並使用 22/7 選擇隱藏選項<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>。在提示符下輸入node2將node2的磁碟重新指派給node4、如下例所示。</block>
-  <block id="ef92505d40c7b380760790a07da2dd38" category="list-text">如果系統進入重新開機迴圈並顯示訊息<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>，表示系統已將 FC 或 UTA/UTA2 連接埠重設回目標模式，因此無法看到任何磁碟。要解決此問題，請繼續執行<block ref="580e238d2ca8d0bd3f71a9c3eb7b6616" category="inline-xref-macro-rx"></block>或轉至<block ref="79bd087280897d4f7e3333262b04aa6c" category="inline-xref-macro-rx"></block>部分<block ref="3a339ed5bdc85366b677c546716fabfa" category="inline-link-macro-rx"></block>。</block>
   <block id="2ae5863ef4ffdec773dd25b804653f23" category="list-text">[[reassign-node2-node4-app-step3]] 自動開機期間按 Ctrl-C ，在 Loader &gt; 提示下停止節點。</block>
   <block id="c4f86938454b613cef939abb47991037" category="paragraph">如果您要從支援外部磁碟的系統升級到也支援外部磁碟的系統，請前往<block ref="79bd087280897d4f7e3333262b04aa6c" category="inline-xref-macro-rx"></block>。</block>
   <block id="21dfc0371365c18907d7dbc160a0c2c4" category="paragraph">如果您要從使用外部磁碟的系統升級到同時支援內部和外部磁碟的系統，例如 AFF A800 系統，請前往<block ref="ba3fb5e9a0164ee5baf520c4c38cd787" category="inline-xref-macro-rx"></block>。</block>
   <block id="b76881a9f4b6f1230f9720635fa52f19" category="list-text">[[reassign-node2-node4-app-step8]] 在 Loader 提示下，開機：</block>
   <block id="dc6402eb152631527f95b84d9f3ce723" category="admonition">您可能會在這個階段遇到錯誤。如果發生錯誤、請重複中的子步驟、 <block ref="79bd087280897d4f7e3333262b04aa6c" category="inline-xref-macro-rx"></block> 直到系統正常開機。</block>
-  <block id="98d4eb275bf317f1ed8a237b4d4626d4" category="list-text">[[reassign-node2-node4-app-step9]] 如果您要從具有外部磁碟的系統升級到支援內部和外部磁碟的系統（例如 AFF A800 系統），請將 node2 Aggregate 設為根 Aggregate ，以確保 node4 從 node2 的根集合中開機。若要設定根 Aggregate ，請前往開機功能表並選取選項<block ref="e4da3b7fbbce2345d7772b0674a318d5" prefix=" " category="inline-code"></block>以進入維護模式。</block>
   <block id="1ffa309b87ea47e57a243a8856ad001d" category="paragraph">如果 node4 沒有板載 FC 端口，板載 UTA/UTA2 端口或 UTA/ UTA2 卡，並且您要升級帶有存儲磁盤的系統，則可以跳至<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block>。</block>
   <block id="188f0556290d62cea45959405efb3bd0" category="paragraph">但是，如果您有 V 系列系統或擁有 FlexArray 虛擬化軟體，並且連接至儲存陣列，而 node4 則沒有內建 FC 連接埠，內建 UTA/ UTA2 連接埠或 UTA/UTA2 卡，則必須返回至 _ 安裝並開機 node4_ <block ref="1a99f6ce933cd745b2b02e54c9272506" category="inline-link-macro-rx"></block>，然後繼續執行中的程序。</block>
   <block id="ce329eb9bee0d5646d8763528bd98e7e" category="list-text">如果 node4 沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口，請跳過本節並轉至<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block>。</block>
@@ -5035,7 +5009,6 @@
   <block id="a4767f09ed98441b185563427dd0a442" category="paragraph">如果您要升級至 AFF A800 系統，請前往<block ref="e81929257c1b77de68576a8a37b1e464" category="inline-link-macro-rx"></block>。</block>
   <block id="5a7f7aa2acda9d8cf0b886b9d97aa6d5" category="list-text">[[step14]] 執行將節點開機至開機功能表<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>。如果您要升級至 AFF A800 系統，請前往<block ref="13193a83e6d1d3a0ad7f7d39140ab8c7" category="inline-link-macro-rx"></block>。</block>
   <block id="798d18731b87565ff109b6fed67d6b99" category="paragraph">如果您沒有 FC 或 UTA/UTA2 組態，請執行，<block ref="b7ef417e87a2f1cf82b2e7cf12272083" category="inline-link-macro-rx"></block>以便 node3 能夠辨識 node1 的磁碟。</block>
-  <block id="c8adb5c5421d34e18d5b9558706c9208" category="list-text">[[reassign-node1-node3-app-step1]] 進入開機功能表，並使用 22/7 選擇隱藏選項<block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix=" " category="inline-code"></block>。在提示符下輸入node1將node1的磁碟重新指派給node3、如下例所示。</block>
   <block id="4ac432efd1d6ca8f4e73f5783d4f90e6" category="paragraph">如果您要升級至 AFF A800 系統，請前往<block ref="4f039e99f80cf2a7b8236bb5590e739b" category="inline-link-macro-rx"></block>。</block>
   <block id="8f9ee542e52933f0e31b07c6ca5316b2" category="list-text">[[step14]] 執行將節點開機至開機功能表<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>。如果您要升級至 AFF A800 系統，請前往<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>。</block>
   <block id="007afae70e6899ccd5a02bd1b8e30413" category="list-text">替換節點使用共享的叢集 HA 乙太網路連接埠。</block>
@@ -5284,7 +5257,6 @@
   <block id="4dfbd3112f049daa92b3b9620a0a23b4" category="list-text">如果您安裝了 NetApp 儲存加密 (NSE) 驅動器，請執行下列步驟：</block>
   <block id="780d3ce82c06a7096f3d7b6381f35cf4" category="list-text">[[man_install3_step16]]如果您安裝了 NetApp 儲存加密 (NSE) 驅動器，請執行下列步驟：</block>
   <block id="4a1df957cbcb3df9aa2205d817cf2109" category="paragraph">若要淘汰 node2，請正確關閉 node2，然後將其從機架或機箱中移除。</block>
-  <block id="8e0b63c33baeb6a190715db3ff6a5639" category="paragraph">在第 6 階段，您使用升級的系統模組啟動 node2 並驗證升級後的 node2 安裝。如果您正在使用 NVE，您可以還原金鑰管理器配置。如果您要升級具有交換器連接叢集的配置，則需要驗證新控制器的交換器配置。您還將節點 1 的非根聚合和 NAS 資料 LIF 從節點 1 重新定位到升級後的節點 2，並驗證 SAN LIF 是否存在於節點 2 上。</block>
   <block id="10cace0e3d344387153f687e87f1b288" category="summary">驗證叢集交換器 RCF 是否支援用於交換器連接叢集升級的新控制器的共用叢集/HA 連接埠。</block>
   <block id="2b1a7f7ae64997f151dc4070b5a3339f" category="doc">驗證叢集交換器上的 RCF 配置</block>
   <block id="4288bdefdf72b476458de2ae320fd290" category="paragraph">在升級過程的這個階段，所有資料聚合都應位於節點 1 上。如果您要升級具有交換器連接叢集的配置，則需要驗證叢集交換器參考設定檔 (RCF) 是否支援新控制器的共用叢集/HA 連接埠。</block>
@@ -5310,4 +5282,51 @@
   <block id="4e0d7c1abfb8de7fd56ae6e56c1b7b4b" category="list-text">在機殼的前面，用拇指將每個驅動器牢牢推入頂部和底部磁碟托架，直到感覺到完全停止。這可確保驅動器牢固地固定在機箱中板上。</block>
   <block id="a3fa441608c8038d19e72ef43c8108bc" category="section-title">恢復系統控制器更換操作</block>
   <block id="20d8255eb490088576c2cdeea2fb6e2a" category="list-text">從源頭拔下節點 2 控制器模組電源。</block>
+  <block id="db799964060c84b9e9d008dc6cc8932c" category="paragraph">如果任何聚合無法重新定位或被否決，則需要手動將聚合重新定位到節點 3，或如有必要，覆寫否決或目標檢查。</block>
+  <block id="06319e499e839b6b47d478534e06e04d" category="paragraph">由於錯誤，系統暫停重定位操作。</block>
+  <block id="a714a70d76bf440021da99c44775bfa1" category="paragraph"><block ref="a923abe052d004a085e2eb84b92a105b" prefix="" category="inline-code"></block></block>
+  <block id="c6a56a02692a522600801db238a7506a" category="cell">使用以下命令：<block ref="a7a60d858b053f311f5ee30c3d684eb6" prefix=" " category="inline-code"></block></block>
+  <block id="8d3072fe7ea0dbdca9d33b84c62569b8" category="cell">使用以下命令：<block ref="687244c84fcc33f57d32e491908871ed" prefix=" " category="inline-code"></block></block>
+  <block id="0e967750f4d977e25c400b1d5a47dcec" category="paragraph">如果任何聚合無法重新定位或被否決，則需要手動將聚合重新定位到節點 2，或如有必要，覆寫否決或目標檢查。</block>
+  <block id="fad33e6e3139be661155899e75925025" category="paragraph"><block ref="556e03894e424730dfb0dcf9dca97389" prefix="" category="inline-code"></block></block>
+  <block id="cbe1d8b8b7f4209d91ce341d93923d12" category="cell">使用以下命令：<block ref="eee95ab9f20f57d6a401c786895c4b0a" prefix=" " category="inline-code"></block></block>
+  <block id="c2df8054edfb63248d8062dc88450726" category="cell">使用以下命令：<block ref="9c49d0bcfd4ed485f0a5572381fe5f1c" prefix=" " category="inline-code"></block></block>
+  <block id="c3ce6809be6bdc67ae978395484d0585" category="open-title">ONTAP 9.8 或更高版本</block>
+  <block id="e56eaa49d9510fbdda2abdf778602edf" category="paragraph">以下運行ONTAP 9.8 及更高版本的系統支援手動 ARL 升級：</block>
+  <block id="d750887602e48c1bc1778029d3d6f08c" category="open-title">ONTAP 9.7 或更早版本</block>
+  <block id="102a8cb20c44f114b165f8482298538c" category="paragraph">以下運行ONTAP 9.7 及更早版本的系統支援手動 ARL 升級：</block>
+  <block id="31263e6149bd28b019471accf69bf287" category="list-text">[[reassign-node1-node3-step1]]驗證node1已經停止在啟動選單，並將node1的磁碟重新指派給node3：</block>
+  <block id="7396ec479d029f0444ae3b381b68cb1c" category="paragraph"><block ref="b4ab52f7185d092e3aa56aaa9905e7e1" prefix="" category="inline-code"></block></block>
+  <block id="02ec5be95fd5339f0ef7b4ff71f76408" category="list-text">如果系統進入重新啟動循環並顯示以下訊息<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>，這是因為它已將連接埠重置回目標模式，因此無法看到任何磁碟。執行<block ref="af3afcd2ec5c54edc4e5ed75b4a39733" category="inline-xref-macro-rx"></block>到<block ref="c9ad15d95077080d869d1e4c8360803a" category="inline-xref-macro-rx"></block>在 node3 上解決此問題。</block>
+  <block id="fae2ed26c8f6134724935097b57380f2" category="list-text">[[auto_check3_step9]]如果要從具有外部磁碟的系統升級到支援內部和外部磁碟的系統（例如AFF A800系統），請將節點 1 聚合設定為根聚合，以確認節點 3 從節點 1 的根聚合啟動。若要設定根聚合，請前往 node3 上的啟動選單並選擇選項<block ref="e4da3b7fbbce2345d7772b0674a318d5" prefix=" " category="inline-code"></block>進入維護模式。</block>
+  <block id="e726a0a84a80e2f3e8d43a808363f626" category="list-text">[[reassign-node2-node4-step1]]驗證node2已在啟動選單停止，並將node2的磁碟重新指派給node4：</block>
+  <block id="e8d3a2ab558d4d58409a8816cc44f371" category="list-text">如果系統進入重新啟動循環並顯示以下訊息<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>，這是因為它已將連接埠重置回目標模式，因此無法看到任何磁碟。執行<block ref="ec97abb56cfbce2d136fcc09be065a07" category="inline-xref-macro-rx"></block>透過<block ref="3d86a68aa8fb2ef1661a4814f02f3b64" category="inline-xref-macro-rx"></block>在 node4 上解決此問題。</block>
+  <block id="28c9c114032aec362da7cc95e208f89c" category="list-text">[[auto_check_4_step9]]如果要從具有外部磁碟的系統升級到支援內部和外部磁碟的系統（例如AFF A800系統），請將節點 2 聚合設定為根聚合，以確認節點 4 從節點 2 的根聚合啟動。若要設定根聚合，請前往 node4 上的啟動選單並選擇選項<block ref="e4da3b7fbbce2345d7772b0674a318d5" prefix=" " category="inline-code"></block>進入維護模式。</block>
+  <block id="5e16852c6347cc7821c73fac4fe85423" category="list-text">回答<block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>到混合平台確認提示。</block>
+  <block id="925fdd27e6c272d3e20a76ac000b55e6" category="list-text">當節點在啟動選單處停止時，透過在 node1 上執行以下命令將舊的 node1 磁碟重新指派給替換 node1：</block>
+  <block id="3e116b6b6becaa5d613ea62aac34daa1" category="list-text">當節點在啟動選單處停止時，透過在 node2 上執行以下命令將舊的 node2 磁碟重新指派給替換 node2：</block>
+  <block id="4b918c9d048f1e7cccba5045af08906f" category="paragraph">在第 6 階段，您使用升級的系統模組啟動 node2 並驗證升級後的 node2 安裝。如果您正在使用 NVE，您可以還原金鑰管理器配置。對於交換器連接叢集升級，您需要驗證叢集交換器參考設定檔 (RCF) 是否支援共用叢集/HA 連接埠。您還將節點 1 的非根聚合和 NAS 資料 LIF 從節點 1 重新定位到升級後的節點 2，並驗證 SAN LIF 是否存在於節點 2 上。</block>
+  <block id="c0bcc09c60945f6339a1913adf9e706f" category="summary">使用以下命令升級執行ONTAP 9.15.1 或更高版本的控制器時，手動將失敗或被否決的聚合重新定位到節點 1<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block>命令。</block>
+  <block id="abf895e50524754359302c9598336b90" category="doc">將失敗或被否決的聚合重新定位到節點 1</block>
+  <block id="25badd8e4c783995863fb7fe9b690c73" category="paragraph">如果任何聚合無法重新定位或被否決，則需要手動將聚合重新定位到節點 1，或如有必要，覆寫否決或目標檢查。</block>
+  <block id="55fc253f57e13795f000be8434340bcc" category="paragraph"><block ref="f0b8ecf91bc7772176817aae0a0e4ebf" prefix="" category="inline-code"></block></block>
+  <block id="cea57067baab669fd34980bc0ce682b7" category="cell">使用以下命令：<block ref="d07352fc16fc07770c0b5027b84f5002" prefix=" " category="inline-code"></block></block>
+  <block id="b1fc68c2ec4e2a62b5d43e002273f1cc" category="cell">使用以下命令：<block ref="b10c3e4b908f6d6ad18a3073c3ada943" prefix=" " category="inline-code"></block></block>
+  <block id="62e63a4fa6321f1da2670df26249655f" category="summary">使用 ARL 升級同一機箱中的控制器型號時，將失敗或被否決的聚合重新定位到節點 2。</block>
+  <block id="174d731b1608e463d92ed4bd05c2494a" category="doc">將失敗或被否決的聚合重新定位到節點 2</block>
+  <block id="b8a4db3aa3a0b5269b2d3b23174abda1" category="list-text">[[reassign-node1-node3-app-step1]]驗證 node1 是否已在啟動選單處停止。將node1的磁碟重新分配給node3：</block>
+  <block id="b4f314eeddcfde8f1ee2e9a2d8642f3e" category="list-text">如果系統進入重新啟動循環並顯示以下訊息<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>，表示系統已將 FC 或 UTA/UTA2 連接埠重設回目標模式，因此無法看到任何磁碟。選擇以下任務之一來解決此問題：</block>
+  <block id="a5c761e5bafe5ee1b3582d84531a0e0a" category="list-text">執行<block ref="8266acaa2ec393b5b0120a81f114e7db" category="inline-xref-macro-rx"></block>到<block ref="0faed76141a6cb4a723aa66a5d852e5d" category="inline-xref-macro-rx"></block>在節點3上</block>
+  <block id="c5c04ed501bd4b102375bcf493db0279" category="list-text">前往章節<block ref="35ed01fca1dde6c35ca197b89d2bbfc7" category="inline-link-macro-rx"></block></block>
+  <block id="7eb5b843027ba85fc0d1c5a23a40eefe" category="list-text">[[reassign-node2-node4-app-step1]]驗證node2已在啟動選單停止，並將node2的磁碟重新指派給node4：</block>
+  <block id="e1854caaca3d758431b5e09931748497" category="list-text">執行<block ref="580e238d2ca8d0bd3f71a9c3eb7b6616" category="inline-xref-macro-rx"></block>到<block ref="79bd087280897d4f7e3333262b04aa6c" category="inline-xref-macro-rx"></block>在節點4上</block>
+  <block id="851fe1371a4738d913b537926e76da6f" category="list-text">前往章節<block ref="3a339ed5bdc85366b677c546716fabfa" category="inline-link-macro-rx"></block></block>
+  <block id="a701cad6dff89a3f059496ff3d04e63d" category="list-text">[[reassign-node2-node4-app-step9]] 如果您想要從具有外部磁碟的系統升級到支援內部和外部磁碟的系統（例如AFF A800系統），請將 node2 聚合設定為根聚合，以確保 node4 從 node2 的根聚合啟動。若要設定根聚合，請前往 node4 上的啟動選單並選擇選項<block ref="e4da3b7fbbce2345d7772b0674a318d5" prefix=" " category="inline-code"></block>進入維護模式。</block>
+  <block id="992f0c14586c62ecc00b3a344a5839c1" category="summary">使用以下命令升級執行ONTAP 9.8 或更高版本的控制器時，手動將失敗或被否決的聚合重新定位到節點 2<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block>命令。</block>
+  <block id="6d31ec7f9207b8dd1eac3d42d25dd52b" category="summary">使用以下命令升級執行ONTAP 9.8 或更高版本的控制器時，手動將失敗或被否決的聚合重新定位到節點 3<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block>命令。</block>
+  <block id="e4a34fcd3be9d1c97af701d3702dc629" category="doc">將失敗或被否決的聚合重新定位到節點 3</block>
+  <block id="ede36164b17cdfd91404d9be823e00b6" category="list-text">當 node3 停止在啟動選單時，透過在 node3 上執行以下命令將 node1 磁碟重新指派給 node3：</block>
+  <block id="41982d264a2a2a5af9a67f777e02916a" category="list-text">[[auto_check_4_step11]]當 node4 停止在啟動選單時，透過在 node4 上執行下列命令將 node2 磁碟重新指派給 node4：</block>
+  <block id="1e1ddf24bfeddc76d571c4800f2d82ad" category="summary">使用以下命令升級執行ONTAP 9.15.1 或更高版本的控制器時，手動將失敗或被否決的聚合重新定位到節點 2<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block>命令。</block>
+  <block id="3129d56ef5cc88b17f6e15c1da3476f1" category="summary">使用以下命令升級執行ONTAP 9.15.1 或更高版本的控制器時，手動將失敗或被否決的聚合重新定位到節點 3<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block>命令。</block>
 </blocks>
