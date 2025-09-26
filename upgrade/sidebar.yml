@@ -68,9 +68,9 @@ entries:
     url: "/upgrade/upgrade-unjoin-original-nodes-move-volumes.html"
   - title: 完整升級
     url: "/upgrade/upgrade-complete-move-volumes.html"
-- title: 將 AFF A250 轉換為磁碟機櫃、以升級至 AFF A400
+- title: 將AFF A250升級到AFF A400
   entries:
-  - title: 工作流程
+  - title: 了解如何將AFF A250升級到AFF A400
     url: "/upgrade/upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html"
   - title: 將 node2 上的生命體和資料集合體移轉至 node1
     url: "/upgrade/upgrade_migrate_lifs_aggregates_node2_to_node1.html"
@@ -86,3 +86,21 @@ entries:
     url: "/upgrade/upgrade_reassign_drives_node1_to_node3.html"
   - title: 將 node4 上的生命週期和資料集合體移轉至 node3
     url: "/upgrade/upgrade_migrate_lIFs_aggregates_node4_node3.html"
+- title: 從FAS2820升級
+  entries:
+  - title: 了解如何從FAS2820升級
+    url: "/upgrade/convert-fas2820-to-drive-shelf.html"
+  - title: 將 node2 上的生命體和資料集合體移轉至 node1
+    url: "/upgrade/migrate-fas2820-node2-lifs-aggregates.html"
+  - title: 將 node2 轉換為磁碟機櫃、並連線至 node4
+    url: "/upgrade/convert-fas2820-node2-drive-shelf.html"
+  - title: 將 node2 磁碟機重新指派給 node4
+    url: "/upgrade/reassign-fas2820-node2-drives.html"
+  - title: 將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 node4
+    url: "/upgrade/migrate-fas2820-aggregates-epsilon-lifs.html"
+  - title: 將 node1 轉換為磁碟機櫃、並連線至 node3
+    url: "/upgrade/convert-fas2820-node1-drive-shelf.html"
+  - title: 將驅動器從 node1 重新分配給 node3
+    url: "/upgrade/reassign-fas2820-node1-drives.html"
+  - title: 將 node4 上的生命週期和資料集合體移轉至 node3
+    url: "/upgrade/migrate-fas2820-node4-lIfs-aggregates.html"

@@ -1,0 +1,147 @@
+---
+permalink: upgrade/migrate-fas2820-node2-lifs-aggregates.html 
+sidebar: sidebar 
+keywords: fas2820, ndu, nondisruptive, upgrade, node1, node2, migrate, aggregates, lifs 
+summary: '將FAS2820節點 2 上的邏輯介面 (LIF) 和資料聚合遷移到節點 1，然後再將節點 2 轉換為磁碟機架。' 
+---
+= 將FAS2820節點 2 上的 LIF 和資料聚合遷移到節點 1
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將FAS2820節點 2 上的邏輯介面 (LIF) 和資料聚合遷移到節點 1，然後再將節點 2 轉換為磁碟機架。
+
+.開始之前
+確認您符合下列要求：
+
+* 如果可能， FAS2820和替換控制器具有相同的ONTAP版本和修補程式版本。請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^]適用於支援的ONTAP版本。
+
+
+[NOTE]
+====
+* 您需要透過網路啟動在 node3 和 node4 上安裝ONTAP版本，以符合FAS2820系統上的ONTAP版本。  Node3 和 node4 是替換控制器。
+* node3 和 node4 控制器的主啟動映像和備份啟動映像必須具有相同的ONTAP版本。
+* 您需要執行下列操作來清除節點 3 和節點 4 上的任何殘留叢集配置 `wipeconfig`從啟動選單。
+
+
+====
+* 兩個替換控制器均在 LOADER 提示字元下處於待命狀態。
+* 所有必需的電纜均已配備。
+
+
+.關於這項工作
+以下步驟在FAS2820節點 1 上執行。
+
+.步驟
+. 存取進階權限層級：
++
+[source, cli]
+----
+set -privilege advanced
+----
+. 停用儲存容錯移轉自動恢復：
++
+[source, cli]
+----
+storage failover modify -node node1 -auto-giveback false
+----
+. 停用 HA 配對兩個節點之間的自動還原：
++
+[source, cli]
+----
+network interface modify -lif * -auto-revert false
+----
+. 顯示所有資料網路生命的狀態：
++
+[source, cli]
+----
+network interface show -role data
+----
+. 顯示叢集管理階層的狀態：
++
+[source, cli]
+----
+network interface show -role cluster-mgmt
+----
+. 從節點 2 上託管的儲存虛擬機器移轉所有資料生命。
++
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <node1> -destination-port <port_name>
+----
++
+
+NOTE: 此命令只會移轉非 SAN 的生命體。您無法使用它來移轉 iSCSI 和 FCP 生命。
+
+. 顯示叢集中所有資料生命的狀態：
++
+[source, cli]
+----
+network interface show -role data
+----
+. 如果任何 LIF 處於關閉狀態，則將其管理狀態設為 `up`為每個 LIF 輸入一次以下命令：
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -status-admin up
+----
+. 顯示叢集中所有資料集合體的狀態：
++
+[source, cli]
+----
+storage aggregate show
+----
+. 顯示容錯移轉資格：
++
+[source, cli]
+----
+storage failover show
+----
+. 將 node2 上的資料集合體移轉至 node1 ：
++
+[source, cli]
+----
+storage aggregate relocation start -aggregate <aggregate_name> -node <node2> -destination <node1>
+----
+. 顯示叢集中所有資料集合體的狀態：
++
+[source, cli]
+----
+storage aggregate show
+----
+. 顯示叢集中所有資料磁碟區的狀態：
++
+[source, cli]
+----
+volume show
+----
+. 顯示 `ha` epsilon 的狀態和擁有權：
++
+[source, cli]
+----
+cluster show
+----
+. 禁用集群 ha：
++
+[source, cli]
+----
+cluster ha modify -configured false
+----
+. 顯示 `ha` epsilon 的狀態和擁有權：
++
+[source, cli]
+----
+cluster show
+----
+. 停止節點2：
++
+[source, cli]
+----
+halt -node <node2> -inhibit-takeover true -ignore-quorum-warnings true
+----
+
+
+.接下來呢？
+link:convert-fas2820-node2-drive-shelf.html["將 node2 轉換為磁碟機櫃、並連線至 node4"]

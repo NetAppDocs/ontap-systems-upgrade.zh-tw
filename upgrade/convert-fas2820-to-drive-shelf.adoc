@@ -1,0 +1,45 @@
+---
+permalink: upgrade/convert-fas2820-to-drive-shelf.html 
+sidebar: sidebar 
+keywords: fas2820,  ndu, nondisruptive, upgrade, FAS, systems, entry, level 
+summary: 透過將每個節點轉換為 DS212C 驅動器架，然後連接到替換節點，對FAS2820執行無中斷升級。 
+---
+= 透過轉換為 DS212C 驅動器架從FAS2820升級
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以將每個節點轉換為 DS212C 驅動器架，然後將其連接到替換節點，對NetApp FAS2820進行無中斷升級。
+
+.關於這項工作
+在此過程中， FAS2820高可用性 (HA) 對控制器稱為節點 1 和節點 2，取代 HA 對控制器稱為節點 3 和節點 4。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]xref:migrate-fas2820-node2-lifs-aggregates.adoc[將 node2 上的生命體和資料集合體移轉至 node1]
+[role="quick-margin-para"]
+在將FAS2820節點 2 轉換為驅動器架之前，您需要將節點 2 上的邏輯介面 (LIF) 和資料聚合遷移到節點 1。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]xref:convert-fas2820-node2-drive-shelf.adoc[將 node2 轉換為磁碟機櫃、並連線至 node4]
+[role="quick-margin-para"]
+將 FAS8280 節點 2 轉換為 DS212C 磁碟機架，然後連接到節點 4，再將磁碟機從節點 2 重新指派到節點 4。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]xref:reassign-fas2820-node2-drives.adoc[將 node2 磁碟機重新指派給 node4]
+[role="quick-margin-para"]
+將FAS2820節點 2 轉換為 DS212C 磁碟機架並連接到節點 4 後，將先前屬於節點 2 的磁碟機重新指派給節點 4。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"]xref:migrate-fas2820-aggregates-epsilon-lifs.adoc[將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 node4]
+[role="quick-margin-para"]
+在將FAS2820節點 1 轉換為驅動器架之前，您需要將節點 1 上的資料聚合、epsilon 和 LIF 遷移到節點 4。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]xref:convert-fas2820-node1-drive-shelf.html[將 node1 轉換為磁碟機櫃、並連線至 node3]
+[role="quick-margin-para"]
+將FAS2820節點 1 轉換為 DS212C 磁碟機架並連接到節點 3，然後將磁碟機從節點 1 重新指派到節點 3。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"]xref:reassign-fas2820-node1-drives.adoc[將驅動器從 node1 重新分配給 node3]
+[role="quick-margin-para"]
+將FAS2820節點 1 轉換為 DS212C 磁碟機並連接到節點 3 後，將先前屬於節點 1 的磁碟機重新指派給節點 3。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["七"]xref:migrate-fas2820-node4-lIfs-aggregates.adoc[將 node4 上的生命週期和資料集合體移轉至 node3]
+[role="quick-margin-para"]
+若要完成升級、請將 node3 連接至 node4 、然後將 node4 上的資料生命週期和資料集合體移轉至 node3 。

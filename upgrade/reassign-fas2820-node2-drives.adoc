@@ -1,0 +1,87 @@
+---
+permalink: upgrade/reassign-fas2820-node2-drives.html 
+sidebar: sidebar 
+keywords: fas2820, ndu, nondisruptive, upgrade, node2, node4, reassign, drives 
+summary: 將FAS2820節點 2 轉換為 DS212C 磁碟機架並連接到節點 4 後，將先前屬於節點 2 的磁碟機重新指派給節點 4。 
+---
+= 將磁碟機從FAS2820節點 2 重新指派到節點 4
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將先前屬於FAS2820節點 2 的磁碟機重新指派給節點 4。
+
+.開始之前
+驗證在加載器提示符下 node3 和 node4 均處於待機狀態。
+
+.關於這項工作
+在node4上執行下列步驟。
+
+.步驟
+. 在載入程式提示字元下、將 node4 開機至維護模式：
++
+[source, cli]
+----
+boot_ontap maint
+----
++
+出現維護模式提示。
+
+. 顯示所有連接的磁碟機：
++
+[source, cli]
+----
+disk show -v
+----
+. 記錄本機系統 ID 值；這是 node4 的系統 ID 。也請從「擁有者」欄中記錄 node1 和 node2 的系統 ID 。
+. 將所有磁碟機從節點 2 重新指派到節點 4。
++
+[role="tabbed-block"]
+====
+.如果您使用整個磁碟
+--
+運行以下命令：
+
+[source, cli]
+----
+disk reassign -s <node2_system_ID> -d <node4_system_ID>
+----
+--
+.如果您使用分割磁碟
+--
+運行以下命令：
+
+[source, cli]
+----
+disk reassign -s <node2_system_ID> -d <node4_system_ID> -p <node1_system_ID>
+----
+--
+====
+. 驗證所有重新分配的磁碟機是否都可以使用新的系統 ID 檢視：
++
+[source, cli]
+----
+disk show -s <node4_System_ID>
+----
++
+
+CAUTION: 如果看不到驅動器，請*停止*並聯絡技術支援尋求協助。
+
+. 驗證輸出中是否報告了 node2 的根聚合，並且該集合是否處於聯機狀態：
++
+[source, cli]
+----
+aggr status
+----
+. 結束維護模式：
++
+[source, cli]
+----
+halt
+----
+
+
+.接下來呢？
+link:migrate-fas2820-aggregates-epsilon-lifs.html["將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 node4"]

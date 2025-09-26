@@ -1,0 +1,211 @@
+---
+permalink: upgrade/migrate-fas2820-aggregates-epsilon-lifs.html 
+sidebar: sidebar 
+keywords: fas2820, ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs 
+summary: '將節點 1 上的資料聚合、epsilon 和邏輯介面 (LIF) 遷移到節點 4。' 
+---
+= 將FAS2820節點 1 上的資料聚合、epsilon 和 LIF 遷移到節點 4
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將FAS2820節點 1 上的資料聚合、epsilon 和邏輯介面 (LIF) 遷移到節點 4。
+
+.關於這項工作
+在node4上執行下列步驟。
+
+.步驟
+. 在 node4 的 LOADER 提示字元下，設定合作夥伴系統 ID：
++
+[source, cli]
+----
+setenv partner-sysid <system_ID_of_node1>
+----
+. 檢查合作夥伴系統ID：
++
+[source, cli]
+----
+printenv partner-sysid
+----
+. 儲存變更：
++
+[source, cli]
+----
+saveenv
+----
+. 將節點開機至開機功能表：
++
+[source, cli]
+----
+boot_ontap menu
+----
+. 在啟動選單中，選擇選項 `6 Update flash from backup config`將 /var 檔案系統還原到 node4。
++
+這會以最後一次備份到磁碟的方式取代所有 Flash 型組態。
+
+. 輸入「y」繼續。
++
+[NOTE]
+====
+節點會自動重新開機、以載入 /var 檔案系統的新複本。
+
+節點報告系統 ID 不相符的警告。輸入 `y` 以覆寫系統 ID 。
+
+====
+. 移轉叢集生命：
++
+[source, cli]
+----
+set -privilege advanced
+----
++
+[source, cli]
+----
+network port show
+----
++
+[NOTE]
+====
+如果將FAS2820升級到替換控制器時系統叢集連接埠不相似，則可能必須暫時將節點 4 上的介面變更為叢集連接埠：
+
+[source, cli]
+----
+network port modify -node <node4> -port <port_name> -mtu 9000 -ipspace Cluster
+----
+====
++
+[source, cli]
+----
+network interface migrate -vserver Cluster -lif <cluster_LIF>  -destination-node <node4> -destination-port <port_name>
+----
+. 等待叢集達到法定人數，然後驗證叢集節點是否健康：
++
+[source, cli]
+----
+– cluster show
+----
++
+
+NOTE: HA 配對與儲存容錯移轉會在目前狀態中保持停用狀態。
+
+. 將叢集生命週期移至 node4 上的暫存 25G 叢集連接埠：
++
+[source, cli]
+----
+network interface modify -vserver Cluster -lif <cluster_LIF> -home-node <node4> -home-port <port_name>
+----
+. 僅當您要升級的FAS2820叢集上使用介面組和資料 VLAN 時才完成此步驟。否則，轉到<<migrate_node1_nod4,步驟11.>>。
++
+更換控制器上的實體網路連接埠名稱與FAS2820上的不同。這可能會導致節點 4 上的 VLAN 移位和介面群組配置不正確。
+
++
+.. 顯示已置換的 VLAN：
++
+[source, cli]
+----
+cluster controller-replacement network displaced-vlans show
+----
+.. 恢復被取代的 VLAN：
++
+[source, cli]
+----
+cluster controller-replacement network displaced-vlans restore
+----
+.. 修復錯誤配置的介面組。 FAS2820和您正在升級的控制器之間的連接埠名稱可能不同。使用正確的成員連接埠更新介面群組：
++
+[source, cli]
+----
+ifgrp remove-port -node <node2> -ifgrp <ifgrp_name> -port <port_name>
+----
++
+[source, cli]
+----
+ifgrp add-port -node <node2> -ifgrp <ifgrp_name> -port <port_name>
+----
+
+
+
+
+[[migrate_node1_nod4]]
+. 將 node1 上的資料集合體移轉至 node4 ：
++
+[source, cli]
+----
+storage aggregate relocation start -aggregate-list <aggregate_list_name> -node <node1> -destination <node4> -ndo-controller-upgrade true -override-destination-checks true
+----
+. 顯示資料聚合狀態：
++
+[source, cli]
+----
+storage aggregate show
+----
+. 將 epsilon 從節點 1 移除並將其移至節點 4 來遷移 epsilon。
++
+.. 從 node1 移除 epsilon ：
++
+[source, cli]
+----
+cluster modify -epsilon false -node <node1>
+----
+.. 將 epsilon 移至 node4 ：
++
+[source, cli]
+----
+cluster modify -epsilon true -node <node4>
+----
+
+
+. 顯示叢集狀態以驗證 epsilon 變更：
++
+[source, cli]
+----
+cluster show
+----
+. 顯示所有資料網路生命：
++
+[source, cli]
+----
+network interface show -role data
+----
+. 將所有資料生命週期移轉至 node4 ：
++
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <lif_name> -destination-node <node4> -destination-port <port_name>
+----
+. 顯示叢集中所有資料生命的狀態：
++
+[source, cli]
+----
+network interface show -role data
+----
+. 如果任何 LIF 處於關閉狀態，則將其管理狀態設為 `up`為每個 LIF 輸入一次以下命令：
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <lif_name> -status-admin up
+----
+. 移轉叢集管理 LIF ：
++
+[source, cli]
+----
+network interface migrate -vserver <vserver_name> -lif <cluster_mgmt_lif> -destination-node <node4> -destination-port <port_name>
+----
+. 顯示叢集管理 LIF 的狀態：
++
+[source, cli]
+----
+network interface show -role cluster-mgmt
+----
+. 停止節點1：
++
+[source, cli]
+----
+halt -node <node1> -inhibit-takeover true -ignore-quorum-warnings true
+----
+
+
+.接下來呢？
+link:convert-fas2820-node1-drive-shelf.html["將 node1 轉換為磁碟機櫃、並連線至 node3"]

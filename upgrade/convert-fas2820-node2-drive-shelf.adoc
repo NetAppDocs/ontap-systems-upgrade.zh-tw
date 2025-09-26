@@ -1,0 +1,29 @@
+---
+permalink: upgrade/convert-fas2820-node2-drive-shelf.html 
+sidebar: sidebar 
+keywords: fas8280, ndu, nondisruptive, upgrade, node2, node4, reassign, drives 
+summary: 將節點 2（FAS2820）轉換為 DS212C 磁碟機架，然後連接到節點 4。 
+---
+= 將FAS2820節點 2 轉換為驅動器架並連接到節點 4
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將FAS2820節點 2 轉換為 DS212C 驅動器架。在將磁碟機從節點 2 重新指派到節點 4 之前，連接到節點 4。  Node1 和 node2 是 DS212C 架內的控制器。
+
+.步驟
+. 從 node2 拔下所有網路纜線。
+. 從FAS2820機箱移除節點 2。
+. 將 IOM12 或 IOM12B 模組插入節點 2 的托架。
+. 將節點 4 串列連接 SCSI (SAS) 連接埠連接到 IOM12 或 IOM12B 模組上的可用連接埠。查看link:https://hwu.netapp.com["Hardware Universe"^]驗證系統的 SAS 連接埠。
+. 透過將節點 1 連接埠 e0a 和 e0b 連接到節點 4 上的任兩個 25GbE 連接埠來建立臨時叢集連接。
++
+
+NOTE: 如果 node4 僅支援 10GbE 叢集連接，則必須有 10GbE 電纜來建立臨時叢集連接。
+
+
+
+.接下來呢？
+link:reassign-fas2820-node2-drives.html["將 node2 磁碟機重新指派給 node4"]

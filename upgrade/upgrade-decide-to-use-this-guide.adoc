@@ -48,6 +48,8 @@ link:https://docs.netapp.com/us-en/ontap/concepts/builtin-storage-efficiency-con
 如果您要升級 MetroCluster 組態、請參閱 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["升級、重新整理或擴充MetroCluster 此功能"^]。
 
 .相關資訊
+* link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html["將AFF A250轉換為驅動器架並升級到AFF A400"]（非破壞性程序）
+* link:convert-fas2820-to-drive-shelf.html["透過轉換為驅動器架從FAS2820進行升級"]（非破壞性程序）
 * link:upgrade-considerations.html["升級控制器硬體的考量事項"]
 * link:../choose_controller_upgrade_procedure.html["選擇升級控制器硬體的方法"]
 * https://docs.netapp.com/us-en/ontap-metrocluster/maintain/concept_where_to_find_procedures_for_mcc_maintenance_tasks.html["哪裡可以找MetroCluster 到執行維護工作的程序"^]

@@ -4218,7 +4218,6 @@
   <block id="9ae5a6f4cdea37ce0343ce6fe870ca8d" category="list-text">如果您的系統具有內部儲存設備、您可以將系統轉換成磁碟機櫃、並將其連接至同一叢集中的新節點。</block>
   <block id="caaabddaf0ae26915d0c67052254e13f" category="admonition">您無法將 AFF A700s 、 AFF A800 、 AFF C800 或 ASA A800 系統轉換為磁碟機櫃。</block>
   <block id="e83ec3e9b2b468e112627883187c2fd0" category="section-title">可能需要額外步驟的情況</block>
-  <block id="d79f8da307382ba028e64d108c30f593" category="inline-xref-macro">您正在從 AFF A250 升級至 AFF A400</block>
   <block id="e6dd5543cbcf668267e622e1c4af270f" category="list-text">如果新系統的插槽比原始系統少、或連接埠類型較少或不同、您可能需要在新系統中新增介面卡。請參閱<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>。</block>
   <block id="cb1a8b9d3abd4e33bdd8ea771ae95f90" category="inline-link">FlexArray 在 NetApp 控制器升級與更換方面的具體步驟為何</block>
   <block id="719139d3840fec9d3f2eb2a98eeabf46" category="list-text">如果原始節點或新節點使用 FlexArray 虛擬化軟體、請參閱知識庫文章<block ref="aa5f5c779b9d140822ad13dbd4dfcaef" category="inline-link-rx"></block>。</block>
@@ -4343,7 +4342,6 @@
   <block id="24c234c0d0c43e69b12af6b120695505" category="list-text">[[map_98_5]] 修改託管資料生命體的實體連接埠的廣播網域成員資格。您可以手動執行此動作、如所示 <block ref="2d50e52fa53ee066c1e23dfcd4b5dae8" category="inline-link-macro-rx"></block>。NetApp 建議您使用 ONTAP 9.8 中引進的增強型網路連線能力掃描與修復程序、如下列步驟 5 （ a ）至（ g ）子步驟所示。</block>
   <block id="3a2b68bdec4a67d63868881c41adfd33" category="paragraph">您已完成實體連接埠的對應。若要完成升級、請前往 <block ref="479694184a7596b8d654b4519a939fb4" category="inline-link-macro-rx"></block>。</block>
   <block id="3548781d8fe3c65e8421c7698ed973f9" category="list-text"><block ref="3548781d8fe3c65e8421c7698ed973f9" category="inline-link-macro-rx"></block></block>
-  <block id="3f22ff9f0de0ae158372929690ccd37d" category="list-text"><block ref="7a22ca21c86b9e16042b418efc302d00" category="inline-link-macro-rx"></block> （不中斷營運的程序）。</block>
   <block id="50ae6167d8a0516c8e8cb720a6888cf9" category="list-text"><block ref="50ae6167d8a0516c8e8cb720a6888cf9" category="inline-link-macro-rx"></block></block>
   <block id="54e45682922af9929fbc5d361d7c0b49" category="list-text"><block ref="54e45682922af9929fbc5d361d7c0b49" category="inline-link-macro-rx"></block></block>
   <block id="3ca57071250bef466a089a9c6c848bd5" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="964fb2d7d8e53060676c08185881a5ae" category="inline-link-macro-rx"></block></block>
@@ -4365,7 +4363,6 @@
   <block id="d1d6580288f1472dbd1db17b372d51d7" category="paragraph">您可以將組態資訊從根磁碟區還原至開機裝置。</block>
   <block id="a185c3c138dca5ef46afc33288a67d1f" category="inline-image-macro">十</block>
   <block id="7cdc9e64dfc551099556d0123c5bb981" category="paragraph-title"><block ref="6097494f0af631df68e3dcb7a6da8d2a" category="inline-image-macro-rx" type="image"></block><block ref="d38ccbe9c555caadedf9e9523ed99b16" category="inline-link-macro-rx"></block></block>
-  <block id="c9dc32dde68fdd77f0e2c8f513e472f8" category="list-text"><block ref="1aa042908822fc17e30db57dc8f3c350" category="inline-link-macro-rx"></block> （不中斷營運的程序）。</block>
   <block id="d0820066ba6f14dca2420f2960ea8c42" category="paragraph">這些步驟適用於執行ONTAP 不含更新版本的系統。如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 <block ref="05d6674d1c6e0d48e8203d8e927e45b4" category="inline-link-macro-rx"></block>。</block>
   <block id="5e79c247ab4077723eed9dcb39fcfe47" category="list-text">如果您的系統執行ONTAP 的是效能不高的版本、*停止*。您必須使用中的程序 <block ref="05d6674d1c6e0d48e8203d8e927e45b4" category="inline-link-macro-rx"></block>。</block>
   <block id="31f3762a2a2ed806ac8dc72ae0dc1eb5" category="admonition">如果您執行就地控制器升級至使用連接埠「e0a」和「e0b」做為高可用度（HA）互連連接埠的系統、例如FAS8300、AFF ESIA400或FAS8700、 請確認您擁有 <block ref="7c3698c6a5737cb69d525ebacf49b908" category="inline-link-macro-rx"></block> 在開始升級程序之前、請先在原始系統的連接埠「e0a」和「e0b」上設定。</block>
@@ -5084,7 +5081,6 @@
   <block id="8babcf5a4f3ceb219fe532ed80e3feb0" category="inline-link-macro">您也可以選擇將系統轉換為磁碟機架並將其連接到新節點</block>
   <block id="e41a07bd97897d75f6b22fcde3750258" category="admonition"><block ref="eb314f9c9756831ec72feb5f63dc05b9" category="inline-link-macro-rx"></block>。</block>
   <block id="158d9483f2a61460306dea524e285d17" category="paragraph">您只能在同一個集群內移動驅動器。</block>
-  <block id="627b519764bbfa6f3e4d2ae785e58059" category="doc">透過轉換為驅動器架工作流程將 AFF A250 升級到 AFF A400</block>
   <block id="2f8d5ddddff80d2511453ce886eee1eb" category="doc">移動、刪除或建立 SAN LIF</block>
   <block id="ff4f01f0da7a9c33d69bb129757afc29" category="section-title">刪除不再需要的 SAN LIF</block>
   <block id="58b02b1a4790c291e537964eb5ec39dd" category="doc">決定是否使用此聚合遷移程序</block>
@@ -5329,4 +5325,106 @@
   <block id="41982d264a2a2a5af9a67f777e02916a" category="list-text">[[auto_check_4_step11]]當 node4 停止在啟動選單時，透過在 node4 上執行下列命令將 node2 磁碟重新指派給 node4：</block>
   <block id="1e1ddf24bfeddc76d571c4800f2d82ad" category="summary">使用以下命令升級執行ONTAP 9.15.1 或更高版本的控制器時，手動將失敗或被否決的聚合重新定位到節點 2<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block>命令。</block>
   <block id="3129d56ef5cc88b17f6e15c1da3476f1" category="summary">使用以下命令升級執行ONTAP 9.15.1 或更高版本的控制器時，手動將失敗或被否決的聚合重新定位到節點 3<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block>命令。</block>
+  <block id="39bb0497bdbb1e04586599bcfb4c0318" category="summary">將FAS2820節點 1 轉換為 DS212C 驅動器架，然後連接到節點 3，再將驅動器從節點 1 重新分配到節點 3。</block>
+  <block id="6d8572f1d7fdac9c27f62e363921947c" category="doc">將FAS2820節點 1 轉換為驅動器架並連接到節點 3</block>
+  <block id="663fdf50ecba63371090c62811c866ac" category="paragraph">將FAS2820節點 1 轉換為 DS212C 驅動器架。在將磁碟機從節點 1 重新指派到節點 3 之前連接到節點 3。</block>
+  <block id="8fe56965007c8482ebfb12c197c02d7e" category="list-text">從FAS2820機箱移除節點 1。</block>
+  <block id="a315276c33006971edc828b2d5f48c91" category="list-text">將 IOM12 或 IOM12B 模組插入節點 1 的托架。</block>
+  <block id="fcef638e0d5cb441f69abe1851a71025" category="list-text">將節點 3 SAS 連接埠連接到 IOM12 或 IOM12B 模組上的可用連接埠。查看<block ref="9c839fcdfb8699a63c787254d7b1ae03" category="inline-link-macro-rx"></block>驗證系統的 SAS 連接埠。查看<block ref="9c839fcdfb8699a63c787254d7b1ae03" category="inline-link-macro-rx"></block>驗證系統的 SAS 連接埠。</block>
+  <block id="9aa378ddd116d4c0628d0af695d9cc17" category="list-text">透過將 node4 叢集連接埠連接到 node3 上的任何叢集連接埠來建立臨時叢集連線。</block>
+  <block id="3936d65ca4d32956127070b6e56b2e64" category="admonition">如果節點 3 僅支援 10GbE 叢集連接，則必須使用 10GbE 電纜來建立臨時叢集連接。</block>
+  <block id="a369db1a615acf5202411aa57b6b0a3d" category="paragraph"><block ref="a369db1a615acf5202411aa57b6b0a3d" category="inline-link-macro-rx"></block></block>
+  <block id="2ad020d481d0a25e01559a9e966da553" category="summary">將節點 2（FAS2820）轉換為 DS212C 磁碟機架，然後連接到節點 4。</block>
+  <block id="d1257ec65502e0686c1e2a24a928f8f4" category="doc">將FAS2820節點 2 轉換為驅動器架並連接到節點 4</block>
+  <block id="e5478c453b4e355829aeee75f0775944" category="paragraph">將FAS2820節點 2 轉換為 DS212C 驅動器架。在將磁碟機從節點 2 重新指派到節點 4 之前，連接到節點 4。  Node1 和 node2 是 DS212C 架內的控制器。</block>
+  <block id="64f46bf8cb3f756ca2a4b5e8380b0b81" category="list-text">從FAS2820機箱移除節點 2。</block>
+  <block id="ea390a7342e757edb35e4cfe75d8ecdb" category="list-text">將 IOM12 或 IOM12B 模組插入節點 2 的托架。</block>
+  <block id="1a7776196607803ade98b6e8e9df8344" category="list-text">將節點 4 串列連接 SCSI (SAS) 連接埠連接到 IOM12 或 IOM12B 模組上的可用連接埠。查看<block ref="9c839fcdfb8699a63c787254d7b1ae03" category="inline-link-macro-rx"></block>驗證系統的 SAS 連接埠。</block>
+  <block id="725e2ebaa93fe8f09185c00e43898f5f" category="list-text">透過將節點 1 連接埠 e0a 和 e0b 連接到節點 4 上的任兩個 25GbE 連接埠來建立臨時叢集連接。</block>
+  <block id="86f6785d45d16c2b0ff31a1179934c9f" category="admonition">如果 node4 僅支援 10GbE 叢集連接，則必須有 10GbE 電纜來建立臨時叢集連接。</block>
+  <block id="bb7601ffb9123f9786cdac8af94211f0" category="paragraph"><block ref="bb7601ffb9123f9786cdac8af94211f0" category="inline-link-macro-rx"></block></block>
+  <block id="1e74494f5772c735812d575a898596c1" category="summary">透過將每個節點轉換為 DS212C 驅動器架，然後連接到替換節點，對FAS2820執行無中斷升級。</block>
+  <block id="ab73d8c2e94481a6ff48a7c91868d2c2" category="doc">透過轉換為 DS212C 驅動器架從FAS2820升級</block>
+  <block id="b013bc2ad201f8e021040fd0a4c8d714" category="paragraph">您可以將每個節點轉換為 DS212C 驅動器架，然後將其連接到替換節點，對NetApp FAS2820進行無中斷升級。</block>
+  <block id="9b4eafb4e3bcfaad97fc5e7af7aa1955" category="paragraph">在此過程中， FAS2820高可用性 (HA) 對控制器稱為節點 1 和節點 2，取代 HA 對控制器稱為節點 3 和節點 4。</block>
+  <block id="d1d868e382ab4b08e3be5f07e03e038d" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="91744e9af34171046ee51e4df1cdf2ab" category="inline-xref-macro-rx"></block></block>
+  <block id="8313cf9b12eae77b602124631070e7c4" category="paragraph">在將FAS2820節點 2 轉換為驅動器架之前，您需要將節點 2 上的邏輯介面 (LIF) 和資料聚合遷移到節點 1。</block>
+  <block id="58169b6641f5811fe5a42525bb985f58" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="9ad99f16aefbb0da0c8192358055567b" category="inline-xref-macro-rx"></block></block>
+  <block id="34e12f96079e8f2641f0bc5f76a14f3b" category="paragraph">將 FAS8280 節點 2 轉換為 DS212C 磁碟機架，然後連接到節點 4，再將磁碟機從節點 2 重新指派到節點 4。</block>
+  <block id="0054cc808f512bbb3f118ca4abd076c2" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="d3f3d357ab78b548fc1601824fb28e41" category="inline-xref-macro-rx"></block></block>
+  <block id="5a6af6abdd490940dc1f9df9cde04966" category="paragraph">將FAS2820節點 2 轉換為 DS212C 磁碟機架並連接到節點 4 後，將先前屬於節點 2 的磁碟機重新指派給節點 4。</block>
+  <block id="48f978643e148ed2cc94db905b383041" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="02b623c9dbb2d160132ae446a4c7a0c7" category="inline-xref-macro-rx"></block></block>
+  <block id="009ec9a2eb4000ba1aeab38e275d3dd4" category="paragraph">在將FAS2820節點 1 轉換為驅動器架之前，您需要將節點 1 上的資料聚合、epsilon 和 LIF 遷移到節點 4。</block>
+  <block id="26def2138cc961c62254cd174c55a771" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="9c43bd8b004df1da7b21ce814f6eafc2" category="inline-xref-macro-rx"></block></block>
+  <block id="fc0b4fd01b008060b7a81ca3f154ea4b" category="paragraph">將FAS2820節點 1 轉換為 DS212C 磁碟機架並連接到節點 3，然後將磁碟機從節點 1 重新指派到節點 3。</block>
+  <block id="a382921dc03bfcb77c9d970e45fe1495" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="9773b7b5ae1a3a9b51916da2f5695c60" category="inline-xref-macro-rx"></block></block>
+  <block id="d794a00a08edf3e003b5895b03494ddf" category="paragraph">將FAS2820節點 1 轉換為 DS212C 磁碟機並連接到節點 3 後，將先前屬於節點 1 的磁碟機重新指派給節點 3。</block>
+  <block id="850e71b118b51db23f5fa234e21d6eef" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="c1ca954fc21d09fcd7cbc3b5808e040e" category="inline-xref-macro-rx"></block></block>
+  <block id="3ac3cdc91bfaa2a43c0fca9946253b03" category="summary">將節點 1 上的資料聚合、epsilon 和邏輯介面 (LIF) 遷移到節點 4。</block>
+  <block id="39e528beab0388f2308ca06481682fe6" category="doc">將FAS2820節點 1 上的資料聚合、epsilon 和 LIF 遷移到節點 4</block>
+  <block id="ec407094615b8064b7141eebdc4faf0a" category="paragraph">將FAS2820節點 1 上的資料聚合、epsilon 和邏輯介面 (LIF) 遷移到節點 4。</block>
+  <block id="70431d2a3b3171dc183ad62c2cdf164e" category="paragraph">在node4上執行下列步驟。</block>
+  <block id="29ef9d409bfc5bf6a0af1a52e7e295a9" category="list-text">在 node4 的 LOADER 提示字元下，設定合作夥伴系統 ID：</block>
+  <block id="9732d4a7f425483bed6ea088b429c321" category="list-text">檢查合作夥伴系統ID：</block>
+  <block id="48aa8461c43c6d434c042a1f7cd26163" category="list-text">儲存變更：</block>
+  <block id="58ce42757edc7d65f7aa335facfe4c55" category="list-text">在啟動選單中，選擇選項<block ref="1fbad292f1d0674d5769c555d41b2d77" prefix=" " category="inline-code"></block>將 /var 檔案系統還原到 node4。</block>
+  <block id="877e27c2d322a599ffdd08c891c17100" category="paragraph">如果將FAS2820升級到替換控制器時系統叢集連接埠不相似，則可能必須暫時將節點 4 上的介面變更為叢集連接埠：</block>
+  <block id="5d7325b4306827947502da22033698f9" category="list-text">等待叢集達到法定人數，然後驗證叢集節點是否健康：</block>
+  <block id="fce12fccf3a26cbb691acedd9868fc28" category="list-text">僅當您要升級的FAS2820叢集上使用介面組和資料 VLAN 時才完成此步驟。否則，轉到<block ref="5a1eec99d6beb6e9faa992f0e22335e5" category="inline-xref-macro-rx"></block>。</block>
+  <block id="16a9d0a644dc77426403978271fa8238" category="paragraph">更換控制器上的實體網路連接埠名稱與FAS2820上的不同。這可能會導致節點 4 上的 VLAN 移位和介面群組配置不正確。</block>
+  <block id="c3e7a5e32bd2e11679ed6235b2adbd21" category="list-text">顯示已置換的 VLAN：</block>
+  <block id="577eb353d2dda6749c18595dad185a0e" category="list-text">恢復被取代的 VLAN：</block>
+  <block id="04b8389fdd361eb809430c42f4624631" category="list-text">修復錯誤配置的介面組。 FAS2820和您正在升級的控制器之間的連接埠名稱可能不同。使用正確的成員連接埠更新介面群組：</block>
+  <block id="5c884dd6b97d69df3e1af4a24ee863bc" category="list-text">顯示資料聚合狀態：</block>
+  <block id="01392697d52d1d375332f041d834fead" category="list-text">將 epsilon 從節點 1 移除並將其移至節點 4 來遷移 epsilon。</block>
+  <block id="118cd161d4f37abbb3a8c4baec04ed48" category="list-text">顯示叢集狀態以驗證 epsilon 變更：</block>
+  <block id="9ad3f03c93e9dcbdf6be7194a18902d9" category="list-text">如果任何 LIF 處於關閉狀態，則將其管理狀態設為<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>為每個 LIF 輸入一次以下命令：</block>
+  <block id="df891edbd6b0f00d98d3d2376a067122" category="paragraph"><block ref="df891edbd6b0f00d98d3d2376a067122" category="inline-link-macro-rx"></block></block>
+  <block id="e0a957b08ecb5a9fd1e825f68f0e64dc" category="summary">將FAS2820節點 2 上的邏輯介面 (LIF) 和資料聚合遷移到節點 1，然後再將節點 2 轉換為磁碟機架。</block>
+  <block id="601722b4c9c69820b9d720c8c940f724" category="doc">將FAS2820節點 2 上的 LIF 和資料聚合遷移到節點 1</block>
+  <block id="7d37ff2d3a9b0f3b21eda882f20eaae5" category="list-text">如果可能， FAS2820和替換控制器具有相同的ONTAP版本和修補程式版本。請參閱<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block>適用於支援的ONTAP版本。</block>
+  <block id="80cd304d38e2aed4d842aa1630bc0dad" category="list-text">您需要透過網路啟動在 node3 和 node4 上安裝ONTAP版本，以符合FAS2820系統上的ONTAP版本。  Node3 和 node4 是替換控制器。</block>
+  <block id="80c7e88957d9462b8f6fac12ec261b8d" category="list-text">node3 和 node4 控制器的主啟動映像和備份啟動映像必須具有相同的ONTAP版本。</block>
+  <block id="adc2a6d6f08e30b20353435634048f79" category="list-text">您需要執行下列操作來清除節點 3 和節點 4 上的任何殘留叢集配置<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>從啟動選單。</block>
+  <block id="da1ea0ee367c83a05341c10eb92921b5" category="list-text">兩個替換控制器均在 LOADER 提示字元下處於待命狀態。</block>
+  <block id="9cdda3ac4f8a5af7408c9611f78f7bf9" category="list-text">所有必需的電纜均已配備。</block>
+  <block id="4465c00fc828473105f269a899d79c21" category="paragraph">以下步驟在FAS2820節點 1 上執行。</block>
+  <block id="5965c3c2057d5bfeb9e7cd6aa1da843d" category="list-text">禁用集群 ha：</block>
+  <block id="2e82d870a2b26cff3089793672f0342d" category="paragraph"><block ref="2e82d870a2b26cff3089793672f0342d" category="inline-link-macro-rx"></block></block>
+  <block id="70213ce8df6f326c8c858906eda1740c" category="summary">要完成升級，您需要將 FAS2820node3 連接到 node4，然後將 node4 上的資料邏輯介面 (LIF) 和資料聚合遷移到 node3。</block>
+  <block id="ac03f0a9aed6d7cc8cc2f9aa06ab5c2f" category="doc">將FAS2820節點 4 上的 LIF 和資料聚合遷移到節點 3</block>
+  <block id="798b92db311a432e12d579940612d93b" category="paragraph">要完成升級，您需要將FAS2820節點 3 連接到節點 4，然後將節點 4 上的資料邏輯介面 (LIF) 和資料聚合遷移到節點 3。</block>
+  <block id="546ad9f8a047416e6263ed28b1b6a61c" category="paragraph">在node3上執行下列步驟。</block>
+  <block id="a76e7f8c364a7e27930ee7ff49df6e37" category="list-text">驗證叢集和 HA 連接埠是否在節點 3 和節點 4 之間連接。</block>
+  <block id="6052d7b32607b02e8d7092b4374824ed" category="list-text">顯示節點3和節點4上的叢集和HA連接埠：</block>
+  <block id="32710cda7c5dad348e2b2e03cf81d971" category="list-text">將兩個節點上的所有叢集網路 LIF 遷移到其計劃的主連接埠：</block>
+  <block id="6ac170d19dd75b39a772cfb2159effe2" category="list-text">配置叢集網路 LIF 的主連接埠：</block>
+  <block id="8bd5f2b46faa7afe1f8b5fde87fe58a7" category="list-text">將用於 node3 的所有資料 LIF 移回 node3：</block>
+  <block id="d4ea258ab4e2dcf20e7e9f102a6ce502" category="list-text">為所有資料 LIF 設定主節點和主連接埠。如果任何 LIF 處於關閉狀態，則將其管理狀態設為<block ref="46c48bec0d282018b9d167eef7711b2c" prefix=" " category="inline-code"></block>為每個 LIF 輸入一次以下命令：</block>
+  <block id="ab72b255e3349ae141f76089ccc6a9bd" category="list-text">在雙節點叢集中啟用叢集高可用性：</block>
+  <block id="98ec39406efb767f83dc79971d983c15" category="list-text">啟用並驗證 node3 和 node4 的儲存故障轉移：</block>
+  <block id="a04136bb695577e89cb64bd8d566305d" category="list-text">遷移由 node4 擁有但本應由 node3 擁有的資料聚合：</block>
+  <block id="7ff9c5727fd29deb9cd8032b2551cd2b" category="admonition">在叢集報告輸出中，一個節點可能錯誤地擁有屬於另一個節點的聚合。如果發生這種情況，請從集群的兩側執行接管和交還。</block>
+  <block id="b7ed6d2578c289a342dff3870c0458e4" category="doc">將磁碟機從FAS2820節點 1 重新指派給節點 3</block>
+  <block id="67242858a5a960ad59c4112deff89a57" category="paragraph">將先前指派給FAS2820節點 1 的磁碟機重新指派給節點 3。</block>
+  <block id="2cc2671439ba3e907dc353e6fa9e2f82" category="paragraph">出現維護模式提示。</block>
+  <block id="50ef837b20ef82f8d6c3ad3818c7e3b9" category="list-text">記錄本機系統 ID 值；這是節點 3 的系統 ID。也從「OWNER」欄位記錄節點 1 和節點 4 的系統 ID。</block>
+  <block id="fc626981b1ece2c6c05c047f46bbfcbf" category="open-title">如果您使用整個磁碟</block>
+  <block id="337d79852891a37d41285c9101c3fff4" category="paragraph">運行以下命令：</block>
+  <block id="17c26bafe75c18b3bcd768f9147f1213" category="open-title">如果您使用分割磁碟</block>
+  <block id="7a276578eb1d5f5ba51a40f9a3c06c94" category="admonition">如果看不到驅動器，請*停止*並聯絡技術支援尋求協助。</block>
+  <block id="f2301c41e07cf933742b943a7d3ecb4e" category="paragraph"><block ref="f2301c41e07cf933742b943a7d3ecb4e" category="inline-link-macro-rx"></block></block>
+  <block id="c76f454b1b8b44e22cf7a34d06691591" category="doc">將磁碟機從FAS2820節點 2 重新指派到節點 4</block>
+  <block id="52ce99ed56c027ff91b3e909018de81d" category="paragraph">將先前屬於FAS2820節點 2 的磁碟機重新指派給節點 4。</block>
+  <block id="e5549cfce8a8e0264f304166398e83fb" category="list-text">將所有磁碟機從節點 2 重新指派到節點 4。</block>
+  <block id="08ca03a8874a1a38c5541456cb7a250f" category="paragraph"><block ref="08ca03a8874a1a38c5541456cb7a250f" category="inline-link-macro-rx"></block></block>
+  <block id="c2dd662463f4b0b3f6efeb80332e50d6" category="list-text"><block ref="1aa042908822fc17e30db57dc8f3c350" category="inline-link-macro-rx"></block>（非破壞性程序）</block>
+  <block id="d81919377c1c1774d8ca7b45cc02103c" category="inline-link-macro">透過轉換為驅動器架從FAS2820進行升級</block>
+  <block id="8b2e9677889c0f0b26cd5e5a2e524532" category="list-text"><block ref="f9bfe9dff8f74d561bd9015eaa95aca7" category="inline-link-macro-rx"></block>（非破壞性程序）</block>
+  <block id="ed58851cec153c1db74f982f7968d38c" category="inline-link-macro">將AFF A250轉換為驅動器架並升級到AFF A400</block>
+  <block id="a0d4e0637e12b87691937ec2f86fe18e" category="list-text"><block ref="182a6b47297b5fcc5de9721f7f6d6e2c" category="inline-link-macro-rx"></block>（非破壞性程序）</block>
+  <block id="af72e67cdd4847ff8df836082e1ecd28" category="sidebar">將AFF A250升級到AFF A400</block>
+  <block id="6a6bad6107988979a4c7bb4f9b6e3f47" category="sidebar">了解如何將AFF A250升級到AFF A400</block>
+  <block id="1c89ca7629177ffaec440b31de61e887" category="sidebar">從FAS2820升級</block>
+  <block id="10952bb20745dcf0f30d5dd264d03924" category="sidebar">了解如何從FAS2820升級</block>
 </blocks>
