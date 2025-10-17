@@ -29,10 +29,10 @@ summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時�
 . 按照節點機型的安裝與設定說明_中的指示、在機架中安裝節點4。
 . 纜線節點4、將連線從節點2移至節點4。
 +
-請依照 _ 安裝與設定說明 _ 或節點 4 平台的 _ FlexArray 虛擬化安裝要求與參考 _ ，適當的磁碟櫃文件及 _ HA 配對管理 _ 中的指示，連接下列連線。
+依照 node4 平台的《安裝與設定說明》、對應的磁碟架文件和《HA 對管理》中的說明，連接以下連接線。
 
 +
-請參閱link:other_references.html["參考資料"]連結至 FlexArray 虛擬化安裝需求與參考 _ 和 _HA 配對管理 _ 。
+參考link:other_references.html["參考資料"]連結到_HA 對管理_。
 
 +
 ** 主控台（遠端管理連接埠）
@@ -71,7 +71,7 @@ WARNING: The battery is unfit to retain data during a power outage. This is like
 .. 讓電池充電並完成開機程序。
 +
 
-WARNING: *注意：請勿置換延遲；若不讓電池充電、可能導致資料遺失。*
+WARNING: *請勿超越延遲；如果電池無法充電，可能會導致資料遺失。 *
 
 +
 

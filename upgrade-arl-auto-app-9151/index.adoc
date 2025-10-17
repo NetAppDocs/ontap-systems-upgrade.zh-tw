@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/index.html 
-keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology 
+keywords: aggregate, relocation, controller, hardware, aggregates, metrocluster, terminology 
 summary: '您可以使用命令來升級執行 ONTAP 9.15.1 或更新版本的控制器硬體 `system controller replace` 、重新配置非根集合體的擁有權。' 
 ---
 = 了解 ARL 升級程序

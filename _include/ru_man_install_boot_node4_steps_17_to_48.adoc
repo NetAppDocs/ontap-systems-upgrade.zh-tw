@@ -13,12 +13,12 @@ Boot_ONTAP功能表
 | 如果您要升級的系統... | 然後... 
 
 
-| 節點4上沒有正確或最新ONTAP 的版本 | 前往 <<man_install4_Step20,步驟20>>。 
+| 節點4上沒有正確或最新ONTAP 的版本 | 前往<<man_install4_Step13,步驟13>>。 
 
 
-| 節點4上有正確或最新版本ONTAP 的資訊 | 前往 <<man_install4_Step25,步驟25>>。 
+| 節點4上有正確或最新版本ONTAP 的資訊 | 前往<<man_install4_Step18,步驟18>>。 
 |===
-. [[man_install4_Step20]]選擇下列其中一項動作來設定netboot連線。
+. [[man_install4_Step13]]透過選擇下列其中一項操作來設定網路啟動連線。
 +
 
 NOTE: 您必須使用管理連接埠和IP位址做為netboot連線。請勿使用資料LIF IP位址、否則在執行升級時可能會發生資料中斷。
@@ -107,8 +107,8 @@ The node must be rebooted to start using the newly installed software. Do you wa
 
 
 
-. [[man_install4_Step25]從開機功能表選取維護模式「5」、然後在系統提示您繼續開機時輸入「y」。
-. [[man_install4_Step26]在繼續之前、請前往 link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"] 可對節點上的FC或UTA/UTA2連接埠進行必要的變更。進行這些區段中建議的變更、重新啟動節點、然後進入維護模式。
+. [[man_install4_Step18]]選擇維護模式 `5`從啟動選單並輸入 `y`當提示您繼續啟動。
+. [[man_install4_Step19]]繼續之前，請前往link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"]對節點上的 FC 或 UTA/UTA2 連接埠進行任何必要的變更。按照這些部分中建議的進行更改，重新啟動節點，然後進入維護模式。
 . 輸入以下命令並檢查輸出以找出節點4的系統ID：
 +
 「展示-A'」
@@ -290,7 +290,7 @@ WARNING: *警告：您必須依照所示的確切順序執行下列子步驟；�
 +
 "et time _hh：mm:ss_"
 
-. 請確認合作夥伴系統ID的設定是否正確、如所述 <<man_install4_Step26,步驟26>> 選項下。
+. 驗證合作夥伴系統 ID 是否依照<<man_install4_Step19,步驟19>>在選項下。
 +
 《prontenv合作夥伴sysid》
 

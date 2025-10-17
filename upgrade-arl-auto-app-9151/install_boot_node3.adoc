@@ -65,7 +65,7 @@ To override this delay, press 'c' followed by 'Enter'
 .. 讓電池充電並完成開機程序。
 +
 
-WARNING: *注意：請勿置換延遲；若不讓電池充電、可能導致資料遺失。*
+WARNING: *請勿超越延遲；如果電池無法充電，可能會導致資料遺失。 *
 
 +
 

@@ -48,7 +48,6 @@ NOTE: 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume�
 您不能在以下情況下使用此 ARL 程式：
 
 * 您想要將新控制器新增為叢集的新 HA 配對，並使用 Volume Moves 移轉資料。
-* 您正在升級的現有系統上使用 FlexArray 虛擬化軟體。
 * 您正在升級 MetroCluster IP 組態。
 +
 若要升級 MetroCluster IP 組態，請參閱link:other_references.html["參考資料"]連結至 MetroCluster 升級與擴充內容。

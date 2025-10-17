@@ -59,7 +59,6 @@ NOTE: 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume�
 +
 若要執行上表所列的升級，請參閱link:other_references.html["參考資料"]連結至 _ 使用「系統控制器更換」命令來升級同一機箱中的控制器機型 _ 。
 
-* 您正在使用外部陣列來升級 V 系列系統或 FlexArray 虛擬化儲存系統，以用於後端儲存設備。如需升級 V 系列或 FlexArray 系統的選項、請聯絡技術支援部門。
 * 您正在升級 MetroCluster FC 或 IP 組態。若要升級 MetroCluster 組態、請參閱 link:other_references.html["參考資料"] 連結至 MetroCluster 升級與擴充說明文件 _ 。
 
 

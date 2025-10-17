@@ -17,16 +17,11 @@ summary: 在執行ONTAP 更新版本的控制器上手動升級ARL時、請在�
 如果node4具有內建FC連接埠、內建統一化目標介面卡（UTA/UTA2）連接埠或UTA/UTA2卡、則必須先設定這些設定、才能完成其餘程序。
 
 .關於這項工作
-您可能需要完成 <<在節點4上設定FC連接埠>>、 <<檢查並設定節點4上的UTA/UTA2連接埠>>或這兩個區段。
+您可能需要完成<<在節點4上設定FC連接埠>>或者<<檢查並設定節點4上的UTA/UTA2連接埠>>或兩個部分。
 
 如果節點4沒有內建FC連接埠、內建UTA/UTA2連接埠或UTA/UTA2卡、而且您正在升級含有儲存磁碟的系統、則可以跳至 link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"]。
 
 但是、如果您有V系列系統或使用FlexArray VMware虛擬化軟體、並連接至儲存陣列、而節點4沒有內建FC連接埠、內建UTA/ UTA2連接埠或UTA/ UTA2卡、則必須返回_安裝與開機節點4_區段、並繼續執行 link:install_boot_node4.html#man_install4_Step9["步驟9."]。確定節點4有足夠的機架空間。如果node4與node2位於不同的機箱中、您可以將node4放在與node3相同的位置。如果節點2和節點4位於同一個機箱中、則節點4已位於適當的機架位置。
-
-.選擇
-* <<在節點4上設定FC連接埠>>
-* <<檢查並設定節點4上的UTA/UTA2連接埠>>
-
 
 
 
@@ -41,88 +36,33 @@ summary: 在執行ONTAP 更新版本的控制器上手動升級ARL時、請在�
 如果您的系統沒有FC組態、您可以跳過本節。如果您的系統有內建UTA/UTA2連接埠或UTA/UTA2介面卡、請在中進行設定 <<檢查並設定節點4上的UTA/UTA2連接埠>>。
 
 
-IMPORTANT: 如果您的系統有儲存磁碟、您必須在叢集提示字元下輸入本節中的命令。如果您的V系列系統或系統FlexArray 已連接至儲存陣列、請在維護模式下於本節中輸入命令。
+IMPORTANT: 在群集提示符下輸入本節中的命令。
 
 .步驟
-. 請採取下列其中一項行動：
+. 顯示系統上所有 FC 和融合網路適配器的資訊：
 +
-[cols="35,65"]
-|===
-| 如果您要升級的系統... | 然後… 
-
-
-| 具有儲存磁碟 | 前往 <<man_config_4_Step5,步驟5.>>。 
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 前往 <<man_config_4_Step2,步驟2>>。 
-|===
-. [[man_config_4_Step2]]存取維護模式：
-+
-Boot_ONTAP maint
-
-. 請採取下列其中一項行動：
-+
-[cols="35,65"]
-|===
-| 如果您要升級的系統... | 然後… 
-
-
-| 具有儲存磁碟 | 「系統節點硬體統一連線展示」 
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 「ucadmin show」 
-|===
-+
-系統會顯示系統上所有FC和整合式網路卡的相關資訊。
+「系統節點硬體統一連線展示」
 
 . 比較新節點上的FC設定與先前從原始節點擷取的設定。
-. [[man_config_4_Step5]]請採取下列其中一項行動：
+. 視需要修改節點4上的FC連接埠：
 +
-[cols="35,65"]
-|===
-| 如果您要升級的系統... | 然後… 
-
-
-| 具有儲存磁碟  a| 
-視需要修改節點4上的FC連接埠：
-
 ** 若要設定目標連接埠：
-
-
-「系統節點硬體統一連線修改類型|-t target -介 面卡_port_name_」
++
+`system node hardware unified-connect modify -type \| -t target -adapter _port_name_`
 
 ** 設定啟動器連接埠：
++
+`system node unified-connect modify type \| -t initiator -adapter _port_name_`
 
-
-「系統節點統一連線修改類型」|-t啟動器-Adapter _port_name_
-
++
 「-type」是FC4類型、目標或啟動器。
 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
-視需要修改節點4上的FC連接埠：
-
-`ucadmin modify -m fc -t initiator -f _adapter_port_name_`
-
-`-t` 為FC4類型、目標或啟動器。
-
-
-NOTE: FC連接埠必須設定為啟動器。
-
-|===
-. 請採取下列其中一項行動：
+. 輸入以下命令並檢查輸出來驗證新設定：
 +
-[cols="35,65"]
-|===
-| 如果您要升級的系統... | 然後… 
+`system node unified-connect show`
 
-
-| 具有儲存磁碟 | 輸入下列命令並檢查輸出、確認新設定：「ystem node-connect show」（系統節點統一連線顯示） 
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 輸入下列命令並檢查輸出「ucadmin show」、以驗證新設定 
-|===
 . 請採取下列其中一項行動：
 +
 [cols="35,65"]
@@ -130,48 +70,26 @@ NOTE: FC連接埠必須設定為啟動器。
 | 如果新節點上的預設FC設定為... | 然後… 
 
 
-| 與您在原始節點上擷取的相同 | 前往 <<man_config_4_Step11,步驟11.>>。 
+| 與您在原始節點上擷取的相同 | 前往<<man_config_4_Step9,步驟9.>>。 
 
 
-| 與您在原始節點上擷取的不同 | 前往 <<man_config_4_Step8,步驟8.>>。 
+| 與您在原始節點上擷取的不同 | 前往<<man_config_4_Step6,Step6>>。 
 |===
-. [[man_config_4_step8]結束維護模式：
+. [[man_config_4_Step6]]退出維護模式：
 +
 《停止》
 
 . 輸入命令後、請等待系統在開機環境提示字元停止。
-. 請採取下列其中一項行動：
+. 在啟動環境提示字元下輸入以下命令來啟動 node4：
 +
-[cols="35,65"]
-|===
-| 如果您要升級的系統... | 然後… 
+Boot_ONTAP
 
-
-| 是V系列系統、或是FlexArray 使用執行Data ONTAP 不支援的功能的功能完善的虛擬化軟體 | 在開機環境提示字元中輸入下列命令、即可存取維護模式：「boot_ONTAP maint」 
-
-
-| 不是V系列系統、也沒有FlexArray 「功能完善的虛擬化」軟體 | 在開機環境提示字元中輸入下列命令來開機節點4：「boot_ontap」 
-|===
-. [[man_config_4_Step11]採取下列其中一項行動：
+. [[man_config_4_Step9]]執行下列其中一項操作：
 +
-[cols="35,65"]
-|===
-| 如果您要升級的系統... | 然後… 
-
-
-| 具有儲存磁碟  a| 
 ** 前往 <<檢查並設定節點4上的UTA/UTA2連接埠>> 如果節點4有UTA/UTA2A卡或UTA/UTA2內建連接埠。
 ** 跳過一節、前往 link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"] 如果節點4沒有UTA/UTA2卡或UTA/UTA2內建連接埠。
 
 
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
-** 前往 <<檢查並設定節點4上的UTA/UTA2連接埠>> 如果節點4有UTA/ UTA2卡或UTA/ UTA2內建連接埠。
-** 跳過_檢查並設定節點4_上的UTA/UTA2連接埠（如果節點4沒有UTA/UTA2卡或UTA/UTA2內建連接埠）一節、返回_安裝與開機節點4_一節、並繼續執行以下步驟： link:install_boot_node4.html#man_install4_Step9["步驟9."]。
-
-
-|===
 
 
 
@@ -198,40 +116,14 @@ UTA/UTA2連接埠可能位於介面卡或控制器上、且具有下列組態：
 
 不過、您可以檢查節點4上UTA/UTA2連接埠的組態、並視需要加以變更。
 
-*注意*：如果您的系統有儲存磁碟、除非指示進入維護模式、否則請在叢集提示字元下輸入本節中的命令。如果您的MetroCluster 系統是連接FlexArray 至儲存陣列的支援功能不支援功能的FC系統、V系列系統或含有功能不全的虛擬化軟體的系統、則您必須處於維護模式才能設定UTA/UTA2連接埠。
+
+WARNING: 除非指示進入維護模式，否則請在叢集提示字元下輸入本節中的命令。如果您有MetroCluster FC 系統，則必須處於維護模式才能設定 UTA/UTA2 連接埠。
 
 .步驟
-. 在節點4上使用下列命令之一、檢查連接埠目前的設定方式：
+. 檢查 node4 上連接埠的目前配置：
 +
-[cols="35,65"]
-|===
-| 如果系統... | 然後… 
+「系統節點硬體統一連線展示」
 
-
-| 具有儲存磁碟 | 「系統節點硬體統一連線展示」 
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 「ucadmin show」 
-|===
-+
-系統會顯示類似下列範例的輸出：
-
-+
-....
-*> ucadmin show
-                Current  Current    Pending   Pending   Admin
-Node   Adapter  Mode     Type       Mode      Type      Status
-----   -------  ---      ---------  -------   --------  -------
-f-a    0e       fc       initiator  -          -        online
-f-a    0f       fc       initiator  -          -        online
-f-a    0g       cna      target     -          -        online
-f-a    0h       cna      target     -          -        online
-f-a    0e       fc       initiator  -          -        online
-f-a    0f       fc       initiator  -          -        online
-f-a    0g       cna      target     -          -        online
-f-a    0h       cna      target     -          -        online
-*>
-....
 . 如果目前的SFP+模組不符合所需用途、請更換為正確的SFP+模組。
 +
 請聯絡您的NetApp代表、以取得正確的SFP+模組。
@@ -249,38 +141,34 @@ f-a    0h       cna      target     -          -        online
 
 | 擁有您想要的個人風格 | 跳過步驟5至步驟12、前往 <<man_check_4_Step13,步驟13>>。 
 |===
-. [[man_inCheck _4_Step5]]請採取下列其中一項行動：
+. [[man_check_4_Step5]]如果系統有儲存磁碟並且正在執行Data ONTAP 8.3，則啟動 node4 並進入維護模式：
 +
-[cols="35,65"]
-|===
-| 如果系統... | 然後... 
+Boot_ONTAP maint
 
+. 輸入下列命令並檢查其輸出、以驗證設定：
++
+「ucadmin show」
 
-| 有儲存磁碟、而且執行Data ONTAP 的是功能不正常的 | 開機節點4並進入維護模式：「boot_ONTAP maint」 
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 前往 <<man_check_4_Step6,步驟6.>>。您應該已經處於維護模式。 
-|===
-. [[man_inar_4_Step6]]請採取下列其中一項行動：
+. 請採取下列其中一項行動：
 +
 [cols="35,65"]
 |===
 | 如果您正在設定... | 然後... 
 
 
-| UTA/UTA2A卡上的連接埠 | 前往 <<man_check_4_Step7,步驟7.>>。 
+| UTA/UTA2A卡上的連接埠 | 前往<<man_check_4_Step8,步驟8.>>。 
 
 
-| 內建UTA/UTA2連接埠 | 跳過步驟7、前往 <<man_check_4_Step8,步驟8.>>。 
+| 內建UTA/UTA2連接埠 | 跳過第 8 步並轉到<<man_check_4_Step9,步驟9.>>。 
 |===
-. [man檢查_4_Step7]如果介面卡處於啟動器模式、且UTA / UTA2連接埠處於線上狀態、請將UTA / UTA2連接埠離線：
+. [[man_check_4_Step8]]如果轉接器處於啟動器模式，且 UTA/UTA2 連接埠處於線上狀態，則將 UTA/UTA2 連接埠離線：
 +
 「停用介面卡_adapter_name_」
 
 +
 目標模式中的介面卡會在維護模式中自動離線。
 
-. [[man_check_4_step8]]如果目前組態與所需用途不符、請輸入下列命令、視需要變更組態：
+. [[man_check_4_Step9]]如果目前配置與所需用途不匹配，請輸入以下命令根據需要更改配置：
 +
 「ucadmin modify -m fc|cna -t啟動器| target _adapter_name_」
 
@@ -291,49 +179,26 @@ f-a    0h       cna      target     -          -        online
 
 +
 
-NOTE: 您必須使用FC啟動器來處理磁帶機和FlexArray 非功能性虛擬化系統。SAN用戶端必須使用FC目標。
+NOTE: 您必須對磁帶驅動器使用 FC 啟動器，對 SAN 用戶端使用 FC 目標。
 
-. 輸入下列命令並檢查其輸出、以驗證設定：
-+
-「ucadmin show」
-
-. 執行下列其中一項動作：
-+
-[cols="35,65"]
-|===
-| 如果系統... | 然後... 
-
-
-| 具有儲存磁碟  a| 
-.. 輸入下列命令：
+. 如果系統有儲存磁碟，請輸入以下命令：
 +
 《停止》
 
 +
 系統會在開機環境提示字元停止。
 
++
 .. 輸入下列命令：
 +
 Boot_ONTAP
 
 
 
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列、執行Data ONTAP 的是「支援支援整合的功能」 | 重新開機至維護模式：「boot_ONTAP maint」 
-|===
-. 驗證設定：
+. 如果系統有儲存磁碟，請輸入以下命令：
 +
-[cols="35,65"]
-|===
-| 如果系統... | 然後... 
+「系統節點硬體統一連線展示」
 
-
-| 具有儲存磁碟 | 輸入下列命令：「ystem node-connect show」 
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 輸入下列命令：「ucadmin show」 
-|===
 +
 以下範例的輸出顯示FC4類型的介面卡「1b」正在變更為「啟動器」、介面卡「2a」和「2b」的模式正在變更為「cna」。
 
@@ -350,43 +215,9 @@ f-a    2a      fc       target    cna      -          online
 f-a    2b      fc       target    cna      -          online
 4 entries were displayed.
 ----
-+
-[listing]
-----
-*> ucadmin show
-               Current Current   Pending  Pending    Admin
-Node  Adapter  Mode    Type      Mode     Type       Status
-----  -------  ------- --------- -------  -------    -----
-f-a    1a      fc      initiator -        -          online
-f-a    1b      fc      target    -        initiator  online
-f-a    2a      fc      target    cna      -          online
-f-a    2b      fc      target    cna      -          online
-4 entries were displayed.
-*>
-----
 . 針對每個連接埠輸入下列其中一個命令、將任何目標連接埠置於線上：
 +
-[cols="35,65"]
-|===
-| 如果系統... | 然後... 
+網路FCP介面卡修改-node_node_name_-介 面卡_adapter_name_-state up
 
-
-| 具有儲存磁碟 | 網路FCP介面卡修改-node_node_name_-介 面卡_adapter_name_-state up 
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | "FCP config _adapter_name_ up（FCP組態介面卡名稱_啟動）" 
-|===
 . [[man_inCheck _4_Step13]連接連接埠。
-. 執行下列其中一項動作：
-+
-[cols="35,65"]
-|===
-| 如果系統... | 然後... 
-
-
-| 具有儲存磁碟 | 前往 link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"]。 
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 返回_安裝和開機節點4_區段、並繼續執行以下區段： link:install_boot_node4.html#man_install4_Step9["步驟9."]。 
-|===
 

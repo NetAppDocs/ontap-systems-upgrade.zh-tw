@@ -136,23 +136,4 @@ NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。�
 +
 《prontenv合作夥伴sysid》
 
-. [[step22]請採取下列其中一項行動：
-+
-[cols="30,70"]
-|===
-| 如果您的系統... | 然後... 
-
-
-| 具有磁碟、無後端儲存設備 | 前往 <<auto_install4_step27,步驟 27>>。 
-
-
-| 是連接FlexArray 至儲存陣列的V系列系統或系統、其中含有與之相關的功能完善的虛擬化軟體  a| 
-.. 前往章節 link:set_fc_or_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"] 並完成本節的小節。
-.. 返回本節、並完成其餘步驟、從開始 <<auto_install4_step23,步驟23>>。
-
-
-
-IMPORTANT: 您必須重新設定FC內建連接埠、CNA內建連接埠和CNA卡、才能使用ONTAP 「支援虛擬化」軟體在V系列或系統上啟動FlexArray 。
-
-|===
 

@@ -40,49 +40,46 @@ summary: '使用命令支援執行 ONTAP 9.15.1 或更新版本之控制器升�
 | link:https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["使用CLI進行磁碟與Aggregate管理"^] | 說明如何ONTAP 使用CLI管理實體儲存設備。本說明如何建立、擴充及管理集合體、如何使用Flash Pool Aggregate、如何管理磁碟、以及如何管理RAID原則。 
 
 
-| link:https://docs.netapp.com/us-en/ontap-flexarray/install/index.html["介紹虛擬化安裝要求與參考資料FlexArray"^] | 包含FlexArray 有關「非虛擬化」系統的佈線指示和其他資訊。 
+| 連結： https://docs.netapp.com/us-en/ontap-/install/index.html | link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["HA配對管理"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["HA配對管理"^] | 說明如何安裝及管理高可用度叢集組態、包括儲存容錯移轉及接管/恢復。 
+| 說明如何安裝及管理高可用度叢集組態、包括儲存容錯移轉及接管/恢復。 | link:https://docs.netapp.com/us-en/ontap/volumes/index.html["使用CLI進行邏輯儲存管理"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap/volumes/index.html["使用CLI進行邏輯儲存管理"^] | 說明如何使用磁碟區、FlexClone磁碟區、檔案和LUN來有效管理邏輯儲存資源、 支援多個磁碟區、重複資料刪除、壓縮、qtree和配額。FlexCache 
+| 說明如何使用磁碟區、FlexClone磁碟區、檔案和LUN來有效管理邏輯儲存資源、 支援多個磁碟區、重複資料刪除、壓縮、qtree和配額。FlexCache | link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["升級與擴充MetroCluster"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["升級與擴充MetroCluster"^] | 提供程序來升級MetroCluster 以支援支援支援功能的控制器和儲存模型、從MetroCluster 支援功能的支援中心轉換為MetroCluster 支援功能的支援中心、以及MetroCluster 新增額外節點來擴充支援中心組態。 
+| 提供程序來升級MetroCluster 以支援支援支援功能的控制器和儲存模型、從MetroCluster 支援功能的支援中心轉換為MetroCluster 支援功能的支援中心、以及MetroCluster 新增額外節點來擴充支援中心組態。 | link:https://docs.netapp.com/us-en/ontap/network-management/index.html["網路管理"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap/network-management/index.html["網路管理"^] | 說明如何設定及管理叢集中的實體和虛擬網路連接埠（VLAN和介面群組）、生命、路由和主機解析服務；透過負載平衡最佳化網路流量；以及使用SNMP監控叢集。 
+| 說明如何設定及管理叢集中的實體和虛擬網路連接埠（VLAN和介面群組）、生命、路由和主機解析服務；透過負載平衡最佳化網路流量；以及使用SNMP監控叢集。 | link:https://docs.netapp.com/us-en/ontap-cli-9131/index.html["ONTAP 9.13.1 命令：手冊頁參考"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap-cli-9131/index.html["ONTAP 9.13.1 命令：手冊頁參考"^] | 說明支援的 ONTAP 9.13.1 命令的語法和使用方式。 
+| 說明支援的 ONTAP 9.13.1 命令的語法和使用方式。 | link:https://docs.netapp.com/us-en/ontap-cli-9141/index.html["ONTAP 9.14.1 命令：手冊頁參考"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap-cli-9141/index.html["ONTAP 9.14.1 命令：手冊頁參考"^] | 說明支援的 ONTAP 9.14.1 命令的語法和使用方式。 
+| 說明支援的 ONTAP 9.14.1 命令的語法和使用方式。 | link:https://docs.netapp.com/us-en/ontap-cli/index.html["ONTAP 9.15.1 命令：手冊頁面參考"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap-cli/index.html["ONTAP 9.15.1 命令：手冊頁面參考"^] | 說明支援的 ONTAP 9.15.1 命令的語法和使用方式。 
+| 說明支援的 ONTAP 9.15.1 命令的語法和使用方式。 | link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["使用CLI進行SAN管理"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["使用CLI進行SAN管理"^] | 說明如何使用iSCSI和FC傳輸協定來設定及管理LUN、igroup和目標、以及使用NVMe / FC傳輸協定的命名空間和子系統。 
+| 說明如何使用iSCSI和FC傳輸協定來設定及管理LUN、igroup和目標、以及使用NVMe / FC傳輸協定的命名空間和子系統。 | link:https://docs.netapp.com/us-en/ontap/san-config/index.html["SAN組態參考"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap/san-config/index.html["SAN組態參考"^] | 包含有關FC和iSCSI拓撲及配線配置的資訊。 
+| 包含有關FC和iSCSI拓撲及配線配置的資訊。 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["透過移動磁碟區或儲存設備進行升級"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade/upgrade-decide-to-use-this-guide.html["透過移動磁碟區或儲存設備進行升級"^] | 說明如何透過移動儲存設備或磁碟區、快速升級叢集中的控制器硬體。也說明如何將支援的機型轉換成磁碟櫃。 
+| 說明如何透過移動儲存設備或磁碟區、快速升級叢集中的控制器硬體。也說明如何將支援的機型轉換成磁碟櫃。 | link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["升級ONTAP"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["升級ONTAP"^] | 內含下載及升級ONTAP 功能的說明。 
+| 內含下載及升級ONTAP 功能的說明。 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["使用「系統控制器更換」命令來升級相同機箱中的控制器機型"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["使用「系統控制器更換」命令來升級相同機箱中的控制器機型"^] | 說明在不中斷系統升級、保留舊系統機箱和磁碟所需的集合體重新定位程序。 
+| 說明在不中斷系統升級、保留舊系統機箱和磁碟所需的集合體重新定位程序。 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html["使用「系統控制器更換」命令來升級執行ONTAP 效能不正常的控制器硬體"^] 
 
 
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html["使用「系統控制器更換」命令來升級執行ONTAP 效能不正常的控制器硬體"^] | 說明ONTAP 使用「系統控制器更換」命令、在不中斷營運的情況下升級執行E9.8的控制器所需的集合體重新配置程序。 
-
-
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html["使用Aggregate重新配置、手動升級執行ONTAP 不含更新版本的控制器硬體"^] | 說明執行ONTAP 執行以不中斷營運的手動控制器升級所需的Aggregate重新配置程序、這些程序執行的是更新版本的《》（英文）。 
+| 說明ONTAP 使用「系統控制器更換」命令、在不中斷營運的情況下升級執行E9.8的控制器所需的集合體重新配置程序。 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-manual-app/index.html["使用Aggregate重新配置、手動升級執行ONTAP 不含更新版本的控制器硬體"^] 
 |===
 
 

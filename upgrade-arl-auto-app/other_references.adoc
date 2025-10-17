@@ -40,12 +40,6 @@ summary: 使用ONTAP 「系統控制器更換」命令、參考支援執行版�
 | link:https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["使用CLI進行磁碟與Aggregate管理"^] | 說明如何ONTAP 使用CLI管理實體儲存設備。本說明如何建立、擴充及管理集合體、如何使用Flash Pool Aggregate、如何管理磁碟、以及如何管理RAID原則。 
 
 
-| link:https://docs.netapp.com/us-en/ontap-metrocluster/install-fc/index.html["Fabric附加MetroCluster 的功能、可進行安裝與組態設定"^] | 說明如何在MetroCluster Fabric組態中安裝及設定支援功能的軟硬體元件。 
-
-
-| link:https://docs.netapp.com/us-en/ontap-flexarray/install/index.html["介紹虛擬化安裝要求與參考資料FlexArray"^] | 包含FlexArray 有關「非虛擬化」系統的佈線指示和其他資訊。 
-
-
 | link:https://docs.netapp.com/us-en/ontap/high-availability/index.html["HA配對管理"^] | 說明如何安裝及管理高可用度叢集組態、包括儲存容錯移轉及接管/恢復。 
 
 

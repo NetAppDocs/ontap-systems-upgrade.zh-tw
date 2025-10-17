@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-manual/install_boot_node3.html 
-keywords: install, boot, node3, rack, transfer connections, v-series, flexarray, storage disks 
+keywords: install, boot, node3, rack, transfer connections, v-series, storage disks 
 summary: 在ONTAP 手動升級ARL期間、在執行ONTAP Es9.7或更早版本的控制器上安裝及開機node3並安裝此軟體。 
 ---
 = 安裝及開機節點3
@@ -24,7 +24,6 @@ summary: 在ONTAP 手動升級ARL期間、在執行ONTAP Es9.7或更早版本的
 [IMPORTANT]
 ====
 * 對於 AFF A800 或 AFF C800 控制器升級，在移除節點 1 之前，必須確保機殼內的所有磁碟機都牢固地固定在中板上。如需更多資訊、請參閱 link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["更換 AFF A800 或 AFF C800 控制器模組"]。
-* 如果您要升級連接至儲存陣列的V系列系統、或是使用FlexArray 連接至儲存陣列的支援功能之非功能性虛擬化軟體的系統、則必須完成 <<man_install3_step1,步驟1.>> 透過 <<man_install3_step5,步驟5.>>請將本節保留在 <<man_install3_step6,步驟6.>> 並遵循中的指示 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node3.html#uta-ports-node3["檢查並設定節點3上的UTA/UTA2連接埠"] 視需要在維護模式中輸入命令。接著您必須返回本節並繼續 <<man_install3_step7,步驟7.>>。
 * 如果您要升級具有儲存磁碟的系統，則必須完成整個部分，然後前往link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"]和link:set_fc_uta_uta2_config_node3.html#uta-ports-node3["檢查並設定節點3上的UTA/UTA2連接埠"] ，在群集提示符下輸入命令。
 
 
@@ -44,7 +43,7 @@ NOTE: 如果您要升級到同一機箱中同時具有兩個節點的系統、�
 下列參考資料可協助您建立適當的纜線連線。前往 link:other_references.html["參考資料"] 以連結至他們。
 
 +
-** _Installation and Setup Instructions（安裝與設定說明）_或_Estratested FlexArray Virtualization Installation Requirements and Reference（_針對節點3平台的虛擬化安裝要求與參考資料）
+** node3 平台的_安裝與設定說明_
 ** 適當的磁碟櫃程序
 ** _HA 配對管理 _ 文件
 
@@ -86,65 +85,25 @@ To override this delay, press 'c' followed by 'Enter'
 .. 讓電池充電並完成開機程序。
 +
 
-NOTE: *注意*：請勿置換延遲；若不允許電池充電、可能導致資料遺失。
+WARNING: *請勿超越延遲；如果電池無法充電，可能會導致資料遺失。 *
 
 
 
-. [[man_install3_step6]]採取下列其中一項行動：
-+
-[cols="35,65"]
-|===
-| 如果您的系統... | 然後... 
-
-
-| 具有磁碟、無後端儲存設備 | 跳過步驟7至步驟12、前往 <<man_install3_step13,步驟13>>。 
-
-
-| 是連接FlexArray 至儲存陣列的V系列系統或系統、其中含有與之相關的功能完善的虛擬化軟體  a| 
-.. 前往 link:set_fc_uta_uta2_config_node3.html["在節點3上設定FC或UTA/UTA2組態"] 並完成這些小節 link:set_fc_uta_uta2_config_node3.html#configure-fc-ports-on-node3["在節點3上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node3.html#uta-ports-node3["檢查並設定節點3上的UTA/UTA2連接埠"]（視系統而定）。
-.. 返回本節、並完成其餘步驟、從開始 <<man_install3_step7,步驟7.>>。
-
-
-
-IMPORTANT: 您必須重新設定FC內建連接埠、CNA內建連接埠和CNA卡、才能使用ONTAP 「支援虛擬化」軟體在V系列或系統上啟動FlexArray 。
-
-|===
-. [[man_install3_step7]將新節點的FC啟動器連接埠新增至交換器區域。
-+
-如果您的系統有磁帶SAN、則需要將啟動器分區。請參閱儲存陣列與分區文件以取得相關指示。
-
-. [[man_install3_step8]將FC啟動器連接埠新增至儲存陣列做為新主機、將陣列LUN對應至新主機。
-+
-請參閱儲存陣列與分區文件以取得相關指示。
-
-. [[man_install3_step9]]修改與儲存陣列上陣列LUN相關之主機或磁碟區群組中的全球連接埠名稱（WWPN）值。
-+
-安裝新的控制器模組會變更與每個內建FC連接埠相關的WWPN值。
-
-. [[man_install3_step10]如果您的組態使用交換器型分區、請調整分區以反映新的WWPN值。
-. [[man_install3_step11]確認節點3現在可以看到陣列LUN：
-+
-"syssconfig -v"
-
-+
-系統會顯示每個FC啟動器連接埠可見的所有陣列LUN。如果陣列LUN不可見、您將無法在本節稍後的部分、將磁碟從節點1重新指派至節點3。
-
-. [[man_install3_step12]按Ctrl-C顯示開機功能表、然後選取維護模式。
-. [[man_install3_step13]在維護模式提示字元下、輸入下列命令：
+. 在維護模式提示下，輸入以下命令：
 +
 《停止》
 
 +
 系統會在開機環境提示字元停止。
 
-. [[man_install3_step14]執行下列其中一項動作：
+. 請採取下列其中一項行動：
 +
 [cols="35,65"]
 |===
 | 如果您要升級的系統位於... | 然後... 
 
 
-| 雙機箱組態（控制器位於不同機箱） | 前往 <<man_install3_step15,步驟15>>。 
+| 雙機箱組態（控制器位於不同機箱） | 前往<<man_install3_step8,步驟8.>>。 
 
 
 | 單一機箱組態（控制器位於同一個機箱中）  a| 
@@ -159,11 +118,11 @@ NOTE: 在開機環境提示字元中保留node4、您將返回中的node4 link:i
 
 .. 如果您在中看到警告訊息 <<man_install3_step4,步驟4.>>、請依照中的指示進行 <<man_install3_step5,步驟5.>>
 .. 將主控台纜線從節點4切換回節點3。
-.. 前往 <<man_install3_step15,步驟15>>。
+.. 前往<<man_install3_step8,步驟8.>>。
 
 
 |===
-. [[man_install3_step15]]<設定ONTAP 節點3以供參考：
+. [[man_install3_step8]]為ONTAP設定 node3：
 +
 「預設值」
 
@@ -204,7 +163,7 @@ Boot_ONTAP
 
 WARNING: 如果此新節點曾經用於任何其他叢集或HA配對、您必須執行 `wipeconfig` 繼續之前。否則可能導致服務中斷或資料遺失。如果先前使用的是替換控制器、請聯絡技術支援部門、特別是當控制器以ONTAP 7-Mode執行時。
 
-. [[man_install3_step18]按下CTRL－C以顯示開機功能表。
+. 按 CTRL-C 顯示啟動選單。
 . [[man_install3_step19]執行下列其中一項動作：
 +
 [cols="35,65"]
@@ -212,12 +171,12 @@ WARNING: 如果此新節點曾經用於任何其他叢集或HA配對、您必須
 | 如果您要升級的系統... | 然後... 
 
 
-| 節點3上是否有正確或最新ONTAP 的版本 | 前往 <<man_install3_step20,步驟20>>。 
+| 節點3上是否有正確或最新ONTAP 的版本 | 前往<<man_install3_step13,步驟13>>。 
 
 
-| 節點3上有正確或最新版本ONTAP 的資訊 | 前往 <<man_install3_step25,步驟25>>。 
+| 節點3上有正確或最新版本ONTAP 的資訊 | 前往<<man_install3_step18,步驟18>>。 
 |===
-. [[man_install3_step20]]選擇下列其中一項動作來設定netboot連線。
+. [[man_install3_step13]]透過選擇下列其中一項操作來設定網路啟動連線。
 +
 
 NOTE: 您必須使用管理連接埠和IP做為netboot連線。請勿使用資料LIF IP、否則在執行升級時可能會發生資料中斷。
@@ -245,7 +204,7 @@ NOTE: 您必須使用管理連接埠和IP做為netboot連線。請勿使用資�
 NOTE: 您的介面可能需要其他參數。在韌體提示字元中輸入「Help ifconfig」以取得詳細資料。
 
 |===
-. [[man_install3_step21]]在節點3上執行netboot：
+. 在節點 3 上執行網路啟動：
 +
 [cols="35,65"]
 |===
@@ -264,7 +223,7 @@ NOTE: 您的介面可能需要其他參數。在韌體提示字元中輸入「He
 
 NOTE: 請勿中斷開機。
 
-. [[man_install3_step22]從開機功能表中、選取選項*（7）「Install new software* first（先安裝新軟體*）」。
+. 從啟動選單中，首先選擇選項*(7) 安裝新軟體*。
 +
 此功能表選項會下載新ONTAP 的功能表映像、並將其安裝至開機裝置。
 
@@ -281,11 +240,11 @@ NOTE: 請勿中斷開機。
 
 NOTE: 請務必使用netboot將新節點更新為所需映像。如果您使用另一種方法在新控制器上安裝映像、可能會安裝錯誤的映像。此問題適用於ONTAP 所有版本的更新版本。netboot程序與選項結合使用 `(7) Install new software` 將開機媒體擦除、並將相同ONTAP 的版本ONTAP 資訊區放置在兩個影像分割區上。
 
-. [[man_install3_step23]如果系統提示您繼續此程序、請輸入「y」、並在系統提示您輸入套件時、輸入下列URL：
+. 如果提示您繼續該過程，請輸入 `y`，當提示輸入包時，輸入以下 URL：
 +
 http://<web_server_ip>/<path_to_web-accessible_directory>/<ontap_version_image>.tgz`
 
-. [[man_install3_step24]完成下列子步驟：
+. 完成下列子步驟：
 +
 .. 當您看到下列提示時、請輸入「n」跳過備份恢復：
 +
@@ -304,12 +263,12 @@ The node must be rebooted to start using the newly installed software. Do you wa
 
 
 
-. [[man_install3_step25]輸入「5」選取*（5）維護模式開機*、然後在提示繼續開機時輸入「y」。
+. [[man_install3_step18]]透過輸入選擇 *(5) 維護模式啟動* `5` ，然後輸入 `y`當提示繼續啟動。
 . [[man_install3_step26]在繼續之前、請前往 link:set_fc_uta_uta2_config_node3.html["在節點3上設定FC或UTA/UTA2組態"] 可對節點上的FC或UTA/UTA2連接埠進行必要的變更。
 +
 進行這些區段中建議的變更、重新啟動節點、然後進入維護模式。
 
-. [[man_install3_step27]尋找節點3的系統ID：
+. 尋找節點3的系統ID：
 +
 「展示-A'」
 
@@ -335,7 +294,7 @@ The node must be rebooted to start using the newly installed software. Do you wa
 
 NOTE: 您可能會在輸入命令後看到「磁碟顯示：沒有磁碟符合選項-A.」訊息。這不是錯誤訊息、因此您可以繼續執行程序。
 
-. [[man_install3_step28]重新指派node1的備援磁碟、屬於根的任何磁碟、以及先前未重新部署至節點2的任何非根Aggregate link:relocate_non_root_aggr_node1_node2.html["將非根Aggregate從節點1重新部署到節點2"]。
+. [[man_install3_step21]]重新分配節點 1 的備用磁碟、屬於根的任何磁碟以及之前未重新定位到節點 2 的任何非根聚合link:relocate_non_root_aggr_node1_node2.html["將非根Aggregate從節點1重新部署到節點2"]。
 +
 根據您的系統是否有共享磁碟、輸入適當形式的「磁碟重新指派」命令：
 
@@ -523,7 +482,7 @@ Destroying mailboxes forces a node to create new empty mailboxes, which clears a
 +
 "et time _hh：mm:ss_"
 
-. [[man_install3_step42]]確認合作夥伴系統ID設定正確、如所述 <<man_install3_step28,步驟28>> 在-p交換器下：
+. [[man_install3_step42]]驗證合作夥伴系統 ID 是否依照<<man_install3_step21,步驟21>>在 -p 開關下：
 +
 《prontenv合作夥伴sysid》
 

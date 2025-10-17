@@ -38,7 +38,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行更新至9.7�
 . 檢查更換的控制器是否已正確設定MetroCluster 為符合不實的組態、而非處於切換模式。
 +
 
-CAUTION: *注意：* MetroCluster 目前階段的不正常設定、您可能會有錯誤需要解決。請參閱 link:verify_health_of_metrocluster_config.html["驗MetroCluster 證整個過程的效能狀況"]。
+CAUTION: 在此階段， MetroCluster配置不會處於正常狀態，您可能需要解決錯誤。看link:verify_health_of_metrocluster_config.html["驗MetroCluster 證整個過程的效能狀況"]。
 
 
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto-affa900/index.html 
-keywords: aggregate, relocation, controller, hardware, aggregates, flexarray, metrocluster, terminology, old, system, chassis, disk, disks 
+keywords: aggregate, relocation, controller, hardware, aggregates, metrocluster, terminology, old, system, chassis, disk, disks 
 summary: 您可以將舊系統轉換為更換系統、以保留舊的系統機箱和磁碟、藉此升級控制器硬體。 
 ---
 = 了解 ARL 升級程序

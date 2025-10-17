@@ -37,7 +37,7 @@ Perfstat融合式工具可讓您建立效能基準、以便在升級後進行比
 
 +
 
-WARNING: *注意*請勿嘗試清除NVRAM內容。如果需要清除NVRAM的內容、請聯絡NetApp技術支援部門。
+WARNING: 不要嘗試清除NVRAM內容。如果需要清除NVRAM的內容，請聯絡NetApp技術支援。
 
 . 檢查ONTAP node3和node4上的版本。
 +

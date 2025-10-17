@@ -24,7 +24,6 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行ONTAP 版本�
 [IMPORTANT]
 ====
 * 對於 AFF A800 或 AFF C800 控制器升級，在移除節點 2 之前，必須確保機殼內的所有磁碟機都牢固地固定在中板上。如需更多資訊、請參閱 link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["更換 AFF A800 或 AFF C800 控制器模組"]。
-* 如果您要升級連接至儲存陣列的V系列系統、或是使用FlexArray 連接至儲存陣列的支援功能之非功能性虛擬化軟體的系統、則必須完成 <<auto_install4_step1,步驟1.>> 透過 <<auto_install4_step21,步驟21>>然後離開本節並依照指示進行 link:set_fc_or_uta_uta2_config_node4.html#configure-fc-ports-on-node4["在節點4上設定FC連接埠"] 和至 link:set_fc_or_uta_uta2_config_node4.html#check-and-configure-utauta2-ports-on-node4["檢查並設定節點4上的UTA/UTA2連接埠"]，在維護模式下輸入命令。接著您必須返回本節並繼續 <<auto_install4_step23,步驟23>>。
 * 如果您要升級具有儲存磁碟的系統，則必須完成整個部分，然後繼續link:set_fc_or_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"] ，在群集提示符下輸入命令。
 
 
@@ -37,10 +36,10 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行ONTAP 版本�
 . 按照節點機型的安裝與設定說明_中的指示、在機架中安裝節點4。
 . 纜線節點4、將連線從節點2移至節點4。
 +
-請依照 _ 安裝與設定說明 _ 或節點 4 平台的 _ FlexArray 虛擬化安裝要求與參考 _ ，適當的磁碟櫃文件及 _ HA 配對管理 _ 中的指示，連接下列連線。
+使用 node4 平台的《安裝與設定說明》、對應的磁碟架文件和《HA 對管理》文件連接以下連線。
 
 +
-請參閱link:other_references.html["參考資料"]連結至 FlexArray 虛擬化安裝需求與參考 _ 和 _HA 配對管理 _ 。
+參考link:other_references.html["參考資料"]連結到_HA 對管理_。
 
 +
 ** 主控台（遠端管理連接埠）
@@ -75,7 +74,7 @@ WARNING: The battery is unfit to retain data during a power outage. This is like
 .. 讓電池充電並完成開機程序。
 +
 
-WARNING: *注意：請勿置換延遲；若不讓電池充電、可能導致資料遺失。*
+WARNING: *請勿超越延遲；如果電池無法充電，可能會導致資料遺失。 *
 
 +
 
@@ -242,43 +241,9 @@ NOTE: 無論系統是在HA配對或獨立組態中、都會記錄在PROm中。�
 +
 《prontenv合作夥伴sysid》
 
-. [[step22]請採取下列其中一項行動：
-+
-[cols="30,70"]
-|===
-| 如果您的系統... | 然後... 
 
 
-| 具有磁碟、無後端儲存設備 | 前往 <<auto_install4_step27,步驟 27>>。 
-
-
-| 是連接FlexArray 至儲存陣列的V系列系統或系統、其中含有與之相關的功能完善的虛擬化軟體  a| 
-.. 前往章節 link:set_fc_or_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"] 並完成本節的小節。
-.. 返回本節、並完成其餘步驟、從開始 <<auto_install4_step23,步驟23>>。
-
-
-
-IMPORTANT: 您必須重新設定FC內建連接埠、CNA內建連接埠和CNA卡、才能使用ONTAP 「支援虛擬化」軟體在V系列或系統上啟動FlexArray 。
-
-|===
-
-
-. [[auto_install4_step23]將新節點的FC啟動器連接埠新增至交換器區域。
-+
-如有需要、請參閱、將內建連接埠修改為啟動器 link:set_fc_or_uta_uta2_config_node4.html#configure-fc-ports-on-node4["在節點4上設定FC連接埠"]。請參閱儲存陣列與分區文件、以取得分區的進一步指示。
-
-. 將FC啟動器連接埠新增至儲存陣列做為新主機、將陣列LUN對應至新主機。
-+
-請參閱儲存陣列與分區文件以取得相關指示。
-
-. 修改與儲存陣列上陣列LUN相關的主機或磁碟區群組中的全球連接埠名稱（WWPN）值。
-+
-安裝新的控制器模組會變更與每個內建FC連接埠相關的WWPN值。
-
-. 如果您的組態使用交換器型分區、請調整分區以反映新的WWPN值。
-
-
-. [[auto_install4_step27]]如果您安裝了 NetApp 儲存加密 (NSE) 驅動器，請執行下列步驟：
+. [[auto_install4_step22]]如果您安裝了NetApp儲存加密 (NSE) 驅動器，請執行下列步驟：
 +
 
 NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷使用中的自我加密磁碟機類型。
@@ -309,8 +274,10 @@ NOTE: 如果您尚未在程序中稍早完成此作業、請參閱知識庫文�
 +
 Boot_ONTAP功能表
 
-+
-如果您沒有 FC 或 UTA/UTA2 組態，請執行，link:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1["將 node2 磁碟重新指派給 node4 ，步驟 1"]以便 node4 能夠辨識 node2 的磁碟。
 
-. [[step29]] 對於 MetroCluster 組態， V 系列系統，以及連接至儲存陣列的 FlexArray 虛擬化軟體系統，請前往link:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1["將 node2 磁碟重新指派給 node4 ，步驟 1"]。
+
+.接下來呢？
+* 如果您的系統具有 FC 或 UTA/UTA2 配置，link:set_fc_or_uta_uta2_config_node4.html["在節點 4 上設定 FC 或 UTA/UTA2 配置"] 。
+* 如果您沒有 FC 或 UTA/UTA2 配置，link:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1["將 node2 磁碟重新分配給 node4，步驟 1"]這樣node4就可以辨識node2的磁碟。
+* 如果您有MetroCluster配置，link:reassign-node1-disks-to-node3.html#reassign-node1-node3-step1["將節點 1 的磁碟重新分配給節點 3"] 。
 

@@ -24,7 +24,6 @@ summary: 在ONTAP 手動升級ARL期間、在執行ONTAP Es9.7或更早版本的
 [IMPORTANT]
 ====
 * 對於 AFF A800 或 AFF C800 控制器升級，在移除節點 2 之前，必須確保機殼內的所有磁碟機都牢固地固定在中板上。如需更多資訊、請參閱 link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["更換 AFF A800 或 AFF C800 控制器模組"]。
-* 如果您要升級 V 系列系統或連接到儲存陣列的具有 FlexArray 虛擬化軟體的系統，則需要完成<<man_install4_Step1,步驟1.>>透過<<man_install4_Step7,步驟7.>> ，請將此部分保留在<<man_install4_Step8,步驟8.>>並按照link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"]根據需要，在維護模式下輸入命令。然後，您必須返回本節並繼續執行<<man_install4_Step9,步驟9.>> 。
 * 如果您要升級具有儲存磁碟的系統，則必須完成整個部分，然後繼續執行下一節link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"] ，在群集提示符下輸入命令。
 
 
@@ -52,7 +51,7 @@ summary: 在ONTAP 手動升級ARL期間、在執行ONTAP Es9.7或更早版本的
 下列參考資料可協助您建立適當的纜線連線。前往 link:other_references.html["參考資料"] 以連結至他們。
 
 +
-** _Installation and Setup Instructions（安裝與設定說明）_或_Estratested FlexArray Virtualization Installation Requirements and Reference（_針對節點4平台的虛擬化安裝要求與參考資料）
+** node4 平台的_安裝與設定說明_
 ** 適當的磁碟櫃程序
 ** _HA 配對管理 _ 文件
 +
@@ -104,51 +103,11 @@ WARNING: The battery is unfit to retain data during a power
 .. 讓電池充電並完成開機程序。
 +
 
-WARNING: *警告：請勿覆寫延遲。若不讓電池充電、可能會導致資料遺失。*
+WARNING: *不要覆蓋延遲。如果電池無法充電，可能會導致資料遺失。 *
 
 
 
-. [[man_install4_step8]請採取下列其中一項行動：
-+
-[cols="35,65"]
-|===
-| 如果您的系統... | 然後... 
-
-
-| 具有磁碟、無後端儲存設備 | 跳過步驟9至步驟14、前往 <<man_install4_Step15,步驟15>>。 
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
-.. 移至節點4_上的_設定FC或UTA/UTA2組態區段、然後完成區段 link:set_fc_uta_uta2_config_node4.html#configure-fc-ports-on-node4["在節點4上設定FC連接埠"] 和 link:set_fc_uta_uta2_config_node4.html#check-and-configure-utauta2-ports-on-node4["檢查並設定節點4上的UTA/UTA2連接埠"]（視系統而定）。
-.. 返回本節、並完成其餘步驟、從開始 <<man_install4_Step9,步驟9.>>。
-
-
-
-IMPORTANT: 在 V 系列系統上開機 ONTAP 之前、您必須重新設定 FC 內建連接埠、 UTA/UTA2 內建連接埠、以及 UTA/UTA2 卡。
-
-|===
-. [[man_install4_Step9]]將新節點的FC啟動器連接埠新增至交換器區域。
-+
-請參閱儲存陣列與分區文件以取得相關指示。
-
-. 將FC啟動器連接埠新增至儲存陣列做為新主機、將陣列LUN對應至新主機。
-+
-請參閱儲存陣列與分區文件以取得相關指示。
-
-. 修改與儲存陣列上陣列LUN相關之主機或磁碟區群組中的全球連接埠名稱（WWPN）值。
-+
-安裝新的控制器模組會變更與每個內建FC連接埠相關的WWPN值。
-
-. 如果您的組態使用交換器型分區、請調整分區以反映新的WWPN值。
-. 輸入下列命令並檢查其輸出、確認節點4現在可以看到陣列LUN：
-+
-"syssconfig -v"
-
-+
-系統會顯示每個FC啟動器連接埠可見的所有陣列LUN。如果看不到陣列LUN、您就無法在本節稍後將磁碟從節點2重新指派至節點4。
-
-. 按 Ctrl-C 顯示開機功能表、然後選取維護模式。
-. [[man_install4_Step15]在維護模式提示字元中、輸入下列命令：
+. [[man_install4_Step8]]在維護模式提示下，輸入以下命令：
 +
 《停止》
 
@@ -199,12 +158,12 @@ Boot_ONTAP功能表
 | 如果您要升級的系統... | 然後... 
 
 
-| 節點4上沒有正確或最新ONTAP 的版本 | 前往 <<man_install4_Step20,步驟20>>。 
+| 節點4上沒有正確或最新ONTAP 的版本 | 前往<<man_install4_Step13,步驟13>>。 
 
 
-| 節點4上有正確或最新版本ONTAP 的資訊 | 前往 <<man_install4_Step25,步驟25>>。 
+| 節點4上有正確或最新版本ONTAP 的資訊 | 前往<<man_install4_Step18,步驟18>>。 
 |===
-. [[man_install4_Step20]]選擇下列其中一項動作來設定netboot連線。
+. [[man_install4_Step13]]透過選擇下列其中一項操作來設定網路啟動連線。
 +
 
 NOTE: 您必須使用管理連接埠和IP位址做為netboot連線。請勿使用資料LIF IP位址、否則在執行升級時可能會發生資料中斷。
@@ -293,8 +252,8 @@ The node must be rebooted to start using the newly installed software. Do you wa
 
 
 
-. [[man_install4_Step25]從開機功能表選取維護模式「5」、然後在系統提示您繼續開機時輸入「y」。
-. [[man_install4_Step26]在繼續之前、請前往 link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"] 可對節點上的FC或UTA/UTA2連接埠進行必要的變更。進行這些區段中建議的變更、重新啟動節點、然後進入維護模式。
+. [[man_install4_Step18]]選擇維護模式 `5`從啟動選單並輸入 `y`當提示您繼續啟動。
+. [[man_install4_Step19]]繼續之前，請前往link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"]對節點上的 FC 或 UTA/UTA2 連接埠進行任何必要的變更。按照這些部分中建議的進行更改，重新啟動節點，然後進入維護模式。
 . 輸入以下命令並檢查輸出以找出節點4的系統ID：
 +
 「展示-A'」
@@ -476,7 +435,7 @@ WARNING: *警告：您必須依照所示的確切順序執行下列子步驟；�
 +
 "et time _hh：mm:ss_"
 
-. 請確認合作夥伴系統ID的設定是否正確、如所述 <<man_install4_Step26,步驟26>> 選項下。
+. 驗證合作夥伴系統 ID 是否依照<<man_install4_Step19,步驟19>>在選項下。
 +
 《prontenv合作夥伴sysid》
 

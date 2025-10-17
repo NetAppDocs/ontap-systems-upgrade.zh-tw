@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto/reassign-node1-disks-to-node3.html 
-keywords: FC, UTA, UTA2, configure, node3, CNA adapters, onboard ports, FlexArray Virtualization 
+keywords: FC, UTA, UTA2, configure, node3, CNA adapters, onboard ports 
 summary: 使用ONTAP 「系統控制器更換」命令、將執行《更新》9.5的控制器升級至9.7時、請設定node3內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡。 
 ---
 = 將 node1 磁碟重新指派給 node3

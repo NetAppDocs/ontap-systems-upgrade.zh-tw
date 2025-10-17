@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-auto/set_fc_or_uta_uta2_config_on_node3.html 
-keywords: FC, UTA, UTA2, configure, node3, CNA adapters, onboard ports, FlexArray Virtualization 
+keywords: FC, UTA, UTA2, configure, node3, CNA adapters, onboard ports 
 summary: 使用ONTAP 「系統控制器更換」命令、將執行《更新》9.5的控制器升級至9.7時、請設定node3內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡。 
 ---
 = 在節點3上設定FC或UTA/UTA2組態
@@ -22,15 +22,13 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行《更新》9.
 
 NOTE: NetApp行銷資料可能會使用「UTA2」一詞來指代整合式網路卡（CNA）介面卡和連接埠。不過、CLI使用「CNA」一詞。
 
-* 如果 node3 沒有板載 FC 端口，板載 UTA/UTA2 端口或 UTA/ UTA2 卡，並且您要升級帶有存儲磁盤的系統，則可以跳至link:reassign-node1-disks-to-node3.html["將 node1 磁碟重新指派給 node3"]。
-* 不過，如果您的 V 系列系統或系統配備 FlexArray 虛擬化軟體與儲存陣列，而 node3 則沒有內建 FC 連接埠，內建 UTA/UTA 連接埠或 UTA/UTA2 卡，請返回 _ 安裝並開機 node3_ ，然後在繼續link:install_boot_node3.html#auto_install3_step23["步驟23"]。
-
+如果 node3 沒有板載 FC 端口，板載 UTA/UTA2 端口或 UTA/ UTA2 卡，並且您要升級帶有存儲磁盤的系統，則可以跳至link:reassign-node1-disks-to-node3.html["將 node1 磁碟重新指派給 node3"]。
 
 
 
 == 在節點3上設定FC連接埠
 
-如果節點3具有FC連接埠（內建或FC介面卡上）、您必須先在節點上設定連接埠組態、才能將其投入服務、因為連接埠並未預先設定。如果未設定連接埠、可能會導致服務中斷。
+如果節點 3 具有 FC 連接埠（無論是板載的還是附加 FC 適配器上的），則必須在節點投入使用之前設定其連接埠配置，因為系統出廠時未預先配置連接埠。如果您不配置端口，則可能會遇到服務中斷。
 
 .開始之前
 您必須擁有儲存在區段中節點1的FC連接埠設定值 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"]。
@@ -39,57 +37,36 @@ NOTE: NetApp行銷資料可能會使用「UTA2」一詞來指代整合式網路�
 如果您的系統沒有FC組態、您可以跳過本節。如果您的系統內建UTA/UTA2連接埠或UTA/UTA2卡、請在中設定 <<檢查並設定節點3上的UTA/UTA2連接埠>>。
 
 
-IMPORTANT: 如果您的系統有儲存磁碟、請在叢集提示字元下輸入本節中的命令。如果您有「V系列系統」或有FlexArray 「支援虛擬化軟體」、並且已連線至儲存陣列、請在「維護」模式中輸入本節中的命令。
+IMPORTANT: 在維護模式 shell 提示字元下輸入本節中的命令。
 
-. [[step1]]比較節點3上的FC設定與先前從節點1擷取的設定。
-. [[step2]]請採取下列其中一項行動：
+.步驟
+. 將節點 3 上的 FC 設定與您先前從節點 1 擷取的設定進行比較。
+. 根據需要執行下列操作之一來修改節點 3 上的 FC 連接埠：
 +
-[cols="30,70"]
-|===
-| 如果您要升級的系統... | 然後… 
+在維護模式下（啟動選單中的選項 5）：
 
++
+** 要作為目標連接埠進行程式設計：
++
+`ucadmin modify -m fc -t target <adapter>`
 
-| 具有儲存磁碟  a| 
-在維護模式（開機功能表中的選項5）中、視需要修改節點3上的FC連接埠：
-
-** 若要設定目標連接埠：
-
-
-「ucadmin modify -m sfc-t target _adapter-'」
++
+例如： `ucadmin modify -m fc -t target 2a`
 
 ** 設定啟動器連接埠：
-
-
-「ucadmin modify -m光纖通道-t啟動器_adapter-'」
-
-「-t」是FC4類型：目標或啟動器。
-
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
-在維護模式（開機功能表中的選項5）中、視需要修改節點3上的FC連接埠：
-
-`ucadmin modify -m fc -t initiator -f _adapter_port_name_`
-
-`-t` 為FC4類型、目標或啟動器。
-
-
-NOTE: FC連接埠必須設定為啟動器。
-
-|===
-. [[step3]請採取下列其中一項行動：
 +
-[cols="30,70"]
-|===
-| 如果您要升級的系統... | 然後… 
+`ucadmin modify -m fc -t initiator <adapter>`
+
++
+例如： `ucadmin modify -m fc -t initator 2b`
 
 
-| 具有儲存磁碟 | 使用下列命令確認新設定、並檢查輸出「ucadmin show」 
 
+. 使用以下命令並檢查輸出來驗證新設定：
++
+「ucadmin show」
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 使用下列命令確認新設定、並檢查輸出「ucadmin show」 
-|===
-. [[step4]]結束維護模式：
+. 停止節點：
 +
 《停止》
 
@@ -97,29 +74,16 @@ NOTE: FC連接埠必須設定為啟動器。
 +
 Boot_ONTAP功能表
 
-. [[step6]輸入命令後、請等到系統在開機環境提示字元停止。
+. 輸入命令後、請等待系統在開機環境提示字元停止。
 . 從開機功能表中選取「5」選項以進行維護模式。
 
 
-. 請採取下列其中一項行動：
+. 執行下列其中一項動作：
 +
-|===
-| 如果您要升級的系統... | 然後… 
-
-
-| 具有儲存磁碟  a| 
 ** 如果node3具有UTA/UTA2卡或UTA/UTA2內建連接埠、請前往 <<檢查並設定節點3上的UTA/UTA2連接埠>>。
 ** 如果 node3 沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口，請跳過<<檢查並設定節點3上的UTA/UTA2連接埠>>並轉至link:reassign-node1-disks-to-node3.html["將 node1 磁碟重新指派給 node3"]。
 
 
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列  a| 
-** 如果node3具有UTA/UTA2卡或UTA/UTA2內建連接埠、請前往 <<檢查並設定節點3上的UTA/UTA2連接埠>>。
-** 如果 node3 沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口，請跳過<<檢查並設定節點3上的UTA/UTA2連接埠>>並返回至 _Install and boot node3_ link:install_boot_node3.html#auto_install3_step23["步驟23"]（請參閱）。
-
-
-|===
 
 
 
@@ -137,7 +101,7 @@ UTA/UTA2連接埠必須具備正確的SFP+模組。
 
 NOTE: NetApp行銷資料可能會使用UTA2一詞來指稱CNA介面卡和連接埠。不過、CLI使用「CNA」一詞。
 
-您可以使用「ucadmin show」命令來驗證目前的連接埠組態：
+您可以使用 `ucadmin show`命令查看或驗證目前連接埠配置，如以下範例輸出所示：
 
 ....
 *> ucadmin show
@@ -154,119 +118,35 @@ Adapter  Mode     Type       Mode      Type         Status
 ....
 UTA/UTA2連接埠可設定為原生FC模式或UTA/UTA2模式。FC模式支援FC啟動器和FC目標；UTA/UTA2模式允許同時NIC和FCoE流量共用相同的10GbE SFP+介面、並支援FC目標。
 
-UTA/UTA2連接埠可能位於介面卡或控制器上、並具有下列組態、但您應該檢查節點3上UTA/UTA2連接埠的組態、並視需要加以變更：
+UTA/UTA2 連接埠可能位於附加適配器或控制器主機板上，並具有以下配置，但您應該檢查節點 3 上的 UTA/UTA2 連接埠的配置並在必要時進行變更：
 
 * 訂購控制器時所訂購的UTA/UTA2卡、在出貨前已設定為具有您要求的特性設定。
 * 與控制器分開訂購的UTA/UTA2卡會隨附預設FC目標特性。
 * 新控制器上的內建UTA/UTA2連接埠會在出貨前設定、以符合您要求的特性設定。
 +
 
-WARNING: *注意*：如果您的系統有儲存磁碟、除非指示進入維護模式、否則請在叢集提示字元下輸入本節中的命令。如果您有V系列系統或使用FlexArray 了「支援虛擬化軟體」、並且已連線至儲存陣列、請在「維護模式」提示字元中輸入本節中的命令。您必須處於維護模式、才能設定UTA/UTA2連接埠。
+WARNING: 您必須處於維護模式才能設定 UTA/UTA2 連接埠。在維護模式 shell 提示字元下輸入本節中的命令。
 
 
 
 .步驟
-. [[step1]]在節點3上輸入下列命令、檢查連接埠目前的設定方式：
-+
-[cols="30,70"]
-|===
-| 如果系統... | 然後… 
-
-
-| 具有儲存磁碟 | 無需採取任何行動。 
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 「ucadmin show」 
-|===
-+
-系統會顯示類似下列範例的輸出：
-
-+
-....
-*> ucadmin show
-         Current  Current     Pending   Pending    Admin
-Adapter  Mode     Type        Mode      Type       Status
--------  -------  ---------   -------   --------   ---------
-0e      fc        initiator   -         -          online
-0f      fc        initiator   -         -          online
-0g      cna       target      -         -          online
-0h      cna       target      -         -          online
-0e      fc        initiator   -         -          online
-0f      fc        initiator   -         -          online
-0g      cna       target      -         -          online
-0h      cna       target      -         -          online
-*>
-....
-. [[step2]]如果目前的SFP+模組與所需用途不符、請以正確的SFP+模組加以更換。
+. 如果目前的SFP+模組不符合所需用途、請更換為正確的SFP+模組。
 +
 請聯絡您的NetApp代表、以取得正確的SFP+模組。
 
-. [[step3]檢查「ucadmin show」命令的輸出、並判斷UTA/UTA2連接埠是否具有您想要的特性。
-. [[step4]採取下列其中一項行動：
-+
-[cols="30,70"]
-|===
-| 如果UTA/UTA2連接埠... | 然後… 
-
-
-| 沒有您想要的特性 | 前往 <<auto_check3_step5,步驟5.>>。 
-
-
-| 擁有您想要的個人風格 | 跳過步驟5至步驟12、前往 <<auto_check3_step13,步驟13>>。 
-|===
-. [[auto_checks3_step5]請採取下列其中一項行動：
-+
-[cols="30,70"]
-|===
-| 如果您正在設定... | 然後… 
-
-
-| UTA/UTA2卡上的連接埠 | 前往 <<auto_check3_step7,步驟7.>> 
-
-
-| 內建UTA/UTA2連接埠 | 跳過步驟7、前往 <<auto_check3_step8,步驟8.>>。 
-|===
-. [[step6]如果介面卡處於啟動器模式、且UTA/UTA2連接埠處於線上狀態、請將UTA/UTA2連接埠離線：
-+
-「停用介面卡_adapter_name_」
-
-+
-目標模式中的介面卡會在維護模式中自動離線。
-
-. [[auto_checks3_step7]如果目前的組態不符合所需用途、請視需要變更組態：
-+
-「ucadmin modify -m fc|cna -t啟動器| target _adapter_name_」
-
-+
-** 「m」是指個人化模式、「光纖通道」或「cna」。
-** "-t"是FC4類型、"target（目標）"或"initiator（啟動器）"。
-+
-
-NOTE: 您必須使用FC啟動器來執行磁帶機、FlexArray 非僅供參考的虛擬化系統及MetroCluster 各種組態。SAN用戶端必須使用FC目標。
-
-
-
-. [[auto_checks3_step8]驗證設定：
+. 驗證 UTA/UTA2 連接埠設定：
 +
 「ucadmin show」
 
-. [[step9]驗證設定：
 +
-[cols="30,70"]
-|===
-| 如果系統... | 然後… 
-
-
-| 具有儲存磁碟 | 「ucadmin show」 
-
-
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | 「ucadmin show」 
-|===
-+
-以下範例的輸出顯示FC4類型的介面卡「1b」正在變更為「啟動器」、介面卡「2a」和「2b」的模式正在變更為「cna」：
+檢查輸出並確定 UTA/UTA2 連接埠是否具有您想要的個性。
 
 +
-....
+以下範例中的輸出顯示適配器“1b”的類型正在變更為啟動器，並且適配器“2a”和“2b”的模式正在變更為“cna”。  CNA 模式可讓您將該卡用作網路介面卡。
+
++
+[listing]
+----
 *> ucadmin show
          Current    Current     Pending  Pending     Admin
 Adapter  Mode       Type        Mode     Type        Status
@@ -276,38 +156,67 @@ Adapter  Mode       Type        Mode     Type        Status
 2a       fc         target      cna      -           online
 2b       fc         target      cna      -           online
 *>
-....
-. [[step10]輸入下列其中一項命令（每個連接埠一次）、將任何目標連接埠置於線上狀態：
+----
+. 請採取下列其中一項行動：
 +
 [cols="30,70"]
 |===
-| 如果系統... | 然後… 
+| 如果UTA/UTA2連接埠... | 然後… 
 
 
-| 具有儲存磁碟 | 網路FCP介面卡修改-node_node_name_-介 面卡_adapter_name_-state up 
+| 沒有您想要的特性 | 前往<<auto_check3_step4,步驟4.>>。 
 
 
-| 是V系列系統、或具有FlexArray 「支援虛擬化的軟體」、並連接至儲存陣列 | "FCP config _adapter_name_ up（FCP組態介面卡名稱_啟動）" 
+| 擁有您想要的個人風格 | 跳過步驟 4 至步驟 8，然後轉到<<auto_check3_step9,步驟9.>>。 
 |===
-. [[step11]連接連接埠。
-
-
-. [[auto_checks3_step12]請採取下列其中一項行動：
-
-
-[cols="35,65"]
+. [[auto_check3_step4]]請執行下列其中一項操作：
++
+[cols="30,70"]
 |===
-| 如果系統... | 然後... 
+| 如果您正在設定... | 然後… 
 
 
-| 具有儲存磁碟 | 前往 link:reassign-node1-disks-to-node3.html["將 node1 磁碟重新指派給 node3"]。 
+| UTA/UTA2卡上的連接埠 | 前往<<auto_check3_step5,步驟5.>> 
 
 
-| 是V系列系統、或具有FlexArray 「虛擬化軟體」、並連接至儲存陣列 | 返回_Install and boot node3_、然後繼續執行以下步驟： link:install_boot_node3.html#auto_install3_step23["步驟23"]。 
+| 內建UTA/UTA2連接埠 | 跳過步驟 5 並轉到<<auto_check3_step6,步驟6.>>。 
 |===
-. [[auto_checks3_step13]結束維護模式：
+. [[auto_check3_step5]]如果轉接器處於啟動器模式，且 UTA/UTA2 連接埠處於線上狀態，則將 UTA/UTA2 連接埠離線：
++
+`storage disable adapter <adapter_name>`
+
++
+目標模式中的介面卡會在維護模式中自動離線。
+
+. [[auto_check3_step6]]如果目前配置與所需用途不匹配，請根據需要變更配置：
++
+`ucadmin modify -m fc|cna -t initiator|target <adapter_name>`
+
++
+** 「m」是指個人化模式、「光纖通道」或「cna」。
+** "-t"是FC4類型、"target（目標）"或"initiator（啟動器）"。
++
+
+NOTE: 您必須對磁帶機和MetroCluster配置使用 FC 啟動器。您必須對 SAN 用戶端使用 FC 目標。
+
+
+
+. 透過為每個連接埠輸入以下命令，將所有目標連接埠置於線上狀態：
++
+`storage enable adapter <adapter_name>`
+
+. 連接連接埠。
+
+
+[[auto_check3_step9]]
+. 結束維護模式：
 +
 《停止》
 
-. [[step14]] 執行將節點開機至開機功能表 `boot_ontap menu`。如果您要升級至 AFF A800 系統，請前往link:reassign-node1-disks-to-node3.html#auto_check3_step9["將 node1 磁碟重新指派給 node3 ，步驟 9"]。
+. 透過執行以下命令將節點啟動到啟動選單 `boot_ontap menu`。
+
+
+.接下來呢？
+* 如果您要升級到AFF A800系統，請前往link:reassign-node1-disks-to-node3.html#auto_check3_step9["將 node1 磁碟重新指派給 node3 ，步驟 9"]。
+* 對於所有其他系統升級，請訪問link:reassign-node1-disks-to-node3.html["將 node1 磁碟重新指派給 node3 ，步驟 1"]。
 

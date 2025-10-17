@@ -49,7 +49,7 @@ Perfstat融合式工具可讓您建立效能基準、以便在升級後進行比
 
 +
 
-WARNING: *注意*請勿嘗試清除NVRAM內容。如果需要清除NVRAM的內容、請聯絡NetApp技術支援部門。
+WARNING: 不要嘗試清除NVRAM內容。如果需要清除NVRAM的內容，請聯絡NetApp技術支援。
 
 . 檢查ONTAP node3和node4上的版本。
 +
@@ -356,7 +356,7 @@ NOTE: 您將使用此資訊重新指派磁碟、並取消委任原始節點。
 
 +
 
-NOTE: 您可以使用此資訊來識別可能要傳輸至節點3或節點4的零件或配件。如果您不知道節點是V系列系統、或是使用FlexArray 了「支援虛擬化」軟體、也可以從輸出中學習。
+NOTE: 您可以使用這些資訊來識別您可能想要傳輸到節點 3 或節點 4 的零件或配件。
 
 .. 在節點1和節點2上輸入下列命令、並記錄兩個節點上線上的Aggregate：
 +
@@ -587,32 +587,7 @@ node2   0d      fc      initiator -       -         online
 +
 您可以在升級後使用這些資訊來設定新節點上的FC連接埠組態。
 
-. 如果您要升級V系列系統或使用FlexArray NetApp虛擬化軟體的系統、請輸入下列命令並記錄輸出、以擷取有關原始節點拓撲的資訊：
-+
-「torage Array config show -switch'」
-
-+
-系統會顯示拓撲資訊、如下列範例所示：
-
-+
-....
-cluster::> storage array config show -switch
-
-      LUN LUN                                  Target Side Initiator Side Initi-
-Node  Grp Cnt Array Name    Array Target Port  Switch Port Switch Port    ator
------ --- --- ------------- ------------------ ----------- -------------- ------
-node1 0   50  I_1818FAStT_1
-                            205700a0b84772da   vgbr6510a:5  vgbr6510s164:3  0d
-                            206700a0b84772da   vgbr6510a:6  vgbr6510s164:4  2b
-                            207600a0b84772da   vgbr6510b:6  vgbr6510s163:1  0c
-node2 0   50  I_1818FAStT_1
-                            205700a0b84772da   vgbr6510a:5  vgbr6510s164:1  0d
-                            206700a0b84772da   vgbr6510a:6  vgbr6510s164:2  2b
-                            207600a0b84772da   vgbr6510b:6  vgbr6510s163:3  0c
-                            208600a0b84772da   vgbr6510b:5  vgbr6510s163:4  2a
-7 entries were displayed.
-....
-. [[man_prepe_node_step29]完成下列子步驟：
+. [[man_prepare_nodes_step28]]完成下列子步驟：
 +
 .. 在其中一個原始節點上輸入下列命令、並記錄輸出：
 +
@@ -629,7 +604,7 @@ node2 0   50  I_1818FAStT_1
 
 
 
-. [man準備節點_step30]如果您希望新節點擁有與原始節點相同的授權功能、請輸入下列命令、以查看原始系統上的叢集授權：
+. [[man_prepare_nodes_step29]]如果您希望新節點具有與原始節點相同的許可功能，請輸入以下命令以查看原始系統上的叢集許可證：
 +
 「系統授權顯示擁有者*」
 
