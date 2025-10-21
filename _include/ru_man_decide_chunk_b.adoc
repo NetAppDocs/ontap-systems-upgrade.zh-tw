@@ -4,9 +4,9 @@
 
 [NOTE]
 ====
-* 如果您透過在同一機箱中交換控制器模組（例如 AFF A800 或 AFF C800）來升級系統，NetApp 強烈建議使用升級程序link:../upgrade-arl-auto-affa900/index.html["使用 ARL 升級控制器模型，保留現有的系統機殼和磁碟"] 。此 ARL 流程包括在升級過程中移除和安裝控制器時確保內部磁碟在機箱中保持安全的步驟。
+* 如果您透過在同一機箱中交換控制器模組（例如AFF A800或AFF C800）來升級系統， NetApp強烈建議使用升級程序link:../upgrade-arl-auto-in-chassis/index.html["使用 ARL 升級控制器模型，保留現有的系統機殼和磁碟"]。此 ARL 流程包括在升級過程中移除和安裝控制器時確保內部磁碟在機箱中保持安全的步驟。
 +
-link:../upgrade-arl-auto-affa900/decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis["了解使用 ARL 支援的系統升級組合，保留現有系統機箱和磁碟"]。
+link:../upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide.html#supported-systems-in-chassis["了解使用 ARL 支援的系統升級組合，保留現有系統機箱和磁碟"]。
 
 * 您可以在此程序中使用NetApp儲存加密（NSE）、NetApp Volume加密（NVE）和NetApp Aggregate加密（NAE）。
 

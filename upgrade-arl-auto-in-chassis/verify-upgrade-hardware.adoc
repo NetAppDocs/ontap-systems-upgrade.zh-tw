@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/verify-upgrade-hardware.html 
+keywords: nodes, upgrade, verify, hardware 
+summary: 在開始升級之前、請確認您擁有正確的硬體、以便在同一個機箱中升級控制器機型。 
+---
+= 驗證升級硬體
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+在開始升級之前，請確認您的替換系統有正確的模組。如果零件遺失、請聯絡技術支援部門或 NetApp 銷售代表以取得協助。
+
+[cols="50,50"]
+|===
+| 如果您是從 ... 升級 | 更換系統必須具備 ... 
+
+
+| AFF A250 、 AFF C250  a| 
+* 兩個控制器模組和新的 IO 模組
+* X60132A，4 埠 10/25GbE 卡，適用於雙節點無交換器升級配置
+
+
+
+
+| AFF A800 、 AFF C800 | 兩個控制器模組、兩個 NVRAM 和新的 IO 模組 
+
+
+ a| 
+* AFF A220 已設定為 ASA
+* AFF A220 、 AFF A200 、 AFF C190
+* FAS2620 、 FAS2720
+
+ a| 
+兩個控制器模組
+
+如果您要將現有系統轉換成儲存櫃，以便將其連接至其他系統，則更換系統也必須有兩個 IO 模組。
+
+
+
+ a| 
+* AFF A700 設定為 ASA
+* AFF A700
+* FAS9000
+
+| 兩個控制器和兩個 NVRAM 模組 
+|===

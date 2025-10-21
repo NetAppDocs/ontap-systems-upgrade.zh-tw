@@ -1,0 +1,142 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/cable-node1-for-shared-cluster-HA-storage.html 
+keywords: cluster, ha, aff, a800, shared, storage, data, management 
+summary: 將先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備和資料連線、連接至新安裝的 AFF A90 或 AFF A70 node1 
+---
+= 纜線 node1 ，用於共用的叢集 HA 和儲存設備
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您執行下列其中一項升級，則必須將先前連接至現有系統上 node1 的叢集， HA ，儲存設備，資料和管理連線，連接至替換系統上新安裝的 node1 。
+
+[cols="35,65"]
+|===
+| 現有系統 | 更換系統 
+
+
+| AFF A250 | AFF A30 、 AFF A50 
+
+
+| AFF C250 | AFF C30 、 AFF C60 
+
+
+| 解答800 AFF | AFF A70 、 AFF A90 
+
+
+| AFF C800 | AFF C80 
+|===
+
+
+== 連接 e0M 和 BMC 連接埠
+
+如果現有系統有管理連接埠（ e0M ）和 BMC 連接埠，則 e0M 和 BMC 連接埠會透過更換系統上的「扳手」連接埠加以組合和存取。您必須確保 e0M 和 BMC 連接埠已連接至現有系統上的同一交換器和子網路，才能連線至更換系統。
+
+[cols="35,65"]
+|===
+| 如果... | 然後... 
+
+
+| e0M 和 BMC IP 位址位於相同的 IP 子網路上 | 將現有系統上的 e0M 或 BMC 連接埠連接至更換系統上的「扳手」連接埠。 
+
+
+| e0M 和 BMC IP 位址位於不同的子網路上  a| 
+. 將 e0M 和 BMC IP 位址合併為一個 IP 子網路。
+. 將現有系統上的 e0M 或 BMC 連接埠連接至更換系統上的「扳手」連接埠。
+
+
+|===
+
+
+== 連線至雙節點無交換器叢集
+
+下表顯示雙節點無交換器叢集組態的交換器連接埠使用量。
+
+|===
+| 連接埠類型 | AFF A800 、 AFF C800 | AFF A90 | AFF A70 、 AFF C80 
+
+
+| 叢集 | e0a | e1a | e1a 
+
+
+| 叢集 | e1a | e7a （如果沒有 e7a 、請使用 e1b ） | e1b 
+
+
+| HA | e0b | 不連接 | 不連接 
+
+
+| HA | e1b | 不連接 | 不連接 
+
+
+| SAS 儲存連接埠（若有及使用） | 任何可用連接埠 | 任何可用連接埠 | 任何可用連接埠 
+
+
+| 適用於 NS224 機櫃的乙太網路儲存連接埠 | 任何可用連接埠 | 請參閱乙太網路儲存設備連線對應 | 請參閱乙太網路儲存設備連線對應 
+|===
+|===
+| 連接埠 | AFF A250 、 AFF C250 | AFF A30 、 AFF C30 、 AFF C60 | AFF A50 
+
+
+| 叢集 | e0c | e1a（使用 e1a 進行臨時群集互連） | e1a（使用 e1a 進行臨時群集互連） 
+
+
+| 叢集 | e0d | e1b（使用 e1b 進行臨時群集互連） | e1b（使用 e1b 進行臨時群集互連） 
+
+
+| HA | 不需要 | node1 升級不需要 HA 端口 | node1 升級不需要 HA 端口 
+
+
+| 乙太網路儲存連接埠 | 任何可用連接埠 | E3A、e3b | E3A、e3b 
+
+
+| SAS 儲存連接埠 | 任何可用連接埠 | 3A ， 3b | 3A ， 3b 
+|===
+
+
+== 連線至交換器連接的叢集
+
+對於交換器連接的叢集，請檢查您是否符合 AFF A30 ， AFF A50 ， AFF A70 ， AFF A90 ， AFF C30 ， AFF C60 或 AFF C80 （更換）節點的下列需求：
+
+* 更換節點上相同的叢集連接埠位於同一台交換器上。例如、升級完成後、節點 1 上的 e1a 和節點 2 上的 e1a 應連接至一個叢集交換器。同樣地、兩個節點的第二個叢集連接埠也應連接至第二個叢集交換器。共享叢集 HA 連接埠的交叉連線，其中 node1 的 e1a 連接到 SwitchA ， node2 的 e1a 連接到 SwitchB ，導致 HA 通訊失敗。
+* 替換節點使用共享的叢集 HA 乙太網路連接埠。
+* 驗證叢集交換器是否安裝有支援共用叢集 HA 連接埠的參考組態檔案（ RCF ）：
++
+.. 移除交換器上現有的組態：
++
+[cols="30,70"]
+|===
+| 如果您的交換器機型是 ... | 前往... 
+
+
+| Cisco Nexus | 知識庫文章link:https://kb.netapp.com/on-prem/Switches/Cisco-KBs/How_to_clear_configuration_on_a_Cisco_interconnect_switch_while_retaining_remote_connectivity["如何在保留遠端連線的同時清除 Cisco 互連交換器上的組態"^] 
+
+
+| Broadcom Bes - 53248 | 知識庫文章link:https://kb.netapp.com/on-prem/Switches/Broadcom-KBs/How_to_clear_configuration_on_a_Broadcom_interconnect_switch_while_retaining_remote_connectivity["如何清除 Broadcom 互連交換器上的組態、同時保持遠端連線"^] 
+|===
+.. 設定並驗證交換器設定：
++
+[cols="30,70"]
+|===
+| 如果您的交換器機型是 ... | 前往... 
+
+
+| Cisco Nexus 9336C-FX2 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-cisco-9336c-fx2/upgrade-rcf-software-9336c-cluster.html["升級參考組態檔案（ RCF ）"^] 
+
+
+| Broadcom Bes - 53248 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-bes-53248/upgrade-rcf.html["升級參考組態檔案（ RCF ）"^] 
+
+
+| NVIDIA SN2100 | link:https://docs.netapp.com/us-en/ontap-systems-switches/switch-nvidia-sn2100/install-rcf-sn2100-cluster.html["安裝或升級參考組態檔案（ RCF ）指令碼"^] 
+|===
+
+
+
+
+
+NOTE: 如果叢集交換器僅支援 10/25 GbE 速度，則必須在替換系統的插槽 1 或插槽 2 中使用 X60130A、4 連接埠 10/25GbE 卡進行叢集互連。

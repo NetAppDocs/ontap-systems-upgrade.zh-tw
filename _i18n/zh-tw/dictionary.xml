@@ -3769,7 +3769,6 @@
   <block id="1f08ef6e3750d69789334fc412377b8b" category="list-text">如果您的交換器不受 ONTAP 版本支援、且您要升級的替換系統不受支援、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至_SURE_ Hardware Universe 。</block>
   <block id="c6d40070c0f6f6a69481f2755cd2ca3d" category="summary">支援使用 ARL 以升級相同機箱中的控制器機型所需的參考內容和網站。</block>
   <block id="61ade0ef1111239ef33a751208b321eb" category="inline-link-macro">使用「系統控制器更換」命令來升級相同機箱中的控制器機型</block>
-  <block id="70d1727ffc9c452707805fb17e6a5b52" category="cell"><block ref="70d1727ffc9c452707805fb17e6a5b52" category="inline-link-macro-rx"></block></block>
   <block id="654c7caa1182ea592a8682474243e9b1" category="summary">使用 ARL 將同一機箱中的控制器機型升級時、請確認 node2 上的 node1 NAS 資料生命體已從 node2 重新定位至 node1 。</block>
   <block id="1fa11ae5ee8ea18f6cb8353961e9a024" category="paragraph">在第 5 階段中、您將安裝針對升級後的 node2 和 netboot node2 所收到的新系統模組。</block>
   <block id="de5811c666f3438943e03926d9b216fd" category="summary">瞭解在同一機箱中升級控制器機型的 ARL 程序如何運作。</block>
@@ -4430,7 +4429,6 @@
   <block id="cd9547b52fda0ee4b09ec2df334b7b51" category="section-title">使用 ONTAP 9 ． 15.1 或更新版本的「系統控制器取代」命令</block>
   <block id="83606cabd222d0d058cfae8874f35382" category="example-title">顯示支援的系統</block>
   <block id="37b7186b6ae7b3227f80bbe1da693be7" category="section-title">在同一機箱中升級控制器機型</block>
-  <block id="34cc21c16ca659d7ddb97f634ed86150" category="paragraph">如果您的升級案例列於下列支援系統對照表、請前往<block ref="8e6a41e8fa329b194a3382ccde9289cd" category="inline-link-macro-rx"></block>開始升級程序。</block>
   <block id="3fe507461c708cfe67db6ed39b069266" category="cell">舊系統</block>
   <block id="7a3b05b130c9ce12ac95ac076b53bfcf" category="cell">AFF A70 或 AFF A90</block>
   <block id="3e44bbb802d299056c9839f8bdfc777a" category="cell">9.15.1 及更新版本</block>
@@ -4746,14 +4744,10 @@
   <block id="dde2acdfbdb2dfacc273b5e47e81dc83" category="inline-link-macro">查看可用於升級控制器硬體的替代 ARL 方法</block>
   <block id="e891c1eb94e2ca8bb3b7b8dadb898400" category="list-text"><block ref="6bdc44b5c51cc632715ca157799c6ae3" category="inline-link-macro-rx"></block>。</block>
   <block id="4ae096e0267d8683306cc7a7a6a39a64" category="paragraph">參考<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>連結到_ONTAP 9 文件_。</block>
-  <block id="937a8df1c80e54683e0177667f449b05" category="list-text">對於 AFF A800 或 AFF C800 控制器升級，在移除節點 2 之前，必須確保機殼內的所有磁碟機都牢固地固定在中板上。如需更多資訊、請參閱 <block ref="3ce85b0276a5a4a19a086a672b09e2c0" category="inline-link-macro-rx"></block>。</block>
   <block id="e9b64afb92831f1198d95f80d156d793" category="list-text">如果您要升級具有儲存磁碟的系統，則必須完成整個部分，然後繼續<block ref="a6d322e902b744ff3a11f02b5c6d9496" category="inline-link-macro-rx"></block> ，在群集提示符下輸入命令。</block>
-  <block id="c74f168430164144f422884d5bbb85e6" category="list-text">對於 AFF A800 或 AFF C800 控制器升級，在移除節點 1 之前，必須確保機殼內的所有磁碟機都牢固地固定在中板上。如需更多資訊、請參閱 <block ref="3ce85b0276a5a4a19a086a672b09e2c0" category="inline-link-macro-rx"></block>。</block>
   <block id="5bd058344f8aec8219e043cff27b0f39" category="admonition">如果您要升級到同一機箱中同時具有兩個節點的系統、請在機箱中安裝node4以及node3。如果不這樣做，當您啟動 node3 時，該節點的行為將如同處於雙底盤配置中，而當您啟動 node4 時，節點之間的互連將不會出現。</block>
   <block id="dce5ed79f31a7baa48db39721ab1ead2" category="inline-link-macro">使用 ARL 升級控制器模型，保留現有的系統機殼和磁碟</block>
-  <block id="fae6fac48399ed6c0672a8befcbb7722" category="list-text">如果您透過在同一機箱中交換控制器模組（例如 AFF A800 或 AFF C800）來升級系統，NetApp 強烈建議使用升級程序<block ref="bd3990206fd7d00befac37502f38725a" category="inline-link-macro-rx"></block> 。此 ARL 流程包括在升級過程中移除和安裝控制器時確保內部磁碟在機箱中保持安全的步驟。</block>
   <block id="744c8ae51567237f1e51aca67e4478ec" category="inline-link-macro">了解使用 ARL 支援的系統升級組合，保留現有系統機箱和磁碟</block>
-  <block id="04ec978432ffe9711e6d07422c94b30d" category="paragraph"><block ref="41af86518c952ad2e3cd73523bdc9ba7" category="inline-link-macro-rx"></block>。</block>
   <block id="8b53acd1242404623585fa614cf7d039" category="paragraph">如果 node3 上沒有安裝與 node1 上相同版本的 ONTAP 9，則必須透過網路啟動 node3。安裝node3之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點3。然後、您可以將正確的檔案下載到開機媒體裝置、以供後續系統開機。請參閱。 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block></block>
   <block id="756d35654041df32f1be206cb5d73d40" category="paragraph">但是，如果 node3 上安裝的 ONTAP 9 與 node1 上安裝的 ONTAP 9 相同或更高版本，則無需透過網路啟動 node3。</block>
   <block id="e9e731a9f4962a1d8b683234f1b71e92" category="list-text">如果您要升級具有儲存磁碟的系統，則必須完成整個部分，然後前往<block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block>和<block ref="65c0a9634aad86b4a452ae0da56bfb85" category="inline-link-macro-rx"></block> ，在群集提示符下輸入命令。</block>
@@ -5290,4 +5284,13 @@
   <block id="138a022be246afc5755a650cb07e42bf" category="list-text">如果 node3 沒有板載 FC 連接埠、板載 UTA/UTA2 連接埠或 UTA/UTA2 卡，且您正在升級具有儲存磁碟的系統，則可以跳至<block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block>。</block>
   <block id="ed601239c6d656a1963ef5d273a4656e" category="list-text">如果節點 3 沒有板載 FC 連接埠、板載 UTA/UTA2 連接埠或 UTA/UTA2 卡（例如，從ONTAP 9.15.1 開始引入的AFF和FAS系統），並且您正在升級具有儲存磁碟的系統，則可以跳至<block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block>。</block>
   <block id="e2711d5d01384ccd88b7e7edd60ba51f" category="paragraph">如果 node4 沒有板載 FC 連接埠、板載 UTA/UTA2 連接埠或 UTA/UTA2 卡（例如，從ONTAP 9.15.1 開始引入的AFF和FAS系統），並且您正在升級具有儲存磁碟的系統，則可以跳至<block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block>。</block>
+  <block id="5995503f0157016dc9126220426976d1" category="cell"><block ref="5995503f0157016dc9126220426976d1" category="inline-link-macro-rx"></block></block>
+  <block id="bfe40fd278079f510bcfb6a7a10f9369" category="list-text">對於AFF A800或AFF C800控制器升級，在移除節點 2 之前，必須確保機箱中的所有驅動器都牢固地固定在中板上。有關詳細信息，請參閱 <block ref="ba47371cb3a59dcddfa160e31dda2034" category="inline-link-macro-rx"></block>。</block>
+  <block id="56bfe01fd4ea060925fdb4a5681a751e" category="list-text">對於AFF A800或AFF C800控制器升級，在移除節點 1 之前，必須確保機箱中的所有驅動器都牢固地固定在中板上。有關詳細信息，請參閱 <block ref="ba47371cb3a59dcddfa160e31dda2034" category="inline-link-macro-rx"></block>。</block>
+  <block id="b73b0ab9c4b2187dc386ae1c43da7a8d" category="list-text">如果您透過在同一機箱中交換控制器模組（例如AFF A800或AFF C800）來升級系統， NetApp強烈建議使用升級程序<block ref="51f73d2815dfaf31a7f9c6af800582d7" category="inline-link-macro-rx"></block>。此 ARL 流程包括在升級過程中移除和安裝控制器時確保內部磁碟在機箱中保持安全的步驟。</block>
+  <block id="04f0b7701d1f9864fc94b5ec9ec68b2d" category="paragraph"><block ref="50932ac5c7bb93210d274e46c6eba169" category="inline-link-macro-rx"></block>。</block>
+  <block id="31eca10b08fe3338a95b8415c5f3e0eb" category="paragraph">永久連結：upgrade-arl-auto-affa900/manage-authentication-using-kmip-servers.html 重定向：ontap-systems-upgrade/upgrade-arl-auto-in-chassis/manage-authentication-using-kmip-servers.html</block>
+  <block id="b17a443c8b1c59c4de1ea415914cd2f3" category="paragraph">永久連結：upgrade-arl-auto-affa900/resume_snapmirror_operations.html 重定向：ontap-systems-upgrade/upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html</block>
+  <block id="fcf09bf7ec3b71c764141820f1fc8020" category="paragraph">永久連結：upgrade-arl-auto-affa900/retire_node1.html 重定向：ontap-systems-upgrade/upgrade-arl-auto-in-chassis/retire-node1.html</block>
+  <block id="21033397b04c40cfe5bfedb2ddbd85d7" category="paragraph">如果您的升級方案列在以下受支援系統矩陣中，請前往<block ref="19860560e89446d8ca0f4e7091d110a0" category="inline-link-macro-rx"></block>開始升級過程。</block>
 </blocks>

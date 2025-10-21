@@ -1,0 +1,31 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/retire-node1.html 
+keywords: retiring, node1, node, retire 
+summary: 停用 HA 配對與 node2 、並在使用 ARL 升級相同機箱中的控制器機型時、關閉 node1 。 
+---
+= 淘汰節點1
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要淘汰 node1 、您可以恢復自動作業、以停用 HA 與 node2 配對、並正確關閉 node1 。
+
+.步驟
+. 恢復作業：
++
+「系統控制器更換恢復」
+
+. 驗證node1是否已停止：
++
+「System Controller replace show-details」（系統控制器取代顯示詳細資料
+
++
+節點1完全停止後、node1應位於loader>提示字元。若要查看Loader>提示、請連線至node1的序列主控台。
+
+

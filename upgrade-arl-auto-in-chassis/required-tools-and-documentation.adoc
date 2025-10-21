@@ -1,0 +1,21 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/required-tools-and-documentation.html 
+keywords: required, tools, documentation, install, worksheet, ontap 
+summary: 您必須擁有某些工具和文件、才能使用 ARL 來升級同一機箱中的控制器機型。 
+---
+= 必要的工具與文件
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須有接地線才能執行升級、而且在升級過程中需要參考其他文件。
+
+若為 AFF A800 升級至 AFF A90 或 AFF A70 、請確認 100GbE 纜線長度至少為一公尺。
+
+請參閱 link:other_references.html["參考資料"] 存取此升級所需的參考文件和參考網站清單。

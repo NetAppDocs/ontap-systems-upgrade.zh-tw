@@ -1,0 +1,116 @@
+---
+section: upgrade-arl-auto-in-chassis
+title: 使用「系統控制器更換」命令來升級相同機箱中的控制器機型
+entries:
+- title: 了解此 ARL 程序
+  url: "/upgrade-arl-auto-in-chassis/index.html"
+- title: 決定是否使用此 ARL 程序
+  url: "/upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide.html"
+- title: 必要的工具與文件
+  url: "/upgrade-arl-auto-in-chassis/required-tools-and-documentation.html"
+- title: 升級控制器的準則
+  url: "/upgrade-arl-auto-in-chassis/guidelines-for-upgrading-controllers-with-arl.html"
+- title: 了解 ARL 升級順序
+  url: "/upgrade-arl-auto-in-chassis/overview-of-the-arl-upgrade.html"
+- title: 第1階段：準備升級
+  pdf-filename: 第1階段：準備升級（升級AFF 至FASA900或FAS9500）
+  entries:
+  - title: 驗證升級硬體
+    url: "/upgrade-arl-auto-in-chassis/verify-upgrade-hardware.html"
+  - title: 準備節點以進行升級
+    url: "/upgrade-arl-auto-in-chassis/prepare-nodes-for-upgrade.html"
+  - title: 使用 Onboard Key Manager 管理儲存加密
+    url: "/upgrade-arl-auto-in-chassis/manage-storage-encryption-using-okm.html"
+- title: 第 2 階段：重新定位資源並淘汰 node1
+  entries:
+  - title: 將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2
+    url: "/upgrade-arl-auto-in-chassis/relocate-non-root-aggr-and-nas-data-lifs-node1-node2.html"
+  - title: 重新部署故障或被否決的集合體
+    url: "/upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node1.html"
+  - title: 淘汰節點1
+    url: "/upgrade-arl-auto-in-chassis/retire-node1.html"
+  - title: 更換 node1 系統模塊
+    entries:
+    - title: 更換 AFF A250 或 AFF C250
+      url: "/upgrade-arl-auto-in-chassis/replace-node1-affa250-affc250.html"
+    - title: 更換 AFF A800 或 AFF C800
+      url: "/upgrade-arl-auto-in-chassis/replace-node1-affa800.html"
+    - title: 更換 AFF A220 、 AFF A200 、 AFF C190 、 FAS2620 或 FAS2720
+      url: "/upgrade-arl-auto-in-chassis/replace-node1-affa220-affa200-affc190-fas2620-fas2720.html"
+    - title: 更換 AFF A700 或 FAS9000
+      url: "/upgrade-arl-auto-in-chassis/replace-node1-aff700-fas900.html"
+  - title: netboot node1
+    url: "/upgrade-arl-auto-in-chassis/netboot-node1.html"
+- title: 階段3.使用替換的系統模組來啟動 node1
+  entries:
+  - title: 纜線 node1 用於共用的叢集 HA 儲存設備
+    url: "/upgrade-arl-auto-in-chassis/cable-node1-for-shared-cluster-HA-storage.html"
+  - title: 使用替換的系統模組來啟動 node1
+    url: "/upgrade-arl-auto-in-chassis/boot-node1-with-a900-controller-and-nvs.html"
+  - title: 驗證node1安裝
+    url: "/upgrade-arl-auto-in-chassis/verify-node1-installation.html"
+  - title: 在升級的節點1上還原金鑰管理程式組態
+    url: "/upgrade-arl-auto-in-chassis/restore-key-manager-config-upgraded-node1.html"
+  - title: 將 node1 非 root 集合體和 NAS 資料生命體從 node2 移至升級的 node1
+    url: "/upgrade-arl-auto-in-chassis/move-non-root-aggr-nas-lifs-node1-from-node2-to-upgraded-node1.html"
+- title: 第4階段：重新定位資源並淘汰 node2
+  entries:
+  - title: 將非根Aggregate和NAS資料LIF從節點2重新定位至節點1
+    url: "/upgrade-arl-auto-in-chassis/relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html"
+  - title: 淘汰節點2
+    url: "/upgrade-arl-auto-in-chassis/retire-node2.html"
+- title: 階段 5.在 node2 上安裝替換系統模組
+  entries:
+  - title: 在 node2 上安裝替換系統模組
+    entries:
+    - title: 安裝 AFF A30 ， AFF A50 ， AFF C30 或 AFF C60
+      url: "/upgrade-arl-auto-in-chassis/install-aff-a30-a50-c30-c50-node2.html"
+    - title: 安裝 AFF A90 或 AFF A70
+      url: "/upgrade-arl-auto-in-chassis/install-affa90-affa70-on-node2.html"
+    - title: 安裝 ASA A150 、 AFF A150 或 FAS2820
+      url: "/upgrade-arl-auto-in-chassis/install-asa150-affa150-fas2820-on-node2.html"
+    - title: 安裝 ASA A900 、 AFF A900 或 FAS9500
+      url: "/upgrade-arl-auto-in-chassis/install-asa900-affa900-fas9500-on-node2.html"
+  - title: netboot node2
+    url: "/upgrade-arl-auto-in-chassis/netboot-node2.html"
+- title: 第 6 階段：使用替換的系統模組來啟動 node2
+  entries:
+  - title: 纜線 node2 用於共用的叢集 HA 儲存設備
+    url: "/upgrade-arl-auto-in-chassis/cable-node2-for-shared-cluster-HA-storage.html"
+  - title: 使用替換的系統模組來啟動 node2
+    url: "/upgrade-arl-auto-in-chassis/boot-node2-with-a900-controller-and-nvs.html"
+  - title: 驗證node2安裝
+    url: "/upgrade-arl-auto-in-chassis/verify-node2-installation.html"
+  - title: 還原節點2上的金鑰管理程式組態
+    url: "/upgrade-arl-auto-in-chassis/restore-key-manager-config-node2.html"
+  - title: 驗證叢集交換器上的 RCF 配置
+    url: "/upgrade-arl-auto-in-chassis/verify-rcf-configuration.html"
+  - title: 將非根Aggregate和NAS資料lifs移回節點2
+    url: "/upgrade-arl-auto-in-chassis/move-non-root-aggr-and-nas-data-lifs-back-to-node2.html"
+- title: 第7階段：完成升級
+  entries:
+  - title: 使用KMIP伺服器管理驗證
+    url: "/upgrade-arl-auto-in-chassis/manage-authentication-using-kmip-servers.html"
+  - title: 確認新的控制器已正確設定
+    url: "/upgrade-arl-auto-in-chassis/ensure-new-controllers-are-set-up-correctly.html"
+  - title: 在新的控制器模組上設定儲存加密
+    url: "/upgrade-arl-auto-in-chassis/set-up-storage-encryption-new-module.html"
+  - title: 在新的控制器模組上設定NetApp Volume或Aggregate Encryption
+    url: "/upgrade-arl-auto-in-chassis/set-up-netapp-volum-encryption-new-module.html"
+  - title: 取消委任舊系統
+    url: "/upgrade-arl-auto-in-chassis/decommission-old-system.html"
+  - title: 恢復SnapMirror作業
+    url: "/upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html"
+- title: 疑難排解
+  pdf-filename: 疑難排解（升級AFF 至FASA900或FAS9500）
+  entries:
+  - title: Aggregate重新配置失敗
+    url: "/upgrade-arl-auto-in-chassis/aggregate-relocation-failures.html"
+  - title: 重新開機、出現問題或重新開機
+    url: "/upgrade-arl-auto-in-chassis/reboots-panics-or-power-cycles.html"
+  - title: 程序的多個階段可能會發生的問題
+    url: "/upgrade-arl-auto-in-chassis/issues-in-multiple-stages-of-procedure.html"
+  - title: LIF移轉失敗
+    url: "/upgrade-arl-auto-in-chassis/lif-migration-failure.html"
+- title: 參考資料
+  url: "/upgrade-arl-auto-in-chassis/other-references.html"

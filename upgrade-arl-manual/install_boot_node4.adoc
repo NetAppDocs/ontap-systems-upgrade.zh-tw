@@ -23,7 +23,7 @@ summary: 在ONTAP 手動升級ARL期間、在執行ONTAP Es9.7或更早版本的
 
 [IMPORTANT]
 ====
-* 對於 AFF A800 或 AFF C800 控制器升級，在移除節點 2 之前，必須確保機殼內的所有磁碟機都牢固地固定在中板上。如需更多資訊、請參閱 link:../upgrade-arl-auto-affa900/replace-node1-affa800.html["更換 AFF A800 或 AFF C800 控制器模組"]。
+* 對於AFF A800或AFF C800控制器升級，在移除節點 2 之前，必須確保機箱中的所有驅動器都牢固地固定在中板上。有關詳細信息，請參閱 link:../upgrade-arl-auto-in-chassis/replace-node1-affa800.html["更換 AFF A800 或 AFF C800 控制器模組"]。
 * 如果您要升級具有儲存磁碟的系統，則必須完成整個部分，然後繼續執行下一節link:set_fc_uta_uta2_config_node4.html["在節點4上設定FC或UTA/UTA2組態"] ，在群集提示符下輸入命令。
 
 

@@ -1,0 +1,103 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/overview-of-the-arl-upgrade.html 
+keywords: overview, arl, upgrade, owner, controller, hardware, old, system, chassis, disk, disks 
+summary: 瞭解在同一機箱中升級控制器機型的 ARL 程序如何運作。 
+---
+= 了解 ARL 升級順序
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用ARL升級節點之前、您應該先瞭解程序的運作方式。在本內容中、程序分為幾個階段。
+
+
+
+== 升級節點配對
+
+若要升級節點配對、您需要準備原始節點、然後在原始節點和新節點上執行一系列步驟。然後您可以取消委任原始節點。
+
+
+
+== ARL升級順序總覽
+
+在程序期間、您可以使用更換的控制器硬體（一次一個控制器）來升級原始控制器硬體、並利用HA配對組態來重新配置非根集合體的擁有權。所有非根Aggregate都必須經過兩次重新定位、才能到達最終目的地、這是正確的升級節點。
+
+每個Aggregate都有一個擁有者和目前擁有者。主擁有者是該集合體的實際擁有者、而目前擁有者則是暫時擁有者。
+
+下表說明您在每個階段中執行的高層工作、以及階段結束時的集合擁有權狀態。程序稍後會提供詳細步驟：
+
+[cols="35,65"]
+|===
+| 階段 | 步驟 
+
+
+| link:verify_upgrade_hardware.html["階段1：準備升級"]  a| 
+在第 1 階段期間、您會確認您擁有適合升級的正確硬體、執行預先檢查、並在必要時修正集合擁有權。如果您使用 Onboard Key Manager 來管理儲存加密、則必須記錄特定資訊、而且您可以選擇要禁用 SnapMirror 關係。
+
+第1階段結束時的Aggregate所有權：
+
+* node1是node1集合體的主擁有者和目前擁有者
+* node2是node2 Aggregate的主擁有者和目前擁有者
+
+
+
+
+| link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["第 2 階段：重新部署資源並淘汰 node1"]  a| 
+在第 2 階段期間、您將 node1 非 root 集合體和 NAS 資料生命體從 node1 重新定位到 node2 。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。如果需要、您可以重新部署故障或被否決的集合體。在淘汰node1之前、請先記錄node1資訊以供稍後的程序使用。您也可以稍後在程序中準備netboot node1。
+
+第2階段結束時的Aggregate所有權：
+
+* node2是node1 Aggregate的目前擁有者
+* node2是node2 Aggregate的主擁有者和目前擁有者
+
+
+
+
+| link:cable-node1-for-shared-cluster-HA-storage.html["階段 3 ：使用替換系統模組來啟動 node1"]  a| 
+在第 3 階段中、您可以使用升級的系統模組來啟動 node1 、並驗證升級後的 node1 安裝。如果您使用的是NetApp Volume Encryption（NVE）、則會還原金鑰管理程式組態。您也可以將node1非根Aggregate和NAS資料lIF從node2重新部署到升級的node1、並確認節點1上存在SAN lIF。
+
+第3階段結束時的Aggregate所有權：
+
+* 升級版 node1 是 node1 集合體的主擁有者和當前擁有者
+* node2是node2 Aggregate的主擁有者和目前擁有者
+
+
+
+
+| link:relocate_non_root_aggr_nas_lifs_from_node2_to_node1.html["第 4 階段：重新部署資源並淘汰 node2"]  a| 
+在第4階段期間、您將非根Aggregate和NAS資料lifs從節點2重新部署到升級的節點1、然後淘汰節點2。
+
+第4階段結束時的Aggregate所有權：
+
+* 升級的node1是原屬於node1的Aggregate的主擁有者和目前擁有者
+* 升級的node1是node2 Aggregate的目前擁有者
+
+
+
+
+| link:install-aff-a30-a50-c30-c50-node2.html["第 5 階段：在 node2 上安裝替換系統模塊"]  a| 
+在第 5 階段中、您將安裝針對升級後的 node2 和 netboot node2 所收到的新系統模組。
+
+第5階段結束時的Aggregate所有權：
+
+* 升級的node1是原屬於node1的Aggregate的主擁有者和目前擁有者。
+* 升級的node2是原屬於node2的Aggregate的主擁有者和目前擁有者。
+
+
+
+
+| link:boot_node2_with_a900_controller_and_nvs.html["階段 6 ：使用替換系統模組來啟動 node2"]  a| 
+在第 6 階段，您使用升級的系統模組啟動 node2 並驗證升級後的 node2 安裝。如果您正在使用 NVE，您可以還原金鑰管理器配置。對於交換器連接叢集升級，您需要驗證叢集交換器參考設定檔 (RCF) 是否支援共用叢集/HA 連接埠。您還將節點 1 的非根聚合和 NAS 資料 LIF 從節點 1 重新定位到升級後的節點 2，並驗證 SAN LIF 是否存在於節點 2 上。
+
+
+
+| link:manage-authentication-using-kmip-servers.html["第7階段：完成升級"]  a| 
+在第7階段期間、您會確認新節點已正確設定、如果新節點已啟用加密、則您可以設定及設定儲存加密或NVE。您也應該取消委任舊節點、然後恢復SnapMirror作業。
+
+|===

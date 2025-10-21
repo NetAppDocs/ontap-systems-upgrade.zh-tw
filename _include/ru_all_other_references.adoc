@@ -91,7 +91,7 @@
 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html["使用「系統控制器更換」命令來升級 ONTAP 9.15.1 及更新版本中引進的控制器硬體"^] | 說明使用「系統控制器更換」命令，在 ONTAP 9.15.1 及更新版本中導入的不中斷升級控制器所需的集合體重新定位程序。 
 
 
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-affa900/index.html["使用「系統控制器更換」命令來升級相同機箱中的控制器機型"^] | 說明在不中斷系統升級、保留舊系統機箱和磁碟所需的集合體重新定位程序。 
+| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-in-chassis/index.html["使用「系統控制器更換」命令來升級相同機箱中的控制器機型"^] | 說明在不中斷系統升級、保留舊系統機箱和磁碟所需的集合體重新定位程序。 
 
 
 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app/index.html["使用「系統控制器更換」命令來升級執行ONTAP 效能不正常的控制器硬體"^] | 說明ONTAP 使用「系統控制器更換」命令、在不中斷營運的情況下升級執行E9.8的控制器所需的集合體重新配置程序。 

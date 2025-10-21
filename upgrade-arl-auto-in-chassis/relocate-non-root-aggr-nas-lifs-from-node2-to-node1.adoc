@@ -1,0 +1,73 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html 
+keywords: relocate, non-root, aggregates, nas, lif, node2, node1, NVRAM, controller, module, modules 
+summary: 使用 ARL 升級同一機箱中的控制器機型時、請將 node2 的非 root 集合體重新定位至 node1 。 
+---
+= 將非根Aggregate和NAS資料LIF從節點2重新定位至節點1
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須先將 node2 所擁有的非根集合體重新放置到 node1 、然後才能將 node2 替換為替換系統模組。
+
+.開始之前
+完成上一階段的檢查後、節點2的資源版本會自動啟動。非根Aggregate和非SAN資料LIF會從節點2移轉至新節點1。
+
+.關於這項工作
+在移轉集合體和lifs之後、此作業會暫停以供驗證之用。在此階段、您必須確認所有非根Aggregate和非SAN資料l生命 體都已移轉至新的節點1。
+
+不會修改集合體和lifs的主擁有者、只會修改目前擁有者。
+
+.步驟
+. 驗證所有非根Aggregate均處於線上狀態、以及節點1上的狀態：
++
+「torage Aggregate show -node1 -state online -root假」
+
++
+以下範例顯示節點1上的非根Aggregate處於線上狀態：
+
++
+[listing]
+----
+cluster::> storage aggregate show -node node1 state online -root false
+
+Aggregate     Size        Available   Used%   State	  #Vols	 Nodes	 RAID	  Status
+----------    ---------   ---------   ------  -----   -----  ------  -------  ------
+aggr_1	      744.9GB     744.8GB	  0%	  online	  5	 node1   raid_dp  normal
+aggr_2	      825.0GB	  825.0GB	  0%	  online	  1	 node1   raid_dp  normal
+2 entries were displayed.
+----
++
+如果Aggregate已離線或成為節點1上的異位節點、請在新節點1上使用下列命令將其上線、每個Aggregate一次：
+
++
+'線上儲存Aggregate -Agggr_name_'
+
+. 在節點1上使用下列命令並檢查其輸出、以確認節點1上的所有磁碟區都已上線：
++
+「Volume show -node1 -state offline」
+
++
+如果節點1上有任何磁碟區離線、請在節點1上使用下列命令將其上線、每個磁碟區一次：
+
++
+「Volume online -vserver _vserver-name_-volume _volume名稱_」
+
++
+與此命令一起使用的"_vserver_name_"可在先前的"volume show"命令輸出中找到。
+
+. 驗證是否已將lifs移至正確的連接埠、且狀態為「up」。如果有任何生命中斷、請輸入下列命令、並針對每個LIF輸入一次、將該生命的管理狀態設定為「UP」：
++
+「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-nodename_- STATUS-admin up」
+
+. 使用下列命令檢查輸出、確認節點2上沒有剩餘的資料lifs：
++
+「網路介面show -curr-node-node2_-role data」
+
+
