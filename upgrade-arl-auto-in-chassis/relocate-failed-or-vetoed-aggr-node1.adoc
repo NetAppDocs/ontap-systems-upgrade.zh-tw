@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-auto-affa900/relocate-failed-or-vetoed-aggr-node1.html 
+permalink: upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node1.html 
 keywords: relocating, failed, vetoed, aggregates, relocation, operation 
 summary: '使用以下命令升級執行ONTAP 9.15.1 或更高版本的控制器時，手動將失敗或被否決的聚合重新定位到節點 1 `system controller replace`命令。' 
 ---

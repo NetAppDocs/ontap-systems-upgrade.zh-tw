@@ -1,6 +1,8 @@
+---
+permalink: upgrade-arl-auto-affa900/resume_snapmirror_operations.html 
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html 
+---
 = 
 :allow-uri-read: 
 
 
-'''
-永久連結：upgrade-arl-auto-affa900/resume_snapmirror_operations.html 重定向：ontap-systems-upgrade/upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html
