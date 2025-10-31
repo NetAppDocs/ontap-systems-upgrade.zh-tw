@@ -116,7 +116,7 @@ Do you want to continue? {y|n}: y
 「系統授權展示」
 
 +
-您可以將輸出與擷取的輸出進行比較 link:prepare_nodes_for_upgrade.html#man_prepare_nodes_step30["步驟30"] （_準備節點以進行升級_）。
+您可以將輸出與您捕獲的輸出進行比較。link:prepare_nodes_for_upgrade.html#man_prepare_nodes_step29["步驟29"]準備節點進行升級。
 
 . 在兩個節點上執行下列命令來設定SP：
 +

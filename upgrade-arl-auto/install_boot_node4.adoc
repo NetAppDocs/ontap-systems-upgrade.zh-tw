@@ -279,5 +279,5 @@ Boot_ONTAP功能表
 .接下來呢？
 * 如果您的系統具有 FC 或 UTA/UTA2 配置，link:set_fc_or_uta_uta2_config_node4.html["在節點 4 上設定 FC 或 UTA/UTA2 配置"] 。
 * 如果您沒有 FC 或 UTA/UTA2 配置，link:reassign-node2-disks-to-node4.html#reassign-node2-node4-step1["將 node2 磁碟重新分配給 node4，步驟 1"]這樣node4就可以辨識node2的磁碟。
-* 如果您有MetroCluster配置，link:reassign-node1-disks-to-node3.html#reassign-node1-node3-step1["將節點 1 的磁碟重新分配給節點 3"] 。
+* 如果您有MetroCluster配置，link:set_fc_or_uta_uta2_config_node4.html["在節點 4 上設定 FC 或 UTA/UTA2 配置"]檢測連接到節點的磁碟。
 

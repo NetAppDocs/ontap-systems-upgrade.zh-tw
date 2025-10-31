@@ -14,7 +14,7 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請使用替換
 
 
 [role="lead"]
-節點 1 及替換模組現已準備好開機。支援的替換模組列於link:index.html#supported-systems,["支援的系統對照表"]中。
+安裝了替換模組的 Node1 現在可以啟動了。支援的替換模組列表如下：link:decide_to_use_the_aggregate_relocation_guide.html#supported-systems-in-chassis["支援的系統對照表"] 。
 
 [NOTE]
 ====

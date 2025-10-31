@@ -13,68 +13,97 @@ summary: 一般而言、控制器硬體的升級方式取決於原始節點的�
 [role="lead"]
 一般而言、控制器硬體的升級方式取決於原始節點的平台機型。您可以透過重新配置集合體或移動磁碟區（兩者皆為不中斷程序）、或是移動儲存設備（中斷程序）來進行升級。如果您在原始節點和新節點上執行不同的 ONTAP 版本、則可能需要在開始硬體升級之前執行軟體升級。
 
-[role="tabbed-block"]
-====
-.內建磁碟機的系統
---
-為具有內部磁碟機的系統選擇升級程序、如下所示：
-
-* FAS2620 、 FAS2650 、 FAS2720 和 FAS2750
-* AFF A150 、 AFF A200 、 AFF A220 、 AFF A250 、 AFF A700s 、 和 AFF A800
-* AFF C190 、 AFF C250 和 AFF C800
-* ASA A150 、 ASA A250 、 ASA A800 和 ASA AFF A220
-+
 
 NOTE: 不支援 ASA 升級至 ASA R2 更換系統。如需將資料從 ASA 移轉至 ASA R2 系統的相關資訊，請參閱link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["啟用從 SAN 主機到 ASA R2 儲存系統的資料存取"^]。
 
 
 
+== 我應該使用哪種升級程式？
 
-NOTE: 對於某些控制器升級，您可以使用聚合重定位來升級具有內部磁碟機的系統。link:upgrade-arl/index.html["深入瞭解"]。
+若要選擇合適的升級程序，請查看下表中列出的所有問題。
 
-如果您的系統未列出、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^] 檢查是否有內部磁碟機。
+[cols="30,70"]
+|===
+| 問問自己… | 如果你的答案是肯定的，你可以這樣做… 
 
-image:workflow_internal_drives.png["選擇升級程序的決策工作流程"]
 
---
-.僅配備外部磁碟機的系統
---
-請為僅含外部磁碟機的系統選擇升級程序、如下所示：
+| 我在原節點和新節點上運行的軟體版本是否不同？ | 將原始節點上的ONTAP版本升級到最高支援版本。如果條件允許，新節點必須支援在原始節點上執行的ONTAP版本。如果這不可能，link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html["升級 ONTAP 版本"^]在原始節點上升級到最高支援版本。原節點和新節點之間的版本差不能大於 4。例如，支援ONTAP 9.8 和 9.12.1；但不支援ONTAP 9.8 和 9.13.1。link:https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["深入瞭解混合版本 ONTAP 叢集"^]。 
 
-* FAS8200 、 FAS8300 、 FAS8700 、 FAS9000 和 FAS9500
-* AFF A300 、 AFF A320 、 AFF A400 、 AFF A700 和 AFF A900
-* AFF C400
-* ASA A400 、 ASA A900 和 ASA AFF A700
+
+| 我是否要進行顛覆性的升級？ | link:upgrade/upgrade-decide-to-use-this-guide.html["透過移動儲存設備進行升級"]。這需要一個全新的系統，配備自己的儲存設備和貨架，用於儲存來自原始系統的資料。對於某些升級，可以從控制器機架進行轉換。 
+
+
+| 我是否要執行無中斷升級？  a| 
+請使用以下方法之一進行升級：
+
+* link:upgrade/upgrade-decide-to-use-this-guide.html["成交量"]
 +
+這需要將新節點加入集群，將捲和 LIF 遷移到新節點，並將要從集群中移除的節點從集群中移除。如果您要升級一個雙節點無交換器集群，請在新增節點之前，請使用一對集群交換器將其轉換為交換器連接集群。
 
-NOTE: 不支援 ASA 升級至 ASA R2 更換系統。如需將資料從 ASA 移轉至 ASA R2 的相關資訊，請參閱link:https://docs.netapp.com/us-en/asa-r2/install-setup/set-up-data-access.html["啟用從 SAN 主機到 ASA R2 儲存系統的資料存取"^]。
-
-
-
-如果您的系統未列出、請參閱 https://hwu.netapp.com["NetApp Hardware Universe"^] 檢查是否只有外部磁碟機。
-
-image:workflow_external_drives.png["選擇升級程序的決策工作流程"]
-
---
-====
-瞭解控制器硬體升級程序：
-
-* link:upgrade-arl/index.html["使用 Aggregate 重定位進行升級"]
+* link:upgrade-arl/index.html["使用聚合遷移"]
 +
-Aggregate 重新定位是一種替代程序。您不需要使用新的節點來擴充和縮小叢集、這對雙節點無交換器叢集很有幫助。移動磁碟區時、透過重新定位集合體來移動資料的速度比跨集合體複製資料快。
-
-* link:upgrade/upgrade-decide-to-use-this-guide.html["透過移動磁碟區或儲存設備進行升級"]
+ARL 是一種置換手術。您無需隨著新節點的加入而擴展和縮減集群，這對於雙節點無交換器集群來說是有利的。在移動磁碟區時，透過重新定位聚合來移動資料比跨聚合複製資料更快。
 
 
-[NOTE]
-====
-* 注意 1* ：新節點必須支援在原始節點上執行的 ONTAP 版本。如有需要、 link:https://docs.netapp.com/us-en/ontap/upgrade/prepare.html["升級 ONTAP 版本"^] 原始節點上的最大支援版本。原始節點與新節點之間的版本差異不能大於四個。例如、支援 ONTAP 9.8 和 9.12.1 ；但是不支援 ONTAP 9.8 和 9.13.1 。 https://docs.netapp.com/us-en/ontap/upgrade/concept_mixed_version_requirements.html["深入瞭解混合版本 ONTAP 叢集"^]。
 
-* 附註 2 * ：不中斷升級需要有自己的儲存設備和機櫃的新系統、才能儲存原始系統的資料。
 
-* 注意 3* ：當您透過移動磁碟區進行升級時、請加入新節點、將磁碟區和生命體移至新節點、然後取消加入您要從叢集移除的節點。如果您要升級雙節點無交換器叢集、請先使用一對叢集交換器將其轉換為交換式附加叢集、然後再新增節點。
 
-====
-如果您要升級 MetroCluster 組態、請參閱 https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["升級、重新整理或擴充MetroCluster 此功能"^]。
+| 我的系統是模組化的嗎？  *注意*：在模組化系統中，控制器沒有任何內部磁碟，所有儲存都位於外部連接的儲存架中。 | link:upgrade-arl/index.html["使用 Aggregate 重定位進行升級"]。 
 
-如果您要更換個別元件、請參閱 https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAP 硬體系統文件"^] 並找出該元件的現場可更換單元（ FRU ）傳單。
+
+| 我是否擁有一個整合系統，並希望透過遷移卷來升級？ *註*：在整合系統中，控制器具有內部磁碟，儲存設備位於控制器機箱內以及外部連接的儲存架中。外部層架用於擴展儲存空間，可能並非每個系統配置都包含外部層架。  a| 
+. link:https://hwu.netapp.com/DetailViews/Home.aspx["請確認您的系統受支援"^]。
+. link:upgrade/upgrade-decide-to-use-this-guide.html["透過移動磁碟區進行升級"]。
+
+
+
+
+| 我是否擁有一個整合系統，並且想要僅透過更換控制器模組進行升級，而保留現有的機箱和磁碟？ | link:upgrade-arl-auto-affa900/index.html["使用 ARL 進行升級，保持原有機箱和硬碟不變。"]。 
+
+
+| 我是要遷移一個支援向量機（SVM）嗎？ | 參考link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html#svm-migration-workflow["SVM 資料移動性概述"^]。 
+
+
+| 我是在升級MetroCluster配置嗎？ | 參考link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["升級、重新整理或擴充MetroCluster 此功能"^]。 
+
+
+| 我是在更換單一零件嗎？ | 請參閱link:https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAP 硬體系統文件"^]並找到該組件的現場可更換單元 (FRU) 宣傳單。 
+|===
+
+
+== 例如： FAS9500升級到 FAS90
+
+本範例展示了FAS9500到 FAS90 控制器升級的可能解決方案。
+
+[cols="30,70"]
+|===
+| 問題 | 範例答案 
+
+
+| 我在原節點和新節點上運行的軟體版本是否不同？ | 不。 FAS9500和 FAS90 都運行ONTAP 9.15.1。 
+
+
+| 我是否要執行一次可能造成嚴重後果的升級？ | 不，我希望在升級期間保持生產環境在線。 
+
+
+| 我是否要執行無中斷升級？ | 是的。根據我的系統是模組化的還是整合的，我可以透過移動磁碟區或使用聚合重定位 (ARL) 來升級。 
+
+
+| 我的系統是模組化的嗎？ | 是的。FAS9500是一款具有外部儲物架的模組化系統。我可以透過ARL進行升級。 
+
+
+| 我是否擁有一個整合系統，並希望透過遷移卷來升級？ | 不。 FAS9500是一個模組化系統，所以這不適用。 
+
+
+| 我是否擁有一個整合系統，並且想要僅透過更換控制器模組進行升級，而保留現有的機箱和磁碟？ | 不。 FAS9500是一個模組化系統，所以這不適用。 
+
+
+| 我是要遷移一個支援向量機（SVM）嗎？ | 不，我是在升級硬體的同時，保留原有的SVM。 
+
+
+| 我是在升級MetroCluster配置嗎？ | 不，這是一個標準的HA集群。 
+
+
+| 我是在更換單一零件嗎？ | 不，我正在升級整個控制器系統。 
+|===
+*本範例建議升級路徑：*link:upgrade-arl/index.html["使用 ARL 升級"]因為FAS9500是一個模組化系統，而 ARL 提供了一種無中斷升級方法。

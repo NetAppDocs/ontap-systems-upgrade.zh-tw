@@ -34,7 +34,7 @@
 移轉的集合體擁有權與因擁有者未變更而接管的非根集合體擁有權相同。當節點1進入「等待恢復狀態」時、node2會歸還所有node1非根Aggregate。
 
 .步驟
-. 完成 link:relocate_non_root_aggr_node1_node2.html#step1["步驟1."] 在_重新將非根Aggregate從節點1重新部署到節點2_一節中。
+. 完全的link:relocate_non_root_aggr_node1_node2.html#relocate-step1["步驟1."]在「將非根聚合從節點 1 遷移到節點 2」部分再次執行。
 . 繼續執行節點配對升級程序。
 
 
@@ -62,7 +62,7 @@
 節點1將接管節點2的所有集合體、以及它已重新定位到節點2的任何專屬集合體。當節點2進入「Waiting for Giveback」（正在等待恢復）狀態時、節點1會傳回節點2的所有集合體。
 
 .步驟
-. 完成 link:relocate_non_root_aggr_node1_node2.html#step1["步驟1."] 在_重新將非根Aggregate從節點1重新部署到節點2_一節中。
+. 完全的link:relocate_non_root_aggr_node1_node2.html#relocate-step1["步驟1."]在「將非根聚合從節點 1 遷移到節點 2」部分再次執行。
 . 繼續執行節點配對升級程序。
 
 
@@ -111,7 +111,7 @@
 
 .步驟
 . 啟動節點2。
-. 完成後重新部署其餘的集合體 link:relocate_non_root_aggr_node2_node3.html#step1["步驟1."] 透過 link:relocate_non_root_aggr_node2_node3.html#step3["步驟3."] 在_將非根Aggregate從node2重新部署到node3_一節中。
+. 透過完成以下操作來重新安置剩餘的骨材link:relocate_non_root_aggr_node2_node3.html#verify-partner-sys-id["步驟1."]透過link:relocate_non_root_aggr_node2_node3.html#relocate-step5["步驟5."]在「將非根聚合從節點 2 遷移到節點 3」部分。
 . 繼續執行節點配對升級程序。
 
 
@@ -137,7 +137,7 @@
 
 .步驟
 . 啟動節點3。
-. 完成 link:relocate_non_root_aggr_node2_node3.html#step3["步驟3."] 同樣地、請參閱_將非根Aggregate從節點2重新部署到節點3_一節。
+. 完全的link:relocate_non_root_aggr_node2_node3.html#relocate-step5["步驟5."]再次在「將非根聚合從節點 2 遷移到節點 3」部分。
 . 繼續執行節點配對升級程序。
 
 
@@ -208,6 +208,6 @@ node3繼續為所有Aggregate提供資料。HA配對已停用。
 
 .步驟
 . 叫出節點4。
-. 再次完成、重新定位屬於節點2的其餘集合體 link:relocate_node2_non_root_aggr_node3_node4.html#Step1["步驟1."] 透過 link:relocate_node2_non_root_aggr_node3_node4.html#step3["步驟3."] 在_重新定位節點2的非根Aggregate、從節點3移至節點4 _。
+. 透過再次完成操作，重新定位屬於節點 2 的剩餘聚合。link:relocate_node2_non_root_aggr_node3_node4.html#man_relocate_3_4_Step1["步驟1."]透過link:relocate_node2_non_root_aggr_node3_node4.html#step3["步驟3."]將節點 2 的非根聚合從節點 3 遷移到節點 4。
 . 繼續執行節點配對升級程序。
 

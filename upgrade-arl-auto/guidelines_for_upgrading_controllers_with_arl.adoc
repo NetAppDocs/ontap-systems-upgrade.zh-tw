@@ -72,6 +72,6 @@ NOTE: 如果您要升級支援內部磁碟機的系統（例如FAS2700或AFF E4A
 
 請參閱 ARL 升級概述部分中描述流程不同階段的表格。程序階段會列出可能發生的故障相關資訊。
 
-如果升級控制器時出現任何問題，請參閱link:aggregate_relocation_failures.html["疑難排解"]部分。有關可能發生的故障的資訊按過程階段列出，位於link:arl_upgrade_workflow.html["ARL 升級序列"] 。
+如果在升級控制器過程中出現任何問題，請參閱以下內容：link:aggregate_relocation_failures.html["疑難排解"]部分。流程各階段列出的故障資訊如下：link:overview_of_the_arl_upgrade.html["ARL 升級序列"] 。
 
 如果您找不到解決所遇到問題的解決方案、請聯絡技術支援部門。

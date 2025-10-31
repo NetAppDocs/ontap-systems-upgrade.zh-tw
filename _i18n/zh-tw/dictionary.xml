@@ -5,7 +5,6 @@
   <block id="291e8826d2b19041a0543b448060f314" category="paragraph">如果node4具有內建FC連接埠、內建統一化目標介面卡（UTA/UTA2）連接埠或UTA/UTA2卡、則必須先設定這些設定、才能完成其餘程序。</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-xref"></block>
   <block id="04e69ed9c039a8d1bc156ec97e69f0d2" category="inline-link-macro">將連接埠從節點2對應至節點4</block>
-  <block id="e5d8ce1e4e0f9c50b3cbdf452d60972e" category="inline-link-macro">步驟22</block>
   <block id="89023b09a8e04215547178052eb90222" category="section-title">在節點4上設定FC連接埠</block>
   <block id="cd7dd5075be56af4a3298feff04bb98a" category="paragraph">如果節點4具有FC連接埠（內建或FC介面卡上）、您必須先在節點上設定連接埠組態、才能將其投入服務、因為連接埠並未預先設定。如果未設定連接埠、可能會導致服務中斷。</block>
   <block id="83b27b00949218cb0d9ec7e1eb1c92ad" category="inline-link-macro">準備節點以進行升級</block>
@@ -121,9 +120,6 @@
   <block id="da8b8662f7c1d5fff02df5d395e1d253" category="cell">Exe7700^1^、Ex4A800^2^^、^^3^、ExA400^4^、^^5^ AFF AFF AFF</block>
   <block id="4852954d031f57b417813707e91dd5bd" category="admonition">如果您的控制器升級模式組合不在上表中、請聯絡技術支援部門。</block>
   <block id="e51c635d01c8dc3e816e9f14ad0767cf" category="paragraph">支援針對AFF 該系統的^1^ARL自動升級ONTAP 功能、可從Ze 9.7P2取得。</block>
-  <block id="1ab9ac762ff98f776b6d5cfddf56bf6f" category="inline-link-macro">檢查並設定節點3步驟14上的UTA/UTA2連接埠</block>
-  <block id="d16c604a3cddc9316d5dfc1514c5da11" category="inline-link-macro">檢查並設定節點4步驟14上的UTA/UTA2連接埠</block>
-  <block id="854e3fd862be50a0cf7e5d697506a33c" category="paragraph">^2^如果您要更新AFF 至支援內部和外部磁碟的FSIFA800或系統、則必須遵循內部NVMe磁碟上根Aggregate的特定指示。請參閱 <block ref="983c366997f9ae38fb70a96bf899b5fb" category="inline-link-macro-rx"></block> 和 <block ref="c637ff237000263c980a88d3850be72b" category="inline-link-macro-rx"></block>。</block>
   <block id="cc31b65361b7c697a4d3c0f75b928baf" category="paragraph">從AFF We 9.7P5 AFF 支援從32 A300自動升級至32 A800系統的^3^ARL ONTAP 。</block>
   <block id="2e2d0e127c8eb55e752ddae9109b7b26" category="paragraph">從功能強大的支援功能、從功能完善的支援功能AFF 升級至AFF 功能完善的支援系統、從功能完善的功能升級至功能完善的功能ONTAP 、從功能完善的功能升級至功能完善的功能。</block>
   <block id="0d17b2b0ee5853657bc79eefe010abec" category="paragraph">^5^如果您要在AFF 雙節點無交換式叢集組態中、從Sfzha300升級AFF 至Sf2 A400或FAS8200、則必須選擇暫用叢集連接埠來升級控制器。以乙太網路套裝組合形式提供兩種組態：夾層卡連接埠為乙太網路類型、夾層連接埠為FC類型、而以FC套裝組合形式提供夾層連接埠為FC類型。AFF</block>
@@ -243,7 +239,6 @@
   <block id="bfacc8eef0b077fb7822880dd6814cc1" category="list-text">使用下列命令並檢查輸出、確認已正確安裝授權：</block>
   <block id="f52d44aaa981f34fa588225f9d4cc820" category="paragraph">「系統授權展示」</block>
   <block id="20d8c464d7ec22352c6b329b84051301" category="paragraph">您可以比較輸出與您在區段中擷取的輸出 <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block>。</block>
-  <block id="9dabc4c6addd92ab1be1dd1cd49038f7" category="inline-link-macro">安裝並開機節點4、步驟27</block>
   <block id="2dc628959227b30796539097566ced4e" category="list-text">[[step13]在兩個節點上使用下列命令來設定SP：</block>
   <block id="cffe1635d7e645065b5457e425a54cdd" category="paragraph">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 如需SP和_SUR9 ONTAP 命令的相關資訊、請連結至_System Administration Reference（系統管理參考資料）：Manual Page Reference（手冊頁參考）_、以取得有關係統「服務處理器網路修改」命令的詳細資訊。</block>
   <block id="5fd1bcc8472b38442961eb87ca3f844a" category="paragraph">"進階權限"</block>
@@ -465,8 +460,6 @@
   <block id="c06377da744f281f74d745bd6cf53c71" category="paragraph">以下是命令輸出的範例：</block>
   <block id="16d19daed45f3be78bc9bea63100bb72" category="summary">使用ONTAP 「系統控制器更換」命令、參考支援執行《支援》從9.5版升級至9.7版的控制器所需的內容和網站。</block>
   <block id="82a3300ad94a5e1dcf0a6abbfe1060e2" category="paragraph">執行本內容中的程序時、您可能需要諮詢參考內容或前往參考網站。</block>
-  <block id="14f94d0b133a9aa34a775e955c95b8bc" category="list-text"><block ref="13e4a2cf4e0a4edbef519c9af2452c86" category="inline-xref-macro-rx"></block></block>
-  <block id="b39850fa882a12596e03ef7779fcfebc" category="list-text"><block ref="5e1bb6d16e6bc7a1d750ae669f510747" category="inline-xref-macro-rx"></block></block>
   <block id="ec5873b9b6861954a7c07d183dd486b0" category="section-title">參考內容</block>
   <block id="bc6bec578fabd4f81f97a21373822230" category="paragraph">下表列出此升級的特定內容。</block>
   <block id="f15c1cae7882448b3fb0404682e17e61" category="cell">內容</block>
@@ -1468,7 +1461,6 @@
   <block id="fd35edd14227b026dc566a7178c387d7" category="summary">將非根Aggregate從node1移至node2、並在執行ONTAP 《Esce9.8或更新版本》的控制器上進行手動ARL升級時、驗證重新配置。</block>
   <block id="11856588314d0c959b2b916a938edde8" category="doc">將非根Aggregate從節點1重新部署到節點2</block>
   <block id="7368fc5c8c51bc8dc679464700a9f443" category="paragraph">您必須先使用儲存Aggregate replace命令將非根Aggregate從node1移至node2、然後再驗證重新配置、才能將node1替換為node3。</block>
-  <block id="fedb2a32e0130d4ae814cd5cc418f72f" category="list-text">[[step1]]完成下列子步驟、重新部署非根集合體：</block>
   <block id="e45573b969f614ffe0b1bc0150964664" category="paragraph">重新配置將會在背景中進行。重新部署集合體可能需要幾秒鐘到幾分鐘的時間。時間包括用戶端中斷和非中斷部分。此命令不會重新部署任何離線或受限的集合體。</block>
   <block id="7b6a4090ff6553e6b643348d522b6560" category="list-text">輸入下列命令即可返回管理員層級：</block>
   <block id="db3c32b2915aa7ffd2fcacb5e017dbc9" category="list-text">在節點1上輸入下列命令、檢查重新配置狀態：</block>
@@ -1543,7 +1535,6 @@
   <block id="7495ab667ca2ae1018dd9d3dd2908757" category="section-title">節點1在第2階段期間或之後當機、但HA仍處於啟用狀態</block>
   <block id="6647bb8df429d773e26f287ab8630e64" category="paragraph">部分或全部的集合體已從節點1重新定位至節點2、但HA仍處於啟用狀態。node2將接管node1的根Volume和未重新定位的任何非根Aggregate。</block>
   <block id="4737e9bd68e050a3ff527329392a0902" category="paragraph">移轉的集合體擁有權與因擁有者未變更而接管的非根集合體擁有權相同。當節點1進入「等待恢復狀態」時、node2會歸還所有node1非根Aggregate。</block>
-  <block id="91cf7a0902c4d8935fa01c715ec744dc" category="list-text">完成 <block ref="293daa0ef1b8dc10a56298f74ae852e0" category="inline-link-macro-rx"></block> 在_重新將非根Aggregate從節點1重新部署到節點2_一節中。</block>
   <block id="74d5b8b871208d748fdac979190074e1" category="section-title">停用HA時、節點1會在第2階段之後當機</block>
   <block id="9ad3dc0563b6521da592666e0c96170d" category="paragraph">節點2不會接管、但它仍在提供來自所有非根Aggregate的資料。</block>
   <block id="cf843a9114c64e407d26e842eb2aa5c2" category="inline-link-macro">非預期的儲存容錯移轉show命令輸出</block>
@@ -1561,12 +1552,10 @@
   <block id="123d371d6f3654b02ea395d3cdce7a43" category="section-title">節點2在重新放置部分或全部集合體之後、在第3階段當機</block>
   <block id="3312049a8df38d6a9cc500f8d982615c" category="paragraph">節點2已將部分或全部的Aggregate重新放置到節點3、節點3將提供重新放置之集合體的資料。HA已停用。</block>
   <block id="4293c82d89ec7602e20335979cb19469" category="paragraph">未重新部署的集合體將會發生用戶端中斷。</block>
-  <block id="325bf4ef0d3493b41794238266e0490a" category="list-text">完成後重新部署其餘的集合體 <block ref="789a9a29365551abd6a71d3f355e39cb" category="inline-link-macro-rx"></block> 透過 <block ref="a9ed1005965421826d33fd16a9c02ffe" category="inline-link-macro-rx"></block> 在_將非根Aggregate從node2重新部署到node3_一節中。</block>
   <block id="7777ccf7f0f06dad3ffad451bb0e83b8" category="section-title">節點3在第3階段和節點2重新放置任何集合體之前當機</block>
   <block id="ec2cd6235f2c50a1e7fed067fe8301f8" category="section-title">在Aggregate重新配置期間、節點3會在第3階段當機</block>
   <block id="bdf12c9e6bf2221b5ef584b80346aaaf" category="paragraph">如果節點3在節點2將Aggregate重新定位到節點3時當機、則節點2會中止任何其他Aggregate的重新定位。</block>
   <block id="5f54439349a0049ded037d046c54cb66" category="paragraph">節點2繼續提供其餘的Aggregate、但在節點3開機時、已重新放置到節點3的Aggregate會遇到用戶端中斷。</block>
-  <block id="e9f32c360440ff87eefc6b2ac000051b" category="list-text">完成 <block ref="a9ed1005965421826d33fd16a9c02ffe" category="inline-link-macro-rx"></block> 同樣地、請參閱_將非根Aggregate從節點2重新部署到節點3_一節。</block>
   <block id="78d6fd9200a4f713a83c4db59f80581d" category="section-title">節點3在第3階段當機後無法開機</block>
   <block id="1f3a2d115338d5055575085be720a753" category="paragraph">由於災難性故障、節點3在第3階段當機之後無法開機。</block>
   <block id="50c2d2087402d2dc8c5767a6ac83e96d" category="list-text">聯絡技術支援。</block>
@@ -1584,7 +1573,6 @@
   <block id="17772501b6724fd9858e76539d802bae" category="section-title">Node4在階段5期間當機</block>
   <block id="ed77b7aeb374975ae2dc4f8a9a5d5551" category="paragraph">節點3已將部分或全部節點2的Aggregate重新放置到節點4。node3不會接管、而是繼續提供節點3擁有的非根Aggregate、以及未重新定位的非根Aggregate。HA已停用。</block>
   <block id="599f33809165d54cb3217e306c6f0f1f" category="paragraph">非根Aggregate發生中斷、這些非根Aggregate已重新部署、直到節點4重新開機為止。</block>
-  <block id="4756394ada9b0ffaa73813469d36b72d" category="list-text">再次完成、重新定位屬於節點2的其餘集合體 <block ref="21d698177270cdcc53abb50c511e3bde" category="inline-link-macro-rx"></block> 透過 <block ref="c5be787c4fcfd0f49f014e8618d28c15" category="inline-link-macro-rx"></block> 在_重新定位節點2的非根Aggregate、從節點3移至節點4 _。</block>
   <block id="81d842dc6512a201e5ccc1816f833428" category="summary">瞭解您是否可以使用手動ARL升級程序來執行ONTAP 一對執行《e89.8或更新版本》的控制器。</block>
   <block id="a58275251c4ceab5ef8fb93df1152efe" category="paragraph">若要瞭ONTAP 解您是否可以使用Aggregate重新配置（ARL）來升級執行支援功能的一對控制器、需視平台和原始控制器和更換控制器的組態而定。</block>
   <block id="03a076130908bcb8ba3ef3e4a9879406" category="paragraph">在下列情況下、您可以使用ARL來升級一對節點：</block>
@@ -1685,7 +1673,6 @@
   <block id="fd6db757e3a6fb12f04139c8f48aab93" category="list-text">若要刪除所有未使用的授權、請輸入：</block>
   <block id="0fae8f5a8ab68238375deb31e474111d" category="list-text">若要從叢集刪除特定授權、請在節點上輸入下列命令：</block>
   <block id="4883a9a9fced202f6b61720c6c0446a2" category="list-text">輸入下列命令並檢查其輸出、確認授權已正確安裝：</block>
-  <block id="7092e15f19aa79a4b642157f15a4bcf6" category="inline-link-macro">步驟30</block>
   <block id="65816664fef74fe3f15406730c518f76" category="list-text">在兩個節點上執行下列命令來設定SP：</block>
   <block id="3d39e72120bdfa8b32eb4183896ece25" category="paragraph">前往 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 如需SP和_SUR9 ONTAP 命令的相關資訊、請連結至_System Administration Reference（系統管理參考）：Manual Page Reference（手冊頁參考）_、以取得有關「系統服務-處理器網路修改」命令的詳細資訊。</block>
   <block id="52eb8cb5708af7396828abc72517413d" category="list-text">如果您要在新節點上設定無交換器叢集、請前往 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要連結至_網路支援站台_、請遵循_移轉至雙節點無交換器叢集_中的指示。</block>
@@ -3474,7 +3461,6 @@
   <block id="97da9a68ce886c4978d84008bc3d4e8b" category="list-text">出現提示時輸入備份資料。</block>
   <block id="71e3a0c9ae3930c06f28eb84647c689b" category="admonition">您必須已取得中的通關密碼和備份資料 <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block> 本程序的一節。</block>
   <block id="df032103f8364ffe0942ab84f5f27f22" category="list-text">系統重新開機至特殊開機功能表後、請執行選項*（1）正常開機*</block>
-  <block id="5daba08f0febc7be0229c918d3deaa4d" category="admonition">您可能會在這個階段遇到錯誤。如果發生錯誤、請重複中的子步驟 <block ref="1abe7aef97cf6f4670adea7171f10403" category="inline-xref-macro-rx"></block> 直到系統正常開機為止。</block>
   <block id="37bcf5964cba22a5e1026e3bfd999926" category="list-text">從節點3執行下列命令：</block>
   <block id="9b4b091bf0690393965fb7724be0006b" category="list-text">在重新部署資料集合體之前、請先確認節點3上的SVM-KEK金鑰已還原為「true」：</block>
   <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="listing-title">範例</block>
@@ -3974,23 +3960,8 @@
   <block id="0c3ddb60effd6213b641983514a7b646" category="summary">一般而言、控制器硬體的升級方式取決於原始節點的平台機型。您可以透過移動集合體或磁碟區儲存設備（不中斷營運的程序）或移動儲存設備（中斷營運的程序）進行升級。</block>
   <block id="81cf1b6821a9509701aa3ffa438696e8" category="doc">選擇控制器硬體升級程序</block>
   <block id="730782d87341664d3c754f5ff1a5e235" category="paragraph">一般而言、控制器硬體的升級方式取決於原始節點的平台機型。您可以透過重新配置集合體或移動磁碟區（兩者皆為不中斷程序）、或是移動儲存設備（中斷程序）來進行升級。如果您在原始節點和新節點上執行不同的 ONTAP 版本、則可能需要在開始硬體升級之前執行軟體升級。</block>
-  <block id="d28610d01016f5bb58284f316bba1cf4" category="paragraph">為具有內部磁碟機的系統選擇升級程序、如下所示：</block>
-  <block id="5502efa05d4fb31521ff855aca634085" category="paragraph">如果您的系統未列出、請參閱<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> 檢查是否有內部磁碟機。</block>
-  <block id="271991a921c3cf77fdc4a8243ff66c54" category="inline-image-macro">選擇升級程序的決策工作流程</block>
-  <block id="9e22cf6af1f2c4fe2e159cbec557ce04" category="paragraph"><block ref="9e22cf6af1f2c4fe2e159cbec557ce04" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="5830cd7f72f9e60e4fa7226df7a6e5b4" category="open-title">僅配備外部磁碟機的系統</block>
-  <block id="02f90960209613fdabef2c9b69f51f1a" category="paragraph">請為僅含外部磁碟機的系統選擇升級程序、如下所示：</block>
-  <block id="fdbb97a31e1f96988fd0043d40890691" category="list-text">FAS8200 、 FAS8300 、 FAS8700 、 FAS9000 和 FAS9500</block>
-  <block id="da6fda94fbd6619e64543f3aae22461a" category="list-text">AFF A300 、 AFF A320 、 AFF A400 、 AFF A700 和 AFF A900</block>
   <block id="c9996a1b1fe92047dfbcfbef9989c233" category="list-text">AFF C400</block>
-  <block id="65843c424385c187542a7f02ef944f93" category="list-text">ASA A400 、 ASA A900 和 ASA AFF A700</block>
-  <block id="6595bfc8c334bd6ea5c2da878f55e46c" category="paragraph">如果您的系統未列出、請參閱<block ref="f73c85a53b5d65cc9c35da0b9e0d2f09" category="inline-link-rx"></block> 檢查是否只有外部磁碟機。</block>
-  <block id="06248cec6a83b53b418520bd0b9d07a5" category="paragraph"><block ref="06248cec6a83b53b418520bd0b9d07a5" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="4a7fecfc06856645d10df298d5553ed7" category="paragraph">瞭解控制器硬體升級程序：</block>
   <block id="1f43d36a6bcfed2f5249ca5ba8e671ba" category="inline-link-macro">使用 Aggregate 重定位進行升級</block>
-  <block id="8f9fb90f68730e000102778c18115044" category="list-text"><block ref="8f9fb90f68730e000102778c18115044" category="inline-link-macro-rx"></block></block>
-  <block id="441e5e19c045de8820e45a5b22e45056" category="paragraph">* 附註 2 * ：不中斷升級需要有自己的儲存設備和機櫃的新系統、才能儲存原始系統的資料。</block>
-  <block id="272d55e2adea123757d8811eaaaebd88" category="paragraph">* 注意 3* ：當您透過移動磁碟區進行升級時、請加入新節點、將磁碟區和生命體移至新節點、然後取消加入您要從叢集移除的節點。如果您要升級雙節點無交換器叢集、請先使用一對叢集交換器將其轉換為交換式附加叢集、然後再新增節點。</block>
   <block id="ef69680bc1ee7b1fd5e0950d56699d33" category="list-text">此程序適用於MetroCluster 執行ONTAP 版本號為「版本資訊」9.5或更早版本的所有四節點和八節點組態。如需MetroCluster 執行ONTAP 效能不可靠的更新版本、請前往 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 使用「系統控制器更換」命令連結至 _ 、以將執行 ONTAP 9.5 的控制器硬體升級至 ONTAP 9.7_ 。</block>
   <block id="187aa569481ce25a564facc34217dda3" category="list-text">主機命令和範例僅適用於 Linux 作業系統。</block>
   <block id="fcbf56c541d4d283030e94ff96a44848" category="paragraph">您也可以使用 USB 開機選項來執行網路開機。請參閱知識庫文章 <block ref="184f8f7294797efad8be0da4fb907563" category="inline-link-macro-rx"></block>。</block>
@@ -4019,16 +3990,11 @@
   <block id="f4050efc501652e600f6e7e735cf5616" category="inline-link-macro">已建立新的 iSCSI 連線</block>
   <block id="527226c39d06e4e2f6eec2dca988d2ba" category="list-text">如果您要移動 iSCSI SAN 磁碟區、請確認您擁有 <block ref="6f18756f17709181fa11fd9271f705fc" category="inline-link-macro-rx"></block>。</block>
   <block id="5dac5a25730948f28ff49739852d7be9" category="list-text">NetApp 建議您盡可能在原始節點和新節點上執行相同的 ONTAP 版本。如果不可能、 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 在原始節點上、到支援的最大版本、使原始節點和新節點之間的版本差異不超過四個。例如、支援 ONTAP 9.8 和 9.12.1 ；但是不支援 ONTAP 9.8 和 9.13.1 。</block>
-  <block id="d9bec0f0ae398cfc3abbf7091d735c22" category="paragraph">* 注意 1* ：新節點必須支援在原始節點上執行的 ONTAP 版本。如有需要、 <block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block> 原始節點上的最大支援版本。原始節點與新節點之間的版本差異不能大於四個。例如、支援 ONTAP 9.8 和 9.12.1 ；但是不支援 ONTAP 9.8 和 9.13.1 。<block ref="ce537934e178c1610dae82a1b82553bf" category="inline-link-rx"></block>。</block>
-  <block id="1e4625a567102c02db411f8ac4403956" category="list-text">[[unset_mastwait_system_commands]]如果在組態中使用自我加密磁碟機、且您已設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變數至<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例如、in <block ref="e646557bd849df21a23243b7031e90bc" category="inline-link-macro-rx"></block>）、您必須取消設定變數：</block>
   <block id="b0da566a6b16767a9a4f6a9815cc8a8c" category="image-alt">卸下纜線管理 ARM</block>
   <block id="df4c49d6d7d92d1a3dd7d374cec6fe02" category="image-alt">打開 CAM 把手</block>
   <block id="401ec6649ed8fe314eef631a190858b3" category="list-text">檢查並重設中所述的儲存加密bootargs <block ref="d1353daad078803f11ba1627582281b9" category="inline-xref-macro-rx"></block>。</block>
-  <block id="e807a193ac5d601655295b7da3f1b093" category="paragraph">但是、如果您有V系列系統或使用FlexArray VMware虛擬化軟體、並連接至儲存陣列、而節點4沒有內建FC連接埠、內建UTA/ UTA2連接埠或UTA/ UTA2卡、則必須返回_安裝與開機節點4_區段、並繼續執行 <block ref="dc87380ee6757ad7d02cae49ae9cdab7" category="inline-link-macro-rx"></block>。確定節點4有足夠的機架空間。如果node4與node2位於不同的機箱中、您可以將node4放在與node3相同的位置。如果節點2和節點4位於同一個機箱中、則節點4已位於適當的機架位置。</block>
-  <block id="6b9fac60e06c90ccfa462d0bed7926e6" category="list-text">但是、如果您的V系列系統或系統搭載FlexArray 含有儲存陣列的VMware虛擬化軟體、而節點3沒有內建FC連接埠、內建UTA/ UTA連接埠或UTA/ UTA2卡、請返回_Install and boot node3_並繼續執行 <block ref="69768913474e5068248c1757dc80b632" category="inline-link-macro-rx"></block>。</block>
   <block id="f21399d0ef733f2bac07631b61733da2" category="list-text">如果有任何磁碟區離線、請將它們與您在中擷取的離線磁碟區清單進行比較  <block ref="f8559d826afe76e8a44f3ff6b2b551c5" category="inline-link-macro-rx"></block> 在_準備要升級的節點_中、輸入下列命令（針對每個Volume一次）、並視需要將任何離線磁碟區上線：</block>
   <block id="3bc4849f9b157d49c1711e6e16889370" category="list-text">[[unset_mastwait_manipal]]如果在組態中使用自我加密磁碟機、且您已設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變數至<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例如、in <block ref="90030e72e0588538d4fa2173f000cf21" category="inline-link-macro-rx"></block> 在_Install and boot node3_）中、您必須取消設定變數：</block>
-  <block id="53658d8e911ed99b785059dfe4444ff6" category="paragraph">您可以將輸出與擷取的輸出進行比較 <block ref="9931aed421ff2a2523e8089d4d074996" category="inline-link-macro-rx"></block> （_準備節點以進行升級_）。</block>
   <block id="7f56dbb7f8f9c7edeba6759e22db809d" category="admonition">您的系統可能沒有叢集間的LIF。您只能在節點配對的一個節點上使用叢集管理LIF。的範例輸出中會顯示叢集管理 LIF <block ref="bd32fdbc5854e6c20c0a8915777bab3f" category="inline-link-macro-rx"></block> 在_Record node1連接埠資訊_中。</block>
   <block id="654d75bbbd9ba4437d62775d8c78fd4e" category="paragraph">適用於<block ref="4bc6af92800eaece42a512a876786ce9" prefix=" " category="inline-code"></block> 請使用中擷取的資訊 <block ref="4bd427aca76f4838cf29941d65834087" category="inline-link-macro-rx"></block> 的「_Record node2 information_」區段。適用於<block ref="3a5307c9225c62c92d2cd1fab07d458d" prefix=" " category="inline-code"></block>、請使用中擷取的資訊 <block ref="9c7125eb7b33f2cb03297a560d0660b0" category="inline-xref-macro-rx"></block>。</block>
   <block id="c1ec927231ff7eccaa7988a2e2070107" category="paragraph">您可能會看到的輸出有一些變更<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> 命令，但這是典型的，不會影響程序。請參閱疑難排解一節 <block ref="75a39bd28c4eb9db95179fd2fef50fb3" category="inline-link-macro-rx"></block>。</block>
@@ -4114,7 +4080,6 @@
   <block id="b6025c8f8309b4b8106567e8e60f52ac" category="admonition">在 BMC 中建立使用者帳戶時、需要管理員權限。</block>
   <block id="a64a5798382cc068c2d777ff826bccb5" category="doc">ONTAP 硬體升級文件</block>
   <block id="646d7d5f93b4a6d7bbbc65acf5ac1077" category="inline-link">ONTAP 硬體系統文件</block>
-  <block id="c2bb4d5f8818bc80f7aa15d94d57c6e3" category="paragraph">如果您要更換個別元件、請參閱<block ref="e18a2433f1085adba8dc86307fee18d1" category="inline-link-rx"></block> 並找出該元件的現場可更換單元（ FRU ）傳單。</block>
   <block id="dec452d8e293e5516524ae8a86713211" category="sidebar">本網站提供 AFF 、 FAS 和 ASA 儲存系統的升級程序。為您的儲存系統選取適當的升級程序。</block>
   <block id="ec6e72d1c4bb7dccdc62b6caf35c95f7" category="sidebar">ONTAP 硬體系統文件</block>
   <block id="1320db1e300a995e122ea5d434b23e9b" category="list-text">將儲存架纜線從先前連接至 node1/node2 的機櫃連接至 node3/node4 。</block>
@@ -4129,8 +4094,6 @@
   <block id="7ed92f84948f4fe94d9e740b0e479a4e" category="paragraph-title">精選FC組態MetroCluster</block>
   <block id="5ffd3baa415444f7f3227edef43b10d9" category="paragraph">在 MetroCluster FC 組態中、您必須盡快更換災難恢復 / 容錯移轉站台節點。不支援不支援在支援範圍內不相符的控制器機型MetroCluster 、因為控制器機型不相符可能導致災難恢復鏡像離線。當您在第二個站台更換節點時、請使用<block ref="bf0b9d28548e0e53fb793faa9566bdc3" prefix=" " category="inline-code"></block> 命令略過 MetroCluster 檢查。</block>
   <block id="df3d0238913361ab2420c20a053ba0d8" category="list-text">[[man_install4_Step6]] 開啟 node4 的電源、然後按 Ctrl-C 存取開機環境提示來中斷開機。</block>
-  <block id="24a28632436fc3dd7e0e4fbde05fdf59" category="paragraph">Aggregate 重新定位是一種替代程序。您不需要使用新的節點來擴充和縮小叢集、這對雙節點無交換器叢集很有幫助。移動磁碟區時、透過重新定位集合體來移動資料的速度比跨集合體複製資料快。</block>
-  <block id="21e5a4b07b3d917519fb1f0a2c21d347" category="list-text"><block ref="21e5a4b07b3d917519fb1f0a2c21d347" category="inline-link-macro-rx"></block></block>
   <block id="2c4564f93114738d1a23cefcb9f1a209" category="paragraph">透過移動儲存設備來升級控制器硬體是一項破壞性程序。開始升級之前、請先檢閱一般升級案例和升級考量事項：</block>
   <block id="7679a865afb03bdbcc1cbd8757f79d09" category="list-text"><block ref="7679a865afb03bdbcc1cbd8757f79d09" category="inline-link-macro-rx"></block></block>
   <block id="70df8f2f5459940187f1edf7420f9c6b" category="paragraph">若要透過移動儲存設備進行升級、請準備原始節點並設定新節點。部分平台機型支援將內部儲存設備傳輸至新節點。您可以重新指派磁碟、並將根磁碟區組態還原至新節點、並設定網路連接埠。</block>
@@ -4501,7 +4464,6 @@
   <block id="a413d295f5d536c0e6c64fa5cd9479fb" category="cell">AFF A50 、 AFF A30</block>
   <block id="724bf3ae18d86521a5b9d77a13fcfddb" category="cell">AFF C80</block>
   <block id="b9234e77b4a8b2f78eab4a2947850612" category="inline-link-macro">支援的系統對照表</block>
-  <block id="2472f42d5b7cd821b446998ec10cc3d7" category="paragraph">節點 1 及替換模組現已準備好開機。支援的替換模組列於<block ref="8badcb7c18eeb5ec98f79dc01581f13d" category="inline-link-macro-rx"></block>中。</block>
   <block id="cd021900ed941327c8cbaab423602fea" category="paragraph">更換控制器模組時，請將所有連線從舊連接移至更換的控制器模組。</block>
   <block id="ca76cff03dc67711aed20c19584f555a" category="paragraph">更換控制器和 NVRAM 模組時，請僅移動主控台和管理連線。</block>
   <block id="32fc669b4855ba474461c53a3b65197d" category="list-text">（僅限 AFF A250 ， AFF C250 ， AFF A800 或 AFF C800 升級）在 Loader 提示下，進入維護模式：</block>
@@ -4542,7 +4504,6 @@
   <block id="7be812dd65bbd3f39bbb06fd50caac76" category="list-text"><block ref="7be812dd65bbd3f39bbb06fd50caac76" category="inline-link-macro-rx"></block></block>
   <block id="3a7170fc4a84869f969e046621bc8c18" category="inline-link">NetApp錯誤線上錯誤編號1127315</block>
   <block id="7e3f4ab9cf33dd84dd92d4491c7263da" category="list-text"><block ref="7e3f4ab9cf33dd84dd92d4491c7263da" category="inline-link-rx"></block></block>
-  <block id="29f0fa6d1a27f17f1b4884d6a3e9c28f" category="list-text">如果您是從現有系統升級<block ref="d463ec7d55f485d162a89eaf4dff8371" category="inline-xref-macro-rx"></block>，但中包含停機時間，您可以移動儲存設備或聯絡技術支援部門，來升級控制器硬體。請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至 _ 透過移動磁碟區或儲存設備進行升級 _ 。</block>
   <block id="316abd6cd53d12f8bf03ae8388826d10" category="doc">在 node2 上安裝 AFF A30 ， AFF A50 ， AFF C30 或 AFF C60 模組</block>
   <block id="bdb39b5926a304a8f387b036b6fd9445" category="list-text">將儲存系統放在機櫃或電信機架中央的軌道上、然後從底部支撐儲存系統、並將其滑入定位。</block>
   <block id="b9772390f34f13ee0716466b74abfc71" category="admonition">在程序稍後的指示下，請勿將控制器模組完全插入機箱。</block>
@@ -4639,7 +4600,6 @@
   <block id="c66431825370525b71d1cf42669b4ad1" category="paragraph"><block ref="03d492bafa8bfc48b6d8087b415cb7c8" prefix="" category="inline-code"></block></block>
   <block id="cbf9a76a9a31fb5d20cbab55c42d6eb4" category="paragraph">在將 node2 替換爲 node4 之前，您需要爲 node2 發送 AutoSupport 消息，然後將 node2 擁有的非根聚合重新定位到 node3 。</block>
   <block id="a2f8774c7412a03482b475c596da177f" category="list-text">傳送 AutoSupport 訊息至 NetApp for node2 ：</block>
-  <block id="726243540d365dca09b0baa8a651d18b" category="list-text">重新部署非根集合體：</block>
   <block id="4b183b97df2f1d6ce9c112a7ed3e980c" category="paragraph">重新配置會在背景中進行。重新部署集合體可能需要幾秒鐘到幾分鐘的時間。時間包括用戶端中斷和非中斷部分。此命令不會重新定位任何離線或受限制的集合體。</block>
   <block id="ce3a9a61e80721a6fb4afa31a98b6267" category="paragraph">在重新定位集合之後，輸出會顯示「完成」。</block>
   <block id="d8a4c81968f4b397fdbe83d1475d852c" category="list-text">確認 node2 沒有任何線上非根集合體：</block>
@@ -4686,7 +4646,6 @@
   <block id="09fd616bd129dbb6b064a8d755638ea6" category="inline-link-macro">將節點 2 磁碟重新指派給節點 4 ，步驟 9</block>
   <block id="efbbd979af9db0d702ab6a5273480e16" category="paragraph">node3 的軟體組態必須符合 node3 的實體連線能力，而且必須先還原網路連線能力，才能繼續升級。</block>
   <block id="0750b6fd70b5c02e0dc63a82e8430e4a" category="admonition">在此過程中，請勿將集合體從 node3 重新定位至 node2 。如此一來，集合體就會離線，而移轉的集合體則會發生資料中斷。</block>
-  <block id="569f02d62115823f4fea09e43e09614c" category="list-text">驗證是否已在 node3 上正確設置了合作伙伴系統 ID ：</block>
   <block id="fb0111f9cd842757d08889f0a7863a8b" category="list-text">在 node3 上顯示合作夥伴系統 ID ：</block>
   <block id="5a17539dbeea2e1642b36b86ee06822c" category="paragraph"><block ref="089ce08d08dd1b75c3f614830a776a5d" prefix="" category="inline-code"></block></block>
   <block id="6015ee0c3c4dbc37f534783a65239e72" category="example-title">顯示範例</block>
@@ -4761,7 +4720,6 @@
   <block id="5e5ea622fae7536bc86af7f458b72c82" category="paragraph">如果升級控制器時出現任何問題，請參閱<block ref="d170dd544fa530f9129069c7fbfdc956" category="inline-link-macro-rx"></block>部分。有關可能發生的故障的資訊按過程階段列出，位於<block ref="8d67bce17772a82227e57f45fab19967" category="inline-link-macro-rx"></block> 。</block>
   <block id="20d941e77026ae8ce1f7960037569d8a" category="inline-link-macro">使用 ARL 升級控制器的指南</block>
   <block id="ad37cb22fa2be28796074eb07740fcc0" category="list-text">此程序相當複雜、假設您具備進階ONTAP 的功能不完整的管理技能。您還必須閱讀並理解<block ref="29a777f478b575f6de532dbc614acf56" category="inline-link-macro-rx"></block>和<block ref="25c64b56e1634b7195570b2ce4c1228b" category="inline-link-macro-rx"></block>在開始升級之前。</block>
-  <block id="8b21e9b95f604354c13a34d474ccbb41" category="admonition">對於某些控制器升級，您可以使用聚合重定位來升級具有內部磁碟機的系統。<block ref="9a4bb8e5ecd8c78c6c81f07972a0f610" category="inline-link-macro-rx"></block>。</block>
   <block id="dbc1fd5a23bc6b740244f75d960b1e10" category="doc">透過行動儲存工作流程進行升級</block>
   <block id="b0015c54c1bbb0e310d3dcd2ae34c8df" category="doc">透過行動卷工作流程進行升級</block>
   <block id="892ec2dad40436ef5448c89d8134c110" category="doc">完成移動卷升級</block>
@@ -4801,7 +4759,6 @@
   <block id="9c936df3ea153c74d872576b972cfc63" category="cell"><block ref="9c936df3ea153c74d872576b972cfc63" category="inline-link-macro-rx"></block></block>
   <block id="8cb1597db65a7387842cef341e165e21" category="cell"><block ref="8cb1597db65a7387842cef341e165e21" category="inline-link-macro-rx"></block></block>
   <block id="0f82d37b39d321fc9b25cdd372b37e32" category="cell"><block ref="0f82d37b39d321fc9b25cdd372b37e32" category="inline-link-macro-rx"></block></block>
-  <block id="c76662e993de5ab0f1eb25d582914989" category="paragraph">帶有替換模組的 node2 現在可以開機了。支援的替換模組列於<block ref="8badcb7c18eeb5ec98f79dc01581f13d" category="inline-link-macro-rx"></block>中。</block>
   <block id="3803a496b59603445ff8102b5b762db9" category="cell">e1a（使用 e1a 進行臨時群集互連）</block>
   <block id="05078edefd215e2eb6ebd175b2f619a9" category="cell">e1b（使用 e1b 進行臨時群集互連）</block>
   <block id="6fd5e95dc0bce8329da87e1152677b48" category="cell">不需要</block>
@@ -4839,7 +4796,6 @@
   <block id="f4e202b16d4110d20d433ad7438f5314" category="list-text">AFF A250 和 AFF C250 系統使用 10/25 GbE 板載埠進行群集互連。若要將 AFF A250 或 AFF C250 系統的雙節點無交換器叢集升級至 AFF A50、AFF A30、AFF C60 或 AFF C30 系統，必須在兩個節點的插槽 1 使用 X60132A 4 連接埠 10/25 GbE 卡。這為叢集 LIF 提供了與目標平台上臨時連接埠的叢集互連。</block>
   <block id="78c398b9af8fd88a6f91bb80a4953770" category="paragraph">在 node2 上安裝您收到的用於升級的替換控制器模組。從系統後方看控制器時，節點 2 是位於機殼下半部的控制器 B。</block>
   <block id="9b44a31a05d8aaba8e74ed9fbe14e789" category="list-text">對於雙節點無交換器配置，請確認節點 2 上的插槽 1 已安裝 X60132A 4 連接埠 10/25 GbE 卡。升級期間，叢集互連需要 X60132A 卡。</block>
-  <block id="568dca3900cf222d69b642e60354ebc8" category="paragraph">除非將替換控制器模組安裝在機箱中並開啟電源，否則無法檢查其啟動媒體上安裝的 ONTAP 版本。替換系統開機媒體上的 ONTAP 版本必須與您要升級的舊系統上執行的 ONTAP 版本相同、而且開機媒體上的主要開機映像和備份開機映像都必須相符。若要驗證升級所需的最低 ONTAP 版本，請參閱<block ref="52d7cf77f93561ecdeaa91d81a4c035b" category="inline-link-macro-rx"></block> 。</block>
   <block id="a7632bc525df3f119a06420f80bce02b" category="list-text">清除啟動媒體上的所有先前配置。</block>
   <block id="85c959b092ae248c6236b1f442d3cbeb" category="list-text">在以下提示符號下，執行<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>命令，然後按回車鍵：</block>
   <block id="b658f4f5938289ac1a7001b05fddd0b2" category="admonition">等待節點完成啟動選單後停止<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>手術。</block>
@@ -4902,7 +4858,6 @@
   <block id="064ec30fe59f186a96ff3a7e79b1e783" category="section-title">此 ARL 程式不支援升級</block>
   <block id="66cdfd07ff0fbee9893a68a3166c5bfc" category="paragraph">在下列情況下，您不能使用此 ARL 流程來升級一對節點：</block>
   <block id="be9f82c7235ff72f6fd3d42c68cd413e" category="paragraph">下表顯示了 ONTAP 9.15.1 或更高版本中引入的 AFF 和 FAS 系統使用 ARL 支援的控制器升級組合。如果您的控制器升級組合未列出，請聯絡技術支援。</block>
-  <block id="d73475334ea9f3a270694cffcdf3c214" category="paragraph">如果在升級控制器時發生任何問題、請參閱 <block ref="b67d05b64e9d4ae5d62b287f015eac9d" category="inline-link-macro-rx"></block> 以取得更多資訊和可能的解決方案。</block>
   <block id="c1003b834b455285971eb1c777fc1ebb" category="paragraph">升級控制器硬體有多種聚合重定位 (ARL) 方法。此 ARL 流程介紹如何在保留現有資料和磁碟的情況下，使用新控制器升級 ONTAP 9.15.1 或更高版本中引入的 AFF 和 FAS 儲存系統中的 HA 控制器對。</block>
   <block id="06727a9cd6d12b6c8838b9bb7623731f" category="list-text">如果系統進入重新開機迴圈並顯示訊息、表示磁碟重新<block ref="bc1d3ad68c46835686e44d5c5c600a71" prefix=" " category="inline-code"></block>指派有問題。請參閱 <block ref="d170dd544fa530f9129069c7fbfdc956" category="inline-link-macro-rx"></block> 以解決此問題。</block>
   <block id="dbc81fa6dbd491d7e15e2010ef2df8eb" category="cell"><block ref="dbc81fa6dbd491d7e15e2010ef2df8eb" category="inline-link-macro-rx"></block></block>
@@ -4929,7 +4884,6 @@
   <block id="b3b5d42abc670ac795f4b90cfc221655" category="paragraph"><block ref="cb38fc2887221a0ca6581f1d73b29ec5" prefix="" category="inline-code"></block></block>
   <block id="028c6aaad70991eeba5c4bb66ea88329" category="paragraph">這<block ref="d6d2e75e827fff3babc66bc7cd4d2c4b" prefix=" " category="inline-code"></block>使用此命令的方法可以在上一個命令的輸出中找到<block ref="0c5606ed319753bb2d86a485f23c8f6d" prefix=" " category="inline-code"></block>命令。</block>
   <block id="7edece7677f8bef06093b6be08879c67" category="paragraph"><block ref="b79a4da2e325c3015ed2f7afe206a96b" prefix="" category="inline-code"></block></block>
-  <block id="a29df3ccd4c80ed70466ab7e616060db" category="paragraph"><block ref="c1415a35d798d0e1bc89dfc239e96300" prefix="" category="inline-code"></block> &lt; <block ref="d6d2e75e827fff3babc66bc7cd4d2c4b" prefix=" " category="inline-code"></block>使用此命令的方法可以在上一個命令的輸出中找到<block ref="0c5606ed319753bb2d86a485f23c8f6d" prefix=" " category="inline-code"></block>命令。</block>
   <block id="316bb78c78d8c5d743c44432528cc2c4" category="paragraph"><block ref="4221e144bb878e9d4c97a49eaf2eb814" prefix="" category="inline-code"></block></block>
   <block id="4d090b6b4178c6d326829a98b05a4cd7" category="paragraph"><block ref="534a01a4ca515955efe8376e84615e84" prefix="" category="inline-code"></block></block>
   <block id="b7836a7a1972d5f8803e2f44bd3cb658" category="paragraph"><block ref="49166cc15e848fc049881c3de5e1d1f8" prefix="" category="inline-code"></block><block ref="6d203e2c19155492a108b65377909131" prefix=" " category="inline-code"></block></block>
@@ -4963,7 +4917,6 @@
   <block id="61decb38566b6125e910fda107613c86" category="cell">前往<block ref="0d500821bdc96d479f52180017fd421c" category="inline-link-macro-rx"></block>。</block>
   <block id="2b23c6643a7989ea797dcc7318e69941" category="cell"><block ref="08a38277b0309070706f6652eeae9a53" prefix="" category="inline-code"></block></block>
   <block id="42eed74bc7449c06a58949763bc19a72" category="cell">前往<block ref="5b8028286d92c73a97e17186fd614dd6" category="inline-xref-macro-rx"></block>。</block>
-  <block id="b124461fc46687d506b67d1ab775e491" category="list-text">檢查叢集連接埠和交換器 RCF。</block>
   <block id="e2ee618006d829a530b146576cce509a" category="list-text">驗證「IC RDMA 連線」狀態是否已變更為<block ref="258f49887ef8d14ac268c92b02503aaa" prefix=" " category="inline-code"></block>：</block>
   <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">下一步</block>
   <block id="0d500821bdc96d479f52180017fd421c" category="paragraph"><block ref="0d500821bdc96d479f52180017fd421c" category="inline-link-macro-rx"></block></block>
@@ -5126,7 +5079,6 @@
   <block id="1c89ca7629177ffaec440b31de61e887" category="sidebar">從FAS2820升級</block>
   <block id="10952bb20745dcf0f30d5dd264d03924" category="sidebar">了解如何從FAS2820升級</block>
   <block id="220b7076a9e851bf1e13056c1e583d05" category="paragraph">您可以使用<block ref="773b5d44fd1b5ae080ff3a379be13169" prefix=" " category="inline-code"></block>命令查看或驗證目前連接埠配置，如以下範例輸出所示：</block>
-  <block id="2a73f4871f45ffc6a9f01730de436222" category="paragraph">UTA/UTA2 連接埠可能位於附加適配器或控制器主機板上，並具有以下配置，但您應該檢查節點 3 上的 UTA/UTA2 連接埠的配置並在必要時進行變更：</block>
   <block id="c594ac60ecfaa8945df018f2ca32a141" category="admonition">您必須處於維護模式才能設定 UTA/UTA2 連接埠。在維護模式 shell 提示字元下輸入本節中的命令。</block>
   <block id="d5f0cabb5a163f2af827009890866160" category="list-text">驗證 UTA/UTA2 連接埠設定：</block>
   <block id="beaeb1b2c5fc204b2484aafd9e9f6f0d" category="paragraph">檢查輸出並確定 UTA/UTA2 連接埠是否具有您想要的個性。</block>
@@ -5167,7 +5119,6 @@
   <block id="8762049cc66fa921ae6bcffe8755d4e6" category="admonition">*請勿超越延遲；如果電池無法充電，可能會導致資料遺失。 *</block>
   <block id="3b4a6d51e129532942e72a2637a3248a" category="paragraph">使用 node3 平台的《安裝與設定說明》、對應的磁碟架文件和《HA 對管理》文件連接以下連線。</block>
   <block id="621db0217765431b65fd2df9431bc8c1" category="paragraph">您可能需要完成<block ref="b22a2e603d310a795a7b59d2bdda39ee" category="inline-xref-macro-rx"></block>或者<block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block>或兩個部分。</block>
-  <block id="bc7c7cb879348cd44e26c92f94f95bf6" category="admonition">由於此過程假設更換的控制器硬體是新的且未使用過，因此準備使用過的控制器所需的步驟與<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>命令不包含在此過程中。如果之前使用過替換控制器硬件，則必須聯絡技術支持，尤其是當控制器在 7 模式下運行Data ONTAP時。</block>
   <block id="4bd95100dfdd41a46154bae000c5b050" category="admonition">不要嘗試清除NVRAM內容。如果需要清除NVRAM的內容，請聯絡NetApp技術支援。</block>
   <block id="dbe7ddc508cb8ca92b05d2610724662c" category="admonition">除非指示進入維護模式，否則請在叢集提示字元下輸入本節中的命令。如果您有MetroCluster FC 系統，則必須處於維護模式才能設定 UTA/UTA2 連接埠。</block>
   <block id="0e98bb417c519b40ee1d3347c345b891" category="list-text">[[man_check_4_Step5]]如果系統有儲存磁碟並且正在執行Data ONTAP 8.3，則啟動 node4 並進入維護模式：</block>
@@ -5251,7 +5202,6 @@
   <block id="b03f4dc28a467dbdb927171247a0b5b9" category="list-text">如果您的系統具有 FC 或 UTA/UTA2 配置，<block ref="a5fd50e267aa742edfb254af48aa31df" category="inline-link-macro-rx"></block> 。</block>
   <block id="84778c2e84fe5df40eb6e09940c8e6da" category="inline-link-macro">將 node2 磁碟重新分配給 node4，步驟 1</block>
   <block id="cb0e98223d1b689567ca884a4ed62d2f" category="list-text">如果您沒有 FC 或 UTA/UTA2 配置，<block ref="77bda7bfb356817385991b20570adf55" category="inline-link-macro-rx"></block>這樣node4就可以辨識node2的磁碟。</block>
-  <block id="d043c2da61f7d367f9629fa3d167d15a" category="list-text">[[step8]]跳過此部分並轉到<block ref="eaad59cad2124997123e3f040ef5cb96" category="inline-link-macro-rx"></block>如果 node4 沒有 UTA/UTA2 卡或 UTA/UTA2 板載連接埠。</block>
   <block id="187112eef07fb14778dfdc513543ea21" category="list-text">[[auto_check_4_step10]]退出維護模式：</block>
   <block id="5407697632a0e9289cbc1571bb74a606" category="list-text">對於所有其他系統升級，請訪問<block ref="344c6df46b49421d4efd3ea3dc243233" category="inline-link-macro-rx"></block>。</block>
   <block id="532277e802a820c7b240fc524a2dec1d" category="list-text">透過執行以下命令將節點啟動到啟動選單<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>。</block>
@@ -5259,7 +5209,6 @@
   <block id="90d15882071659f5c278c3188642dcdd" category="list-text">對於所有其他系統升級，請訪問<block ref="85de4eaf81abb5e5b335f49a296af5f4" category="inline-link-macro-rx"></block>。</block>
   <block id="1f3fcdf9022a6aa0f67562f35de18fd5" category="admonition">在此階段， MetroCluster配置不會處於正常狀態，您可能需要解決錯誤。看<block ref="14c0e32a98a31f9fd4a16b635b2f7ebd" category="inline-link-macro-rx"></block>。</block>
   <block id="eae0d196e9a099a5039af7d8b6c1eb85" category="admonition">托架 B 位於底盤的右側。</block>
-  <block id="36e28ccc6b6e4a11682d10de117d21e0" category="admonition">由於機箱已通電，因此節點 2 在完全就位後立即開始啟動。若為防止節點 2 啟動，請在完全插入控制器模組之前連接控制台和管理電纜。</block>
   <block id="851d3d8a0258ed7660584e68159aae4e" category="inline-link-macro">設定並配置節點 3 上的 FC 或 UTA/UTA2 連接埠</block>
   <block id="9066510c72210c33ee0037190ab1e1ff" category="list-text">如果您的系統具有 FC 或 UTA/UTA2 配置，<block ref="a2860b8490ec5aaef9fa8fc42929bb0a" category="inline-link-macro-rx"></block> 。</block>
   <block id="f6195d58e46fb7461b72fc0f7cfb9d9e" category="inline-link-macro">將 node1 磁碟重新分配給 node3，步驟 1</block>
@@ -5279,7 +5228,6 @@
   <block id="cb46a1722edd0d184e8f5160da79aef5" category="cell">跳過_檢查並配置節點 3 上的 UTA/UTA2 連接埠_並前往<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block>。</block>
   <block id="2466a7dc80883b138ff2ff9dd6381cb2" category="list-text">如果您要升級到AFF A800系統，請前往<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>。</block>
   <block id="72bb382f624988c585ab0960bd64853a" category="paragraph">依照 node4 平台的《安裝與設定說明》、對應的磁碟架文件和《HA 對管理》中的說明，連接以下連接線。</block>
-  <block id="52c7a636e7de8a73f74cbbbbba1d2bf1" category="cell">連結： https://docs.netapp.com/us-en/ontap-/install/index.html</block>
   <block id="8ea9f47b485e9358783b1f1f3bd0f67e" category="paragraph">您可能需要完成<block ref="750d6dbe3bf1312d0d97a8f03a0d2304" category="inline-xref-macro-rx"></block>或者<block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>或兩個部分。</block>
   <block id="138a022be246afc5755a650cb07e42bf" category="list-text">如果 node3 沒有板載 FC 連接埠、板載 UTA/UTA2 連接埠或 UTA/UTA2 卡，且您正在升級具有儲存磁碟的系統，則可以跳至<block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block>。</block>
   <block id="ed601239c6d656a1963ef5d273a4656e" category="list-text">如果節點 3 沒有板載 FC 連接埠、板載 UTA/UTA2 連接埠或 UTA/UTA2 卡（例如，從ONTAP 9.15.1 開始引入的AFF和FAS系統），並且您正在升級具有儲存磁碟的系統，則可以跳至<block ref="3b6c063a8efbc88c969c7838f0611434" category="inline-link-macro-rx"></block>。</block>
@@ -5289,8 +5237,78 @@
   <block id="56bfe01fd4ea060925fdb4a5681a751e" category="list-text">對於AFF A800或AFF C800控制器升級，在移除節點 1 之前，必須確保機箱中的所有驅動器都牢固地固定在中板上。有關詳細信息，請參閱 <block ref="ba47371cb3a59dcddfa160e31dda2034" category="inline-link-macro-rx"></block>。</block>
   <block id="b73b0ab9c4b2187dc386ae1c43da7a8d" category="list-text">如果您透過在同一機箱中交換控制器模組（例如AFF A800或AFF C800）來升級系統， NetApp強烈建議使用升級程序<block ref="51f73d2815dfaf31a7f9c6af800582d7" category="inline-link-macro-rx"></block>。此 ARL 流程包括在升級過程中移除和安裝控制器時確保內部磁碟在機箱中保持安全的步驟。</block>
   <block id="04f0b7701d1f9864fc94b5ec9ec68b2d" category="paragraph"><block ref="50932ac5c7bb93210d274e46c6eba169" category="inline-link-macro-rx"></block>。</block>
-  <block id="31eca10b08fe3338a95b8415c5f3e0eb" category="paragraph">永久連結：upgrade-arl-auto-affa900/manage-authentication-using-kmip-servers.html 重定向：ontap-systems-upgrade/upgrade-arl-auto-in-chassis/manage-authentication-using-kmip-servers.html</block>
-  <block id="b17a443c8b1c59c4de1ea415914cd2f3" category="paragraph">永久連結：upgrade-arl-auto-affa900/resume_snapmirror_operations.html 重定向：ontap-systems-upgrade/upgrade-arl-auto-in-chassis/resume-snapmirror-operations.html</block>
   <block id="fcf09bf7ec3b71c764141820f1fc8020" category="paragraph">永久連結：upgrade-arl-auto-affa900/retire_node1.html 重定向：ontap-systems-upgrade/upgrade-arl-auto-in-chassis/retire-node1.html</block>
   <block id="21033397b04c40cfe5bfedb2ddbd85d7" category="paragraph">如果您的升級方案列在以下受支援系統矩陣中，請前往<block ref="19860560e89446d8ca0f4e7091d110a0" category="inline-link-macro-rx"></block>開始升級過程。</block>
+  <block id="066b4e06813cb4484b4d19373d95d0b8" category="paragraph">您可能會在附加適配器或控制器主機板上找到 UTA/UTA2 端口，並具有以下配置，但您應該檢查 node3 上的 UTA/UTA2 端口配置，並在必要時進行更改：</block>
+  <block id="78475a8af5a97db71bf76492940ae509" category="inline-link-macro">安裝並啟動 node4，步驟 22</block>
+  <block id="1559ddd5d383480aa8545cb986dfd8ed" category="list-text">[[unset_maxwait_system_commands]]如果在配置中使用自加密磁碟機並且您已設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block>變數<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block>（例如，在<block ref="84eec0795d86d5ec7c8468425b9e48d8" category="inline-link-macro-rx"></block>），您必須取消設定該變數：</block>
+  <block id="b8ef9e4414711297f1f6127d87d8e422" category="admonition">準備二手控制器所需的步驟<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>本程式不包含指令，因為本程式假定更換的控制器硬體是全新的，且未使用過。如果之前使用過替換控制器硬件，則必須聯絡技術支持，尤其是當控制器在 7 模式下運行Data ONTAP時。</block>
+  <block id="4e36bc200e35ce76e1def1c9847c6f6c" category="paragraph">您可以將輸出與您捕獲的輸出進行比較。<block ref="cec31d5141a762ae7d38f72febf6b8d9" category="inline-link-macro-rx"></block>準備節點進行升級。</block>
+  <block id="c88514cf6aa90bbe248ea107fd638b94" category="list-text">完全的<block ref="76543dc4b088af7954881ae9114056a2" category="inline-link-macro-rx"></block>在「將非根聚合從節點 1 遷移到節點 2」部分再次執行。</block>
+  <block id="2bd7251adb6cb85d06594cef2e46f762" category="list-text">透過完成以下操作來重新安置剩餘的骨材<block ref="c897e2b1fa0d7ad13f886cf1538be3eb" category="inline-link-macro-rx"></block>透過<block ref="5adaf2d8e29100eb9027e3120c811323" category="inline-link-macro-rx"></block>在「將非根聚合從節點 2 遷移到節點 3」部分。</block>
+  <block id="92755986e66b1c1b799f94e506b0e78b" category="list-text">完全的<block ref="5adaf2d8e29100eb9027e3120c811323" category="inline-link-macro-rx"></block>再次在「將非根聚合從節點 2 遷移到節點 3」部分。</block>
+  <block id="0b20a5d3b7dcba1ce2ef1c3a32c62b57" category="list-text">透過再次完成操作，重新定位屬於節點 2 的剩餘聚合。<block ref="bd44335b572d50c129363547aa87bcee" category="inline-link-macro-rx"></block>透過<block ref="c5be787c4fcfd0f49f014e8618d28c15" category="inline-link-macro-rx"></block>將節點 2 的非根聚合從節點 3 遷移到節點 4。</block>
+  <block id="7c83d808889f08051a5ca591ce7c8e27" category="list-text">[[relocate-step1]]透過完成以下子步驟來重新定位非根聚合：</block>
+  <block id="fc0d545a8e3aca29e30f066934728447" category="list-text">請確認節點3上的合作夥伴系統ID設定是否正確：</block>
+  <block id="dfcbf33b107ee8cbdb248e3973591ecd" category="list-text">[[relocate-step5]]重新定位非根聚合：</block>
+  <block id="ed787946b7250668aadee490b38bc4a4" category="section-title">我應該使用哪種升級程式？</block>
+  <block id="dd04b613766be00015be37c27c9287a8" category="paragraph">若要選擇合適的升級程序，請查看下表中列出的所有問題。</block>
+  <block id="40c8ff48fe09ea0079684fdd1a250ec0" category="cell">問問自己…</block>
+  <block id="3b67351e5cad04409e6a96d3746ac449" category="cell">如果你的答案是肯定的，你可以這樣做…</block>
+  <block id="7276d228ae5909a1600376ea04afcc20" category="cell">我在原節點和新節點上運行的軟體版本是否不同？</block>
+  <block id="d36d3c0e8d8d1ae2b69767c2d21f4de1" category="cell">將原始節點上的ONTAP版本升級到最高支援版本。如果條件允許，新節點必須支援在原始節點上執行的ONTAP版本。如果這不可能，<block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block>在原始節點上升級到最高支援版本。原節點和新節點之間的版本差不能大於 4。例如，支援ONTAP 9.8 和 9.12.1；但不支援ONTAP 9.8 和 9.13.1。<block ref="e34181b97f6f4b1fe67c330fb826ba03" category="inline-link-macro-rx"></block>。</block>
+  <block id="218b292436939056129ace4ef7a755ab" category="cell">我是否要進行顛覆性的升級？</block>
+  <block id="7556c42574b8863b01a23cb64beb17f6" category="cell"><block ref="8b9b2634fd898f04166a765851aba8f2" category="inline-link-macro-rx"></block>。這需要一個全新的系統，配備自己的儲存設備和貨架，用於儲存來自原始系統的資料。對於某些升級，可以從控制器機架進行轉換。</block>
+  <block id="8988c8c891d1b170244fa2801c8f7823" category="cell">我是否要執行無中斷升級？</block>
+  <block id="2f5546c2bb23945783cbdb6d6e128cdf" category="paragraph">請使用以下方法之一進行升級：</block>
+  <block id="0678555704a75d8c6ba937ca89e44347" category="inline-link-macro">成交量</block>
+  <block id="7a5d9d481746c5a733396a92b9fa9ad9" category="list-text"><block ref="7a5d9d481746c5a733396a92b9fa9ad9" category="inline-link-macro-rx"></block></block>
+  <block id="7c15b3f4f4497023a45b26abfbd34fa1" category="paragraph">這需要將新節點加入集群，將捲和 LIF 遷移到新節點，並將要從集群中移除的節點從集群中移除。如果您要升級一個雙節點無交換器集群，請在新增節點之前，請使用一對集群交換器將其轉換為交換器連接集群。</block>
+  <block id="6de3b933715f67f0e1503dadf7be11b5" category="inline-link-macro">使用聚合遷移</block>
+  <block id="1326c781e22221bcfee09723f0a2bfc2" category="list-text"><block ref="1326c781e22221bcfee09723f0a2bfc2" category="inline-link-macro-rx"></block></block>
+  <block id="af07e0611bc43f9c7f0e394b682e76a9" category="paragraph">ARL 是一種置換手術。您無需隨著新節點的加入而擴展和縮減集群，這對於雙節點無交換器集群來說是有利的。在移動磁碟區時，透過重新定位聚合來移動資料比跨聚合複製資料更快。</block>
+  <block id="999f41e22973138ebb057a2c18787f5b" category="cell">我的系統是模組化的嗎？  *注意*：在模組化系統中，控制器沒有任何內部磁碟，所有儲存都位於外部連接的儲存架中。</block>
+  <block id="48dea881883b05a136108fac6e95bcae" category="cell"><block ref="8f9fb90f68730e000102778c18115044" category="inline-link-macro-rx"></block>。</block>
+  <block id="87f099da08cbe3849d9395ec1b7d8604" category="cell">我是否擁有一個整合系統，並希望透過遷移卷來升級？ *註*：在整合系統中，控制器具有內部磁碟，儲存設備位於控制器機箱內以及外部連接的儲存架中。外部層架用於擴展儲存空間，可能並非每個系統配置都包含外部層架。</block>
+  <block id="03478f7299af730e1a78b0850b26043c" category="inline-link-macro">請確認您的系統受支援</block>
+  <block id="d66f8add2b0ea52e5e5255f9e37c4dfd" category="list-text"><block ref="a057e8af1198737f32477ae9faf7d879" category="inline-link-macro-rx"></block>。</block>
+  <block id="8362baab856f8e12516f78c5f4908211" category="list-text"><block ref="73d856629c7408ec32b9b5ffa5af9ed6" category="inline-link-macro-rx"></block>。</block>
+  <block id="bb9da06465d483320cbe6e41cf99dc3f" category="cell">我是否擁有一個整合系統，並且想要僅透過更換控制器模組進行升級，而保留現有的機箱和磁碟？</block>
+  <block id="6087f2f30b2a32c0234e7e376519a44e" category="inline-link-macro">使用 ARL 進行升級，保持原有機箱和硬碟不變。</block>
+  <block id="dfd865f2d8a7847deea386561d57d6ab" category="cell"><block ref="d5dab9ae669d9433d7055784bb29c8c7" category="inline-link-macro-rx"></block>。</block>
+  <block id="c016f2ad87c195aba089a085eb1654e7" category="cell">我是要遷移一個支援向量機（SVM）嗎？</block>
+  <block id="4fb2cb21dc3e75dde8f863702755da43" category="inline-link-macro">SVM 資料移動性概述</block>
+  <block id="1c42ed2b59214b87d822dd5017bc2e77" category="cell">參考<block ref="f5ec7b921dd29fa0a34c4b5d1f4565b8" category="inline-link-macro-rx"></block>。</block>
+  <block id="9ec7090eb33407e101e04bf9b69e3589" category="cell">我是在升級MetroCluster配置嗎？</block>
+  <block id="52e927fa9ff9982893744a27582c6c25" category="cell">參考<block ref="64af35d559b5326923c0d917526da292" category="inline-link-macro-rx"></block>。</block>
+  <block id="ee02ff06a678b4f0bf35d84ad8172be2" category="cell">我是在更換單一零件嗎？</block>
+  <block id="d65572507ebaf55db388e34a847557ea" category="cell">請參閱<block ref="bcf4c677eadf935a910ed0b1e7ac432c" category="inline-link-macro-rx"></block>並找到該組件的現場可更換單元 (FRU) 宣傳單。</block>
+  <block id="4c57db980fd04065c39ac4dffcef854a" category="section-title">例如： FAS9500升級到 FAS90</block>
+  <block id="18f154e130f3704e87f40b22af08eb89" category="paragraph">本範例展示了FAS9500到 FAS90 控制器升級的可能解決方案。</block>
+  <block id="a97ea56b0e00b2379736ae60869ff66a" category="cell">問題</block>
+  <block id="67ca848a550c561e54a81891f0d6d223" category="cell">範例答案</block>
+  <block id="be3ad2de4d2b8e3ba0b5c1aa4b8cb05b" category="cell">不。 FAS9500和 FAS90 都運行ONTAP 9.15.1。</block>
+  <block id="d3334963d764fa4e8de5f77317d6ec86" category="cell">我是否要執行一次可能造成嚴重後果的升級？</block>
+  <block id="5eeadbc38fb7c86d39e9b4b88587473b" category="cell">不，我希望在升級期間保持生產環境在線。</block>
+  <block id="980384b8326ad5f69899ae62e2ab1ecb" category="cell">是的。根據我的系統是模組化的還是整合的，我可以透過移動磁碟區或使用聚合重定位 (ARL) 來升級。</block>
+  <block id="639cdefe077091e96c8787665fcbb7ca" category="cell">我的系統是模組化的嗎？</block>
+  <block id="1a4026ddffb82b6b9ac717175bed5832" category="cell">是的。FAS9500是一款具有外部儲物架的模組化系統。我可以透過ARL進行升級。</block>
+  <block id="6b5453e8fcd8e2749847ab38c45261c3" category="cell">我是否擁有一個整合系統，並希望透過遷移卷來升級？</block>
+  <block id="9af392aee692c2ff21ce87eb631be389" category="cell">不。 FAS9500是一個模組化系統，所以這不適用。</block>
+  <block id="575a6b1f82c7a41dfcc1260ff9935fcc" category="cell">不，我是在升級硬體的同時，保留原有的SVM。</block>
+  <block id="5d32d7e49401b6906ebfeb106c811c06" category="cell">不，這是一個標準的HA集群。</block>
+  <block id="01f86cedd6c4c38a70b4de409ea5b9cd" category="cell">不，我正在升級整個控制器系統。</block>
+  <block id="c608ae28350f6ab483c6756e71344bef" category="paragraph">*本範例建議升級路徑：*<block ref="a1631b4a67814fc247ed3125116eb66b" category="inline-link-macro-rx"></block>因為FAS9500是一個模組化系統，而 ARL 提供了一種無中斷升級方法。</block>
+  <block id="8ae064b1f26a14a321bdd37f8e7c147b" category="cell">AFF C60和AFF C80</block>
+  <block id="a01ca45740c62abf88d40d7c6b75626c" category="paragraph">^2^如果您要升級到AFF A800或支援內部和外部磁碟的系統，則必須按照內部 NVMe 磁碟上的根聚合的特定說明進行操作。請參閱<block ref="13193a83e6d1d3a0ad7f7d39140ab8c7" category="inline-link-macro-rx"></block>和<block ref="e81929257c1b77de68576a8a37b1e464" category="inline-link-macro-rx"></block>。</block>
+  <block id="8ea4792550e67c99e46356bbdb3b5adc" category="paragraph">如果在升級控制器過程中出現任何問題，請參閱以下內容：<block ref="d170dd544fa530f9129069c7fbfdc956" category="inline-link-macro-rx"></block>部分。流程各階段列出的故障資訊如下：<block ref="1e7f97890c56f8e84d1c3bfb7b3e84a7" category="inline-link-macro-rx"></block> 。</block>
+  <block id="9461d51010fac8414124b0927dca8e3d" category="list-text">如果您有MetroCluster配置，<block ref="a5fd50e267aa742edfb254af48aa31df" category="inline-link-macro-rx"></block>檢測連接到節點的磁碟。</block>
+  <block id="576aba72a7a92b2c78395c8632ac2b4a" category="admonition">您在此階段可能會遇到錯誤。如果發生錯誤，請重複以下子步驟：<block ref="3d86a68aa8fb2ef1661a4814f02f3b64" category="inline-xref-macro-rx"></block>直到系統正常啟動。</block>
+  <block id="1b251a6545aaa60cfce829c062bad4c6" category="paragraph">如果在升級控制器過程中出現任何問題，請參閱<block ref="d170dd544fa530f9129069c7fbfdc956" category="inline-link-macro-rx"></block>了解更多資訊和可能的解決方案。</block>
+  <block id="7595b5b2f33e67aef80e7fb106f5d9c7" category="paragraph">安裝了替換模組的 Node1 現在可以啟動了。支援的替換模組列表如下：<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block> 。</block>
+  <block id="814388f801b80ae9095417204e6c9db9" category="paragraph">安裝了替換模組的 Node2 現在可以啟動了。支援的替換模組列表如下：<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block> 。</block>
+  <block id="03abda8c19912cead385e464a7c36590" category="list-text">如果您是從現有系統升級，並且停機時間包含在內，<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block>您可以透過行動儲存裝置或聯絡技術支援來升級控制器硬體。請參閱<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>連結到 _透過移動卷或儲存進行升級_。</block>
+  <block id="b2cf47c2f8de48c91a2658d1bae42ab8" category="admonition">由於機箱已經通電，節點 2 一旦完全就位就會立即啟動。若為防止節點 2 啟動，請在完全插入控制器模組之前連接控制台和管理電纜。</block>
+  <block id="914a76ca2b7f6ddaae8d7322d8dfd459" category="paragraph">除非將替換控制器模組安裝到機箱中並通電，否則無法檢查安裝在替換控制器模組啟動媒體上的ONTAP版本。替換系統啟動媒體上的ONTAP版本必須與要升級的舊系統上執行的ONTAP版本相同，且啟動媒體上的主啟動映像和備份啟動映像必須相符。若要確認升級所需的最低ONTAP版本，請參閱<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block>。</block>
+  <block id="fa25f8cd417cf37165c34fcb9720ffe3" category="list-text">[[verify-rcf-step3]]檢查叢集連接埠並切換 RCF。</block>
 </blocks>

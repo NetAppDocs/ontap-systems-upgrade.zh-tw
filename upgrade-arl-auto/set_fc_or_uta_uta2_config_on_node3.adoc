@@ -118,7 +118,7 @@ Adapter  Mode     Type       Mode      Type         Status
 ....
 UTA/UTA2連接埠可設定為原生FC模式或UTA/UTA2模式。FC模式支援FC啟動器和FC目標；UTA/UTA2模式允許同時NIC和FCoE流量共用相同的10GbE SFP+介面、並支援FC目標。
 
-UTA/UTA2 連接埠可能位於附加適配器或控制器主機板上，並具有以下配置，但您應該檢查節點 3 上的 UTA/UTA2 連接埠的配置並在必要時進行變更：
+您可能會在附加適配器或控制器主機板上找到 UTA/UTA2 端口，並具有以下配置，但您應該檢查 node3 上的 UTA/UTA2 端口配置，並在必要時進行更改：
 
 * 訂購控制器時所訂購的UTA/UTA2卡、在出貨前已設定為具有您要求的特性設定。
 * 與控制器分開訂購的UTA/UTA2卡會隨附預設FC目標特性。

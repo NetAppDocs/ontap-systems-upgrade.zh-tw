@@ -62,7 +62,7 @@ NOTE: 如果您的控制器升級模式組合不在上表中、請聯絡技術�
 
 支援針對AFF 該系統的^1^ARL自動升級ONTAP 功能、可從Ze 9.7P2取得。
 
-^2^如果您要更新AFF 至支援內部和外部磁碟的FSIFA800或系統、則必須遵循內部NVMe磁碟上根Aggregate的特定指示。請參閱 link:set_fc_or_uta_uta2_config_on_node3.html#step14["檢查並設定節點3步驟14上的UTA/UTA2連接埠"] 和 link:set_fc_or_uta_uta2_config_node4.html#step14["檢查並設定節點4步驟14上的UTA/UTA2連接埠"]。
+^2^如果您要升級到AFF A800或支援內部和外部磁碟的系統，則必須按照內部 NVMe 磁碟上的根聚合的特定說明進行操作。請參閱link:reassign-node1-disks-to-node3.html#auto_check3_step9["將 node1 磁碟重新指派給 node3 ，步驟 9"]和link:reassign-node2-disks-to-node4.html#auto_check_4_step9["將 node2 磁碟重新指派給 node4 ，步驟 9"]。
 
 從AFF We 9.7P5 AFF 支援從32 A300自動升級至32 A800系統的^3^ARL ONTAP 。
 

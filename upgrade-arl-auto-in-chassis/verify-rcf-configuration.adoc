@@ -41,7 +41,7 @@ summary: 驗證叢集交換器 RCF 是否支援用於交換器連接叢集升級
 
 | `Down` | 前往<<verify-rcf-step3,步驟3.>>。 
 |===
-. 檢查叢集連接埠和交換器 RCF。
+. [[verify-rcf-step3]]檢查叢集連接埠並切換 RCF。
 +
 如需更多資訊、請參閱 link:cable-node1-for-shared-cluster-HA-storage.html#connect-switch-attached-cluster["連線至交換器連接的叢集"]。
 

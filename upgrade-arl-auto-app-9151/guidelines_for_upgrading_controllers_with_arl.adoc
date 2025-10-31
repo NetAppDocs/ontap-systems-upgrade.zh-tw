@@ -59,6 +59,6 @@ NOTE: 在每個節點上執行超過兩個叢集連接埠的控制器升級、�
 
 == 疑難排解
 
-如果在升級控制器時發生任何問題、請參閱 link:aggregate_relocation_failures.htmll["疑難排解"] 以取得更多資訊和可能的解決方案。
+如果在升級控制器過程中出現任何問題，請參閱link:aggregate_relocation_failures.html["疑難排解"]了解更多資訊和可能的解決方案。
 
 如果您找不到解決所遇到問題的解決方案、請聯絡技術支援部門。

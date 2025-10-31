@@ -26,7 +26,7 @@ entries:
   - title: 將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2
     url: "/upgrade-arl-auto-in-chassis/relocate-non-root-aggr-and-nas-data-lifs-node1-node2.html"
   - title: 重新部署故障或被否決的集合體
-    url: "/upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node1.html"
+    url: "/upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node2.html"
   - title: 淘汰節點1
     url: "/upgrade-arl-auto-in-chassis/retire-node1.html"
   - title: 更換 node1 系統模塊
@@ -58,7 +58,7 @@ entries:
   - title: 將非根Aggregate和NAS資料LIF從節點2重新定位至節點1
     url: "/upgrade-arl-auto-in-chassis/relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html"
   - title: 重新部署故障或被否決的集合體
-    url: "/upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node2.html"
+    url: "/upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node1.html"
   - title: 淘汰節點2
     url: "/upgrade-arl-auto-in-chassis/retire-node2.html"
 - title: 階段 5.在 node2 上安裝替換系統模組

@@ -17,7 +17,7 @@ summary: 將非根Aggregate從node1移至node2、並在執行ONTAP 《Esce9.8或
 您必須先使用儲存Aggregate replace命令將非根Aggregate從node1移至node2、然後再驗證重新配置、才能將node1替換為node3。
 
 .步驟
-. [[step1]]完成下列子步驟、重新部署非根集合體：
+. [[relocate-step1]]透過完成以下子步驟來重新定位非根聚合：
 +
 .. 將權限層級設為進階：
 +

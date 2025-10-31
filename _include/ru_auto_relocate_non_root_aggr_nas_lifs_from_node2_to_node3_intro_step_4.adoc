@@ -47,7 +47,10 @@ aggr_2         825.0GB      825.0GB      0%     online  1      node2  raid_dp  n
 如果節點3上有任何磁碟區離線、請在節點3上使用下列命令將其上線、每個磁碟區一次：
 
 +
-`volume online -vserver <vserver_name> -volume <volume_name>` <  `vserver_name`使用此命令的方法可以在上一個命令的輸出中找到 `volume show`命令。
+`volume online -vserver <vserver_name> -volume <volume_name>`
+
++
+這 `vserver_name`使用此命令的方法可以在上一個命令的輸出中找到 `volume show`命令。
 
 . 驗證是否已將lifs移至正確的連接埠、且狀態為「up」。如果有任何生命中斷、請輸入下列命令、並針對每個LIF輸入一次、將該生命的管理狀態設定為「UP」：
 +

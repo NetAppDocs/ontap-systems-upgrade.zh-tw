@@ -80,7 +80,12 @@ Boot_ONTAP功能表
 . 從開機功能表中選取「5」選項以進行維護模式。
 
 
-. [[step8]]跳過此部分並轉到link:reassign-node2-disks-to-node4.html["將 node2 磁碟重新指派給 node4"]如果 node4 沒有 UTA/UTA2 卡或 UTA/UTA2 板載連接埠。
+. [[step8]請採取下列其中一項行動：
++
+** 前往 <<檢查並設定節點4上的UTA/UTA2連接埠>> 如果節點4有UTA/UTA2卡或UTA/UTA2內建連接埠。
+** 如果 node4 沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口，請跳過“檢查並配置 node4 上的 UTA/UTA2 端口”並轉到link:reassign-node2-disks-to-node4.html["將 node2 磁碟重新指派給 node4"]。
+
+
 
 
 
