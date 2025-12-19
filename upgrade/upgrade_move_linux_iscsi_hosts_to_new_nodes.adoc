@@ -493,3 +493,6 @@ sanlun lun show -p
 multipath -ll -d
 ----
 
+
+.接下來呢？
+link:upgrade-create-aggregate-move-volumes.html["建立Aggregate並將磁碟區移至新節點"]

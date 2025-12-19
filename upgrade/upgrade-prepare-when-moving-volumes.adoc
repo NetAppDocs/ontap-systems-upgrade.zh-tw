@@ -49,3 +49,6 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["使用NetApp CN161
 「系統節點AutoSupport 無法叫用-node_node_name_-type all -messing node_name from _platform _instite_to _platform _new_"（將節點名稱從_platform _instite_升級 至_platform _new_"）」
 
 
+
+.接下來呢？
+link:upgrade-install-and-join-new-nodes-move-vols.html["安裝新節點並將其加入叢集"]

@@ -35,7 +35,7 @@ summary: 視叢集內容和叢集環境而定、您需要移動、刪除或建�
 
 == 刪除不再需要的 SAN LIF
 
-如果叢集位於SAN環境中、您必須先從原始節點刪除不再需要的任何SAN LIF、才能從叢集取消加入原始節點。
+如果叢集位於 SAN 環境中，則必須先從原始節點中刪除不再需要的任何 SAN LIF，然後才能將原始節點從叢集中移除。
 
 .步驟
 . 如果您有iSCSI啟動器、請完成下列步驟：
@@ -91,3 +91,6 @@ js11      ps0          mixed    LIF1,                   igroup1
 == 建立新的SAN生命體、或重新建立刪除的SAN生命體
 
 視叢集環境需求而定、您可能會決定建立新的SAN LIF、或是重新建立先前在此程序中刪除的SAN LIF。您可以使用建立或重新建立SAN LIF https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/task_creating_network_interfaces.html["網路介面建立"^] 叢集管理中的程序（使用OnCommand SURE®System Manager_文件）。
+
+.接下來呢？
+link:upgrade-remove-original-nodes.html["從叢集中移除原始節點。"]

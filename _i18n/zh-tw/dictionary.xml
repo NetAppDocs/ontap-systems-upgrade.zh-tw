@@ -2713,7 +2713,6 @@
   <block id="ef14daf085f4427e7af6d6339e2a9dd6" category="list-text">如果多次嘗試後、「Volume Move（Volume Move）」（Volume Move（Volume Move））作業仍未完成最後階段、請強制移動完成：</block>
   <block id="faadc653b9d5250917700d625763b5cc" category="paragraph">強制完成磁碟區移動作業、可能會中斷用戶端對您正在移動之磁碟區的存取。</block>
   <block id="c127e808b121ddcc589e1612e8629e3d" category="list-text">確認磁碟區已成功移至指定的SVM、而且位於正確的Aggregate：</block>
-  <block id="94e9d0bee98aefbd97c04b1401f6c790" category="paragraph">如果叢集位於SAN環境中、您必須先從原始節點刪除不再需要的任何SAN LIF、才能從叢集取消加入原始節點。</block>
   <block id="94a76ebba8e86706797afe6001140741" category="list-text">如果您有iSCSI啟動器、請完成下列步驟：</block>
   <block id="9882b7407728c4a51f28a203651b752e" category="paragraph">下列範例顯示命令的輸出、其中使用中的啟動器連接至SVM VS1：</block>
   <block id="2a81dce4a4ecbdb4f7260dfa1838dac6" category="list-text">如果仍有任何啟動器登入原始節點、請從主機電腦登出工作階段。</block>
@@ -2851,7 +2850,6 @@
   <block id="8b8e41e588d3f28837be58712aeec25a" category="paragraph">系統會啟動「無圖」程序、然後重新開機。程序完成後、系統會返回開機功能表。</block>
   <block id="5b3de670b2de55fec257c6f89ab421bc" category="summary">如果您要透過移動磁碟區來升級、請準備原始節點、並將新節點加入叢集。您可以將磁碟區移至新節點、設定lifs、以及從叢集取消連接原始節點。透過移動磁碟區進行升級是不中斷營運的程序。</block>
   <block id="8093d580d9cc0468991044c64c97b174" category="inline-xref-macro">移動、刪除或建立SAN LIF</block>
-  <block id="cf9dafa4aad7081e3241e5bc4acb350f" category="inline-xref-macro">從叢集取消加入原始節點</block>
   <block id="c9b87fd8826330d02eb0f7e03c49023c" category="summary">若要透過移動磁碟區來完成升級程序、您需要設定服務處理器（SP）、安裝新授權、以及設定AutoSupport 更新。您可能還需要設定儲存設備或Volume Encryption、並設定FC或NCA連接埠。</block>
   <block id="758ed2ce94a0d48e369a05e9792df5bf" category="paragraph">若要透過移動磁碟區完成升級程序、您必須設定服務處理器（SP）、安裝新授權、以及設定AutoSupport 更新。您可能還需要設定儲存設備或Volume Encryption、並設定FC或NCA連接埠。</block>
   <block id="d01decedde31fd5fc9aee34a816e3a84" category="paragraph">「系統節點AutoSupport 無法叫用節點node_name -type all -m則 訊息「node_name coted walled from plate_old to platform _new」（節點名稱已從platfore_old成功升級至platform _new）。</block>
@@ -2871,16 +2869,9 @@
   <block id="1c21d383507612a44944a4ef460798a2" category="list-text">[move_int_drive_5]關閉CAM握把、使托架完全就位在中間板上、並將握把卡入定位。</block>
   <block id="aa6a7c81aeaad5ec8cef068df556cb9d" category="paragraph">您必須緩慢關閉握把、使其與機層面正確對齊。</block>
   <block id="4d388dae867b0a86458ede8119b8865e" category="list-text">重複 <block ref="267cbc67ee851d16fc5833a2bb2eacbb" category="inline-xref-macro-rx"></block> 透過 <block ref="07cb79f26065ce7eb3e55fb46a8c9f8b" category="inline-xref-macro-rx"></block> 適用於您要移至新系統的所有磁碟機。</block>
-  <block id="be560856af220999f45b0e64a842465a" category="summary">將磁碟區移至新節點之後、您就會從叢集中取消加入原始節點。當您取消加入節點時、節點的組態會被清除、且所有磁碟都會初始化。</block>
-  <block id="f61d9690213fcb44fc551adab505eb85" category="paragraph">將磁碟區移至新節點之後、您就會從叢集中取消加入原始節點。當您取消加入節點時、節點的組態會被清除、而且所有磁碟都會初始化。</block>
   <block id="72992cc1c16f1dbbbcb7cc77a55977d9" category="list-text">存取進階權限層級：</block>
   <block id="dc4a67b269dfaba9479198e3f11a2a68" category="list-text">識別具有epsilon的節點：</block>
   <block id="9f964a34bab4b3112781e0b28258f5bb" category="paragraph">在下列範例中、「node0」目前保留epsilon：</block>
-  <block id="c66d0d8c1fe1605513edaaeec7a73d16" category="list-text">如果其中一個原始節點保留epsilon、請將epsilon移至不同的節點：</block>
-  <block id="91ab806eca55f1234d360a9bf96615a0" category="list-text">從保留在叢集中的節點、從叢集取消連接每個原始節點（進階權限層級）：</block>
-  <block id="a38cfcfcdebdf9c05a1cd632c11918b8" category="paragraph">未加入的節點會自動重新開機、並在開機功能表停止。</block>
-  <block id="7ab0d0bb58501cb25dab62cdcffddfb5" category="list-text">從未加入節點的開機功能表中、選取選項*（4）Clean組態、然後初始化所有磁碟*、以清除節點的組態並初始化所有磁碟。</block>
-  <block id="35c0226d4e8a9cad1a873c648504d626" category="list-text">在兩個提示字元中輸入「y」。</block>
   <block id="7f1e916ec0aa6a4296149be58ba61a1b" category="list-text">如果叢集僅剩兩個節點、請為雙節點叢集設定高可用度：</block>
   <block id="c1f192f6d626bc5f27fc74b0848a1250" category="paragraph">"cluster ha modify -configured true"</block>
   <block id="e931682ac0f69e4f23e778b87a1949e7" category="summary">在移動儲存設備進行升級的過程中、您需要開啟節點3和節點4的電源、開機軟體映像、以及設定節點。</block>
@@ -2967,7 +2958,6 @@
   <block id="51e0a0afc4d011a307d3419bfe742eba" category="sidebar">透過移動磁碟區進行升級</block>
   <block id="ff56b4f5944c3419d2cbe4a5a19eb150" category="sidebar">安裝並加入新節點</block>
   <block id="f86f16f11e093ddd1a9acafc8ee58e6f" category="sidebar">移動非SAN資料生命體和叢集管理生命體</block>
-  <block id="d2e2f3320c4d610d0815b1405859a98b" category="sidebar">取消連接原始節點</block>
   <block id="23ec9249d03285a513eaaf182a7bcd49" category="cell">AFF8080</block>
   <block id="a21bb6fd42ff6eb59f1b181296f7c703" category="cell">FAS8020^3^、FAS8040^3^、FAS8060、FAS8080</block>
   <block id="34a273586a26b9c6b133c4ff92d23f7c" category="cell">FAS8060^4^、FAS8080、4^</block>
@@ -2998,10 +2988,6 @@
   <block id="038bf310b30027962de2d4e7d3c544e6" category="paragraph">「系統節點AutoSupport 無法叫用-node_node_name_-type all -messing "MAn=2h正在將_node_name_從_platforte_ORIGIN__升級至_platfort_new_"。</block>
   <block id="10de09f0f92f196f1e5984884c43ba27" category="list-text">「torage容錯移轉修改-node_node_name_-enabled_false」</block>
   <block id="981b4567a35216af18afaec3c97bc50d" category="paragraph">'系統節點停止節點節點_norme_name_'</block>
-  <block id="59e7cb89beb0d9c0f35ba87b5c4549e3" category="list-text">停用原始節點上的高可用度組態：「torage容錯移轉修改-node_orent_node_name_-enabled_fals'</block>
-  <block id="787149e64a0bc37710b15cd205977d92" category="list-text">從原始節點移除epsilon：+「cluster modify -node_enture_node_name_-epsilon假」</block>
-  <block id="cbb7de31a52f2a91eb5415ac80ca9da6" category="list-text">將epsilon指派給不同的節點：+「cluster modify -node_new_node_name_-epsilon true」</block>
-  <block id="01d317947cf0fa7c03a1243dac797c57" category="paragraph">"cluster unjoin -node_原始 節點名稱_"</block>
   <block id="57160bbb15f3acc82c1eac8e82c87937" category="paragraph">「網路連接埠修改-node_node_name_-port _port_name_-MTU 9000 -IPSpace叢集」</block>
   <block id="1db9d300a7d27735fb49e694ad616a9e" category="paragraph">「網路介面移轉-vserver _vserver_name_-lif_lif_name_-source-Node node1 -dest-Node node1 -destation-port _port_name_'</block>
   <block id="cf8f2405fecce8ee1f21a7233d89115d" category="paragraph">「網路介面修改-vserver叢集-lif_lif_name_–home-port _port_name_`</block>
@@ -4018,7 +4004,6 @@
   <block id="66686106038dcdf0e7037a2679e6be2b" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="a931a68d44bca92701e3cc2575cb8e58" category="inline-link-macro-rx"></block></block>
   <block id="2431d8b533362d8472db79a8849836be" category="paragraph">根據您的叢集內容和叢集環境、您可以移動、刪除或建立 SAN 生命體、或重新建立刪除的 SAN 生命體。</block>
   <block id="12e67aac3e7f9227cc35f8f047d7dc74" category="inline-image-macro">七</block>
-  <block id="3c49f3e0113334d7428d508b5d1dba98" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="a6976dfe70e597796c77b019f33f6b95" category="inline-link-macro-rx"></block></block>
   <block id="baca0ca6729684fd54206793ae4b5bd5" category="inline-image-macro">八</block>
   <block id="266c2a634fcfab43713325017c0d1fc1" category="paragraph-title"><block ref="430057c670c01688e904ed2ba129a0b5" category="inline-image-macro-rx" type="image"></block><block ref="25f018c3ca0d5083cf0a96e5a5daf8b3" category="inline-link-macro-rx"></block></block>
   <block id="55388932978c50267bc31e99b8d1d4d9" category="paragraph">若要透過移動磁碟區來完成升級程序、請設定服務處理器（ SP ）、安裝新授權、以及設定 AutoSupport 。您可能也需要設定儲存或 Volume Encryption 、並設定 FC 或 NCA 連接埠。</block>
@@ -4098,7 +4083,6 @@
   <block id="7679a865afb03bdbcc1cbd8757f79d09" category="list-text"><block ref="7679a865afb03bdbcc1cbd8757f79d09" category="inline-link-macro-rx"></block></block>
   <block id="70df8f2f5459940187f1edf7420f9c6b" category="paragraph">若要透過移動儲存設備進行升級、請準備原始節點並設定新節點。部分平台機型支援將內部儲存設備傳輸至新節點。您可以重新指派磁碟、並將根磁碟區組態還原至新節點、並設定網路連接埠。</block>
   <block id="ffaf71c89815c9497697e87f8d77a27d" category="paragraph">透過移動磁碟區來升級控制器硬體是一項不中斷營運的程序。開始升級之前、請先檢閱一般升級案例和升級考量事項：</block>
-  <block id="cf41c84e5298fdad396a8a0dd7eaf0f3" category="paragraph">若要透過移動磁碟區進行升級、請準備原始節點並將新節點加入叢集。您可以將磁碟區移至新節點、設定lifs、以及從叢集取消連接原始節點。</block>
   <block id="4b5907b5b5c704438991bdf09784779a" category="list-text">在開機功能表中、輸入 8 重新啟動節點、然後在自動開機期間按 Ctrl-C 、在載入程式提示下停止節點。</block>
   <block id="ee537959cbe6c4957342c94d3801abf7" category="doc">選擇您的 ARL 升級程序</block>
   <block id="e2de59a5a77b66213e7d85b56f1eb224" category="list-text">在載入程式提示下、進入維護模式：</block>
@@ -5263,7 +5247,6 @@
   <block id="2f5546c2bb23945783cbdb6d6e128cdf" category="paragraph">請使用以下方法之一進行升級：</block>
   <block id="0678555704a75d8c6ba937ca89e44347" category="inline-link-macro">成交量</block>
   <block id="7a5d9d481746c5a733396a92b9fa9ad9" category="list-text"><block ref="7a5d9d481746c5a733396a92b9fa9ad9" category="inline-link-macro-rx"></block></block>
-  <block id="7c15b3f4f4497023a45b26abfbd34fa1" category="paragraph">這需要將新節點加入集群，將捲和 LIF 遷移到新節點，並將要從集群中移除的節點從集群中移除。如果您要升級一個雙節點無交換器集群，請在新增節點之前，請使用一對集群交換器將其轉換為交換器連接集群。</block>
   <block id="6de3b933715f67f0e1503dadf7be11b5" category="inline-link-macro">使用聚合遷移</block>
   <block id="1326c781e22221bcfee09723f0a2bfc2" category="list-text"><block ref="1326c781e22221bcfee09723f0a2bfc2" category="inline-link-macro-rx"></block></block>
   <block id="af07e0611bc43f9c7f0e394b682e76a9" category="paragraph">ARL 是一種置換手術。您無需隨著新節點的加入而擴展和縮減集群，這對於雙節點無交換器集群來說是有利的。在移動磁碟區時，透過重新定位聚合來移動資料比跨聚合複製資料更快。</block>
@@ -5311,4 +5294,56 @@
   <block id="b2cf47c2f8de48c91a2658d1bae42ab8" category="admonition">由於機箱已經通電，節點 2 一旦完全就位就會立即啟動。若為防止節點 2 啟動，請在完全插入控制器模組之前連接控制台和管理電纜。</block>
   <block id="914a76ca2b7f6ddaae8d7322d8dfd459" category="paragraph">除非將替換控制器模組安裝到機箱中並通電，否則無法檢查安裝在替換控制器模組啟動媒體上的ONTAP版本。替換系統啟動媒體上的ONTAP版本必須與要升級的舊系統上執行的ONTAP版本相同，且啟動媒體上的主啟動映像和備份啟動映像必須相符。若要確認升級所需的最低ONTAP版本，請參閱<block ref="f48bb6f7501a6484670164b41fb968ae" category="inline-link-macro-rx"></block>。</block>
   <block id="fa25f8cd417cf37165c34fcb9720ffe3" category="list-text">[[verify-rcf-step3]]檢查叢集連接埠並切換 RCF。</block>
+  <block id="2138fe46f5a4636fa20671bcd5e370b9" category="paragraph">這需要將新節點加入集群，將捲和 LIF 遷移到新節點，並將要從集群中移除的節點從集群中移除。如果您要升級一個雙節點無交換器集群，請在新增節點之前，請使用一對集群交換器將其轉換為交換器連接集群。</block>
+  <block id="1e7b20b34e3e14bc87b5019115ef6319" category="paragraph">要透過移動卷進行升級，您​​需要準備好原始節點並將新節點加入叢集。您將磁碟區遷移到新節點，配置 LIF，然後從叢集中刪除原始節點。</block>
+  <block id="febd744aeea49809fb1302b73fa6bd8c" category="inline-link-macro">從叢集中移除原始節點。</block>
+  <block id="5f9dcd9884f9526b20b37705a8075dc7" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="de2c8f88da32b208ab4a1bf0c1405c32" category="inline-link-macro-rx"></block></block>
+  <block id="04c0dc0ac08f266118ef312b94f34222" category="paragraph">將磁碟區遷移到新節點後，從叢集中刪除原始節點。刪除節點時，節點的配置將被擦除，所有磁碟將被初始化。</block>
+  <block id="1411918bbf69ad4104cdc56864b603a3" category="paragraph"><block ref="1411918bbf69ad4104cdc56864b603a3" category="inline-link-macro-rx"></block></block>
+  <block id="cbbd4da8364a1dcf2593c3eec92abe27" category="paragraph"><block ref="cbbd4da8364a1dcf2593c3eec92abe27" category="inline-link-macro-rx"></block></block>
+  <block id="cf954e9acfd74a54fe766c2c130222c6" category="paragraph"><block ref="cf954e9acfd74a54fe766c2c130222c6" category="inline-link-macro-rx"></block></block>
+  <block id="638758de43a31bd2903f659581f78fa7" category="paragraph"><block ref="638758de43a31bd2903f659581f78fa7" category="inline-link-macro-rx"></block></block>
+  <block id="d350fa659f98e0153758612c202e6a04" category="summary">將磁碟區遷移到新節點後，從叢集中刪除原始節點。刪除節點時，節點的配置將被擦除，所有磁碟將被初始化。</block>
+  <block id="174d5560f210e4b4b5a29f385b2c8035" category="paragraph">將磁碟區從原始節點移至新節點並移動或刪除資料 LIF 後，從叢集中刪除原始節點。刪除節點時，節點的配置將被擦除，所有磁碟將被初始化。</block>
+  <block id="fcd2352296590a0e2accae2dd13e31d6" category="list-text">[[disable-ha]]停用原始節點上的高可用性 (HA) 配置：</block>
+  <block id="2c1e3c1177e032883dd8cedb7237369c" category="paragraph"><block ref="cfb56c7a6f1b3b0505ee17fb92209fba" prefix="" category="inline-code"></block></block>
+  <block id="bf80321073982fe86a71c1af9fac0650" category="list-text">[[epsilon-true]]如果某個原始節點持有 epsilon，則將 epsilon 移到您不會從叢集中移除的節點：</block>
+  <block id="4b839279170b4ba0703853fb5c2cb9da" category="list-text">從原始節點中移除 epsilon：</block>
+  <block id="222406298d9a2f2c033dca8a74afd55c" category="paragraph"><block ref="de7321e59bd990ec3ef09ca78116a7b0" prefix="" category="inline-code"></block></block>
+  <block id="7a788eb6946d9ba1aaad7df7bfb5f5b2" category="list-text">將 epsilon 分配給不同的節點：</block>
+  <block id="b0c1e0271345231f93266b65411815c2" category="paragraph"><block ref="45f47d97caec3e0967eb10311176b1bb" prefix="" category="inline-code"></block></block>
+  <block id="14f47a56746d8dd06d7152a27fa22219" category="list-text">確定當前主節點：</block>
+  <block id="e477c0774c6014b5173ffa6810d512ab" category="paragraph"><block ref="484f24f8e4da80a1185aa63fa1d5fc08" prefix="" category="inline-code"></block></block>
+  <block id="f56d76980d50ef81b1a4f2246dbcf0da" category="paragraph">主節點是承載諸如此類流程的節點。<block ref="d724f231a9a7b89757c4394d6622bc47" prefix=" " category="inline-code"></block>，<block ref="7b588256fbdc51b849239cf8988219ff" prefix=" " category="inline-code"></block>，<block ref="4855d47f82dd3929173aadd191f2a0ee" prefix=" " category="inline-code"></block>，<block ref="1ed70af3fcff64fcd6c818d86b6e6150" prefix=" " category="inline-code"></block>， 和<block ref="29fa19e764c47fa898f697bf7bb940db" prefix=" " category="inline-code"></block>。</block>
+  <block id="b799370e99c40124bdcc44e4ed7a5704" category="list-text">如果要移除的節點是目前主節點，則需要啟用叢集中剩餘節點的選舉機制，使其能夠被選為主節點：</block>
+  <block id="ac13fc86d8d30a4abbb50425385fe453" category="list-text">取消目前主節點參與叢集的資格：</block>
+  <block id="7021c105080628669b133405100efc63" category="paragraph"><block ref="f2b8f9d3d7fb27d37deaaf84ee69a072" prefix="" category="inline-code"></block></block>
+  <block id="84023f697c3d7f175eb48d9e7f81fe97" category="paragraph">該節點將被標記為不健康，直到其恢復符合資格為止。當主節點不再符合資格時，叢集仲裁將從剩餘節點中選出一個新主節點。</block>
+  <block id="834ca6428bef51142e4d70a6c409829e" category="paragraph">如果您在 HA 對中的第一個節點上執行此步驟，則應僅將該節點標記為不符合條件。請勿修改HA合作夥伴的狀態。</block>
+  <block id="c45a4c98c59ca383859dc9ca2d7b3243" category="paragraph">如果選擇夥伴節點作為新的主節點，則需要驗證它是否持有 epsilon。如果夥伴節點持有 epsilon，則在使其失去資格之前，需要將 epsilon 轉移到叢集中剩餘的另一個節點。當你重複這些步驟來刪除夥伴節點時，就會執行此操作。</block>
+  <block id="fa46d2d3d8cfe760c5a42ee99c2bb479" category="list-text">使之前的主節點再次有資格參與叢集：</block>
+  <block id="c1f0c4bf4b8a0d924276f97311b2b56c" category="paragraph"><block ref="14dcae85a302a6e4089a3c2a5636ff04" prefix="" category="inline-code"></block></block>
+  <block id="342dbc3880ef101e1ed2b5b78347d7d3" category="list-text">登入叢集中剩餘節點的遠端節點管理 LIF 或叢集管理 LIF，並從叢集中刪除每個原始節點（進階權限等級）：</block>
+  <block id="eb1f2131641f5195e8a8d9b93f797562" category="paragraph">節點名稱：</block>
+  <block id="9900c92f7c4f327f3d129fcdb88c5a95" category="paragraph">節點 IP 位址：</block>
+  <block id="e1b2dd8ee5d4a8767f514f7140d3b5b7" category="paragraph">如果您有一個混合版本集群，並且要移除最後一個版本較低的節點，請使用下列方法：<block ref="980f71817e3a06bee87bd061faeb423d" prefix=" " category="inline-code"></block> 使用這些命令的參數。</block>
+  <block id="76732b147c5a72422d23da150a4c5434" category="paragraph">系統會告知您以下資訊：</block>
+  <block id="f80f10147ba45bd1fef6e3c0af2ad9b6" category="list-text">您也必須從叢集中刪除節點的故障轉移夥伴。</block>
+  <block id="f8794e0f00d445cfe92a1a1eeb5fdb7d" category="list-text">節點被移除後，在它重新加入叢集之前，必須使用啟動選單選項 *(4) 清除配置並初始化所有磁碟* 或選項 *(9) 配置進階磁碟機分割區* 來擦除節點的配置並初始化所有磁碟。</block>
+  <block id="4fcbf7b91c2fe0247f60ee2199672575" category="paragraph">如果在刪除節點之前必須解決某些條件，則會產生錯誤訊息。例如，該訊息可能表示該節點具有您必須刪除的共用資源，或者該節點處於您必須停用的叢集 HA 配置或儲存故障轉移配置中。</block>
+  <block id="39e6f8500af6b07f2903990336145751" category="paragraph">如果該節點是仲裁主節點，則叢集會短暫失去仲裁，然後恢復仲裁。此次法定人數損失是暫時的，不會影響任何資料操作。</block>
+  <block id="5b04742f17c701ff3b58fe32667cc471" category="list-text">如果錯誤訊息指示存在錯誤情況，請解決這些情況並重新運行。<block ref="b592ef8b0e17ac31ab55e93e7c1d10e1" prefix=" " category="inline-code"></block> 或者<block ref="5d16191a3b7abaee7967de5fd82cd336" prefix=" " category="inline-code"></block> 命令。</block>
+  <block id="bb73c71d58dba4f68bd9a8e3fa5709b6" category="paragraph">節點從叢集中成功移除後，會自動重新啟動。</block>
+  <block id="b16b992bede9cd61adafd05ccfa8b5db" category="list-text">如果要重新利用節點，請清除節點配置並初始化所有磁碟：</block>
+  <block id="f68297d08c23f1c81caf07d193fce59a" category="list-text">在啟動過程中，當系統提示時，按 Ctrl-C 顯示啟動選單。</block>
+  <block id="5b43d3aa91abf75fd24c44f1341b2f06" category="list-text">選擇啟動選單選項 *(4) 清除配置並初始化所有磁碟*。</block>
+  <block id="82049266f76a1c9f2f0a3be4c999f4d2" category="list-text">[[return-admin]]恢復叢集中某個新節點的管理員權限等級：</block>
+  <block id="c4ca4238a0b923820dcc509a6f75849b" category="inline-xref">1</block>
+  <block id="d3d9446802a44259755d38e6d163e820" category="inline-xref">10</block>
+  <block id="d189cecc16115f8a1464438558157df4" category="list-text">重複步驟 <block ref="ad03471bc3c3d3a60bb07d8e505cecf8" category="inline-xref-macro-rx"></block> 到 <block ref="0b50026eb51fd5abcc3f6c551ad9a731" category="inline-xref-macro-rx"></block> 從叢集中移除故障轉移夥伴。</block>
+  <block id="168c92437cbc3465963cce1942e62338" category="paragraph"><block ref="168c92437cbc3465963cce1942e62338" category="inline-link-macro-rx"></block></block>
+  <block id="b442cda004fcb2b77f9a06066859253e" category="paragraph">如果叢集位於 SAN 環境中，則必須先從原始節點中刪除不再需要的任何 SAN LIF，然後才能將原始節點從叢集中移除。</block>
+  <block id="de2c8f88da32b208ab4a1bf0c1405c32" category="paragraph"><block ref="de2c8f88da32b208ab4a1bf0c1405c32" category="inline-link-macro-rx"></block></block>
+  <block id="0187590ed6627836f657d0d4157f4bd9" category="paragraph"><block ref="0187590ed6627836f657d0d4157f4bd9" category="inline-link-macro-rx"></block></block>
+  <block id="9cab58d086b1e90a5b2f49ae6b194edb" category="sidebar">移除原始節點</block>
 </blocks>

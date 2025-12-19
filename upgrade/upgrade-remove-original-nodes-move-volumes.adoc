@@ -1,0 +1,143 @@
+---
+permalink: upgrade/upgrade-remove-original-nodes.html 
+sidebar: sidebar 
+keywords: volume, move, node, remove, original, cluster, configuration, disk, initialize, remove the original nodes from the cluster 
+summary: 將磁碟區遷移到新節點後，從叢集中刪除原始節點。刪除節點時，節點的配置將被擦除，所有磁碟將被初始化。 
+---
+= 從叢集中移除原始節點。
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將磁碟區從原始節點移至新節點並移動或刪除資料 LIF 後，從叢集中刪除原始節點。刪除節點時，節點的配置將被擦除，所有磁碟將被初始化。
+
+.步驟
+. [[disable-ha]]停用原始節點上的高可用性 (HA) 配置：
++
+`storage failover modify -node <original_node_name> -enabled false`
+
+. 存取進階權限層級：
++
+"進階權限"
+
+. 識別具有epsilon的節點：
++
+「叢集展示」
+
++
+在下列範例中、「node0」目前保留epsilon：
+
++
+[listing]
+----
+cluster::*>
+Node                 Health  Eligibility  Epsilon
+-------------------- ------- ------------ ------------
+node0                true    true         true
+node1                true    true         false
+node2                true    true         false
+node3                true    true         false
+----
+. [[epsilon-true]]如果某個原始節點持有 epsilon，則將 epsilon 移到您不會從叢集中移除的節點：
++
+.. 從原始節點中移除 epsilon：
++
+`cluster modify -node <original_node_name> -epsilon false`
+
+.. 將 epsilon 分配給不同的節點：
++
+`cluster modify -node <new_node_name> -epsilon true`
+
+
+
+. 確定當前主節點：
++
+`cluster ring show`
+
++
+主節點是承載諸如此類流程的節點。 `mgmt`， `vldb`， `vifmgr`， `bcomd`， 和 `crs`。
+
+. 如果要移除的節點是目前主節點，則需要啟用叢集中剩餘節點的選舉機制，使其能夠被選為主節點：
++
+.. 取消目前主節點參與叢集的資格：
++
+`cluster modify -node <original_node_name> -eligibility false`
+
++
+該節點將被標記為不健康，直到其恢復符合資格為止。當主節點不再符合資格時，叢集仲裁將從剩餘節點中選出一個新主節點。
+
++
+[NOTE]
+====
+如果您在 HA 對中的第一個節點上執行此步驟，則應僅將該節點標記為不符合條件。請勿修改HA合作夥伴的狀態。
+
+如果選擇夥伴節點作為新的主節點，則需要驗證它是否持有 epsilon。如果夥伴節點持有 epsilon，則在使其失去資格之前，需要將 epsilon 轉移到叢集中剩餘的另一個節點。當你重複這些步驟來刪除夥伴節點時，就會執行此操作。
+
+====
+.. 使之前的主節點再次有資格參與叢集：
++
+`cluster modify -node <node_name> -eligibility true`
+
+
+
+. 登入叢集中剩餘節點的遠端節點管理 LIF 或叢集管理 LIF，並從叢集中刪除每個原始節點（進階權限等級）：
++
+節點名稱：
+
++
+[source, cli]
+----
+cluster remove-node -node <original_node_name>
+----
++
+節點 IP 位址：
+
++
+[source, cli]
+----
+cluster remove-node -cluster_ip <original_node_ip>
+----
++
+如果您有一個混合版本集群，並且要移除最後一個版本較低的節點，請使用下列方法： `-skip-last-low-version-node-check` 使用這些命令的參數。
+
++
+系統會告知您以下資訊：
+
++
+** 您也必須從叢集中刪除節點的故障轉移夥伴。
+** 節點被移除後，在它重新加入叢集之前，必須使用啟動選單選項 *(4) 清除配置並初始化所有磁碟* 或選項 *(9) 配置進階磁碟機分割區* 來擦除節點的配置並初始化所有磁碟。
++
+如果在刪除節點之前必須解決某些條件，則會產生錯誤訊息。例如，該訊息可能表示該節點具有您必須刪除的共用資源，或者該節點處於您必須停用的叢集 HA 配置或儲存故障轉移配置中。
+
++
+如果該節點是仲裁主節點，則叢集會短暫失去仲裁，然後恢復仲裁。此次法定人數損失是暫時的，不會影響任何資料操作。
+
+
+
+. 如果錯誤訊息指示存在錯誤情況，請解決這些情況並重新運行。 `cluster remove-node` 或者 `cluster unjoin` 命令。
++
+節點從叢集中成功移除後，會自動重新啟動。
+
+. 如果要重新利用節點，請清除節點配置並初始化所有磁碟：
++
+.. 在啟動過程中，當系統提示時，按 Ctrl-C 顯示啟動選單。
+.. 選擇啟動選單選項 *(4) 清除配置並初始化所有磁碟*。
+
+
+. [[return-admin]]恢復叢集中某個新節點的管理員權限等級：
++
+[source, cli]
+----
+set -privilege admin
+----
+. 重複步驟 <<disable-ha,1>> 到 <<return-admin,10>> 從叢集中移除故障轉移夥伴。
+. 如果叢集僅剩兩個節點、請為雙節點叢集設定高可用度：
++
+"cluster ha modify -configured true"
+
+
+
+.接下來呢？
+link:upgrade-complete-move-volumes.html["完成移動卷升級"]

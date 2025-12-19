@@ -17,7 +17,7 @@ summary: 如果您要透過移動磁碟區來升級、請準備原始節點、�
 * link:upgrade-considerations.html["升級控制器硬體的考量事項"]
 
 
-若要透過移動磁碟區進行升級、請準備原始節點並將新節點加入叢集。您可以將磁碟區移至新節點、設定lifs、以及從叢集取消連接原始節點。
+要透過移動卷進行升級，您​​需要準備好原始節點並將新節點加入叢集。您將磁碟區遷移到新節點，配置 LIF，然後從叢集中刪除原始節點。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]link:upgrade-prepare-when-moving-volumes.html["準備在移動磁碟區時進行升級"]
 [role="quick-margin-para"]
@@ -43,9 +43,9 @@ summary: 如果您要透過移動磁碟區來升級、請準備原始節點、�
 [role="quick-margin-para"]
 根據您的叢集內容和叢集環境、您可以移動、刪除或建立 SAN 生命體、或重新建立刪除的 SAN 生命體。
 
-.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["七"]link:upgrade-unjoin-original-nodes-move-volumes.html["從叢集取消加入原始節點"]
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["七"]link:upgrade-remove-original-nodes.html["從叢集中移除原始節點。"]
 [role="quick-margin-para"]
-將磁碟區移至新節點之後、您就會從叢集中取消加入原始節點。當您取消加入節點時、節點的組態會被清除、而且所有磁碟都會初始化。
+將磁碟區遷移到新節點後，從叢集中刪除原始節點。刪除節點時，節點的配置將被擦除，所有磁碟將被初始化。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png["八"]link:upgrade-complete-move-volumes.html["完成升級"]
 [role="quick-margin-para"]

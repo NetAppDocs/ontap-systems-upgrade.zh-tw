@@ -112,3 +112,6 @@ NOTE: 如果您的儲存組態包含已啟用加密的磁碟區、請遵循中�
 `volume show -vserver _svm_name_`
 
 
+
+.接下來呢？
+link:upgrade-move-lifs-to-new-nodes.html["將非 SAN 資料生命體和叢集管理生命體移至新節點"]
