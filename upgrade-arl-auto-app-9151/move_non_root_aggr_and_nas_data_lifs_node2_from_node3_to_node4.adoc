@@ -27,30 +27,44 @@ summary: '使用命令將執行 ONTAP 9.15.1 或更新版本的控制器升級�
 +
 .. 修改任何回報「停機」操作狀態給新資料連接埠的 iSCSI SAN 生命：
 +
-`network interface modify -vserver <vserver> -lif <iscsi_san_lif> admin down`
-
+[source, cli]
+----
+network interface modify -vserver <vserver> -lif <iscsi_san_lif> admin down
+----
 +
-`network interface modify -vserver <vserver> -lif <iscsi_san_lif> port <new_port> node <node>`
-
+[source, cli]
+----
+network interface modify -vserver <vserver> -lif <iscsi_san_lif> port <new_port> node <node>
+----
 +
-`network interface modify -vserver <vserver> -lif <iscsi_san_lif>`
-
+[source, cli]
+----
+network interface modify -vserver <vserver> -lif <iscsi_san_lif>
+----
 .. 修改新控制器主控的任何 FC 和 NVMe / FC SAN 生命體、並向新控制器上的 FCP 連接埠回報「停機」操作狀態：
 +
-`network interface modify -vserver <vserver> -lif <fc_san_lif> admin down`
-
+[source, cli]
+----
+network interface modify -vserver <vserver> -lif <fc_san_lif> admin down
+----
 +
-`network interface modify -vserver <vserver> -lif <fc_san_lif> port <new_port> node <node>`
-
+[source, cli]
+----
+network interface modify -vserver <vserver> -lif <fc_san_lif> port <new_port> node <node>
+----
 +
-`network interface modify -vserver <vserver> -lif <fc_san_lif>`
-
+[source, cli]
+----
+network interface modify -vserver <vserver> -lif <fc_san_lif>
+----
 
 
 . 恢復重新定位作業：
 +
-「系統控制器更換恢復」
-
+[source, cli]
+----
+system controller replace resume
+----
 +
 系統會執行下列工作：
 
@@ -67,8 +81,10 @@ summary: '使用命令將執行 ONTAP 9.15.1 或更新版本的控制器升級�
 
 . 恢復重新定位作業：
 +
-「系統控制器更換恢復」
-
+[source, cli]
+----
+system controller replace resume
+----
 +
 系統會執行下列檢查：
 
@@ -82,25 +98,58 @@ summary: '使用命令將執行 ONTAP 9.15.1 或更新版本的控制器升級�
 
 . 檢查集合體重新配置和NAS資料LIF移動作業的狀態：
 +
-「System Controller replace show-details」（系統控制器取代顯示詳細資料
-
+[source, cli]
+----
+system controller replace show-details
+----
 +
 如果控制器更換程序暫停、請檢查並修正錯誤（如果有）、然後發出「推入」以繼續操作。
 
-. 如有必要、請還原並還原任何已移轉的生命。列出任何已移出的生命生命：
+. 如有必要，恢復和還原已移位的 LIF，或手動遷移和修改未能自動遷移到 node4 的 node2 LIF。
 +
-「叢集控制器更換網路置換介面show」
-
+[role="tabbed-block"]
+====
+.恢復和還原移位的 LIF
+--
+.. 列出所有已移位的 LIF：
 +
-如果有任何生命週期被移除、請將主節點還原回節點4：
-
+[source, cli]
+----
+cluster controller-replacement network displaced-interface show
+----
+.. 如果有任何生命週期被移除、請將主節點還原回節點4：
 +
-「叢集控制器更換網路置換介面還原主節點」
+[source, cli]
+----
+cluster controller-replacement network displaced-interface restore-home-node -node <node4_nodename> -vserver <vserver name> -lif-name <lif_name>
+----
 
+
+--
+.手動遷移和修改 LIF 文件
+--
+.. 將未能自動遷移到節點 4 的 LIF 遷移：
++
+[source, cli]
+----
+network interface migrate -vserver <vserver name> -lif <lif_name> -destination-node <node4_nodename> -destination-port <port_on_node4>
+----
+.. 修改已遷移 LIF 的來源節點和來源連接埠：
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <data_lif_name> -home-node <node4_nodename> -home-port <home_port>
+----
+
+
+--
+====
 . 繼續作業、以提示系統執行必要的POST檢查：
 +
-「系統控制器更換恢復」
-
+[source, cli]
+----
+system controller replace resume
+----
 +
 系統會執行下列POST檢查：
 

@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-如果netboot node4的版本ONTAP 與node2上安裝的版本不相同、則需要netboot node4。安裝node4之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點4。接著、您可以依照中的指示、將正確的檔案下載到開機媒體裝置、以供後續系統開機 link:prepare_for_netboot.html["準備netboot"]。
+如果節點 4 上的ONTAP版本與節點 2 上的ONTAP版本不同，則需要對節點 4 進行網路啟動。安裝 node4 後，從儲存在 Web 伺服器上的ONTAP 9 映像啟動它。然後，您可以按照說明將正確的檔案下載到啟動媒體設備，以便後續系統啟動。 link:prepare_for_netboot.html["準備netboot"]。
 
 [IMPORTANT]
 ====

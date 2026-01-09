@@ -14,16 +14,20 @@ summary: 使用 ARL 將同一機箱中的控制器機型升級時、請確認節
 
 
 [role="lead"]
-在您驗證 node2 上的網路組態、並在將集合體從 node1 重新定位至 node2 之前、請確認屬於 node2 的 NAS 資料生命體目前位於 node1 上、已從 node1 重新定位至 node2 。您還必須驗證節點2上是否存在SAN lifs。
+在驗證節點 2 上的網路配置後，需要將節點 2 擁有的 NAS 資料 LIF 從節點 1 遷移到節點 2，並確認 SAN LIF 存在於節點 2 上。
 
 .關於這項工作
-在升級過程中、遠端LIF會處理SAN LUN的流量。在升級期間、移轉SAN LIF對於叢集或服務健全狀況並不必要。除非需要將SAN LIF對應至新連接埠、否則不會移動SAN LIF。將node2聯機後，必須驗證該生命段是否正常且位於適當的端口上。
+遠端 LIF 在升級過程中處理到 SAN LUN 的流量。升級過程中，遷移 SAN LIF 對叢集或服務運作狀況並非必要。除非需要將 SAN LIF 對應到新端口，否則不會移動它們。
+
+在節點 2 上線後，您需要驗證 LIF 是否健康以及是否位於正確的連接埠上。
 
 .步驟
 . 恢復重新定位作業：
 +
-「系統控制器更換恢復」
-
+[source, cli]
+----
+system controller replace resume
+----
 +
 系統會執行下列工作：
 
@@ -38,12 +42,14 @@ summary: 使用 ARL 將同一機箱中的控制器機型升級時、請確認節
 
 --
 +
-此作業會在網路連線能力檢查的這個階段暫停。
+系統在網路可達性檢查的此階段暫停操作。
 
 . 恢復重新定位作業：
 +
-「系統控制器更換恢復」
-
+[source, cli]
+----
+system controller replace resume
+----
 +
 系統會執行下列檢查：
 
@@ -62,25 +68,58 @@ summary: 使用 ARL 將同一機箱中的控制器機型升級時、請確認節
 
 . 檢查集合體重新配置和NAS資料LIF移動作業的狀態：
 +
-「System Controller replace show-details」（系統控制器取代顯示詳細資料
-
+[source, cli]
+----
+system controller replace show-details
+----
 +
 如果控制器更換程序暫停、請檢查並修正錯誤（如果有）、然後發出「推入」以繼續操作。
 
-. 如有必要、請還原並還原任何已移轉的生命。列出任何已移出的生命生命：
+. 如有必要，恢復和還原已移位的 LIF，或手動遷移和修改未能自動遷移到 node2 的 node2 LIF。
 +
-「叢集控制器更換網路置換介面show」
-
+[role="tabbed-block"]
+====
+.恢復和還原移位的 LIF
+--
+.. 列出所有已移位的 LIF：
 +
-如果有任何生命段被移除、請將主節點還原回節點2：
-
+[source, cli]
+----
+cluster controller-replacement network displaced-interface show
+----
+.. 如果有任何生命段被移除、請將主節點還原回節點2：
 +
-「叢集控制器更換網路置換介面還原主節點」
+[source, cli]
+----
+cluster controller-replacement network displaced-interface restore-home-node -node <node2_nodename> -vserver <vserver name> -lif-name <lif_name>
+----
 
+
+--
+.手動遷移和修改 LIF 文件
+--
+.. 將未能自動遷移到節點2的LIF遷移出去：
++
+[source, cli]
+----
+network interface migrate -vserver <vserver name> -lif <lif_name> -destination-node <node2_nodename> -destination-port <port_on_node2>
+----
+.. 修改已遷移 LIF 的來源節點和來源連接埠：
++
+[source, cli]
+----
+network interface modify -vserver <vserver_name> -lif <data_lif_name> -home-node <node2_nodename> -home-port <home_port>
+----
+
+
+--
+====
 . 繼續作業、以提示系統執行必要的POST檢查：
 +
-「系統控制器更換恢復」
-
+[source, cli]
+----
+system controller replace resume
+----
 +
 系統會執行下列POST檢查：
 

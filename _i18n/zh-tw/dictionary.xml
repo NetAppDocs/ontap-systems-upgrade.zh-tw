@@ -818,7 +818,6 @@
   <block id="9fd68cc494a9f57cae67ac737ab1370f" category="paragraph">升級節點配對時可能會發生故障。節點可能會當機、集合體可能不會重新部署、或是生命體可能無法移轉。故障原因及其解決方案取決於升級程序期間何時發生故障。</block>
   <block id="14e89b35ebfcce3b97d4642f23842015" category="summary">使用ONTAP 「系統控制器更換」命令、將執行ONTAP 版本號從9.5升級至9.7的控制器時、請安裝及開機節點4並安裝效益分析軟體。</block>
   <block id="75586863c552442d574a9bbfc3a0d408" category="paragraph">您必須在機架中安裝node4、將node2的連線傳輸至node4、開機node4、然後安裝ONTAP 。然後您必須重新指派節點2的任何備用磁碟、屬於根磁碟區的任何磁碟、以及任何未在程序中稍早重新放置到節點3的非根Aggregate、如本節所述。</block>
-  <block id="cdb3662e6ecd47991de3008672ab3eb8" category="paragraph">如果netboot node4的版本ONTAP 與node2上安裝的版本不相同、則需要netboot node4。安裝node4之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點4。接著、您可以依照中的指示、將正確的檔案下載到開機媒體裝置、以供後續系統開機 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block>。</block>
   <block id="6f4a225b29c0975663d0e4b9e1f4547f" category="inline-xref">步驟1.</block>
   <block id="2f5ad93b7f0dd7bdcdf63542c05e8ebe" category="inline-xref">步驟21</block>
   <block id="c7009662ac7e20dc02b0e7d7e2ed8804" category="list-text">[[[auto_install4_step1]]請確定node4有足夠的機架空間。</block>
@@ -888,7 +887,6 @@
   <block id="56fd5e5051297f55fa1e22d93c8d71b8" category="list-text">[[[auto_install3_step1]]請確定您有節點3的機架空間。</block>
   <block id="2c6541bc32b15b7aae8bab68f0ca5874" category="paragraph">如果節點1和節點2位於不同的機箱中、您可以將節點3放在與節點1相同的機架位置。但是、如果節點1與節點2位於同一個機箱中、則您需要將節點3放入自己的機架空間、最好是靠近節點1的位置。</block>
   <block id="b76de3994341c25067b438fe161926b7" category="list-text">[[[auto_install3_step2]]依照節點機型的安裝與設定指示_、在機架中安裝節點3。</block>
-  <block id="e642674ff2b68ba9c6309b786d87c4f9" category="admonition">如果您要升級到同一機箱中同時具有兩個節點的系統、請在機箱中安裝node4以及node3。如果沒有、當您開機節點3時、節點的行為就會如同雙機箱組態、當您開機節點4時、節點之間的互連就不會出現。</block>
   <block id="c558275e7d3a61c5ffa4c89d17138a8e" category="list-text">[[auto_install3_step3]]纜線節點3、將連線從節點1移至節點3。</block>
   <block id="a237c9d74ab3870e45b318a1071c10f4" category="admonition">您可能不需要將互連卡或叢集互連纜線連線從節點1移至節點3、因為大多數平台機型都有獨特的互連卡模式。若要進行支援、您需要將FC-VI纜線連線從節點1移至節點3。MetroCluster如果新主機沒有FC-VI卡、您可能需要移動FC-VI卡。</block>
   <block id="a5492c1c64c93543c424918fe38a847e" category="list-text">[[auto_install3_step4]]開啟節點3的電源、然後在主控台終端按Ctrl-C存取開機環境提示字元、以中斷開機程序。</block>
@@ -1026,10 +1024,7 @@
   <block id="338e1133e592584bd1dc26b643cbe02f" category="paragraph">在驗證節點3上的網路組態之後、在將Aggregate從節點2重新定位至節點3之前、您必須驗證屬於節點1的NAS資料lifs目前位於節點2上、是否已從節點2重新定位至節點3。您還必須驗證節點3上是否存在SAN lifs。</block>
   <block id="a29257abbaad84467babad354360d285" category="paragraph">執行這些檢查之後、系統會將節點1擁有的非根Aggregate和NAS資料lifs重新定位至新的控制器節點3。資源重新配置完成後、控制器更換作業會暫停。</block>
   <block id="ff23473696232fd91c1e2dcb460109e4" category="paragraph">如果控制器更換程序暫停、請檢查並修正錯誤（如果有）、然後發出「推入」以繼續操作。</block>
-  <block id="b5cd09b90221c700e1c2cf9d6253d6a1" category="list-text">如有必要、請還原並還原任何已移轉的生命。列出任何已移出的生命生命：</block>
-  <block id="0b66eef739f727e3f877d8fd0e6b8862" category="paragraph">「叢集控制器更換網路置換介面show」</block>
   <block id="61d1def7733487d4ddcc1c11e4c26d34" category="paragraph">如果有任何生命段被移除、請將主節點還原回節點3：</block>
-  <block id="26490175c6a9bb3f68c33041e7c3bd2e" category="paragraph">「叢集控制器更換網路置換介面還原主節點」</block>
   <block id="3c1799bbeb29b748f57f26ac2c4fc6f9" category="list-text">Volume檢查</block>
   <block id="e13e6c141a78d2d49110f9de675a4ce7" category="summary">使用ONTAP 「系統控制器更換」命令來升級執行版本號為Escr9.8或更新版本的控制器時、請關閉節點2、並將其從機架或機箱中移除。</block>
   <block id="08ff55c299fd8105ff1d7a024f588b9a" category="summary">使用ONTAP 「系統控制器更換」命令來升級執行《更新版本》9.8或更新版本的控制器時、請設定node3內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡。</block>
@@ -2124,7 +2119,6 @@
   <block id="c5c3d54cdf6631e2e290953a91dcd842" category="paragraph">當所有連接埠均已正確設定並新增至正確的廣播網域時、「network port re連通 性show」命令會針對所有連接的連接埠、將連線狀態報告為「ok」、對於沒有實體連線的連接埠、狀態應顯示為「不可到達性」。如果有任何連接埠報告的狀態不是這兩個連接埠、請依照中所述修復連線能力 <block ref="42e2bf4f4ef15f603bcc30bc206d35c3" category="inline-xref-macro-rx"></block>。</block>
   <block id="db548c254460f5243399043fe56f9785" category="list-text">驗證所有生命體都在屬於正確廣播網域的連接埠上以管理方式啟動。</block>
   <block id="cf76afd058516dd90fe89aedbec6904e" category="doc">將非根Aggregate和NAS資料lifs移回節點2</block>
-  <block id="ee2ce060961db1c7ec1f363acef87d91" category="paragraph">在升級過程中、遠端LIF會處理SAN LUN的流量。在升級期間、移轉SAN LIF對於叢集或服務健全狀況並不必要。除非需要將SAN LIF對應至新連接埠、否則不會移動SAN LIF。將node2聯機後，必須驗證該生命段是否正常且位於適當的端口上。</block>
   <block id="7d7b11f14dacd1dc55ecbacf79121ab1" category="paragraph">資源重新配置完成後、控制器更換作業會暫停。</block>
   <block id="371a52c6bb799f6fb34f1a8ac8617b35" category="paragraph">如果控制器更換程序暫停、請檢查並修正錯誤（如果有）、然後發出「推入」以繼續操作。</block>
   <block id="b990f6960d7072e815b8e4d805f92035" category="paragraph">如果有任何生命段被移除、請將主節點還原回節點2：</block>
@@ -2148,7 +2142,6 @@
   <block id="6e7e19ae8357eafafb5df9d5e403d692" category="paragraph">您可以比較輸出與中擷取的輸出 <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block> 區段。</block>
   <block id="83384f48b367d39b20d627f5230807a9" category="list-text">在兩個節點上使用下列命令來設定SP：</block>
   <block id="09e9f7abfe1cdfbd7b4465d4dbc6bd0c" category="paragraph">如果節點1和節點2上已啟用儲存加密、請完成一節 <block ref="18c90c300c0b71334b8b427eaf4f38a3" category="inline-link-macro-rx"></block>。否則、請完成本節 <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>。</block>
-  <block id="6224b74d5b0b8d2ad6d1e4b341f1fa19" category="paragraph">在升級過程中、遠端LIF會處理SAN LUN的流量。在升級期間、移轉SAN LIF對於叢集或服務健全狀況並不必要。除非需要將SAN LIF對應至新連接埠、否則不會移動SAN LIF。將節點1上線後、您必須確認該生命區是否正常、並位於適當的連接埠上。</block>
   <block id="0bff73dcb819ba800842aebfbaa1ea03" category="list-text">執行網路連線檢查：</block>
   <block id="22754bd796837dc212cb05d513ad94cb" category="paragraph">確認所有連接的連接埠（包括介面群組和VLAN連接埠）都顯示為「OK（正常）」狀態。</block>
   <block id="d22abe120efea253d7c808e8381ed917" category="paragraph">執行這些檢查之後、系統會將節點1擁有的非根Aggregate和NAS資料lifs重新定位至新節點1。</block>
@@ -3782,9 +3775,7 @@
   <block id="fcff81c7528d1100eb58e37ad90535bd" category="admonition">如果使用內建金鑰管理程式的 NetApp Volume Encryption （ NVE ）或 NetApp Aggregate Encryption （ NAE ）正在使用中、請在稍後的程序中、將金鑰管理程式複雜密碼保留為完成金鑰管理程式重新同步。</block>
   <block id="1cb0cfe1b06273ad55b3f7189d138bb6" category="paragraph">此程序提供自動化程序的步驟、此程序使用自動磁碟指派和網路連接埠連線檢查來簡化控制器升級體驗。</block>
   <block id="7903419bce057c444e1bce59010158ec" category="paragraph">交換對應的替換系統模組之後、您必須使用 netboot node1 。「netboot」一詞表示您是從ONTAP 儲存在遠端伺服器上的鏡像進行開機。準備 netboot 時、您可以將 ONTAP 9 開機映像的複本新增到系統可以存取的 Web 伺服器上。</block>
-  <block id="4524533c84ef78e7e46b023d69fd771f" category="paragraph">在您驗證 node2 上的網路組態、並在將集合體從 node1 重新定位至 node2 之前、請確認屬於 node2 的 NAS 資料生命體目前位於 node1 上、已從 node1 重新定位至 node2 。您還必須驗證節點2上是否存在SAN lifs。</block>
   <block id="aeadb581bc234293016c883a2bc49cc9" category="paragraph">若要淘汰 node1 、您可以恢復自動作業、以停用 HA 與 node2 配對、並正確關閉 node1 。</block>
-  <block id="374c76f74637c44ca649d6a92a52de14" category="paragraph">在您驗證 node1 上的網路組態、並在將 node2 的集合體重新放置到 node1 之前、請先確認屬於 node1 的 NAS 資料生命體目前位於 node2 上、已從 node2 重新放置到 node1 。您還必須驗證節點1上是否存在SAN lifs。</block>
   <block id="656030f2bc1d7ad32243a38c007d0770" category="paragraph">使用替換系統模組啟動 node1 之後、請確認已正確安裝。您必須等待節點2加入仲裁、然後繼續執行控制器更換作業。</block>
   <block id="fc654fff4abe048148189ff6fa5e3c9c" category="paragraph">若要確認正確的設定、請確認 HA 配對已啟用。您也可以驗證 node1 和 node2 是否可以存取彼此的儲存設備、以及是否都不擁有屬於叢集上其他節點的資料生命體。此外、您也可以確認所有的資料集合體都位於其正確的主節點上、而且兩個節點的磁碟區都在線上。如果其中一個新節點有統一化的目標介面卡、您必須還原任何連接埠組態、而且可能需要變更介面卡的使用。</block>
   <block id="37e06fbb743ab1c1935f7d96672ee924" category="paragraph">交換對應的更換 node2 系統模組之後、您可能需要將它們以網路開機。「netboot」一詞表示您是從ONTAP 儲存在遠端伺服器上的鏡像進行開機。準備 netboot 時、您可以將 ONTAP 9 開機映像的複本放到系統可以存取的 Web 伺服器上。</block>
@@ -4124,14 +4115,10 @@
   <block id="1541d30bc97104d196a4b30a48265600" category="paragraph">在 node2 的插槽 6 中安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 模組。</block>
   <block id="ede80ab611f3725304fd9e964c65b970" category="paragraph">在 node2 中安裝、連接及連接 ASA A900 、 AFF A900 或 FAS9500 控制器模組。</block>
   <block id="b9b8de16ec06ff60ede24d2818e0abab" category="list-text">將用於 FCP 或 FC-NVMe 資料存取的 FCP SAN 生命體重新指派給正確的主連接埠：</block>
-  <block id="a1e8ba06d77acad7fa970ba8e0f0e467" category="paragraph"><block ref="16135bd5b92713cfb36ebe367a4ca458" prefix="" category="inline-code"></block></block>
   <block id="2de38c1e5aa6aa649940e819b4ebf8dd" category="list-text">對於目前節點為升級節點 1 的生命週期、而目前的連接埠會將「狀態 oper 」報告為「 - 」（因為連接埠存在於 AFF A800 節點上、但不存在於 AFF A90 節點上）、請先修改目前的連接埠、然後再將其上線。</block>
   <block id="dc7986d888f3be0cb2a2215b9580886d" category="paragraph">驗證是否已建立實體連線至需要移動 FC LIF 的 FC 目標連接埠：</block>
-  <block id="20aae0c682908a321c4cb1ad3ed45571" category="paragraph"><block ref="6c2cad085a4937044f2937a01cb285f3" prefix="" category="inline-code"></block></block>
   <block id="b6257f5e9d4beab0291d2ae4dcfcbbd8" category="list-text">修改 LIF 的主連接埠：</block>
-  <block id="d354b1900f4972b1b49a933cfce61941" category="paragraph"><block ref="867b8ae03fe5d96f67794b8aa4dc8589" prefix="" category="inline-code"></block></block>
   <block id="4dbb86eefaa0a209d0215f725cf0c953" category="list-text">將 LIF 狀態設定為「 UP 」：</block>
-  <block id="461987576b6bc9795673a818ccac3663" category="paragraph"><block ref="c69d259c6c2cd4b5fceaec835bc7e8b1" prefix="" category="inline-code"></block></block>
   <block id="5ed9b0adde6f557c682b59271b680376" category="paragraph">對節點 1 上的每個主目錄 FC SAN LIF 重複執行子步驟 a 和 b 。</block>
   <block id="9948b60bcf24c5a577ac51ca46681211" category="list-text">[[resume_gress_step4]] 恢復重新定位作業：</block>
   <block id="c8d0afb25c26087738c4c8847b04be0f" category="list-text">等待更換控制器模組上執行的 node1 開機、並顯示開機功能表選項、如下所示：</block>
@@ -4260,13 +4247,7 @@
   <block id="5f6dcf2dc8c9275db98fa671806a2df2" category="list-text">iSCSI 生命體會使用連線掃描自動尋找正確的主連接埠。FC 和 NVMe / FC SAN 生命點不會自動移動。在升級之前、他們會繼續顯示所在的主連接埠。</block>
   <block id="896fb328ef1870ab0c1426f849038173" category="paragraph">檢查 node3 上的 SAN 生命期：</block>
   <block id="986b69e60fa399c84378e8d8fdc4169e" category="list-text">修改任何回報「停機」操作狀態給新資料連接埠的 iSCSI SAN 生命：</block>
-  <block id="d9969d4bf831f15759b98f7f207624b0" category="paragraph"><block ref="10a9afb32a3e32e2f6c74223ba2ea3bf" prefix="" category="inline-code"></block></block>
-  <block id="6f1ad881dbf1eabf2024524fef9e1724" category="paragraph"><block ref="ef02172e95be012def2cc33ea87abf3b" prefix="" category="inline-code"></block></block>
-  <block id="4f79deb8615933038d14dd5ea648ed45" category="paragraph"><block ref="e880cca787f2bb3d426379f39b8412bb" prefix="" category="inline-code"></block></block>
   <block id="d2106fca8a6ec5ee92267756d2ba5ed8" category="list-text">修改新控制器主控的任何 FC 和 NVMe / FC SAN 生命體、並向新控制器上的 FCP 連接埠回報「停機」操作狀態：</block>
-  <block id="374a3532b059f787794fea3a4eceed27" category="paragraph"><block ref="fd39e72aaaaed002f894920981daeb07" prefix="" category="inline-code"></block></block>
-  <block id="09d339146e9f1aea7c732982453d56de" category="paragraph"><block ref="b60b5b228661943ca32fb9e03105246b" prefix="" category="inline-code"></block></block>
-  <block id="844aa209b69b21c6b4ac8b353001bf6c" category="paragraph"><block ref="340db2fa4901e2bebbaa48beb251cc09" prefix="" category="inline-code"></block></block>
   <block id="5041f3d5ede13a9dd794a52168aacdb3" category="summary">使用命令將執行 ONTAP 9.15.1 或更新版本的控制器升級時、請確認 node2 的 NAS 資料生命週期是從 node2 重新放置到 node2<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
   <block id="37795240818b6015e8cc10cd9fdd35e1" category="paragraph">檢查 node4 上的 SAN 生命週圍：</block>
   <block id="b13a176ba8c67756fe909d3d869f8300" category="summary">使用命令支援執行 ONTAP 9.15.1 或更新版本之控制器升級所需的參考內容和網站<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
@@ -4688,14 +4669,11 @@
   <block id="e891c1eb94e2ca8bb3b7b8dadb898400" category="list-text"><block ref="6bdc44b5c51cc632715ca157799c6ae3" category="inline-link-macro-rx"></block>。</block>
   <block id="4ae096e0267d8683306cc7a7a6a39a64" category="paragraph">參考<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>連結到_ONTAP 9 文件_。</block>
   <block id="e9b64afb92831f1198d95f80d156d793" category="list-text">如果您要升級具有儲存磁碟的系統，則必須完成整個部分，然後繼續<block ref="a6d322e902b744ff3a11f02b5c6d9496" category="inline-link-macro-rx"></block> ，在群集提示符下輸入命令。</block>
-  <block id="5bd058344f8aec8219e043cff27b0f39" category="admonition">如果您要升級到同一機箱中同時具有兩個節點的系統、請在機箱中安裝node4以及node3。如果不這樣做，當您啟動 node3 時，該節點的行為將如同處於雙底盤配置中，而當您啟動 node4 時，節點之間的互連將不會出現。</block>
   <block id="dce5ed79f31a7baa48db39721ab1ead2" category="inline-link-macro">使用 ARL 升級控制器模型，保留現有的系統機殼和磁碟</block>
   <block id="744c8ae51567237f1e51aca67e4478ec" category="inline-link-macro">了解使用 ARL 支援的系統升級組合，保留現有系統機箱和磁碟</block>
   <block id="8b53acd1242404623585fa614cf7d039" category="paragraph">如果 node3 上沒有安裝與 node1 上相同版本的 ONTAP 9，則必須透過網路啟動 node3。安裝node3之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點3。然後、您可以將正確的檔案下載到開機媒體裝置、以供後續系統開機。請參閱。 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block></block>
   <block id="756d35654041df32f1be206cb5d73d40" category="paragraph">但是，如果 node3 上安裝的 ONTAP 9 與 node1 上安裝的 ONTAP 9 相同或更高版本，則無需透過網路啟動 node3。</block>
   <block id="e9e731a9f4962a1d8b683234f1b71e92" category="list-text">如果您要升級具有儲存磁碟的系統，則必須完成整個部分，然後前往<block ref="b874d68563e926f19d0f15015f15f190" category="inline-link-macro-rx"></block>和<block ref="65c0a9634aad86b4a452ae0da56bfb85" category="inline-link-macro-rx"></block> ，在群集提示符下輸入命令。</block>
-  <block id="077a3792f816c368d84f9a714136be02" category="paragraph">如果節點 4 上安裝的 ONTAP 9 版本與節點 2 上安裝的 ONTAP 9 版本不同，則必須安裝node4之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點3。透過網路啟動節點 4。然後，您可以按照<block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block> 。</block>
-  <block id="b4f090990739dcde90138932f4f42a92" category="paragraph">但是，如果 node4 上安裝的 ONTAP 9 與 node2 上安裝的相同或更高版本，則無需透過網路啟動 node4。</block>
   <block id="92909e480346a929ed3538f8fb727042" category="list-text">如果您要升級具有儲存磁碟的系統，則必須完成整個部分，然後繼續執行下一節<block ref="488c6e462745f03d8c1dfb3ba61f7258" category="inline-link-macro-rx"></block> ，在群集提示符下輸入命令。</block>
   <block id="13f6606372b0497bd7d8f495e2c93873" category="paragraph">您將使用目錄中的信息<block ref="ab6acaf1648b65fe7eff652317a95a17" category="inline-link-macro-rx"></block> 。</block>
   <block id="ab58313074490a46c5f45119c9303e60" category="paragraph">查看「*狀態管理/每*」欄、查看是否有任何生命期中斷。如果任何 LIF 故障，請諮詢<block ref="103588ef7fbd849a8c4b92e24d1fe01e" category="inline-link-macro-rx"></block>部分。</block>
@@ -5346,4 +5324,30 @@
   <block id="de2c8f88da32b208ab4a1bf0c1405c32" category="paragraph"><block ref="de2c8f88da32b208ab4a1bf0c1405c32" category="inline-link-macro-rx"></block></block>
   <block id="0187590ed6627836f657d0d4157f4bd9" category="paragraph"><block ref="0187590ed6627836f657d0d4157f4bd9" category="inline-link-macro-rx"></block></block>
   <block id="9cab58d086b1e90a5b2f49ae6b194edb" category="sidebar">移除原始節點</block>
+  <block id="ebcb74e1716134fe203a42a8cd428baa" category="paragraph">如果節點 4 上的ONTAP版本與節點 2 上的ONTAP版本不同，則需要對節點 4 進行網路啟動。安裝 node4 後，從儲存在 Web 伺服器上的ONTAP 9 映像啟動它。然後，您可以按照說明將正確的檔案下載到啟動媒體設備，以便後續系統啟動。 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block>。</block>
+  <block id="f9e30dbcc8818a264a749f4e39bc4fab" category="admonition">如果要升級到兩個節點都在同一個機箱中的系統，請將節點 4 和節點 3 安裝到機箱中。如果兩個節點沒有安裝在同一機箱中，啟動節點 3 時，它的行為就像是在雙機箱配置中一樣；而啟動節點 4 時，節點之間的互連將無法建立。</block>
+  <block id="37fe0d7aeb22bd42f48b3712743c4b39" category="paragraph">如果節點 4 上的ONTAP版本與節點 2 上的ONTAP版本不同，則必須對節點 4 進行網路啟動。安裝 node4 後，從儲存在 Web 伺服器上的ONTAP 9 映像啟動它。然後，您可以按照說明將正確的檔案下載到啟動媒體設備，以便後續系統啟動。 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block></block>
+  <block id="e8b6b737376aeb606702dc2af5d474cd" category="paragraph">但是，如果 node4 上的ONTAP版本與 node2 上的ONTAP版本相同或更高，則無需對 node4 進行網路啟動。</block>
+  <block id="abe51e27581a803d580b27106c8fbcc9" category="list-text">如有必要，恢復和還原已移位的 LIF，或手動遷移和修改未能自動遷移到 node3 的 node1 LIF。</block>
+  <block id="fa9a7ae0c5e4e008996b0538541864c2" category="open-title">恢復和還原移位的 LIF</block>
+  <block id="a576509acad193e321ac9d885bc9528e" category="list-text">列出所有已移位的 LIF：</block>
+  <block id="0ea61c0cbfb23f5c46127b958ce17c92" category="open-title">手動遷移和修改 LIF 文件</block>
+  <block id="8d89c65969f1e32bf8b6c9fb92b19f08" category="list-text">將未能自動遷移到節點3的LIF遷移：</block>
+  <block id="3a062c1f7aa95f546bf6583c39ceb2fd" category="list-text">修改已遷移 LIF 的來源節點和來源連接埠：</block>
+  <block id="064dc3dc8b7fdd4f038fd92a236f9b83" category="paragraph">在驗證節點 4 上的網路配置後，需要將節點 2 擁有的 NAS 資料 LIF 從節點 3 遷移到節點 4，並確認 SAN LIF 存在於節點 4 上。</block>
+  <block id="ed77334ffc92a501bf542c2f2d717f14" category="paragraph">遠端 LIF 在升級過程中處理到 SAN LUN 的流量。升級過程中，遷移 SAN LIF 對叢集或服務運作狀況並非必要。除非需要將 SAN LIF 對應到新端口，否則不會移動它們。</block>
+  <block id="738a28f5784910fea735841a7a946127" category="paragraph">在節點 4 上線後，您需要驗證 LIF 是否健康並位於正確的連接埠上。</block>
+  <block id="f5ddff38abc8c1b895f6621c588d31b9" category="paragraph">系統在網路可達性檢查階段暫停操作。</block>
+  <block id="3d2471dd6cc645b6dc421dfb8f23f60f" category="list-text">如有必要，恢復和還原已移位的 LIF，或手動遷移和修改未能自動遷移到 node4 的 node2 LIF。</block>
+  <block id="ca2db2e739635d249ad481bb473976e7" category="list-text">將未能自動遷移到節點 4 的 LIF 遷移：</block>
+  <block id="ba5c068e6cda04378d720403021dfbd4" category="paragraph">如果節點 4 上的ONTAP版本與節點 2 上的ONTAP版本不同，則必須對節點 4 進行網路啟動。安裝 node4 後，從儲存在 Web 伺服器上的ONTAP 9 映像啟動它。然後，您可以按照說明將正確的檔案下載到啟動媒體設備，以便後續系統啟動。 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block>。</block>
+  <block id="9121a5ed9235664a166062eb989f8200" category="paragraph">在驗證節點 2 上的網路配置後，需要將節點 2 擁有的 NAS 資料 LIF 從節點 1 遷移到節點 2，並確認 SAN LIF 存在於節點 2 上。</block>
+  <block id="1055c88411bbfa6c3eba01720acdc22a" category="paragraph">在節點 2 上線後，您需要驗證 LIF 是否健康以及是否位於正確的連接埠上。</block>
+  <block id="acad873850f7dfac35785963df3cc61f" category="paragraph">系統在網路可達性檢查的此階段暫停操作。</block>
+  <block id="781572d7ed485284c30a93586bc8b92a" category="list-text">如有必要，恢復和還原已移位的 LIF，或手動遷移和修改未能自動遷移到 node2 的 node2 LIF。</block>
+  <block id="f64bf283d31880054e5afd8aaefe6a39" category="list-text">將未能自動遷移到節點2的LIF遷移出去：</block>
+  <block id="ea32bdbc38b1afc744063f63942db19d" category="paragraph">在驗證節點 1 上的網路配置後，需要將節點 1 擁有的 NAS 資料 LIF 從節點 2 遷移到節點 1，並確認 SAN LIF 存在於節點 1 上。</block>
+  <block id="e1bbac43e553387c297781314d0b0a41" category="paragraph">在節點 1 上線後，您需要驗證 LIF 是否健康以及是否位於正確的連接埠上。</block>
+  <block id="62a56d2b56c0cc31edabe0668b713cd8" category="list-text">如有必要，恢復和還原已移位的 LIF，或手動遷移和修改未能自動遷移到 node1 的 node1 LIF。</block>
+  <block id="619e87d98142a98df53ed32236cf583d" category="list-text">將未能自動遷移到節點 1 的 LIF 遷移：</block>
 </blocks>

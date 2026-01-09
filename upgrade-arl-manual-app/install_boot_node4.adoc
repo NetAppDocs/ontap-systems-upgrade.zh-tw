@@ -17,9 +17,9 @@ summary: 在ONTAP 執行ONTAP 更新版本的控制器上、手動進行ARL升�
 您必須在機架中安裝node4、將node2連線傳輸至node4和開機node4。您也必須重新指派任何節點2備援磁碟、屬於根的任何磁碟、以及先前未重新部署至節點3的任何非根Aggregate。
 
 .關於這項工作
-如果節點 4 上安裝的 ONTAP 9 版本與節點 2 上安裝的 ONTAP 9 版本不同，則必須安裝node4之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點3。透過網路啟動節點 4。然後，您可以按照link:prepare_for_netboot.html["準備netboot"] 。
+如果節點 4 上的ONTAP版本與節點 2 上的ONTAP版本不同，則必須對節點 4 進行網路啟動。安裝 node4 後，從儲存在 Web 伺服器上的ONTAP 9 映像啟動它。然後，您可以按照說明將正確的檔案下載到啟動媒體設備，以便後續系統啟動。 link:prepare_for_netboot.html["準備netboot"]
 
-但是，如果 node4 上安裝的 ONTAP 9 與 node2 上安裝的相同或更高版本，則無需透過網路啟動 node4。
+但是，如果 node4 上的ONTAP版本與 node2 上的ONTAP版本相同或更高，則無需對 node4 進行網路啟動。
 
 [IMPORTANT]
 ====
