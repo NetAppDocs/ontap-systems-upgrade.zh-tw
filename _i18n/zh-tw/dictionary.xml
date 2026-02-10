@@ -2841,7 +2841,6 @@
   <block id="b14047e1956c68f095842760b1beaea2" category="paragraph">下列畫面顯示開機功能表提示</block>
   <block id="d4041bfba261eda3180ae9fbf6285d95" category="list-text">當您看到類似於以下內容的提示時、請輸入「yes（是）」：</block>
   <block id="8b8e41e588d3f28837be58712aeec25a" category="paragraph">系統會啟動「無圖」程序、然後重新開機。程序完成後、系統會返回開機功能表。</block>
-  <block id="5b3de670b2de55fec257c6f89ab421bc" category="summary">如果您要透過移動磁碟區來升級、請準備原始節點、並將新節點加入叢集。您可以將磁碟區移至新節點、設定lifs、以及從叢集取消連接原始節點。透過移動磁碟區進行升級是不中斷營運的程序。</block>
   <block id="8093d580d9cc0468991044c64c97b174" category="inline-xref-macro">移動、刪除或建立SAN LIF</block>
   <block id="c9b87fd8826330d02eb0f7e03c49023c" category="summary">若要透過移動磁碟區來完成升級程序、您需要設定服務處理器（SP）、安裝新授權、以及設定AutoSupport 更新。您可能還需要設定儲存設備或Volume Encryption、並設定FC或NCA連接埠。</block>
   <block id="758ed2ce94a0d48e369a05e9792df5bf" category="paragraph">若要透過移動磁碟區完成升級程序、您必須設定服務處理器（SP）、安裝新授權、以及設定AutoSupport 更新。您可能還需要設定儲存設備或Volume Encryption、並設定FC或NCA連接埠。</block>
@@ -2863,7 +2862,6 @@
   <block id="aa6a7c81aeaad5ec8cef068df556cb9d" category="paragraph">您必須緩慢關閉握把、使其與機層面正確對齊。</block>
   <block id="4d388dae867b0a86458ede8119b8865e" category="list-text">重複 <block ref="267cbc67ee851d16fc5833a2bb2eacbb" category="inline-xref-macro-rx"></block> 透過 <block ref="07cb79f26065ce7eb3e55fb46a8c9f8b" category="inline-xref-macro-rx"></block> 適用於您要移至新系統的所有磁碟機。</block>
   <block id="72992cc1c16f1dbbbcb7cc77a55977d9" category="list-text">存取進階權限層級：</block>
-  <block id="dc4a67b269dfaba9479198e3f11a2a68" category="list-text">識別具有epsilon的節點：</block>
   <block id="9f964a34bab4b3112781e0b28258f5bb" category="paragraph">在下列範例中、「node0」目前保留epsilon：</block>
   <block id="7f1e916ec0aa6a4296149be58ba61a1b" category="list-text">如果叢集僅剩兩個節點、請為雙節點叢集設定高可用度：</block>
   <block id="c1f192f6d626bc5f27fc74b0848a1250" category="paragraph">"cluster ha modify -configured true"</block>
@@ -3554,7 +3552,6 @@
   <block id="b81d07712272425546299d94028eada1" category="list-text">結束維護模式：</block>
   <block id="6a3104dd603be761e5020da6f96a9944" category="inline-xref-macro">將 AFF A250 轉換為磁碟機櫃、以升級至 AFF A400</block>
   <block id="15cef8c52a9390a0d7fe3fdbd4c153c8" category="summary">無需購買額外的儲存設備和叢集交換器、即可執行 NDU 至入門級 NetApp AFF 和 FAS 系統。</block>
-  <block id="f023a71f63cfb01aeff4e5fe98a66467" category="paragraph">在本程序中、 AFF A250 高可用度（ HA ）配對控制器稱為 node1 和 node2 、而替換的 AFF A400 HA 配對控制器則稱為 node3 和 node4 。</block>
   <block id="b3105979177988818fc1f2f63701e999" category="inline-xref-macro">將 node2 上的生命體和資料集合體移轉至 node1</block>
   <block id="ea7226a78f02b3e8ba077638a2e6fb6a" category="inline-xref-macro">將 node2 轉換為磁碟機櫃、並連線至 node4</block>
   <block id="3dd43dc6ebaff4c46e6ce0976cbd1a04" category="inline-xref-macro">將 node2 磁碟機重新指派給 node4</block>
@@ -4004,19 +4001,13 @@
   <block id="e1d9300a5e6bf8e78b0757b6849a8ce6" category="paragraph">您已完成實體連接埠的對應。若要完成升級、請前往 <block ref="00ba9232a950e876c165749336dea823" category="inline-link-macro-rx"></block>。</block>
   <block id="c3241c585c0680bacd1308d6f2c7f051" category="paragraph">這些步驟適用於執行ONTAP 下列版本的系統：如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 <block ref="2a32a1887b2d01dbc6f66ce7f3bde379" category="inline-link-macro-rx"></block>。</block>
   <block id="14c8c7cd715ed376698ba17d9b3263a3" category="list-text">如果您的系統執行ONTAP 的是*停止*版本9.8或更新版本。您必須使用中的程序 <block ref="479694184a7596b8d654b4519a939fb4" category="inline-link-macro-rx"></block>。</block>
-  <block id="019e462408d5236cafe9463f4045db3d" category="paragraph">您可以將每個 AFF A250 節點轉換為 NS224 磁碟機櫃、然後連線至 AFF A400 替換節點、以執行從 NetApp AFF A250 系統到 NetApp AFF A400 系統的不中斷升級。</block>
   <block id="ee1607b96090f48bac4dd25134093834" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="f5b56c210a0d4c20980ddfe8b334c676" category="inline-link-macro-rx"></block></block>
   <block id="316fbda1f1480f59ea91e4245a06ca9b" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="89f7cee20d9833c231c0e50fc41ce58d" category="inline-link-macro-rx"></block></block>
-  <block id="bbadb0866103c09529bf7f6484a7d090" category="paragraph">您可以將 AFF A250 node2 轉換為 NS224 磁碟機櫃、然後連線至 AFF A400 node4 、再將磁碟機從 node2 重新指派至 node4 。</block>
   <block id="2fce8a2d690ba83af5432e4cae17de6f" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="3c6ba9b5c38f48cb17c85b592674d539" category="inline-link-macro-rx"></block></block>
-  <block id="e718380a27225cee9937552d63279ec4" category="paragraph">將 AFF A250 node2 轉換為 NS224 磁碟機櫃並連線至 AFF A400 node4 之後、您可以將先前屬於 node2 的磁碟機重新指派給 node4</block>
   <block id="f82507a2b9b5f8c5aefa824395d9718d" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="e2c52cb2e34e893afee819116adecafb" category="inline-link-macro-rx"></block></block>
-  <block id="d05c49cd0e63bffcd5674e232b1afbb9" category="paragraph">在將 AFF A250 node1 轉換為磁碟機櫃之前、請先將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 AFF A400 node4 。</block>
   <block id="81dc3cbf2118e8579a9b2450f7a12e5d" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="e86b9bc23de1f214996444ef551bacb8" category="inline-link-macro-rx"></block></block>
   <block id="58cb6081dfeeba17660c15ea6ea91ba5" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="2fbb74e3e06daf149b588471e96a56a4" category="inline-link-macro-rx"></block></block>
-  <block id="00c1c8079c802e3e24aa7784bdfb9fbf" category="paragraph">將 AFF A250 node1 轉換為 NS224 磁碟機櫃並連線至 AFF A400 node3 之後、您可以將先前屬於 node1 的磁碟機重新指派給 node3 。</block>
   <block id="fe2f8aac9baa1b8fcda89bf672f09bc8" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="bfdfbe3df70ea3584435d9a8c7e7cd9c" category="inline-link-macro-rx"></block></block>
-  <block id="663e41c83a5c4afbfe905c75bda6d9cd" category="paragraph">若要完成升級、請將 node3 連接至 node4 、然後將 node4 上的資料生命週期和資料集合體移轉至 node3 。</block>
   <block id="18101d4aba30800c4dc0822c723a1de6" category="paragraph">這些步驟適用於執行ONTAP 不含更新版本的系統。如果您執行ONTAP 的是更新版本的版本、則必須使用中的程序 <block ref="df92ac10eb53320f3aee49e68f1573a2" category="inline-link-macro-rx"></block>。</block>
   <block id="2408bbc2877d469c8a828dd2f71d5815" category="list-text">如果您的系統執行ONTAP 的是效能不高的版本、*停止*。您必須使用中的程序 <block ref="df92ac10eb53320f3aee49e68f1573a2" category="inline-link-macro-rx"></block>。</block>
   <block id="323f7a087e92b0783382d6a319113ac8" category="cell">跳過此步驟、前往 <block ref="84a764803e273063ea87749716b7c654" category="inline-xref-macro-rx"></block>。</block>
@@ -4499,8 +4490,6 @@
   <block id="e0646aaa208b06f2b9c991f8d1d06277" category="doc">更換 AFF A800 或 AFF C800 控制器模組</block>
   <block id="b9f8db0a3b83103e79c00296ab293002" category="section-title">卸下 AFF A800 或 AFF C800 控制器模組</block>
   <block id="84a1bd056cdf96c5313ffeb160884063" category="paragraph">從現有模組中移除纜線管理裝置，然後將控制器稍微移出機箱。</block>
-  <block id="9377ce9760d2e42c9e31f172d37994a5" category="section-title">安裝 AFF A90 ， AFF A70 或 AFF C80 控制器模組</block>
-  <block id="1c11a10891fa20f98660572f553b2716" category="paragraph">在 node1 中安裝，連接及連接 AFF A90 ， AFF A70 或 AFF C80 控制器模組。</block>
   <block id="95699993f4e4282e1516a59b8f8b3a24" category="paragraph">在開始升級之前，請確認您的替換系統有正確的模組。如果零件遺失、請聯絡技術支援部門或 NetApp 銷售代表以取得協助。</block>
   <block id="fbe8d8aaa2d545f1170258a5901312fe" category="cell">兩個控制器模組和新的 IO 模組</block>
   <block id="ce648a37807e4da2fbd09030fea537d2" category="list-text">AFF A220 、 AFF A200 、 AFF C190</block>
@@ -4958,18 +4947,12 @@
   <block id="bb7601ffb9123f9786cdac8af94211f0" category="paragraph"><block ref="bb7601ffb9123f9786cdac8af94211f0" category="inline-link-macro-rx"></block></block>
   <block id="1e74494f5772c735812d575a898596c1" category="summary">透過將每個節點轉換為 DS212C 驅動器架，然後連接到替換節點，對FAS2820執行無中斷升級。</block>
   <block id="ab73d8c2e94481a6ff48a7c91868d2c2" category="doc">透過轉換為 DS212C 驅動器架從FAS2820升級</block>
-  <block id="b013bc2ad201f8e021040fd0a4c8d714" category="paragraph">您可以將每個節點轉換為 DS212C 驅動器架，然後將其連接到替換節點，對NetApp FAS2820進行無中斷升級。</block>
-  <block id="9b4eafb4e3bcfaad97fc5e7af7aa1955" category="paragraph">在此過程中， FAS2820高可用性 (HA) 對控制器稱為節點 1 和節點 2，取代 HA 對控制器稱為節點 3 和節點 4。</block>
   <block id="d1d868e382ab4b08e3be5f07e03e038d" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="91744e9af34171046ee51e4df1cdf2ab" category="inline-xref-macro-rx"></block></block>
-  <block id="8313cf9b12eae77b602124631070e7c4" category="paragraph">在將FAS2820節點 2 轉換為驅動器架之前，您需要將節點 2 上的邏輯介面 (LIF) 和資料聚合遷移到節點 1。</block>
   <block id="58169b6641f5811fe5a42525bb985f58" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="9ad99f16aefbb0da0c8192358055567b" category="inline-xref-macro-rx"></block></block>
-  <block id="34e12f96079e8f2641f0bc5f76a14f3b" category="paragraph">將 FAS8280 節點 2 轉換為 DS212C 磁碟機架，然後連接到節點 4，再將磁碟機從節點 2 重新指派到節點 4。</block>
   <block id="0054cc808f512bbb3f118ca4abd076c2" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="d3f3d357ab78b548fc1601824fb28e41" category="inline-xref-macro-rx"></block></block>
   <block id="5a6af6abdd490940dc1f9df9cde04966" category="paragraph">將FAS2820節點 2 轉換為 DS212C 磁碟機架並連接到節點 4 後，將先前屬於節點 2 的磁碟機重新指派給節點 4。</block>
   <block id="48f978643e148ed2cc94db905b383041" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="02b623c9dbb2d160132ae446a4c7a0c7" category="inline-xref-macro-rx"></block></block>
-  <block id="009ec9a2eb4000ba1aeab38e275d3dd4" category="paragraph">在將FAS2820節點 1 轉換為驅動器架之前，您需要將節點 1 上的資料聚合、epsilon 和 LIF 遷移到節點 4。</block>
   <block id="26def2138cc961c62254cd174c55a771" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="9c43bd8b004df1da7b21ce814f6eafc2" category="inline-xref-macro-rx"></block></block>
-  <block id="fc0b4fd01b008060b7a81ca3f154ea4b" category="paragraph">將FAS2820節點 1 轉換為 DS212C 磁碟機架並連接到節點 3，然後將磁碟機從節點 1 重新指派到節點 3。</block>
   <block id="a382921dc03bfcb77c9d970e45fe1495" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="9773b7b5ae1a3a9b51916da2f5695c60" category="inline-xref-macro-rx"></block></block>
   <block id="d794a00a08edf3e003b5895b03494ddf" category="paragraph">將FAS2820節點 1 轉換為 DS212C 磁碟機並連接到節點 3 後，將先前屬於節點 1 的磁碟機重新指派給節點 3。</block>
   <block id="850e71b118b51db23f5fa234e21d6eef" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="c1ca954fc21d09fcd7cbc3b5808e040e" category="inline-xref-macro-rx"></block></block>
@@ -5218,9 +5201,7 @@
   <block id="40c8ff48fe09ea0079684fdd1a250ec0" category="cell">問問自己…</block>
   <block id="3b67351e5cad04409e6a96d3746ac449" category="cell">如果你的答案是肯定的，你可以這樣做…</block>
   <block id="7276d228ae5909a1600376ea04afcc20" category="cell">我在原節點和新節點上運行的軟體版本是否不同？</block>
-  <block id="d36d3c0e8d8d1ae2b69767c2d21f4de1" category="cell">將原始節點上的ONTAP版本升級到最高支援版本。如果條件允許，新節點必須支援在原始節點上執行的ONTAP版本。如果這不可能，<block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block>在原始節點上升級到最高支援版本。原節點和新節點之間的版本差不能大於 4。例如，支援ONTAP 9.8 和 9.12.1；但不支援ONTAP 9.8 和 9.13.1。<block ref="e34181b97f6f4b1fe67c330fb826ba03" category="inline-link-macro-rx"></block>。</block>
   <block id="218b292436939056129ace4ef7a755ab" category="cell">我是否要進行顛覆性的升級？</block>
-  <block id="7556c42574b8863b01a23cb64beb17f6" category="cell"><block ref="8b9b2634fd898f04166a765851aba8f2" category="inline-link-macro-rx"></block>。這需要一個全新的系統，配備自己的儲存設備和貨架，用於儲存來自原始系統的資料。對於某些升級，可以從控制器機架進行轉換。</block>
   <block id="8988c8c891d1b170244fa2801c8f7823" category="cell">我是否要執行無中斷升級？</block>
   <block id="2f5546c2bb23945783cbdb6d6e128cdf" category="paragraph">請使用以下方法之一進行升級：</block>
   <block id="0678555704a75d8c6ba937ca89e44347" category="inline-link-macro">成交量</block>
@@ -5228,7 +5209,6 @@
   <block id="6de3b933715f67f0e1503dadf7be11b5" category="inline-link-macro">使用聚合遷移</block>
   <block id="1326c781e22221bcfee09723f0a2bfc2" category="list-text"><block ref="1326c781e22221bcfee09723f0a2bfc2" category="inline-link-macro-rx"></block></block>
   <block id="af07e0611bc43f9c7f0e394b682e76a9" category="paragraph">ARL 是一種置換手術。您無需隨著新節點的加入而擴展和縮減集群，這對於雙節點無交換器集群來說是有利的。在移動磁碟區時，透過重新定位聚合來移動資料比跨聚合複製資料更快。</block>
-  <block id="999f41e22973138ebb057a2c18787f5b" category="cell">我的系統是模組化的嗎？  *注意*：在模組化系統中，控制器沒有任何內部磁碟，所有儲存都位於外部連接的儲存架中。</block>
   <block id="48dea881883b05a136108fac6e95bcae" category="cell"><block ref="8f9fb90f68730e000102778c18115044" category="inline-link-macro-rx"></block>。</block>
   <block id="87f099da08cbe3849d9395ec1b7d8604" category="cell">我是否擁有一個整合系統，並希望透過遷移卷來升級？ *註*：在整合系統中，控制器具有內部磁碟，儲存設備位於控制器機箱內以及外部連接的儲存架中。外部層架用於擴展儲存空間，可能並非每個系統配置都包含外部層架。</block>
   <block id="03478f7299af730e1a78b0850b26043c" category="inline-link-macro">請確認您的系統受支援</block>
@@ -5245,7 +5225,6 @@
   <block id="ee02ff06a678b4f0bf35d84ad8172be2" category="cell">我是在更換單一零件嗎？</block>
   <block id="d65572507ebaf55db388e34a847557ea" category="cell">請參閱<block ref="bcf4c677eadf935a910ed0b1e7ac432c" category="inline-link-macro-rx"></block>並找到該組件的現場可更換單元 (FRU) 宣傳單。</block>
   <block id="4c57db980fd04065c39ac4dffcef854a" category="section-title">例如： FAS9500升級到 FAS90</block>
-  <block id="18f154e130f3704e87f40b22af08eb89" category="paragraph">本範例展示了FAS9500到 FAS90 控制器升級的可能解決方案。</block>
   <block id="a97ea56b0e00b2379736ae60869ff66a" category="cell">問題</block>
   <block id="67ca848a550c561e54a81891f0d6d223" category="cell">範例答案</block>
   <block id="be3ad2de4d2b8e3ba0b5c1aa4b8cb05b" category="cell">不。 FAS9500和 FAS90 都運行ONTAP 9.15.1。</block>
@@ -5284,24 +5263,10 @@
   <block id="d350fa659f98e0153758612c202e6a04" category="summary">將磁碟區遷移到新節點後，從叢集中刪除原始節點。刪除節點時，節點的配置將被擦除，所有磁碟將被初始化。</block>
   <block id="174d5560f210e4b4b5a29f385b2c8035" category="paragraph">將磁碟區從原始節點移至新節點並移動或刪除資料 LIF 後，從叢集中刪除原始節點。刪除節點時，節點的配置將被擦除，所有磁碟將被初始化。</block>
   <block id="fcd2352296590a0e2accae2dd13e31d6" category="list-text">[[disable-ha]]停用原始節點上的高可用性 (HA) 配置：</block>
-  <block id="2c1e3c1177e032883dd8cedb7237369c" category="paragraph"><block ref="cfb56c7a6f1b3b0505ee17fb92209fba" prefix="" category="inline-code"></block></block>
-  <block id="bf80321073982fe86a71c1af9fac0650" category="list-text">[[epsilon-true]]如果某個原始節點持有 epsilon，則將 epsilon 移到您不會從叢集中移除的節點：</block>
-  <block id="4b839279170b4ba0703853fb5c2cb9da" category="list-text">從原始節點中移除 epsilon：</block>
-  <block id="222406298d9a2f2c033dca8a74afd55c" category="paragraph"><block ref="de7321e59bd990ec3ef09ca78116a7b0" prefix="" category="inline-code"></block></block>
-  <block id="7a788eb6946d9ba1aaad7df7bfb5f5b2" category="list-text">將 epsilon 分配給不同的節點：</block>
-  <block id="b0c1e0271345231f93266b65411815c2" category="paragraph"><block ref="45f47d97caec3e0967eb10311176b1bb" prefix="" category="inline-code"></block></block>
   <block id="14f47a56746d8dd06d7152a27fa22219" category="list-text">確定當前主節點：</block>
-  <block id="e477c0774c6014b5173ffa6810d512ab" category="paragraph"><block ref="484f24f8e4da80a1185aa63fa1d5fc08" prefix="" category="inline-code"></block></block>
   <block id="f56d76980d50ef81b1a4f2246dbcf0da" category="paragraph">主節點是承載諸如此類流程的節點。<block ref="d724f231a9a7b89757c4394d6622bc47" prefix=" " category="inline-code"></block>，<block ref="7b588256fbdc51b849239cf8988219ff" prefix=" " category="inline-code"></block>，<block ref="4855d47f82dd3929173aadd191f2a0ee" prefix=" " category="inline-code"></block>，<block ref="1ed70af3fcff64fcd6c818d86b6e6150" prefix=" " category="inline-code"></block>， 和<block ref="29fa19e764c47fa898f697bf7bb940db" prefix=" " category="inline-code"></block>。</block>
-  <block id="b799370e99c40124bdcc44e4ed7a5704" category="list-text">如果要移除的節點是目前主節點，則需要啟用叢集中剩餘節點的選舉機制，使其能夠被選為主節點：</block>
   <block id="ac13fc86d8d30a4abbb50425385fe453" category="list-text">取消目前主節點參與叢集的資格：</block>
-  <block id="7021c105080628669b133405100efc63" category="paragraph"><block ref="f2b8f9d3d7fb27d37deaaf84ee69a072" prefix="" category="inline-code"></block></block>
-  <block id="84023f697c3d7f175eb48d9e7f81fe97" category="paragraph">該節點將被標記為不健康，直到其恢復符合資格為止。當主節點不再符合資格時，叢集仲裁將從剩餘節點中選出一個新主節點。</block>
-  <block id="834ca6428bef51142e4d70a6c409829e" category="paragraph">如果您在 HA 對中的第一個節點上執行此步驟，則應僅將該節點標記為不符合條件。請勿修改HA合作夥伴的狀態。</block>
-  <block id="c45a4c98c59ca383859dc9ca2d7b3243" category="paragraph">如果選擇夥伴節點作為新的主節點，則需要驗證它是否持有 epsilon。如果夥伴節點持有 epsilon，則在使其失去資格之前，需要將 epsilon 轉移到叢集中剩餘的另一個節點。當你重複這些步驟來刪除夥伴節點時，就會執行此操作。</block>
   <block id="fa46d2d3d8cfe760c5a42ee99c2bb479" category="list-text">使之前的主節點再次有資格參與叢集：</block>
-  <block id="c1f0c4bf4b8a0d924276f97311b2b56c" category="paragraph"><block ref="14dcae85a302a6e4089a3c2a5636ff04" prefix="" category="inline-code"></block></block>
-  <block id="342dbc3880ef101e1ed2b5b78347d7d3" category="list-text">登入叢集中剩餘節點的遠端節點管理 LIF 或叢集管理 LIF，並從叢集中刪除每個原始節點（進階權限等級）：</block>
   <block id="eb1f2131641f5195e8a8d9b93f797562" category="paragraph">節點名稱：</block>
   <block id="9900c92f7c4f327f3d129fcdb88c5a95" category="paragraph">節點 IP 位址：</block>
   <block id="e1b2dd8ee5d4a8767f514f7140d3b5b7" category="paragraph">如果您有一個混合版本集群，並且要移除最後一個版本較低的節點，請使用下列方法：<block ref="980f71817e3a06bee87bd061faeb423d" prefix=" " category="inline-code"></block> 使用這些命令的參數。</block>
@@ -5309,13 +5274,10 @@
   <block id="f80f10147ba45bd1fef6e3c0af2ad9b6" category="list-text">您也必須從叢集中刪除節點的故障轉移夥伴。</block>
   <block id="f8794e0f00d445cfe92a1a1eeb5fdb7d" category="list-text">節點被移除後，在它重新加入叢集之前，必須使用啟動選單選項 *(4) 清除配置並初始化所有磁碟* 或選項 *(9) 配置進階磁碟機分割區* 來擦除節點的配置並初始化所有磁碟。</block>
   <block id="4fcbf7b91c2fe0247f60ee2199672575" category="paragraph">如果在刪除節點之前必須解決某些條件，則會產生錯誤訊息。例如，該訊息可能表示該節點具有您必須刪除的共用資源，或者該節點處於您必須停用的叢集 HA 配置或儲存故障轉移配置中。</block>
-  <block id="39e6f8500af6b07f2903990336145751" category="paragraph">如果該節點是仲裁主節點，則叢集會短暫失去仲裁，然後恢復仲裁。此次法定人數損失是暫時的，不會影響任何資料操作。</block>
   <block id="5b04742f17c701ff3b58fe32667cc471" category="list-text">如果錯誤訊息指示存在錯誤情況，請解決這些情況並重新運行。<block ref="b592ef8b0e17ac31ab55e93e7c1d10e1" prefix=" " category="inline-code"></block> 或者<block ref="5d16191a3b7abaee7967de5fd82cd336" prefix=" " category="inline-code"></block> 命令。</block>
-  <block id="bb73c71d58dba4f68bd9a8e3fa5709b6" category="paragraph">節點從叢集中成功移除後，會自動重新啟動。</block>
   <block id="b16b992bede9cd61adafd05ccfa8b5db" category="list-text">如果要重新利用節點，請清除節點配置並初始化所有磁碟：</block>
   <block id="f68297d08c23f1c81caf07d193fce59a" category="list-text">在啟動過程中，當系統提示時，按 Ctrl-C 顯示啟動選單。</block>
   <block id="5b43d3aa91abf75fd24c44f1341b2f06" category="list-text">選擇啟動選單選項 *(4) 清除配置並初始化所有磁碟*。</block>
-  <block id="82049266f76a1c9f2f0a3be4c999f4d2" category="list-text">[[return-admin]]恢復叢集中某個新節點的管理員權限等級：</block>
   <block id="c4ca4238a0b923820dcc509a6f75849b" category="inline-xref">1</block>
   <block id="d3d9446802a44259755d38e6d163e820" category="inline-xref">10</block>
   <block id="d189cecc16115f8a1464438558157df4" category="list-text">重複步驟 <block ref="ad03471bc3c3d3a60bb07d8e505cecf8" category="inline-xref-macro-rx"></block> 到 <block ref="0b50026eb51fd5abcc3f6c551ad9a731" category="inline-xref-macro-rx"></block> 從叢集中移除故障轉移夥伴。</block>
@@ -5350,4 +5312,46 @@
   <block id="e1bbac43e553387c297781314d0b0a41" category="paragraph">在節點 1 上線後，您需要驗證 LIF 是否健康以及是否位於正確的連接埠上。</block>
   <block id="62a56d2b56c0cc31edabe0668b713cd8" category="list-text">如有必要，恢復和還原已移位的 LIF，或手動遷移和修改未能自動遷移到 node1 的 node1 LIF。</block>
   <block id="619e87d98142a98df53ed32236cf583d" category="list-text">將未能自動遷移到節點 1 的 LIF 遷移：</block>
+  <block id="8707b7b9990e9180be9940c8e227c80e" category="cell">將原節點上的 ONTAP 版本升級到最高支援版本。如果可能，新節點必須支援原節點上執行的 ONTAP 版本。如果無法做到這一點，<block ref="9fa2b66114da266713b82d418ec229cf" category="inline-link-macro-rx"></block>將原節點上的版本升級到最高支援版本。原節點和新節點之間的版本差不能超過四個版本。例如，支援 ONTAP 9.8 和 9.12.1；但不支援 ONTAP 9.8 和 9.13.1。<block ref="e34181b97f6f4b1fe67c330fb826ba03" category="inline-link-macro-rx"></block>。</block>
+  <block id="1769a2237ae4aebbeab27e761de8385d" category="cell"><block ref="8b9b2634fd898f04166a765851aba8f2" category="inline-link-macro-rx"></block>。這需要一個全新的系統，配備獨立的儲存設備和磁碟櫃，用於儲存原始系統的資料。對於某些升級，您可以從控制器磁碟櫃進行轉換。</block>
+  <block id="6e8c3ee76fcadeb6ec47dbcadea47a38" category="inline-link-macro">移動儲存設備</block>
+  <block id="0375fb3f43aabda281925c908026849c" category="list-text"><block ref="0375fb3f43aabda281925c908026849c" category="inline-link-macro-rx"></block></block>
+  <block id="09a27d80d33fa90559928cfbde0eef27" category="paragraph">您可以將 AFF A250 不中斷地升級至 AFF A400 或將 FAS2820 升級至替換系統，方法是將原始節點轉換為磁碟機櫃，然後將磁碟機櫃連接至替換節點以移動內建儲存設備。</block>
+  <block id="8c17b87f02bbfd2bbced4a5b26d31331" category="cell">我的系統是模組化的嗎？*注意*：在模組化系統中，控制器沒有內建硬碟；所有儲存裝置都位於外部連接的硬碟架上。</block>
+  <block id="2999348514687ff52ce58b7afc2f296c" category="paragraph">本範例提供了 FAS9500 到 FAS90 控制器升級的可能解答。</block>
+  <block id="24124867dfccf8690c5f7cdd9ce6bd62" category="paragraph">透過將每個節點轉換為 DS212C 磁碟機櫃，對 NetApp FAS2820 系統執行不中斷升級。然後，將磁碟機櫃連接至替換節點。這會將 FAS2820 內建儲存設備移至替換系統。</block>
+  <block id="4213d01441857f93da68c80fb33581fe" category="paragraph">檢閱透過移動磁碟區或儲存設備進行升級的一般升級案例和升級考量事項：</block>
+  <block id="71f84f778009454b2b2138137c802a1c" category="paragraph">FAS2820 高可用性（ HA ）配對控制器為 node1 和 node2 ，替換的 HA 配對控制器為 node3 和 node4 。</block>
+  <block id="799a6e7bff23c95a2dd5d417bacbfe63" category="paragraph">在將 FAS2820 node2 轉換為磁碟機櫃之前，請將 node2 上的邏輯介面（LIF）和資料集合體移轉至 node1。</block>
+  <block id="75872fa3c18278304dd0eb39783d804a" category="paragraph">將 FAS2820 node2 轉換為 DS212C 磁碟機櫃，然後連接到 node4，再將磁碟機從 node2 重新指派到 node4。</block>
+  <block id="ec64d38caa130d059cd72713bcfc7f48" category="paragraph">將 FAS2820 node2 轉換為 DS212C 磁碟機櫃並連接至 node4 後，請將先前屬於 node2 的磁碟機重新指派給 node4。</block>
+  <block id="365b9dada8659a517a8fd469ca7247ff" category="paragraph">在將 FAS2820 node1 轉換為磁碟機櫃之前，請將 node1 上的資料集合體、epsilon 和 LIF 移轉至 node4。</block>
+  <block id="6f57e15b9ebf56efad25a58405528420" category="paragraph">將 FAS2820 node1 轉換為 DS212C 磁碟機櫃，並連接至 node3，然後再將磁碟機從 node1 重新指派至 node3。</block>
+  <block id="610a64418a192f74fc706aefe0947fb4" category="paragraph">將 FAS2820 node1 轉換為 DS212C 磁碟機櫃並連接至 node3 後，請將先前屬於 node1 的磁碟機重新指派給 node3。</block>
+  <block id="49efc5ac77a134695034e6d41774f7a7" category="paragraph">若要完成升級、請將 node3 連接至 node4、然後將 node4 上的資料 LIF 和資料 Aggregate 移轉至 node3。</block>
+  <block id="17fa19bd817fcd421a3320663299d3fe" category="summary">如果透過移動磁碟區進行升級，您需要準備好原有節點，並將新節點加入叢集。然後將磁碟區移動到新節點，配置 LIF，最後從叢集中移除原有節點。透過移動磁碟區進行升級是一個不中斷的程序。</block>
+  <block id="8a3e1e55cf4f3f7698b5923333b44f7a" category="list-text">將權限等級變更為進階：</block>
+  <block id="2c572e0b3f8df41472dc3cc55d4f3675" category="list-text">識別叢集中具有 epsilon 的節點：</block>
+  <block id="ac11b00437102d46834c44f688bb816b" category="list-text">[[epsilon-true]]如果您要移除的節點包含 epsilon：</block>
+  <block id="da3029d4f58fca3ccf4049fbe3f8d5a9" category="list-text">將 epsilon 從要移除的節點中移出：</block>
+  <block id="fe432e6a2040f760b86fdb6fb2475ea2" category="list-text">將 epsilon 移到您不會刪除的節點：</block>
+  <block id="535d3fb6510351991395e311dafd715a" category="list-text">如果要移除的節點是目前的主節點，請啟用叢集中的另一個節點以選舉為主節點：</block>
+  <block id="9a1fed4d7eb734f9652172206c2b6c97" category="paragraph">該節點會被標記為不健康，直到其恢復資格。當主節點失去資格時，叢集仲裁會從剩餘節點中選出一個作為新的主節點。</block>
+  <block id="0dea226ebb02761023dc688056ea4997" category="paragraph">如果您在 HA 對中的第一個節點上執行此步驟，則只需將該節點標記為不符合條件。請勿修改 HA 夥伴的狀態。</block>
+  <block id="5b2f9fa3a4d06ceb986a95a26f1bfbeb" category="paragraph">如果選擇合作夥伴節點作為新的主節點，您需要在將其設為不符合資格之前驗證它是否持有 epsilon。如果合作夥伴節點持有 epsilon，您需要在將其設為不符合資格之前，將 epsilon 移至叢集中剩餘的其他節點。當您重複這些步驟以移除合作夥伴節點時，您需要執行此操作。</block>
+  <block id="2c3337f10b57ece73ad05be4f4418e0d" category="list-text">登入您不會從叢集中移除之節點上的遠端節點管理 LIF 或叢集管理 LIF。</block>
+  <block id="6006a3969e4a49af5bcf372d6a4b6f76" category="list-text">從叢集中移除節點：</block>
+  <block id="1a59e73da663791d8cc1a4162cc79daa" category="cell">對於此 ONTAP 版本...</block>
+  <block id="5380cb1d86fac77428bc4816a9400818" category="paragraph">ONTAP 9.3</block>
+  <block id="673c94a242aa517fb75dfb1350772ecc" category="paragraph">ONTAP 9.4 及更新版本</block>
+  <block id="758c1d632758dd4e740d6be764f6eefd" category="paragraph">如果該節點是仲裁主節點，叢集將短暫失去仲裁，然後恢復仲裁。這種仲裁遺失是暫時的，不會影響任何資料作業。</block>
+  <block id="ee3943d184071eb8b00fa718413c59da" category="paragraph">節點從叢集中成功移除後會自動重新開機。</block>
+  <block id="72e4185215c581a01dbad2e58ec475eb" category="list-text">[[return-admin]]返回管理員權限等級：</block>
+  <block id="3c24247c970dc2603902ae01f38a7edc" category="paragraph">透過將 AFF A250 節點轉換為 NS224 磁碟機櫃，從 AFF A250 系統無中斷升級至 AFF A400 系統。然後，將它們連接至 AFF A400 替換節點。這會將 AFF A250 機載儲存設備移至 AFF A400 替換系統。</block>
+  <block id="f9db51ad5ae75a45a96e719689af7351" category="paragraph">AFF A250 高可用性（HA）配對控制器為 node1 和 node2，替換後的 AFF A400 HA 配對控制器為 node3 和 node4。</block>
+  <block id="e21bba92a872660c5525b68393fccdd6" category="paragraph">在將 AFF A250 node2 轉換為磁碟機櫃之前，請將 node2 上的邏輯介面（LIF）和資料集合體移轉至 node1。</block>
+  <block id="5f2bd886a1ddbc0f18d7dda59298b8e8" category="paragraph">將 AFF A250 node2 轉換為 NS224 磁碟機櫃並連接到 AFF A400 node4 後，將先前屬於 node2 的磁碟機重新指派給 node4。</block>
+  <block id="39f91ec3fbd4d906c846b0ee83a740e8" category="paragraph">在將 AFF A250 node1 轉換為磁碟機櫃之前，請將 node1 上的資料集合體、epsilon 和 LIF 移轉至 AFF A400 node4。</block>
+  <block id="ce2f3556362c3cfcb43ad4834d6282a4" category="paragraph">將 AFF A250 node1 轉換為 NS224 磁碟機櫃並連接到 AFF A400 node3 後，將先前屬於 node1 的磁碟機重新指派給 node3。</block>
+  <block id="a636e9bc040eb70e113d52373fce20bc" category="paragraph">安裝 AFF A90、AFF A70 或 AFF C80 控制器模組 在節點 1 中安裝、連接並連結 AFF A90、AFF A70 或 AFF C80 控制器模組。</block>
 </blocks>
