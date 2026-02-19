@@ -14,6 +14,8 @@ summary: 使用 ARL 升級同一機箱中的控制器型號時、請更換 AFF A
 
 
 [role="lead"]
+將節點 1 的 AFF A700 或 FAS9000 控制器和 NVRAM 模組更換為 ASA A900 、 AFF A900 或 FAS9500 控制器和 NVRAM 模組。
+
 在此階段、node1已關閉、所有資料均由node2提供服務。您必須小心、只移除節點1控制器模組和節點1 NVRAM模組。通常、節點1是位於機箱左側的控制器A、當您從系統背面查看控制器時。控制器標籤位於控制器模組正上方的機箱上。
 
 
@@ -24,9 +26,9 @@ CAUTION: 請勿關閉機箱電源，因為 node1 和 node2 位於同一個機箱
 
 
 
-== 移除AFF 「功能不整」或「FAS9000」控制器模組
+== 步驟 1：拆下 AFF A700 或 FAS9000 控制器模組
 
-從 node1 中分離並刪除 AFF A700 或 FAS9000 控制器模塊。
+拆下並移除節點 1 AFF A700 或 FAS9000 控制器模組。
 
 .步驟
 . 從 node1 控制器模組拔下主控台纜線（如果有）和管理纜線。
@@ -64,9 +66,9 @@ image:black_circle_two.png["第二名"]
 
 
 
-== 移除AFF 「功能不整」或「FAS9000 NVRAM模組」
+== 步驟 2：移除 AFF A700 或 FAS9000 NVRAM 模組
 
-從 node1 解鎖並移除 AFF A700 或 FAS9000 NVRAM 模組。
+解鎖並移除節點 1 AFF A700 或 FAS9000 NVRAM 模組。
 
 
 NOTE: FASA700或FAS9000 NVRAM模組位於插槽6中、高度是系統中其他模組的兩倍。AFF
@@ -106,26 +108,18 @@ image:black_circle_two.png["第二名"]
 
 
 
-== 安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 和控制器模組
+== 步驟 3：安裝 ASA A900、AFF A900 或 FAS9500 NVRAM 模組
 
-在 node1 中安裝、連接和連接 ASA A900 、 AFF A900 或 FAS9500 NVRAM 和控制器模組。
+在節點 1 中安裝、連接 ASA A900、AFF A900 或 FAS9500 NVRAM 模組。
 
-執行安裝時、您必須注意下列事項：
-
+[NOTE]
+====
 * 將插槽6-1和6-2中的所有空白填充模組、從舊的NVRAM模組移至新的NVRAM模組。
 * 請勿將 coredump 裝置從 AFF A700 NVRAM 模組移至 ASA A900 或 AFF A900 NVRAM 模組。
 * 將FAS9000 NVRAM模組中安裝的所有快閃快取模組移至FAS9500 NVRAM模組。
 
 
-.開始之前
-如果您尚未接地、請正確接地。
-
-
-
-=== 安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 模組
-
-在 node1 的插槽 6 中安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 模組。
-
+====
 .步驟
 . 將NVRAM模組對齊插槽6中機箱開孔的邊緣。
 . 將NVRAM模組輕推入插槽、直到帶有字母和編號的I/O CAM栓開始與I/O CAM銷接合、然後將I/O CAM栓完全推入、將NVRAM模組鎖定到位。
@@ -150,9 +144,9 @@ image:black_circle_two.png["第二名"]
 
 
 
-=== 在 node1 上安裝 ASA A900 、 AFF A900 或 FAS9500 控制器模組。
+== 步驟 4：在節點 1 上安裝 ASA A900、AFF A900 或 FAS9500 控制器模組。
 
-請使用下列程序、在 node1 中安裝 ASA A900 、 AFF A900 或 FAS9500 控制器模組。
+在節點 1 中安裝、連接纜線並連接 ASA A900、AFF A900 或 FAS9500 控制器模組。
 
 .步驟
 . 將控制器模組的一端對準機箱的開啟A、然後將控制器模組輕推至系統的一半。
@@ -194,10 +188,14 @@ image:black_circle_two.png["第二名"]
 . 中斷自動開機後、 node1 會在載入程式提示下停止。如果您未在時間中斷自動開機、而 node1 開始開機、請等待提示字元、然後按 Ctrl-C 進入開機功能表。節點停止在開機功能表後、請使用選項 `8` 重新啟動節點、並在重新開機期間中斷自動開機。
 . 在node1的loader>提示下、設定預設環境變數：
 +
-「預設值」
-
+[source, cli]
+----
+set-defaults
+----
 . 儲存預設環境變數設定：
 +
-「aveenv」
-
+[source, cli]
+----
+saveenv
+----
 
