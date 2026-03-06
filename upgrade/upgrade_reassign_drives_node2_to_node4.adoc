@@ -16,10 +16,9 @@ summary: 在將磁碟機從 node2 重新指派至 node4 之前、請先將 node2
 .開始之前
 驗證在加載器提示符下 node3 和 node4 均處於待機狀態。
 
-.關於這項工作
-您可以在 node4 上執行以下步驟。
-
 .步驟
+在 AFF A400 node4 上執行下列步驟。
+
 . 在載入程式提示字元下、將 node4 開機至維護模式：
 +
 Boot_ONTAP maint

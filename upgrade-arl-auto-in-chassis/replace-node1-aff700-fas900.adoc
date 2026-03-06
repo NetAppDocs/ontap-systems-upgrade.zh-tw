@@ -144,7 +144,7 @@ image:black_circle_two.png["第二名"]
 
 
 
-== 步驟 4：在節點 1 上安裝 ASA A900、AFF A900 或 FAS9500 控制器模組。
+== 步驟 4：在節點 1 中安裝 ASA A900、AFF A900 或 FAS9500 控制器模組
 
 在節點 1 中安裝、連接纜線並連接 ASA A900、AFF A900 或 FAS9500 控制器模組。
 

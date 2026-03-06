@@ -1,22 +1,21 @@
 ---
-permalink: upgrade/migrate-fas2820-aggregates-epsilon-lifs.html 
+permalink: upgrade/migrate-aggregates-epsilon-lifs.html 
 sidebar: sidebar 
-keywords: fas2820, ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs 
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node1, node4, migrate, aggregates, lifs 
 summary: '將節點 1 上的資料聚合、epsilon 和邏輯介面 (LIF) 遷移到節點 4。' 
 ---
-= 將FAS2820節點 1 上的資料聚合、epsilon 和 LIF 遷移到節點 4
+= 將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 node4
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-將FAS2820節點 1 上的資料聚合、epsilon 和邏輯介面 (LIF) 遷移到節點 4。
-
-.關於這項工作
-在node4上執行下列步驟。
+將節點 1 上的資料聚合、epsilon 和邏輯介面 (LIF) 遷移到節點 4。
 
 .步驟
+在 node4 上執行這些步驟。
+
 . 在 node4 的 LOADER 提示字元下，設定合作夥伴系統 ID：
 +
 [source, cli]
@@ -208,4 +207,4 @@ halt -node <node1> -inhibit-takeover true -ignore-quorum-warnings true
 
 
 .接下來呢？
-link:convert-fas2820-node1-drive-shelf.html["將 node1 轉換為磁碟機櫃、並連線至 node3"]
+link:convert-node1-to-drive-shelf.html["將 node1 轉換為磁碟機櫃、並連線至 node3"]

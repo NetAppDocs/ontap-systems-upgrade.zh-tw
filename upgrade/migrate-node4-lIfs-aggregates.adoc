@@ -1,22 +1,21 @@
 ---
-permalink: upgrade/migrate-fas2820-node4-lIfs-aggregates.html 
+permalink: upgrade/migrate-node4-lifs-aggregates.html 
 sidebar: sidebar 
-keywords: fas2820, ndu, nondisruptive, upgrade, node3, node4, migrate, aggregates, lif 
-summary: '要完成升級，您需要將 FAS2820node3 連接到 node4，然後將 node4 上的資料邏輯介面 (LIF) 和資料聚合遷移到 node3。' 
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node3, node4, migrate, aggregates, lif 
+summary: 若要完成升級、請將節點 3 連接至節點 4、然後將節點 4 上的資料邏輯介面（LIF）和資料 Aggregate 移轉至節點 3。 
 ---
-= 將FAS2820節點 4 上的 LIF 和資料聚合遷移到節點 3
+= 將 node4 上的生命週期和資料集合體移轉至 node3
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-要完成升級，您需要將FAS2820節點 3 連接到節點 4，然後將節點 4 上的資料邏輯介面 (LIF) 和資料聚合遷移到節點 3。
-
-.關於這項工作
-在node3上執行下列步驟。
+若要完成升級、請將節點 3 連接至節點 4、然後將節點 4 上的資料邏輯介面（LIF）和資料 Aggregate 移轉至節點 3。
 
 .步驟
+在節點 3 上執行這些步驟。
+
 . 在 node3 的載入程式提示下、將節點開機至開機功能表：
 +
 [source, cli]

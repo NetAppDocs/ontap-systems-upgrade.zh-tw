@@ -4,14 +4,17 @@ sidebar: sidebar
 keywords: ndu, nondisruptive, upgrade, AFF, FAS, systems, entry, level 
 summary: 無需購買額外的儲存設備和叢集交換器、即可執行 NDU 至入門級 NetApp AFF 和 FAS 系統。 
 ---
-= 將AFF A250轉換為驅動器架並升級到AFF A400
+= 了解如何將 AFF A250 轉換為磁碟機櫃，以及如何將儲存設備移至 AFF A400
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-透過將 AFF A250 節點轉換為 NS224 磁碟機櫃，從 AFF A250 系統無中斷升級至 AFF A400 系統。然後，將它們連接至 AFF A400 替換節點。這會將 AFF A250 機載儲存設備移至 AFF A400 替換系統。
+將 AFF A250 系統無中斷升級至 AFF A400 系統。首先，將 AFF A250 節點轉換為 NS224 磁碟機櫃。然後，將它們連接至 AFF A400 替換節點。這會將 AFF A250 板載儲存設備移至 AFF A400 替換系統。
+
+.關於這項工作
+AFF A250 高可用性（HA）配對控制器為 node1 和 node2，替換後的 AFF A400 HA 配對控制器為 node3 和 node4。
 
 .開始之前
 檢閱透過移動磁碟區或儲存設備進行升級的一般升級案例和升級考量事項：
@@ -20,16 +23,13 @@ summary: 無需購買額外的儲存設備和叢集交換器、即可執行 NDU 
 * link:upgrade-considerations.html["升級控制器硬體的考量事項"]
 
 
-.關於這項工作
-AFF A250 高可用性（HA）配對控制器為 node1 和 node2，替換後的 AFF A400 HA 配對控制器為 node3 和 node4。
-
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]link:upgrade_migrate_lifs_aggregates_node2_to_node1.html["將 node2 上的生命體和資料集合體移轉至 node1"]
 [role="quick-margin-para"]
 在將 AFF A250 node2 轉換為磁碟機櫃之前，請將 node2 上的邏輯介面（LIF）和資料集合體移轉至 node1。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]link:upgrade_convert_node2_drive_shelf_connect_node4.html["將 node2 轉換為磁碟機櫃、並連線至 node4"]
 [role="quick-margin-para"]
-將 AFF A250 node2 轉換為 NS224 磁碟機櫃、然後連線至 AFF A400 node4 、再將磁碟機從 node2 重新指派至 node4 。
+將 AFF A250 node2 轉換為 NS224 磁碟機櫃，然後連接到 AFF A400 node4，再將磁碟機從 node2 重新指派到 node4。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]link:upgrade_reassign_drives_node2_to_node4.html["將 node2 磁碟機重新指派給 node4"]
 [role="quick-margin-para"]
@@ -41,7 +41,7 @@ AFF A250 高可用性（HA）配對控制器為 node1 和 node2，替換後的 A
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]link:upgrade_convert_node1_drive_shelf_connect_node3.html["將 node1 轉換為磁碟機櫃、並連線至 node3"]
 [role="quick-margin-para"]
-將 AFF A250 node1 轉換為 NS224 磁碟機櫃、然後連線至 AFF A400 node3 、再將磁碟機從 node1 重新指派至 node3 。
+將 AFF A250 node1 轉換為 NS224 磁碟機櫃，然後連接到 AFF A400 node3，再將磁碟機從 node1 重新指派到 node3。
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"]link:upgrade_reassign_drives_node1_to_node3.html["將驅動器從 node1 重新分配給 node3"]
 [role="quick-margin-para"]
@@ -49,4 +49,4 @@ AFF A250 高可用性（HA）配對控制器為 node1 和 node2，替換後的 A
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["七"]link:upgrade_migrate_lIFs_aggregates_node4_node3.html["將 node4 上的生命週期和資料集合體移轉至 node3"]
 [role="quick-margin-para"]
-若要完成升級、請將 node3 連接至 node4、然後將 node4 上的資料 LIF 和資料 Aggregate 移轉至 node3。
+若要完成升級、請將 node3 連接至 node4、並將 node4 上的資料 LIF 和資料 Aggregate 移轉至 node3。

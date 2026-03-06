@@ -48,7 +48,7 @@ image:drw_2240_x_opening_cam_latch.png["打開 CAM 把手"]
 
 
 
-== 安裝 ASA A150 、 AFF A150 或 FAS2820 控制器模組
+== 步驟 2：安裝 ASA A150、AFF A150 或 FAS2820 控制器模組
 
 在 node1 中安裝、連接及連接 ASA A150 、 AFF A150 或 FAS2820 控制器模組。
 

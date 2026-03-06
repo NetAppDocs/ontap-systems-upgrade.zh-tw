@@ -1,0 +1,58 @@
+---
+permalink: upgrade/convert-to-drive-shelf.html 
+sidebar: sidebar 
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, FAS, systems, entry, level 
+summary: 透過將每個節點轉換為磁碟機櫃並將其連接至替換節點來執行不中斷升級。 
+---
+= 了解如何將 AFF A150 、 AFF A220 或 FAS2820 轉換為磁碟機櫃並移動儲存設備
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+對 AFF A150 、 AFF A220 或 FAS2820 系統執行不中斷升級。首先、將 AFF A150 、 AFF A220 或 FAS2820 系統中的每個節點轉換為磁碟機櫃。然後、將它們連接至替換節點。這會將內建儲存設備移至替換系統。
+
+.關於這項工作
+此程序支援以下系統轉換：
+
+* 將 AFF A150 或 AFF A220 轉換為 DS224C 磁碟機櫃
+* 將 FAS2820 轉換為 DS212C 磁碟機櫃
+
+
+高可用性（HA）配對控制器為 node1 和 node2，替換 HA 配對控制器為 node3 和 node4。
+
+.開始之前
+檢閱透過移動磁碟區或儲存設備進行升級的一般升級案例和升級考量事項：
+
+* link:upgrade-decide-to-use-this-guide.html["決定是否要透過移動磁碟區或儲存設備來升級"]
+* link:upgrade-considerations.html["升級控制器硬體的考量事項"]
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]xref:migrate-node2-lifs-aggregates.adoc[將 node2 上的生命體和資料集合體移轉至 node1]
+[role="quick-margin-para"]
+在將 node2 轉換為磁碟機櫃之前，請將 node2 上的邏輯介面（LIF）和資料集合體移轉至 node1。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]xref:convert-node2-to-drive-shelf.adoc[將 node2 轉換為磁碟機櫃、並連線至 node4]
+[role="quick-margin-para"]
+將 node2 轉換為磁碟機櫃，然後連接到 node4，再將磁碟機從 node2 重新指派給 node4。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]xref:reassign-node2-drives.adoc[將 node2 磁碟機重新指派給 node4]
+[role="quick-margin-para"]
+將 node2 轉換為磁碟機櫃並連接至 node4 後、請將先前屬於 node2 的磁碟機重新指派給 node4。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"]xref:migrate-aggregates-epsilon-lifs.adoc[將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 node4]
+[role="quick-margin-para"]
+在將 node1 轉換為磁碟機櫃之前，請將 node1 上的資料集合體、epsilon 和 LIF 移轉至 node4。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]xref:convert-node1-to-drive-shelf.adoc[將 node1 轉換為磁碟機櫃、並連線至 node3]
+[role="quick-margin-para"]
+將 node1 轉換為磁碟機櫃並連接至 node3，然後再將磁碟機從 node1 重新指派給 node3。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"]xref:reassign-node1-drives.adoc[將驅動器從 node1 重新分配給 node3]
+[role="quick-margin-para"]
+將 node1 轉換為磁碟機櫃並連接至 node3 後、請將先前屬於 node1 的磁碟機重新指派給 node3。
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-7.png["七"]xref:migrate-node4-lIfs-aggregates.adoc[將 node4 上的生命週期和資料集合體移轉至 node3]
+[role="quick-margin-para"]
+若要完成升級、請將 node3 連接至 node4、並將 node4 上的資料 LIF 和資料 Aggregate 移轉至 node3。

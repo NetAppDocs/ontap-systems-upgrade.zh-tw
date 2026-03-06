@@ -1,25 +1,24 @@
 ---
-permalink: upgrade/reassign-fas2820-node2-drives.html 
+permalink: upgrade/reassign-node2-drives.html 
 sidebar: sidebar 
-keywords: fas2820, ndu, nondisruptive, upgrade, node2, node4, reassign, drives 
-summary: 將FAS2820節點 2 轉換為 DS212C 磁碟機架並連接到節點 4 後，將先前屬於節點 2 的磁碟機重新指派給節點 4。 
+keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node2, node4, reassign, drives 
+summary: 將 node2 轉換為磁碟機櫃並連接至 node4 後、您可以將先前屬於 node2 的磁碟機重新指派給 node4。 
 ---
-= 將磁碟機從FAS2820節點 2 重新指派到節點 4
+= 將 node2 磁碟機重新指派給 node4
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-將先前屬於FAS2820節點 2 的磁碟機重新指派給節點 4。
+將先前屬於 node2 的磁碟機重新指派給 node4。
 
 .開始之前
 驗證在加載器提示符下 node3 和 node4 均處於待機狀態。
 
-.關於這項工作
-在node4上執行下列步驟。
-
 .步驟
+在 node4 上執行這些步驟。
+
 . 在載入程式提示字元下、將 node4 開機至維護模式：
 +
 [source, cli]
@@ -84,4 +83,4 @@ halt
 
 
 .接下來呢？
-link:migrate-fas2820-aggregates-epsilon-lifs.html["將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 node4"]
+link:migrate-aggregates-epsilon-lifs.html["將 node1 上的資料集合體、 epsilon 和 lifs 移轉至 node4"]
