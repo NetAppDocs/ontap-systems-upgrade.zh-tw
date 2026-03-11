@@ -167,7 +167,7 @@ NOTE: 「EVENT log show」命令會列出發生的任何錯誤。
 
 
 
-如需儲存Aggregate重新配置命令的詳細資訊、請前往 link:other_references.html["參考資料"] 若要使用CLCLI和_例ONTAP 9命令連結至_磁碟和集合管理：手冊頁參考_。
+如需儲存 Aggregate 重新配置命令的詳細資訊、請前往link:other_references.html["參考資料"]連結至 _Disk and aggregate management with the CLI_ 和 _ONTAP 9 Command reference_ 。
 
 |===
 . [[man_region_2_3_step8]] 驗證節點 3 上的所有非根集合體是否均為線上：

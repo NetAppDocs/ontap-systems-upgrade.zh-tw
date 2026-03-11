@@ -38,7 +38,7 @@ summary: 疑難排解使用 ARL 升級同一機箱中的控制器機型時、可
 
 
 +
-如需有關「強制集合重新定位開始」、「置換-否決」和「置換-目的地-檢查」選項的詳細資訊、請參閱 link:other_references.html["參考資料"] 若要連結至「_SURF9 ONTAP 命令：手動頁面參考_」。
+有關  `storage aggregate relocation start`、 `override-vetoes` 和  `override-destination-checks` 選項的詳細資訊、請參閱 link:other-references.html["參考資料"] 以連結至 _ONTAP 9 命令參考_。
 
 
 
@@ -69,9 +69,9 @@ summary: 疑難排解使用 ARL 升級同一機箱中的控制器機型時、可
 「torage Aggregate show -nodes _node2_-is hometrue」
 
 +
-若要識別未正確重新放置的集合體、請參閱您在一節中取得的節點1主擁有者之集合體清單 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] 並將其與上述命令的輸出進行比較。
+若要識別未正確重新定位的 Aggregate，請參考您在 link:prepare-nodes-for-upgrade.html["準備節點以進行升級"] 區段中取得的 node1 主擁有者 Aggregate 清單，並將其與上述命令的輸出進行比較。
 
-. 將步驟1的輸出與您在區段中針對節點1擷取的輸出進行比較 link:prepare_nodes_for_upgrade.html["準備節點以進行升級"] 並記下任何未正確重新定位的集合體。
+. 將步驟 1 的輸出與您在 link:prepare-nodes-for-upgrade.html["準備節點以進行升級"] 區段中為 node1 擷取的輸出進行比較，並記下任何未正確重新配置的集合體。
 . 重新定位節點2上留下的集合體：
 +
 Check Alignment of PHs>將Agrage Aggregate重新定位開始節點_node2_-aggr _aggr_node_1_-destate _node1_

@@ -123,7 +123,7 @@ Do you want to continue? {y|n}: y
 `system service-processor network modify -node <node_name>`
 
 +
-前往 link:other_references.html["參考資料"] 如需SP和_SUR9 ONTAP 命令的相關資訊、請連結至_System Administration Reference（系統管理參考）：Manual Page Reference（手冊頁參考）_、以取得有關「系統服務-處理器網路修改」命令的詳細資訊。
+前往link:other_references.html["參考資料"]連結至 _System Administration Reference_ 以取得有關 SP 的資訊，以及 _ONTAP 9 Command reference_ 以取得有關 `system service- processor network modify`命令的詳細資訊。
 
 . 如果您要在新節點上設定無交換器叢集、請前往 link:other_references.html["參考資料"] 若要連結至_網路支援站台_、請遵循_移轉至雙節點無交換器叢集_中的指示。
 

@@ -38,7 +38,7 @@ summary: 疑難排解使用「系統控制器更換」命令來升級執行ONTAP
 
 
 +
-如需有關「強制集合重新定位開始」、「置換-否決」和「置換-目的地-檢查」選項的詳細資訊、請參閱 link:other_references.html["參考資料"] 若要連結至_Estrat9 ONTAP 8命令：手動頁面參考_。
+有關 `storage aggregate relocation start`、 `override-vetoes` 和 `override-destination-checks` 選項的詳細資訊、請參閱link:other_references.html["參考資料"]以連結至 _ONTAP 9 Command reference_。
 
 
 

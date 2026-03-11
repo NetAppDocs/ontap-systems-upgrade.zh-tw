@@ -98,7 +98,7 @@ Aggregate清單是故障或被否決的Aggregate清單。
 
 
 
-如需儲存Aggregate重新定位命令的詳細資訊、請參閱 link:other_references.html["參考資料"] 若要使用CLCLI和_例ONTAP 9命令連結至_磁碟和集合管理：手冊頁參考_。
+如需儲存 Aggregate 重新配置命令的詳細資訊、請參閱link:other_references.html["參考資料"]以連結至_使用 CLI 進行磁碟和 Aggregate 管理_和_ ONTAP 9 命令參考_。
 
 |===
 . [[man_allocation_3_4_Step5]]確認所有節點2非根Aggregate均處於線上狀態、以及節點4上的狀態：

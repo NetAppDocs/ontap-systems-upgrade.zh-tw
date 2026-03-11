@@ -215,7 +215,7 @@ network port modify -node node4 -port e1b -ipspace Cluster -mtu 9000
 「網路介面修改-vserver node3 -lIF data1容錯移轉原則廣播網域範圍-容 錯移轉群組fg1」
 
 +
-請參閱 link:other_references.html["參考資料"] 如需ONTAP 詳細資訊、請連結至_網路管理_或_《_例》9命令：手冊頁參考_。
+請參閱 link:other_references.html["參考資料"] 以連結至 _Network Management_ 或 _ONTAP 9 Command reference_ 以取得更多資訊。
 
 . 驗證節點3上的變更：
 +

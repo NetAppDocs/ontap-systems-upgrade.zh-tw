@@ -2,7 +2,7 @@
 permalink: upgrade/reassign-node2-drives.html 
 sidebar: sidebar 
 keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node2, node4, reassign, drives 
-summary: 將 node2 轉換為磁碟機櫃並連接至 node4 後、您可以將先前屬於 node2 的磁碟機重新指派給 node4。 
+summary: 將 AFF A150、AFF A220 或 FAS2820 node2 轉換為磁碟機櫃並連接至 node4 後，您可以將先前屬於 node2 的磁碟機重新指派給 node4。 
 ---
 = 將 node2 磁碟機重新指派給 node4
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 將 node2 轉換為磁碟機櫃並連接至 node4 後、您可以將先
 
 
 [role="lead"]
-將先前屬於 node2 的磁碟機重新指派給 node4。
+將先前屬於 AFF A150 、 AFF A220 或 FAS2820 node2 的磁碟機重新指派給 node4 。
 
 .開始之前
 驗證在加載器提示符下 node3 和 node4 均處於待機狀態。

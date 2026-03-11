@@ -202,7 +202,7 @@ node4      e0a  Cluster
 「網路介面修改-vserver node4 -lIF data1容錯移轉原則廣播網域範圍-容 錯移轉群組fg1」
 
 +
-請參閱 link:other_references.html["參考資料"] 如需連結至_Network Management或_SURF9 ONTAP 命令：手動頁面參考_、請參閱_Configuring Failover settings on a LIF_以取得更多資訊。
+請參閱 link:other_references.html["參考資料"] 以連結至_網路管理_或 _ONTAP 9 Command reference_，並參閱_在 LIF 上配置容錯移轉設定_以取得更多資訊。
 
 . 驗證節點4上的變更：
 +

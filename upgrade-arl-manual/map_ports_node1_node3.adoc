@@ -239,7 +239,7 @@ network port broadcast-domain remove-ports -ipspace Cluster -broadcast-domain Cl
 network interface modify -vserver node3 -lif data1 failover-policy broadcast-domainwide -failover-group fg1
 ----
 +
-前往 link:other_references.html["參考資料"] 如需ONTAP 詳細資訊、請連結至_網路管理_或_《_例》9命令：手冊頁參考_。
+前往 link:other_references.html["參考資料"] 以連結至 _Network Management_ 或 _ONTAP 9 Command reference_ 以取得更多資訊。
 
 . 驗證節點3上的變更：
 +

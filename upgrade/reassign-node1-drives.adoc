@@ -2,7 +2,7 @@
 permalink: upgrade/reassign-node1-drives.html 
 sidebar: sidebar 
 keywords: fas2820, aff a150, aff a220, ndu, nondisruptive, upgrade, node3, node1, reassign, drives 
-summary: 將 node1 轉換為磁碟機櫃並連接至 node3 後、您可以將先前屬於 node1 的磁碟機重新指派給 node3。 
+summary: 將 AFF A150、AFF A220 或 FAS2820 node1 轉換為磁碟機櫃並連接到 node3 後，您可以將先前屬於 node1 的磁碟機重新指派給 node3。 
 ---
 = 將驅動器從 node1 重新分配給 node3
 :allow-uri-read: 
@@ -11,7 +11,7 @@ summary: 將 node1 轉換為磁碟機櫃並連接至 node3 後、您可以將先
 
 
 [role="lead"]
-將先前指派給 node1 的磁碟機重新指派給 node3。
+將先前指派給 AFF A150 、 AFF A220 或 FAS2820 node1 的磁碟機重新指派給 node3 。
 
 .步驟
 在節點 3 上執行這些步驟。

@@ -59,7 +59,7 @@ NOTE: 請等到節點1擁有的所有非根集合體都已重新定位至節點2
 
 
 
-請參閱 link:other_references.html["參考資料"] 若要連結至_磁碟與Aggregate管理、請使用CLI/content和_還原ONTAP 9命令：手冊頁參考_、以取得有關儲存Aggregate重新定位命令的詳細資訊。
+請參閱 link:other_references.html["參考資料"] 以連結至 _Disk and aggregate management with the CLI_ 內容和 _ONTAP 9 Command reference_，以取得有關儲存 Aggregate 重新配置命令的詳細資訊。
 
 |===
 . [[man_allocation_1_2_step4]]確認所有非根Aggregate都在線上、且其狀態位於節點2：

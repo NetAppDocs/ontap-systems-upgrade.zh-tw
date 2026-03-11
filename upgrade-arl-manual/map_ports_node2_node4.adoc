@@ -216,7 +216,7 @@ command failed: This operation is not permitted on a Vserver that is configured 
 「網路介面修改-vserver node4 -lIF data1容錯移轉原則、廣播網域範圍內的容錯移轉群組fg1」
 
 +
-如需詳細資訊、請參閱 link:other_references.html["參考資料"] 若要連結至_網路管理_或_ ONTAP 《_資訊9命令：手冊頁參考_》、請前往_設定LIF_上的容錯移轉設定。
+如需更多資訊、請參閱 link:other_references.html["參考資料"] 以連結至 _Network Management_ 或 _ONTAP 9 Command reference_ 、然後前往 _Configuring failover settings on a LIF_ 。
 
 . 驗證節點4上的變更：
 +

@@ -18,4 +18,4 @@ summary: 您必須擁有某些工具和文件、才能使用 ARL 來升級同一
 
 若為 AFF A800 升級至 AFF A90 或 AFF A70 、請確認 100GbE 纜線長度至少為一公尺。
 
-請參閱 link:other_references.html["參考資料"] 存取此升級所需的參考文件和參考網站清單。
+請參閱link:other-references.html["參考資料"]以取得本次升級所需的參考文件和參考網站清單。

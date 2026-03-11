@@ -327,7 +327,7 @@ vs0
 「網路介面還原-vserver *-lif*」
 
 +
-如需「網路介面回復」命令的詳細資訊、請參閱 link:other_references.html["參考資料"] 若要連結至「_SURF9 ONTAP 命令：手動頁面參考_」。
+有關  `network interface revert` 命令的詳細資訊，請參閱 link:other_references.html["參考資料"] 以連結至 _ONTAP 9 Command reference_。
 
 . 檢查node1或node2是否擁有任何故障磁碟：
 +
@@ -604,7 +604,7 @@ node2   0d      fc      initiator -       -         online
 .. 確認已設定SP網路。
 .. 記錄有關SP的IP位址和其他資訊。
 +
-您可能想要重複使用遠端管理裝置的網路參數、在此案例中、SP會從原始系統、針對新節點上的SP。如需SP的詳細資訊、請參閱 link:other_references.html["參考資料"] 若要連結至_系統管理參考_和_還原ONTAP 9命令：手冊頁參考_。
+您可能需要將原始系統中遠端管理設備（在本例中為 SP）的網路參數重用於新節點上的 SP。有關 SP 的詳細資訊，請參閱link:other_references.html["參考資料"]以連結至《系統管理參考》和《ONTAP 9 命令參考》。
 
 
 
@@ -676,7 +676,7 @@ node2            enable    Postmaster    -                 mailhost
 「系統節點AutoSupport 不完整地顯示節點node_name -instance」
 
 +
-如需AutoSupport 有關功能的詳細資訊、請參閱 link:other_references.html["參考資料"] 若要連結至_系統管理參考_和_還原ONTAP 9命令：手冊頁參考_。
+有關 AutoSupport 的詳細資訊，請參閱 link:other_references.html["參考資料"] 以連結至《系統管理參考》和《ONTAP 9 命令參考》。
 
 . [[man_prepe_node_step35、Step 35] AutoSupport 輸入下列命令、將節點1的支援資訊傳送給NetApp：
 +

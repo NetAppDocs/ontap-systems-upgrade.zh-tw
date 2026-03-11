@@ -99,7 +99,7 @@ Controller replacement operation has been paused for user intervention.
 | 叢集仲裁檢查 | 檢查要替換的節點是否處於仲裁狀態。如果節點不在仲裁中、則工作會失敗。 
 
 
-| 映像版本檢查 | 檢查要更換的節點是否執行相同版本ONTAP 的Sof Sof。如果ONTAP 不相同的版本、工作就會失敗。新節點上ONTAP 必須安裝相同版本的還原9.x、並安裝在原始節點上。如果新節點ONTAP 安裝了不同版本的支援功能、則安裝新的控制器之後、您必須以網路開機。如需有關如何升級ONTAP 功能的說明、請參閱 link:other_references.html["參考資料"] 連結至_Upgrade ONTAP 
+| 映像版本檢查 | 檢查被替換的節點是否運行相同版本的 ONTAP。如果 ONTAP 映像版本不同，則任務失敗。新節點必須安裝與原始節點相同版本的 ONTAP 9.x。如果新節點安裝了不同版本的 ONTAP，則需要在安裝後對新控制器進行 netboot。有關如何升級 ONTAP 的說明，請參閱 link:other-references.html["參考資料"] 以連結至 _Upgrade ONTAP_。 
 
 
 | HA狀態檢查 | 檢查要更換的兩個節點是否都是高可用度（HA）配對組態。如果控制器未啟用儲存容錯移轉、工作就會失敗。 
@@ -108,7 +108,7 @@ Controller replacement operation has been paused for user intervention.
 | Aggregate狀態檢查 | 如果要替換自己的Aggregate、但這些節點不是主擁有者、則工作會失敗。節點不應擁有任何非本機Aggregate。 
 
 
-| 磁碟狀態檢查 | 如果要更換的任何節點有遺失或故障的磁碟、則工作會失敗。如果有任何磁碟遺失，請參閱link:other_references.html["參考資料"]以 CL5_ 連結至磁碟和集合管理，使用 CL5_ 進行邏輯儲存管理，以及使用 HA 配對管理 _ 來設定 HA 配對的儲存設備。 
+| 磁碟狀態檢查 | 如果任何被替換的節點缺少磁碟或磁碟發生故障，則任務失敗。如果缺少任何磁碟，請參閱link:other-references.html["參考資料"]連結至「使用 CLI 進行磁碟和 Aggregate 管理」、「使用 CLI 進行邏輯儲存管理」和「HA 配對管理」，以設定 HA 配對的儲存。 
 
 
 | 資料LIF狀態檢查 | 檢查要更換的任何節點是否具有非本機資料生命量。節點不應包含任何非主擁有者的資料LIF。如果其中一個節點包含非本機資料LIF、則工作會失敗。 
@@ -230,6 +230,6 @@ aggr4       node1      node1       online
 
 如果您沒有 NLF 、則叢集中目前授權的功能可用於新的控制器。不過、在控制器上使用未經授權的功能可能會使您不遵守授權合約、因此您應該在升級完成後、為新控制器安裝 NLF 。
 
-請參閱 link:other_references.html["參考資料"] 連結至可 NetApp 支援網站 取得 NLF 的 _NLF 。NLF 可在 _ 軟體授權 _ 下方的 _ 我的支援 _ 區段中找到。如果網站沒有您需要的 NLF 、請聯絡您的 NetApp 銷售代表。
+請參閱link:other-references.html["參考資料"]以連結至 _NetApp Support Site_，您可以在此取得 NLF。NLF 可在 _My Support_ 區段的 _Software licenses_ 下取得。如果網站沒有您需要的 NLF，請聯絡您的NetApp銷售代表。
 
-如需授權的詳細資訊、請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。
+有關授權的詳細資訊、請參閱link:other-references.html["參考資料"]以連結至《系統管理參考》。

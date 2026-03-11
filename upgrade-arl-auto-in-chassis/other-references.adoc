@@ -51,37 +51,7 @@ summary: 支援使用 ARL 以升級相同機箱中的控制器機型所需的參
 | link:https://docs.netapp.com/us-en/ontap/network-management/index.html["網路管理"^] | 說明如何設定及管理叢集中的實體和虛擬網路連接埠（VLAN和介面群組）、生命、路由和主機解析服務；透過負載平衡最佳化網路流量；以及使用SNMP監控叢集。 
 
 
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-900%2Fhome.html["《部分指令》（英文）：手冊頁參考ONTAP"^] | 說明支援ONTAP 的支援的功能性指令檔9.0命令的語法和使用方式。 
-
-
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-910%2Fhome.html["《》指令：手冊頁參考ONTAP"^] | 說明支援ONTAP 的支援的支援的支援功能之語法和使用方法。 
-
-
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-920%2Fhome.html["《指令》（英文）：手冊頁參考ONTAP"^] | 說明支援ONTAP 的支援的支援之2、2指令的語法和使用方式。 
-
-
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-930%2Fhome.html["《》《》（英文）《》（英文）ONTAP"^] | 說明支援ONTAP 的支援的支援功能。9.3命令的語法和使用方式。 
-
-
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-940%2Fhome.html["《聯合國系統指令集》（英文）：手冊頁參考ONTAP"^] | 說明支援ONTAP 的支援的支援的指令檔9.4命令的語法和使用方式。 
-
-
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-950%2Fhome.html["《S19.5命令：手冊頁參考》ONTAP"^] | 說明支援ONTAP 的Sof Sof 9.5命令的語法和使用方式。 
-
-
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-960%2Fhome.html["《》（英文）：《英文》（英文）ONTAP"^] | 說明支援ONTAP 的支援的支援的支援功能之語法和使用方法。 
-
-
-| link:https://docs.netapp.com/ontap-9/index.jsp?topic=%2Fcom.netapp.doc.dot-cm-cmpr-970%2Fhome.html["《英文）》9.7命令：手冊頁參考資料ONTAP"^] | 說明支援ONTAP 的支援的支援的支援功能之語法與使用方式。 
-
-
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-980/home.html["《》（英文）《英文）》（英文）ONTAP"^] | 說明支援ONTAP 的支援的支援功能之語法和用法。 
-
-
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-991/home.html["《》（英文）：《英文版》（英文）ONTAP"^] | 說明支援ONTAP 的支援的支援的支援功能之語法和使用方法。 
-
-
-| link:https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-9101/home.html["《英文）》（英文）：《英文（英文）》（英文）ONTAP"^] | 說明支援ONTAP 的支援的支援的支援功能之語法和使用方法。 
+| link:https://docs.netapp.com/us-en/ontap-cli/index.html["ONTAP 9 指令參考"^] | 說明支援的 ONTAP 命令的語法和使用方式。 
 
 
 | link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["使用CLI進行SAN管理"^] | 說明如何使用iSCSI和FC傳輸協定來設定及管理LUN、igroup和目標、以及使用NVMe / FC傳輸協定的命名空間和子系統。 

@@ -315,7 +315,7 @@ vs0
 「網路介面還原-vserver *-lif*」
 
 +
-如需「網路介面回復」命令的詳細資訊、請參閱 link:other_references.html["參考資料"] 若要連結至「_SURF9 ONTAP 命令：手動頁面參考_」。
+有關  `network interface revert` 命令的詳細資訊，請參閱 link:other_references.html["參考資料"] 以連結至 _ONTAP 9 Command reference_。
 
 . 檢查node1或node2是否擁有任何故障磁碟：
 +

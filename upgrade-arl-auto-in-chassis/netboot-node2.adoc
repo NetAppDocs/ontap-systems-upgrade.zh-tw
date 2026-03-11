@@ -22,14 +22,14 @@ summary: 在使用 ARL 升級同一機箱中的控制器機型時、交換對應
 
 .開始之前
 * 確認您可以使用系統存取HTTP伺服器。
-* 請從ONTAP NetApp支援網站下載系統所需的系統檔案、以及正確版本的支援。請參閱 link:other_references.html["參考資料"] 連結至_NetApp支援網站_。
+* 請從 _NetApp Support Site_ 下載適用於您系統的必要系統檔案和正確版本的 ONTAP。請參閱link:other-references.html["參考資料"]以連結至 _NetApp Support Site_。
 
 
 .關於這項工作
 如果新的控制器ONTAP 上安裝的版本與原控制器上安裝的版本不相同、則必須以網路開機。安裝每個新的控制器之後、您可以從ONTAP 儲存在Web伺服器上的Image9映像來啟動系統。然後、您可以將正確的檔案下載到開機媒體裝置、以供後續系統開機。
 
 .步驟
-. 請參閱 link:other_references.html["參考資料"] 可鏈接到_NetApp Support Situ_下載用於執行系統的netboot的文件。
+. 請參閱 link:other-references.html["參考資料"] 以連結至 _NetApp Support Site_ 下載用於執行系統 netboot 的檔案。
 . [[netboot_node2_step2]]請ONTAP 從NetApp支援網站的軟體下載區段下載適當的支援軟體、並將「<ONTAP_VERSION >_image.tgz」檔案儲存在可從網路存取的目錄中。
 . 切換至網路存取目錄、並確認您所需的檔案可用。
 . 您的目錄清單應包含「<ONTAP_VERSION >_image.tgz」。
