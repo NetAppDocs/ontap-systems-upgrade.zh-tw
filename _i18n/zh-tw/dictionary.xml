@@ -3406,7 +3406,6 @@
   <block id="7de07b30845475194f5305d135dd504b" category="paragraph">您可以使用 Onboard Key Manager （ OKM ）來管理驗證金鑰。如果您已設定 OKM 、則必須在開始升級之前記錄複雜密碼和備份資料。</block>
   <block id="b57235dcd9249f0e9bf6001eecd99ce5" category="list-text">記錄叢集範圍的複雜密碼。</block>
   <block id="f97bf876165b297d6e8425acab009019" category="paragraph">這是使用 CLI 或 REST API 設定或更新 OKM 時所輸入的複雜密碼。</block>
-  <block id="8cada82213a4eb50c1f0cba46389bd44" category="list-text">執行以備份金鑰管理程式資訊<block ref="32ba7af89b7557f6e3e6d80a922080ce" prefix=" " category="inline-code"></block> 命令。</block>
   <block id="219d5a10054a3daaa60cc6dc3881a506" category="paragraph">如果節點1和節點2位於不同的機箱中、您可以將節點3放在與節點1相同的機架位置。不過、如果 node1 位於與 node2 相同的機箱中、則您必須將 node3 放入自己的機架空間、最好是靠近 node1 的位置。</block>
   <block id="7abb4d22dfb96ceb2a52ebfc5cef2026" category="admonition">您可能不需要將互連卡或叢集互連纜線連線從節點1移至節點3、因為大多數平台機型都有獨特的互連卡模式。對於 MetroCluster 組態、您必須將 FC-VI 纜線連線從 node1 移至 node3 。如果新主機沒有FC-VI卡、您可能需要移動FC-VI卡。</block>
   <block id="28fabaf13c83a39f567169d484c2bdb7" category="admonition">如果您尚未在程序中稍早完成此作業、請參閱知識庫文章<block ref="99bc6507ac71bae6bc6755b2bf68f73a" category="inline-link-rx"></block> 以判斷使用中的自我加密磁碟機類型。</block>
@@ -5357,4 +5356,9 @@
   <block id="49e4f8e3ed6f9b425b3302443b88af26" category="paragraph">前往 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至 _Network Management_ 或 _ONTAP 9 Command reference_ 以取得更多資訊。</block>
   <block id="79ed614e57a84cb3ea78a7ec6a71e230" category="paragraph">如需更多資訊、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至 _Network Management_ 或 _ONTAP 9 Command reference_ 、然後前往 _Configuring failover settings on a LIF_ 。</block>
   <block id="bf4898b462ec44974d0fd35d857406f4" category="paragraph">輸入您先前在程序中記錄的通關密語和備份資訊。請參閱<block ref="67f80d13cf548292184bc05f4b74227a" category="inline-link-macro-rx"></block>。</block>
+  <block id="160d9607adcb68efced47d6deb7493eb" category="list-text">驗證通關密語和金鑰管理程式操作：</block>
+  <block id="35e13cf28e19f82138f24d5704edb686" category="paragraph">出現提示時，輸入您在上一個步驟中記錄的叢集範圍 OKM 複雜密碼。</block>
+  <block id="86e557f58bf6d6ffc84353711ad398d6" category="list-text">透過查看以下命令的輸出來驗證 cc-mode 是否已啟用：</block>
+  <block id="c1c5360be7e00706ec4adf74606262d2" category="paragraph"><block ref="8bb1a67a3cdda2dcc6e451017bb9da4d" prefix="" category="inline-code"></block></block>
+  <block id="66a6e497892fb616eb108dd90d697bfb" category="list-text">備份金鑰管理器資訊：</block>
 </blocks>

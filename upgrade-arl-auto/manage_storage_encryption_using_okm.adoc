@@ -21,7 +21,21 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.
 +
 這是使用 CLI 或 REST API 設定或更新 OKM 時所輸入的複雜密碼。
 
-. 執行以備份金鑰管理程式資訊 `security key-manager onboard show-backup` 命令。
+. 驗證通關密語和金鑰管理程式操作：
++
+「安全金鑰管理程式內建同步」
+
++
+出現提示時，輸入您在上一個步驟中記錄的叢集範圍 OKM 複雜密碼。
+
+. 透過查看以下命令的輸出來驗證 cc-mode 是否已啟用：
++
+`security key-manager config show`
+
+. 備份金鑰管理器資訊：
++
+「安全金鑰管理程式內建show Backup」
+
 
 
 
