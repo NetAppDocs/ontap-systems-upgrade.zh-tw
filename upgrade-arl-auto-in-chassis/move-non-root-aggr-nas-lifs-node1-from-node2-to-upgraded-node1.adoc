@@ -203,3 +203,6 @@ system controller replace resume
 
 
 
+
+.接下來呢？
+將 node1 的非根 Aggregate 和 NAS 資料 LIF 從 node2 移至升級後的 node1 之後link:relocate-non-root-aggr-nas-lifs-from-node2-to-node1.html["將非根 Aggregate 和 NAS 資料 LIF 從節點 2 重新配置到節點 1"]。

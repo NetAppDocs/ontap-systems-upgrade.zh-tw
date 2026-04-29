@@ -69,3 +69,5 @@ summary: 在執行ONTAP 《Se 9.8或更新版本》的控制器上進行手動AR
 
 |  |  |  |  |  |  
 |===
+.接下來呢？
+記錄每個 LIF 的 `adapter`和 `switch-port`資訊後，link:relocate_node2_non_root_aggr_node3_node4.html["將節點 2 的非根 Aggregate 從節點 3 重新配置到節點 4"]。

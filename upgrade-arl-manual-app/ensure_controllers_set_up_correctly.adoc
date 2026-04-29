@@ -142,3 +142,6 @@ Do you want to continue? {y|n}: y
 
 .完成後
 如果節點3和節點4上已啟用儲存加密、請完成中的步驟 link:set_up_storage_encryption_new_controller.html["在新的控制器模組上設定儲存加密"]。否則、請完成中的步驟 link:decommission_old_system.html["取消委任舊系統"]。
+
+.接下來呢？
+確認新控制器設定正確後，link:set_up_storage_encryption_new_controller.html["在新的控制器模組上設定 Storage Encryption"]。

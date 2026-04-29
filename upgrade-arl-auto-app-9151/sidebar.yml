@@ -19,8 +19,8 @@ entries:
   entries:
   - title: 準備節點以進行升級
     url: "/upgrade-arl-auto-app-9151/prepare_nodes_for_upgrade.html"
-  - title: 使用 Onboard Key Manager 管理儲存加密
-    url: "/upgrade-arl-auto-app-9151/manage_storage_encryption_using_okm.html"
+  - title: 完成升級準備工作
+    url: "/upgrade-arl-auto-app-9151/complete-preparation-for-upgrade.html"
 - title: 第2階段：重新部署和淘汰節點1
   pdf-filename: 第 2 階段：重新定位和淘汰 node1 （在 ONTAP 9.15.1 或更新版本中使用「系統控制器更換」進行升級）
   entries:

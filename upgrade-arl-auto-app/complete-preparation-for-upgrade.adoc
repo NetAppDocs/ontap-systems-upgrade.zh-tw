@@ -1,0 +1,86 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-app/complete-preparation-for-upgrade.html 
+keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication 
+summary: 使用ONTAP 「系統控制器更換」命令、在升級執行更新版本的控制器時、設定及管理儲存加密、管理驗證金鑰、以及靜止SnapMirror關係。 
+---
+= 完成升級準備工作
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+了解 ONTAP 授權以及如何使用 Onboard Key Manager (OKM) 管理儲存加密。您也可以選擇停止 SnapMirror 關係。
+
+
+
+== 了解 ONTAP 授權
+
+某些功能需要授權、以包含一或多項功能的 _packags_ 形式發出。叢集中的每個節點都必須擁有自己的金鑰、才能在叢集中使用每個功能。
+
+如果您沒有新的授權金鑰、新的控制器就能使用叢集中目前已授權的功能。但是、在控制器上使用未獲授權的功能可能會使您不遵守授權合約、因此您應該在升級完成後、為新的控制器安裝新的授權金鑰或金鑰。
+
+請參閱 link:other_references.html["參考資料"] 連結至 NetApp 支援網站 、您可在其中取得 ONTAP 的 28 個字元新授權金鑰。金鑰可在「軟體授權」下的「我的支援」區段中找到。如果網站沒有您需要的授權金鑰、您可以聯絡NetApp銷售代表。
+
+如需 ONTAP 授權的詳細資訊，請參閱link:other_references.html["參考資料"]以連結至《系統管理參考》。
+
+
+
+== 使用 Onboard Key Manager 管理儲存加密
+
+使用 Onboard Key Manager（OKM）來管理加密金鑰。如果您已設定 OKM，則必須在開始升級之前記錄通關密語和備份資料。
+
+.步驟
+. 記錄叢集範圍的複雜密碼。
++
+這是使用 CLI 或 REST API 設定或更新 OKM 時所輸入的複雜密碼。
+
+. 驗證通關密語和金鑰管理程式操作：
++
+「安全金鑰管理程式內建同步」
+
++
+出現提示時，輸入您在上一個步驟中記錄的叢集範圍 OKM 複雜密碼。
+
+. 透過查看以下命令的輸出來驗證 cc-mode 是否已啟用：
++
+`security key-manager config show`
+
+. 備份金鑰管理器資訊：
++
+「安全金鑰管理程式內建show Backup」
+
+
+
+
+
+== 或者，也可以讓這些 SnapMirror 關係平靜下來
+
+在繼續執行此程序之前、您必須確認所有SnapMirror關係均已靜止。當SnapMirror關係靜止時、它會在重新開機和容錯移轉之間保持靜止。
+
+.步驟
+. 驗證目的地叢集上的SnapMirror關係狀態：
++
+「napmirror show」
+
++
+[NOTE]
+====
+如果狀態為「Transferring（正在傳輸）」、您必須中止傳輸：「napmirror abort-destination-vserver _vserver_name_」
+
+====
++
+如果SnapMirror關係未處於「傳輸」狀態、則中止將會失敗。
+
+. 停止叢集之間的所有關係：
++
+`snapmirror quiesce -destination-vserver *`
+
+
+
+.接下來呢？
+準備升級後， link:relocate_non_root_aggr_nas_data_lifs_node1_node2.html["將節點 1 擁有的非根 Aggregate 和 NAS 資料 LIF 重新配置到節點 2"]。

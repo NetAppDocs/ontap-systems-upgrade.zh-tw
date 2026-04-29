@@ -84,3 +84,6 @@ aggr_2     825.0GB  825.0GB    0%     online     1  node2  raid_dp,normal
 「網路介面修改-vserver _vserver_name_-lif_lif_name_-home-nodeame_-stue-admin up」
 
 
+
+.接下來呢？
+將節點 1 擁有的非根 Aggregate 和 NAS 資料 LIF 重新配置到節點 2 後link:relocate-failed-or-vetoed-aggr-node2.html["重新配置失敗或被否決的 Aggregate"]。

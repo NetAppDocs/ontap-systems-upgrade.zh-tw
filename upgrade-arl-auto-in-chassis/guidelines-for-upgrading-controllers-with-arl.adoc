@@ -49,3 +49,6 @@ summary: 瞭解您是否可以使用 ARL 、保留舊的系統機箱和磁碟來
 如果出現任何問題、請參閱程序結尾的link:aggregate-relocation-failures.html["疑難排解"]一節、以取得更多資訊和可能的解決方案。可能發生的故障相關資訊會依程序階段列於link:overview-of-the-arl-upgrade.html["ARL 升級序列"]中。
 
 如果您沒有找到所遇到問題的解決方案，請聯絡技術支援。
+
+.接下來呢？
+在審閱控制器升級準則之後，link:overview-of-the-arl-upgrade.html["瞭解 ARL 升級順序"]。

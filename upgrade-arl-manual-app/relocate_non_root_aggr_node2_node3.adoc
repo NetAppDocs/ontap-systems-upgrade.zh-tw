@@ -210,3 +210,6 @@ NOTE: 「EVENT log show」命令會列出發生的任何錯誤。
 命令輸出不應顯示線上非根Aggregate、因為所有非根線上Aggregate都已重新部署至節點3。
 
 
+
+.接下來呢？
+將非根 Aggregate 從節點 2 重新配置到節點 3 後，link:move_nas_lifs_node2_node3.html["將節點 2 擁有的 NAS 資料 LIF 移至節點 3"]。

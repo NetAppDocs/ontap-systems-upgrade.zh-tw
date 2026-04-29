@@ -23,6 +23,12 @@ summary: 使用 ARL 升級同一機箱中的控制器型號時、請使用替換
 
 在此過程中、當節點1嘗試自動加入仲裁時、控制器升級作業應該會暫停。
 
+
+
+== 步驟 1：驗證 node1 是否在仲裁中
+
+確認 node1 處於仲裁狀態。然後，繼續執行控制器更換作業。
+
 .步驟
 . 驗證node1是否已加入仲裁：
 +
@@ -112,12 +118,12 @@ To complete the Network Reachability task, the ONTAP network configuration must 
 
 NOTE: 在此程序中、_重新建立VLAN、ifgrps和廣播網域_一節已重新命名為_在節點1 _上還原網路組態。
 
-. 在控制器更換處於暫停狀態時、繼續執行 <<還原節點1上的網路組態>>。
+. 在控制器更換處於暫停狀態時，請繼續執行 <<restore_network_configuration_on_node1,還原節點1上的網路組態>>。
 
 
 
 
-== 還原節點1上的網路組態
+== 步驟 2：還原 node1 上的網路組態
 
 確認節點1處於仲裁狀態並可與節點2通訊之後、請確認節點1的VLAN、介面群組和廣播網域均顯示在節點1上。此外、請確認所有節點1網路連接埠都已設定在正確的廣播網域中。
 
@@ -214,7 +220,7 @@ Warning: Repairing port "node1:e1b" may cause it to move into a different broadc
 「網路連接埠連線能力顯示」
 
 +
-執行可連線性修復時ONTAP 、嘗試將連接埠放在正確的廣播網域中。但是、如果無法判斷連接埠的連線能力、而且不屬於任何現有的廣播網域、ONTAP 則無法使用這些連接埠來建立新的廣播網域。
+在執行可達性修復時，ONTAP 會嘗試將連接埠放置在正確的廣播網域中。但是，如果 ONTAP 無法確定連接埠的可達性，且該連接埠不屬於任何現有廣播網域，ONTAP 會為這些連接埠建立新的廣播網域。
 
 . 驗證連接埠可連線性：
 +
@@ -248,3 +254,6 @@ Warning: Repairing port "node1:e1b" may cause it to move into a different broadc
 「網路介面顯示欄位主連接埠、狀態管理」
 
 
+
+.接下來呢？
+驗證 node1 安裝後，link:restore-key-manager-config-upgraded-node1.html["在升級後的 node1 上還原金鑰管理程式組態"]。

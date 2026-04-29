@@ -12,7 +12,8 @@
 +
 節點會自動停止。
 
++
+.. 升級完成後，可選擇停用 node2。請參閱 link:decommission_old_system.html["取消委任舊系統"]。
 
 
-.完成後
-您可以在升級完成後取消委任節點2。請參閱 link:decommission_old_system.html["取消委任舊系統"]。
+

@@ -169,7 +169,7 @@ node2          node1          true     Connected to node1
 「torage Aggregate show -nodes _norme_name_-is主目錄錯誤欄位擁有者名稱、主目錄名稱、狀態」
 
 +
-如果node1和node2都不擁有當前擁有者（但不是主擁有者）的Aggregate、系統將傳回類似下列範例的訊息：
+如果 node1 和 node2 都不擁有自己是目前擁有者（但不是主擁有者）的 Aggregate、則系統會傳回類似下列範例的訊息：
 
 +
 ....
@@ -423,7 +423,7 @@ fg_6210_e0c         Default           node1:e0c, node1:e0d
 「網路連接埠VLAN show -node_node_name_」
 
 +
-VLAN是透過實體連接埠進行設定。如果實體連接埠有所變更、則稍後將需要重新建立VLAN。
+VLAN 是透過實體連接埠配置的。如果實體連接埠發生變化，則需要在後續流程中重新建立 VLAN。
 
 +
 系統會顯示節點上設定的VLAN、如下列範例所示：
@@ -457,7 +457,7 @@ node1   e1b-70    e1b     70      00:15:17:76:7b:69
 「網路介面show -vserver _vserver_name_-data-protocol iscsiSCSI|FCP」
 
 +
-如果未針對SVM設定iSCSI或FC、則命令會顯示類似下列範例的訊息：
+如果 SVM 既未設定 iSCSI 也未設定 FC，則該命令會顯示類似下列範例的訊息：
 
 +
 ....
@@ -468,7 +468,7 @@ There are no entries matching your query.
 您可以使用「network interface show」命令搭配「-data傳輸協定NFS|CIFS」參數、確認節點是否位於NAS環境中。
 
 +
-如果已為SVM設定iSCSI或FC、則命令會顯示類似下列範例的訊息：
+如果為 SVM 設定了 iSCSI 或 FC，則該命令會顯示類似於下列範例的訊息：
 
 +
 ....
@@ -711,3 +711,6 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 
 --
 
+
+.接下來呢？
+完成節點升級準備工作後，link:manage_authentication_okm.html["使用 Onboard Key Manager 管理驗證金鑰"]。

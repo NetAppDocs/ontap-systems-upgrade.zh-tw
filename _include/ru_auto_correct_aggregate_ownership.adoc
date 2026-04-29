@@ -1,10 +1,10 @@
-= 如果ARL預先檢查失敗、請修正Aggregate所有權
+= 步驟 2：如果 ARL 預先檢查失敗、請修正 Aggregate 擁有權
 :allow-uri-read: 
 
 
 
 
-== 如果ARL預先檢查失敗、請修正Aggregate所有權
+== 步驟 2：如果 ARL 預先檢查失敗、請修正 Aggregate 擁有權
 
 如果Aggregate Status Check失敗、您必須將合作夥伴節點擁有的Aggregate傳回主擁有者節點、然後再次啟動預先檢查程序。
 
@@ -33,12 +33,7 @@ aggr4       node1      node1       online
 
 4 entries were displayed.
 ----
+. 重新啟動控制器更換程序：
 
-
-
-
-=== 完成後
-
-您必須重新啟動控制器更換程序：
 
 「System Controller replace start -nodes _norme_names」（系統控制器取代start節點_node_names）

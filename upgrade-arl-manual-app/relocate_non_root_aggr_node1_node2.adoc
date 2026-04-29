@@ -29,7 +29,7 @@ summary: 將非根Aggregate從node1移至node2、並在執行ONTAP 《Esce9.8或
 
 .. 出現提示時、請輸入「y」。
 +
-重新配置將會在背景中進行。重新部署集合體可能需要幾秒鐘到幾分鐘的時間。時間包括用戶端中斷和非中斷部分。此命令不會重新部署任何離線或受限的集合體。
+重新配置會在背景中進行。重新部署集合體可能需要幾秒鐘到幾分鐘的時間。時間包括用戶端中斷和非中斷部分。此命令不會重新部署任何離線或受限的集合體。
 
 .. 輸入下列命令即可返回管理員層級：
 +
@@ -42,7 +42,7 @@ summary: 將非根Aggregate從node1移至node2、並在執行ONTAP 《Esce9.8或
 「torage Aggregate regate reg搬 移顯示-node1_」
 
 +
-在重新放置集合體之後、輸出會顯示「Done」。
+輸出會在 Aggregate 重新配置後顯示 `Done`。
 
 +
 
@@ -133,3 +133,6 @@ Node owns partner's aggregates as part of the nondisruptive controller upgrade p
 輸出不應顯示任何已重新定位到節點2的線上非根Aggregate。
 
 
+
+.接下來呢？
+將非根 Aggregate 從 node1 重新配置到 node2 後link:move_nas_lifs_node1_node2.html["將節點 1 擁有的 NAS 資料 LIF 移至節點 2"]。

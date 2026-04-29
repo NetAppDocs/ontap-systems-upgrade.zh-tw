@@ -138,7 +138,7 @@ vsa_1 iscsi_lf__n4_p1_ 1 iqn.2020-01.com.netapp.englab.gdl:scspr1789621001 00:02
 .結果
 在本工作結束時、主機可以看到所有 iSCSI 介面（在舊節點和新節點上）、並登入所有這些介面。
 
-LUN 和磁碟區仍以實體方式託管在舊節點上。由於 LUN 只會在舊節點介面上報告、因此主機只會在舊節點上顯示路徑。若要查看、請執行 `sanlun lun show -p` 和 `multipath -ll -d` 在主機上執行命令、並檢查命令輸出。
+LUN 和磁碟區仍然實體託管在舊節點上。由於 LUN 僅在舊節點介面上報告，因此主機僅顯示經過舊節點的路徑。若要查看此資訊，請在主機上執行 `sanlun lun show -p`和 `multipath -ll -d`命令並檢查命令輸出。
 
 [listing]
 ----

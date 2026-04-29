@@ -139,8 +139,6 @@
   <block id="f10d0345f9a30980e7c9be821215c028" category="list-text">將node4連接埠新增至新重新建立的廣播網域：</block>
   <block id="bf0c95f7e92a0bc6e46bfc9664dcb9ee" category="summary">使用ONTAP 「系統控制器更換」命令、準備節點並執行一系列預先檢查、將執行版本號從執行版本資訊的控制器升級至9.7。</block>
   <block id="6510eaf8fd7e9800a5b7d62b06dc6e9c" category="list-text">在VMware命令列輸入下列命令、開始控制器更換程序ONTAP ：</block>
-  <block id="53d5140b9db74b84bdd8037a6063ec88" category="paragraph">您會看到下列輸出：</block>
-  <block id="9843edc4af038cb41e5ce95e9aad1e03" category="list-text">按「y」、您會看到下列輸出：</block>
   <block id="ffc467f3c2a85173d4529548d72d41b9" category="paragraph">系統會執行下列預先檢查、並記錄每個預先檢查的輸出、以便稍後在程序中使用：</block>
   <block id="495aa5c508241f1eca40fd503bc73196" category="cell">預先檢查</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">說明</block>
@@ -181,16 +179,12 @@
   <block id="793d1d4f275c1119fa9ef4c6bdeb245e" category="list-text">「網路連接埠VLAN show」</block>
   <block id="b60d742c0bb409f0ebcb8588e87621e0" category="list-text">「網路介面容錯移轉群組顯示」</block>
   <block id="af11fb45c89d3718886f151c8a08d22c" category="list-text">「torage加密磁碟顯示」</block>
-  <block id="22afa574ce25ee7b49bc951eecd7f0ac" category="section-title">如果ARL預先檢查失敗、請修正Aggregate所有權</block>
   <block id="7a29204c210eec42f3d01bebd9b483ba" category="paragraph">如果Aggregate Status Check失敗、您必須將合作夥伴節點擁有的Aggregate傳回主擁有者節點、然後再次啟動預先檢查程序。</block>
   <block id="f38dad169237355428118b60b1896828" category="list-text">將合作夥伴節點目前擁有的Aggregate傳回主擁有者節點：</block>
   <block id="17ef288fc5accadf7f08a6841d89c986" category="list-text">驗證node1和node2是否仍擁有當前擁有者（但不是主擁有者）的Aggregate：</block>
   <block id="74aa132d7caa1904dc30e16328313124" category="paragraph">以下範例顯示當節點同時是Aggregate的目前擁有者和主擁有者時、命令的輸出：</block>
   <block id="bd965e38a0c9cf27aa1bde099308e23f" category="section-title">完成後</block>
-  <block id="b034884667760545b9597461a985e372" category="paragraph">您必須重新啟動控制器更換程序：</block>
-  <block id="794df3791a8c800841516007427a2aa3" category="section-title">授權</block>
   <block id="0716a66a70e59256281f4030c078ce04" category="paragraph">如果您沒有新的授權金鑰、新的控制器就能使用叢集中目前已授權的功能。但是、在控制器上使用未獲授權的功能可能會使您不遵守授權合約、因此您應該在升級完成後、為新的控制器安裝新的授權金鑰或金鑰。</block>
-  <block id="556a407c4a4faf57fc56c1b7137d5f36" category="paragraph">如需授權的詳細資訊、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 連結至_System Administration Reference。</block>
   <block id="3926b0a999f25273c8f07ee812e70656" category="summary">您可以ONTAP 使用「系統控制器更換」命令、重新定位非根Aggregate的擁有權、將執行SES9.5的控制器硬體升級至9.7。</block>
   <block id="3b2a75ebc087c7f3c4fa9ac0e2a92ebe" category="cell">版本ONTAP</block>
   <block id="76c7e3320831285f65d8e81c92ccd88a" category="paragraph">在過程中、您會使用更換的控制器硬體來升級原始的控制器硬體、以重新定位非根集合體的擁有權。您可以多次從節點移轉Aggregate至節點、以確認在整個升級程序中、至少有一個節點正在處理來自集合體的資料。您也可以移轉資料邏輯介面（LIF）、並在繼續進行時將新控制器上的網路連接埠指派給介面群組。</block>
@@ -264,10 +258,7 @@
   <block id="843ab277685630f82095416c5b9ae5a1" category="inline-link-macro">階段3.</block>
   <block id="9b12fafa5a8b1307615caadc9be2c552" category="summary">使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.5的控制器升級至9.7時、請確認節點1上的實體連接埠正確對應至節點3。</block>
   <block id="9bced622fe4463826e54e9d72ffb3105" category="doc">將連接埠從節點1對應至節點3</block>
-  <block id="aef0be345c19587a34b9e9c1f46f47df" category="paragraph">您必須驗證節點1上的實體連接埠是否正確對應至節點3上的實體連接埠、如此一來、節點3就能在升級後與叢集中的其他節點和網路進行通訊。</block>
   <block id="4ded4d845e551767daf131f3a1827b13" category="paragraph">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 可鏈接到_SURE_ Hardware Universe 以獲取有關新節點上端口的信息。您將會使用本節稍後的資訊。</block>
-  <block id="44471d5aafdc0c157c500d2d6a23a19e" category="paragraph">連接埠設定可能有所不同、視節點的機型而定。您必須讓原始節點上的連接埠和LIF組態與新節點的規劃用途和組態相容。這是因為新節點在開機時會重新執行相同的組態、也就是說、當您開機node3時ONTAP 、將會嘗試在節點1上使用的相同連接埠上裝載l生命。</block>
-  <block id="0e17cd2a380c7aee928d55a629e1247a" category="paragraph">因此、如果節點1上的實體連接埠未直接對應至節點3上的實體連接埠、則在開機後、需要變更軟體組態才能還原叢集、管理和網路連線。此外、如果節點1上的叢集連接埠未直接對應至節點3上的叢集連接埠、則節點3可能不會在重新開機時自動重新加入仲裁、直到您將軟體組態變更為在正確的實體連接埠上裝載叢集生命體為止。</block>
   <block id="8ecfd3d07d0b566573970e006b263355" category="list-text">在表中記錄節點1、連接埠、廣播網域和IPspaces的所有節點1纜線資訊：</block>
   <block id="95416f2c916dabe21f738406546ebc53" category="cell">LIF</block>
   <block id="7c58d4376f3e9edee5dddea0cb60174b" category="cell">節點1連接埠</block>
@@ -330,7 +321,6 @@
   <block id="8f6f15e3cd3793ad38c3214c75a0a348" category="paragraph">重複步驟11、確認叢集LIF現在正在偵聽連接埠7700。</block>
   <block id="840820d31f6c078aeb1567ce302bdd05" category="doc">將節點1擁有的非根Aggregate和NAS資料lifs從節點2移至節點3</block>
   <block id="31185fb85292c7e722f79c9b5cb9cdde" category="paragraph">驗證node3安裝之後、在將Aggregate從node2重新定位至node3之前、您必須將屬於node1的NAS資料lIF、目前位於node2上、從node2移至node3。您還必須驗證節點3上是否存在SAN lifs。</block>
-  <block id="f329a7087048b2fb128acd99205356e2" category="paragraph">在升級過程中、遠端LIF會處理SAN LUN的流量。在升級期間、移轉SAN LIF對於叢集或服務健全狀況並不必要。除非需要將SAN LIF對應至新連接埠、否則不會移動SAN LIF。將node3聯機後，您將驗證生命期是否正常並位於適當的端口上。</block>
   <block id="761fe912511daeb08557e2215d0085e3" category="list-text">恢復重新定位作業：</block>
   <block id="d6fd449bc639f92f27b747fd5b40361d" category="paragraph">「系統控制器更換恢復」</block>
   <block id="0088774945c7d5ae5289c2de3632524f" category="paragraph">系統會執行下列工作：</block>
@@ -421,10 +411,8 @@
   <block id="42b71ea88832319c6f3f7818996dd5aa" category="summary">使用ONTAP 「系統控制器更換」命令、將執行版本號從9.5升級至9.7的控制器時、請關閉節點2並將其從機架或機箱中移除。</block>
   <block id="3b70100fce1839004dba40191f90a2c9" category="list-text">恢復作業：</block>
   <block id="21d67404cbc8811a82f375c6eb59ce82" category="paragraph">節點會自動停止。</block>
-  <block id="815c0aa063df3c53b17744c860357708" category="paragraph">您可以在升級完成後取消委任節點2。請參閱 <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>。</block>
   <block id="1609725c89da712556fac3c5249a458a" category="summary">使用ONTAP 「系統控制器更換」命令、將執行《更新》9.5的控制器升級至9.7時、請設定node3內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡。</block>
   <block id="7bd5452d2f3a1c07fc54d3a08cc82d64" category="paragraph">如果節點3具有內建FC連接埠、內建統一化目標介面卡（UTA/UTA2）連接埠或UTA/UTA2卡、則必須先設定設定、才能完成其餘程序。</block>
-  <block id="d897564a1ca4a58b7f422ba34b232ab7" category="paragraph">您可能需要完成本節 <block ref="750d6dbe3bf1312d0d97a8f03a0d2304" category="inline-xref-macro-rx"></block>章節 <block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>或這兩個區段。</block>
   <block id="6e8734f19d50032240b4c921c28e1359" category="admonition">NetApp行銷資料可能會使用「UTA2」一詞來指代整合式網路卡（CNA）介面卡和連接埠。不過、CLI使用「CNA」一詞。</block>
   <block id="2ad1e670b60bb257ae5313d5009813a5" category="section-title">在節點3上設定FC連接埠</block>
   <block id="7551ace690fab9fce9d0a9cad21a0ae7" category="paragraph">您必須擁有儲存在區段中節點1的FC連接埠設定值 <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block>。</block>
@@ -577,7 +565,6 @@
   <block id="d2dec120c917320cae7461e84d91f23c" category="list-text">叫出節點4。</block>
   <block id="32d978cffec9875e4d92dc55b84df69b" category="doc">將節點2擁有的非根Aggregate和NAS資料lifs從節點3移至節點4</block>
   <block id="ceb540e1a706eaef05047a7ec692cfe0" category="paragraph">驗證node4安裝之後、在將Aggregate從node3重新定位至node4之前、您必須將屬於node2的NAS資料lIF（目前位於node3上）、從node3移至node4。您還需要驗證節點4上是否存在SAN生命週期。</block>
-  <block id="d2f28697e2bc23acb2a0a646043ffac0" category="paragraph">在升級過程中、遠端LIF會處理SAN LUN的流量。在升級期間、移轉SAN LIF對於叢集或服務健全狀況並不必要。除非需要將SAN LIF對應至新連接埠、否則不會移動SAN LIF。將node4聯機後，您將驗證生命週年是否正常並位於適當的端口上。</block>
   <block id="0fe1ab232beb36c111a482c1e5418bbf" category="paragraph">執行這些檢查之後、系統會將節點2擁有的非根Aggregate和NAS資料lifs重新定位至新的控制器節點4。資源重新配置完成後、系統會暫停。</block>
   <block id="ec0abf2d5a391631e61dd4509cb00ed5" category="list-text">手動驗證非根集合體和NAS資料生命週期是否已成功移至節點4。</block>
   <block id="947b05812612f9bdff090f2792520d01" category="paragraph">如果有任何集合體無法重新定位或遭到否決、您必須手動重新定位集合體、或在必要時覆寫檢查結果或目的地檢查。請參閱一節 <block ref="f9a42009c629603217595f3693c67911" category="inline-link-macro-rx"></block> 以取得更多資訊。</block>
@@ -625,7 +612,6 @@
   <block id="321aa19fc0cdb52498a74f6673729f5e" category="list-text">驗證金鑰管理伺服器是否已設定、且可供叢集中的所有節點使用：</block>
   <block id="a1b7f6ea0d485d5a6890d4047d37884c" category="list-text">將驗證金鑰從所有連結的金鑰管理伺服器還原至新節點：</block>
   <block id="c497a6b930105164567b744840c21e94" category="paragraph">「安全金鑰管理程式內建show Backup」</block>
-  <block id="5055165524bf9c633a40b424396e9008" category="section-title">靜止SnapMirror關係（選用）</block>
   <block id="4c8b55d155015695884299d539ae7e00" category="paragraph">在繼續執行此程序之前、您必須確認所有SnapMirror關係均已靜止。當SnapMirror關係靜止時、它會在重新開機和容錯移轉之間保持靜止。</block>
   <block id="bad82f8550ff52390ef854218320ca8e" category="list-text">驗證目的地叢集上的SnapMirror關係狀態：</block>
   <block id="5bab70a374b8d81dfb1cf1f910800c2a" category="paragraph">「napmirror show」</block>
@@ -773,7 +759,6 @@
   <block id="6afe954858ef53a16278f4735833c1a5" category="list-text">執行Active IQ Config Advisor 功能、檢閱輸出內容、並遵循其建議來解決任何問題。</block>
   <block id="395efc410823d3328f70ddb736016f0b" category="summary">使用ONTAP 「系統控制器更換」命令、將執行更新至9.7的控制器升級時、請確認節點4加入仲裁、重新建立節點1的VLAN、介面群組和廣播網域、並還原金鑰管理程式組態。</block>
   <block id="16285c696d110c3e6ece1092e2680d1b" category="paragraph">安裝並開機節點4之後、您必須驗證節點是否已正確安裝、是否為叢集的一部分、以及節點3是否可以通訊。</block>
-  <block id="ed944478e87ce6285850bdd8efb0399a" category="paragraph">在此過程中、當節點4加入仲裁時、作業將暫停。</block>
   <block id="6a8e851d9f61a3ae03d77096370ca9c6" category="list-text">驗證node4是否已加入仲裁：</block>
   <block id="4395613c979349d83b9f7a1fd64ad821" category="paragraph">「cluster show -node4 -Fields health」</block>
   <block id="5606085c29237d873046f0814d8b70b0" category="list-text">輸入下列命令、確認node4與node3屬於同一個叢集、而且正常運作：</block>
@@ -848,7 +833,6 @@
   <block id="80f347da1888e440d3f1755d2e9ca001" category="paragraph">您必須在機架中安裝node3、將node1的連線傳輸至node3、開機node3及安裝ONTAP 支援。接著、您必須重新指派節點1的任何備用磁碟、屬於根磁碟區的任何磁碟、以及任何未在程序中稍早重新放置到節點2的非根Aggregate、如本節所述。</block>
   <block id="845a94c1ed34fe833c91b960798ffff2" category="paragraph">重新配置作業會在此階段開始時暫停。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。此外、您必須驗證SAN LIF是否已成功移至節點3。</block>
   <block id="31ccaad020ad8995655b8785712ac7b9" category="paragraph">如果netboot node3沒有ONTAP 安裝在node1上的相同版本的支援功能、您就需要netboot node3。安裝node3之後、請從ONTAP 儲存在Web伺服器上的Image9映像啟動節點3。接著、您可以依照中的指示、將正確的檔案下載到開機媒體裝置、以供後續系統開機 <block ref="4815c2d091d790c1d3bab94177b38eaf" category="inline-link-macro-rx"></block>。</block>
-  <block id="80f025cc78499a80da49bd37c9bde220" category="list-text">如果您要升級具有儲存磁碟的系統、則必須完成此一整節、然後前往 <block ref="b8be2332e6727dc6b48478780a30df1b" category="inline-link-macro-rx"></block> 和 <block ref="e1881302722b07e924682c0aeef752a5" category="inline-link-macro-rx"></block> 區段、在叢集提示字元中輸入命令。</block>
   <block id="56fd5e5051297f55fa1e22d93c8d71b8" category="list-text">[[[auto_install3_step1]]請確定您有節點3的機架空間。</block>
   <block id="2c6541bc32b15b7aae8bab68f0ca5874" category="paragraph">如果節點1和節點2位於不同的機箱中、您可以將節點3放在與節點1相同的機架位置。但是、如果節點1與節點2位於同一個機箱中、則您需要將節點3放入自己的機架空間、最好是靠近節點1的位置。</block>
   <block id="b76de3994341c25067b438fe161926b7" category="list-text">[[[auto_install3_step2]]依照節點機型的安裝與設定指示_、在機架中安裝節點3。</block>
@@ -881,7 +865,6 @@
   <block id="b7b77c4a8d173f38e98b19b6fa156359" category="paragraph">《prontenv合作夥伴sysid》</block>
   <block id="a6f1d58c4c38c1ac76cd5929e302f723" category="summary">使用ONTAP 「系統控制器更換」命令、將執行更新至9.7的控制器升級時、請確認節點3加入仲裁、重新建立節點1的VLAN、介面群組和廣播網域、並還原金鑰管理程式組態。</block>
   <block id="3e0da2be1046cdf5d552f8adaa98c3ae" category="paragraph">安裝並開機節點3之後、您必須驗證節點是否已正確安裝。您必須等待節點3加入仲裁、然後繼續重新配置作業。</block>
-  <block id="60d0d1447a22e8eb1a7dd321b2eec56f" category="paragraph">在此過程中、當節點3加入仲裁時、作業將暫停。</block>
   <block id="264f45c2e8ee62b2a09c06df8f3dea0f" category="list-text">驗證node3是否已加入仲裁：</block>
   <block id="1c39607d3048b34130b8a3c0d2959603" category="list-text">驗證node3是否與node2屬於同一個叢集、而且它是否正常：</block>
   <block id="2fa5c37305bc33a6ae27bb983656d1e3" category="list-text">檢查作業狀態、並確認節點3的組態資訊與節點1相同：</block>
@@ -909,13 +892,9 @@
   <block id="c76c038ef9582123a69154e143b5e63f" category="list-text">輸入下列命令並檢查其輸出、檢查節點上是否有任何已設定的介面群組：</block>
   <block id="3ab0e6df482466ba6428f0535b2e2564" category="summary">使用ONTAP 「系統控制器更換」命令、將執行E9.5的控制器升級至9.7時、請停用與節點2的HA配對、並關閉節點1。</block>
   <block id="44d5329782b4f4acb8947c6cc4601de1" category="list-text">驗證node1是否已停止：</block>
-  <block id="d1e63174073b4ec3e4d49ef0ca235c5b" category="paragraph">您可以在升級完成後取消委任節點1。請參閱 <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>。</block>
   <block id="81605039a97ca73a232818034b412a87" category="doc">第1階段：準備升級</block>
   <block id="00c13e2880f6565acea9eb7b236ffe2a" category="summary">使用ONTAP 「系統控制器更換」命令、將執行版本資訊9.5的控制器升級至9.7時、請確認節點2上的實體連接埠正確對應至節點4。</block>
-  <block id="964ab85547edd708f3257e13df3d6e86" category="paragraph">您必須驗證節點2上的實體連接埠是否正確對應至節點4上的實體連接埠、以便節點4在升級後與叢集中的其他節點和網路進行通訊。</block>
   <block id="1f689cbf21b231665fddfb1e6d536c70" category="paragraph">節點4的軟體組態必須符合節點4的實體連線能力、而且必須先還原IP連線、才能繼續升級。</block>
-  <block id="bf8b9055a5342a7293763811a06a8608" category="paragraph">連接埠設定可能有所不同、視節點的機型而定。您必須使原始節點的連接埠和LIF組態與您計畫新節點的組態相容。這是因為新節點在開機時會重新執行相同的組態、也就是說、當您開機node4 Data ONTAP 時、該節點將嘗試在節點2上使用的相同連接埠上裝載LIF。</block>
-  <block id="fbec007548b328ac0c95f6da4a3baeae" category="paragraph">因此、如果節點2上的實體連接埠未直接對應至節點4上的實體連接埠、則在開機後、需要變更軟體組態才能還原叢集、管理和網路連線。此外、如果節點2上的叢集連接埠未直接對應至節點4上的叢集連接埠、則在軟體組態變更以將叢集生命週期裝載到正確的實體連接埠之前、節點4可能不會在重新開機時自動重新加入仲裁。</block>
   <block id="bad707bf91a771b52edba306ada6de3a" category="list-text">在表中記錄節點2、連接埠、廣播網域和IPspaces的所有節點2纜線資訊：</block>
   <block id="7d59f6e2a8043f873c459c922f1be4ac" category="cell">節點2連接埠</block>
   <block id="45b46ba4750e074aa4e7304855388746" category="cell">節點2 IPspaces</block>
@@ -954,7 +933,6 @@
   <block id="57bd5edad2e4a85125aa9528f6fa4cea" category="list-text">還原OKM驗證：</block>
   <block id="0a83ed732b07426c840d56d0ee6e648b" category="cell">「安全金鑰管理程式內建同步」</block>
   <block id="bc8355e3ba73925a2f4cf661fa66be6a" category="summary">使用ONTAP 「系統控制器更換」命令來升級執行《更新版本》9.8或更新版本的控制器時、請設定node4內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡。</block>
-  <block id="403ef226990b83673617ca3be4865d06" category="list-text">前往 <block ref="5752cac0a470e06ffceef40fba1931c1" category="inline-xref-macro-rx"></block> 如果節點4有UTA/UTA2卡或UTA/UTA2內建連接埠。</block>
   <block id="f91809c39c7c5ad59f2475c5ee644448" category="admonition">在上述主控台輸出範例中、ONTAP 如果系統使用進階磁碟分割（ADP）磁碟、則會提示您輸入合作夥伴節點名稱。</block>
   <block id="cb891bf7e336200833c9e240c76a0cc6" category="list-text">確認節點4的根Aggregate為離線狀態、且從節點2移轉的磁碟根Aggregate為線上狀態、並設定為root：</block>
   <block id="6bab8b4510fec23b1120be927a0bfea7" category="admonition">如果無法執行上一個子步驟、可能會導致節點4從內部根Aggregate開機、或者可能導致系統假設有新的叢集組態存在、或提示您識別一個。</block>
@@ -1010,7 +988,6 @@
   <block id="231d6537090582d94372987139e9087b" category="paragraph">當您開始工作時、該作業應該已經暫停；您必須手動恢復該作業。</block>
   <block id="fa39e98dea804607ace91ae82c9543d7" category="list-text">[[step5]]如果有任何生命週期中斷、請使用下列命令將生命週期的管理狀態設為「up」（上）、每個LIF一次：</block>
   <block id="ddb5eb2be2cb4d619fb6d97af7f0979a" category="summary">請告訴NetApp、使用ONTAP 「系統控制器更換」命令、升級執行版本為NetApp 9.8或更新版本的控制器之後、舊系統將不再運作。</block>
-  <block id="c58e06e13ea00648461f7e5d6400a1e2" category="summary">使用半自動ARL程序來升級執行ONTAP 不含更新版本的控制器。</block>
   <block id="5faf3e9d007712b89cd716c2cbabed9f" category="paragraph">在控制器升級期間、控制器會被另一個執行較新或更強大平台的控制器所取代。此內容的早期版本包含不中斷營運的控制器更新程序指示、其中包含完全手動的步驟。本內容提供新自動化程序的步驟、此程序利用自動網路連接埠連線檢查來進一步簡化控制器升級體驗。</block>
   <block id="6842ea6d980ed82db538f2da553da6d9" category="paragraph">手動程序既冗長又複雜、但在此簡化程序中、您可以使用集合體重新配置來實作控制器更新、讓HA配對能夠更有效率地進行不中斷營運的升級。手動步驟大幅減少、尤其是驗證、收集資訊及檢查後的步驟。</block>
   <block id="19742459913bf455e1f34dbda6e44b09" category="summary">瞭解您是否ONTAP 可以使用「系統控制器更換」命令來升級執行效能不全的控制器。</block>
@@ -1023,9 +1000,6 @@
   <block id="5e668aadf3c84d39f49c47f9c74523b2" category="summary">使用ONTAP 「系統控制器更換」命令來升級執行版本不含更新版本的控制器時、可能發生的問題相關資訊。</block>
   <block id="a5493bc67e24703f243d4cfc0298650e" category="summary">疑難排解使用「系統控制器更換」命令來升級執行ONTAP VMware 9.8或更新版本的控制器時、可能會發生的Aggregate重新定位故障。</block>
   <block id="f068e1c881bcb261ac497abe62b5aef7" category="summary">使用ONTAP 「系統控制器更換」命令、升級執行版本號為「更新」的控制器時、請確認節點2的實體連接埠正確對應至節點4、並還原節點4上的網路組態。</block>
-  <block id="4b23fc3c80c3c248a200cfd0971d83e3" category="paragraph">您必須驗證節點2的實體連接埠是否正確對應至節點4上的實體連接埠。這將使node4能夠在升級後與叢集中的其他節點和網路進行通訊。</block>
-  <block id="3e1a89708cfe8d08896ed24a0d0be5e8" category="paragraph">實體連接埠配置可能有所不同、視節點的機型而定。當新節點開機時ONTAP 、為了自動進入仲裁、S庫 會嘗試判斷哪些連接埠應該裝載叢集生命期。</block>
-  <block id="98ba93dd4de23479aa574bba16f17db7" category="paragraph">如果節點2上的實體連接埠未直接對應至節點4上的實體連接埠、請參閱後續章節 <block ref="364d871b05cd34ae9893fc6fc54b8984" category="inline-xref-macro-rx"></block> 必須用於修復網路連線。</block>
   <block id="e39c239523fa2335eed92e50ae0e2208" category="paragraph">安裝並開機節點4之後、您必須驗證節點是否已正確安裝。您必須等待節點4加入仲裁、然後繼續重新配置作業。</block>
   <block id="a5c25ebe0ba44233d498c66cb77e22f2" category="paragraph">保健領域的產出應該是真的。</block>
   <block id="f9bb6290635aecbf1e553e1d48da4966" category="list-text">驗證node4是否與node3屬於同一個叢集、而且它是否正常：</block>
@@ -1040,7 +1014,6 @@
   <block id="45b045cb31b53300f077fd700437de5a" category="paragraph">檢查MetroCluster 此節點狀態：</block>
   <block id="ecada3140a47012aab89f14c63ba9190" category="paragraph">「不一樣的秀」MetroCluster</block>
   <block id="973e4031ed35bf66df5741d51fd988da" category="list-text">[[[auto_Verify（自動驗證）_4_Step6]繼續控制器更換作業：</block>
-  <block id="2a2c4f4e7fd268d1d4c0dda8807d69e2" category="list-text">控制器更換將暫停以進行介入、並顯示下列訊息：</block>
   <block id="c78fd54aa1461d651da28406676f336f" category="admonition">在此程序中、_重新建立VLAN、ifgrps和廣播網域_一節已重新命名為_在節點4_上還原網路組態。</block>
   <block id="6f399bf4f62f96a02d91e295630626e7" category="list-text">在控制器更換處於暫停狀態時、請繼續執行本文件的下一節、以還原節點上的網路組態。</block>
   <block id="ad642c9296b70fbec2ff690ecca7088a" category="section-title">還原節點4上的網路組態</block>
@@ -1058,7 +1031,6 @@
   <block id="6da5520b869a50ed547a761fe1f0e10e" category="paragraph">如前所示、對於連線狀態可能不同於目前所在廣播網域之連線狀態的連接埠、預期會出現一則警告訊息。</block>
   <block id="2b17ef3c860c2adf63f0265d9181acce" category="paragraph">檢視連接埠的連線能力、並視需要回答「y」或「n」。</block>
   <block id="88e1ec169a4d9b4d08505d76c6e1eb13" category="paragraph">驗證所有實體連接埠的可連線性是否符合預期：</block>
-  <block id="763c4b6560b672163a09cf2e67ba8d89" category="paragraph">執行可連線性修復時ONTAP 、嘗試將連接埠放在正確的廣播網域中。但是、如果無法判斷連接埠的連線能力、而且不屬於任何現有的廣播網域、ONTAP 則無法使用這些連接埠來建立新的廣播網域。</block>
   <block id="6c2174965c1dafdd591752b78b10faa9" category="list-text">如果介面群組組態與新的控制器實體連接埠配置不符、請使用下列步驟加以修改。</block>
   <block id="a0c9e092b3640057dbbb2fad95c8d7be" category="list-text">您必須先從其廣播網域成員資格中移除應該是介面群組成員連接埠的實體連接埠。您可以使用下列命令來執行此作業：</block>
   <block id="62c1275f11de1967a743be3b315a5af6" category="list-text">將成員連接埠新增至介面群組：</block>
@@ -1100,8 +1072,6 @@
   <block id="b10c9e2a07f0bd22d85f72c5fb19d122" category="list-text">請檢查事件管理系統（EMS）記錄、以判斷為何無法重新部署或遭否決該集合體。</block>
   <block id="beda7e39626b719165412c5becb115d5" category="summary">使用ONTAP 「系統控制器更換」命令、在升級執行ONTAP 版本號為E9、8或更新版本的控制器時、安裝並啟動節點3並安裝更新軟體。</block>
   <block id="c05c7a2303ef34ab95234ebadd79fc8f" category="cell">在開機環境提示字元中使用下列命令自動設定連線：「ifconfige0M -auto」</block>
-  <block id="0fe595dcf68c11944d6702639057e6d6" category="paragraph">您必須驗證節點1的實體連接埠是否正確對應至節點3上的實體連接埠。如此一來、節點3就能在升級後與叢集中的其他節點和網路進行通訊。</block>
-  <block id="e81669be921c5bd20d872e337c5b204d" category="paragraph">如果節點1上的實體連接埠未直接對應至節點3上的實體連接埠、請參閱後續章節 <block ref="871101a3a410248482eefafa62332b63" category="inline-xref-macro-rx"></block> 必須用於修復網路連線。</block>
   <block id="65e2b77d04e539a041041cfc7b7c4d8f" category="list-text">檢查控制器更換作業的狀態、並確認它處於暫停狀態、且狀態與節點1停止之前的狀態相同、以執行安裝新控制器和移動纜線的實體工作：</block>
   <block id="7d6da636a56e3278933335b21cca97bc" category="list-text">如果您使用MetroCluster 的是一個發揮作用的系統、請確認已更換的控制器已正確設定MetroCluster 為符合該功能的組態；MetroCluster 該功能應該處於正常狀態。請參閱 <block ref="14c0e32a98a31f9fd4a16b635b2f7ebd" category="inline-link-macro-rx"></block>。</block>
   <block id="cc3fae395501f043309fdf0319483db7" category="paragraph">重新設定MetroCluster 叢集間的LIF on the Synestate node3、並檢查叢集對等功能、以恢復MetroCluster 在各個節點之間的通訊、然後再繼續執行步驟6。</block>
@@ -1169,7 +1139,6 @@
   <block id="7a309bb6c6af5ef06efe5f48e0c54074" category="paragraph">以下範例顯示節點彼此連線並可進行接管時的輸出：</block>
   <block id="8ad3217d99ee19b408199ad575ffe3af" category="paragraph">兩個節點都不應處於部分恢復狀態。以下範例顯示node1在部分恢復中：</block>
   <block id="077bf43ae0702cf4ef1519ff5ec6b8f3" category="list-text">[[man_prepe_node_step9]]確認節點1和節點2均不擁有其目前擁有者（但不擁有主擁有者）的Aggregate：</block>
-  <block id="e86a1d7ab77ef690a506c50aeb0e4407" category="paragraph">如果node1和node2都不擁有當前擁有者（但不是主擁有者）的Aggregate、系統將傳回類似下列範例的訊息：</block>
   <block id="b985e562bbb6750dd51f653600fe0a16" category="paragraph">下列範例顯示四個集合體的主擁有者節點2（但不是目前擁有者）之節點的命令輸出：</block>
   <block id="54c8107ec5763757535759e84fcccba4" category="inline-xref">步驟9.</block>
   <block id="d2d09b67c3b189d4996ce96fdb6e7f46" category="cell">如果中有命令 <block ref="f234334393599d38df4eb27863e3dcfa" category="inline-xref-macro-rx"></block>...</block>
@@ -1212,7 +1181,6 @@
   <block id="8d9c45aa37c89a2c1648b1756ab487ea" category="paragraph">系統會在節點上顯示容錯移轉群組、如下列範例所示：</block>
   <block id="da98a346ceebae46d5f809b0a76fa466" category="list-text">如果故障切換群組並非「clusterwide」、請記錄故障切換群組名稱和屬於故障切換群組的連接埠。</block>
   <block id="4284018d8ed5fd4750bbe54e42d5131e" category="list-text">輸入下列命令、查看節點上是否已設定任何VLAN：</block>
-  <block id="c4bc09685f2b51c989913c717d719690" category="paragraph">VLAN是透過實體連接埠進行設定。如果實體連接埠有所變更、則稍後將需要重新建立VLAN。</block>
   <block id="d12a9049e51fd6e424aa4359a72b4295" category="paragraph">系統會顯示節點上設定的VLAN、如下列範例所示：</block>
   <block id="c14e11ebbdc4deecee898760f94845d8" category="list-text">如果節點上已設定VLAN、請記下每個網路連接埠和VLAN ID配對。</block>
   <block id="52be7caa23f8083514a04ae35866982c" category="cell">如果介面群組或VLAN ...</block>
@@ -1222,9 +1190,7 @@
   <block id="6c2e7ce55ecae714a2208a38f28950b9" category="cell">不在節點1或節點2上</block>
   <block id="68eb39c6bade33093ea7116e69724b9d" category="cell">前往 <block ref="75c40b124b57824cd48270709549c07b" category="inline-xref-macro-rx"></block>。</block>
   <block id="371f291ab5b98703097ed6da7c8ed52f" category="list-text">[man準備節點_step23]如果您不知道節點1和節點2是否位於SAN或非SAN環境中、請輸入下列命令並檢查其輸出：</block>
-  <block id="acbfcb7305e244387e0051fa5f508401" category="paragraph">如果未針對SVM設定iSCSI或FC、則命令會顯示類似下列範例的訊息：</block>
   <block id="f5ec26fd612e05501dc188ab23c1e529" category="paragraph">您可以使用「network interface show」命令搭配「-data傳輸協定NFS|CIFS」參數、確認節點是否位於NAS環境中。</block>
-  <block id="94b030f9c4d0cf01d4214519980e06e7" category="paragraph">如果已為SVM設定iSCSI或FC、則命令會顯示類似下列範例的訊息：</block>
   <block id="6d0f0ab3ba176428ba45b4d0b08cb29a" category="list-text">[man準備節點_step24]完成下列子步驟、確認叢集中的所有節點都處於仲裁狀態：</block>
   <block id="41755192777732f571a4c320827bfc6d" category="list-text">針對每個節點、驗證核心中的叢集服務狀態一次：</block>
   <block id="998af7db71400f287ae13a492f9d193a" category="paragraph">「叢集核心服務展示」</block>
@@ -1326,7 +1292,6 @@
   <block id="34c13ce480fd28c643a03477e436ea69" category="inline-link-macro">階段3：安裝和開機節點3</block>
   <block id="021eb7b60dabf41949ccbeca660311c4" category="list-text">[[man_netboot_Step1]]請存取NetApp支援網站、下載用於執行系統網路開機的檔案。</block>
   <block id="a54f5c2e2731f201663a2d288e5fec98" category="summary">在執行ONTAP 《Esc9.8或更新版本》的控制器上進行手動ARL升級時、請確認節點1上的實體連接埠正確對應至節點3。</block>
-  <block id="9207f0d2f15feec52f0acba2d7786a53" category="paragraph">您必須確定節點1上的實體連接埠正確對應至節點3上的實體連接埠、以便節點3在升級後與叢集中的其他節點和網路進行通訊。</block>
   <block id="d22f146c49d95d305653bf62234fdbc9" category="paragraph">您必須已經取得有關_E__新節點上連接埠的資訊Hardware Universe 。（請前往 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至_SURE_ Hardware Universe ）。您可以使用本節稍後和中的資訊 <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block>。</block>
   <block id="7ae38f6d8449bab135d62e112d801780" category="paragraph">連接埠設定可能有所不同、視節點的機型而定。</block>
   <block id="18d6cf18e081291f183ebc71cad11449" category="list-text">[[step1]]請執行下列步驟、確認設定是否為雙節點無交換式叢集：</block>
@@ -1345,7 +1310,6 @@
   <block id="8c40a77b34a5d773edb70494e7f10d84" category="paragraph">預期會出現類似以下的警告。請視需要檢閱並輸入「y」或「n」：</block>
   <block id="280d42fd22f6ddb732aa3a4794b2f8cd" category="list-text">若要讓ONTAP 支援功能更新完成修復、請在最後一個連接埠上執行「可連線性修復」命令後等待約一分鐘。</block>
   <block id="1708f24291e02d5444d943fd9a4a384c" category="list-text">列出叢集上的所有廣播網域：</block>
-  <block id="8d324785c287a538f58e372f40bed342" category="list-text">執行可連線性修復時ONTAP 、嘗試將連接埠放在正確的廣播網域中。但是、如果無法判斷連接埠的連線能力、而且與任何現有的廣播網域不相符、ONTAP 則無法針對這些連接埠建立新的廣播網域。如果新建立的廣播網域的所有成員連接埠都會成為介面群組的成員連接埠、您可以視需要刪除這些網域。刪除廣播網域：</block>
   <block id="ad26ddf2e9b94d63fc11537e49b3ecb8" category="list-text">檢閱介面群組組態、並視需要新增或刪除成員連接埠。</block>
   <block id="4f8ff7a721c81a3185d356f1a33fae2d" category="paragraph">新增成員連接埠至介面群組連接埠：</block>
   <block id="6d260ed9cb63935d4eff6ef0cbc812bc" category="paragraph">從介面群組連接埠移除成員連接埠：</block>
@@ -1388,7 +1352,6 @@
   <block id="4dea80d6ab207bc372820b8a74a583df" category="list-text">在節點1上輸入下列命令：</block>
   <block id="c98e23a6f059dd6276dbffb11af4d53d" category="paragraph">系統會顯示節點上的實體連接埠、如下列範例所示：</block>
   <block id="e39f84c1a169d8d90af9c95f44865bc0" category="list-text">記錄連接埠及其廣播網域。</block>
-  <block id="00e8b0b0df56090152aa5c1cb1bd4a45" category="paragraph">稍後的程序將需要將廣播網域對應至新控制器上的新連接埠。</block>
   <block id="554c196eb9c5953b024f2cc2c07ba455" category="paragraph">系統會在節點上顯示FC連接埠、如下列範例所示：</block>
   <block id="f33b448fa0bb738f614e66795ee372d4" category="list-text">記錄連接埠。</block>
   <block id="183e98aa2a84c4dee16223d4c260f2ce" category="paragraph">需要輸出資訊、才能在程序稍後的新控制器上對應新的FC連接埠。</block>
@@ -1416,10 +1379,8 @@
   <block id="fd35edd14227b026dc566a7178c387d7" category="summary">將非根Aggregate從node1移至node2、並在執行ONTAP 《Esce9.8或更新版本》的控制器上進行手動ARL升級時、驗證重新配置。</block>
   <block id="11856588314d0c959b2b916a938edde8" category="doc">將非根Aggregate從節點1重新部署到節點2</block>
   <block id="7368fc5c8c51bc8dc679464700a9f443" category="paragraph">您必須先使用儲存Aggregate replace命令將非根Aggregate從node1移至node2、然後再驗證重新配置、才能將node1替換為node3。</block>
-  <block id="e45573b969f614ffe0b1bc0150964664" category="paragraph">重新配置將會在背景中進行。重新部署集合體可能需要幾秒鐘到幾分鐘的時間。時間包括用戶端中斷和非中斷部分。此命令不會重新部署任何離線或受限的集合體。</block>
   <block id="7b6a4090ff6553e6b643348d522b6560" category="list-text">輸入下列命令即可返回管理員層級：</block>
   <block id="db3c32b2915aa7ffd2fcacb5e017dbc9" category="list-text">在節點1上輸入下列命令、檢查重新配置狀態：</block>
-  <block id="435f14e8c9936aa21efde9eac795b40f" category="paragraph">在重新放置集合體之後、輸出會顯示「Done」。</block>
   <block id="d550e31a6ccbb056c2d7ab1e68692363" category="admonition">請等到節點1擁有的所有非根集合體都已重新定位至節點2、然後再繼續下一步。</block>
   <block id="b77ef5d765d72155b0da6da7cb47f0ed" category="cell">如果重新配置...</block>
   <block id="b15b9b498c001e92853f9fea21ef7ef8" category="cell">然後...</block>
@@ -1486,28 +1447,18 @@
   <block id="04818410504d7e5aff0400546dfc87fe" category="paragraph">如果節點1或節點2在第2階段之前當機、則尚未重新放置任何集合體、而且HA組態仍處於啟用狀態。</block>
   <block id="141bacc3e7a6f502bd3657db72437350" category="list-text">檢查主控台是否有系統可能發出的EMS訊息、並採取建議的修正行動。</block>
   <block id="7495ab667ca2ae1018dd9d3dd2908757" category="section-title">節點1在第2階段期間或之後當機、但HA仍處於啟用狀態</block>
-  <block id="6647bb8df429d773e26f287ab8630e64" category="paragraph">部分或全部的集合體已從節點1重新定位至節點2、但HA仍處於啟用狀態。node2將接管node1的根Volume和未重新定位的任何非根Aggregate。</block>
-  <block id="4737e9bd68e050a3ff527329392a0902" category="paragraph">移轉的集合體擁有權與因擁有者未變更而接管的非根集合體擁有權相同。當節點1進入「等待恢復狀態」時、node2會歸還所有node1非根Aggregate。</block>
   <block id="74d5b8b871208d748fdac979190074e1" category="section-title">停用HA時、節點1會在第2階段之後當機</block>
-  <block id="9ad3dc0563b6521da592666e0c96170d" category="paragraph">節點2不會接管、但它仍在提供來自所有非根Aggregate的資料。</block>
   <block id="cf843a9114c64e407d26e842eb2aa5c2" category="inline-link-macro">非預期的儲存容錯移轉show命令輸出</block>
   <block id="15c9d515df1ae9990db781b0882abe66" category="section-title">在仍啟用HA的情況下、節點2會在階段2期間或之後失敗</block>
   <block id="716abd00d1127a1995735a99a806c57a" category="paragraph">節點1已將部分或全部的Aggregate重新放置到節點2。HA已啟用。</block>
-  <block id="f0cdf8c3a0614c42ddbb847f4d954ecc" category="paragraph">節點1將接管節點2的所有集合體、以及它已重新定位到節點2的任何專屬集合體。當節點2進入「Waiting for Giveback」（正在等待恢復）狀態時、節點1會傳回節點2的所有集合體。</block>
   <block id="d9cfe3ea2fdbf3c16ed9c5e72d3e656c" category="section-title">在停用HA之後、節點2會在第2階段之後當機</block>
-  <block id="60d779c99277ce73af20b8df4f5f56d7" category="paragraph">節點1不會接管。</block>
-  <block id="6cd506af8fb7a9917363ff2842c8cc31" category="paragraph">節點2開機時、所有的Aggregate都會發生用戶端中斷。</block>
   <block id="4fcbd6d017dc3bed8096ddf23845774a" category="list-text">繼續執行其餘的節點配對升級程序。</block>
   <block id="a5d750c0f90be33b555932b544614491" category="section-title">在階段3期間重新開機、出現問題或重新開機</block>
   <block id="c4ff6b7da7d4d6d1387161732065f7e3" category="paragraph">在安裝和引導node3的階段3期間或之後可能會立即發生故障、將節點1的連接埠對應至node3、將屬於node1和node2的資料lifs和SAN lifs移至node3、並將節點2的所有Aggregate重新定位至node3。</block>
   <block id="6c6e673ed49e2d3170e896afadb82987" category="section-title">在停用HA的情況下、以及在重新部署任何Aggregate之前、節點2會在第3階段當機</block>
-  <block id="d0dbe31475820a3a3bf65dc0bcdc3d22" category="paragraph">由於HA已停用、因此節點2當機後、節點3將不會接管。</block>
   <block id="123d371d6f3654b02ea395d3cdce7a43" category="section-title">節點2在重新放置部分或全部集合體之後、在第3階段當機</block>
-  <block id="3312049a8df38d6a9cc500f8d982615c" category="paragraph">節點2已將部分或全部的Aggregate重新放置到節點3、節點3將提供重新放置之集合體的資料。HA已停用。</block>
-  <block id="4293c82d89ec7602e20335979cb19469" category="paragraph">未重新部署的集合體將會發生用戶端中斷。</block>
   <block id="7777ccf7f0f06dad3ffad451bb0e83b8" category="section-title">節點3在第3階段和節點2重新放置任何集合體之前當機</block>
   <block id="ec2cd6235f2c50a1e7fed067fe8301f8" category="section-title">在Aggregate重新配置期間、節點3會在第3階段當機</block>
-  <block id="bdf12c9e6bf2221b5ef584b80346aaaf" category="paragraph">如果節點3在節點2將Aggregate重新定位到節點3時當機、則節點2會中止任何其他Aggregate的重新定位。</block>
   <block id="5f54439349a0049ded037d046c54cb66" category="paragraph">節點2繼續提供其餘的Aggregate、但在節點3開機時、已重新放置到節點3的Aggregate會遇到用戶端中斷。</block>
   <block id="78d6fd9200a4f713a83c4db59f80581d" category="section-title">節點3在第3階段當機後無法開機</block>
   <block id="1f3a2d115338d5055575085be720a753" category="paragraph">由於災難性故障、節點3在第3階段當機之後無法開機。</block>
@@ -1516,7 +1467,6 @@
   <block id="f9266620f38392278a4002882f41b801" category="paragraph">node3繼續為所有Aggregate提供資料。HA配對已停用。</block>
   <block id="45e4e2e875b4e69af2a57be92e35bd6d" category="section-title">節點3在第3階段之後但在第5階段之前當機</block>
   <block id="3558827f5793acfed9bd716ccf9185d2" category="paragraph">節點3在第3階段之後但在第5階段之前當機。HA配對已停用。</block>
-  <block id="a7b36ae4a63894ec22ce7b4ffc1a7601" category="paragraph">所有集合體都會發生用戶端中斷。</block>
   <block id="dba18149d1d705af7c19dced9bbd93eb" category="section-title">在階段5期間重新開機、出現問題或重新開機</block>
   <block id="6faaefd8133cb9348e7c089d482c5e7d" category="paragraph">在階段5（即安裝和引導節點4的階段）、將節點2的連接埠對應至節點4、將屬於節點2的資料生命週期和SAN生命週期從節點3移至節點4、以及將節點2的所有集合體從節點3重新部署至節點4時、可能會發生當機。</block>
   <block id="188229afd48ed8799252ee3f4371adf0" category="section-title">節點3在階段5期間當機</block>
@@ -1665,7 +1615,6 @@
   <block id="7b8424ae8ebc04e308b8d348d8d07edf" category="list-text">如果node2保留epsilon、請在節點上將epsilon標記為「假」、以便傳輸至node3：</block>
   <block id="9b3ca02a7473e1db3c0c57693a01aabe" category="list-text">將epsilon傳輸到node3、在node3上標記epsilon「true（真））：</block>
   <block id="b7a9c811aab8e6da8894f06c47eec709" category="list-text">[[man_retar_2_Step9]]返回管理層級：</block>
-  <block id="befba560e8eaef2f66cac914b95edc61" category="list-text">節點2完全關機後、請將其從機箱或機架中移除。您可以在升級完成後取消委任節點2。請參閱 <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>。</block>
   <block id="555d9e461a574dac83e9908b06022e17" category="summary">在執行ONTAP 更新版本的控制器上進行手動ARL升級時、請在節點3內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡上設定節點3。</block>
   <block id="5e8f88089134f38f7cf630a3a4ce36ff" category="admonition">NetApp行銷資料可能會使用「UTA2」一詞來指稱CNA介面卡和連接埠。不過、CLI使用「CNA」一詞。</block>
   <block id="218c1c22487e3cea0e94aedcabb843e2" category="paragraph">您必須擁有儲存在節點1中的FC連接埠設定值 <block ref="cd8ad1809865824065fe011b80800cd6" category="inline-link-macro-rx"></block>。</block>
@@ -1814,7 +1763,6 @@
   <block id="db388cc11af248e636d23a7634f79da1" category="list-text">擷取輸出中的資訊以供區段使用 <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block>。</block>
   <block id="b226d44baee1fdcf5f175befc4240f79" category="list-text">確定節點2上的實體連接埠：</block>
   <block id="a36b8ceea3403515d94e1d9ad1d33833" category="paragraph">系統會顯示節點2上的實體連接埠、如下列範例所示：</block>
-  <block id="1a494d33f95411ce2d7f871e87234bb6" category="paragraph">稍後的程序將需要將廣播網域對應至新控制器上的連接埠。</block>
   <block id="36d2ce7941b2c78c3d67d83e5bab95ab" category="list-text">確定節點2上的FC端口：</block>
   <block id="922cfc273cc764471719b8a70b2bd795" category="paragraph">「網路FCP介面卡顯示」</block>
   <block id="e2ce1c0ee0599997916e05613833e82e" category="paragraph">系統會在節點2上顯示FC連接埠、如下列範例所示：</block>
@@ -2056,7 +2004,6 @@
   <block id="4554f5f9818af46c131a159c2ec43887" category="paragraph">節點會在開機環境提示字元停止。</block>
   <block id="839c9527e6867357b4949b3cb19bd5a6" category="list-text">當節點1顯示開機環境提示時、請將其從機箱或機架中移除。</block>
   <block id="ec4374c74901037b92a2e0de7e3fe4a2" category="summary">在執行ONTAP 《Esc9.8或更新版本》的控制器上進行手動ARL升級時、請確認節點2上的實體連接埠正確對應至節點4。</block>
-  <block id="d30a32a5505fed77045c8a821e24f7ac" category="paragraph">您必須確定節點2上的實體連接埠正確對應至節點4上的實體連接埠、以便節點4在升級後與叢集中的其他節點和網路進行通訊。</block>
   <block id="5fca7ca4e218be9851d30cba0f329262" category="paragraph">您必須已經有新節點上連接埠的相關資訊、才能存取此資訊、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至_SURE_ Hardware Universe 。您可以使用本節稍後的資訊。</block>
   <block id="8897c39b9e3259e6b8f69dc05949b6b0" category="paragraph">節點4的軟體組態必須符合節點4的實體連線能力、而且必須先還原IP連線、才能繼續升級。</block>
   <block id="4839549656731e0245736bfa32bc3606" category="list-text">請執行下列步驟、確認設定是否為雙節點無交換器叢集：</block>
@@ -2078,7 +2025,6 @@
   <block id="371a52c6bb799f6fb34f1a8ac8617b35" category="paragraph">如果控制器更換程序暫停、請檢查並修正錯誤（如果有）、然後發出「推入」以繼續操作。</block>
   <block id="b990f6960d7072e815b8e4d805f92035" category="paragraph">如果有任何生命段被移除、請將主節點還原回節點2：</block>
   <block id="5077f34346404c6e6b1972588ad2c047" category="list-text">在ONTAP 指令行的進階權限模式中輸入下列命令、開始控制器更換程序：</block>
-  <block id="8a4f2711fdfcfeea79b7fe0124a6d453" category="list-text">選取「y」。您會看到下列輸出：</block>
   <block id="db4336e2ca46622010f5ba0c4094ec50" category="paragraph">在預先檢查階段、系統會在背景執行下列檢查清單。</block>
   <block id="eeb3813f1d9a188e4d0a912235894f96" category="cell">檢查叢集中的所有節點、以確認其正常運作。</block>
   <block id="f1e3d153ef84dd8b3cbde456e0a2bf74" category="cell">檢查要更換的兩個節點是否都是高可用度（HA）配對組態。如果控制器未啟用儲存容錯移轉、工作就會失敗。</block>
@@ -2139,7 +2085,6 @@
   <block id="73dac86302530c6371ee49f4ae0c3157" category="paragraph">「cluster show -node1 -Fields health」</block>
   <block id="a877d77b53f7818728787e578280c690" category="list-text">控制器更換作業會暫停以進行介入、並顯示下列訊息：</block>
   <block id="e373d02f1761d14eafc408b260c8b7da" category="admonition">在此程序中、_重新建立VLAN、ifgrps和廣播網域_一節已重新命名為_在節點1 _上還原網路組態。</block>
-  <block id="ae76f3c30991fdb1e3693cb5811cb1dc" category="list-text">在控制器更換處於暫停狀態時、繼續執行 <block ref="a4e280a8ee04f7ed15cf014345b7be25" category="inline-xref-macro-rx"></block>。</block>
   <block id="830de75aac3de476490ce8697cfc84ee" category="section-title">還原節點1上的網路組態</block>
   <block id="7b3bcbfe626392f126d3c9c59049f669" category="paragraph">確認節點1處於仲裁狀態並可與節點2通訊之後、請確認節點1的VLAN、介面群組和廣播網域均顯示在節點1上。此外、請確認所有節點1網路連接埠都已設定在正確的廣播網域中。</block>
   <block id="909b05c70a22b9f37b5b0dd91c33c2da" category="list-text">列出已升級節點1上的所有實體連接埠：</block>
@@ -2208,7 +2153,6 @@
   <block id="a98ce2caf38bef05082af61a7b3cfd2a" category="paragraph">在下列情況下、Aggregate可能無法正確重新定位、也就是將節點2當作主節點、而非節點1：</block>
   <block id="17d6197f66fac0500a1052e1756381a7" category="list-text">在第3階段期間、當Aggregate從節點2重新定位至節點1時。</block>
   <block id="b64ff0aed650d75434d24e770d7ac535" category="paragraph">正在重新部署的部分集合體將node1當作其主節點。例如、此類Aggr_nnode_1可稱為Aggr_node_1。如果在第3階段重新配置aggr_node_1失敗、且無法強制重新配置、則會將Aggregate留在node2上。</block>
-  <block id="bbc15afd4ded8ef20f852908a9e94008" category="paragraph">當節點2被替換時、aggr_node_1會以node1作為主節點、而非node2連線。</block>
   <block id="7161e79fb43252db4d620ecbcfbe0672" category="paragraph">您可以在啟用儲存容錯移轉之後、完成下列步驟、修正階段6之後的不正確擁有權問題：</block>
   <block id="99fb891a920a0a874aa601c151d5ef1b" category="list-text">取得Aggregate清單：</block>
   <block id="0cdc803707489b410a938130768dfdb6" category="list-text">重新定位節點2上留下的集合體：</block>
@@ -2219,7 +2163,6 @@
   <block id="ba7d8f5ebb18592d91d949241848dfe6" category="paragraph">在此過程中、節點2加入仲裁時、操作會暫停。</block>
   <block id="c32050bd0152940e859c61963c8eac2b" category="list-text">驗證node2是否已加入仲裁：</block>
   <block id="1ed68b1a1c4717bcf9913f481374e7de" category="admonition">在此程序中、_重新建立VLAN、ifgrps和廣播網域_一節已重新命名為_在節點2上還原網路組態。</block>
-  <block id="8c8bbdd54247874dc95cb56adf2233aa" category="list-text">在控制器更換處於暫停狀態時、繼續執行 <block ref="cf2f6e65074eee957c362f92c9fdd8b5" category="inline-xref-macro-rx"></block>。</block>
   <block id="c7ac27a6d6c91af26ae2248d25a66f1f" category="section-title">還原節點2上的網路組態</block>
   <block id="26c2308a63a61c5f8f6891347ee8e59b" category="paragraph">確認節點2處於仲裁狀態並可與節點1通訊之後、請確認節點1的VLAN、介面群組和廣播網域是否顯示在節點2上。此外、請確認所有節點2網路連接埠都已設定在正確的廣播網域中。</block>
   <block id="2d9a324d737623f68053a45037166f3b" category="list-text">列出已升級節點2上的所有實體連接埠：</block>
@@ -2276,13 +2219,10 @@
   <block id="ef3c91fa4c8f504ee640cfbd9abd851c" category="summary">在執行ONTAP 更新版本的控制器上手動進行ARL升級時、收集特定資訊。</block>
   <block id="ce9a79ebc7c19f98472942ce9de695aa" category="summary">在執行ONTAP Esce9.7或更早版本的控制器上進行手動ARL升級時、準備netboot node3和node4。</block>
   <block id="05743303a73462ef6d9bbfd30ac4d38e" category="summary">在執行ONTAP 版本更新的控制器上手動升級ARL時、請確認節點1上的實體連接埠正確對應至節點3。</block>
-  <block id="516641dccf4c70d4db12878e058ae756" category="paragraph">您必須使原始節點的連接埠和LIF組態與您計畫新節點的組態相容。這是因為新節點在開機時會重新執行相同的組態、也就是說、當您開機node3時ONTAP 、將會嘗試在節點1上使用的相同連接埠上裝載l生命。</block>
-  <block id="a7e55a2eda4d6d9856ad9438d37fbed0" category="paragraph">因此、如果節點1上的實體連接埠未直接對應至節點3上的實體連接埠、則在開機後、需要變更軟體組態才能還原叢集、管理和網路連線。此外、如果節點1上的叢集連接埠未直接對應至節點3上的叢集連接埠、則在軟體組態變更以將叢集生命體裝載到正確的實體連接埠之前、節點3可能不會在重新開機時自動重新加入仲裁。</block>
   <block id="cbf79efe25579eb8669620f8a705d90c" category="list-text">[[step1]]請在下表中記錄節點1、連接埠、廣播網域和IPspaces的所有節點1纜線資訊：</block>
   <block id="2a04e456c6cc4811fe58e125c72d102f" category="cell">節點1廣播網域</block>
   <block id="a73f157295775ec357e4cbb83394837d" category="cell">叢集5.</block>
   <block id="f8b0e66f09382485306db5e1ba20e4fc" category="cell">叢集6.</block>
-  <block id="032db7a5ba2209ef2a98f177b97ef9c0" category="paragraph">請參閱 <block ref="111c70a978efb37ba3bd0ea564da1d79" category="inline-link-macro-rx"></block> 取得此資訊的步驟。</block>
   <block id="d6fd23476a280d6343ba76f013c499fd" category="list-text">[[step2]]使用中的相同程序、記錄上表中節點3、連接埠、廣播網域和IPspaces的所有纜線資訊 <block ref="111c70a978efb37ba3bd0ea564da1d79" category="inline-link-macro-rx"></block>。</block>
   <block id="db8e77631790a3f2f7e9e65f99e95d55" category="list-text">[[step3]]請依照下列步驟、確認設定是否為雙節點無交換式叢集：</block>
   <block id="64544217a0060d8a47ba296eaa9eda15" category="list-text">[[step4]]執行下列步驟、將節點3變成仲裁：</block>
@@ -2450,7 +2390,6 @@
   <block id="ffd0deb022240e6349d0ad6c700b5228" category="summary">針對AutoSupport 節點2傳送一個資訊區訊息、並在ONTAP 執行更新版本的控制器上手動進行ARL升級時、將節點2的非根Aggregate重新定位至節點3。</block>
   <block id="28adb05c023c689461eafc8525f2227b" category="summary">在執行ONTAP 支援版本9.7或更早版本的控制器上進行手動ARL升級時、請停用HA配對與node2、並正確關閉node1。</block>
   <block id="10a1bf2406c5b22e1d135998f630df5f" category="summary">在執行ONTAP 版本更新的控制器上手動升級ARL時、請確認節點2上的實體連接埠正確對應至節點4。</block>
-  <block id="1b10a983f98ed23432fa58568f54f671" category="paragraph">因此、如果節點2上的實體連接埠未直接對應至節點4上的實體連接埠、則在開機後、需要變更軟體組態才能還原叢集、管理和網路連線。此外、如果節點2上的叢集連接埠未直接對應至節點4上的叢集連接埠、則節點4在重新開機時、可能不會自動重新加入仲裁、直到軟體組態變更、將叢集生命週期裝載到正確的實體連接埠為止。</block>
   <block id="529041da4d36160525aac5502b5d8ff7" category="list-text">請在此表格中記錄節點2、連接埠、廣播網域和IPspaces的所有節點2纜線資訊：</block>
   <block id="24738875225e89a3fe6b531d598a45f9" category="paragraph">如需取得此資訊的步驟、請參閱「錄音節點2資訊」一節。</block>
   <block id="7974b2ee243c61270cbc49955821fd33" category="list-text">使用中的相同程序、在上表中記錄節點4、連接埠、廣播網域和IPspaces的所有纜線資訊 <block ref="bf281b48b35a7cc176890f2be65ca906" category="inline-link-macro-rx"></block> 一節、以瞭解取得此資訊的步驟。</block>
@@ -2592,8 +2531,6 @@
   <block id="9ec9f63f098d105f79f28fc374c9efa9" category="list-text">如果您要升級硬體、則不需要移除磁碟的擁有權、只要在內部磁碟平台上交換舊控制器與新控制器、同時保留舊控制器的機箱和磁碟即可。</block>
   <block id="70cb24dc68388db99857a34f097c9997" category="paragraph">如果您對在控制器升級期間移除磁碟擁有權有任何疑問、請聯絡NetApp技術支援。</block>
   <block id="bd6c6f37524ad70ce38bbd0fcea22fe4" category="list-text">在節點的載入器提示字元下、輸入命令：</block>
-  <block id="1d16d3ddc3b796c6db7da6cbb645757e" category="list-text">在開機功能表提示字元中、輸入「9a」、然後按Enter。</block>
-  <block id="8b33e54d0bef1c80ef3462386d101928" category="paragraph">下列畫面顯示開機功能表提示。</block>
   <block id="543ee8d410a9846b897a6a8491f4e3b9" category="list-text">當您看到類似下列的提示時、請輸入「y」來移除磁碟擁有權：</block>
   <block id="d9eb47ff217ad0469ac1858d577a0cfb" category="paragraph">系統會移除磁碟擁有權、並返回開機功能表。</block>
   <block id="cfd1f1b088da29d35da848a99036f2c2" category="list-text">在開機功能表中、輸入「5」進入維護模式。</block>
@@ -2638,7 +2575,6 @@
   <block id="830476e871eedc92e5ffda6c2c33b533" category="paragraph"><block ref="331cb63b7c37688cf0c07ea29b8a4923" category="inline-link-rx"></block>。</block>
   <block id="4cbaf693faaaa40a1e90a2e2918ba582" category="list-text">在每個新節點上建立至少一個Aggregate：</block>
   <block id="fe82c8b7274d1544ce545c5b1bb60481" category="paragraph">「vserver add-aggregate」</block>
-  <block id="39e7eb0e1fd08f1ba6fea6e4df4f0d50" category="paragraph">新的Aggregate和要從中移動磁碟區的舊Aggregate都必須位於相同的SVM中。</block>
   <block id="65c0e65d7f3d4f9b7e59695a5beed439" category="list-text">確認新的Aggregate現在已指派給與原始節點上Aggregate相同的SVM：</block>
   <block id="60ffd94dccfc67beb8507929d59460e3" category="list-text">顯示您要從原始節點移至新節點的磁碟區資訊：</block>
   <block id="045e4ac6df29d2cafc7b15a9d2d9e81e" category="paragraph">您應該保留命令輸出以供日後參考。</block>
@@ -2756,7 +2692,6 @@
   <block id="757ee83d9d913287174eb13a32791a9a" category="list-text">如果您尚未引導並登錄到node3和node4，請執行此操作。</block>
   <block id="1d79ea5a41dff0854a82efdbcdb2f72d" category="paragraph">此範例在「node1」上新增「叢集」連接埠e1b：</block>
   <block id="9694fd9e35e64d8c445c0824b45a5dff" category="inline-link-macro">使用ONTAP VMware版9.7或更早版本對應網路連接埠、步驟7</block>
-  <block id="7b4ead482f6c92170f4c6bef96fe284b" category="list-text">執行可連線性修復時ONTAP 、嘗試將連接埠放在正確的廣播網域中。但是、如果無法判斷連接埠的連線能力、而且與任何現有的廣播網域不相符、ONTAP 則無法針對這些連接埠建立新的廣播網域。如果新建立的廣播網域的所有成員連接埠都會成為介面群組的成員連接埠、您可以視需要刪除這些網域。刪除廣播網域：</block>
   <block id="991ac44bc0f4b09cc233a9a79f867f55" category="list-text">檢閱介面群組組態、並視需要新增或刪除成員連接埠。新增成員連接埠至介面群組連接埠：</block>
   <block id="244220515525d7bbce7364431256c704" category="admonition">視所升級系統的網路組態複雜度而定、您可能需要重複步驟5、子步驟（A）到（g）、直到所有連接埠都正確放置在所需位置。</block>
   <block id="b27e1f5014645cf6a835fb2e11524da4" category="list-text">如果系統上未設定任何VLAN、請前往 <block ref="44c817ee9110592f40577b67e8940aff" category="inline-xref-macro-rx"></block>。如果已設定VLAN、請還原先前在不再存在的連接埠上設定或是在移至另一個廣播網域的連接埠上設定的已移除VLAN。</block>
@@ -2783,10 +2718,7 @@
   <block id="e4b60fefa0013671f6066bd9990def84" category="paragraph">若要確認開機媒體上的組態資訊不會干擾控制器升級、您必須將節點3和節點4的組態重設為預設組態設定。</block>
   <block id="3c6d839c276fd97f3efa9e0584e8ab14" category="paragraph">您必須在節點3和節點4上執行下列步驟。您可以在每個節點上平行執行這些步驟。</block>
   <block id="161c64322f806c6fa66fcfcc4f963ca2" category="list-text">將節點開機至開機功能表：</block>
-  <block id="17137d920db60e7b0b7bfb0be3579b56" category="list-text">在開機功能表提示字元中、輸入「wepeconfig」、然後按Enter。</block>
-  <block id="b14047e1956c68f095842760b1beaea2" category="paragraph">下列畫面顯示開機功能表提示</block>
   <block id="d4041bfba261eda3180ae9fbf6285d95" category="list-text">當您看到類似於以下內容的提示時、請輸入「yes（是）」：</block>
-  <block id="8b8e41e588d3f28837be58712aeec25a" category="paragraph">系統會啟動「無圖」程序、然後重新開機。程序完成後、系統會返回開機功能表。</block>
   <block id="8093d580d9cc0468991044c64c97b174" category="inline-xref-macro">移動、刪除或建立SAN LIF</block>
   <block id="c9b87fd8826330d02eb0f7e03c49023c" category="summary">若要透過移動磁碟區來完成升級程序、您需要設定服務處理器（SP）、安裝新授權、以及設定AutoSupport 更新。您可能還需要設定儲存設備或Volume Encryption、並設定FC或NCA連接埠。</block>
   <block id="758ed2ce94a0d48e369a05e9792df5bf" category="paragraph">若要透過移動磁碟區完成升級程序、您必須設定服務處理器（SP）、安裝新授權、以及設定AutoSupport 更新。您可能還需要設定儲存設備或Volume Encryption、並設定FC或NCA連接埠。</block>
@@ -2815,7 +2747,6 @@
   <block id="cfd2431baff6fc4122f2c8fed540c128" category="paragraph">在移動儲存設備進行升級的過程中、您需要開啟節點3和節點4的電源、開機軟體映像、以及設定節點。原始節點與新節點之間的實體連接埠配置可能有所不同。應在原始節點和替換節點之間對應連接埠、以識別連接埠和連線的適當配置。</block>
   <block id="a57aac48a821a53a307169a496e18118" category="inline-link-macro">步驟5.</block>
   <block id="2b74e29dce2257a68211617c402f9061" category="paragraph">如果ONTAP 在新節點上執行的版本與原始節點上的版本不同、您必須從NetApp支援網站下載正確的「&lt;ONTAP_VERY&gt;_image.tgz」檔案到可從網路存取的目錄（請參閱「移動儲存設備時、請準備升級」_、 <block ref="a49c2511b21eba354c03ca701f675aae" category="inline-link-macro-rx"></block>）。您需要「&lt;ONTAP_VERSION &gt;_image.tgz」檔案來執行系統的網路開機。</block>
-  <block id="cc32105596984688d6ab5fee199bc645" category="list-text">開啟節點3的電源、然後立即在主控台終端按Ctrl-C存取載入程式提示。</block>
   <block id="25870cbb4fe9afef5797b531420b7012" category="paragraph">如果節點3和節點4位於同一個機箱中、請前往步驟2。如果沒有、請前往步驟3。</block>
   <block id="6c43e0670806fec2f9b82e002c3d44d5" category="list-text">如果節點3和節點4位於單一機箱組態中（在同一個機箱中有控制器）：</block>
   <block id="d486515e741f0bde35c2fd426a867b3d" category="list-text">將序列主控台附加至節點4。</block>
@@ -2839,7 +2770,6 @@
   <block id="53986d70143c63a3205b1deed773b405" category="paragraph">請忽略下列訊息：「HA配對不支援此程序進行不中斷升級」。它適用於軟體的不中斷升級、而非控制器的升級。</block>
   <block id="efb4ec8002f3f7ed99b1b4f92cbef052" category="list-text">如果系統提示您繼續此程序、請輸入y、然後在系統提示您輸入套件時、輸入映像檔的URL：</block>
   <block id="3bb3e0dc251b6c719d9693145812f91b" category="paragraph">http://web_server_ip/path_to_web-accessible_directory/ontap_version_image.tgz`</block>
-  <block id="647f982b341b67a165ac63d735784a54" category="paragraph">輸入使用者名稱/密碼（若適用）、或按Enter繼續。</block>
   <block id="a01beec0f6ce0a2dd45c8f1d5aa3e76c" category="list-text">當您看到類似下列的提示時、請輸入「n」跳過備份恢復：</block>
   <block id="4c311f4de89068c42d4731e90025eefc" category="list-text">當您看到類似於以下內容的提示時、輸入「y」重新開機：</block>
   <block id="3772c3f3ea70d5c6527c33a07c35e34b" category="list-text">在系統提示您時、按Ctrl-C顯示開機功能表、以中斷重新開機程序。</block>
@@ -3011,7 +2941,6 @@
   <block id="7a4b65a92ad0461916e64e86d4469810" category="paragraph">'線上儲存Aggregate -Agggr_name_'</block>
   <block id="ffd863d528f6b76a6f398dd53b185d1d" category="cell">"Disk reassign-s"（磁碟重新指派-s）`_node2_sysid_-d _node_sysid_-p _node_sysid_'</block>
   <block id="9666e158b6e459758482181fdc5caf71" category="cell">"Disings disk reassign-s（磁碟重新指派- s）"_node2_sysid_-d _node4_sysid_"</block>
-  <block id="ff573218a71a52e566a9d2cb9c112902" category="paragraph">「磁碟重新指派」命令只會重新指派目前擁有者為「節點2_sysid_」的磁碟。</block>
   <block id="bfb9fe88864aa2cf3d9decbdba2d491d" category="paragraph">"aggr_online root_aggr_from __node2__（aggr_online root_aggr_from __node2__）"</block>
   <block id="f5ff2bb513b480c8df7df73e2a7eca20" category="paragraph">「aggr offline _root_aggr_on_node4_」</block>
   <block id="4daae5d3b652a659ddd315488acd4db5" category="paragraph">"aggr options aggr_fe__ node2__ root"</block>
@@ -3222,7 +3151,6 @@
   <block id="7389b01d5fe0e17f5523a7fb85295f91" category="inline-link-macro">這篇知識庫文章</block>
   <block id="2ee5a2dd85f4cccb6dbb3701b2a263ba" category="paragraph">如果控制器升級失敗並報告「rlib_port_IPspace_assign」錯誤訊息、您必須還原升級、並刪除原始系統上作為HA連接埠的網路連接埠上的LIF。如需詳細資訊、請參閱 <block ref="48beba1570dcc6cd04554aaa6118327f" category="inline-link-macro-rx"></block>。</block>
   <block id="7b416fb3b0ecbf485baebef5aa26f421" category="doc">完成ONTAP 更新、請使用更新版本的更新版本</block>
-  <block id="7893bfa78df90b820f889d3721889827" category="list-text">[[map_98_7]*從ONTAP VMware 9.8開始、ONTAP 如果在網路連接埠可到達性修復程序期間、連接埠在廣播網域之間移動、則會自動修改lifs的主連接埠。如果LIF的主連接埠已移至其他節點、或未指派、則LIF會顯示為已移除的LIF。還原主連接埠不再存在或重新放置到其他節點的已移轉LIF主連接埠。</block>
   <block id="ef29cfe4123c7b4d36dffdb01aac77fc" category="summary">完成ONTAP 更新、請參閱《更新版本、更新版本、ONTAP 或《更新版本、更新版本、更新版本、更新版本、更新版本、更新版本</block>
   <block id="ee4259e7fa1dc73036cc58b6216ac26d" category="list-text">[[assign_lifs]特定系統AFF 、例如FAS8300、SureA400或FAS8700系統、 使用連接埠「e0a」和「e0b」作為高可用度（HA）互連連接埠。如果您要從FAS8200或AFF E4A300等系統升級至使用連接埠「e0a」和「e0b」做為HA互連連接埠的系統、 您必須將在原始系統上這些連接埠上設定的管理和叢集間LIF重新指派給替換系統上的替代連接埠。</block>
   <block id="bb90459e9b4aa7c112f4569c2ec19b97" category="admonition">當取代系統上的連接埠「e0a」和「e0b」被用作HA互連連接埠時、在這些連接埠上設定的任何管理或叢集間生命體、可能會導致升級失敗、因為HA組態無法使用連接埠「e0a」和「e0b」開機至替換系統。</block>
@@ -3236,8 +3164,6 @@
   <block id="82d8cfa6b0eabc1385f0c7a740d05580" category="image-alt">將LIF重新指派給替換系統上的網路連接埠</block>
   <block id="2052b0cdd036221aef35041d554abfe3" category="example-title">展開主控台輸出範例</block>
   <block id="9bcbfad54c93824c94a6b85331bed53e" category="list-text">從ONTAP 功能更新至功能更新至功能更新至功能更新至功能更新MetroCluster 的版本。由於這個組態站台可位於兩個實體位置、因此必須在每個站台個別執行自動化控制器升級、才能進行HA配對。MetroCluster MetroCluster</block>
-  <block id="17c47d164b7fe13ac454c776902ff45f" category="list-text">[[man_map_2_Step5]"從ONTAP 發行版本號9.8開始、ONTAP 如果在網路連接埠可連線性修復程序期間、連接埠在廣播網域之間移動、則會自動修改lifs的主連接埠。如果LIF的主連接埠已移至其他節點、或未指派、則LIF會顯示為已移除的LIF。還原主連接埠不再存在或重新放置到其他節點的已移轉LIF主連接埠。</block>
-  <block id="b4e995bdd78b40e4a973dab2bcf9ed16" category="list-text">[[man_map_1_step5]]從ONTAP 發行版本號為9.8開始、ONTAP 當連接埠在網路連接埠可連線性修復程序期間於廣播網域之間移動時、會自動修改正式作業階段的主連接埠。如果LIF的主連接埠已移至其他節點、或未指派、則LIF會顯示為已移除的LIF。還原主連接埠不再存在或重新放置到其他節點的已移轉LIF主連接埠。</block>
   <block id="b20fa92767a639ebf6c7b69aac21e88f" category="list-text">將節點開機至開機功能表：</block>
   <block id="c1ff3d9c3e793a92f67d6a17048a954d" category="paragraph">短暫延遲之後、系統會提示您輸入要取代的節點名稱。如果有共享磁碟（也稱為進階磁碟分割（ADP）或分割磁碟）、系統會提示您輸入HA合作夥伴的節點名稱。</block>
   <block id="01b22e2b8dff1191395f34f0d45cdd7e" category="paragraph">這些提示可能會被隱藏在主控台訊息中。如果您未輸入節點名稱或輸入不正確的名稱、系統會提示您再次輸入名稱。</block>
@@ -3294,7 +3220,6 @@
   <block id="eb5305681dcf43e8c1db320ce431edd8" category="paragraph">在第4階段期間、您會記錄必要的node2資訊、以便稍後在程序中使用、然後淘汰node2。</block>
   <block id="88a0eec75ccbf727881e52be21050e3c" category="paragraph">在第5階段期間、您可以安裝及開機node4、將叢集和節點管理連接埠從node2對應至node4、驗證node4安裝、並將屬於node2的資料l生命 週期和SAN lIF從node3移至node4。您也可以將node2 Aggregate從node3重新定位到node4、然後將Data node2 NAS lifs從node3移到node4。</block>
   <block id="17713187c4e0912bc419e03d9496d3ae" category="paragraph">在第6階段期間、您確認新節點已正確設定、如果新節點已啟用加密、則可設定儲存加密或NetApp Volume加密。您也應該取消委任舊節點、並恢復SnapMirror作業。</block>
-  <block id="ecd942205bedf95694f574a1e603a6d3" category="admonition">儲存虛擬機器（SVM）災難恢復更新不會依照指派的排程中斷。</block>
   <block id="0fa2804ab676b4c1ef9de6071a2f7c81" category="admonition">在開機環境提示字元中保留node4、您將返回中的node4 <block ref="f326c815b47f4f2909494bae5cd735d5" category="inline-link-macro-rx"></block>。</block>
   <block id="0be88c4bca37291303f8b31b2c15960b" category="paragraph">在開機環境提示字元中輸入下列命令、手動設定連線：<block ref="08e9ed1febc3e725e8201311cddea860" prefix=" " category="inline-code"></block></block>
   <block id="9217255664b7bb463d1293cee7c132b2" category="paragraph"><block ref="854a4be4b1fce65bf3a90ee74692188e" prefix="" category="inline-code"></block> 為儲存系統的IP位址（必填）。<block ref="220b0a4790e2c047ae96a881e506e1fe" prefix=" " category="inline-code"></block> 是儲存系統的網路遮罩（必填）。<block ref="14fb245f7140583707d1cda241eeeff2" prefix=" " category="inline-code"></block> 是儲存系統的閘道（必填）。<block ref="573c932508ccab841c5c117fb2cd2186" prefix=" " category="inline-code"></block> 為網路上名稱伺服器的IP位址（選用）。<block ref="79e5a69f76d034adaafbb5cb6cb8fc45" prefix=" " category="inline-code"></block> 為網域名稱服務（DNS）網域名稱。如果使用此選用參數、則不需要netboot伺服器URL中的完整網域名稱；您只需要伺服器的主機名稱。</block>
@@ -3326,7 +3251,6 @@
   <block id="56e327f81566d68ee048f3f881ecfd0e" category="paragraph">此命令需要OKM密碼</block>
   <block id="274fa51e35e2d7744511852ce715a339" category="summary">使用升級執行ONTAP 支援功能的控制器時、請確認節點1實體連接埠正確對應至節點3、並還原節點3上的網路組態<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 命令。</block>
   <block id="ed5e166424b6971ce3ff91d956aed8c8" category="summary">使用升級執行ONTAP 支援功能的控制器時、請確認節點2上的節點1 NAS資料lifs已從節點2重新定位至節點3<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 命令。</block>
-  <block id="5e972db272a05de06b0d6fdb800b7a08" category="paragraph">如果您使用NetApp Aggregate Encryption（NAE）或NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、則加密組態必須同步至新節點。如果您沒有還原金鑰管理程式、當您使用ARL將節點1集合體從節點2重新定位至節點3時、加密的磁碟區將會離線。</block>
   <block id="32c58b427183169965ebb999f423176a" category="paragraph">在開機環境提示字元中使用下列命令手動設定連線：<block ref="08e9ed1febc3e725e8201311cddea860" prefix=" " category="inline-code"></block></block>
   <block id="b159bbd899522472927771c3cfb60e98" category="paragraph"><block ref="854a4be4b1fce65bf3a90ee74692188e" prefix="" category="inline-code"></block> 為儲存系統的IP位址（必填）。<block ref="220b0a4790e2c047ae96a881e506e1fe" prefix=" " category="inline-code"></block> 是儲存系統的網路遮罩（必填）。<block ref="14fb245f7140583707d1cda241eeeff2" prefix=" " category="inline-code"></block> 是儲存系統的閘道（必填）。<block ref="573c932508ccab841c5c117fb2cd2186" prefix=" " category="inline-code"></block> 為網路上名稱伺服器的IP位址（選用）。<block ref="79e5a69f76d034adaafbb5cb6cb8fc45" prefix=" " category="inline-code"></block> 為網域名稱服務（DNS）網域名稱（選用）。</block>
   <block id="303eb51c66cbd45f9e6d876421927f72" category="admonition">請務必使用netboot將新節點更新為所需映像。如果您使用其他方法在新控制器上安裝映像、可能會安裝不正確的映像。此問題適用於ONTAP 所有的版本。netboot程序與選項結合使用<block ref="164ab89f87a6d8b32c239f7ca0be1f74" prefix=" " category="inline-code"></block> 清除開機媒體、並在ONTAP 兩個影像分割區上放置相同的版本。</block>
@@ -3346,7 +3270,6 @@
   <block id="5e2c0dc3398b3e8f5619e371fec2269b" category="list-text">在開機載入程式中、在節點4上設定合作夥伴系統ID：</block>
   <block id="4e01f43abaf0b878dabe329f87d4cee7" category="paragraph">對於node4、<block ref="d18fd3db938a26ebbd3f74de41f0b73f" prefix=" " category="inline-code"></block> 必須是node3的。</block>
   <block id="d1031e1f800c4bd6f924dc58bce65e5e" category="list-text">[[[auto_install4_step21]驗證<block ref="d18fd3db938a26ebbd3f74de41f0b73f" prefix=" " category="inline-code"></block> 對於節點4：</block>
-  <block id="47c9d570e26767f6f7f0247b3b0faa44" category="paragraph">如果您使用NetApp Aggregate Encryption（NAE）或NetApp Volume Encryption（NVE）來加密升級系統上的磁碟區、則加密組態必須同步至新節點。如果您沒有還原金鑰管理程式、當您使用ARL將節點2集合體從節點3重新定位至節點4時、加密的磁碟區將會離線。</block>
   <block id="33ff5cb99c889e1db4238bdd49969091" category="paragraph">在第2階段期間、您會將節點1非根Aggregate和NAS資料lifs重新部署至節點2。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。如果需要、您可以重新部署故障或被否決的集合體。您必須記錄必要的node1資訊、以便稍後在程序中使用、然後淘汰node1。您也可以在程序稍後的步驟中準備netboot node3和node4。</block>
   <block id="3023bde0419d9056e2c0a1ff888f6e3a" category="paragraph">在第4階段期間、您將節點2非根集合體和非SAN資料生命週期重新部署到節點3。您也可以記錄必要的node2資訊、然後淘汰node2。</block>
   <block id="74d8511a5efc9e6d2f77eaf8e99a51e1" category="summary">使用將執行ONTAP 版本號為9.5的控制器升級至9.7時、請將節點3上的節點2 NAS資料lifs從節點3移至節點4<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 命令。</block>
@@ -3414,7 +3337,6 @@
   <block id="6187854879f5d4cd0a5fb4b97e2fc7a8" category="list-text">前往特殊開機功能表並選取選項<block ref="9181412f3c9d818fd261b168a3f00b5d" prefix=" " category="inline-code"></block>。</block>
   <block id="6250ffa8b605242265415231c2c23025" category="list-text">如果您已安裝 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。</block>
   <block id="28556bd95def05fed56f5833d7b0b25b" category="inline-link-macro">使用 Onboard Key Manager 管理儲存加密</block>
-  <block id="2f3067e385c13bed8c91d99a529e1f6c" category="paragraph">您可以使用 Onboard Key Manager （ OKM ）來管理加密金鑰。如果您已設定 OKM 、則必須在開始升級之前記錄複雜密碼和備份資料。</block>
   <block id="03b784c13f464c141a29ed9b7adc0b70" category="paragraph">您無法在同一個節點或HA配對上混用FIPS磁碟機與其他類型的磁碟機。您可以在同一個節點或HA配對上混合使用SED與非加密磁碟機。</block>
   <block id="eaf73ead47320ec21942b56fd3660eea" category="list-text">如需還原內建金鑰管理資訊的協助、請聯絡 NetApp 支援部門。</block>
   <block id="c5915780f057e573017a845938fc8511" category="summary">準備 node3 、將節點 node3 連接至 node4 、然後將 node4 上的資料生命週期和資料集合體移轉至 node3 。</block>
@@ -3615,7 +3537,6 @@
   <block id="644e220a44e1ff19f9d586b2ec3ee2d5" category="summary">在開始升級之前、請確認您擁有正確的硬體、以便在同一個機箱中升級控制器機型。</block>
   <block id="4e106a6c623eb6811b42be00dbde2ef3" category="cell">兩個控制器模組</block>
   <block id="327579b68dffec79f2bcb176142f3d56" category="cell">兩個控制器和兩個 NVRAM 模組</block>
-  <block id="99b9437fef3a8474ef15fe95bfd91b50" category="summary">如果需要、請在使用 ARL 升級相同機箱中的控制器機型時、為 NVE 或 NAE 設定新的控制器模組。」</block>
   <block id="6422bfca9827bfd67034aad22b0eeb27" category="paragraph">使用 Onboard Key Manager 設定 NVE 或 NAE 。</block>
   <block id="d80988540e7f7055a5ccd5e307e90b01" category="paragraph">使用外部金鑰管理設定 NVE 或 NAE 。</block>
   <block id="dc8ac74e6e135f34ace5625adffc8c72" category="summary">將非根集合體和 NAS 資料生命體從 node1 移至 node2 、並在使用 ARL 升級相同機箱中的控制器機型時、還原 node1 的資源。</block>
@@ -3628,8 +3549,6 @@
   <block id="5b29cd0b8848fbfc7c43edd22b16cf04" category="section-title">切換附加叢集</block>
   <block id="38622c9aae2baa5dfb1bdeeb2c31c5a3" category="summary">使用 ARL 將同一機箱中的控制器機型升級時、請確認節點 1 上的 node2 NAS 資料生命體已從 node1 重新定位至 node2 。</block>
   <block id="25c0a64ebb3d4dec1d638d209b3b73a2" category="paragraph">執行這些檢查之後、系統會將非根集合體和 NAS 資料的生命體重新定位回節點 2 、而節點 2 目前正在替換控制器上執行。</block>
-  <block id="038a1f98f287c3e58631ad2264c784b5" category="summary">在同一機箱中升級控制器機型的 ARL 期間、在 node2 上安裝替換系統模組。</block>
-  <block id="7339c5b8269b308a3bb75b606b220a40" category="doc">在 node2 上安裝替換系統模組</block>
   <block id="d1cf73ac3312e046217517b06817c8be" category="list-text">從要移除的控制器拔下所有纜線、包括主控台、管理、 SAS 儲存設備和資料網路纜線。</block>
   <block id="0999b94892b1b34eb0ef08c34b267bc1" category="summary">使用 ARL 升級同一機箱中的控制器機型時、請使用替換模組來驗證 node2 安裝。</block>
   <block id="0774c7bfeafd6a8db85f6f40e93164c5" category="paragraph">您必須使用替換的系統模組來驗證 node2 安裝。由於實體連接埠沒有變更、因此您不需要將實體連接埠從舊節點2對應至替換節點2。</block>
@@ -3638,7 +3557,6 @@
   <block id="b1a65206ecba20bb5f74f28f81b4f20b" category="admonition">在升級期間、網路連接埠及其連線不應變更。所有連接埠都應位於正確的廣播網域中、而且網路連接埠的連線能力不應改變。不過、在將LIF從節點2移回節點1之前、您必須先確認網路連接埠的連線能力和健全狀況狀態。</block>
   <block id="3a3f289393d9aae4f5403ed3ce658b92" category="paragraph">在第 3 階段中、您可以使用升級的系統模組來啟動 node1 、並驗證升級後的 node1 安裝。如果您使用的是NetApp Volume Encryption（NVE）、則會還原金鑰管理程式組態。您也可以將node1非根Aggregate和NAS資料lIF從node2重新部署到升級的node1、並確認節點1上存在SAN lIF。</block>
   <block id="64a849a8de630f1ea4ad68009f78a51d" category="inline-link-macro">使用替換的系統模組來啟動 node1</block>
-  <block id="1cf4820f0a2cb46c48512331c3f04acd" category="inline-xref">更換 AFF A220 、 AFF A200 、 AFF C190 、 FAS2620 或 FAS2720 控制器模組</block>
   <block id="359b2f64ed46d9bc640532f2fd8810c0" category="list-text">解開將纜線綁定至纜線管理裝置的掛勾和迴圈帶、然後從控制器模組拔下系統纜線和SFP（如有需要）、並追蹤纜線的連接位置。</block>
   <block id="73ffa1532dd710d7eb1520cb730fb392" category="paragraph">將纜線留在纜線管理裝置中、以便在重新安裝纜線管理裝置時、整理好纜線。</block>
   <block id="3e5a02473a086978bae6a6516ad46c5e" category="list-text">從控制器模組的左側和右側移除纜線管理裝置、並將其放在一邊。</block>
@@ -3646,7 +3564,6 @@
   <block id="5fb9af22ffedd74df1492c91f96b8d7a" category="list-text">翻轉控制器模組、將其放置在平穩的表面上。</block>
   <block id="0dc0820d363c65f7e12beec6160b793f" category="list-text">將控制器模組的一端與機箱的開口對齊、然後將控制器模組輕推至系統的一半。</block>
   <block id="73c39df93369189180566421495bd86b" category="list-text">當 CAM 把手處於開啟位置時、將控制器模組牢牢推入、直到它與中板接觸並完全就位。控制器模組完全就位時、鎖定鎖定鎖定會上升。將凸輪把手關閉至鎖定位置。</block>
-  <block id="06fe1e1c3556d47d3a40caee57ba2411" category="section-title">更換 AFF A700 或 FAS9000 控制器和 NVRAM 模組</block>
   <block id="98b9e41d81ea8470149a461f166a4b92" category="summary">請告知 NetApp 、舊系統在控制器升級後不再運作。</block>
   <block id="fd03f78134ad299c30781abefe876b6e" category="summary">使用 ARL 升級同一機箱中的控制器機型時、請恢復 SnapMirror 傳輸和關係。</block>
   <block id="0c266b0ddf80e06776f6545018e3be7b" category="summary">使用 ARL 升級同一機箱中的控制器機型時、請關閉 node2 並將其從機架或機箱中移除。</block>
@@ -3670,7 +3587,6 @@
   <block id="6f3ef0e4028f382323a2ae0f3917bcaf" category="inline-link-macro">階段 3 ：使用替換系統模組來啟動 node1</block>
   <block id="267d546f79d9773e5dcd8c8c02f5f0dc" category="list-text">升級版 node1 是 node1 集合體的主擁有者和當前擁有者</block>
   <block id="663c963d479132d6dd08963c3d3fa6bc" category="inline-link-macro">第 4 階段：重新部署資源並淘汰 node2</block>
-  <block id="02f2f9641c85a8db356647e8893d98f5" category="inline-link-macro">第 5 階段：在 node2 上安裝替換系統模塊</block>
   <block id="74b38fc0176f87b24ddc1621aaae7baa" category="inline-link-macro">階段 6 ：使用替換系統模組來啟動 node2</block>
   <block id="826466190f8ccac159cbf60cf120c8fd" category="summary">在使用 ARL 升級同一機箱中的控制器機型時、交換對應的更換 node2 系統模組之後、您可能需要將它們以網路開機。</block>
   <block id="4900049201a6af77c5ee289d1d927b7f" category="list-text">等待更換控制器模組上目前執行的 node2 開機、並顯示開機功能表選項、如下列輸出所示：</block>
@@ -3690,7 +3606,6 @@
   <block id="0b24a531934791ccba401c74f7b872ae" category="sidebar">第 2 階段：重新定位資源並淘汰 node1</block>
   <block id="5ceb77f8e2c1e3cdd2daa06e83ac5f9d" category="sidebar">階段3.使用替換的系統模組來啟動 node1</block>
   <block id="e5985dd18c7bc7d6b7d0f8d0b77dc81a" category="sidebar">第4階段：重新定位資源並淘汰 node2</block>
-  <block id="5dd6606e32426e4ac475f3467376f846" category="sidebar">階段 5.在 node2 上安裝替換系統模組</block>
   <block id="b04ee562ceae44380463be3b60eafa2d" category="sidebar">第 6 階段：使用替換的系統模組來啟動 node2</block>
   <block id="9219c8535d9ace4d574d9ba36c9b71bf" category="cell">說明在不中斷系統升級、保留舊系統機箱和磁碟所需的集合體重新定位程序。</block>
   <block id="e6cf1502d2fa79200a1dc7507e20d7e9" category="paragraph">若要確認正確的設定、請啟用 HA 配對。您也可以驗證 node3 和 node4 是否可以存取彼此的儲存設備、以及它們是否都不擁有屬於叢集上其他節點的資料生命週期。此外、您還會確認 node3 擁有 node1 的集合體、 node4 擁有 node2 的集合體、而且兩個節點的磁碟區都在線上。</block>
@@ -3729,8 +3644,6 @@
   <block id="0e096ce16590ab86950913510752010e" category="cell">ASA A900</block>
   <block id="0d1ed1043a9669e13b81f70da0ae56bb" category="list-text">ASA A150 、 AFF A150 或 FAS2820 控制器</block>
   <block id="70b323769da32749c57798f0d8e782e5" category="list-text">請勿將 coredump 裝置從 AFF A700 NVRAM 模組移至 ASA A900 或 AFF A900 NVRAM 模組。</block>
-  <block id="74cae3e1383e831697d2a89099232c43" category="inline-xref">在 node2 上安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 和控制器模組</block>
-  <block id="a2f2586b0e85eb39267cb5c9d9e043d2" category="paragraph">在 node2 上安裝您收到的 ASA A900 、 AFF A900 或 FAS9500 NVRAM 和控制器模組。節點2是位於機箱右側的控制器B、可從系統背面查看控制器。</block>
   <block id="86e722dcbc94e4ea341e26dd6af9f76a" category="cell">AFF A220 設定為全 SAN 陣列（ ASA ）</block>
   <block id="4fdc3efb53d664a8ab709272358f7966" category="cell">9.13.1P1 及更新版本</block>
   <block id="6e43ae996b970f40321b42d34dd0b4b8" category="list-text">ASA A900 、 AFF A900 和 FAS9500 系統僅支援高線電力（ 200V 至 240V ）。如果AFF 您的FASA700或FAS9000系統是以低線電源（100V至120V）執行、則在AFF 使用此程序之前、您必須先將該功能轉換成使用該功能的電源供應器或FAS9000輸入電源。</block>
@@ -3768,7 +3681,6 @@
   <block id="c833c589f902c8c0ddc3bdb645a85fe9" category="list-text">在新節點上、驗證登入和與主機的連線：</block>
   <block id="8eea62084ca7e541d918e823422bd82e" category="paragraph-title">結果</block>
   <block id="4e7233ab8e56169d5783c1e27cf80e62" category="paragraph">在本工作結束時、主機可以看到所有 iSCSI 介面（在舊節點和新節點上）、並登入所有這些介面。</block>
-  <block id="1ea11cf2a7632efb274bdc8804c13cc8" category="paragraph">LUN 和磁碟區仍以實體方式託管在舊節點上。由於 LUN 只會在舊節點介面上報告、因此主機只會在舊節點上顯示路徑。若要查看、請執行<block ref="41dc2c94e82e1c56ba876085acf5a974" prefix=" " category="inline-code"></block> 和<block ref="2fbf63deae0938cf669e6ca451f1eb2c" prefix=" " category="inline-code"></block> 在主機上執行命令、並檢查命令輸出。</block>
   <block id="85ef9de042295f197ffebdafe8989eba" category="section-title">步驟 2 ：將新節點新增為報告節點</block>
   <block id="63caeb58f676a0ef9b76df2d7cb19636" category="paragraph">設定與新節點的連線之後、您可以將新節點新增為報告節點。</block>
   <block id="491bf790c89cc65e6e44bc71af9a4016" category="list-text">在新節點上、列出 SVM 上 LUN 的報告節點：</block>
@@ -3892,7 +3804,6 @@
   <block id="401ec6649ed8fe314eef631a190858b3" category="list-text">檢查並重設中所述的儲存加密bootargs <block ref="d1353daad078803f11ba1627582281b9" category="inline-xref-macro-rx"></block>。</block>
   <block id="f21399d0ef733f2bac07631b61733da2" category="list-text">如果有任何磁碟區離線、請將它們與您在中擷取的離線磁碟區清單進行比較  <block ref="f8559d826afe76e8a44f3ff6b2b551c5" category="inline-link-macro-rx"></block> 在_準備要升級的節點_中、輸入下列命令（針對每個Volume一次）、並視需要將任何離線磁碟區上線：</block>
   <block id="3bc4849f9b157d49c1711e6e16889370" category="list-text">[[unset_mastwait_manipal]]如果在組態中使用自我加密磁碟機、且您已設定<block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變數至<block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block> （例如、in <block ref="90030e72e0588538d4fa2173f000cf21" category="inline-link-macro-rx"></block> 在_Install and boot node3_）中、您必須取消設定變數：</block>
-  <block id="7f56dbb7f8f9c7edeba6759e22db809d" category="admonition">您的系統可能沒有叢集間的LIF。您只能在節點配對的一個節點上使用叢集管理LIF。的範例輸出中會顯示叢集管理 LIF <block ref="bd32fdbc5854e6c20c0a8915777bab3f" category="inline-link-macro-rx"></block> 在_Record node1連接埠資訊_中。</block>
   <block id="654d75bbbd9ba4437d62775d8c78fd4e" category="paragraph">適用於<block ref="4bc6af92800eaece42a512a876786ce9" prefix=" " category="inline-code"></block> 請使用中擷取的資訊 <block ref="4bd427aca76f4838cf29941d65834087" category="inline-link-macro-rx"></block> 的「_Record node2 information_」區段。適用於<block ref="3a5307c9225c62c92d2cd1fab07d458d" prefix=" " category="inline-code"></block>、請使用中擷取的資訊 <block ref="9c7125eb7b33f2cb03297a560d0660b0" category="inline-xref-macro-rx"></block>。</block>
   <block id="c1ec927231ff7eccaa7988a2e2070107" category="paragraph">您可能會看到的輸出有一些變更<block ref="ddf400f1cb6b8b9330ed6c79c508123c" prefix=" " category="inline-code"></block> 命令，但這是典型的，不會影響程序。請參閱疑難排解一節 <block ref="75a39bd28c4eb9db95179fd2fef50fb3" category="inline-link-macro-rx"></block>。</block>
   <block id="4d71aeb459e7fed93e6f01c378ca3c04" category="list-text">重複重新定位屬於節點2的其餘集合體 <block ref="bd44335b572d50c129363547aa87bcee" category="inline-link-macro-rx"></block> 透過 <block ref="c5be787c4fcfd0f49f014e8618d28c15" category="inline-link-macro-rx"></block> 在_重新部署節點2的非根Aggregate從節點3到節點4_一節中。</block>
@@ -3988,7 +3899,6 @@
   <block id="7679a865afb03bdbcc1cbd8757f79d09" category="list-text"><block ref="7679a865afb03bdbcc1cbd8757f79d09" category="inline-link-macro-rx"></block></block>
   <block id="70df8f2f5459940187f1edf7420f9c6b" category="paragraph">若要透過移動儲存設備進行升級、請準備原始節點並設定新節點。部分平台機型支援將內部儲存設備傳輸至新節點。您可以重新指派磁碟、並將根磁碟區組態還原至新節點、並設定網路連接埠。</block>
   <block id="ffaf71c89815c9497697e87f8d77a27d" category="paragraph">透過移動磁碟區來升級控制器硬體是一項不中斷營運的程序。開始升級之前、請先檢閱一般升級案例和升級考量事項：</block>
-  <block id="4b5907b5b5c704438991bdf09784779a" category="list-text">在開機功能表中、輸入 8 重新啟動節點、然後在自動開機期間按 Ctrl-C 、在載入程式提示下停止節點。</block>
   <block id="ee537959cbe6c4957342c94d3801abf7" category="doc">選擇您的 ARL 升級程序</block>
   <block id="e2de59a5a77b66213e7d85b56f1eb224" category="list-text">在載入程式提示下、進入維護模式：</block>
   <block id="a6cb6b55dcfc4f7ab4204a180701bf3a" category="paragraph">當您要取代的叢集節點使用根磁碟區加密時、 ONTAP 無法從磁碟讀取磁碟區資訊。還原根磁碟區的金鑰：</block>
@@ -4022,7 +3932,6 @@
   <block id="86c15a425269c6a2503b9871021e6df8" category="cell">AFF A700 或 FAS9000</block>
   <block id="011359cc38c137752e931fd997e519a7" category="image-alt">安裝 AFF A90 或 AFF A70</block>
   <block id="b360374fb1c72b27ec9072588d678096" category="admonition">由於機箱已開機、因此節點 1 會在完全就位後、立即啟動 BIOS 初始化、接著自動開機。若要中斷節點1開機、在將控制器模組完全插入插槽之前、建議您將序列主控台和管理纜線連接至節點1控制器模組。</block>
-  <block id="da7cf8ace467e07feef604bd9a07fa23" category="list-text">中斷自動開機後、 node1 會在載入程式提示下停止。如果您未在時間中斷自動開機、而 node1 開始開機、請等待提示字元、然後按 Ctrl-C 進入開機功能表。節點停止在開機功能表後、請使用選項<block ref="c9f0f895fb98ab9159f51fd0297e236d" prefix=" " category="inline-code"></block> 重新啟動節點、並在重新開機期間中斷自動開機。</block>
   <block id="611a9754cc853d659f10d0a1aabd961b" category="list-text">中斷自動開機後、 node2 會在載入程式提示下停止。如果您沒有在時間中斷自動開機、而 node2 開始開機、請等待提示、然後按 Ctrl-C 進入開機功能表。節點停止在開機功能表後、請使用選項<block ref="c9f0f895fb98ab9159f51fd0297e236d" prefix=" " category="inline-code"></block> 重新啟動節點、並在重新開機期間中斷自動開機。</block>
   <block id="1541d30bc97104d196a4b30a48265600" category="paragraph">在 node2 的插槽 6 中安裝 ASA A900 、 AFF A900 或 FAS9500 NVRAM 模組。</block>
   <block id="ede80ab611f3725304fd9e964c65b970" category="paragraph">在 node2 中安裝、連接及連接 ASA A900 、 AFF A900 或 FAS9500 控制器模組。</block>
@@ -4035,7 +3944,6 @@
   <block id="9948b60bcf24c5a577ac51ca46681211" category="list-text">[[resume_gress_step4]] 恢復重新定位作業：</block>
   <block id="c8d0afb25c26087738c4c8847b04be0f" category="list-text">等待更換控制器模組上執行的 node1 開機、並顯示開機功能表選項、如下所示：</block>
   <block id="604b621863a9a67dada3210a46ac0585" category="cell">10.9</block>
-  <block id="e958fa4ebf6cfd080461a2ab27108030" category="paragraph">您會看到類似下列範例的輸出。輸出會顯示叢集上執行的 ONTAP 版本：</block>
   <block id="3907a30ce94bbdb9a45c1eb9ed6f9c2f" category="paragraph">從連接至每個節點的序列連接埠執行命令、分別執行及儲存命令的輸出：</block>
   <block id="b47faa02412cc89f2b0f103844279e9f" category="list-text"><block ref="2a0ee6f2d3fcee518356895f7e962392" prefix="" category="inline-code"></block></block>
   <block id="c42b01075c29ecf2009d164958ca98f5" category="list-text"><block ref="35b6841ae0a9776250da7cef0c9b1713" prefix="" category="inline-code"></block></block>
@@ -4058,7 +3966,6 @@
   <block id="0f0a79780676cf6ae8f3282e89437c68" category="cell">鎖定銷</block>
   <block id="3daf51d905ef8cf65eaf1306fdb7fc15" category="admonition">由於機箱已開機、因此在您插入新的控制器模組時、 node1 會先啟動 BIOS 初始化、然後自動開機。為了避免自動開機、 NetApp 建議您在插入控制器模組之前、先連接序列纜線和主控台纜線。</block>
   <block id="7d2ab27c4c0e5b47aef3114f5e958f70" category="list-text">中斷自動開機後、 node1 會在載入程式提示下停止。</block>
-  <block id="8ee4b1e10410e2b66e0bf9d74a323ab7" category="paragraph">如果您未在時間中斷自動開機、而 node1 開始開機、請等待提示字元、然後按 Ctrl-C 進入開機功能表。節點停止在開機功能表後、請使用選項<block ref="c9f0f895fb98ab9159f51fd0297e236d" prefix=" " category="inline-code"></block> 重新啟動節點、並在重新開機期間中斷自動開機。</block>
   <block id="8ff82dc56b5a1d525adf2a33f9b0ef1e" category="paragraph">若為 AFF A800 升級至 AFF A90 或 AFF A70 、請確認 100GbE 纜線長度至少為一公尺。</block>
   <block id="2372d3e97a3ad6b559d0a6d0c020e688" category="paragraph">使用替換控制器模組啟動 node1 之後、請確認已正確安裝。</block>
   <block id="54688fc83f84e29fdf50e22c9b7c7ff5" category="paragraph">您必須等待節點1加入仲裁、然後繼續執行控制器更換作業。</block>
@@ -4070,8 +3977,6 @@
   <block id="b8499c64cd399582a56bd38ef2f0b689" category="paragraph">當您要取代的叢集節點使用根磁碟區加密時、 ONTAP 無法從磁碟讀取磁碟區資訊。還原根磁碟區的金鑰。</block>
   <block id="4671cfb012ae240f7ddc8f7aaa369dbf" category="admonition">這僅適用於根磁碟區使用 NetApp 磁碟區加密時。</block>
   <block id="1868f9f2297be03938f9d37234c57a9d" category="summary">疑難排解使用命令來升級執行 ONTAP 9.15.1 或更新版本的控制器時、可能發生的 Aggregate 重新定位故障<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
-  <block id="a275532e7dc5da455e7d0af51e44e26d" category="summary">使用部分自動 ARL 程序來升級執行 ONTAP 9.15.1 或更新版本的控制器。</block>
-  <block id="03b84140205de4279d7e7c6144f8a93a" category="paragraph">在控制器升級期間、控制器會被另一個執行較新或更強大平台的控制器所取代。本內容提供部分自動化程序的步驟、此程序利用自動網路連接埠連線能力檢查、進一步簡化控制器升級體驗。</block>
   <block id="274d42025e97a78743f8d189528d662b" category="summary">使用命令決定是否使用 ARL 來升級執行 ONTAP 9.15.1 或更新版本的控制器<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
   <block id="82a01e528bf5bf2b1b7172eddc250977" category="cell">現有控制器</block>
   <block id="4de11ced25f5990c0cc8fa95f739e66c" category="summary">請告知 NetApp 、在使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器之後、舊系統不再運作<block ref="616743bfa4fd61d558c556fe614cb2e9" prefix=" " category="inline-code"></block> 。</block>
@@ -4133,7 +4038,6 @@
   <block id="25a249a3cdba620e6eba67639be13589" category="paragraph"><block ref="aa979bf34f52b205295408bd829f28b6" prefix="" category="inline-code"></block></block>
   <block id="3ede614b2861dd7a0548afd0b4e21bcf" category="list-text">在開機載入程式中、在 node3 上設定合作夥伴系統 ID ：</block>
   <block id="9b0061842e9b4b978c7b1f439fbd5125" category="paragraph"><block ref="0a94bdecbd83c3f6cbe41c7cf35976fd" prefix="" category="inline-code"></block></block>
-  <block id="1ef946adab62927bb74aa3d563d853b7" category="list-text">在自動開機期間按下<block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> 、即可在提示時停止節點<block ref="b4e58ddfd75fec23180551a08c0e87c6" prefix=" " category="inline-code"></block> 。</block>
   <block id="65675a0cf14d62660f665d2417a5428e" category="list-text">確認磁碟連線能力、控制器型號字串、 HA 組態、以及其他硬體連線相關詳細資料。</block>
   <block id="3f5fca71654403bc4eb39336d9167c1b" category="list-text">[[auto_check3_step32]] 在載入程式提示下開機：</block>
   <block id="01f408e94bd0887ce8a9faec6429d20d" category="inline-xref">步驟 32</block>
@@ -4142,7 +4046,6 @@
   <block id="9f3b5fde6efe97f3316b9fdf630f5307" category="paragraph">您可以在機架中安裝 node4 、將 node2 的連線傳輸至 node4 、開機 node4 、然後安裝 ONTAP 。然後重新分配節點 2 的任何備用磁碟、屬於根磁碟區的任何磁碟、以及此程序之前未重新定位至節點 3 的任何非根集合體、如本節所述。</block>
   <block id="eb91daa92a7cd6e3d0f28a92df381e46" category="paragraph"><block ref="0771d944db92b398d28d841edda85128" prefix="" category="inline-code"></block></block>
   <block id="b7b6eb575f44421125712f552d3c6514" category="list-text">[[auto_install4_step24]] 如果您安裝了 NetApp 儲存加密（ NSE ）磁碟機、請執行下列步驟。</block>
-  <block id="f16197d10b85eccdd96c289850f6f9a4" category="list-text">[[auto_check_4_step27]] 在載入程式提示下開機：</block>
   <block id="9fd0ed44498deb7ffb633dc1298bafef" category="paragraph">如果根磁碟區已加密、請恢復內建金鑰管理秘密、以便系統找到根磁碟區。</block>
   <block id="0df0b8c9a45c8c96a58c4a6a9c14d3ab" category="inline-xref">步驟 27</block>
   <block id="a48904f34036044cc49f6c59e8c6e89d" category="admonition">您可能會在這個階段遇到錯誤。如果發生錯誤、請重複中的子步驟、 <block ref="0bc751c788418356c58952313677a63b" category="inline-xref-macro-rx"></block> 直到系統正常開機。</block>
@@ -4212,9 +4115,6 @@
   <block id="0aa489897873ed4f6cacbbccf44589ea" category="sidebar">使用 ARL 升級</block>
   <block id="ef62a5865ef10a9f98eab6ed7130657e" category="sidebar">更換 AFF A220 、 AFF A200 、 AFF C190 、 FAS2620 或 FAS2720</block>
   <block id="e7a797d163f1786c84029862d653fdb1" category="sidebar">更換 AFF A700 或 FAS9000</block>
-  <block id="fe6c048ac188825e939c35497493825e" category="sidebar">安裝 AFF A90 或 AFF A70</block>
-  <block id="b2428a0f40b1f13f030d6799860c7cca" category="sidebar">安裝 ASA A150 、 AFF A150 或 FAS2820</block>
-  <block id="1571b9a3c2c5be276f508055478b60cb" category="sidebar">安裝 ASA A900 、 AFF A900 或 FAS9500</block>
   <block id="2a80893b493b7ab0f3c726473a1b8a3e" category="sidebar">第 1 階段：準備升級（在 ONTAP 9.15.1 或更新版本中使用「系統控制器更換」進行升級）</block>
   <block id="fd9953035d2e427fff5d261c7c0e28af" category="sidebar">第 2 階段：重新定位和淘汰 node1 （在 ONTAP 9.15.1 或更新版本中使用「系統控制器更換」進行升級）</block>
   <block id="e08f30fc0052987b4d3dd4b36c42592a" category="sidebar">第 3 階段：安裝並開機 node3 （在 ONTAP 9.15.1 或更新版本中以「系統控制器更換」進行升級）</block>
@@ -4389,8 +4289,6 @@
   <block id="9e602ed6376aabcfeb78f35f1ed4b314" category="paragraph">在 node1 中安裝，連接和連接替換模塊。</block>
   <block id="5577eee5ab487d69261df7fcdd77d00e" category="summary">使用 ARL 升級同一機箱中的控制器機型時，請更換 AFF A800 或 AFF C800 node1 系統模組。</block>
   <block id="e0646aaa208b06f2b9c991f8d1d06277" category="doc">更換 AFF A800 或 AFF C800 控制器模組</block>
-  <block id="b9f8db0a3b83103e79c00296ab293002" category="section-title">卸下 AFF A800 或 AFF C800 控制器模組</block>
-  <block id="84a1bd056cdf96c5313ffeb160884063" category="paragraph">從現有模組中移除纜線管理裝置，然後將控制器稍微移出機箱。</block>
   <block id="95699993f4e4282e1516a59b8f8b3a24" category="paragraph">在開始升級之前，請確認您的替換系統有正確的模組。如果零件遺失、請聯絡技術支援部門或 NetApp 銷售代表以取得協助。</block>
   <block id="fbe8d8aaa2d545f1170258a5901312fe" category="cell">兩個控制器模組和新的 IO 模組</block>
   <block id="ce648a37807e4da2fbd09030fea537d2" category="list-text">AFF A220 、 AFF A200 、 AFF C190</block>
@@ -4409,7 +4307,6 @@
   <block id="d403eb5d1a3dd37e397850942a0e2aa1" category="paragraph">AFF A20 系統可共用 10GbE 和 25GbE 網路連接埠，用於叢集和 HA 連線。這是 AFF A20 系統唯一支援的網路連接埠叢集連線。</block>
   <block id="1e08e52a85eb1ffb2284468e3498db1d" category="sidebar">更換 AFF A250 或 AFF C250</block>
   <block id="5b69734effb16f16b86998a01f8978c5" category="sidebar">纜線 node1 用於共用的叢集 HA 儲存設備</block>
-  <block id="a6b8e7f67087d00695547f0599a662d0" category="sidebar">安裝 AFF A30 ， AFF A50 ， AFF C30 或 AFF C60</block>
   <block id="ec31fc0bcc9399c68ce1eaa960489026" category="cell"><block ref="ec31fc0bcc9399c68ce1eaa960489026" category="inline-link-macro-rx"></block></block>
   <block id="b107ac189af2e98fbe02dd9c5a1028e3" category="cell">說明使用「系統控制器更換」命令，在 ONTAP 9.15.1 及更新版本中導入的不中斷升級控制器所需的集合體重新定位程序。</block>
   <block id="f95e2ee7384d545a3847f594109d4a3a" category="paragraph">如果現有系統有管理連接埠（ e0M ）和 BMC 連接埠，則 e0M 和 BMC 連接埠會透過更換系統上的「扳手」連接埠加以組合和存取。您必須確保 e0M 和 BMC 連接埠已連接至現有系統上的同一交換器和子網路，才能連線至更換系統。</block>
@@ -4428,7 +4325,6 @@
   <block id="692e04ae1166a86924090f14f4f93566" category="list-text">（僅限 AFF A250 和 AFF C250 升級）當用於替換控制器模組的 node1 正在開機時，會顯示下列警告，因為組態包含現有控制器的 node2 ：</block>
   <block id="152549dbd6808b54153763cfb3171438" category="paragraph">在升級 node2 之前，每次系統開機都會顯示此警告。這是預期的行為。</block>
   <block id="a7ab3451afab886103e41daa71b744af" category="admonition">請勿關閉機箱電源，因為 node1 和 node2 位於同一個機箱中，並連接至相同的電源供應器。</block>
-  <block id="4d4099b1bdb89d3aa1931527e516237a" category="list-text">準備卸下控制器模組：</block>
   <block id="2c0bd9fe8fca68ffe959dec538d18418" category="paragraph">僅對於 AFF A250 ， AFF C250 ， AFF A800 或 AFF C800 升級，您可以將實體連接埠從現有節點 1 對應至替換節點 1 ，因為實體連接埠在現有控制器和更換控制器之間變更。此升級程序所支援的其他系統的實體連接埠不會變更。</block>
   <block id="d0c49c66359eda6530916c4391cb9ccc" category="cell">如果您是從 ... 升級</block>
   <block id="cba6e2dc3c149c3c6f2e38d8209942ad" category="paragraph">如果您要將現有系統轉換成儲存櫃，以便將其連接至其他系統，則更換系統也必須有兩個 IO 模組。</block>
@@ -4478,7 +4374,6 @@
   <block id="0557ba2404e82e19ae1f9975c3ce6b5f" category="paragraph">確定節點4有足夠的機架空間。如果node4與node2位於不同的機箱中、您可以將node4放在與node3相同的位置。如果節點2和節點4位於同一個機箱中、則節點4已位於適當的機架位置。</block>
   <block id="328a7a0648a6342a4e5d9762596df977" category="inline-link-macro">將 node2 磁碟重新指派給 node4 ，步驟 9</block>
   <block id="b08503fa695caa40c403fd4b0a68ee5a" category="list-text">如果 node3 沒有板載 FC 端口，板載 UTA/UTA2 端口或 UTA/ UTA2 卡，並且您要升級帶有存儲磁盤的系統，則可以跳至<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block>。</block>
-  <block id="fc1748891fee59e7ee68e749f479c431" category="list-text">如果 node3 沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口，請跳過<block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block>並轉至<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block>。</block>
   <block id="7578581e3a33edeb6b72193b779ff242" category="paragraph">^1^ 如需 AFF A800 系統所需的其他步驟，請前往<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>或<block ref="a9b70e5969497a28f737eb804f3061d5" category="inline-link-macro-rx"></block>一節中參照 A800 的步驟。</block>
   <block id="ca05d8f8894d6ff273a92135000e282c" category="admonition">您必須使用管理連接埠和IP做為netboot連線。請勿使用資料 LIF IP ，否則在執行升級時可能會發生資料中斷。</block>
   <block id="6ce2823803aa2f6a15c6368e9054699b" category="paragraph">在第 3 階段中，您將安裝並開機 node3 ，檢查 node1 的叢集和節點管理連接埠是否已在 node3 上上線，將 node1 磁碟重新指派至 node3 ，並驗證 node3 安裝。如果您使用的是NetApp Volume Encryption（NVE）、則會還原金鑰管理程式組態。如果需要、您可以在節點3上設定FC或UTA/UTA2組態。您也可以將節點1 NAS資料lifs和非根Aggregate從節點2重新部署到節點3、並確認節點3上存在SAN lifs。</block>
@@ -4633,14 +4528,11 @@
   <block id="8bfe558f0142a4614ccf00a267ed0e88" category="paragraph">如果您沒有找到所遇到問題的解決方案，請聯絡技術支援。</block>
   <block id="7a33c380da7173854208ef2ecf3ad83b" category="inline-link-macro">控制器升級指南</block>
   <block id="f4e202b16d4110d20d433ad7438f5314" category="list-text">AFF A250 和 AFF C250 系統使用 10/25 GbE 板載埠進行群集互連。若要將 AFF A250 或 AFF C250 系統的雙節點無交換器叢集升級至 AFF A50、AFF A30、AFF C60 或 AFF C30 系統，必須在兩個節點的插槽 1 使用 X60132A 4 連接埠 10/25 GbE 卡。這為叢集 LIF 提供了與目標平台上臨時連接埠的叢集互連。</block>
-  <block id="78c398b9af8fd88a6f91bb80a4953770" category="paragraph">在 node2 上安裝您收到的用於升級的替換控制器模組。從系統後方看控制器時，節點 2 是位於機殼下半部的控制器 B。</block>
   <block id="9b44a31a05d8aaba8e74ed9fbe14e789" category="list-text">對於雙節點無交換器配置，請確認節點 2 上的插槽 1 已安裝 X60132A 4 連接埠 10/25 GbE 卡。升級期間，叢集互連需要 X60132A 卡。</block>
   <block id="a7632bc525df3f119a06420f80bce02b" category="list-text">清除啟動媒體上的所有先前配置。</block>
-  <block id="85c959b092ae248c6236b1f442d3cbeb" category="list-text">在以下提示符號下，執行<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>命令，然後按回車鍵：</block>
   <block id="b658f4f5938289ac1a7001b05fddd0b2" category="admonition">等待節點完成啟動選單後停止<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>手術。</block>
   <block id="24c944e4e18d5101d5a8069e4aed82b7" category="paragraph">除非將替換控制器模組安裝在機箱中並開啟電源，否則無法檢查其啟動媒體上安裝的 ONTAP 版本。替換系統開機媒體上的 ONTAP 版本必須與您要升級的舊系統上執行的 ONTAP 版本相同、而且主要開機映像和備份開機映像都必須相符。您可以透過執行網路啟動，然後執行<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>命令。如果控制器模組之前已在其他叢集中使用，則<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>命令清除啟動媒體上的任何殘留配置。</block>
   <block id="5cc98758108e5696a18521fc09fdcec0" category="cell"><block ref="5cc98758108e5696a18521fc09fdcec0" category="inline-link-macro-rx"></block></block>
-  <block id="011854dc700dfa96d9898f3c4c13f97c" category="cell"><block ref="011854dc700dfa96d9898f3c4c13f97c" category="inline-link-macro-rx"></block></block>
   <block id="c6ebca9a3afaa3cddaedcad592c58fb5" category="cell"><block ref="c6ebca9a3afaa3cddaedcad592c58fb5" category="inline-link-macro-rx"></block></block>
   <block id="981b474bcebe95928c5044d4d826b06a" category="paragraph">確認節點 1 上的插槽 1 已安裝 X60132A 4 連接埠 10/25 GbE 卡。升級期間，雙節點無交換器叢集配置中的叢集互連需要 X60132A 卡。</block>
   <block id="aec594503e4cd85b89390b92e19c6336" category="list-text">此步驟適用於以下升級配置。對於所有其他系統升級，請跳過此步驟並轉至<block ref="35cd4c3f74cf1f31540dfdaaae84abf5" category="inline-xref-macro-rx"></block> ：</block>
@@ -4749,14 +4641,12 @@
   <block id="2b23c6643a7989ea797dcc7318e69941" category="cell"><block ref="08a38277b0309070706f6652eeae9a53" prefix="" category="inline-code"></block></block>
   <block id="42eed74bc7449c06a58949763bc19a72" category="cell">前往<block ref="5b8028286d92c73a97e17186fd614dd6" category="inline-xref-macro-rx"></block>。</block>
   <block id="e2ee618006d829a530b146576cce509a" category="list-text">驗證「IC RDMA 連線」狀態是否已變更為<block ref="258f49887ef8d14ac268c92b02503aaa" prefix=" " category="inline-code"></block>：</block>
-  <block id="01e12de62fa77fda2815719aed8ff892" category="paragraph-title">下一步</block>
   <block id="48b45c4448ac737e7cd5110c5c5ab986" category="paragraph">若要退出節點 1，您可以還原自動操作以停用與節點 2 的 HA 對並正確關閉節點 1。在此過程的稍後部分，您將從機架或機箱中移除節點 1。</block>
   <block id="fdece49a53b4d22867330bbf853edcbb" category="paragraph">退出節點 1 後，確認其已關閉電源且未連接至網路。將 node1 的舊硬體保留在此狀態，直到完成 node1 和 node2 的升級。然後，您可以在以下情況下停用 node1：<block ref="0f82d37b39d321fc9b25cdd372b37e32" category="inline-link-macro-rx"></block> 。</block>
   <block id="9385d14007f76e744745739d94bc306a" category="paragraph">退出節點 2 後，確認其已關閉電源且未連接至網路。將 node2 的舊硬體保持此狀態，直到完成 node1 和 node2 的升級。然後，您可以在下列情況下停用 node2<block ref="0f82d37b39d321fc9b25cdd372b37e32" category="inline-link-macro-rx"></block> 。</block>
   <block id="3df2e25dd62a653c7cb81686296e66ad" category="admonition">由於機箱已通電，因此節點 2 在完全就位後立即啟動 BIOS 初始化，然後啟動 AUTOBOOT。若要中斷 node2 啟動，建議在將控制器模組完全插入插槽之前將串行控制台和管理電纜連接到 node2 控制器模組。</block>
   <block id="0c1a4b73743825276f6a94f00753ae1c" category="list-text">模組就位後立即連接序列控制台並準備中斷節點 2 的 AUTOBOOT。</block>
   <block id="4e0d7c1abfb8de7fd56ae6e56c1b7b4b" category="list-text">在機殼的前面，用拇指將每個驅動器牢牢推入頂部和底部磁碟托架，直到感覺到完全停止。這可確保驅動器牢固地固定在機箱中板上。</block>
-  <block id="a3fa441608c8038d19e72ef43c8108bc" category="section-title">恢復系統控制器更換操作</block>
   <block id="20d8255eb490088576c2cdeea2fb6e2a" category="list-text">從源頭拔下節點 2 控制器模組電源。</block>
   <block id="db799964060c84b9e9d008dc6cc8932c" category="paragraph">如果任何聚合無法重新定位或被否決，則需要手動將聚合重新定位到節點 3，或如有必要，覆寫否決或目標檢查。</block>
   <block id="06319e499e839b6b47d478534e06e04d" category="paragraph">由於錯誤，系統暫停重定位操作。</block>
@@ -4941,7 +4831,6 @@
   <block id="49e85d2cb5dc17786beece61ce67579b" category="list-text">在維護模式提示下，輸入以下命令：</block>
   <block id="defaf387837a5ac57c453e436af7ffe6" category="cell">前往<block ref="57e0c5137c5e4ee9559e4abc3701552f" category="inline-xref-macro-rx"></block>。</block>
   <block id="b543203df1cba169912b116fd99674ff" category="list-text">[[man_install3_step8]]為ONTAP設定 node3：</block>
-  <block id="b6894d5bdf50a826cb6b87d0ca6a44d3" category="list-text">按 CTRL-C 顯示啟動選單。</block>
   <block id="28e28932e1038b7cc2979611172e5f48" category="cell">前往<block ref="85131af613f0169831e213f11ca11041" category="inline-xref-macro-rx"></block>。</block>
   <block id="b9da98e99c8057fc3b9a54d9d19ff501" category="inline-xref">步驟18</block>
   <block id="7c524e8842cf8de298e4c6e1291bb583" category="cell">前往<block ref="f5b2f21e8ce0ab7d4e5603147e143520" category="inline-xref-macro-rx"></block>。</block>
@@ -4985,7 +4874,6 @@
   <block id="532277e802a820c7b240fc524a2dec1d" category="list-text">透過執行以下命令將節點啟動到啟動選單<block ref="d20d8416248acf69156e4b7875cc4868" prefix=" " category="inline-code"></block>。</block>
   <block id="9e5cb50e1c577a8bbe485a517d02859d" category="list-text">如果您要升級到AFF A800系統，請前往<block ref="13193a83e6d1d3a0ad7f7d39140ab8c7" category="inline-link-macro-rx"></block>。</block>
   <block id="90d15882071659f5c278c3188642dcdd" category="list-text">對於所有其他系統升級，請訪問<block ref="85de4eaf81abb5e5b335f49a296af5f4" category="inline-link-macro-rx"></block>。</block>
-  <block id="1f3fcdf9022a6aa0f67562f35de18fd5" category="admonition">在此階段， MetroCluster配置不會處於正常狀態，您可能需要解決錯誤。看<block ref="14c0e32a98a31f9fd4a16b635b2f7ebd" category="inline-link-macro-rx"></block>。</block>
   <block id="eae0d196e9a099a5039af7d8b6c1eb85" category="admonition">托架 B 位於底盤的右側。</block>
   <block id="851d3d8a0258ed7660584e68159aae4e" category="inline-link-macro">設定並配置節點 3 上的 FC 或 UTA/UTA2 連接埠</block>
   <block id="9066510c72210c33ee0037190ab1e1ff" category="list-text">如果您的系統具有 FC 或 UTA/UTA2 配置，<block ref="a2860b8490ec5aaef9fa8fc42929bb0a" category="inline-link-macro-rx"></block> 。</block>
@@ -5001,7 +4889,6 @@
   <block id="e5330a3f067b20c0bc653c95754f0003" category="paragraph">如果節點 3 沒有板載 FC 連接埠、板載 UTA/UTA2 連接埠或 UTA/UTA2 卡（例如，從ONTAP 9.15.1 開始引入的AFF和FAS系統），並且您正在升級具有儲存磁碟的系統，則可以跳至<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block>。</block>
   <block id="5ec3ea1c092d9baccac3f18b114cbb19" category="cell">如果節點 3...</block>
   <block id="43b887bce260431997df1d009b1f86d3" category="cell">具有 UTA/UTA2 卡或 UTA/UTA2 板載端口</block>
-  <block id="b218cf02d86731be6eb24c55f95238d6" category="cell">前往<block ref="574c49ad3466f1bed21aff7050a30e36" category="inline-xref-macro-rx"></block></block>
   <block id="c1d0c27818786bcecaad04b77cee8c31" category="cell">沒有 UTA/UTA2 卡或 UTA/UTA2 板載端口</block>
   <block id="cb46a1722edd0d184e8f5160da79aef5" category="cell">跳過_檢查並配置節點 3 上的 UTA/UTA2 連接埠_並前往<block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block>。</block>
   <block id="2466a7dc80883b138ff2ff9dd6381cb2" category="list-text">如果您要升級到AFF A800系統，請前往<block ref="c6817bbcae6fe5893644f9e570310aab" category="inline-link-macro-rx"></block>。</block>
@@ -5013,7 +4900,6 @@
   <block id="5995503f0157016dc9126220426976d1" category="cell"><block ref="5995503f0157016dc9126220426976d1" category="inline-link-macro-rx"></block></block>
   <block id="bfe40fd278079f510bcfb6a7a10f9369" category="list-text">對於AFF A800或AFF C800控制器升級，在移除節點 2 之前，必須確保機箱中的所有驅動器都牢固地固定在中板上。有關詳細信息，請參閱 <block ref="ba47371cb3a59dcddfa160e31dda2034" category="inline-link-macro-rx"></block>。</block>
   <block id="56bfe01fd4ea060925fdb4a5681a751e" category="list-text">對於AFF A800或AFF C800控制器升級，在移除節點 1 之前，必須確保機箱中的所有驅動器都牢固地固定在中板上。有關詳細信息，請參閱 <block ref="ba47371cb3a59dcddfa160e31dda2034" category="inline-link-macro-rx"></block>。</block>
-  <block id="fcf09bf7ec3b71c764141820f1fc8020" category="paragraph">永久連結：upgrade-arl-auto-affa900/retire_node1.html 重定向：ontap-systems-upgrade/upgrade-arl-auto-in-chassis/retire-node1.html</block>
   <block id="21033397b04c40cfe5bfedb2ddbd85d7" category="paragraph">如果您的升級方案列在以下受支援系統矩陣中，請前往<block ref="19860560e89446d8ca0f4e7091d110a0" category="inline-link-macro-rx"></block>開始升級過程。</block>
   <block id="066b4e06813cb4484b4d19373d95d0b8" category="paragraph">您可能會在附加適配器或控制器主機板上找到 UTA/UTA2 端口，並具有以下配置，但您應該檢查 node3 上的 UTA/UTA2 端口配置，並在必要時進行更改：</block>
   <block id="78475a8af5a97db71bf76492940ae509" category="inline-link-macro">安裝並啟動 node4，步驟 22</block>
@@ -5162,14 +5048,6 @@
   <block id="5f2bd886a1ddbc0f18d7dda59298b8e8" category="paragraph">將 AFF A250 node2 轉換為 NS224 磁碟機櫃並連接到 AFF A400 node4 後，將先前屬於 node2 的磁碟機重新指派給 node4。</block>
   <block id="39f91ec3fbd4d906c846b0ee83a740e8" category="paragraph">在將 AFF A250 node1 轉換為磁碟機櫃之前，請將 node1 上的資料集合體、epsilon 和 LIF 移轉至 AFF A400 node4。</block>
   <block id="ce2f3556362c3cfcb43ad4834d6282a4" category="paragraph">將 AFF A250 node1 轉換為 NS224 磁碟機櫃並連接到 AFF A400 node3 後，將先前屬於 node1 的磁碟機重新指派給 node3。</block>
-  <block id="04e23b210e0430fd6997a9fc1d8fda00" category="doc">在節點 2 上安裝 AFF A30、AFF A50、AFF C30 或 AFF C60 模組</block>
-  <block id="d9408ab5bc96e9410c367a1693dfa37a" category="summary">在同一機箱內對控制器型號進行 ARL 升級時，請在 node2 中安裝替換系統模組。</block>
-  <block id="a4a2dd9d36b116bef402bcdf710dc709" category="doc">在節點 2 中安裝 AFF A90 或 AFF A70 模組</block>
-  <block id="e6ae8ed645d47b31d65c89bd281a2134" category="paragraph">將您收到的用於升級的 AFF A90 或 AFF A70 控制器模組安裝到節點 2 中。從系統後方看控制器時，節點 2 是位於機殼下部托架的控制器 B。</block>
-  <block id="7c44b93e39110a1df5d5b1d5c7b2aa96" category="doc">在節點 2 中安裝 ASA A150、AFF A150 或 FAS2820 控制器模組</block>
-  <block id="0a5f16db0d2a164e8fb5e89418a84b7c" category="paragraph">將您收到的用於升級的 ASA A150、AFF A150 或 FAS2820 控制器模組安裝到節點 2 中。從系統後方看控制器時，節點 2 是位於機殼右側的控制器 B。</block>
-  <block id="177d9f0d90545dcab9e666b61c7d50f8" category="section-title">步驟 1：安裝 ASA A900、AFF A900 或 FAS9500 NVRAM 模組</block>
-  <block id="6e154df7ee1e94fc9a1ca3cdea1b07ce" category="section-title">步驟 2：安裝 ASA A900、AFF A900 或 FAS9500 控制器模組</block>
   <block id="63ec106ef1df9e11add410bfee39c255" category="paragraph">將節點 1 的 AFF A700 或 FAS9000 控制器和 NVRAM 模組更換為 ASA A900 、 AFF A900 或 FAS9500 控制器和 NVRAM 模組。</block>
   <block id="f068fd46a83c2c7cc89a6914580e1fe8" category="section-title">步驟 1：拆下 AFF A700 或 FAS9000 控制器模組</block>
   <block id="6ede165fbcdd9ed79328813d3b4841c1" category="paragraph">拆下並移除節點 1 AFF A700 或 FAS9000 控制器模組。</block>
@@ -5237,7 +5115,6 @@
   <block id="33e63f79556a87281e8de9d8ba37f5f5" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="ece5a483b89709db8820de418819044a" category="inline-xref-macro-rx"></block></block>
   <block id="9f3787f77a3d708bfd899656a1d33473" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="58261ec40fab79eddcd526a99ebeb740" category="inline-xref-macro-rx"></block></block>
   <block id="8c097303e8c47e0358dee664485228ad" category="paragraph">將 node1 轉換為磁碟機櫃並連接至 node3 後、請將先前屬於 node1 的磁碟機重新指派給 node3。</block>
-  <block id="eb6c87afcabfd3eb60c8d87f7b2fa75d" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="8df2fdb5b5907c7ff547185a007acea7" category="inline-xref-macro-rx"></block></block>
   <block id="dbd49bc5d5ba19572dc566632d2aced5" category="paragraph">若要完成升級、請將 node3 連接至 node4、並將 node4 上的資料 LIF 和資料 Aggregate 移轉至 node3。</block>
   <block id="f03ac6f1409311cad39eb41e53a62b5d" category="paragraph">在 node4 上執行這些步驟。</block>
   <block id="a10e919e5952f3c6e23ac5a3030258d9" category="paragraph"><block ref="a10e919e5952f3c6e23ac5a3030258d9" category="inline-link-macro-rx"></block></block>
@@ -5279,7 +5156,6 @@
   <block id="9ef033d8c14c127b977f9ddb9717418d" category="admonition">您必須檢閱以下所有重要資訊。</block>
   <block id="cdebc1687e2a3fcf7e10d696e347a0b9" category="paragraph">除非將替換控制器模組安裝到機箱中並通電，否則無法檢查其啟動媒體上安裝的 ONTAP 版本。替換系統啟動媒體上的 ONTAP 版本必須與要升級的舊系統上執行的 ONTAP 版本相同，啟動媒體上的主啟動映像和備份啟動映像也必須相符。若要驗證升級所需的最低支援 ONTAP 版本，請參閱<block ref="1148bc021ec205bbffacd287de2b889b" category="inline-link-macro-rx"></block>。</block>
   <block id="55bbe63dc2510d221cc5a30666c866c1" category="section-title">步驟 4：在節點 1 中安裝 ASA A900、AFF A900 或 FAS9500 控制器模組</block>
-  <block id="44bc263b79949f06fdd989ec293c19b4" category="section-title">步驟 2：安裝 ASA A150、AFF A150 或 FAS2820 控制器模組</block>
   <block id="d6502f1be5391b0a8898fed8416aa2bd" category="paragraph">若要拆卸 node1 控制器模組，請先移除纜線管理裝置並解鎖鎖定閂鎖。然後，將控制器模組從機箱中取出。</block>
   <block id="1aedb7d8f3d716ca9b88187c1f40d3f7" category="section-title">步驟 2：安裝 AFF A30、AFF A50、AFF C30 或 AFF C60 控制器模組</block>
   <block id="283e63573648e755da79f3b7a34aa3cd" category="sidebar">轉換為磁碟機櫃並移動儲存設備</block>
@@ -5315,14 +5191,12 @@
   <block id="37fa36d94f192487e210e3f3acf76c25" category="paragraph">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至《系統管理參考》，以取得有關 SP 的資訊，以及《ONTAP 9 命令參考》，以取得有關系統 <block ref="2a8e2b100f5ea655a56702ca475f0d42" prefix=" " category="inline-code"></block> 命令的詳細資訊。</block>
   <block id="83d213cb232676aa1a2116b78316fc82" category="paragraph">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至 _Network Management_ 或 _ONTAP 9 Command reference_ 以取得更多資訊。</block>
   <block id="0dd70df5fdfa99812bfb16ad796f3243" category="paragraph">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至_網路管理_或 _ONTAP 9 Command reference_，並參閱_在 LIF 上配置容錯移轉設定_以取得更多資訊。</block>
-  <block id="6f50d22bc0a3dc9b233677603f9d7070" category="paragraph">輸入您先前在流程中記錄的密碼短語和備份資訊。請參閱 <block ref="2b0f9b46416ed6835a9cf4374bf56295" category="inline-link-macro-rx"></block>。</block>
   <block id="d2fb72c1e41e70be33be5a2db34ad912" category="paragraph">有多種 Aggregate 重新配置（ARL）方法可用於升級控制器硬體。本 ARL 程序說明如何在 ONTAP 9.15.1 或更新版本中引入的 AFF 和 FAS 儲存系統中，使用新控制器升級 HA 配對控制器，同時保留現有磁碟及磁碟上儲存的資料。這是一個複雜的程序，僅應由經驗豐富的 ONTAP 管理員使用。</block>
   <block id="03ea74f1c6366fb37761962a003062de" category="paragraph">有多種 Aggregate 重新配置（ARL）方法可用於升級控制器硬體。本 ARL 程序說明如何在 ONTAP 9.15.1 或更新版本中推出的 AFF 和 FAS 儲存系統中，使用新控制器升級 HA 配對控制器，同時保留現有磁碟及磁碟上儲存的資料。</block>
   <block id="63e3bdeda7914c0e52d8bfc6de1859ea" category="cell">描述受支援 ONTAP 9 指令的語法和用法。</block>
   <block id="17f799304c6d34011331c99f291bf697" category="paragraph">有關 <block ref="d8a8a1780214c33b958eab7dee095b3b" prefix=" " category="inline-code"></block>、<block ref="1ca2ae7c41ce5825ae800de30d135bce" prefix=" " category="inline-code"></block> 和 <block ref="df1f92332c08f156b192fdc1f1ad10ef" prefix=" " category="inline-code"></block> 選項的詳細資訊、請參閱 <block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block> 以連結至 _ONTAP 9 命令參考_。</block>
   <block id="180bc7168411dbe42ebd7633c0c3659b" category="paragraph">若要識別未正確重新定位的 Aggregate，請參考您在 <block ref="a092688e6ef631b035ce76b1b08e7b3c" category="inline-link-macro-rx"></block> 區段中取得的 node1 主擁有者 Aggregate 清單，並將其與上述命令的輸出進行比較。</block>
   <block id="bc00b7156a6469658c6415d1ad71fee4" category="list-text">將步驟 1 的輸出與您在 <block ref="a092688e6ef631b035ce76b1b08e7b3c" category="inline-link-macro-rx"></block> 區段中為 node1 擷取的輸出進行比較，並記下任何未正確重新配置的集合體。</block>
-  <block id="2faca14a161fadd876dc731312403352" category="paragraph">輸入您先前在流程中記錄的密碼短語和備份資訊。請參閱 <block ref="5c5360e1f5a4a04447c69ece9bdccf98" category="inline-link-macro-rx"></block>。</block>
   <block id="ab70f27c1505201e3523b49908f29d8f" category="list-text">如果任何磁碟區處於離線狀態，請將其與您在該部分中擷取的離線磁碟區清單進行比較 <block ref="a092688e6ef631b035ce76b1b08e7b3c" category="inline-link-macro-rx"></block>，並根據需要使用以下命令將任何離線磁碟區上線，每個磁碟區執行一次：</block>
   <block id="d9a2b927be1ce6e77cb9ca17638c3135" category="paragraph">您可以將輸出結果與您在 <block ref="a092688e6ef631b035ce76b1b08e7b3c" category="inline-link-macro-rx"></block> 部分中捕獲的輸出結果進行比較。</block>
   <block id="5c33a061471b30473b28ba75deb266f8" category="list-text">[[unset_maxwait]] 如果在配置中使用了自加密磁碟機、且您已將 <block ref="fd93f52ab7757855a2e3e5cbb717ab40" prefix=" " category="inline-code"></block> 變數設為 <block ref="3262d48df5d75e3452f0f16b313b7808" prefix=" " category="inline-code"></block>（例如、在 _使用替換系統模組開機 node2_ 中、<block ref="1d45c93f8b18dc6d11c4b73ecc538173" category="inline-link-macro-rx"></block>）、則必須取消設定該變數：</block>
@@ -5342,17 +5216,13 @@
   <block id="6ae4d547d903fd384ab10f29a2699c21" category="cell"><block ref="6ae4d547d903fd384ab10f29a2699c21" category="inline-link-macro-rx"></block></block>
   <block id="668d4645890e8fd9a6fb116caf91b91d" category="cell"><block ref="668d4645890e8fd9a6fb116caf91b91d" category="inline-link-macro-rx"></block></block>
   <block id="a88f5a0d96cb256c410858cea1853483" category="cell"><block ref="a88f5a0d96cb256c410858cea1853483" category="inline-link-macro-rx"></block></block>
-  <block id="93b1a83564d80f01add6d83f1422fec3" category="cell"><block ref="93b1a83564d80f01add6d83f1422fec3" category="inline-link-macro-rx"></block></block>
   <block id="3584a34be7fa7de7c78dcec93b67d1a8" category="cell">檢查被替換的節點是否運行相同版本的 ONTAP。如果 ONTAP 映像版本不同，則任務失敗。新節點必須安裝與原始節點相同版本的 ONTAP 9.x。如果新節點安裝了不同版本的 ONTAP，則需要在安裝後對新控制器進行 netboot。有關如何升級 ONTAP 的說明，請參閱 <block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block> 以連結至 _Upgrade ONTAP_。</block>
   <block id="2d1282533438ce245617f59e7b805d11" category="cell">如果任何被替換的節點缺少磁碟或磁碟發生故障，則任務失敗。如果缺少任何磁碟，請參閱<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>連結至「使用 CLI 進行磁碟和 Aggregate 管理」、「使用 CLI 進行邏輯儲存管理」和「HA 配對管理」，以設定 HA 配對的儲存。</block>
   <block id="f9d38c90e959ee132d9a65bf2dbc43fd" category="paragraph">請參閱<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>以連結至 _NetApp Support Site_，您可以在此取得 NLF。NLF 可在 _My Support_ 區段的 _Software licenses_ 下取得。如果網站沒有您需要的 NLF，請聯絡您的NetApp銷售代表。</block>
-  <block id="f6d260acbab35d587beefa77bc3f9302" category="paragraph">有關授權的詳細資訊、請參閱<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>以連結至《系統管理參考》。</block>
   <block id="8040fa88ddcf5dcfb7ee115664e394dc" category="paragraph">請參閱<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>以取得本次升級所需的參考文件和參考網站清單。</block>
-  <block id="c09b6add9d5f494336e3001da32f3ba7" category="paragraph">升級完成後，您可以停用 node2。請參閱<block ref="729f334357724db1951ca16bc4d24fcf" category="inline-link-macro-rx"></block>。</block>
   <block id="bbea1301f0872b294a706764a937699f" category="paragraph">有關建立和重新建立 VLAN、介面群組和廣播網域的更多資訊，請參閱<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>以連結至 _Network Management_ 內容。</block>
   <block id="c49a299e1a9015c8f66d8adfee48188f" category="paragraph">如果您要升級到雙節點無交換器叢集組態，則可以跳過本節並前往 <block ref="7cc19125534eeb08a291fd4dac52df88" category="inline-link-macro-rx"></block>。</block>
   <block id="b615b5c8970354059c201c62cbbe2d1d" category="cell">前往 <block ref="7cc19125534eeb08a291fd4dac52df88" category="inline-link-macro-rx"></block>。</block>
-  <block id="7cc19125534eeb08a291fd4dac52df88" category="paragraph"><block ref="7cc19125534eeb08a291fd4dac52df88" category="inline-link-macro-rx"></block></block>
   <block id="49e4f8e3ed6f9b425b3302443b88af26" category="paragraph">前往 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至 _Network Management_ 或 _ONTAP 9 Command reference_ 以取得更多資訊。</block>
   <block id="79ed614e57a84cb3ea78a7ec6a71e230" category="paragraph">如需更多資訊、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 以連結至 _Network Management_ 或 _ONTAP 9 Command reference_ 、然後前往 _Configuring failover settings on a LIF_ 。</block>
   <block id="bf4898b462ec44974d0fd35d857406f4" category="paragraph">輸入您先前在程序中記錄的通關密語和備份資訊。請參閱<block ref="67f80d13cf548292184bc05f4b74227a" category="inline-link-macro-rx"></block>。</block>
@@ -5361,4 +5231,375 @@
   <block id="86e557f58bf6d6ffc84353711ad398d6" category="list-text">透過查看以下命令的輸出來驗證 cc-mode 是否已啟用：</block>
   <block id="c1c5360be7e00706ec4adf74606262d2" category="paragraph"><block ref="8bb1a67a3cdda2dcc6e451017bb9da4d" prefix="" category="inline-code"></block></block>
   <block id="66a6e497892fb616eb108dd90d697bfb" category="list-text">備份金鑰管理器資訊：</block>
+  <block id="855df338c9b226ed8980ff7ba86bd971" category="doc">步驟 2：檢查並設定 node3 上的 UTA/UTA2 連接埠</block>
+  <block id="cfd9ea2e0a547ab08d848061f441b5c1" category="doc">步驟 2：檢查並設定 node4 上的 UTA/UTA2 連接埠</block>
+  <block id="39099bd2a473eda247c5c57f546615d0" category="doc">步驟 1：在 node3 上設定 FC 連接埠</block>
+  <block id="495740bb52935f28af67cb917bd18bf4" category="paragraph">如果您的系統沒有 FC 組態，則可以跳過此部分。如果您的系統有板載 UTA/UTA2 連接埠或 UTA/UTA2 卡，則可以在<block ref="d73a9d5b309b0cab3f8f8afd4147c340" category="inline-xref-macro-rx"></block>中進行設定。</block>
+  <block id="243f340efcea3d554a9125b503ec1d61" category="doc">步驟 1：在 node4 上設定 FC 連接埠</block>
+  <block id="29df30fe5091a7a6da022f10777368a6" category="paragraph">如果您的系統沒有 FC 組態，則可以跳過此部分。如果您的系統有板載 UTA/UTA2 連接埠或 UTA/UTA2 轉接器，則可以在<block ref="11614003aceee2cc2e8ca21f25dd5eb8" category="inline-xref-macro-rx"></block>中進行設定。</block>
+  <block id="41b0c06c45e2028666c59ed8c8ee76ea" category="doc">步驟 2：如果 ARL 預先檢查失敗、請修正 Aggregate 擁有權</block>
+  <block id="9528e7cf70b3b55b2c0b6eac8ad72440" category="list-text">重新啟動控制器更換程序：</block>
+  <block id="d0e931f04807be06d1000781652d26d0" category="list-text">如果您要升級具有儲存磁碟的系統，則需要完成本部分的全部內容，然後前往 <block ref="b8be2332e6727dc6b48478780a30df1b" category="inline-link-macro-rx"></block> 和 <block ref="3d1446b36749b51626c7254121f193f1" category="inline-link-macro-rx"></block> 部分，在叢集提示字元中輸入命令。</block>
+  <block id="7e87abdacf7d877a979e6e31d3ae8ec5" category="doc">了解 ONTAP 授權</block>
+  <block id="30dff19006a75d1c44f25e7350768aae" category="paragraph">如需 ONTAP 授權的詳細資訊，請參閱<block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block>以連結至《系統管理參考》。</block>
+  <block id="b60b0193d25f7c31bc57f02156fb1e08" category="paragraph">使用 Onboard Key Manager（OKM）來管理加密金鑰。如果您已設定 OKM，則必須在開始升級之前記錄通關密語和備份資料。</block>
+  <block id="4cd8e3787d557635895cca0a79c2bb41" category="doc">或者，也可以讓這些 SnapMirror 關係平靜下來</block>
+  <block id="bd6e4617711413582a6ba89078e0334d" category="list-text">升級完成後，可選擇停用 node1。請參閱<block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>。</block>
+  <block id="c0254ae2063142705d2da55b71c0cf3e" category="list-text">升級完成後，可選擇停用 node2。請參閱 <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>。</block>
+  <block id="f80bfabe41b23fe5e9c2f7848cb87d1a" category="paragraph">您可能需要完成 <block ref="47a673a039e6840b1d1ada77fac855e1" category="inline-xref-macro-rx"></block>、<block ref="d73a9d5b309b0cab3f8f8afd4147c340" category="inline-xref-macro-rx"></block> 或兩者。</block>
+  <block id="649e81d1a71615857ef10a7b2875b06c" category="paragraph">您可能需要完成<block ref="089558361a80a85226eca107a80e732e" category="inline-xref-macro-rx"></block>或<block ref="11614003aceee2cc2e8ca21f25dd5eb8" category="inline-xref-macro-rx"></block>，或兩者皆需完成。</block>
+  <block id="be85c3cace3ec2f35b19c80adea3300b" category="list-text">在第 3 階段期間、會將 Aggregate 從 node2 重新配置到 node3。部分重新配置的 Aggregate 以 node1 為主節點。例如、這類 Aggregate 可稱為 aggr_node_1。如果在第 3 階段期間重新配置 aggr_node_1 失敗、且無法強制重新配置、則 Aggregate 會留在 node2 上。</block>
+  <block id="94da38ce9af571e45b99b2b09b50392d" category="list-text">在第 4 階段之後，當 node2 被 node4 取代時。當 node2 被取代時，aggr_node_1 將以 node4 作為其主節點而不是 node3 上線。</block>
+  <block id="1f01ff4583481ed1ba6e455161fa3bed" category="list-text">輸入 CTRL-C 以顯示開機功能表。</block>
+  <block id="7c4786079e0af3e5023036486eedb99d" category="paragraph">此<block ref="a5160db2f330101874d96e78b0693369" prefix=" " category="inline-code"></block>命令僅重新指派<block ref="0395107b450be7489aafae3e3de11830" prefix=" " category="inline-code"></block>為目前擁有者的磁碟。</block>
+  <block id="65b71793cd92cc9dc4d1ad05f77fe279" category="paragraph">您必須確保 node1 上的實體連接埠與 node3 上的實體連接埠正確對應。這樣，升級後 node3 才能與叢集中的其他節點以及網路進行通訊。</block>
+  <block id="90889ab44c770c0bc6cdbdb95012c140" category="paragraph">遠端 LIF 在升級過程中處理 SAN LUN 的流量。升級期間，無需移動 SAN LIF 以確保叢集或服務的正常運作。除非需要將 SAN LIF 對應到新連接埠，否則不會移動它們。節點 3 上線後，您需要驗證 LIF 是否運作正常並位於正確的連接埠上。</block>
+  <block id="e2c8b830f67d139462cedf2638966e8c" category="paragraph">如果 node1 和 node2 都不擁有自己是目前擁有者（但不是主擁有者）的 Aggregate、則系統會傳回類似下列範例的訊息：</block>
+  <block id="59ebc5b02a27c73bb9da66bc7fe3f8f3" category="paragraph">VLAN 是透過實體連接埠配置的。如果實體連接埠發生變化，則需要在後續流程中重新建立 VLAN。</block>
+  <block id="5594e326bf76574225ea219e64d52ee3" category="paragraph">如果 SVM 既未設定 iSCSI 也未設定 FC，則該命令會顯示類似下列範例的訊息：</block>
+  <block id="34b0d13a441af97ab13116c57d6146e4" category="paragraph">如果為 SVM 設定了 iSCSI 或 FC，則該命令會顯示類似於下列範例的訊息：</block>
+  <block id="4b7c1c849e30294683fd486efc313ffa" category="paragraph">部分或全部 Aggregate 已從 node1 重新配置至 node2，且 HA 仍處於啟用狀態。Node2 接管 node1 的根磁碟區以及任何未重新配置的非根 Aggregate。</block>
+  <block id="ad373844ce3c06e807593d84417e3dd0" category="paragraph">重新配置的 Aggregate 所有權看起來與接管的非根 Aggregate 所有權相同，因為主擁有者並未變更。當 node1 進入<block ref="c673eaa802c21237c070d647bd91b35b" prefix=" " category="inline-code"></block>時，node2 會交還所有 node1 的非根 Aggregate。</block>
+  <block id="49cd3d8c7b93ebc80c7fee6f44bfd38e" category="paragraph">Node1 接管 node2 的所有 Aggregate，以及它本身重新配置到 node2 的所有 Aggregate。當 node2 進入<block ref="6975ddc7f024555d2a823b8031b5588a" prefix=" " category="inline-code"></block>狀態時，node1 會歸還 node2 的所有 Aggregate。</block>
+  <block id="602e5230e684bb79d8fbe217c5dd14c2" category="paragraph">節點 2 啟動時，所有 Aggregate 都會發生用戶端中斷。</block>
+  <block id="26abc307a4d33fef595bc0e02c4b9e6b" category="paragraph">由於 HA 已停用，因此 node2 當機後 node3 不會接管。</block>
+  <block id="99c1e1305958ee7bb66c103b760347dc" category="paragraph">Node2 已將其部分或全部 Aggregate 重新配置至 node3，node3 會從重新配置的 Aggregate 提供資料。HA 已停用。</block>
+  <block id="4040f7dd4b3fc54507d09c0a0a296955" category="paragraph">未重新配置的 Aggregate 會發生用戶端中斷。</block>
+  <block id="566881c27fccbc0d817d51e1703f417b" category="paragraph">如果節點 3 在節點 2 將 Aggregate 重新配置至節點 3 時當機，節點 2 會中止任何剩餘 Aggregate 的重新配置。</block>
+  <block id="28752c0fc2baebc6d94b970401d5fe68" category="paragraph">所有 Aggregate 都發生用戶端中斷。</block>
+  <block id="57d2802cf551e21da1e974d8a8741a28" category="paragraph">稍後在程序中需要將廣播網域對應到新控制器上的新連接埠。</block>
+  <block id="a11aa8a224ce82f4ef1a11f2f44f5bc7" category="admonition">您的系統可能沒有叢集間 LIF。您在節點配對的其中一個節點上只有一個叢集管理 LIF。叢集管理 LIF 會顯示在 _Record node1 port information_ 的 <block ref="bd32fdbc5854e6c20c0a8915777bab3f" category="inline-link-macro-rx"></block> 範例輸出中。</block>
+  <block id="40194f2aeff904de09d51436151057d2" category="paragraph">稍後在程序中需要將廣播網域對應到新控制器上的連接埠。</block>
+  <block id="50fb25167db32a806a0c8c02494f7190" category="paragraph">輸出會在 Aggregate 重新配置後顯示<block ref="f92965e2c8a7afb3c1b9a5c09a263636" prefix=" " category="inline-code"></block>。</block>
+  <block id="ed8bfb3253104375ec0642dce3bccf6d" category="list-text">node2 完全關閉後，將其從機箱或機架中移除。</block>
+  <block id="411dfa6bc53c22308a41a3f1849b5c3a" category="paragraph">LUN 和磁碟區仍然實體託管在舊節點上。由於 LUN 僅在舊節點介面上報告，因此主機僅顯示經過舊節點的路徑。若要查看此資訊，請在主機上執行<block ref="41dc2c94e82e1c56ba876085acf5a974" prefix=" " category="inline-code"></block>和<block ref="2fbf63deae0938cf669e6ca451f1eb2c" prefix=" " category="inline-code"></block>命令並檢查命令輸出。</block>
+  <block id="6f01498521faf671f677f89ba441925e" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="2b3488108a6ddda930bf6711a4300770" category="inline-xref-macro-rx"></block></block>
+  <block id="0e06d13e2d65b35ca42f998cbc126ebd" category="paragraph">新的 Aggregate 和要從中移動 Volume 的舊 Aggregate 必須位於同一個 SVM 中。</block>
+  <block id="3e03b405a17a83655c70771c85aaa185" category="list-text">在執行可達性修復時， ONTAP 會嘗試將連接埠放置在正確的廣播網域中。但是，如果 ONTAP 無法確定連接埠的可達性，且該連接埠不屬於任何現有廣播網域， ONTAP 會為這些連接埠建立新的廣播網域。如有需要，您可以刪除新建立的廣播網域，前提是其所有成員連接埠都將成為介面群組的成員連接埠。刪除廣播網域：</block>
+  <block id="bffc97dc6c8e27da5713e9ba8af41c2d" category="list-text">從 ONTAP 9.8 開始，如果連接埠在網路連接埠可連線性修復程序期間於廣播網域之間移動，ONTAP 會自動修改 LIF 的主連接埠。如果 LIF 的主連接埠已移至另一個節點或未指派，該 LIF 會顯示為已移出的 LIF。還原主連接埠已不存在或已重新配置至另一個節點之已移出 LIF 的主連接埠。</block>
+  <block id="88ed7e4be0060dde065e65a459a7fb9a" category="list-text">在開機功能表提示字元處、輸入<block ref="3de20f8f6d054d551e879fef0f0fc83c" prefix=" " category="inline-code"></block>、然後選取 Enter。</block>
+  <block id="c4017752500a1a0f3f1daf071a747566" category="paragraph">您會看到以下輸出：</block>
+  <block id="9e6fa3b5f97c14dc73b06e5efc4420fb" category="list-text">在開機功能表提示字元處、輸入<block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block>然後選取 Enter。</block>
+  <block id="a31bc29ef9f2f4d576b6917297c8e450" category="paragraph">系統會啟動 <block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block> 程序並重新開機。程序完成後，系統會返回開機功能表。</block>
+  <block id="20444be1360ba91932463ecc5bafa49b" category="list-text">從開機功能表中輸入 8 以重新開機節點，並在 AUTOBOOT 期間輸入 Ctrl-C 以在 LOADER 提示字元處停止節點。</block>
+  <block id="28d151ba5b3732f42fdb685479b7207f" category="list-text">開啟 node3 的電源、然後立即在主控台終端機按下 Ctrl-C 以存取 LOADER 提示。</block>
+  <block id="3463c449044d42906a144a54eb1cd776" category="paragraph">輸入使用者名稱 / 密碼（如適用），或選取 Enter 以繼續。</block>
+  <block id="7a765268cfc3437e7f0bcf4242b7624c" category="doc">完成升級準備工作</block>
+  <block id="cc47e3f1d96f2e7af82fc969bd8e34a0" category="paragraph">您必須驗證 node1 上的實體連接埠是否與 node3 上的實體連接埠正確對應。這樣才能確保升級後 node3 能夠與叢集中的其他節點以及網路進行通訊。</block>
+  <block id="2ba961153ef1850e478e2c6903ff7bb8" category="paragraph">連接埠設定可能因節點型號而異。您必須確保原始節點上的連接埠和 LIF 組態與新節點的計畫用途和組態相容。這是因為新節點啟動時會重播相同的組態，這表示當您啟動 node3 時，ONTAP 會嘗試在與 node1 相同的連接埠上託管 LIF。</block>
+  <block id="e0b9947c29098928c9617201ae7f1064" category="paragraph">因此，如果 node1 上的實體連接埠與 node3 上的實體連接埠不直接對應，則需要進行軟體組態變更，才能在開機後還原叢集、管理和網路連線。此外，如果 node1 上的叢集連接埠與 node3 上的叢集連接埠不直接對應，則在 node3 重新開機後，除非您變更軟體組態以將叢集 LIF 託管在正確的實體連接埠上，否則 node3 可能不會自動重新加入仲裁。</block>
+  <block id="e7d0237c90a160bdb7789bd2afbf2099" category="paragraph">您必須驗證 node2 上的實體連接埠是否與 node4 上的實體連接埠正確對應。這樣才能確保升級後 node4 能夠與叢集中的其他節點以及網路進行通訊。</block>
+  <block id="1c115fe2ef612431d145b6cacea27f3d" category="paragraph">連接埠設定可能因節點型號而異。您必須確保原始節點的連接埠和 LIF 組態與您計劃在新節點上的組態相容。這是因為新節點在開機時會重播相同的組態，也就是說，當您啟動 node4 時，Data ONTAP 會嘗試在與 node2 相同的連接埠上託管 LIF。</block>
+  <block id="3e1d85c8c0fff25df0d9b4dc860bc611" category="paragraph">因此，如果節點 2 上的實體連接埠與節點 4 上的實體連接埠不直接對應，則需要進行軟體組態變更才能在開機後還原叢集、管理和網路連線。此外，如果節點 2 上的叢集連接埠與節點 4 上的叢集連接埠不直接對應，則節點 4 在重新開機後可能不會自動重新加入仲裁，直到進行軟體組態變更，將叢集 LIF 託管在正確的實體連接埠上。</block>
+  <block id="06a0d7527ab5e7dfc99942566a9d749a" category="paragraph">遠端 LIF 在升級過程中處理到 SAN LUN 的流量。升級期間，無需移動 SAN LIF 以確保叢集或服務的正常運作。除非需要將 SAN LIF 對應到新連接埠，否則不會移動它們。在節點 3 上線後，您需要驗證 LIF 是否運作正常並位於正確的連接埠上。</block>
+  <block id="9ef1f1380fdbcbd9f506411bccfeaba2" category="list-text">選擇 <block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block> 後，您將看到以下輸出：</block>
+  <block id="1117d5a6b3e2106536dbc2c2f12ef32b" category="list-text">如果 node4 有 UTA/UTA2 卡或 UTA/UTA2 內建連接埠，請前往 <block ref="11614003aceee2cc2e8ca21f25dd5eb8" category="inline-xref-macro-rx"></block>。</block>
+  <block id="cf5ba9457ec4fac04510d251bb992722" category="list-text">如果 node3 有 UTA/UTA2 卡或 UTA/UTA2 板載連接埠，請前往 <block ref="d73a9d5b309b0cab3f8f8afd4147c340" category="inline-xref-macro-rx"></block>。</block>
+  <block id="98601f4df2232619aab6d3861bfe1f57" category="list-text">如果 node3 沒有 UTA/UTA2 卡或 UTA/UTA2 內建連接埠，請跳過 <block ref="d73a9d5b309b0cab3f8f8afd4147c340" category="inline-xref-macro-rx"></block> 並前往 <block ref="ac081fdc0801ea4a4f23475143090cfa" category="inline-link-macro-rx"></block>。</block>
+  <block id="530c1deb597a838537c5b44897685341" category="paragraph">在此程序中，由於 node3 加入仲裁，作業會暫停。</block>
+  <block id="139229b7343b0760b8419fa37a9217d5" category="paragraph">如果您在升級的系統上使用 NetApp Aggregate Encryption（NAE）或 NetApp Volume Encryption（NVE）來加密磁碟區，則必須將加密組態同步到新節點。如果您未還原 key-manager，則在使用 ARL 將 node1 彙總從 node2 重新配置到 node3 時，加密磁碟區將會離線。</block>
+  <block id="f545af3f179f57293ecca94caf3f94a3" category="paragraph">在此程序中，由於 node4 加入仲裁，作業會暫停。</block>
+  <block id="4c85426e158277687beba6eb28b12ba8" category="admonition">現階段，MetroCluster 配置尚未處於正常狀態，您可能需要解決一些錯誤。請參閱 <block ref="14c0e32a98a31f9fd4a16b635b2f7ebd" category="inline-link-macro-rx"></block>。</block>
+  <block id="997cb8f90aeffbb7e2583908183f089c" category="paragraph">如果您在升級的系統上使用 NetApp Aggregate Encryption (NAE) 或 NetApp Volume Encryption (NVE) 來加密磁碟區，則必須將加密組態同步到新節點。如果您未還原金鑰管理程式，則在使用 ARL 將 node2 Aggregate 從 node3 重新配置到 node4 時，加密磁碟區將會離線。</block>
+  <block id="137c0aaadbbd826fbdcfd8ef47648f5f" category="inline-link-macro">驗證切換、修復和切換回復</block>
+  <block id="16d32339ecf3d32afc070cefb2e0c472" category="paragraph">檢查 MetroCluster 組態錯誤後，<block ref="9ba787b50160272c5de029a8cab35fd8" category="inline-link-macro-rx"></block>。</block>
+  <block id="055787462397c2421f4bbab676966060" category="paragraph">了解 ONTAP 授權以及如何使用 Onboard Key Manager (OKM) 管理儲存加密。您也可以選擇停止 SnapMirror 關係。</block>
+  <block id="157943f216f3298a7dc6bad915d2f1bd" category="inline-link-macro">將節點 1 擁有的非根 Aggregate 和 NAS 資料 LIF 重新配置到節點 2</block>
+  <block id="033e7e20d94dad4d1bc4f13adb8cf147" category="paragraph">準備升級後， <block ref="1f445204fa369259f97f4d8ab99b6ee4" category="inline-link-macro-rx"></block>。</block>
+  <block id="4c925fa03b2e8f5cf9086149a2180055" category="inline-link-macro">所需工具和說明文件</block>
+  <block id="6f64c918af11305f6ce8336b8fb2c163" category="paragraph">決定是否使用此 ARL 程序後，請了解 <block ref="ea05fdba249737f32c9ba999c1577fb0" category="inline-link-macro-rx"></block>。</block>
+  <block id="9e7c6b59bf5d2937d224029894d7e7e0" category="inline-link-macro">恢復 SnapMirror 作業</block>
+  <block id="95975ababce6fe88a656018f8f077380" category="paragraph">舊系統退役後，<block ref="256cc1ccdfb85adc7b2bcaf56dbc7dbf" category="inline-link-macro-rx"></block>。</block>
+  <block id="dad162302e34d4110f7541806902058d" category="inline-link-macro">在新的控制器模組上設定 Storage Encryption</block>
+  <block id="5d29c1e96cb905d25a53131ce17b66dd" category="paragraph">確認新控制器設定正確後，<block ref="d9d7154c5d0b32089affc1ad5b9d9168" category="inline-link-macro-rx"></block>。</block>
+  <block id="251b7c402d2cd52eb814081be1eaaae9" category="inline-link-macro">驗證 MetroCluster 組態的健全狀況</block>
+  <block id="ebd5c26e40de1a7df5226d95928d1759" category="paragraph">在檢閱使用 ARL 升級控制器的準則後<block ref="d809e6da118c2012cb35d8e2547d93af" category="inline-link-macro-rx"></block>。</block>
+  <block id="525d547aefd6c7ea5c7d140b4432bc41" category="inline-link-macro">決定是否使用此 ARL 程序</block>
+  <block id="f60442a797ecf614d09c447a5b8396e8" category="paragraph">在了解此 ARL 程序後<block ref="4cb282e8f37048368df4a5bd78558727" category="inline-link-macro-rx"></block>。</block>
+  <block id="8dc7cb99b78d5a8a218376dee4d01c44" category="paragraph">輸入您先前在程序中記錄的通關密語和備份資訊。請參閱 <block ref="d901254883677828d7cb21d703be5c33" category="inline-link-macro-rx"></block>。</block>
+  <block id="2cd4658df4167e76c25c0700f908744e" category="inline-link-macro">確認新控制器已正確設定</block>
+  <block id="4d2c9c6e0dfd43c1c9e6b2d300ccc2c6" category="paragraph">使用 KMIP 伺服器管理驗證之後<block ref="a028604080931f0dd02d49f3007af15c" category="inline-link-macro-rx"></block>。</block>
+  <block id="e024639740827e00e0b74a4e029b9d57" category="inline-link-macro">將非根 Aggregate 和 NAS 資料 LIF 從節點 2 重新配置到節點 3</block>
+  <block id="72a311271ba850468e93a5ab8789d3f9" category="paragraph">將節點 1 擁有的非根 Aggregate 和 NAS 資料 LIF 從節點 2 移至節點 3 之後，<block ref="e04167303bdd5a7fd666024b6e44568e" category="inline-link-macro-rx"></block></block>
+  <block id="82374eb5c3aebbcf208e789101f401dc" category="inline-link-macro">使用 KMIP 伺服器管理驗證</block>
+  <block id="6be9cf0b31c91eebb25ebdfc014b080f" category="paragraph">將節點 2 擁有的非根 Aggregate 和 NAS 資料 LIF 從節點 3 移至節點 4 之後，<block ref="01b837168d3e680191080c5eb96965f3" category="inline-link-macro-rx"></block></block>
+  <block id="0f5dabdb9442784cdb183f8e649474fa" category="inline-link-macro">準備節點以進行升級</block>
+  <block id="b92b6534ff8ca5102d09cf59c453162f" category="paragraph">在了解 ARL 升級順序之後，<block ref="bb51c4c0cf1a3d19fab605a0eabe8f83" category="inline-link-macro-rx"></block>。</block>
+  <block id="84eeecd51fb682e4a938cb4c6674e155" category="inline-link-macro">安裝並啟動 node3</block>
+  <block id="39f5a65f61bc131ed72283dd7d3594da" category="paragraph">準備好網路開機後，<block ref="71c2250b25b8a8fd388e9f8e11a1a60f" category="inline-link-macro-rx"></block>。</block>
+  <block id="f7683bc92a065dcbe8caa73a1668a026" category="section-title">步驟 1：準備節點</block>
+  <block id="24e5accdf15d6e28724fa9b86d8b38b2" category="paragraph">啟動控制器更換程序並執行預先檢查。如有必要，請判斷使用中的自我加密磁碟機類型。</block>
+  <block id="5fe470f319a3c98f7bb6c47bbc88ce77" category="inline-link-macro">完成升級準備工作</block>
+  <block id="61c1c20926e54a6f20ea373156c1ea01" category="paragraph">準備好節點後，<block ref="2382d0aa3dd7cb3946b672191f9ae7ba" category="inline-link-macro-rx"></block>。</block>
+  <block id="1bb8913517cd8b266b53dd368dfa5267" category="inline-link-macro">驗證 node3 安裝</block>
+  <block id="9e581eae9d0ea32bfcc0c81ff48d9915" category="paragraph">將節點 1 磁碟重新指派給節點 3 後，<block ref="45eb3286917a07c1354ebce8b9c5efdf" category="inline-link-macro-rx"></block>。</block>
+  <block id="ea7a5ea82c3b7f26e36e122dec1a06cf" category="admonition">在上面的主控台輸出範例中，如果系統使用進階磁碟分割（ADP）磁碟，ONTAP 會提示您輸入合作夥伴節點名稱。</block>
+  <block id="730dcfa39d68db02169dcbaee270c928" category="inline-link-macro">驗證 node4 安裝</block>
+  <block id="7ed0b4334ea399400b81e6f61a8af3c9" category="paragraph">將節點 2 的磁碟重新指派給節點 4 後，<block ref="83e02e4e53434407c31389308d77fbfb" category="inline-link-macro-rx"></block>。</block>
+  <block id="061f38b32d2bf44cbcc56fee71ae61df" category="inline-link-macro">退役 node1</block>
+  <block id="fe816bef8adcfdd8b33bbdbd86393b12" category="paragraph">在重新安置失敗或被否決的 aggregate 之後，<block ref="bb6e7fc639cbf9bc879f06671cdfd191" category="inline-link-macro-rx"></block>。</block>
+  <block id="5d1c68ef9265ed0c844b72fad4759bac" category="inline-link-macro">退役 node2</block>
+  <block id="2afa99c858b467f4b50c5d7b3f20bb53" category="paragraph">在重新安置失敗或被否決的 aggregate 之後，<block ref="5ae9ac7f71e57ea0c131002219be4206" category="inline-link-macro-rx"></block>。</block>
+  <block id="6e1072943833fd62e19cb9fba4bbb540" category="inline-link-macro">重新配置失敗或被否決的 Aggregate</block>
+  <block id="26d965e3b08f7457d39ec57412e49e57" category="paragraph">將節點 1 擁有的非根 Aggregate 和 NAS 資料 LIF 重新配置到節點 2 後<block ref="e83c66e70a4f5dc14017a27839fe5af6" category="inline-link-macro-rx"></block>。</block>
+  <block id="8e71a747ab1c869c16183e2251515479" category="paragraph">將非根 Aggregate 和 NAS 資料 LIF 從節點 2 重新配置到節點 3 後，<block ref="e22480b6b911ba5f1e0bad3b5463e8cb" category="inline-link-macro-rx"></block></block>
+  <block id="973d03605d177fe5411b7abaec858d26" category="paragraph">在查閱了所需的工具和文件之後，了解一下 <block ref="07bd1ba3b368537f0ce8ec59dd45af10" category="inline-link-macro-rx"></block>。</block>
+  <block id="0c728d609364292ca3a75f17e54986cc" category="inline-link-macro">將節點 2 擁有的非根 Aggregate 和 NAS 資料 LIF 從節點 3 移至節點 4</block>
+  <block id="4a17d0cb8a11e8e7354e318bad05e030" category="paragraph">在 node4 上還原金鑰管理程式組態之後<block ref="46ebfd574f1ab2166ab379a6fab6f520" category="inline-link-macro-rx"></block>。</block>
+  <block id="0480ab557f30569f6b6aa2bd73a9383f" category="inline-link-macro">將節點 1 擁有的非根 Aggregate 和 NAS 資料 LIF 從節點 2 移至節點 3</block>
+  <block id="18db1c3a320e69138a97cb38968f2d6f" category="paragraph">在 node3 上還原金鑰管理程式組態之後<block ref="5580318cbbb43e4400d5ca001358843f" category="inline-link-macro-rx"></block>。</block>
+  <block id="ffe98a7e51250b004e016703d4c9d0e0" category="inline-link-macro">準備進行網路開機</block>
+  <block id="dbb5fdc91a4a09d313a0a27e0360d55f" category="paragraph">node1 退役後，<block ref="a2e38e10a2ba83414be3dbb4ebc0b887" category="inline-link-macro-rx"></block>。</block>
+  <block id="74331398a8757b7cc406da26919e19c4" category="inline-link-macro">安裝並啟動 node4</block>
+  <block id="8abdf2c651dceeeb0de422c2f413c230" category="paragraph">在節點 2 退役後，<block ref="176336b2edd83c6a141404d82dcc6d8a" category="inline-link-macro-rx"></block>。</block>
+  <block id="4e2c85a0fe55d9c264c72006ad9ed6f5" category="cell">前往 <block ref="d73a9d5b309b0cab3f8f8afd4147c340" category="inline-xref-macro-rx"></block></block>
+  <block id="681d247a63b640d7521006e17b005d3d" category="inline-link-macro">停用舊系統</block>
+  <block id="809d147a41f4059033692b2ecec4cbbe" category="paragraph">在新的控制器模組上設定 NetApp Volume 或 Aggregate Encryption 後，<block ref="019c101a13c9665c8684211e3d1d66a6" category="inline-link-macro-rx"></block>。</block>
+  <block id="2fe394dd741a09c09ed3376cb16de578" category="inline-link-macro">在新控制器模組上設定 NetApp Volume 或 Aggregate Encryption</block>
+  <block id="1eb1e858e5dd53700889c69fd94325da" category="paragraph">在新控制器模組上設定儲存加密後，<block ref="6aa34c862f22128dcf8570a13a49e8db" category="inline-link-macro-rx"></block>。</block>
+  <block id="5ba8bbd4063867ea191f5ab540e318fa" category="inline-link-macro">檢查 MetroCluster 組態錯誤</block>
+  <block id="226b0bfb27e61c6f804e9d41feb78c97" category="paragraph">驗證 MetroCluster 組態的健全狀況之後，<block ref="ab5b8ed838381ae43d6181c76b88a419" category="inline-link-macro-rx"></block>。</block>
+  <block id="3aa7f1dce42628a63ec16e47658dbb2a" category="paragraph">您必須驗證 node1 的實體連接埠是否正確對應到 node3 的實體連接埠。這樣才能確保升級後 node3 能夠與叢集中的其他節點以及網路進行通訊。</block>
+  <block id="41715aa8d438bacf6c2e9b24a1585a1d" category="paragraph">實體連接埠配置可能因節點機型而異。新節點開機時，ONTAP 會嘗試判斷哪些連接埠應裝載叢集 LIF，以便自動進入仲裁。</block>
+  <block id="f71d375fc8b71a6d1a22b42c452bfd23" category="paragraph">如果 node1 上的實體連接埠無法直接對應到 node3 上的實體連接埠，則必須使用後續章節 <block ref="62b79e332517d9838032a6122e757287" category="inline-xref-macro-rx"></block> 來修復網路連線。</block>
+  <block id="7d1e4fa6f2adef774b0185a785ce1fd5" category="section-title">步驟 1：驗證 node3 是否在仲裁中</block>
+  <block id="8117fa4ae9f619ee5e91ed1e1dc46872" category="paragraph">確認 node3 已達法定人數。然後，繼續執行控制器更換作業。</block>
+  <block id="1d0386f95117f762b58ead302c968339" category="list-text">控制器更換會暫停以進行介入，並顯示以下訊息：</block>
+  <block id="08a83cf2cdf7e5b4d0c91e79038a35b0" category="section-title">步驟 2：還原 node3 上的網路組態</block>
+  <block id="b1f1e1a34d6b9f77e41c5f87478eaf7d" category="paragraph">在執行可達性修復時，ONTAP 會嘗試將連接埠放置在正確的廣播網域中。但是，如果 ONTAP 無法確定連接埠的可達性，且該連接埠不屬於任何現有廣播網域，ONTAP 會為這些連接埠建立新的廣播網域。</block>
+  <block id="ea26252d98472cb7778208e7d00483cd" category="inline-link-macro">在節點 3 上還原金鑰管理程式組態</block>
+  <block id="a3079e06f08772fef7fe8443a9d3d867" category="paragraph">驗證 node3 安裝後，<block ref="12b731f439737059d01b9804ede614f7" category="inline-link-macro-rx"></block>。</block>
+  <block id="acfac6e9036b941e0a155215468acdd4" category="paragraph">您必須驗證 node2 的實體連接埠是否正確對應到 node4 的實體連接埠。這樣才能確保升級後 node4 能夠與叢集中的其他節點以及網路進行通訊。</block>
+  <block id="6014b1dc31c06c81a4fabbec42ec35b5" category="paragraph">如果 node2 上的實體連接埠沒有直接對應到 node4 上的實體連接埠，則必須使用後續章節<block ref="f1af21a5b3f39148d23f7c08ae1da924" category="inline-xref-macro-rx"></block>來修復網路連線。</block>
+  <block id="1528a4f5b3472399ffe2586a4abeabd1" category="section-title">步驟 1：驗證 node4 是否在仲裁中</block>
+  <block id="006866a00333f6a52c34da6451fa5825" category="paragraph">確認 node4 已達法定人數。然後，繼續執行控制器更換作業。</block>
+  <block id="64d5cdb76e80b2755e21d22c49d357a1" category="section-title">步驟 2：還原 node4 上的網路組態</block>
+  <block id="bf2c733b37ecd1f513c4ec5dc05cf261" category="inline-link-macro">在節點 4 上還原金鑰管理程式組態</block>
+  <block id="77a0e14a7d4c3c7bf3064ce8106a444e" category="paragraph">驗證 node4 安裝後，<block ref="bb77e496f171fb7be9e8928884e29bfe" category="inline-link-macro-rx"></block>。</block>
+  <block id="5682d75e83997e14f1336c23dd7de7f2" category="inline-link-macro">瞭解 ARL 升級順序</block>
+  <block id="8e9f25312531fb9d50be07a0308a5252" category="paragraph">在驗證切換、修復和切換回之後，<block ref="a00b16a3338adc91b075f46fcd9aeafa" category="inline-link-macro-rx"></block>。</block>
+  <block id="1aa043e30e364bde8c5110fe5b4265fb" category="inline-link-macro">瞭解所需的工具和文件</block>
+  <block id="c3618095b89e84d222da82b52db0a3f4" category="paragraph">在決定使用此 ARL 程序之後，<block ref="ab4f1a409ba2fb30567779897a44402b" category="inline-link-macro-rx"></block>。</block>
+  <block id="eb225aafae3d9c646984b1d1ea701d88" category="paragraph">在查閱使用 ARL 升級控制器的準則後<block ref="a00b16a3338adc91b075f46fcd9aeafa" category="inline-link-macro-rx"></block>。</block>
+  <block id="addb9e70976c2f94b8ccfc3736a31888" category="list-title">重要資訊</block>
+  <block id="1e4f403f31a03407a5c52805f195e7d2" category="paragraph-title">自動化控制器升級程序</block>
+  <block id="78b68f6899de538d4ff2cd6bfa6942ee" category="paragraph">在控制器升級期間、現有控制器會由執行較新或更強大平台的另一個控制器取代。本內容提供部分自動化程序的步驟、該程序利用自動網路連接埠連線能力檢查、進一步簡化控制器升級體驗。</block>
+  <block id="672faaff64510eaf647bcdb6818b5a04" category="inline-link-macro">決定是否使用此程序</block>
+  <block id="07b58db0c29dcd8f0b6afb9a7be52dd7" category="paragraph">在了解 ARL 升級程序之後，<block ref="f51e9ee3ffe898c19c99211a46cb1d18" category="inline-link-macro-rx"></block>。</block>
+  <block id="7e677e14dfecc784305bd5fad45453cf" category="list-text">在自動開機期間輸入 <block ref="76be6883bcf9e8a6aed3a347ac20e41f" prefix=" " category="inline-code"></block> 以在 <block ref="b4e58ddfd75fec23180551a08c0e87c6" prefix=" " category="inline-code"></block> 提示字元處停止節點。</block>
+  <block id="d9e344fdadc3a77980122766fbdb8e50" category="paragraph">安裝並啟動 node3 後，<block ref="45eb3286917a07c1354ebce8b9c5efdf" category="inline-link-macro-rx"></block>。</block>
+  <block id="ef7e16861efaf925624bb9f60847ed83" category="list-text">[[auto_check_4_step27]]在 LOADER 提示字元下，啟動節點：</block>
+  <block id="7fd1c5f4075244d10c847c194b936f11" category="paragraph">安裝並啟動 node4 後，<block ref="83e02e4e53434407c31389308d77fbfb" category="inline-link-macro-rx"></block>。</block>
+  <block id="46d64c0da9d7c583a3937938c612b090" category="paragraph">控制器更換程序首先會進行一系列預先檢查。您也會收集原始節點的相關資訊、以便稍後在程序中使用。如果有任何預先檢查失敗、您必須先修正 Aggregate 擁有權、才能繼續進行升級。</block>
+  <block id="ed58c9697a8e33ce6a4f18f5ef74a4b6" category="paragraph">您會看到類似以下範例的輸出。此輸出顯示在叢集上執行的 ONTAP 版本：</block>
+  <block id="c4679b58bfdf709b7a7799515ded1dde" category="paragraph">將失敗或被否決的 Aggregate 重新配置到 node2 後，<block ref="bb6e7fc639cbf9bc879f06671cdfd191" category="inline-link-macro-rx"></block>。</block>
+  <block id="0b1906151b2feabc8c2440749c00a353" category="paragraph">將失敗或被否決的 Aggregate 重新配置到 node3 後<block ref="5ae9ac7f71e57ea0c131002219be4206" category="inline-link-macro-rx"></block>。</block>
+  <block id="6ff036e76ab5287cf0238b642977aa5e" category="inline-link-macro">將失敗或被否決的 Aggregate 重新配置到 node2</block>
+  <block id="c3117ad27404bc6695f39293407a9561" category="paragraph">將節點 1 擁有的非根 Aggregate 和 NAS 資料 LIF 重新配置到節點 2 後<block ref="d8f5114551d54b87577d678e4ac5e83c" category="inline-link-macro-rx"></block>。</block>
+  <block id="dc5948b02ce2d46a93d2a292e6058bbb" category="inline-link-macro">將失敗或被否決的 Aggregate 重新配置到 node3</block>
+  <block id="ec8dc47d70b48e30d67e1ebed4d27ca6" category="paragraph">將非根 Aggregate 和 NAS 資料 LIF 從節點 2 重新配置到節點 3 後，<block ref="9e92966a62d6e77fe617e1a141d8964b" category="inline-link-macro-rx"></block></block>
+  <block id="78fa6ab602bcb336db83d88224bf9f26" category="inline-link-macro">瞭解使用 ARL 升級控制器的準則</block>
+  <block id="5af56b78c6a328cc2a7755b21c0e6408" category="paragraph">在審查了所需的工具和文件之後，<block ref="e5c51a5995464780ee628e096c95011a" category="inline-link-macro-rx"></block>。</block>
+  <block id="a7c43de8fa50000bcb5b7edb5714d09b" category="paragraph">在節點 3 上還原金鑰管理程式組態之後<block ref="5580318cbbb43e4400d5ca001358843f" category="inline-link-macro-rx"></block>。</block>
+  <block id="3ba2638b2bc60a70fe53099552241598" category="paragraph">如果 node1 上的實體連接埠無法直接對應到 node3 上的實體連接埠，則必須使用後續章節<block ref="9d614c1b2515259272100997be25c5c7" category="inline-xref-macro-rx"></block>來修復網路連線。</block>
+  <block id="1e53ac7a821373bfad5b73ffb93395fd" category="paragraph">在執行可達性修復時，ONTAP 會嘗試將連接埠放置在正確的廣播網域中。但是，如果 ONTAP 無法確定連接埠的可達性，且該連接埠不屬於任何現有廣播網域，ONTAP 會為這些連接埠建立新的廣播網域。</block>
+  <block id="2306c9d9546f8944f3f4e43750a85424" category="inline-link-macro">在節點 3 上還原金鑰管理程式組態</block>
+  <block id="b51072e5a004b741ee17acbf2c7b0f87" category="paragraph">驗證 node3 安裝後，<block ref="88435367b162a49ef90e35951a26cd8f" category="inline-link-macro-rx"></block>。</block>
+  <block id="baaa610935f21b7883aa336cc0c0176c" category="paragraph">如果 node2 上的實體連接埠沒有直接對應到 node4 上的實體連接埠，則必須使用後續章節<block ref="8debf6be2c5ff94fec9cb6a4ea98a974" category="inline-xref-macro-rx"></block>來修復網路連線。</block>
+  <block id="593ff55076c887ac89af72bf074a5217" category="paragraph">確認 node4 處於仲裁狀態。然後，繼續執行控制器更換作業。</block>
+  <block id="43e016f58d9341cacd85fd1c7f92d757" category="inline-link-macro">在節點 4 上還原金鑰管理程式組態</block>
+  <block id="db1c3f2ad5cbb870b7ee615b839bde67" category="paragraph">驗證 node4 安裝後，<block ref="a70647e5e39cff0079e168322a70eacc" category="inline-link-macro-rx"></block>。</block>
+  <block id="a0ae725f60cb77773744998f1d7ecdfe" category="paragraph">當 node2 被替換時、aggr_node_1 會以 node1 作為其主節點而非 node2 上線。</block>
+  <block id="05018c5346855026a9f39e4e1f1279e1" category="paragraph">輸入您先前在程序中記錄的通關密語和備份資訊。請參閱 <block ref="425cff12361d623da764d7047ed50abc" category="inline-link-macro-rx"></block>。</block>
+  <block id="5161be552068cb646a3b47d343229f00" category="inline-link-macro">驗證 node1 安裝</block>
+  <block id="693c4c97a75c818b6d562a11910bf2d0" category="paragraph">使用替換系統模組啟動 node1 後，<block ref="4711bf05866ad42dbc22b3a789e820f0" category="inline-link-macro-rx"></block>。</block>
+  <block id="4cb57026298b2973eef8308592cb9793" category="inline-link-macro">驗證 node2 安裝</block>
+  <block id="3187139962aa018250593fe2a8cca57f" category="paragraph">使用替換系統模組啟動 node2 後，<block ref="1a8dd2cba07745aa906b3f138441534d" category="inline-link-macro-rx"></block></block>
+  <block id="7dfaa872331fb675611cf56a8bd6710d" category="inline-link-macro">使用替換系統模組啟動 node1</block>
+  <block id="61af19b62cbf99be3cf1fbb04e4f764d" category="paragraph">在為共享叢集高可用性和儲存連接節點 1 之後，<block ref="3982dccb157ff62e033bb83a3da1f1ce" category="inline-link-macro-rx"></block></block>
+  <block id="90db987221dd5f8159ecd4f774546d17" category="inline-link-macro">使用替換系統模組啟動 node2</block>
+  <block id="29fd7a79054dc11cb795dd5a0bcc3618" category="paragraph">在為共享叢集 HA 和儲存設備連接 node2 之後，<block ref="09f8b0baa34cc3318640dea3d0fc0a08" category="inline-link-macro-rx"></block>。</block>
+  <block id="4ff3a20772d8d7adf38ea1a25699b898" category="paragraph">有關 ONTAP 授權的詳細資訊，請參閱<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>以連結至《系統管理參考》。</block>
+  <block id="9de6a6f6ea48099b1305eeb9301f7679" category="paragraph">準備升級後，<block ref="0d08e260c4bde2d13bb947f0a9e09267" category="inline-link-macro-rx"></block>。</block>
+  <block id="8f77a5ae2857206a750f5c0ad3144dba" category="paragraph">確認新控制器設定正確後，<block ref="3971d535deb9d86527af888c19f530a0" category="inline-link-macro-rx"></block>。</block>
+  <block id="8d20c5aabf9dd75444b513dba9105128" category="list-text">如果您偏好使用不同的方法來升級控制器硬體，並且願意進行磁碟區移動，請參閱<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>以連結至_透過移動磁碟區或儲存設備進行升級_。</block>
+  <block id="e7832b913f3afc75dba2c326b1f78e53" category="paragraph">請參閱<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>以連結至 _ONTAP 9 文件_。</block>
+  <block id="a2bbeda24395d719b706b64dfe948579" category="paragraph">在決定使用此 ARL 程序之後，<block ref="91151593e881bd87765e26c1297041b3" category="inline-link-macro-rx"></block>。</block>
+  <block id="507d933d47a6537d92195e190c11484a" category="list-text">請點選 <block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block> 連結造訪 _NetApp Support Site_ 並登入。</block>
+  <block id="9f92af96b5d3b869fcf7eab42bd5cc08" category="paragraph">舊系統退役後，<block ref="f4079db79b5429ce771ea3a34eb1e8f9" category="inline-link-macro-rx"></block>。</block>
+  <block id="e7b8e0fba9c9b33b762bd4e7d2cb39c1" category="paragraph">在審閱控制器升級準則之後，<block ref="7eb250b820c3db26ee334554a9610b65" category="inline-link-macro-rx"></block>。</block>
+  <block id="d207b9e3649fb5a2bf5179c3d43e7c90" category="paragraph">在了解 ARL 升級程序之後，<block ref="e6e29353cbe851715b8a8c7a1fe5542b" category="inline-link-macro-rx"></block>。</block>
+  <block id="465bff4c631aabaa2874f502d1454a91" category="paragraph">在使用 KMIP 伺服器管理驗證之後，<block ref="80fb8fd6aa071b28d972a2bab4e4e309" category="inline-link-macro-rx"></block>。</block>
+  <block id="e4958706b7fde04c411fdf36d1bc7799" category="paragraph">將非根 Aggregate 和 NAS 資料 LIF 移回節點 2 後，<block ref="01b837168d3e680191080c5eb96965f3" category="inline-link-macro-rx"></block>。</block>
+  <block id="4bdc5e4cd1fe7e5ccd6f86529a1a1367" category="inline-link-macro">將非根 Aggregate 和 NAS 資料 LIF 從節點 2 重新配置到節點 1</block>
+  <block id="cd6023c3d3abcc2f65619f83bd51a720" category="paragraph">將 node1 的非根 Aggregate 和 NAS 資料 LIF 從 node2 移至升級後的 node1 之後<block ref="7e37b733eb5d33d0248fe5cecf5f01ec" category="inline-link-macro-rx"></block>。</block>
+  <block id="a3a1a1ba92ac91c496572fe44d61b304" category="list-text">在出現以下提示時，執行 <block ref="b433b76417b4f08166eb90cef3aa2a31" prefix=" " category="inline-code"></block> 命令。然後按 Enter 鍵：</block>
+  <block id="b2342598a77c193bd2b0cb570d3049ad" category="inline-link-macro">用於共享叢集 HA 和儲存設備的纜線 node1</block>
+  <block id="7441c7dae2b536b12ee192686c33f3f4" category="paragraph">在對 node1 進行網路開機後，<block ref="4e7e2529d15b2edf036d0f8bce591fc3" category="inline-link-macro-rx"></block>。</block>
+  <block id="bced4ce9ec4d93d24737740b670b880b" category="inline-link-macro">為共享叢集 HA 和儲存設備連接 node2 纜線</block>
+  <block id="a2bd6010e4efa6c1d00349d22dcb5927" category="paragraph">在對節點 2 進行網路啟動後，<block ref="f61e8772f6c43c3fcf1f1bf292fcade0" category="inline-link-macro-rx"></block>。</block>
+  <block id="3e257c95cec84a50e21b02c9a2fa909d" category="inline-link-macro">第 5 階段：安裝 node2 更換系統模組</block>
+  <block id="19ba67801d8f792ea82cc248430b2ab3" category="cell"><block ref="19ba67801d8f792ea82cc248430b2ab3" category="inline-link-macro-rx"></block></block>
+  <block id="fd75eecafc1864793dc201986e637126" category="cell"><block ref="fd75eecafc1864793dc201986e637126" category="inline-link-macro-rx"></block></block>
+  <block id="b4dd075678a85d57347dd3274dea19e3" category="inline-link-macro">驗證升級硬體</block>
+  <block id="252a26d1bd4c3a52b4537956a3938ce1" category="paragraph">在了解 ARL 升級順序之後，<block ref="7c88d2f1fe016bf5fd6e87dd3badef18" category="inline-link-macro-rx"></block>。</block>
+  <block id="c7d2e2a849aa04c143ebdaa239ab67e4" category="list-text">選擇 <block ref="415290769594460e2e485922904f345d" prefix=" " category="inline-code"></block>。您會看到以下輸出：</block>
+  <block id="89cc9179a897aed1f67b5705d5cf04e2" category="paragraph">將失敗或被否決的集合體重新配置到 node1 後，<block ref="5724263a6e9c70a82f660e7c6eb27e7b" category="inline-link-macro-rx"></block>。</block>
+  <block id="994974d19a9407e64c313898321fa4ef" category="paragraph">將失敗或被否決的集合體重新配置到節點 2 後，<block ref="093b4918af6834707d646c16a94febc9" category="inline-link-macro-rx"></block>。</block>
+  <block id="d56a193f4c979dcf87220a0915b042cf" category="inline-link-macro">將失敗或被否決的 Aggregate 重新定位至 node1</block>
+  <block id="9ed56a865a32848d3f1aa7d446677121" category="paragraph">將非根 Aggregate 和 NAS 資料 LIF 從 node2 重新配置到 node1 後<block ref="56991ad00c8ca710c04216f20173f646" category="inline-link-macro-rx"></block>。</block>
+  <block id="fbcf6fd44decbab77632a2d1ac73ada5" category="doc">更換節點 1 的 AFF A700 或 FAS9000 控制器和 NVRAM 模組</block>
+  <block id="529d0913e8e04a94eb5d1ab125e6f2d2" category="list-text">中斷 AUTOBOOT 後、node1 會停留在 LOADER 提示字元。如果您未能及時中斷 AUTOBOOT 且 node1 開始開機、請等待提示字元並輸入 Ctrl-C 以進入開機功能表。節點停留在開機功能表後、請使用選項 <block ref="c9f0f895fb98ab9159f51fd0297e236d" prefix=" " category="inline-code"></block> 重新啟動節點、並在重新啟動期間中斷 AUTOBOOT 。</block>
+  <block id="00f976949b3cf02881d16be945f11084" category="inline-link-macro">netboot node1</block>
+  <block id="24a5ea1658567f3129705d235f697243" category="paragraph">安裝 ASA A900、AFF A900 或 FAS9500 控制器和 NVRAM 模組後，<block ref="a8aab8bcb70e480fb851cffb0d67d966" category="inline-link-macro-rx"></block>。</block>
+  <block id="561f8c813e0e967499a85d76182ffedd" category="doc">更換節點 1 AFF A220、AFF A200、AFF C190、FAS2620 或 FAS2720 控制器模組</block>
+  <block id="aa602bfa10b0162ad4c0fce611678baa" category="section-title">步驟 2：安裝 ASA A150、AFF A150 或 FAS2820 控制器模組</block>
+  <block id="fc398508b77734442616e4525fbce1e2" category="paragraph">安裝 ASA A150 、 AFF A150 或 FAS2820 控制器模組後，<block ref="a8aab8bcb70e480fb851cffb0d67d966" category="inline-link-macro-rx"></block>。</block>
+  <block id="cc0b31c60b7535ce85b81bcd0274cedf" category="doc">更換節點 1 AFF A250 或 AFF C250 控制器模組</block>
+  <block id="bc40f37852a1620acf136b2a679f42fb" category="paragraph">如果未能及時中斷 AUTOBOOT 且 node1 開始啟動，請等待提示並輸入 Ctrl-C 進入啟動選單。節點停留在啟動選單後，使用選項<block ref="c9f0f895fb98ab9159f51fd0297e236d" prefix=" " category="inline-code"></block>重新啟動節點，並在重新啟動期間中斷 AUTOBOOT。</block>
+  <block id="b822cf67210ec3548d188c94e1140dc7" category="paragraph">安裝 AFF A30、AFF A50、AFF C30 或 AFF C60 控制器模組後，<block ref="a8aab8bcb70e480fb851cffb0d67d966" category="inline-link-macro-rx"></block>。</block>
+  <block id="50917cdb34d5cdbfdcd8419645828c36" category="doc">更換節點 1 AFF A800 或 AFF C800 控制器模組</block>
+  <block id="4efb73796966eb1013611c19bca6d15b" category="paragraph">安裝 AFF A90、AFF A70 或 AFF C80 控制器模組後<block ref="a8aab8bcb70e480fb851cffb0d67d966" category="inline-link-macro-rx"></block>。</block>
+  <block id="df9af8c8867d39daeb4f410e23a93376" category="summary">在同一機殼內對控制器型號進行 ARL 升級時，更換 node2 AFF A700 或 FAS9000 控制器和 NVRAM 模組。</block>
+  <block id="d90a732dc53bb453189d5243cb4a9e51" category="doc">更換節點 2 的 AFF A700 或 FAS9000 控制器和 NVRAM 模組</block>
+  <block id="d9700f0c759805c5d727a3a160ab4d2b" category="paragraph">將節點 2 的 AFF A700 或 FAS9000 控制器和 NVRAM 模組更換為 ASA A900、AFF A900 或 FAS9500 控制器和 NVRAM 模組。</block>
+  <block id="9e56b7eedd51a073474420ba55a8466a" category="paragraph">此時，節點 2 已關閉，所有資料均由節點 1 處理。請務必小心，僅移除節點 2 的控制器模組和節點 2 的 NVRAM 模組。通常情況下，從系統後方觀察控制器時，節點 2 是位於機箱右側的控制器 B。控制器標籤位於機殼上，就在控制器模組的正上方。</block>
+  <block id="5c755133a2b05b185cf77944efba7c1e" category="paragraph">拆下 node2 AFF A700 或 FAS9000 控制器模組。</block>
+  <block id="5015325f015c221742540997b0a7378d" category="list-text">從 node2 控制器模組拆下主控台纜線（如有）和管理纜線。</block>
+  <block id="ee80cca612c7d66eb64cc41f82f9dfa1" category="admonition">在操作 node2 時，您只需從 node2 移除主控台纜線和 e0M 纜線。在此過程中，您不得移除或變更 node1 或 node2 上的任何其他纜線或連線。</block>
+  <block id="dddbca93237b9c734b7482ebdce108b0" category="paragraph">解鎖並移除 node2 AFF A700 或 FAS9000 NVRAM 模組。</block>
+  <block id="cd8c8cc988ecbe479c7a64a04d7e9ed2" category="list-text">解鎖並從節點 2 的插槽 6 移除 NVRAM 模組。</block>
+  <block id="454b5f3dbb4bec3b27ced9f8180f9581" category="section-title">步驟 4：安裝 ASA A900、AFF A900 或 FAS9500 控制器模組</block>
+  <block id="8d407c723ab59bfd160527f9de369924" category="list-text">中斷 AUTOBOOT 後、node2 會停留在 LOADER 提示字元。如果您未能及時中斷 AUTOBOOT、導致 node2 開始開機、請等待提示符號出現後按 Ctrl-C 進入開機選單。節點停留在開機選單後、使用選項<block ref="c9f0f895fb98ab9159f51fd0297e236d" prefix=" " category="inline-code"></block>重新啟動節點、並在重新啟動過程中中斷 AUTOBOOT。</block>
+  <block id="34e650544f8ecb0ac0633c7dc1e5651b" category="inline-link-macro">netboot node2</block>
+  <block id="364f6e86393f57920a7c9e9c7b2eff2a" category="paragraph">安裝 ASA A900、AFF A900 或 FAS9500 NVRAM 和控制器模組後<block ref="1832018f7f9aa661918a81713348d125" category="inline-link-macro-rx"></block>。</block>
+  <block id="9e98a6aac1e6981852c9480a141d1384" category="summary">在同一機殼內對控制器型號進行 ARL 升級時，更換 node2 AFF A220、AFF A200、AFF C190、FAS2620 或 FAS2720 控制器模組。</block>
+  <block id="6b7eea352b4f634b98c8cd6dbb83601d" category="doc">更換節點 2 AFF A220 、 AFF A200 、 AFF C190 、 FAS2620 或 FAS2720 控制器模組</block>
+  <block id="f37400914d9fe4dd6abc43426d8b0811" category="paragraph">將節點 2 的 AFF A220、AFF A200、AFF C190、FAS2620 或 FAS2720 控制器模組更換為 ASA A150、AFF A150 或 FAS2820 控制器模組。</block>
+  <block id="e74f91cee5ca8270c175690c2adc2839" category="paragraph">此時，node2 已關閉，所有資料均由 node1 提供服務。請務必小心，僅移除 node2 控制器模組。通常情況下，從系統後方觀察控制器時，node2 是位於機箱右側的控制器 B。控制器標籤位於機殼上，就在控制器模組的正上方。</block>
+  <block id="30b6ac3f4a0892649c1dc6e3793d5b42" category="paragraph">若要存取 node2 控制器內部的元件、請從系統中移除控制器模組、然後移除控制器模組上的護蓋。</block>
+  <block id="e207f9b1d025d0c05385756fa24bdaea" category="paragraph">將您收到的用於升級的 ASA A150、AFF A150 或 FAS2820 控制器模組安裝到節點 2 中。</block>
+  <block id="26d36ed8da149457610ace09ccf316fd" category="paragraph">安裝 ASA A150、AFF A150 或 FAS2820 控制器模組後，<block ref="1832018f7f9aa661918a81713348d125" category="inline-link-macro-rx"></block>。</block>
+  <block id="81bcc0c35f1a8c6e8d9d8f5d982bef6b" category="summary">在同一機殼內對控制器型號進行 ARL 升級時，更換 node2 AFF A250 或 AFF C250 控制器模組。</block>
+  <block id="0ff90982f0823179697428e085fcf1ad" category="doc">更換節點 2 AFF A250 或 AFF C250 控制器模組</block>
+  <block id="36c4e827baca1f39db01b3e95c5e1443" category="paragraph">將 node2 AFF A250 或 AFF C250 控制器模組更換為 AFF A30、AFF A50、AFF C30 或 AFF C60 控制器模組。</block>
+  <block id="1f4033cb07a6af90c1c09898304deca4" category="paragraph">此時，node2 已關閉，所有資料均由 node1 提供服務。請務必小心，僅移除 node2 控制器模組。通常情況下，從系統後部觀察控制器時，node2 是位於機箱下半部的控制器 B。控制器標籤位於機殼上，就在控制器模組的正上方。</block>
+  <block id="0e0a67f61b940b797830689ea1397ede" category="paragraph">若要拆卸 node2 控制器模組，請先移除纜線管理裝置並解鎖鎖定閂鎖。然後，將控制器模組從機箱中取出。</block>
+  <block id="ff75815289582594c6c4a27824f2987f" category="list-text">將 node2 控制器模組的電源線從電源上拔下。</block>
+  <block id="9dc18c7dea815356f8b1aa55fbd349a1" category="list-text">放開電源線固定器，然後從 node2 的電源供應器拔除電源線。</block>
+  <block id="a20d8c3e7f9dd638497f3e13a6d58213" category="admonition">node1 和 node2 的電源連接線重疊在一起。請務必只拔下 node2 的電源線。如果同時拔除 node1 和 node2 的電源線，可能會導致 HA 配對中的兩個節點都斷電。</block>
+  <block id="558d1678a46019bdf64244a99feee754" category="paragraph">在 node2 上安裝您收到用於升級的替換控制器模組。</block>
+  <block id="779932bef4c1cfd9da6ddeac7db4bcf9" category="paragraph">安裝 AFF A30、AFF A50、AFF C30 或 AFF C60 模組後，<block ref="1832018f7f9aa661918a81713348d125" category="inline-link-macro-rx"></block>。</block>
+  <block id="7574c8cda4293a8ce35f1d3c2fb2eab0" category="summary">在同一機殼內對控制器型號進行 ARL 升級時，更換 node2 AFF A800 或 AFF C800 控制器模組。</block>
+  <block id="be1abec40cb0c6b8729b87214fdfc7e1" category="doc">更換節點 2 AFF A800 或 AFF C800 控制器模組</block>
+  <block id="49370cd3a901c635ed347ea7c33ca6bf" category="paragraph">將 node2 的 AFF A800 或 AFF C800 控制器模組更換為 AFF A90、AFF A70 或 AFF C80 控制器模組。</block>
+  <block id="db2449f58f3ef01bb2ae90d55bf3f55d" category="paragraph">此時，node2 已關閉，所有資料均由 node1 處理。請務必小心，僅移除 node2 控制器模組。從系統後方看控制器時，節點 2 是位於機殼下部托架的控制器 B。控制器標籤位於機殼上，就在控制器模組的正上方。</block>
+  <block id="b3774554cdfb829db79ed04eda39fa9e" category="paragraph">從現有的 node2 模組移除纜線管理裝置，並將控制器稍微移出機箱。</block>
+  <block id="f875dea101c16530ebaf380cc3e55cdc" category="paragraph">將您收到的用於升級的 AFF A90 或 AFF A70 控制器模組安裝到節點 2 中。</block>
+  <block id="3338ca9fb3459a2cdf846a3b9557a255" category="paragraph">安裝 AFF A90 或 AFF A70 模組後，<block ref="1832018f7f9aa661918a81713348d125" category="inline-link-macro-rx"></block>。</block>
+  <block id="b6787a0db1ff08874b765a7ea6d1d970" category="inline-link-macro">了解升級控制器的準則</block>
+  <block id="239f0503451761c803c87b64d313b14d" category="paragraph">在審查了所需的工具和文件之後，<block ref="66b81e6276eb294e68dbd9b9751edd87" category="inline-link-macro-rx"></block></block>
+  <block id="a60a10422d9ffc0447bf51b19bf16789" category="inline-link-macro">驗證叢集交換器上的 RCF 組態</block>
+  <block id="dc656479ef4904f670e0dfa5d6614774" category="paragraph">在 node2 上還原金鑰管理程式組態之後，<block ref="f6ac84c0bb98635189a2df85588b5cd3" category="inline-link-macro-rx"></block>。</block>
+  <block id="56cbc69f66ee80642fd4a7771288160c" category="inline-link-macro">將節點 1 的非根 Aggregate 和 NAS 資料 LIF 從節點 2 遷移到升級後的節點 1</block>
+  <block id="cde8e9d94586de58573e810d648b3276" category="paragraph">在升級後的 node1 上還原金鑰管理程式組態後，<block ref="5b29f22815d9642bf4c64e8e5e249aaa" category="inline-link-macro-rx"></block>。</block>
+  <block id="45243dd7e2c1de1523f0430c256efc91" category="paragraph">在節點 1 退役後，根據您的升級組態，選擇下列其中一個控制器更換程序：</block>
+  <block id="a321fb908007fc094672c975d5b1feaa" category="list-text"><block ref="a321fb908007fc094672c975d5b1feaa" category="inline-link-macro-rx"></block></block>
+  <block id="c21ffbed772be84e8533df9c23bc5d1c" category="list-text"><block ref="c21ffbed772be84e8533df9c23bc5d1c" category="inline-link-macro-rx"></block></block>
+  <block id="701e4857eae9f4790a6859bcecc1ce5a" category="inline-link-macro">更換節點 1 AFF A220、AFF A200、AFF C190、FAS2620 或 FAS2720 控制器模組</block>
+  <block id="dd0bc1d9dba869698f93af25d9cbc43b" category="list-text"><block ref="dd0bc1d9dba869698f93af25d9cbc43b" category="inline-link-macro-rx"></block></block>
+  <block id="5bab63bf6e491e120cb82e0e9a60abcd" category="inline-link-macro">更換節點 1 的 AFF A700 或 FAS9000 控制器和 NVRAM 模組</block>
+  <block id="cd6963e3c49bcbd46745468138beec3b" category="list-text"><block ref="cd6963e3c49bcbd46745468138beec3b" category="inline-link-macro-rx"></block></block>
+  <block id="d66b13439b478bed7ee4005994706999" category="paragraph">在節點 2 退役後，根據您的升級組態，選擇下列其中一個控制器更換程序：</block>
+  <block id="acbf886efbb2ad0fab5b74e2d252e785" category="inline-link-macro">更換節點 2 AFF A250 或 AFF C250 控制器模組</block>
+  <block id="84394e5aede6cdc13919c3304ec0af9f" category="list-text"><block ref="84394e5aede6cdc13919c3304ec0af9f" category="inline-link-macro-rx"></block></block>
+  <block id="89bc8c2d112c436fa0dde0e0bae19427" category="inline-link-macro">更換節點 2 AFF A800 或 AFF C800 控制器模組</block>
+  <block id="47c3f65aa0c9fdcffac55a9123e29007" category="list-text"><block ref="47c3f65aa0c9fdcffac55a9123e29007" category="inline-link-macro-rx"></block></block>
+  <block id="61004860abcc2b6b296eb87e61aac0ed" category="inline-link-macro">更換節點 2 AFF A220、AFF A200、AFF C190、FAS2620 或 FAS2720 控制器模組</block>
+  <block id="439e31f82d51dd439e42746233f0161e" category="list-text"><block ref="439e31f82d51dd439e42746233f0161e" category="inline-link-macro-rx"></block></block>
+  <block id="161a8027bb49f03904f7c4bd51dde375" category="inline-link-macro">更換節點 2 AFF A700 或 FAS9000 控制器和 NVRAM 模組</block>
+  <block id="2cd7669e53f1e5c1811000e0f3268260" category="list-text"><block ref="2cd7669e53f1e5c1811000e0f3268260" category="inline-link-macro-rx"></block></block>
+  <block id="a9dde45ad66b52befe36f439eda6c9f7" category="summary">如果需要，在使用 ARL 升級相同機箱中的控制器型號時，請為 NVE 或 NAE 設定新的控制器模組。</block>
+  <block id="5d4a678a37b3c1a278753697360d59d4" category="paragraph">在新控制器模組上設定 NetApp Volume 或 Aggregate Encryption 後，<block ref="b8ddf2a0cf515aa378aa454b0ec4bb7b" category="inline-link-macro-rx"></block>。</block>
+  <block id="5ae756365897abd456f4d537d856c35c" category="paragraph">在新控制器模組上設定儲存加密後，<block ref="ade3f5b15d93fdcfd1c36678bdaccb28" category="inline-link-macro-rx"></block>。</block>
+  <block id="84972c8511b77a9ff10095cea1b8e2dc" category="section-title">步驟 1：驗證 node1 是否在仲裁中</block>
+  <block id="4700985fec326299c519a6dbbf32931b" category="paragraph">確認 node1 處於仲裁狀態。然後，繼續執行控制器更換作業。</block>
+  <block id="4b94b9587e721791e7da7d7a206b2e13" category="list-text">在控制器更換處於暫停狀態時，請繼續執行 <block ref="4a32bf8ef483f8dd35d6e15847a1a7c4" category="inline-xref-macro-rx"></block>。</block>
+  <block id="9c85e0a633898a63c342779f9de638fc" category="section-title">步驟 2：還原 node1 上的網路組態</block>
+  <block id="f2dfe1c93bb0317d250d5d69175cbe8c" category="inline-link-macro">在升級後的 node1 上還原金鑰管理程式組態</block>
+  <block id="83b2deccbb92f9a4faa9e46bad4b2197" category="paragraph">驗證 node1 安裝後，<block ref="2a960ff827f374fd5eefc8b27984b5e4" category="inline-link-macro-rx"></block>。</block>
+  <block id="a8dd617a3974ec930ba73c917dfcf7ec" category="section-title">步驟 1：驗證 node2 是否在仲裁中</block>
+  <block id="f949ed1f7144041771ad143e14d4f782" category="paragraph">確認 node2 處於仲裁狀態。然後，繼續執行控制器更換作業。</block>
+  <block id="4d1acb885fa269fcedb6374b5bf2b88a" category="list-text">控制器更換處於暫停狀態後，繼續執行 <block ref="93369af91cf2d3ada47dab58c6602a85" category="inline-xref-macro-rx"></block>。</block>
+  <block id="eb0188afc44cee8e74615a7af56db760" category="section-title">步驟 2：還原 node2 上的網路組態</block>
+  <block id="e58cbf43d9a2bbf1bd8a30d1075ed15a" category="inline-link-macro">在節點 2 上還原金鑰管理程式組態</block>
+  <block id="d4077f886f481189ca25a2d28f35bf81" category="paragraph">驗證 node2 安裝後，<block ref="ef6e9be31530d5337980f53c96de657a" category="inline-link-macro-rx"></block>。</block>
+  <block id="8449c3758e2e2ea009e2f43aad9fe521" category="inline-link-macro">將非根 Aggregate 和 NAS 資料 LIF 移回節點 2</block>
+  <block id="9cb2d379e7813839cb45d0874e46612c" category="paragraph">驗證 RCF 組態後<block ref="ca500076ccdfefcc4c12ec8b665890d0" category="inline-link-macro-rx"></block>。</block>
+  <block id="2fd3cc5549602e8a538f206fed442d5b" category="paragraph">驗證升級硬體後，<block ref="947d2e2b0d5430b6b956ed26ae42fce8" category="inline-link-macro-rx"></block>。</block>
+  <block id="c15283efdeafcf95378d3624795e3d40" category="admonition">儲存虛擬機器（SVM）災難復原更新不會依照指定的排程中斷。</block>
+  <block id="6052be292a3a560497e244db33c3abcf" category="paragraph">您必須確保原節點的連接埠和 LIF 組態與您計劃在新節點上的組態相容。這是因為新節點在開機時會重播相同的組態，這表示當您開機 node3 時，ONTAP 會嘗試在 node1 上使用的相同連接埠上託管 LIF。</block>
+  <block id="d89905f1d98d0902f992dbc6aafc2229" category="paragraph">因此，如果節點 1 上的實體連接埠與節點 3 上的實體連接埠不直接對應，則需要進行軟體組態變更才能在開機後還原叢集、管理和網路連線。此外，如果節點 1 上的叢集連接埠與節點 3 上的叢集連接埠不直接對應，則在進行軟體組態變更以將叢集 LIF 託管在正確的實體連接埠上之前，節點 3 在重新開機後可能無法自動重新加入仲裁。</block>
+  <block id="eb3c1d7fa7c66df0c9bf2a8e4982afba" category="paragraph">有關取得此資訊的步驟，請參閱 <block ref="111c70a978efb37ba3bd0ea564da1d79" category="inline-link-macro-rx"></block>。</block>
+  <block id="628156876a61932ce236b80c07aa4611" category="paragraph">node2 上的實體連接埠必須與 node4 上的實體連接埠正確對應。這樣，升級後 node4 才能與叢集中的其他節點以及網路進行通訊。</block>
+  <block id="fb2af142c1da23fd6b47e681c473179b" category="paragraph">因此，如果 node2 上的實體連接埠與 node4 上的實體連接埠不直接對應，則需要進行軟體組態變更才能在開機後還原叢集、管理和網路連線。此外，如果 node2 上的叢集連接埠與 node4 上的叢集連接埠不直接對應，則在 node4 重新開機後，除非進行軟體組態變更，將叢集 LIF 託管在正確的實體連接埠上，否則 node4 可能無法自動重新加入仲裁。</block>
+  <block id="a76abac2748e5f8d5b567557bb78a443" category="inline-link-macro">檢閱使用 ARL 升級控制器的準則</block>
+  <block id="f43aa57818d81b5baaad1c46bc050d6c" category="paragraph">在審查 ARL 升級工作流程之後，<block ref="01080be3ccd85c5d939616a1f60cec70" category="inline-link-macro-rx"></block>。</block>
+  <block id="b4c9bd2e52458680098bb5b7e3d65a0a" category="inline-link-macro">檢閱 ARL 升級工作流程</block>
+  <block id="a316a4e9eaee69a9e593a5b19c7ccc76" category="paragraph">在決定是否使用此 ARL 程序之後，<block ref="88f9904383e77d561b83c25a2e968975" category="inline-link-macro-rx"></block>。</block>
+  <block id="d5a5471387d991a7ed33c25a0002f9ec" category="paragraph">舊系統退役後，<block ref="147c11a6e1201930e077c95096cee180" category="inline-link-macro-rx"></block>。</block>
+  <block id="92241bf78b3e622131ad0a8a09009256" category="paragraph">確定控制器內部磁碟機上是否有 Aggregate 後，<block ref="bb51c4c0cf1a3d19fab605a0eabe8f83" category="inline-link-macro-rx"></block>。</block>
+  <block id="b5c6b80b540cf3de85415081661e5124" category="paragraph">確認新控制器設定正確後，<block ref="b68ee9312f87d73c230456ab27ab8069" category="inline-link-macro-rx"></block>。</block>
+  <block id="083e0e554d35e8113f58f18c8dcbb53f" category="inline-link-macro">檢閱所需的工具和文件</block>
+  <block id="b99a33ed07552f40c78df36e0ee18a06" category="paragraph">在查閱了使用 ARL 升級控制器的準則後<block ref="eb7046482d444ff7be1a319b881c90c3" category="inline-link-macro-rx"></block>。</block>
+  <block id="d7fa1bc70a3b7ea590a1ed6d3b8bb45e" category="paragraph">在了解 ARL 程序之後，<block ref="e88e37a259437f9c1b9febc4e6462ab9" category="inline-link-macro-rx"></block>。</block>
+  <block id="1e0b51d84e9ca85136f6ba9963b1a0f8" category="paragraph">安裝並啟動 node3 後，<block ref="d24de90717b43523f2455fad5934bff6" category="inline-link-macro-rx"></block>。</block>
+  <block id="406c623f3a5ec60d396706ae38e70d8f" category="paragraph">安裝並啟動 node4 後，<block ref="ae5f13d20eed93cbe3cd0b4b45d43f51" category="inline-link-macro-rx"></block>。</block>
+  <block id="1672f36bce1eb31d0d74fa9427f2ec26" category="paragraph">在使用 KMIP 伺服器管理驗證之後，<block ref="a3967e84527bdce80c205c88fb4fc958" category="inline-link-macro-rx"></block>。</block>
+  <block id="2a416615e3c704938377adc1e6a76778" category="inline-link-macro">靜止 SnapMirror 關係</block>
+  <block id="a7cc1199f0b2e9c3e5c786cba9271137" category="paragraph">使用 Onboard Key Manager 管理驗證金鑰後，<block ref="76533eda8311759db78783029dca9939" category="inline-link-macro-rx"></block>。</block>
+  <block id="199b894c5795e4a82db38eac69d7d635" category="list-text">在執行可達性修復時，ONTAP 會嘗試將連接埠放置在正確的廣播網域中。但是，如果 ONTAP 無法確定連接埠的可達性，且該連接埠不屬於任何現有廣播網域，ONTAP 會嘗試為這些連接埠建立新的廣播網域。如有需要，如果所有新建立的廣播網域的成員連接埠都已成為介面群組的成員連接埠，則可以刪除這些廣播網域。刪除廣播網域：</block>
+  <block id="8f194de27ee69d7a9df7339901026162" category="list-text">[[man_map_1_step5]]從 ONTAP 9.8 開始，如果連接埠在網路連接埠可連線性修復程序期間於廣播網域之間移動，ONTAP 會自動修改 LIF 的主連接埠。如果 LIF 的主連接埠被移至另一個節點或未指派，則該 LIF 會顯示為已移位的 LIF。還原主連接埠已不存在或已重新配置至另一個節點之已移位 LIF 的主連接埠。</block>
+  <block id="dd7c57fed05a72ea3ea7af6f285efbb4" category="inline-link-macro">將節點 1 擁有的 NAS 資料 LIF 從節點 2 遷移到節點 3，並驗證節點 3 上的 SAN LIF</block>
+  <block id="c3002403a67dce2738edaa79a19f7e82" category="paragraph">將連接埠從 node1 對應到 node3 之後，<block ref="03ea654416a152e6f1b063f93109b640" category="inline-link-macro-rx"></block>。</block>
+  <block id="34a0e54d19b965dd2123ea5c989ed331" category="paragraph">您必須確保節點 2 上的實體連接埠與節點 4 上的實體連接埠正確對應。這樣，升級後節點 4 才能與叢集中的其他節點以及網路進行通訊。</block>
+  <block id="2a95017ff90fd181257c7e0d1d876d78" category="list-text">在執行可達性修復時，ONTAP 會嘗試將連接埠放置在正確的廣播網域中。但是，如果 ONTAP 無法確定連接埠的可達性，且該連接埠不屬於任何現有廣播網域，ONTAP 會嘗試為這些連接埠建立新的廣播網域。如有需要，您可以刪除新建立的廣播網域，前提是其所有成員連接埠都將成為介面群組的成員連接埠。刪除廣播網域：</block>
+  <block id="d408f43d40af023691f75f218a0e334b" category="list-text">[[man_map_2_Step5]]從 ONTAP 9.8 開始，如果連接埠在網路連接埠可連線性修復程序期間於廣播網域之間移動，ONTAP 會自動修改 LIF 的主連接埠。如果 LIF 的主連接埠被移至另一個節點或未指派，則該 LIF 會顯示為已移位的 LIF。還原主連接埠已不存在或已重新配置至另一個節點之已移位 LIF 的主連接埠。</block>
+  <block id="b1f7615b7493660125f1e89e7bd74d7b" category="inline-link-macro">將節點 2 擁有的 NAS 資料 LIF 從節點 3 遷移到節點 4，並驗證節點 4 上的 SAN LIF</block>
+  <block id="3deae158ebee41c0581b3c3079adbc4a" category="paragraph">將連接埠從節點 2 對應到節點 4 之後，<block ref="b6b3783f3a737398b86eb7ecbe38abde" category="inline-link-macro-rx"></block></block>
+  <block id="eeefd2c9e84a84e43fd5d0def54355f5" category="inline-link-macro">記錄每個 LIF 的&lt;block ref="8a7a38cfa57d4ac98cced700b804556a" prefix=" " category='inline-code'/&gt;和&lt;block ref="3139ea911ab60226789083923e2852c9" prefix=" " category='inline-code'/&gt;資訊</block>
+  <block id="138aa50b3ef3141c3b50b7c475b16f04" category="paragraph">將節點 1 擁有的 NAS 資料 LIF 從節點 2 移動到節點 3，並在節點 3 上驗證 SAN LIF 後，<block ref="727b727a1cd9b16f8ee30bd59de5fba3" category="inline-link-macro-rx"></block></block>
+  <block id="db5ab3e4ee13110c5aa49c000cb9a45e" category="inline-link-macro">記錄 node1 資訊</block>
+  <block id="3c1ecc6581e6068d084c6632f2945a31" category="paragraph">將節點 1 擁有的 NAS 資料 LIF 移至節點 2 後，<block ref="38f076723e12610b8a3756d1fd15f29e" category="inline-link-macro-rx"></block>。</block>
+  <block id="3bff1a261cf18bd67318cec6cea494dd" category="paragraph">將節點 2 擁有的 NAS 資料 LIF 從節點 3 移動到節點 4，並在節點 4 上驗證 SAN LIF 後，<block ref="c284f90805556cf1681cdb4b977c2a78" category="inline-link-macro-rx"></block>。</block>
+  <block id="8af5c1eba65b122850959dc2bbcfaebf" category="inline-link-macro">記錄 node2 資訊</block>
+  <block id="006d1db27b4cb28f8908039d380671f3" category="paragraph">將節點 2 擁有的 NAS 資料 LIF 移至節點 3 後，<block ref="f559080b9160efc05c539ed9f3eae96e" category="inline-link-macro-rx"></block>。</block>
+  <block id="4ed354728bf08b8a0504406d40c91034" category="inline-link-macro">將非根 Aggregate 從節點 1 重新配置到節點 2</block>
+  <block id="e1b8e32a9cd9eb606bcb150a08f4360d" category="paragraph">準備好網路開機後，<block ref="f56aa3bed1e00e5d2b843c0f67e9f0d0" category="inline-link-macro-rx"></block>。</block>
+  <block id="f8668ac2aa2e6853ff048a7eb5738ed8" category="inline-link-macro">使用 Onboard Key Manager 管理驗證金鑰</block>
+  <block id="f8230bbd1dc614373484186e60dbbdd8" category="paragraph">完成節點升級準備工作後，<block ref="833ebc9df58e21e2208b52a17e279c72" category="inline-link-macro-rx"></block>。</block>
+  <block id="f0d4dbcd5c185921c6c385a53800c3d6" category="paragraph">在靜止 SnapMirror 關係之後，<block ref="a2e38e10a2ba83414be3dbb4ebc0b887" category="inline-link-macro-rx"></block>。</block>
+  <block id="0d0ab1ca9cf982bde031049a58434944" category="paragraph">記錄節點 1 資訊後，<block ref="bb6e7fc639cbf9bc879f06671cdfd191" category="inline-link-macro-rx"></block>。</block>
+  <block id="6592ee5fe1bf6730e89bb5ec48aff0ca" category="paragraph">記錄節點 2 資訊後，<block ref="5ae9ac7f71e57ea0c131002219be4206" category="inline-link-macro-rx"></block>。</block>
+  <block id="16cf167e5c0277248416462985a01bb5" category="paragraph">將節點 2 的非根 Aggregate 從節點 3 重新配置到節點 4 後，<block ref="36576fea2fd1aaa9d7efba889913855b" category="inline-link-macro-rx"></block>。</block>
+  <block id="185fac6fad6ceb2f6bd1fa24b9988d5c" category="inline-link-macro">將節點 1 擁有的 NAS 資料 LIF 移至節點 2</block>
+  <block id="1ea93b385ba28ae4583ce868abb69404" category="paragraph">將非根 Aggregate 從 node1 重新配置到 node2 後<block ref="9e227c13f01a0d7c63c1f03bd3dab55c" category="inline-link-macro-rx"></block>。</block>
+  <block id="e62b9afcebbe2d4f45b33af1d6f30d01" category="inline-link-macro">將節點 2 擁有的 NAS 資料 LIF 移至節點 3</block>
+  <block id="bdfcfb7c4c90ccdbe58b8e204794155a" category="paragraph">將非根 Aggregate 從節點 2 重新配置到節點 3 後，<block ref="ffaa0fdcd29832f3d114088ecd2c2c41" category="inline-link-macro-rx"></block>。</block>
+  <block id="f5936eb3aedba2b8bfac4f102ac7c600" category="inline-link-macro">記錄原始節點資訊，以便在升級過程中使用</block>
+  <block id="fccb7a5d5e6c392acd5952ddd707cabf" category="paragraph">在審查了所需的工具和文件之後，<block ref="08f23a5e024e1c3a988016f3216cb3cc" category="inline-link-macro-rx"></block></block>
+  <block id="048d81917849ff635f4fc0ce7e54b233" category="paragraph">淘汰 node1 後，<block ref="71c2250b25b8a8fd388e9f8e11a1a60f" category="inline-link-macro-rx"></block>。</block>
+  <block id="a9101388a8e26129539ab5eb9228566f" category="inline-link-macro">將連接埠從 node1 對應至 node3</block>
+  <block id="9dfda9abc726880694ee34e9682df466" category="paragraph">在節點 3 上設定 FC 或 UTA/UTA2 組態後，<block ref="ccf576e5a05d9316d1f6b4c1d4f6dd2b" category="inline-link-macro-rx"></block>。</block>
+  <block id="5b6d1062e59c09cb27f97b981dfeee5a" category="inline-link-macro">將連接埠從 node2 對應至 node4</block>
+  <block id="356b4743ea0a29c27d2b4e2655bf71cd" category="paragraph">在節點 4 上設定 FC 或 UTA/UTA2 組態後<block ref="1ec3fc1b382d318efe7bebb920dbfd82" category="inline-link-macro-rx"></block>。</block>
+  <block id="c8d282c3aaa22ec9eeaf815a4014154a" category="paragraph">在新控制器模組上設定儲存加密後，<block ref="a79a6da7b843b741fe24e727510f0197" category="inline-link-macro-rx"></block>。</block>
+  <block id="d3928c75ade53f1580eb074c0aab88a2" category="inline-link-macro">判斷控制器的內部磁碟機上是否有 Aggregate</block>
+  <block id="be39bb36cf2b3a556e8c0670414965ca" category="paragraph">記錄原始節點資訊後，<block ref="944f3d882f4d5b48f2f889357fec90da" category="inline-link-macro-rx"></block>。</block>
+  <block id="dd2420dc517ef650d80bdc955b9ff052" category="inline-link-macro">將非根 Aggregate 從節點 2 重新配置到節點 3</block>
+  <block id="ef00db7aad21ec2c3e7a85b19564eef3" category="paragraph">記錄每個 LIF 的<block ref="8a7a38cfa57d4ac98cced700b804556a" prefix=" " category="inline-code"></block>和<block ref="3139ea911ab60226789083923e2852c9" prefix=" " category="inline-code"></block>資訊後，<block ref="21597550b58b9a6430b4c9dd0c38a96d" category="inline-link-macro-rx"></block>。</block>
+  <block id="3dcb09b5752d650ee38d97875f98921c" category="inline-link-macro">將節點 2 的非根 Aggregate 從節點 3 重新配置到節點 4</block>
+  <block id="8695aaca9524014699a6d443a2a534fa" category="paragraph">記錄每個 LIF 的<block ref="8a7a38cfa57d4ac98cced700b804556a" prefix=" " category="inline-code"></block>和<block ref="3139ea911ab60226789083923e2852c9" prefix=" " category="inline-code"></block>資訊後，<block ref="0e10c1b69c827b2c86d2f4757a767a1f" category="inline-link-macro-rx"></block>。</block>
+  <block id="2e7f5b6308a3207b532f2eb213ce3976" category="sidebar">第 5 階段。安裝 node2 替換系統模組</block>
+  <block id="5a71019ad7fb5de4924f41950c599ee0" category="sidebar">更換 node2 系統模組</block>
 </blocks>

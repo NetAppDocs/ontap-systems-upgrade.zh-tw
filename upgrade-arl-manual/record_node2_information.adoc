@@ -41,7 +41,7 @@ node2
 ----
 +
 
-NOTE: 您的系統可能沒有叢集間的LIF。您只能在節點配對的一個節點上使用叢集管理LIF。的範例輸出中會顯示叢集管理 LIF link:record_node1_information.html#step1["步驟1."] 在_Record node1連接埠資訊_中。
+NOTE: 您的系統可能沒有叢集間 LIF。您在節點配對的其中一個節點上只有一個叢集管理 LIF。叢集管理 LIF 會顯示在 _Record node1 port information_ 的 link:record_node1_information.html#step1["步驟1."] 範例輸出中。
 
 . 擷取輸出中的資訊以供區段使用 link:map_ports_node2_node4.html["將連接埠從節點2對應至節點4"]。
 +
@@ -75,7 +75,7 @@ node2
 ----
 . 記錄連接埠及其廣播網域。
 +
-稍後的程序將需要將廣播網域對應至新控制器上的連接埠。
+稍後在程序中需要將廣播網域對應到新控制器上的連接埠。
 
 . 確定節點2上的FC端口：
 +

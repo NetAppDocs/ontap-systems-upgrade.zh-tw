@@ -96,5 +96,6 @@ Enable Switchless Cluster: false/true
 「et -priv. admin」
 
 . 在任一控制器上輸入下列命令來停止節點2：「ystem Node halt -node2_」
-. 節點2完全關機後、請將其從機箱或機架中移除。您可以在升級完成後取消委任節點2。請參閱 link:decommission_old_system.html["取消委任舊系統"]。
+. node2 完全關閉後，將其從機箱或機架中移除。
+. 升級完成後，可選擇停用 node2。請參閱 link:decommission_old_system.html["取消委任舊系統"]。
 

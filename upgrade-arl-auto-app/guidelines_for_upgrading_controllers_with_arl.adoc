@@ -70,3 +70,6 @@ NOTE: 如果您要升級支援內部磁碟機的系統（例如FAS2700或AFF E4A
 如果出現任何問題，請參閱link:aggregate_relocation_failures.html["疑難排解"]請參閱本過程末尾的部分，以了解更多資訊和可能的解決方案。有關可能發生的故障的資訊按過程的階段列出在link:overview_of_the_arl_upgrade.html["ARL 升級序列"] 。
 
 如果您找不到解決所遇到問題的解決方案、請聯絡技術支援部門。
+
+.接下來呢？
+在檢閱使用 ARL 升級控制器的準則後link:verify_health_of_metrocluster_config.html["驗證 MetroCluster 組態的健全狀況"]。

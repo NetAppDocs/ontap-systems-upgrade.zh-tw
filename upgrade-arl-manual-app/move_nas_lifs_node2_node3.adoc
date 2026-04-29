@@ -149,3 +149,6 @@ Distribution Function: ip
 
 
 
+
+.接下來呢？
+將節點 2 擁有的 NAS 資料 LIF 移至節點 3 後，link:record_node2_information.html["記錄 node2 資訊"]。

@@ -219,3 +219,6 @@ f-a    2b      fc       target    cna      -          online
 
 . [[man_inCheck _4_Step13]連接連接埠。
 
+
+.接下來呢？
+在節點 4 上設定 FC 或 UTA/UTA2 組態後link:map_ports_node2_node4.html["將連接埠從 node2 對應至 node4"]。

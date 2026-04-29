@@ -49,7 +49,7 @@ Aggregate清單是您在中取得的node4所擁有的Aggregate清單 <<man_reloc
 「torage Aggregate regate reg搬 移顯示-node3_」
 
 +
-在重新放置集合體之後、輸出會顯示「Done」。
+輸出會在 Aggregate 重新配置後顯示 `Done`。
 
 +
 

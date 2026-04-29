@@ -60,3 +60,6 @@ volumes              ok
 「系統健全狀況警示顯示」
 
 
+
+.接下來呢？
+驗證 MetroCluster 組態的健全狀況之後，link:check_for_metrocluster_config_errors.html["檢查 MetroCluster 組態錯誤"]。

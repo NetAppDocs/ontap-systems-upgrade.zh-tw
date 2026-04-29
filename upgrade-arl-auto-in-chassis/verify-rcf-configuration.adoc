@@ -51,5 +51,5 @@ summary: 驗證叢集交換器 RCF 是否支援用於交換器連接叢集升級
 
 
 
-.下一步
-link:move-non-root-aggr-and-nas-data-lifs-back-to-node2.html["將非根Aggregate和NAS資料lifs移回節點2"]
+.接下來呢？
+驗證 RCF 組態後link:move-non-root-aggr-and-nas-data-lifs-back-to-node2.html["將非根 Aggregate 和 NAS 資料 LIF 移回節點 2"]。

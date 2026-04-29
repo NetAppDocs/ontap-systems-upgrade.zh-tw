@@ -1,10 +1,10 @@
-= 靜止SnapMirror關係（選用）
+= 或者，也可以讓這些 SnapMirror 關係平靜下來
 :allow-uri-read: 
 
 
 
 
-== 靜止SnapMirror關係（選用）
+== 或者，也可以讓這些 SnapMirror 關係平靜下來
 
 在繼續執行此程序之前、您必須確認所有SnapMirror關係均已靜止。當SnapMirror關係靜止時、它會在重新開機和容錯移轉之間保持靜止。
 

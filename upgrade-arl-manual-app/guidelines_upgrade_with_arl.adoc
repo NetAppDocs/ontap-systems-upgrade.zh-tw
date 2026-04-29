@@ -131,3 +131,6 @@ LOADER>
 如果升級控制器時出現任何問題，請參閱link:aggregate_relocation_failures.html["疑難排解"]部分。有關可能發生的故障的資訊按過程階段列出，位於link:arl_upgrade_workflow.html["ARL 升級序列"] 。
 
 如果您找不到解決所遇到問題的解決方案、請聯絡技術支援部門。
+
+.接下來呢？
+在查閱了使用 ARL 升級控制器的準則後link:required_tools_documentation.html["檢閱所需的工具和文件"]。

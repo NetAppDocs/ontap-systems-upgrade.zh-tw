@@ -4,7 +4,7 @@ permalink: upgrade-arl-auto-in-chassis/replace-node1-aff700-fas900.html
 keywords: aff, asa, fas, replace, node1, system, modules 
 summary: 使用 ARL 升級同一機箱中的控制器型號時、請更換 AFF A700 或 FAS9000 node1 系統模組。 
 ---
-= 更換 AFF A700 或 FAS9000 控制器和 NVRAM 模組
+= 更換節點 1 的 AFF A700 或 FAS9000 控制器和 NVRAM 模組
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -185,7 +185,7 @@ image:black_circle_two.png["第二名"]
 | CAM握把處於解除鎖定位置 
 |===
 . 只要模組就位、請立即連接序列主控台、並準備好中斷節點1的自動開機。
-. 中斷自動開機後、 node1 會在載入程式提示下停止。如果您未在時間中斷自動開機、而 node1 開始開機、請等待提示字元、然後按 Ctrl-C 進入開機功能表。節點停止在開機功能表後、請使用選項 `8` 重新啟動節點、並在重新開機期間中斷自動開機。
+. 中斷 AUTOBOOT 後、node1 會停留在 LOADER 提示字元。如果您未能及時中斷 AUTOBOOT 且 node1 開始開機、請等待提示字元並輸入 Ctrl-C 以進入開機功能表。節點停留在開機功能表後、請使用選項  `8` 重新啟動節點、並在重新啟動期間中斷 AUTOBOOT 。
 . 在node1的loader>提示下、設定預設環境變數：
 +
 [source, cli]
@@ -199,3 +199,6 @@ set-defaults
 saveenv
 ----
 
+
+.接下來呢？
+安裝 ASA A900、AFF A900 或 FAS9500 控制器和 NVRAM 模組後，link:netboot-node1.html["netboot node1"]。

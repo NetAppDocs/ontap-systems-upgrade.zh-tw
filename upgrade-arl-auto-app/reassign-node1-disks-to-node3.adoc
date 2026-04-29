@@ -286,3 +286,6 @@ NOTE: 如果無法執行上一個子步驟、可能會導致節點3從內部根A
 
 
 
+
+.接下來呢？
+將節點 1 磁碟重新指派給節點 3 後，link:verify_node3_installation.html["驗證 node3 安裝"]。

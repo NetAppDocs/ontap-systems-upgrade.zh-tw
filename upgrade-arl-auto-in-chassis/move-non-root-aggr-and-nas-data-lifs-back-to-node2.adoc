@@ -134,3 +134,6 @@ system controller replace resume
 
 
 
+
+.接下來呢？
+將非根 Aggregate 和 NAS 資料 LIF 移回節點 2 後，link:manage-authentication-using-kmip-servers.html["使用 KMIP 伺服器管理驗證"]。

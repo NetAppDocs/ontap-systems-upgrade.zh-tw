@@ -77,3 +77,6 @@ aggr_2         825.0GB      825.0GB      0%     online  1      node2  raid_dp  n
 「網路介面show -curr-node-node2_-role data」
 
 
+
+.接下來呢？
+將非根 Aggregate 和 NAS 資料 LIF 從節點 2 重新配置到節點 3 後，link:relocate-failed-or-vetoed-aggr-node3.html["重新配置失敗或被否決的 Aggregate"]

@@ -60,3 +60,6 @@ NOTE: 在本文檔中，原有節點稱為_node1_和_node2_，新節點稱為_no
 
 
 
+
+.接下來呢？
+在了解 ARL 程序之後，link:decide_to_use_arl_guide.html["決定是否使用此 ARL 程序"]。

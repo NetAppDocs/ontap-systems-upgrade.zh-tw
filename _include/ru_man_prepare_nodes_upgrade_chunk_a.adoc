@@ -157,7 +157,7 @@ node2          node1          true     Connected to node1
 「torage Aggregate show -nodes _norme_name_-is主目錄錯誤欄位擁有者名稱、主目錄名稱、狀態」
 
 +
-如果node1和node2都不擁有當前擁有者（但不是主擁有者）的Aggregate、系統將傳回類似下列範例的訊息：
+如果 node1 和 node2 都不擁有自己是目前擁有者（但不是主擁有者）的 Aggregate、則系統會傳回類似下列範例的訊息：
 
 +
 ....

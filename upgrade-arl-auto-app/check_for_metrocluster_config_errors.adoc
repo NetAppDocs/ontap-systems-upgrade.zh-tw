@@ -27,3 +27,6 @@ NOTE: 支援功能有限、僅限線上使用。Config Advisor
 . 下載 link:https://mysupport.netapp.com/site/tools["Active IQ Config Advisor"] 工具：
 . 執行Active IQ Config Advisor 功能、檢閱輸出內容、並遵循其建議來解決任何問題。
 
+
+.接下來呢？
+檢查 MetroCluster 組態錯誤後，link:verify_switchover_healing_switchback.html["驗證切換、修復和切換回復"]。

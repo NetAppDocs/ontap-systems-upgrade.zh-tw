@@ -57,7 +57,7 @@ summary: 疑難排解使用 ARL 升級同一機箱中的控制器機型時、可
 
 * 在第 4 階段之後、當 node2 被新的系統模組取代時。
 +
-當節點2被替換時、aggr_node_1會以node1作為主節點、而非node2連線。
+當 node2 被替換時、aggr_node_1 會以 node1 作為其主節點而非 node2 上線。
 
 
 

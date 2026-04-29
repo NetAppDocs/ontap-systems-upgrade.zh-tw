@@ -1,6 +1,8 @@
+---
+permalink: upgrade-arl-auto-affa900/retire_node1.html 
+redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/retire-node1.html 
+---
 = 
 :allow-uri-read: 
 
 
-'''
-永久連結：upgrade-arl-auto-affa900/retire_node1.html 重定向：ontap-systems-upgrade/upgrade-arl-auto-in-chassis/retire-node1.html

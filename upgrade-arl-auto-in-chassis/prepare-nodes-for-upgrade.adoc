@@ -16,6 +16,12 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請準備節點
 [role="lead"]
 控制器更換程序從一系列預先檢查開始。您也可以收集原始節點的相關資訊、以便稍後在程序中使用、並視需要判斷使用中的自我加密磁碟機類型。
 
+
+
+== 步驟 1：準備節點
+
+啟動控制器更換程序並執行預先檢查。如有必要，請判斷使用中的自我加密磁碟機類型。
+
 .步驟
 . 列出在舊控制器上執行的服務處理器（ SP ）或主機板管理控制器（ BMC ）韌體版本：
 +
@@ -55,7 +61,7 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請準備節點
 「System Controller replace start -nodes _norme_names」（系統控制器取代start節點_node_names）
 
 +
-您會看到類似下列範例的輸出。輸出會顯示叢集上執行的 ONTAP 版本：
+您會看到類似以下範例的輸出。此輸出顯示在叢集上執行的 ONTAP 版本：
 
 +
 ....
@@ -72,7 +78,7 @@ Attention: Do not try to clear the NVRAM contents. If there is a need to clear t
 
 Do you want to continue? {y|n}: y
 ....
-. 選取「y」。您會看到下列輸出：
+. 選擇  `y`。您會看到以下輸出：
 +
 ....
 Controller replacement operation: Prechecks in progress.
@@ -183,7 +189,7 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 
 
 
-== 如果ARL預先檢查失敗、請修正Aggregate所有權
+== 步驟 2：如果 ARL 預先檢查失敗、請修正 Aggregate 擁有權
 
 如果Aggregate Status Check失敗、您必須將合作夥伴節點擁有的Aggregate傳回主擁有者節點、然後再次啟動預先檢查程序。
 
@@ -212,24 +218,10 @@ aggr4       node1      node1       online
 
 4 entries were displayed.
 ----
+. 重新啟動控制器更換程序：
 
-
-
-
-=== 完成後
-
-您必須重新啟動控制器更換程序：
 
 「System Controller replace start -nodes _norme_names」（系統控制器取代start節點_node_names）
 
-
-
-== 授權
-
-叢集中的每個節點都必須有自己的 NetApp 授權檔案（ NLF ）。
-
-如果您沒有 NLF 、則叢集中目前授權的功能可用於新的控制器。不過、在控制器上使用未經授權的功能可能會使您不遵守授權合約、因此您應該在升級完成後、為新控制器安裝 NLF 。
-
-請參閱link:other-references.html["參考資料"]以連結至 _NetApp Support Site_，您可以在此取得 NLF。NLF 可在 _My Support_ 區段的 _Software licenses_ 下取得。如果網站沒有您需要的 NLF，請聯絡您的NetApp銷售代表。
-
-有關授權的詳細資訊、請參閱link:other-references.html["參考資料"]以連結至《系統管理參考》。
+.接下來呢？
+準備好節點後，link:complete-preparation-for-upgrade.html["完成升級準備工作"]。

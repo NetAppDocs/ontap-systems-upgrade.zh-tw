@@ -34,3 +34,6 @@ summary: '請告知 NetApp 、在使用命令升級執行 ONTAP 9.15.1 或更新
 
 . 在表中找到叢集、然後從「產品工具集」下拉式功能表中選取*「取消委任此系統*」。
 
+
+.接下來呢？
+舊系統退役後，link:resume_snapmirror_operations.html["恢復 SnapMirror 作業"]。

@@ -259,3 +259,6 @@ Boot_ONTAP
 
 . [[man_check_3_step14]]連接埠。
 
+
+.接下來呢？
+在節點 3 上設定 FC 或 UTA/UTA2 組態後，link:map_ports_node1_node3.html["將連接埠從 node1 對應至 node3"]。

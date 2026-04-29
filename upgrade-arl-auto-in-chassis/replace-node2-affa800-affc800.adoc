@@ -1,0 +1,163 @@
+---
+sidebar: sidebar 
+permalink: upgrade-arl-auto-in-chassis/replace-node2-affa800-affc800.html 
+keywords: aff, fas, asa, install, NVRAM, node2, controller, module, modules, replacement 
+summary: 在同一機殼內對控制器型號進行 ARL 升級時，更換 node2 AFF A800 或 AFF C800 控制器模組。 
+---
+= 更換節點 2 AFF A800 或 AFF C800 控制器模組
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+將 node2 的 AFF A800 或 AFF C800 控制器模組更換為 AFF A90、AFF A70 或 AFF C80 控制器模組。
+
+此時，node2 已關閉，所有資料均由 node1 處理。請務必小心，僅移除 node2 控制器模組。從系統後方看控制器時，節點 2 是位於機殼下部托架的控制器 B。控制器標籤位於機殼上，就在控制器模組的正上方。
+
+
+CAUTION: 請勿關閉機箱電源，因為 node1 和 node2 位於同一個機箱中，並連接至相同的電源供應器。
+
+.開始之前
+如果您尚未接地、請正確接地。
+
+
+
+== 步驟 1：拆下 AFF A800 或 AFF C800 控制器模組
+
+從現有的 node2 模組移除纜線管理裝置，並將控制器稍微移出機箱。
+
+.步驟
+. 用拇指按壓每個磁碟機，確保機箱中的所有磁碟機都牢固地安裝在中板上，直到感覺到明顯的阻力為止。
++
+.影片 - 確認磁碟機安裝
+video::2c46e4af-2c21-4f12-b065-b38b003d0ea2[panopto]
++
+image:drw_a800_drive_seated_IEOPS-960.svg["將磁碟機安裝到位"]
+
+. 根據系統狀態檢查控制器磁碟機：
++
+.. 在運作正常的控制器上、檢查是否有任何作用中的 RAID 群組處於降級狀態、故障狀態或兩者兼具的狀態：
++
+[source, cli]
+----
+storage aggregate show -raidstatus !*normal*
+----
++
+*** 如果命令返回  `There are no entries matching your query.`，則繼續執行 <<Check-missing-drives,前往下一個子步驟以檢查是否有遺失的磁碟機>>。
+*** 如果該命令返回任何其他結果，請從兩個控制器收集 AutoSupport 數據並聯繫 NetApp 支援部門以獲取進一步協助。
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+.. [[Check-missing-drives]]檢查檔案系統或備用磁碟機是否有缺失磁碟機問題：
++
+[source, cli]
+----
+event log show -severity * -node * -message-name *disk.missing*
+----
++
+*** 如果命令傳回 `There are no entries matching your query.`，請繼續執行<<remove-power-cables,進入下一步>>。
+*** 如果該命令返回任何其他結果，請從兩個控制器收集 AutoSupport 數據並聯繫 NetApp 支援部門以獲取進一步協助。
++
+[source, cli]
+----
+system node autosupport invoke -node * -type all -message '<message_name>'
+----
+
+
+
+
+. [[remove-power-cables]]移除電源線固定器，然後從電源供應器上拔下電源線。
+. 從源頭拔下節點 2 控制器模組電源。
+. 釋放電源線固定器、然後從電源供應器拔下纜線。
+. 解開將纜線綁定至纜線管理裝置的掛勾和迴圈帶、然後從控制器模組拔下系統纜線、SFP和QSFP模組（如有需要）、並追蹤纜線的連接位置。
++
+將纜線留在纜線管理裝置中、以便在重新安裝纜線管理裝置時、整理好纜線。
+
+. 從控制器模組中取出纜線管理裝置、然後將其放在一旁。
+. 向下按兩個鎖定栓、然後同時向下轉動兩個鎖條。
++
+控制器模組會稍微移出機箱。
+
++
+image:a800_cable_management.png["卸下纜線管理 ARM"]
+
++
+[cols="20,80"]
+|===
+
+
+ a| 
+image:black_circle_one.png["第一名"]
+| 鎖定鎖定 
+
+
+ a| 
+image:black_circle_two.png["第二名"]
+| 鎖定銷 
+|===
+
+
+
+
+== 步驟 2：安裝 AFF A90、AFF A70 或 AFF C80 控制器模組
+
+將您收到的用於升級的 AFF A90 或 AFF A70 控制器模組安裝到節點 2 中。
+
+.步驟
+. 在機殼的前面，用拇指將每個驅動器牢牢推入頂部和底部磁碟托架，直到感覺到完全停止。這可確保驅動器牢固地固定在機箱中板上。
++
+image:drw_a800_drive_seated_IEOPS-960.png["將磁碟機推入機箱中板、使其穩固就位"]
+
++
+.. 移至機箱背面。
+
+
+. 將控制器模組的一端與機箱的開口對齊、然後將控制器模組輕推至系統的一半。
++
+
+NOTE: 在程序稍後的指示下，請勿將控制器模組完全插入機箱。
+
++
+image:drw_A70-90_PCM_remove_replace_IEOPS-1365.PNG["安裝 AFF A90 或 AFF A70"]
+
+. 將管理和主控台連接埠連接至節點2控制器模組。
++
+
+NOTE: 由於機箱已通電，因此節點 2 在完全就位後立即啟動 BIOS 初始化，然後啟動 AUTOBOOT。若要中斷 node2 啟動，建議在將控制器模組完全插入插槽之前將串行控制台和管理電纜連接到 node2 控制器模組。
+
+. 當 CAM 把手處於開啟位置時、將控制器模組牢牢推入、直到它與中板接觸並完全就位。控制器模組完全就位時、鎖定鎖定鎖定會上升。將凸輪把手關閉至鎖定位置。
++
+
+NOTE: 為避免損壞連接器，將控制器模組滑入機箱時請勿過度施力。
+
+. 模組就位後立即連接序列控制台並準備中斷節點 2 的 AUTOBOOT。
+. 中斷 AUTOBOOT 後、node2 會停留在 LOADER 提示字元。如果您未能及時中斷 AUTOBOOT、導致 node2 開始開機、請等待提示符號出現後按 Ctrl-C 進入開機選單。節點停留在開機選單後、使用選項 `8`重新啟動節點、並在重新啟動過程中中斷 AUTOBOOT。
+. 在node2的loader>提示下、設定預設環境變數：
++
+[source, cli]
+----
+set-defaults
+----
+. 儲存預設環境變數設定：
++
+[source, cli]
+----
+saveenv
+----
+. 在機殼的前面，用拇指將每個驅動器牢牢推入頂部和底部磁碟托架，直到感覺到完全停止。這可確保驅動器牢固地固定在機箱中板上。
++
+image:drw_a800_drive_seated_IEOPS-960.png["將磁碟機推入機箱中板、使其穩固就位"]
+
+. 移至機箱背面。
+
+
+.接下來呢？
+安裝 AFF A90 或 AFF A70 模組後，link:netboot-node2.html["netboot node2"]。

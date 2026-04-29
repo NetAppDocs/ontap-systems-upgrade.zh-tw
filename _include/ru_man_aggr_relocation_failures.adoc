@@ -39,8 +39,8 @@
 .關於這項工作
 在下列情況下、Aggregate可能無法正確重新定位、將node1當作其主節點、而非node3：
 
-* 在第3階段期間、當Aggregate從節點2重新定位至節點3時。正在重新部署的部分集合體將node1當作其主節點。例如、此類Aggr_nnode_1可稱為Aggr_node_1。如果在第3階段重新配置aggr_node_1失敗、且無法強制重新配置、則會將Aggregate留在node2上。
-* 在第4階段之後、節點2被節點4取代。當節點2被替換時、aggr_node_1會以node4做為主節點、而非node3連線。
+* 在第 3 階段期間、會將 Aggregate 從 node2 重新配置到 node3。部分重新配置的 Aggregate 以 node1 為主節點。例如、這類 Aggregate 可稱為 aggr_node_1。如果在第 3 階段期間重新配置 aggr_node_1 失敗、且無法強制重新配置、則 Aggregate 會留在 node2 上。
+* 在第 4 階段之後，當 node2 被 node4 取代時。當 node2 被取代時，aggr_node_1 將以 node4 作為其主節點而不是 node3 上線。
 
 
 在儲存容錯移轉啟用後、您可以完成下列步驟、在第6階段之後修正不正確的擁有權問題：

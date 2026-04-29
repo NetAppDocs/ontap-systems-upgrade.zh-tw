@@ -56,3 +56,6 @@ NOTE: 如果要在Windows上解壓縮內容、請使用7-Zip或WinRAR擷取netbo
 您將使用目錄中的信息link:install_boot_node3.html["階段3."] 。
 
 
+
+.接下來呢？
+準備好網路開機後，link:relocate_non_root_aggr_node1_node2.html["將非根 Aggregate 從節點 1 重新配置到節點 2"]。

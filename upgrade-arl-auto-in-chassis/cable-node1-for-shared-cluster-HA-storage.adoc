@@ -140,3 +140,6 @@ summary: 將先前連接至 AFF A800 node1 的叢集、 HA 、儲存設備和資
 
 
 NOTE: 如果叢集交換器僅支援 10/25 GbE 速度，則必須在替換系統的插槽 1 或插槽 2 中使用 X60130A、4 連接埠 10/25GbE 卡進行叢集互連。
+
+.接下來呢？
+在為共享叢集高可用性和儲存連接節點 1 之後，link:boot-node1-with-a900-controller-and-nvs.html["使用替換系統模組啟動 node1"]

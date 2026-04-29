@@ -57,3 +57,6 @@ summary: 必要時、請設定儲存加密、安裝 SSL 憑證、並在使用 AR
 「安全金鑰管理程式外部還原-node_new_控制 器名稱_」
 
 
+
+.接下來呢？
+在新控制器模組上設定儲存加密後，link:set-up-netapp-volum-encryption-new-module.html["在新控制器模組上設定 NetApp Volume 或 Aggregate Encryption"]。

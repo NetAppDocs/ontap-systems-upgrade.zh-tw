@@ -149,7 +149,7 @@ The node must be rebooted to start using the newly installed software. Do you wa
 
 . 清除啟動媒體上的所有先前配置。
 +
-.. 在以下提示符號下，執行 `wipeconfig`命令，然後按回車鍵：
+.. 在出現以下提示時，執行  `wipeconfig` 命令。然後按 Enter 鍵：
 +
 [listing]
 ----
@@ -268,3 +268,6 @@ NOTE: 在節點1上設定對應的UTC時間。
 《prontenv合作夥伴sysid》
 
 
+
+.接下來呢？
+在對 node1 進行網路開機後，link:cable-node1-for-shared-cluster-HA-storage.html["用於共享叢集 HA 和儲存設備的纜線 node1"]。

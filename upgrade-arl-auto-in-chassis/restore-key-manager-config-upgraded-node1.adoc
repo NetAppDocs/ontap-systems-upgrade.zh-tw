@@ -42,3 +42,6 @@ node1    svm1      ""           00000000000000000200000000000a008a81976 true
                                 2190178f9350e071fbb90f00000000000000000
 ----
 
+
+.接下來呢？
+在升級後的 node1 上還原金鑰管理程式組態後，link:move-non-root-aggr-nas-lifs-node1-from-node2-to-upgraded-node1.html["將節點 1 的非根 Aggregate 和 NAS 資料 LIF 從節點 2 遷移到升級後的節點 1"]。

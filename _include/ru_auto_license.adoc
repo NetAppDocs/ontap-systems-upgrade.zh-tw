@@ -1,10 +1,10 @@
-= 授權
+= 了解 ONTAP 授權
 :allow-uri-read: 
 
 
 
 
-== 授權
+== 了解 ONTAP 授權
 
 某些功能需要授權、以包含一或多項功能的 _packags_ 形式發出。叢集中的每個節點都必須擁有自己的金鑰、才能在叢集中使用每個功能。
 
@@ -12,4 +12,4 @@
 
 請參閱 link:other_references.html["參考資料"] 連結至 NetApp 支援網站 、您可在其中取得 ONTAP 的 28 個字元新授權金鑰。金鑰可在「軟體授權」下的「我的支援」區段中找到。如果網站沒有您需要的授權金鑰、您可以聯絡NetApp銷售代表。
 
-如需授權的詳細資訊、請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。
+如需 ONTAP 授權的詳細資訊，請參閱link:other_references.html["參考資料"]以連結至《系統管理參考》。

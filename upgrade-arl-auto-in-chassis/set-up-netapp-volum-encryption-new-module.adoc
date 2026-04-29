@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-in-chassis/set-up-netapp-volum-encryption-new-module.html 
 keywords: set up, netapp volume encryption, controller, module, nve, node 
-summary: 如果需要、請在使用 ARL 升級相同機箱中的控制器機型時、為 NVE 或 NAE 設定新的控制器模組。」 
+summary: 如果需要，在使用 ARL 升級相同機箱中的控制器型號時，請為 NVE 或 NAE 設定新的控制器模組。 
 ---
 = 在新的控制器模組上設定NetApp Volume或Aggregate Encryption
 :hardbreaks:
@@ -84,5 +84,5 @@ summary: 如果需要、請在使用 ARL 升級相同機箱中的控制器機型
 .完成後
 檢查是否有任何磁碟區因為驗證金鑰無法使用或無法連線到EKM伺服器而離線。使用「Volume online」命令將這些磁碟區重新連線。
 
-.完成後
-檢查是否有任何磁碟區因為驗證金鑰無法使用或無法連線至外部金鑰管理伺服器而離線。使用 `volume online`命令。
+.接下來呢？
+在新控制器模組上設定 NetApp Volume 或 Aggregate Encryption 後，link:decommission-old-system.html["停用舊系統"]。

@@ -34,3 +34,6 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請設定並管
 「安全金鑰管理程式外部還原-node_new_控制 器名稱_」
 
 
+
+.接下來呢？
+在使用 KMIP 伺服器管理驗證之後，link:confirm-new-controllers-are-set-up-correctly.html["確認新控制器已正確設定"]。
