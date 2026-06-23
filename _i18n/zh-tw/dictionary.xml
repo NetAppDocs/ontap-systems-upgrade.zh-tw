@@ -707,7 +707,6 @@
   <block id="d061d57f2d82b85a7aa74e13aaec4c96" category="paragraph">您無法執行下列升級：</block>
   <block id="70a3b031f6a4e388e4285d647440ec82" category="list-text">更換不支援連接至原始控制器之磁碟櫃的控制器</block>
   <block id="23498de552873202eefb3139773f663c" category="paragraph">請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 可連結至_SURE_ Hardware Universe 以取得磁碟支援資訊。</block>
-  <block id="d5457a285ea7fce244bde8387644b062" category="list-text">例如FAS 、使用內部磁碟機的入門級控制器：一套</block>
   <block id="14fc1fec490b9f5ad23d58c3c55d4441" category="paragraph">如果您想要使用內部磁碟機來升級入門級控制器、請參閱 <block ref="3352feee8874655040be7cccb077b0f9" category="inline-link-macro-rx"></block> 若要透過移動磁碟區或儲存設備來連結至_Upgrade、請移Data ONTAP 至「移動磁碟區」以升級執行叢集式VMware的一對節點」程序。</block>
   <block id="d60c463bb4096f3ed4bd1618626dfe10" category="inline-link-macro">疑難排解</block>
   <block id="59af70dd915dcdb0e4027b17846b1638" category="paragraph">如果您找不到解決所遇到問題的解決方案、請聯絡技術支援部門。</block>
@@ -1366,12 +1365,6 @@
   <block id="866ca6e46d7456a7c276afd3eb54db5d" category="list-text">[[man_recipal_node1_step11]]在任一控制器上輸入下列命令：</block>
   <block id="9bcd562ef44a8e11e5fd0e0492ebe6c4" category="paragraph">系統會顯示節點1的相關資訊、如下列範例所示：</block>
   <block id="5b9519c4c2b57166c18827dfa9f50f7c" category="list-text">[[man_recipal_node1_step12]請在一節中記錄要使用的NVRAM系統ID編號 <block ref="b27daeccf5fbd8a2e88a3636ee615b74" category="inline-link-macro-rx"></block>。</block>
-  <block id="71c5d3d7f0857c67830fb002783fd24e" category="paragraph">請參閱本節中說明程序不同階段的表格 <block ref="25c64b56e1634b7195570b2ce4c1228b" category="inline-link-macro-rx"></block>。程序階段會列出可能發生故障的相關資訊。</block>
-  <block id="96518cf6fc4836f38d5963152c3b52fc" category="list-text"><block ref="96518cf6fc4836f38d5963152c3b52fc" category="inline-link-macro-rx"></block></block>
-  <block id="b41eca4a9e61478c5412544da1b31c9f" category="list-text"><block ref="b41eca4a9e61478c5412544da1b31c9f" category="inline-link-macro-rx"></block></block>
-  <block id="03f183bce69c6c170ce7d98b73a0da9b" category="list-text"><block ref="03f183bce69c6c170ce7d98b73a0da9b" category="inline-link-macro-rx"></block></block>
-  <block id="bffc8177304b2cba0a93e9425c22a1b7" category="list-text"><block ref="bffc8177304b2cba0a93e9425c22a1b7" category="inline-link-macro-rx"></block></block>
-  <block id="e74451404fb8d41f6db27c4f815f8cf3" category="list-text"><block ref="e74451404fb8d41f6db27c4f815f8cf3" category="inline-link-macro-rx"></block></block>
   <block id="f17d4647b6777b8ed14edf7798d3bfd3" category="summary">在您對系統進行網路開機之前、請先在執行ONTAP 版本號為9.8或更新版本的控制器上進行手動ARL升級、以停止所有SnapMirror關係。</block>
   <block id="5bfe738b0f48a11f74df0b195987ecb0" category="doc">靜止SnapMirror關係</block>
   <block id="d5560010a4b579866a98e0b680b5c248" category="paragraph">如果SnapMirror關係未處於「Transferring（傳輸）」狀態、則中止將會失敗。</block>
@@ -5422,9 +5415,6 @@
   <block id="4ff3a20772d8d7adf38ea1a25699b898" category="paragraph">有關 ONTAP 授權的詳細資訊，請參閱<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>以連結至《系統管理參考》。</block>
   <block id="9de6a6f6ea48099b1305eeb9301f7679" category="paragraph">準備升級後，<block ref="0d08e260c4bde2d13bb947f0a9e09267" category="inline-link-macro-rx"></block>。</block>
   <block id="8f77a5ae2857206a750f5c0ad3144dba" category="paragraph">確認新控制器設定正確後，<block ref="3971d535deb9d86527af888c19f530a0" category="inline-link-macro-rx"></block>。</block>
-  <block id="8d20c5aabf9dd75444b513dba9105128" category="list-text">如果您偏好使用不同的方法來升級控制器硬體，並且願意進行磁碟區移動，請參閱<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>以連結至_透過移動磁碟區或儲存設備進行升級_。</block>
-  <block id="e7832b913f3afc75dba2c326b1f78e53" category="paragraph">請參閱<block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block>以連結至 _ONTAP 9 文件_。</block>
-  <block id="a2bbeda24395d719b706b64dfe948579" category="paragraph">在決定使用此 ARL 程序之後，<block ref="91151593e881bd87765e26c1297041b3" category="inline-link-macro-rx"></block>。</block>
   <block id="507d933d47a6537d92195e190c11484a" category="list-text">請點選 <block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block> 連結造訪 _NetApp Support Site_ 並登入。</block>
   <block id="9f92af96b5d3b869fcf7eab42bd5cc08" category="paragraph">舊系統退役後，<block ref="f4079db79b5429ce771ea3a34eb1e8f9" category="inline-link-macro-rx"></block>。</block>
   <block id="e7b8e0fba9c9b33b762bd4e7d2cb39c1" category="paragraph">在審閱控制器升級準則之後，<block ref="7eb250b820c3db26ee334554a9610b65" category="inline-link-macro-rx"></block>。</block>
@@ -5602,4 +5592,23 @@
   <block id="8695aaca9524014699a6d443a2a534fa" category="paragraph">記錄每個 LIF 的<block ref="8a7a38cfa57d4ac98cced700b804556a" prefix=" " category="inline-code"></block>和<block ref="3139ea911ab60226789083923e2852c9" prefix=" " category="inline-code"></block>資訊後，<block ref="0e10c1b69c827b2c86d2f4757a767a1f" category="inline-link-macro-rx"></block>。</block>
   <block id="2e7f5b6308a3207b532f2eb213ce3976" category="sidebar">第 5 階段。安裝 node2 替換系統模組</block>
   <block id="5a71019ad7fb5de4924f41950c599ee0" category="sidebar">更換 node2 系統模組</block>
+  <block id="c61e96543ff55077f64d8dd03940c2c6" category="cell">AFF A70</block>
+  <block id="6733c91021834f836a56aa42deec9ed1" category="cell">9.18.1 及更高版本</block>
+  <block id="f8f6ba2d572ef729148f2d89d8ff810a" category="cell">AFF A30</block>
+  <block id="bab1b59b0a2ad746796448276777fdbd" category="cell">AFF C30</block>
+  <block id="7a1f08f539146079eaeae8f4a563cce2" category="cell">AFF C60</block>
+  <block id="017db3debbf4b1ed577798b78fd96b66" category="cell">FAS70</block>
+  <block id="ae53f9b6c37e8ea6aae42847aa6b0621" category="list-text">對於內建磁碟機的入門級控制器，例如：FAS2750。</block>
+  <block id="d3444d99e26820a0501e10f63ff02ce8" category="cell">AFF A70 ^1^</block>
+  <block id="21e93d495fc43df48584edd71b0d597d" category="cell">AFF A30 ^1^</block>
+  <block id="224aecc1813d58390c83fb8decc63b6b" category="cell">AFF A20 ^1^</block>
+  <block id="9c72db8ed6f22f44a2b4fa3a8e594dff" category="cell">AFF A30 ^3^，AFF A50</block>
+  <block id="358489a49dc54c3e41e29084805d95cb" category="cell">AFF C30 ^1^</block>
+  <block id="9194367b74a77f509bf82a9c405501e3" category="cell">FAS70 ^1^</block>
+  <block id="eb5f65df42e892b67421158d46262d5b" category="paragraph">^3^ 在雙節點無交換器叢集配置中，AFF A20 升級到 AFF A30 有一些連接埠連線需求：</block>
+  <block id="b9defe65cc630cb29fcf83583ad21bf6" category="list-text">AFF A20 支援 X60132A（4 埠 10/25GbE CX7）和 X60131A（2 埠 10/25GbE CX6-LX）用於叢集互連。</block>
+  <block id="d8c33c1b9cb7049a65e4a3bb2c51cb30" category="list-text">AFF A30 僅支援 X60130A（2 連接埠 100GbE CX6-DX）用於叢集互連。</block>
+  <block id="eb0245b89d287738a56a5047aeb3152b" category="list-text">使用臨時 10/25GbE 網路卡將 AFF A20 暫時連接到 AFF A30。4 連接埠或 2 連接埠 10/25GbE 網路卡支援 AFF A20 上的叢集功能。建議在 AFF A20 和 AFF A30 中使用相同的網路卡。如果沒有新網路卡，可以使用 AFF A20 上的網路卡作為臨時叢集互連。</block>
+  <block id="f3cccb510b48124791f68ef8a99fca3a" category="list-text">當 AFF A30 節點 3 上線時，它會將 HA IC 連接埠配置為 100GbE，並嘗試將叢集 LIF 部署在 10/25GbE 連接埠上。ONTAP 會將這些連接埠偵測為已連接到 AFF A20。如果 ONTAP 未自動偵測到這些連接埠，您可以手動修改臨時叢集連接埠。然後，如有需要，您可以將叢集 LIF 遷移到這些臨時叢集連接埠。</block>
+  <block id="9aa79fb991cdc044a96dc2dbd05e3bd6" category="list-text">在升級 AFF A20 node1 後，由於 AFF A20 node2 需要停機以進行升級準備，因此您需要斷開臨時 10/25GbE 叢集連接埠的連接，僅使用 100GbE 共用叢集連接埠。當 AFF A30 node3 和 node4 透過 100GbE 連接埠連接後，連線恢復正常，即可完成升級。</block>
 </blocks>

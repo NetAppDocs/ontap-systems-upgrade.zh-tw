@@ -49,7 +49,7 @@ NOTE: 如果您要升級支援內部磁碟機的系統（例如FAS2700或AFF E4A
 +
 請參閱 link:other_references.html["參考資料"] 可連結至_SURE_ Hardware Universe 以取得磁碟支援資訊。
 
-* 例如FAS 、使用內部磁碟機的入門級控制器：一套
+* 對於內建磁碟機的入門級控制器，例如：FAS2750。
 +
 如果您想要使用內部磁碟機來升級入門級控制器、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備來連結至_Upgrade、請移Data ONTAP 至「移動磁碟區」以升級執行叢集式VMware的一對節點」程序。
 
