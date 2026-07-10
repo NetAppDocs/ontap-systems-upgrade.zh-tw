@@ -18,6 +18,7 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請準備節點
 
 
 
+[[step-1-prepare-the-nodes]]
 == 步驟 1：準備節點
 
 啟動控制器更換程序並執行預先檢查。如有必要，請判斷使用中的自我加密磁碟機類型。
@@ -25,8 +26,10 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請準備節點
 .步驟
 . 列出在舊控制器上執行的服務處理器（ SP ）或主機板管理控制器（ BMC ）韌體版本：
 +
-`service-processor show`
-
+[source, cli]
+----
+service-processor show
+----
 +
 確認您擁有支援的 SP 或 BMC 韌體版本：
 
@@ -55,11 +58,15 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請準備節點
 |===
 . 在ONTAP 指令行的進階權限模式中輸入下列命令、開始控制器更換程序：
 +
-"進階權限"
-
+[source, cli]
+----
+set -privilege advanced
+----
 +
-「System Controller replace start -nodes _norme_names」（系統控制器取代start節點_node_names）
-
+[source, cli]
+----
+system controller replace start -nodes <node_names>
+----
 +
 您會看到類似以下範例的輸出。此輸出顯示在叢集上執行的 ONTAP 版本：
 
@@ -123,7 +130,7 @@ Controller replacement operation has been paused for user intervention.
 | 叢集LIF狀態 | 檢查兩個節點的叢集生命點是否都正常運作。如果叢集LIF已關閉、工作就會失敗。 
 
 
-| ASUP狀態檢查 | 如果AutoSupport 未設定顯示功能通知、工作就會失敗。在AutoSupport 開始更換控制器之前、您必須先啟用支援功能。 
+| AutoSupport 狀態檢查 | 如果AutoSupport 未設定顯示功能通知、工作就會失敗。在AutoSupport 開始更換控制器之前、您必須先啟用支援功能。 
 
 
 | CPU使用率檢查 | 檢查要更換的任何節點的CPU使用率是否超過50%。如果CPU使用率在一段相當長的時間內超過50%、工作就會失敗。 
@@ -140,33 +147,118 @@ Controller replacement operation has been paused for user intervention.
 從連接至每個節點的序列連接埠執行命令、分別執行及儲存命令的輸出：
 
 +
-** 「Vserver服務名稱服務DNS節目」
-** `network interface show -curr-node _local_ -role cluster,intercluster,node-mgmt,cluster-mgmt,data`
-** `network port show -node _local_ -type physical`
-** `service-processor show -node _local_ -instance`
-** `network fcp adapter show -node _local_`
-** `network port ifgrp show -node _local_`
-** `system node show -instance -node _local_`
-** `run -node _local_ sysconfig`
-** `run -node local sysconfig -ac`
-** `run -node local aggr status -r`
-** `vol show -fields type`
-** `run local aggr options _data_aggregate_name_`
-** `vol show -fields type , space-guarantee`
-** `storage aggregate show -node _local_`
-** `volume show -node _local_`
-** 「torage Array config show -switch_switch_name_」
-** `system license show -owner _local_`
-** 「torage加密磁碟顯示」
-** 「安全金鑰管理程式內建show Backup」
-** 「安全關鍵經理外部秀」
-** 「安全金鑰管理程式外部顯示狀態」
-** `network port reachability show -detail -node _local_`
+[source, cli]
+----
+vserver services name-service dns show
+----
++
+[source, cli]
+----
+network interface show -curr-node <local> -role cluster,intercluster,node-mgmt,cluster-mgmt,data
+----
++
+[source, cli]
+----
+network port show -node <local> -type physical
+----
++
+[source, cli]
+----
+service-processor show -node <local> -instance
+----
++
+[source, cli]
+----
+network fcp adapter show -node <local>
+----
++
+[source, cli]
+----
+network port ifgrp show -node <local>
+----
++
+[source, cli]
+----
+system node show -instance -node <local>
+----
++
+[source, cli]
+----
+run -node <local> sysconfig
+----
++
+[source, cli]
+----
+run -node local sysconfig -ac
+----
++
+[source, cli]
+----
+run -node local aggr status -r
+----
++
+[source, cli]
+----
+vol show -fields type
+----
++
+[source, cli]
+----
+run local aggr options <data_aggregate_name>
+----
++
+[source, cli]
+----
+vol show -fields type , space-guarantee
+----
++
+[source, cli]
+----
+storage aggregate show -node <local>
+----
++
+[source, cli]
+----
+volume show -node <local>
+----
++
+[source, cli]
+----
+storage array config show -switch <switch_name>
+----
++
+[source, cli]
+----
+system license show -owner <local>
+----
++
+[source, cli]
+----
+storage encryption disk show
+----
++
+[source, cli]
+----
+security key-manager onboard show-backup
+----
++
+[source, cli]
+----
+security key-manager external show
+----
++
+[source, cli]
+----
+security key-manager external show-status
+----
++
+[source, cli]
+----
+network port reachability show -detail -node <local>
+----
 +
 
 NOTE: 如果使用內建金鑰管理程式的 NetApp Volume Encryption （ NVE ）或 NetApp Aggregate Encryption （ NAE ）正在使用中、請在稍後的程序中、將金鑰管理程式複雜密碼保留為完成金鑰管理程式重新同步。
-
-
 
 . 如果您的系統使用自我加密磁碟機、請參閱知識庫文章 https://kb.netapp.com/onprem/ontap/Hardware/How_to_tell_if_a_drive_is_FIPS_certified["如何判斷磁碟機是否已通過 FIPS 認證"^] 以判斷您要升級的HA配對所使用的自我加密磁碟機類型。支援兩種自我加密磁碟機的支援ONTAP ：
 +
@@ -189,6 +281,7 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 
 
 
+[[step-2-correct-aggregate-ownership-if-an-arl-precheck-fails]]
 == 步驟 2：如果 ARL 預先檢查失敗、請修正 Aggregate 擁有權
 
 如果Aggregate Status Check失敗、您必須將合作夥伴節點擁有的Aggregate傳回主擁有者節點、然後再次啟動預先檢查程序。
@@ -196,12 +289,16 @@ https://docs.netapp.com/us-en/ontap/encryption-at-rest/support-storage-encryptio
 .步驟
 . 將合作夥伴節點目前擁有的Aggregate傳回主擁有者節點：
 +
-「torage Aggregate regate or搬 移開始節點_source_node_-destination-node_-aggregation-list *」
-
+[source, cli]
+----
+storage aggregate relocation start -node <source_node> -destination <destination_node> -aggregate-list *
+----
 . 驗證node1和node2是否仍擁有當前擁有者（但不是主擁有者）的Aggregate：
 +
-「torage Aggregate show -nodes _norme_name_-is主目錄錯誤欄位擁有者名稱、主目錄名稱、狀態」
-
+[source, cli]
+----
+storage aggregate show -nodes <node_name> -is-home false -fields owner-name, home-name, state
+----
 +
 以下範例顯示當節點同時是Aggregate的目前擁有者和主擁有者時、命令的輸出：
 
@@ -219,9 +316,12 @@ aggr4       node1      node1       online
 4 entries were displayed.
 ----
 . 重新啟動控制器更換程序：
++
+[source, cli]
+----
+system controller replace start -nodes <node_names>
+----
 
-
-「System Controller replace start -nodes _norme_names」（系統控制器取代start節點_node_names）
 
 .接下來呢？
 準備好節點後，link:complete-preparation-for-upgrade.html["完成升級準備工作"]。

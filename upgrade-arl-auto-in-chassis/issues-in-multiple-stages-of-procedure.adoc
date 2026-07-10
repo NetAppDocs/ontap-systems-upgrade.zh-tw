@@ -18,6 +18,7 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、可能發生的
 
 
 
+[[unexpected-storage-failover-show-command-output]]
 == 意外的「儲存容錯移轉show」命令輸出
 
 在過程中、如果裝載所有資料集合體的節點發生緊急情況或意外重新開機、您可能會在重新開機、發生緊急情況或關機後、看到「儲存容錯移轉show」命令的非預期輸出。

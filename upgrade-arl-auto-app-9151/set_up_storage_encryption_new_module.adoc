@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/set_up_storage_encryption_new_module.html 
 keywords: set up storage, encryption, controller, module, node 
-summary: '如有必要、請使用命令來升級執行 ONTAP 9.15.1 或更新版本的控制器時、設定儲存加密、安裝 SSL 憑證、以及設定金鑰管理伺服器 `system controller replace` 。' 
+summary: '如果需要，可在升級至 ONTAP 9.15.1 或更新版本所引入的控制器時，使用 `system controller replace`命令來設定儲存加密、安裝 SSL 憑證及設定金鑰管理伺服器。' 
 ---
 = 在新的控制器模組上設定儲存加密
 :hardbreaks:

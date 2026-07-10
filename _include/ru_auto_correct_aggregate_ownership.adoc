@@ -4,6 +4,7 @@
 
 
 
+[[step-2-correct-aggregate-ownership-if-an-arl-precheck-fails]]
 == 步驟 2：如果 ARL 預先檢查失敗、請修正 Aggregate 擁有權
 
 如果Aggregate Status Check失敗、您必須將合作夥伴節點擁有的Aggregate傳回主擁有者節點、然後再次啟動預先檢查程序。
@@ -11,12 +12,16 @@
 .步驟
 . 將合作夥伴節點目前擁有的Aggregate傳回主擁有者節點：
 +
-「torage Aggregate regate or搬 移開始節點_source_node_-destination-node_-aggregation-list *」
-
+[source, cli]
+----
+storage aggregate relocation start -node <source_node> -destination <destination_node> -aggregate-list *
+----
 . 驗證node1和node2是否仍擁有當前擁有者（但不是主擁有者）的Aggregate：
 +
-「torage Aggregate show -nodes _norme_name_-is主目錄錯誤欄位擁有者名稱、主目錄名稱、狀態」
-
+[source, cli]
+----
+storage aggregate show -nodes <node_name> -is-home false -fields owner-name, home-name, state
+----
 +
 以下範例顯示當節點同時是Aggregate的目前擁有者和主擁有者時、命令的輸出：
 
@@ -34,6 +39,9 @@ aggr4       node1      node1       online
 4 entries were displayed.
 ----
 . 重新啟動控制器更換程序：
++
+[source, cli]
+----
+system controller replace start -nodes <node_names>
+----
 
-
-「System Controller replace start -nodes _norme_names」（系統控制器取代start節點_node_names）

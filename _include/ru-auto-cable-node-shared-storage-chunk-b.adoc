@@ -4,6 +4,7 @@
 
 
 
+[[connect-to-a-switch-attached-cluster]]
 == 連線至交換器連接的叢集
 
 對於交換器連接的叢集，請檢查您是否符合 AFF A30 ， AFF A50 ， AFF A70 ， AFF A90 ， AFF C30 ， AFF C60 或 AFF C80 （更換）節點的下列需求：

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-in-chassis/netboot-node2.html 
 keywords: preparing, prepare, netboot, ontap, node2 
-summary: 在使用 ARL 升級同一機箱中的控制器機型時、交換對應的更換 node2 系統模組之後、您可能需要將它們以網路開機。 
+summary: 使用 ARL 升級同一機箱中的控制器型號時，更換對應的替換系統模組後，必須對 node2 進行網路開機。 
 ---
 = netboot node2
 :hardbreaks:

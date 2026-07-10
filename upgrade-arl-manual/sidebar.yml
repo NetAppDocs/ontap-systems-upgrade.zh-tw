@@ -19,7 +19,7 @@ entries:
   - title: 準備重新配置交換器佈局
     url: "/upgrade-arl-manual/reconfig_index.html"
   - title: 重新設定交換器之前、請先傳送自訂AutoSupport 的功能資訊
-    url: "/upgrade-arl-manual/send_custom_asup_message_prior_reconfig_switches.html"
+    url: "/upgrade-arl-manual/send_custom_autosupport_message_prior_reconfig_switches.html"
   - title: 驗MetroCluster 證整個過程的效能狀況
     url: "/upgrade-arl-manual/verify_health_mcc_config.html"
   - title: 檢查MetroCluster 是否有任何組態錯誤

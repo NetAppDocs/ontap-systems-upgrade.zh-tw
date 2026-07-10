@@ -43,6 +43,7 @@ NOTE: 本文檔中，*node1* 和 *node2* 僅用作節點名稱的指涉。在執
 
 
 
+[[requirements-and-limitations]]
 == 要求與限制
 
 開始升級之前，您需要考慮重要因素。
@@ -77,6 +78,7 @@ NOTE: 您必須檢閱以下所有重要資訊。
 
 
 
+[[automated-controller-upgrade-process]]
 == 自動化控制器升級程序
 
 此程序提供自動化程序的步驟、此程序使用自動磁碟指派和網路連接埠連線檢查來簡化控制器升級體驗。

@@ -18,6 +18,7 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請設定並管
 
 
 
+[[learn-about-ontap-licensing]]
 == 了解 ONTAP 授權
 
 叢集中的每個節點都必須有自己的 NetApp 授權檔案（ NLF ）。
@@ -30,6 +31,8 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請設定並管
 
 
 
+[[manage-storage-encryption-using-the-onboard-key-manager]]
+[[manage-storage-encryption-using-okm]]
 == 使用 Onboard Key Manager 管理儲存加密
 
 使用 Onboard Key Manager（OKM）來管理加密金鑰。如果您已設定 OKM，則必須在開始升級之前記錄通關密語和備份資料。
@@ -58,6 +61,7 @@ summary: 使用 ARL 升級同一機箱中的控制器機型時、請設定並管
 
 
 
+[[optionally-quiesce-the-snapmirror-relationships]]
 == 或者，也可以讓這些 SnapMirror 關係平靜下來
 
 在繼續執行此程序之前、您必須確認所有SnapMirror關係均已靜止。當SnapMirror關係靜止時、它會在重新開機和容錯移轉之間保持靜止。

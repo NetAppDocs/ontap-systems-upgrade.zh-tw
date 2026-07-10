@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html 
 keywords: relocate, non-root, aggregates, nas, lif, node2, node3 
-summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、請將 node2 的非 root 集合體重新定位至 node3 `system controller replace` 。' 
+summary: '使用  `system controller replace` 命令，將 node2 的非根 Aggregate 重新定位至 node3，以升級至 ONTAP 9.15.1 或更新版本中引入的控制器。' 
 ---
 = 將非根Aggregate和NAS資料LIF從節點2重新定位至節點3
 :hardbreaks:

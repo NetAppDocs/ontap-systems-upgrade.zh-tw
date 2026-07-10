@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/manage-authentication-using-kmip-servers.html 
 keywords: ip, address, external, key, management, server, storage, encryption, upgrading, authentication 
-summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、請設定及管理儲存加密、管理驗證金鑰、以及靜態 SnapMirror 關係 `system controller replace` 。' 
+summary: '使用 `system controller replace`命令，設定並管理儲存加密、管理驗證金鑰，並在升級至 ONTAP 9.15.1 或更新版本中引入的控制器時，將 SnapMirror 關係靜止。' 
 ---
 = 使用KMIP伺服器管理驗證
 :hardbreaks:

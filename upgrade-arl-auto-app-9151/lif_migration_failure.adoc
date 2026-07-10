@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/lif_migration_failure.html 
 keywords: lif, migration, failure, mtu 
-summary: '在階段 2 、階段 3 或階段 5 中移轉後、當使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、生命週期不會在線上 `system controller replace` 。' 
+summary: '使用 `system controller replace`指令升級至 ONTAP 9.15.1 或更新版本中引入的控制器時，在階段 2、階段 3 或階段 5 移轉後 LIF 未上線。' 
 ---
 = LIF移轉失敗
 :hardbreaks:

@@ -18,6 +18,7 @@ summary: 疑難排解使用 ARL 升級同一機箱中的控制器機型時、可
 
 
 
+[[check-for-aggregate-relocation-failure]]
 == 檢查Aggregate重新配置失敗
 
 在程序期間、ARL可能會在階段2、階段3或階段5中失敗。
@@ -44,6 +45,7 @@ summary: 疑難排解使用 ARL 升級同一機箱中的控制器機型時、可
 
 
 
+[[aggregates-originally-on-node1-are-owned-by-node2-after-completion-of-the-upgrade]]
 == 在完成升級後、原本位於節點1上的Aggregate歸node2所有
 
 在升級程序結束時、節點1應該是集合體的新主節點、而該主節點原本是節點1、做為主節點。您可以在升級後重新配置。

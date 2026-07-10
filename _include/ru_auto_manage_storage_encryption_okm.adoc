@@ -4,6 +4,7 @@
 
 
 
+[[manage-storage-encryption-using-the-onboard-key-manager]]
 == 使用 Onboard Key Manager 管理儲存加密
 
 使用 Onboard Key Manager（OKM）來管理加密金鑰。如果您已設定 OKM，則必須在開始升級之前記錄通關密語和備份資料。

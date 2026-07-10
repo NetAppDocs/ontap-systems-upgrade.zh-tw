@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/ensure_new_controllers_are_set_up_correctly.html 
 keywords: confirm, controllers, set up, ha, node3, node4, node2, lif, cluster, high, availability 
-summary: '啟用 HA 配對、驗證 node3 和 node4 儲存設備存取、並在使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器之後、確認 Aggregate 擁有權 `system controller replace` 。' 
+summary: '升級至 ONTAP 9.15.1 或更新版本中引入的控制器後，使用 `system controller replace`命令啟用 HA 配對、驗證 node3 和 node4 儲存存取，並確認 Aggregate 所有權。' 
 ---
 = 確認新的控制器已正確設定
 :hardbreaks:

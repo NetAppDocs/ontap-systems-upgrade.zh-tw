@@ -4,6 +4,7 @@
 
 
 
+[[step-1-set-up-new-iscsi-connections]]
 == 步驟 1 ：設定新的 iSCSI 連線
 
 若要移動 iSCSI 連線、請設定新的 iSCSI 連線至新節點。
@@ -167,6 +168,7 @@ size=2.0G features='4 queue_if_no_path pg_init_retries 50 retain_attached_hw_han
 ----
 
 
+[[step-2-add-the-new-nodes-as-reporting-nodes]]
 == 步驟 2 ：將新節點新增為報告節點
 
 設定與新節點的連線之後、您可以將新節點新增為報告節點。
@@ -356,6 +358,7 @@ up        secondary  sdah    host5        iscsi_lf__n3_p1_
 
 
 
+[[step-3-remove-reporting-nodes-and-rescan-paths]]
 == 步驟 3 ：移除報告節點並重新掃描路徑
 
 您必須移除報告節點、然後重新掃描路徑。

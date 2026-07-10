@@ -26,6 +26,7 @@ CAUTION: 請勿關閉機箱電源，因為 node1 和 node2 位於同一個機箱
 
 
 
+[[step-1-remove-the-aff-a700-or-fas9000-controller-module]]
 == 步驟 1：拆下 AFF A700 或 FAS9000 控制器模組
 
 拆下並移除節點 1 AFF A700 或 FAS9000 控制器模組。
@@ -66,6 +67,7 @@ image:black_circle_two.png["第二名"]
 
 
 
+[[step-2-remove-the-aff-a700-or-fas9000-nvram-module]]
 == 步驟 2：移除 AFF A700 或 FAS9000 NVRAM 模組
 
 解鎖並移除節點 1 AFF A700 或 FAS9000 NVRAM 模組。
@@ -108,6 +110,7 @@ image:black_circle_two.png["第二名"]
 
 
 
+[[step-3-install-the-asa-a900-aff-a900-or-fas9500-nvram-module]]
 == 步驟 3：安裝 ASA A900、AFF A900 或 FAS9500 NVRAM 模組
 
 在節點 1 中安裝、連接 ASA A900、AFF A900 或 FAS9500 NVRAM 模組。
@@ -144,6 +147,7 @@ image:black_circle_two.png["第二名"]
 
 
 
+[[step-4-install-the-asa-a900-aff-a900-or-fas9500-controller-module-in-node1]]
 == 步驟 4：在節點 1 中安裝 ASA A900、AFF A900 或 FAS9500 控制器模組
 
 在節點 1 中安裝、連接纜線並連接 ASA A900、AFF A900 或 FAS9500 控制器模組。

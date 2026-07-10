@@ -4,6 +4,7 @@
 
 
 
+[[check-and-configure-utauta2-ports-on-node4]]
 == 檢查並設定節點4上的UTA/UTA2連接埠
 
 如果節點4內建UTA/UTA2連接埠或UTA/UTA2A卡、您必須檢查連接埠的組態並加以設定、視您要使用升級系統的方式而定。

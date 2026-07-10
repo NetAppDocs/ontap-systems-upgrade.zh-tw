@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/relocate_non_root_aggr_nas_data_lifs_node1_node2.html 
 keywords: relocating, non-root, aggregates, nas, data, lif, node1, node2 
-summary: '使用命令將非根集合體和 NAS 資料生命體從 node1 移至 node2 、並將 node1 的資源移至 node3 、以升級執行 ONTAP 9.15.1 或更新版本的控制器 `system controller replace` 。' 
+summary: '使用 `system controller replace`指令將非根聚合和 NAS 資料 LIF 從節點 1 移至節點 2，並在升級至 ONTAP 9.15.1 或更新版本所引入的控制器時，將節點 1 的資源移至節點 3。' 
 ---
 = 將節點1擁有的非根Aggregate和NAS資料lifs重新部署到節點2
 :hardbreaks:

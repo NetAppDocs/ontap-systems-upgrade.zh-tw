@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-manual/send_custom_asup_message_prior_reconfig_switches.html 
+permalink: upgrade-arl-manual/send_custom_autosupport_message_prior_reconfig_switches.html 
 keywords: autosupport, reconfigure, send message, maintenance, netapp support 
 summary: 通知NetApp技術支援部門、在ONTAP 執行更新版本的控制器上進行手動ARL升級時、正在進行維護。 
 ---

@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/restore_key-manager_configuration_node3.html 
 keywords: restoring, key-manager, configuration, node3, nve, arl, encryption, netapp, volume 
-summary: '如果需要、請使用命令在 node3 上還原金鑰管理程式組態、以升級執行 ONTAP 9.15.1 或更新版本的控制器 `system controller replace` 。' 
+summary: '如果需要，在升級至 ONTAP 9.15.1 或更新版本中引入的控制器時，可使用 `system controller replace`命令在 node3 上還原金鑰管理程式組態。' 
 ---
 = 還原節點3上的金鑰管理程式組態
 :hardbreaks:

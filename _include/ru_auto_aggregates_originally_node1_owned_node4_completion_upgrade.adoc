@@ -4,6 +4,7 @@
 
 
 
+[[aggregates-originally-on-node1-are-owned-by-node4-after-completion-of-the-upgrade]]
 == 在完成升級後、原本位於節點1上的Aggregate歸node4所有
 
 在升級程序結束時、node3應該是集合體的新主節點、而該主節點原本是node1作為主節點。您可以在升級後重新配置。

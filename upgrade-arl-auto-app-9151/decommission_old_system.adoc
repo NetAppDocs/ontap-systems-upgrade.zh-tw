@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/decommission_old_system.html 
 keywords: decommission, old system, upgrade, databases, netapp, support, site, serial, number, cluster 
-summary: '請告知 NetApp 、在使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器之後、舊系統不再運作 `system controller replace` 。' 
+summary: '升級至 ONTAP 9.15.1 或更新版本中引入的控制器後，請使用 `system controller replace`命令通知 NetApp 舊系統已不再運作。' 
 ---
 = 取消委任舊系統
 :hardbreaks:

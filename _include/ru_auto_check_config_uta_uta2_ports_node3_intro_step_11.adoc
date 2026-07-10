@@ -4,6 +4,8 @@
 
 
 
+[[step-2-check-and-configure-utauta2-ports-on-node3]]
+[[check-config-uta-uta2-node3]]
 == 步驟 2：檢查並設定 node3 上的 UTA/UTA2 連接埠
 
 如果節點3內建UTA/UTA2連接埠或UTA/UTA2卡、您必須檢查連接埠的組態、並視您要使用升級系統的方式而可能重新設定。

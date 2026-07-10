@@ -41,6 +41,7 @@ link:../upgrade-arl-auto-in-chassis/decide-to-use-the-aggregate-relocation-guide
 
 
 
+[[choose-a-different-hardware-upgrade-procedure]]
 == 選擇不同的硬體升級程序
 
 * link:../upgrade-arl/index.html["查看可用於升級控制器硬體的替代 ARL 方法"]。

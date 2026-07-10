@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: upgrade-arl/index.html 
 keywords: aggregate, relocation, moving, manual, upgrade, relocate, hardware 
-summary: 使用Aggregate重新配置來升級控制器硬體 
+summary: 了解如何使用聚合重新定位來升級 AFF、ASA 或 FAS 控制器硬體。 
 ---
-= 從這裡開始：選擇您的 ARL 升級程序
+= 從這裡開始：選擇適用於 AFF、ASA 或 FAS 控制器硬體的 ARL 升級程序
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 使用Aggregate重新配置來升級控制器硬體
 
 
 [role="lead"]
-您可以使用 Aggregate 重定位（ ARL ）來升級控制器硬體、而不會造成中斷。有關升級控制器硬體的其他方法，請參閱link:../upgrade/upgrade-decide-to-use-this-guide.html["透過移動磁碟區或儲存設備進行升級"]。
+您可以使用集合體重新定位 (ARL) 來升級 AFF、ASA 或 FAS 控制器硬體，而不會造成服務中斷。如需升級控制器硬體的其他方法，請參閱 link:../upgrade/upgrade-decide-to-use-this-guide.html["透過移動磁碟區或儲存設備進行升級"]。
 
 使用 ARL 、您可以將非根集合體從原始節點移轉至同一個叢集中的新節點、以不中斷營運的方式升級執行 ONTAP 的一對節點上的控制器硬體。在升級期間、可存取所要升級節點上的資料。
 
@@ -24,9 +24,10 @@ ARL 利用 HA 組態、讓您能夠將非根集合體的擁有權從一個節點
 
 
 
-== 使用 ONTAP 9 ． 15.1 或更新版本的「系統控制器取代」命令
+[[upgrade-to-systems-introduced-in-ontap-9-15-1-or-later]]
+== 升級至 ONTAP 9.15.1 或更新版本中引入的系統
 
-如果您的升級案例列於下列支援系統對照表、請前往link:../upgrade-arl-auto-app-9151/index.html["使用「系統控制器更換」命令來升級 ONTAP 9.15.1 及更新版本中引進的控制器硬體"]開始升級程序。
+如果您的升級方案列在以下支援的系統矩陣中，請前往link:../upgrade-arl-auto-app-9151/index.html["使用「system controller replace」指令升級至 ONTAP 9.15.1 或更新版本中引入的控制器硬體"]以開始升級程序。
 
 .顯示支援的系統
 [%collapsible]
@@ -64,6 +65,7 @@ ARL 利用 HA 組態、讓您能夠將非根集合體的擁有權從一個節點
 ====
 
 
+[[upgrade-controller-models-in-the-same-chassis]]
 == 在同一機箱中升級控制器機型
 
 如果您的升級方案列在以下受支援系統矩陣中，請前往link:../upgrade-arl-auto-in-chassis/index.html["使用「系統控制器更換」命令來升級相同機箱中的控制器機型"]開始升級過程。
@@ -142,6 +144,7 @@ ARL 利用 HA 組態、讓您能夠將非根集合體的擁有權從一個節點
 ====
 
 
+[[use-system-controller-replace-commands-with-ontap-9-8-or-later]]
 == 使用 ONTAP 9 8 或更新版本的「系統控制器取代」命令
 
 如果您的升級案例列於下列支援系統對照表、請前往link:../upgrade-arl-auto-app/index.html["使用「系統控制器更換」命令來升級執行ONTAP 效能不正常的控制器硬體"]開始升級程序。
@@ -182,6 +185,7 @@ ARL 利用 HA 組態、讓您能夠將非根集合體的擁有權從一個節點
 ====
 
 
+[[use-system-controller-replace-commands-with-ontap-9-5-to-9-7]]
 == 使用 ONTAP 9 從 9.7 改為 9.7 的「系統控制器更換」命令
 
 如果您的升級案例列於下列支援系統對照表、請前往link:../upgrade-arl-auto/index.html["使用「系統控制器更換」命令、將執行ONTAP E9.5的控制器硬體升級至9.7"]開始升級程序。
@@ -208,6 +212,7 @@ ARL 利用 HA 組態、讓您能夠將非根集合體的擁有權從一個節點
 ====
 
 
+[[use-manual-arl-commands]]
 == 使用手動 ARL 命令
 
 如果您的升級案例不支援使用「系統命令」、您可以使用手動命令來執行 ARL 升級。

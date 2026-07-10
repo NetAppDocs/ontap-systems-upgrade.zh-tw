@@ -26,6 +26,7 @@ CAUTION: 請勿關閉機箱電源，因為 node1 和 node2 位於同一個機箱
 
 
 
+[[step-1-remove-the-aff-a800-or-aff-c800-controller-module]]
 == 步驟 1：拆下 AFF A800 或 AFF C800 控制器模組
 
 從現有的 node1 模組移除纜線管理裝置，並將控制器稍微移出機箱。
@@ -107,6 +108,7 @@ image:black_circle_two.png["第二名"]
 
 
 
+[[step-2-install-the-aff-a90-aff-a70-or-aff-c80-controller-module]]
 == 步驟 2：安裝 AFF A90、AFF A70 或 AFF C80 控制器模組
 
 在節點 1 中安裝、連接 AFF A90、AFF A70 或 AFF C80 控制器模組。

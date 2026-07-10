@@ -6,6 +6,7 @@
 
 
 
+[[reference-content]]
 == 參考內容
 
 下表列出此升級的特定內容。
@@ -54,7 +55,7 @@
 | link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["升級ONTAP"^] | 內含下載及升級ONTAP 功能的說明。 
 
 
-| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html["使用「系統控制器更換」命令來升級 ONTAP 9.15.1 及更新版本中引進的控制器硬體"^] | 說明使用「系統控制器更換」命令，在 ONTAP 9.15.1 及更新版本中導入的不中斷升級控制器所需的集合體重新定位程序。 
+| link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-app-9151/index.html["使用「system controller replace」指令升級至 ONTAP 9.15.1 及更新版本中引入的控制器硬體"^] | 說明使用「system controller replace」命令，以不中斷營運的方式升級至 ONTAP 9.15.1 及更新版本所引入之控制器所需的集合體重新定位程序。 
 
 
 | link:https://docs.netapp.com/us-en/ontap-systems-upgrade/upgrade-arl-auto-in-chassis/index.html["使用「系統控制器更換」命令來升級相同機箱中的控制器機型"^] | 說明在不中斷系統升級、保留舊系統機箱和磁碟所需的集合體重新定位程序。 
@@ -73,6 +74,7 @@
 |===
 
 
+[[reference-sites]]
 == 參考網站
 
 。 link:https://mysupport.netapp.com["NetApp 支援網站"^] 也包含網路介面卡（NIC）和其他可能與系統搭配使用的硬體的相關文件。也包含 link:https://hwu.netapp.com["Hardware Universe"^]，提供有關新系統支援之硬體的資訊。

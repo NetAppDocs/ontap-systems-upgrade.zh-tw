@@ -28,6 +28,8 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行《更新》9.
 ====
 
 
+[[step-1-configure-fc-ports-on-node4]]
+[[configure-fc-ports-on-node4]]
 == 步驟 1：在 node4 上設定 FC 連接埠
 
 如果節點 4 具有 FC 連接埠（無論是板載的還是附加 FC 適配器上的），則必須在節點投入使用之前設定其連接埠配置，因為系統出廠時未預先配置連接埠。如果您沒有按要求配置端口，則可能會遇到服務中斷。
@@ -90,6 +92,8 @@ Boot_ONTAP功能表
 
 
 
+[[step-2-check-and-configure-utauta2-ports-on-node4]]
+[[check-config-uta-uta2-node4]]
 == 步驟 2：檢查並設定 node4 上的 UTA/UTA2 連接埠
 
 如果節點4內建UTA/UTA2連接埠或UTA/UTA2A卡、您必須檢查連接埠的組態並加以設定、視您要使用升級系統的方式而定。

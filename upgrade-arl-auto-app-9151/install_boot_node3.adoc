@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/install_boot_node3.html 
 keywords: installing, booting, node3, ontap 
-summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、請安裝並開機 node3 並安裝 ONTAP 軟體 `system controller replace` 。' 
+summary: '使用 `system controller replace`命令安裝並啟動 node3，並在升級到 ONTAP 9.15.1 或更新版本中引入的控制器時安裝 ONTAP 軟體。' 
 ---
 = 安裝及開機節點3
 :hardbreaks:

@@ -26,6 +26,7 @@ CAUTION: 請勿關閉機箱電源，因為 node1 和 node2 位於同一個機箱
 
 
 
+[[step-1-remove-the-aff-a220-aff-a200-aff-c190-fas2620-or-fas2720-controller-module]]
 == 步驟 1：拆下 AFF A220、AFF A200、AFF C190、FAS2620 或 FAS2720 控制器模組
 
 若要存取 node2 控制器內部的元件、請從系統中移除控制器模組、然後移除控制器模組上的護蓋。
@@ -48,6 +49,7 @@ image:drw_2240_x_opening_cam_latch.png["打開 CAM 把手"]
 
 
 
+[[step-2-install-the-asa-a150-aff-a150-or-fas2820-controller-module]]
 == 步驟 2：安裝 ASA A150、AFF A150 或 FAS2820 控制器模組
 
 將您收到的用於升級的 ASA A150、AFF A150 或 FAS2820 控制器模組安裝到節點 2 中。

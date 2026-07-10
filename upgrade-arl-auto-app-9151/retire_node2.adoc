@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: upgrade-arl-auto-app-9151/retire_node2.html 
 keywords: retire, node2 
-summary: '使用命令升級執行 ONTAP 9.15.1 或更新版本的控制器時、請關閉 node2 並將其從機架或機箱中移除 `system controller replace` 。' 
+summary: '使用 `system controller replace`命令升級至 ONTAP 9.15.1 或更新版本中引入的控制器時，請關閉 node2 並將其從機架或機箱中移除。' 
 ---
 = 淘汰節點2
 :hardbreaks:

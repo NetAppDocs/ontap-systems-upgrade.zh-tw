@@ -4,6 +4,7 @@
 
 
 
+[[check-for-aggregate-relocation-failure]]
 == 檢查Aggregate重新配置失敗
 
 在程序期間、ARL可能會在階段2、階段3或階段5中失敗。
