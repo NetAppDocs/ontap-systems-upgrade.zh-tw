@@ -3220,10 +3220,7 @@
   <block id="c5dc6358f70b9b01e402df306b4756e6" category="summary">如有需要、請在執行ONTAP 版本號為ENF9.8或更新版本的控制器上進行手動ARL升級時、為NVE或NAE設定新的控制器模組。</block>
   <block id="f0a0eea61e7c18706f2be0d0b664df19" category="doc">在新的控制器模組上設定NetApp Volume或Aggegte Encryption</block>
   <block id="9c5b8b5e0f9e3862ddb4d7aea590526d" category="paragraph">在第2階段期間、您會將非根Aggregate從節點1重新部署至節點2、並將節點1擁有的非SAN資料lifs移至節點2、包括故障或遭否決的Aggregate。您也可以記錄必要的node1資訊、以便稍後在程序中使用、並淘汰node1。</block>
-  <block id="b1d2d80254a37ea644bb2f1ced221235" category="paragraph">在第3階段期間、您可以安裝並開機node3、將叢集和節點管理連接埠從node1對應至node3、並將屬於node1的資料l生命 期和SAN生命期從node2移至node3。您也可以將節點2上的所有集合體重新定位到節點3、然後將節點2擁有的資料生命體和SAN生命體移到節點3。</block>
   <block id="14404b4da2811fbc2d79f7bd9ba708f3" category="paragraph">在第4階段期間、您會記錄必要的node2資訊、以便稍後在程序中使用、然後淘汰node2。集合體擁有權不會發生任何變更。</block>
-  <block id="7e21a9c9d8227ac88401921ab1292b41" category="paragraph">在第5階段期間、您可以安裝並開機node4、將叢集和節點管理連接埠從node2對應至node4、並將屬於node2的資料lifs和SAN lifs從node3移至node4。您也可以將node2 Aggregate從node3重新部署到node4、然後將node2擁有的資料l生命 週期和SAN生命週期移到node3。</block>
-  <block id="3bd7ed4f2ac8c8bee0e26402197de3f8" category="paragraph">在第6階段期間、您確認新節點已正確設定、如果新節點已啟用加密、則可設定儲存加密或NetApp Volume加密。您也應該取消委任舊節點、以恢復SnapMirror作業。</block>
   <block id="a6b2bef9fee39460e6de895c83a49b09" category="paragraph">在第2階段期間、您會將節點1非根Aggregate和NAS資料lifs重新部署至節點2。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。如果需要、您可以重新部署故障或被否決的集合體。在淘汰node1之前、請先記錄node1資訊以供稍後的程序使用。您也可以在程序稍後的步驟中準備netboot node3和node4。</block>
   <block id="b782fb0a43ba5a997562172fe5afc493" category="paragraph">在第4階段期間、您將非根Aggregate和NAS資料lifs從節點2重新部署到節點3。您也可以記錄node2資訊、以便在程序中稍後使用、然後再將node2淘汰。</block>
   <block id="ee70b93b550a5730542d0185fb89b3ce" category="paragraph">在第6階段期間、您會確認新節點已正確設定、如果新節點已啟用加密、則您可以設定及設定儲存加密或NVE。您也應該取消委任舊節點、然後恢復SnapMirror作業。</block>
@@ -5588,4 +5585,14 @@
   <block id="296dded36176a3c0cddf588327506ee0" category="summary">使用 ARL 升級同一機箱中的控制器型號時，更換對應的替換系統模組後，必須對 node2 進行網路開機。</block>
   <block id="f22b666a8f2e5bcdb8fb87b0f8aa7d19" category="summary">使用 ARL 在同一機箱中升級控制器型號時，手動將失敗或被否決的集合體重新定位到 node1。</block>
   <block id="579119c4e708317159df0e8381e43324" category="list-text"><block ref="579119c4e708317159df0e8381e43324" category="inline-link-macro-rx"></block></block>
+  <block id="599b54171a77643ce7931a9986ea7c42" category="paragraph">要升級節點配對，您需要準備好原有節點，並在原節點和新節點上依照升級步驟進行操作。然後，將原有節點退役。</block>
+  <block id="d3f5a62906fe227e98435313989c588d" category="paragraph">您需要逐一升級原有控制器硬體與替換控制器硬體，並利用 HA 配對組態來轉移非根目錄彙總的所有權。您必須將所有非根目錄彙總轉移兩次，才能到達正確的升級節點。</block>
+  <block id="017f0198cb149e001e7d1fbdbfeff2ab" category="paragraph">下表描述了每個階段的高階任務以及階段結束時的彙總所有權狀態。詳細步驟將在後續流程中提供：</block>
+  <block id="926cb196a2b3f1a08efba3993217d3e0" category="paragraph">在第一階段，如有必要，您需要確認內部磁碟機不包含根目錄彙總或資料彙總，準備節點以進行升級，並執行預先檢查。如有必要，您需要重新配置磁碟金鑰以進行 Storage Encryption，並準備透過網路開機新的控制器。</block>
+  <block id="49ddc20064f4f29a69131c6812872ce2" category="paragraph">在第三階段，您需要安裝並開機 node3，並將叢集連接埠和節點管理連接埠從 node1 對應到 node3。如果您使用 NetApp Volume Encryption （NVE），則需要還原金鑰管理器組態。然後，將屬於 node1 的資料 LIF 和 SAN LIF 從 node2 遷移到 node3，將所有彙總從 node2 遷移到 node3，並將 node2 擁有的資料 LIF 和 SAN LIF 遷移到 node3。</block>
+  <block id="af49fa765409efddf18e8edd7d047f69" category="paragraph">在第五階段，您需要安裝並開機 node4，並將叢集連接埠和節點管理連接埠從 node2 對應到 node4。如果您使用 NetApp Volume Encryption （NVE），則需要還原金鑰管理器組態。然後，將屬於 node2 的資料 LIF 和 SAN LIF 從 node3 遷移到 node4，將 node2 的彙總資料從 node3 遷移到 node4，並將 node2 擁有的資料 LIF 和 SAN LIF 遷移到 node3。</block>
+  <block id="12177ec5bd50eaf788179fbe2ab3d1ff" category="summary">如果需要，請在執行 ONTAP 9.8 或更新版本的控制器上手動進行 ARL 升級期間，還原節點 4 上的金鑰管理器組態。</block>
+  <block id="74b1deeae7ed2c75aa8ad4c2ddea9d93" category="summary">如果需要，請在執行 ONTAP 9.8 或更新版本的控制器上手動進行 ARL 升級期間，還原 node3 上的金鑰管理器組態。</block>
+  <block id="8ad3199cfb5e6cb3fc2da5bb1354e4c8" category="sidebar">在 node3 上還原 Key Manager 組態</block>
+  <block id="2cd0e87e95581377b5e99bb14328f296" category="sidebar">在 node4 上還原 Key Manager 組態</block>
 </blocks>

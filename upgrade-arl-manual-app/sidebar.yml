@@ -47,6 +47,8 @@ entries:
     url: "/upgrade-arl-manual-app/set_fc_uta_uta2_config_node3.html"
   - title: 將連接埠從節點1對應至節點3
     url: "/upgrade-arl-manual-app/map_ports_node1_node3.html"
+  - title: 在 node3 上還原 Key Manager 組態
+    url: "/upgrade-arl-manual-app/restore_key-manager_configuration_node3.html"
   - title: 將節點1擁有的NAS資料lifs從節點2移至節點3、並驗證節點3上的SAN lifs
     url: "/upgrade-arl-manual-app/move_nas_lifs_node1_from_node2_node3_verify_san_lifs_node3.html"
   - title: 工作表：將NAS資料生命期移至節點3之前要記錄的資訊
@@ -71,6 +73,8 @@ entries:
     url: "/upgrade-arl-manual-app/set_fc_uta_uta2_config_node4.html"
   - title: 將連接埠從節點2對應至節點4
     url: "/upgrade-arl-manual-app/map_ports_node2_node4.html"
+  - title: 在 node4 上還原 Key Manager 組態
+    url: "/upgrade-arl-manual-app/restore_key-manager_config_node4.html"
   - title: 將節點2擁有的NAS資料生命週期從節點3移至節點4、並驗證節點4上的SAN生命週期
     url: "/upgrade-arl-manual-app/move_nas_lifs_node2_from_node3_node4_verify_san_lifs_node4.html"
   - title: 工作表：將NAS資料生命週期移至節點4之前要記錄的資訊
