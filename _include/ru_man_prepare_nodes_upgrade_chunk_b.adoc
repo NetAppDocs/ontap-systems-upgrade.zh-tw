@@ -170,7 +170,7 @@ node1         node1         in-quorum     true          operational
 2 entries were displayed.
 ....
 +
-叢集中的節點在大多數節點狀況良好且能夠彼此通訊時、都處於仲裁狀態。如需詳細資訊、請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。
+當叢集中大多數節點運作正常且彼此可以通訊時，叢集即達到法定人數。如需更多資訊，請參閱 link:other-references.html["參考資料"] 以連結至《系統管理參考》。
 
 . 返回管理權限層級：
 +
@@ -260,7 +260,7 @@ node2   0d      fc      initiator -       -         online
 . 確認已設定SP網路。
 . 記錄有關SP的IP位址和其他資訊。
 +
-您可能需要將原始系統中遠端管理設備（在本例中為 SP）的網路參數重用於新節點上的 SP。有關 SP 的詳細資訊，請參閱link:other_references.html["參考資料"]以連結至《系統管理參考》和《ONTAP 9 命令參考》。
+您可能需要將原始系統中遠端管理設備（在本例中為 SP）的網路參數重用於新節點上的 SP。有關 SP 的詳細資訊，請參閱link:other-references.html["參考資料"]以連結至《系統管理參考》和《ONTAP 9 命令參考》。
 
 +
 .. [[man_prepare_nodes_step29]]如果您希望新節點具有與原始節點相同的許可功能，請輸入以下命令以查看原始系統上的叢集許可證：
@@ -286,7 +286,7 @@ FlexClone         site    FlexClone License     -
 SnapVault         site    SnapVault License     -
 6 entries were displayed.
 ....
-.. 在_NetApp Support Site_取得新節點的新授權金鑰。請參閱 link:other_references.html["參考資料"] 連結至_NetApp支援網站_。
+.. 請前往 NetApp 支援網站取得新節點的授權金鑰。請參閱 link:other-references.html["參考資料"] 以連結至 NetApp 支援網站。
 +
 如果網站沒有您需要的授權金鑰、請聯絡您的NetApp銷售代表。
 
@@ -321,7 +321,7 @@ node2            enable    Postmaster    -                 mailhost
 
 
 | 未啟用任何功能... AutoSupport  a| 
-請遵循_系統管理參考_中的指示來啟用AutoSupport 支援。（請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。）
+請依照《系統管理參考手冊》中的說明啟用 AutoSupport。（請參閱 link:other-references.html["參考資料"] 以連結至《系統管理參考手冊》。）
 
 *注意：* AutoSupport 當您第一次設定儲存系統時、預設會啟用此功能。雖然AutoSupport 您可以隨時停用不支援、但仍應保持啟用狀態。啟用AutoSupport 功能可在儲存系統發生問題時、大幅協助識別問題與解決方案。
 
@@ -331,7 +331,7 @@ node2            enable    Postmaster    -                 mailhost
 「系統節點AutoSupport 不完整地顯示節點node_name -instance」
 
 +
-有關 AutoSupport 的詳細資訊，請參閱 link:other_references.html["參考資料"] 以連結至《系統管理參考》和《ONTAP 9 命令參考》。
+有關 AutoSupport 的詳細資訊，請參閱 link:other-references.html["參考資料"] 以連結至《系統管理參考》和《ONTAP 9 命令參考》。
 
 .. [[man_prepe_node_step35、Step 35] AutoSupport 輸入下列命令、將節點1的支援資訊傳送給NetApp：
 +

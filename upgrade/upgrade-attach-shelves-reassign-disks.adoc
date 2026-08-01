@@ -14,13 +14,19 @@ summary: 您必須分別將屬於節點1和節點2的磁碟重新指派給節點
 您必須分別將屬於節點1和節點2的磁碟重新指派給節點3和節點4。
 
 .關於這項工作
-您可以在節點3和節點4上執行本節中的步驟、完成節點3和節點4上的每個步驟、然後再繼續下一步。
+本節的步驟需要在 node3 和 node4 上執行。在進行下一個步驟之前，請先在 node3 上完成每個步驟，然後再在 node4 上完成每個步驟。
 
+[[reassign-spare-disks-step1]]
 .步驟
-. 將儲存架纜線從先前連接至 node1/node2 的機櫃連接至 node3/node4 。
+. 連接先前已連接之機櫃的儲存設備機櫃纜線：
++
+** 將節點1的電纜連接到節點3
+** 將節點2的電纜連接到節點4。
 +
 
-CAUTION: 在此升級過程中、您不得將新的機櫃連接至 node3/node4 。完成控制器升級後、您可以不中斷地將新機櫃連接至系統。
+CAUTION: 在此升級過程中，請勿將新機櫃連接到 node3 或 node4。控制器升級完成後，即可將新機櫃無中斷地連接到系統。
+
+
 
 . 驗證電源供應器和磁碟櫃的實體連線能力。
 . 從node3載入器提示字元中、開機至維護模式：
@@ -39,26 +45,38 @@ Local System ID: 101268854
 ...
 ----
 +
-請記下節點3的系統ID、以便在以下步驟4中使用。
+記錄 node3 的系統 ID，以便在 <<reassign-disks-and-aggregates,步驟5.>> 中使用。
 
-. 重新指派節點1的備用磁碟、屬於根Aggregate的磁碟、以及任何資料Aggregate：
+
+
+[[reassign-disks-and-aggregates]]
+. 重新分配磁碟和資料彙總：
 +
-"Disk reassign-s _node1_sysid_-d _node3_sysid_-p _nod2_sysid_"
-
-+
---
-** 參數`_node1_sysid_'是您在_關閉原始節點_、 link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5["步驟5."]。
-** 僅當共享磁碟存在時、才指定參數「_-p PARTNER_sysid_'」。
-
-
-[NOTE]
+[role="tabbed-block"]
 ====
-重新指派節點2的備用磁碟、屬於根Aggregate的磁碟、以及任何資料Aggregate時、命令為：
-
-"Disk reassign-s node2_sysid -d node4_sysid -p node3_sysid"
-
-====
+.重新分配給節點3
 --
+將 node1 的備援裝置磁碟、屬於根 Aggregate 的磁碟以及任何資料彙總重新分配給 node3：
+
+`disk reassign -s <node1_sysid> -d <node3_sysid> -p <node4_sysid>`
+
+** 此參數 `node1_sysid`是您在「關閉原始節點」中記錄的值，link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5["步驟5."]。
+** 僅當存在共享的磁碟時，才指定參數 `-p <node2_sysid>`。
+
+
+--
+.重新分配給節點4
+--
+將節點 2 的備援裝置磁碟、屬於根 Aggregate 的磁碟以及任何資料彙總重新分配給節點 4：
+
+`disk reassign -s <node2_sysid> -d <node4_sysid> -p <node3_sysid>`
+
+** 此參數 `node2_sysid`是您在「關閉原始節點」中記錄的值，link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5["步驟5."]。
+** 僅當存在共享的磁碟時，才指定參數 `-p <node3_sysid>`。
+
+
+--
+====
 +
 系統會顯示類似以下內容的訊息：
 
@@ -100,8 +118,12 @@ Do you want to continue (y/n)? y
           aggr0 online          raid_dp, aggr         root
                                 64-bit
 ----
-. 結束維護模式：
+. [[reassign-spare-disks-step9]]退出維護模式：
 +
 《停止》
 
+. 在 node4 上重複 <<reassign-spare-disks-step1,步驟1.>> 到 <<reassign-spare-disks-step9,步驟9.>> 的步驟。
 
+
+.接下來呢？
+安裝儲存設備機櫃並重新分配磁碟所有權後，link:upgrade-restore-root-volume-config.html["還原根 Volume 組態"]。

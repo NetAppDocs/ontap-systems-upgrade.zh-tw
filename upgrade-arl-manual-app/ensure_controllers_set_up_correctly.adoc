@@ -135,9 +135,9 @@ Do you want to continue? {y|n}: y
 `system service-processor network modify -node <node_name>`
 
 +
-前往link:other_references.html["參考資料"]連結至 _System Administration Reference_ 以取得有關 SP 的資訊，以及 _ONTAP 9 Command reference_ 以取得有關 `system service- processor network modify`命令的詳細資訊。
+前往link:other-references.html["參考資料"]連結至 _System Administration Reference_ 以取得有關 SP 的資訊，以及 _ONTAP 9 Command reference_ 以取得有關 `system service- processor network modify`命令的詳細資訊。
 
-. 如果您要在新節點上設定無交換器叢集、請前往 link:other_references.html["參考資料"] 若要連結至_網路支援站台_、請遵循_移轉至雙節點無交換器叢集_中的指示。
+. 如果您想在新節點上設定無交換器式叢集，請前往 link:other-references.html["參考資料"] 以連結至 _Network Support Site_，並依照 _Transitioning to a two-node switchless cluster_ 中的說明進行操作。
 
 
 .完成後

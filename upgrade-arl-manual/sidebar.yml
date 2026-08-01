@@ -130,4 +130,4 @@ entries:
   - title: LIF在升級後位於無效連接埠上
     url: "/upgrade-arl-manual/lifs_invalid_ports_after_upgrade.html"
 - title: 參考資料
-  url: "/upgrade-arl-manual/other_references.html"
+  url: "/upgrade-arl-manual/other-references.html"

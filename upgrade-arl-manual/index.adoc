@@ -33,5 +33,5 @@ NOTE: 在本文檔中，原有節點稱為_node1_和_node2_，新節點稱為_no
 * 您可以使用此程序來升級具有兩個以上節點之叢集中的控制器硬體、不過您需要針對叢集中的每個高可用度（HA）配對分別執行此程序。
 
 
-* 此程序適用於MetroCluster 執行ONTAP 版本號為「版本資訊」9.5或更早版本的所有四節點和八節點組態。如需MetroCluster 執行ONTAP 效能不可靠的更新版本、請前往 link:other_references.html["參考資料"] 使用「系統控制器更換」命令連結至 _ 、以將執行 ONTAP 9.5 的控制器硬體升級至 ONTAP 9.7_ 。
+* 此程序適用於執行 ONTAP 9.5 及更早版本的 MetroCluster 四節點和八節點組態。對於執行 ONTAP 9.6 及更新版本的 MetroCluster 組態，請前往 link:other-references.html["參考資料"] 以連結至「使用 "system controller replace" 命令將執行 ONTAP 9.5 的控制器硬體升級至 ONTAP 9.7」。
 

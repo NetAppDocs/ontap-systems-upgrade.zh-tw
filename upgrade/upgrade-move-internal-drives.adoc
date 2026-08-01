@@ -51,3 +51,6 @@ NOTE: 裝入載體時請用兩隻手。
 
 . 重複 <<move_int_drive_2,步驟2>> 透過 <<move_int_drive_5,步驟5.>> 適用於您要移至新系統的所有磁碟機。
 
+
+.接下來呢？
+將內部磁碟機從原始節點移出後，link:upgrade-attach-shelves-reassign-disks.html["連接磁碟櫃並重新指派磁碟所有權"]。

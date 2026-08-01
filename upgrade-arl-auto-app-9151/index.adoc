@@ -17,7 +17,7 @@ summary: '您可以使用命令來升級執行 ONTAP 9.15.1 或更新版本的�
 有多種 Aggregate 重新配置（ARL）方法可用於升級控制器硬體。本 ARL 程序說明如何在 ONTAP 9.15.1 或更新版本中推出的 AFF 和 FAS 儲存系統中，使用新控制器升級 HA 配對控制器，同時保留現有磁碟及磁碟上儲存的資料。
 
 
-NOTE: 您無法使用此程序來升級 MetroCluster FC 或 IP 組態。若要升級 MetroCluster 組態、請參閱 link:other_references.html["參考資料"] 連結至 MetroCluster 升級與擴充說明文件 _ 。
+NOTE: 您不能使用此程序升級 MetroCluster FC 或 IP 組態。若要升級 MetroCluster 組態，請參閱 link:other-references.html["參考資料"] 以連結至 _MetroCluster 升級和擴充文件_。
 
 在過程中、您會使用更換的控制器硬體來升級原始的控制器硬體、以重新定位非根集合體的擁有權。您可以多次從節點移轉Aggregate至節點、以確認在整個升級程序中、至少有一個節點正在處理來自集合體的資料。您也可以移轉資料邏輯介面（LIF）、並在繼續進行時將新控制器上的網路連接埠指派給介面群組。
 

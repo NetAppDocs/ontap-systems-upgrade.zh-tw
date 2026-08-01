@@ -498,4 +498,4 @@ multipath -ll -d
 
 
 .接下來呢？
-link:upgrade-create-aggregate-move-volumes.html["建立Aggregate並將磁碟區移至新節點"]
+將 Linux iSCSI 主機遷移到新節點後，link:upgrade-create-aggregate-move-volumes.html["建立 Aggregate 並將 Volume 遷移至新節點"]。

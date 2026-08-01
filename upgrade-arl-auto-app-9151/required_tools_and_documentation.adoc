@@ -22,7 +22,7 @@ summary: '若要使用 `system controller replace`指令升級 ONTAP 9.15.1 或�
 * 2號十字螺絲起子
 
 
-前往 link:other_references.html["參考資料"] 一節、以存取此升級所需的參考文件和參考網站清單
+請前往 link:other-references.html["參考資料"] 部分，存取本次升級所需的參考文件和參考網站清單。
 
 .接下來呢？
 在審查了所需的工具和文件之後，link:guidelines_for_upgrading_controllers_with_arl.html["瞭解使用 ARL 升級控制器的準則"]。

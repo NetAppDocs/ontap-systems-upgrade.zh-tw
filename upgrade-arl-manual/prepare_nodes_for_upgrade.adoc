@@ -19,7 +19,7 @@ summary: 在ONTAP 執行「版本資訊」9.7或更早版本的控制器上進�
 .步驟
 . 確認每個原始節點都有足夠的資源、可在接管模式期間充分支援兩個節點的工作負載。
 +
-請參閱link:other_references.html["參考資料"]連結至 _HA 配對管理 _ ，並遵循 _ HA 配對最佳實務做法 _ 一節。任何原始節點都不應以超過50%的使用率執行；如果節點的使用率低於50%、則可在控制器升級期間處理兩個節點的負載。
+請參閱 link:other-references.html["參考資料"] 以連結至 _HA 配對管理_，並遵循 _HA 配對最佳實務_ 部分。兩個原始節點的使用率均不得超過 50%；如果某個節點的使用率低於 50%，則在控制器升級期間，它可以處理兩個節點的負載。
 
 . 完成下列子步驟、為原始節點建立效能基準：
 +
@@ -29,23 +29,23 @@ summary: 在ONTAP 執行「版本資訊」9.7或更早版本的控制器上進�
 ====
 診斷使用者帳戶僅供低階診斷用途使用、僅限在技術支援的指導下使用。
 
-如需解除鎖定使用者帳戶的相關資訊、請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。
+有關解鎖使用者帳戶的資訊，請參閱 link:other-references.html["參考資料"] 以連結至《系統管理參考》。
 
 ====
-.. 請參閱 link:other_references.html["參考資料"] 連結至_NetApp支援網站_並下載效能與統計資料收集器（perfstat Converged）。
+.. 請參考 link:other-references.html["參考資料"] 連結前往 _NetApp 支援網站_ 下載效能和統計資訊收集器 (Perfstat Converged)。
 +
 Perfstat融合式工具可讓您建立效能基準、以便在升級後進行比較。
 
 .. 依照NetApp支援網站上的指示建立效能基準。
 
 
-. 請參閱 link:other_references.html["參考資料"] 若要連結至_NetApp支援網站、並在NetApp支援網站上開啟支援案例。
+. 請參閱 link:other-references.html["參考資料"] 以連結至 _NetApp 支援網站_，並在 NetApp 支援網站上開啟支援案例。
 +
 您可以使用此案例來報告升級期間可能發生的任何問題。
 
 . 驗證node3和node4的NVMEM或NVRAM電池是否已充電、如果電池未充電、請將其充電。
 +
-您必須實際檢查node3和node4、以查看是否已為NVMEM或NVRAM電池充電。如需節點3和節點4機型的LED相關資訊、請參閱 link:other_references.html["參考資料"] 以連結至_SURE_ Hardware Universe 。
+您必須實際檢查節點 3 和節點 4，以確認 NVMEM 或 NVRAM 電池是否已充電。有關節點 3 和節點 4 型號的 LED 指示燈資訊，請參閱 link:other-references.html["參考資料"] 以連結至 _Hardware Universe_。
 
 +
 
@@ -53,7 +53,7 @@ WARNING: 不要嘗試清除NVRAM內容。如果需要清除NVRAM的內容，請�
 
 . 檢查ONTAP node3和node4上的版本。
 +
-新節點上ONTAP 必須安裝相同版本的還原9.x、並安裝在原始節點上。如果新節點ONTAP 安裝了不同版本的支援、則安裝新的控制器之後、您必須對其進行網路開機。如需有關如何升級ONTAP 功能的說明、請參閱 link:other_references.html["參考資料"] 連結至_Upgrade ONTAP
+新節點必須安裝與原節點相同版本的 ONTAP 9.x。如果新節點安裝的 ONTAP 版本不同，則必須在安裝後對新控制器進行網路開機。如需如何升級 ONTAP 的說明，請參閱 link:other-references.html["參考資料"] 以連結至「升級 ONTAP」。
 
 +
 有關node3和node4上ONTAP 的版本資訊、應包含在運送箱中。當節點開機或您可以將節點開機至維護模式並執行命令時、會顯示此版本：ONTAP
@@ -162,7 +162,7 @@ node1          node2          true     Connected to node2, Partial giveback
 node2          node1          true     Connected to node1
 ....
 +
-如果任一節點都在部分恢復中，請使用 `storage failover giveback`命令執行恢復，然後使用命令來 `storage failover show-giveback`確保不需要再提供任何集合體。如需命令的詳細資訊，請參閱link:other_references.html["參考資料"]連結至 _HA 配對管理 _ 。
+如果任一節點處於部分歸還狀態，請使用 `storage failover giveback`命令執行歸還，然後使用 `storage failover show-giveback`命令確認不再需要歸還任何彙總。如需命令的詳細資訊，請參閱link:other-references.html["參考資料"]以連結至 _HA 配對管理_。
 
 . [[man_prepe_node_step9]]確認節點1和節點2均不擁有其目前擁有者（但不擁有主擁有者）的Aggregate：
 +
@@ -251,7 +251,7 @@ node1    None                None
 node2    None                None
 ....
 +
-如果有任何磁碟遺失，請參閱link:other_references.html["參考資料"]以 CL5_ 連結至磁碟和集合管理，使用 CL5_ 進行邏輯儲存管理，以及使用 HA 配對管理 _ 來設定 HA 配對的儲存設備。
+如果缺少任何磁碟，請參閱link:other-references.html["參考資料"]連結至「使用 CLI 進行磁碟和 Aggregate 管理」、「使用 CLI 進行邏輯儲存管理」和「HA 配對管理」，以設定 HA 配對的儲存。
 
 . 確認node1和node2正常且符合參加叢集的資格：
 +
@@ -327,14 +327,14 @@ vs0
 「網路介面還原-vserver *-lif*」
 
 +
-有關  `network interface revert` 命令的詳細資訊，請參閱 link:other_references.html["參考資料"] 以連結至 _ONTAP 9 Command reference_。
+有關  `network interface revert` 命令的詳細資訊，請參閱 link:other-references.html["參考資料"] 以連結至 _ONTAP 9 Command reference_。
 
 . 檢查node1或node2是否擁有任何故障磁碟：
 +
 「torage disk show -nodelist _node1、node2_-disbed」
 
 +
-如果有任何磁碟發生故障、請依照_Disk中的指示、使用CLI進行Aggregate管理。（請參閱 link:other_references.html["參考資料"] 使用CLI連結至_磁碟與集合管理。）
+如果任何磁碟發生故障，請按照《使用 CLI 進行磁碟和彙總管理》中的說明將其移除。（請參閱link:other-references.html["參考資料"]以連結至《使用 CLI 進行磁碟和彙總管理》。）
 
 . 完成下列子步驟並記錄每個命令的輸出、以收集節點1和節點2的相關資訊：
 +
@@ -510,7 +510,7 @@ node1         node1         in-quorum     true          operational
 2 entries were displayed.
 ....
 +
-叢集中的節點在大多數節點狀況良好且能夠彼此通訊時、都處於仲裁狀態。如需詳細資訊、請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。
+當叢集中大多數節點運作正常且彼此可以通訊時，叢集即達到法定人數。如需更多資訊，請參閱 link:other-references.html["參考資料"] 以連結至《系統管理參考》。
 
 .. 返回管理權限層級：
 +
@@ -600,7 +600,7 @@ node2   0d      fc      initiator -       -         online
 .. 確認已設定SP網路。
 .. 記錄有關SP的IP位址和其他資訊。
 +
-您可能需要將原始系統中遠端管理設備（在本例中為 SP）的網路參數重用於新節點上的 SP。有關 SP 的詳細資訊，請參閱link:other_references.html["參考資料"]以連結至《系統管理參考》和《ONTAP 9 命令參考》。
+您可能需要將原始系統中遠端管理設備（在本例中為 SP）的網路參數重用於新節點上的 SP。有關 SP 的詳細資訊，請參閱link:other-references.html["參考資料"]以連結至《系統管理參考》和《ONTAP 9 命令參考》。
 
 
 
@@ -627,7 +627,7 @@ FlexClone         site    FlexClone License     -
 SnapVault         site    SnapVault License     -
 6 entries were displayed.
 ....
-. 在_NetApp Support Site_取得新節點的新授權金鑰。請參閱 link:other_references.html["參考資料"] 連結至_NetApp支援網站_。
+. 請前往 NetApp 支援網站取得新節點的授權金鑰。請參閱 link:other-references.html["參考資料"] 以連結至 NetApp 支援網站。
 +
 如果網站沒有您需要的授權金鑰、請聯絡您的NetApp銷售代表。
 
@@ -662,7 +662,7 @@ node2            enable    Postmaster    -                 mailhost
 
 
 | 未啟用任何功能... AutoSupport  a| 
-請遵循_系統管理參考_中的指示來啟用AutoSupport 支援。（請參閱 link:other_references.html["參考資料"] 連結至_System Administration Reference。）
+請依照《系統管理參考手冊》中的說明啟用 AutoSupport。（請參閱 link:other-references.html["參考資料"] 以連結至《系統管理參考手冊》。）
 
 *注意：* AutoSupport 當您第一次設定儲存系統時、預設會啟用此功能。雖然AutoSupport 您可以隨時停用不支援、但仍應保持啟用狀態。啟用AutoSupport 功能可在儲存系統發生問題時、大幅協助識別問題與解決方案。
 
@@ -672,7 +672,7 @@ node2            enable    Postmaster    -                 mailhost
 「系統節點AutoSupport 不完整地顯示節點node_name -instance」
 
 +
-有關 AutoSupport 的詳細資訊，請參閱 link:other_references.html["參考資料"] 以連結至《系統管理參考》和《ONTAP 9 命令參考》。
+有關 AutoSupport 的詳細資訊，請參閱 link:other-references.html["參考資料"] 以連結至《系統管理參考》和《ONTAP 9 命令參考》。
 
 . [[man_prepe_node_step35、Step 35] AutoSupport 輸入下列命令、將節點1的支援資訊傳送給NetApp：
 +

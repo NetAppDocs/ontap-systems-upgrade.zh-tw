@@ -100,3 +100,6 @@ This is a disruptive operation and will result in the
 《停止》
 
 
+
+.接下來呢？
+移除連接到新節點的磁碟所有權後，link:upgrade-reset-default-configuration-node3-and-node4.html["重置新節點的預設組態"]。

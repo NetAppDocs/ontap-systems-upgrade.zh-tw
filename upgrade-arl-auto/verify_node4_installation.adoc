@@ -50,7 +50,7 @@ CAUTION: 現階段，MetroCluster 配置尚未處於正常狀態，您可能需�
 在您確認node4處於仲裁狀態並可與node3通訊之後、您必須在node4上重新建立node2的VLAN、介面群組和廣播網域。您也必須將node3連接埠新增至新重新建立的廣播網域。
 
 .關於這項工作
-如需建立及重新建立VLAN、介面群組及廣播網域的詳細資訊、請參閱 link:other_references.html["參考資料"] 並連結至_網路管理_。
+有關建立和重新建立 VLAN、介面群組和廣播網域的詳細資訊，請前往 link:other-references.html["參考資料"] 並連結至 _網路管理_。
 
 .步驟
 . 使用中記錄的節點2資訊、在節點4上重新建立VLAN link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["將非根Aggregate和NAS資料LIF從節點2重新定位至節點3"] 區段：

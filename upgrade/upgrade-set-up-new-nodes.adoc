@@ -121,3 +121,6 @@ link:https://docs.netapp.com/us-en/ontap/san-admin/index.html["使用CLI進行SA
 系統會在載入程式提示下停止
 
 
+
+.接下來呢？
+設定好新節點後，可以選擇 link:upgrade-move-internal-drives.html["將內部磁碟機從原始節點移出"] 或 link:upgrade-convert-node-to-shelf.html["將原始節點轉換為磁碟機機櫃"]。然後，link:upgrade-attach-shelves-reassign-disks.html["連接磁碟櫃並重新指派磁碟所有權"]。

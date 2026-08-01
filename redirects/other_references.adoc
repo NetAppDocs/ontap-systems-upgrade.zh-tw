@@ -1,5 +1,5 @@
 ---
-permalink: upgrade-arl-auto-affa900/other_references.html 
+permalink: upgrade-arl-auto-affa900/other-references.html 
 redirect: ontap-systems-upgrade/upgrade-arl-auto-in-chassis/other-references.html 
 ---
 = 

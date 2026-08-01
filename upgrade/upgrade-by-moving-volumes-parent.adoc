@@ -50,3 +50,6 @@ summary: 如果透過移動磁碟區進行升級，您需要準備好原有節�
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-8.png["八"]link:upgrade-complete-move-volumes.html["完成升級"]
 [role="quick-margin-para"]
 若要透過移動磁碟區來完成升級程序、請設定服務處理器（ SP ）、安裝新授權、以及設定 AutoSupport 。您可能也需要設定儲存或 Volume Encryption 、並設定 FC 或 NCA 連接埠。
+
+.接下來呢？
+在了解如何透過移動 Volume 進行升級之後，link:upgrade-prepare-when-moving-volumes.html["為升級做好準備"]。

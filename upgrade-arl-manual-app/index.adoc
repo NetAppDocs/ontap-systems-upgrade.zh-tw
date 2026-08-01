@@ -55,8 +55,8 @@ NOTE: 在本文檔中，原有節點稱為_node1_和_node2_，新節點稱為_no
 
 * 除了非MetroCluster組態之外、此程序也適用於MetroCluster 執行ONTAP 「版本號」的Fabric支援4節點和8節點組態。
 +
-** 如需MetroCluster 執行ONTAP 效能不符合要求的更新版本、請參閱 link:other_references.html["參考資料"] 若要連結至_使用Aggregate Relocation以手動升級執行ONTAP VMware 9.7或更早版本的控制器硬體。
-** 如需MetroCluster 瞭解有關Fabric MetroCluster 支援組態的支援IP組態和其他升級選項、請前往 link:other_references.html["參考資料"] 連結至_E不明MetroCluster Upgrade and Expansion內容。
+** 對於執行 ONTAP 9.7 及更早版本的 MetroCluster 組態，請前往 link:other-references.html["參考資料"] 以連結至「使用 Aggregate 重新定位手動升級執行 ONTAP 9.7 或更早版本的控制器硬體」。
+** 有關 MetroCluster IP 組態和 Fabric MetroCluster 組態的其他升級選項，請前往 link:other-references.html["參考資料"] 以連結至 _MetroCluster Upgrade and Expansion_ 內容。
 
 
 

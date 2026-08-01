@@ -48,7 +48,7 @@ summary: 在ONTAP 手動升級ARL期間、在執行ONTAP Es9.7或更早版本的
 . 按照節點機型的安裝與設定說明_中的指示、在機架中安裝節點4。
 . [[man_install4_stip4]]纜線節點4、將連線從節點2移至節點4。
 +
-下列參考資料可協助您建立適當的纜線連線。前往 link:other_references.html["參考資料"] 以連結至他們。
+以下參考資料可協助您正確連接電纜。請前往 link:other-references.html["參考資料"] 以連結至這些資料。
 
 +
 ** node4 平台的_安裝與設定說明_

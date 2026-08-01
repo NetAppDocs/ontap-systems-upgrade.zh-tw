@@ -17,7 +17,7 @@ summary: 請告訴NetApp、使用ONTAP 「系統控制器更換」命令、升�
 升級之後、您可以透過NetApp支援網站取消委任舊系統。汰換系統會告訴NetApp系統不再運作、並將其從支援資料庫中移除。
 
 .步驟
-. 請參閱 link:other_references.html["參考資料"] 連結至_NetApp支援網站_並登入。
+. 請點選 link:other-references.html["參考資料"] 連結造訪 _NetApp Support Site_ 並登入。
 . 從功能表中選取*產品>我的產品*。
 . 在「*檢視安裝的系統*」頁面上、選擇您要用來顯示系統相關資訊的*選擇條件*。
 +

@@ -51,4 +51,4 @@ https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["使用NetApp CN161
 
 
 .接下來呢？
-link:upgrade-install-and-join-new-nodes-move-vols.html["安裝新節點並將其加入叢集"]
+升級準備工作完成後，link:upgrade-install-and-join-new-nodes-move-vols.html["安裝新節點並將其參加叢集"]。

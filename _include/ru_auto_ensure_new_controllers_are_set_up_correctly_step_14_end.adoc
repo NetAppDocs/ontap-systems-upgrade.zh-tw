@@ -2,7 +2,7 @@
 :allow-uri-read: 
 
 
-. 如果您要在新節點上設定無交換器叢集、請參閱 link:other_references.html["參考資料"] 若要連結至_NetApp支援網站_、請遵循_移轉至雙節點無交換器叢集_中的指示。
+. 如果您想在新節點上設定無交換器叢集，請參閱link:other-references.html["參考資料"]以連結至 _NetApp Support Site_ ，並遵循 _Transitioning to a two-node switchless cluster_ 中的說明進行操作。
 
 
 .完成後

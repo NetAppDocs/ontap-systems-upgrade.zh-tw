@@ -61,7 +61,7 @@ entries:
     url: "/upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node1.html"
   - title: 淘汰節點2
     url: "/upgrade-arl-auto-in-chassis/retire-node2.html"
-- title: 第 5 階段。安裝 node2 替換系統模組
+- title: 第五階段：安裝 node2 替換系統模組
   entries:
   - title: 更換 node2 系統模組
     entries:

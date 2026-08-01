@@ -23,12 +23,12 @@ summary: 瞭解您是否ONTAP 可以使用「系統控制器更換」命令來�
 
 當您使用本ARL程序升級一對節點ONTAP 以利執行更新以利執行本程序（適用於更新版本的）時、您必須確認ARL是否可在原始控制器和更換控制器上執行。
 
-您必須檢查所有已定義的集合體大小、以及原始系統所支援的磁碟數量。然後、您必須將所支援的Aggregate大小和磁碟數目、與新系統所支援的Aggregate大小和磁碟數目進行比較。請參閱 link:other_references.html["參考資料"] 可連結至Hardware Universe 提供此資訊的_SUR__。新系統支援的Aggregate大小和磁碟數目必須等於或大於原始系統支援的Aggregate大小和磁碟數目。
+您必須檢查原始系統支援的所有已定義彙總的大小和磁碟數量。然後，您必須將彙總的 Aggregate 大小和磁碟數量與新系統支援的 Aggregate 大小和磁碟數量進行比較。請參閱 link:other-references.html["參考資料"] 以連結至 _Hardware Universe_，其中提供了此資訊。新系統支援的 Aggregate 大小和磁碟數量必須等於或大於原始系統支援的 Aggregate 大小和磁碟數量。
 
-您必須在叢集混合規則中驗證新節點是否能在更換原始控制器時、成為現有節點的叢集一部分。如需叢集混合規則的詳細資訊、請參閱 link:other_references.html["參考資料"] 以連結至_SURE_ Hardware Universe 。
+您必須在叢集混合規則中驗證，當原始控制器被替換時，新節點是否可以加入現有節點所在的叢集。有關叢集混合規則的詳細資訊，請參閱link:other-references.html["參考資料"]以連結至 _Hardware Universe_。
 
 
-NOTE: 如果您要升級支援內部磁碟機的系統（例如FAS2700或AFF E4A250）、但沒有內部磁碟機、請參閱 link:other_references.html["參考資料"] 並使用_Aggregate Relocation中的程序來手動升級控制器Hardware_內容、而這些內容適用於ONTAP 您的版次。
+NOTE: 如果您要升級支援內部磁碟機的系統（例如 FAS2700 或 AFF A250），但沒有內部磁碟機，請參考 link:other-references.html["參考資料"] 並使用適用於您的 ONTAP 版本的 _Aggregate Relocation to Manually Upgrade Controller Hardware_ 內容中的正確程序。
 
 如果您的系統每個節點有兩個以上的叢集連接埠、例如FAS8080或AFF8080系統、則在開始升級之前、您必須將叢集生命體移轉並重新主控至每個節點的兩個叢集連接埠。如果您在每個節點上使用兩個以上的叢集連接埠來執行控制器升級、則在升級之後、新控制器上的叢集生命量可能會遺失。
 
@@ -50,11 +50,11 @@ NOTE: 如果您要升級支援內部磁碟機的系統（例如FAS2700或AFF E4A
 
 * 更換不支援連接至原始控制器之磁碟櫃的控制器
 +
-請參閱 link:other_references.html["參考資料"] 可連結至_SURE_ Hardware Universe 以取得磁碟支援資訊。
+請參閱 link:other-references.html["參考資料"]，以連結至 _Hardware Universe_ 以取得磁碟支援資訊。
 
 * 對於內建磁碟機的入門級控制器，例如：FAS2750。
 +
-如果您想要使用內部磁碟機來升級入門級控制器、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備來連結至_Upgrade、請移Data ONTAP 至「移動磁碟區」以升級執行叢集式VMware的一對節點」程序。
+如果要升級具有內部磁碟機的入門層級控制器，請參閱 link:other-references.html["參考資料"] 以連結至「透過移動 Volume 或儲存設備進行升級」，然後前往「透過移動 Volume 升級執行叢集式 Data ONTAP 的一對節點」程序。
 
 
 

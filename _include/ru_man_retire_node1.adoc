@@ -115,7 +115,7 @@ High Availability Configured: false
 「叢集展示」
 
 +
-由於叢集中有可能會有一個節點數目相同的連結、因此一個節點會有額外的分數投票權重稱為epsilon。請參閱 link:other_references.html["參考資料"] 如需詳細資訊、請連結至_系統管理參考_。
+由於節點數為偶數的叢集中可能會出現平局，因此會為其中一個節點賦予一個額外的分數投票權重，稱為 epsilon。請參閱 link:other-references.html["參考資料"] 以連結至《系統管理參考手冊》以取得更多資訊。
 
 +
 [NOTE]

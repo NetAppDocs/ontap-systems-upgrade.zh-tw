@@ -139,7 +139,7 @@ node> aggr status -v
 繼續執行此程序。
 
 
-NOTE: 在繼續之前、您必須先將集合體離線、然後銷毀內部磁碟機上的集合體。請參閱 link:other_references.html["參考資料"] 連結至_磁碟、並使用CLCLI內容進行Aggregate管理、以取得有關管理Aggregate的資訊。
+NOTE: 在繼續操作之前，您必須先將彙總離線，然後毀損內部磁碟機上的彙總。請參閱 link:other-references.html["參考資料"] 以連結至 _Disk and aggregate management with the CLI_ 內容，以取得有關管理彙總的資訊。
 
 
 
@@ -147,13 +147,13 @@ NOTE: 在繼續之前、您必須先將集合體離線、然後銷毀內部磁�
 繼續執行此程序。
 
 
-NOTE: 在繼續之前、您必須先將磁碟區移至外部磁碟櫃、將集合體離線、然後銷毀內部磁碟機上的集合體。請參閱 link:other_references.html["參考資料"] 可鏈接到_Disk並使用CLI/content進行集合管理，以瞭解有關移動Volume的信息。
+NOTE: 在繼續操作之前，您必須將 Volume 移至外部磁碟櫃，將彙總離線，然後毀損內部磁碟機上的彙總。請參閱 link:other-references.html["參考資料"] 以連結至 _Disk and aggregate management with the CLI_ 內容，以取得有關移動 Volume 的資訊。
 
 
 
-| 在內部磁碟機上包含根磁碟區 | 請勿繼續執行此程序。您可以參考來升級控制器 link:other_references.html["參考資料"] 若要連結至_NetApp Support Site_、並使用下列程序來升級執行叢集Data ONTAP 式故障的一對節點上的控制器硬體：移動Volumes（磁碟區）。 
+| 在內部磁碟機上包含根磁碟區 | 請勿繼續執行此步驟。您可以參考 link:other-references.html["參考資料"] 以連結至 NetApp 支援網站，並使用「在執行叢集式 Data ONTAP 的一對節點上透過移動 Volume 來升級控制器硬體」步驟來升級控制器。 
 
 
-| 在內部磁碟機上包含非根磁碟區、因此您無法將磁碟區移至外部儲存設備 | 請勿繼續執行此程序。您可以Data ONTAP 使用下列程序來升級控制器：移轉Volumes（磁碟區）、在執行叢集式的節點配對上升級控制器硬體。請參閱 link:other_references.html["參考資料"] 連結至_NetApp支援網站_、您可在此存取此程序。 
+| 在內部磁碟機上包含非根磁碟區、因此您無法將磁碟區移至外部儲存設備 | 請勿繼續執行此步驟。您可以使用「透過移動 Volume 升級叢集式 Data ONTAP 上一對節點的控制器硬體」步驟來升級控制器。請參閱link:other-references.html["參考資料"]以連結至 NetApp 支援網站，您可以在該網站上存取此步驟。 
 |===
 

@@ -34,7 +34,7 @@ summary: 您可以ONTAP 使用「系統控制器更換」命令來升級執行�
 * 此程序適用於FAS系統和AFF系統。
 * 此程序適用於執行4節點NetApp MetroCluster 功能更新組態的系統。由於這個組態站台可位於兩個實體位置、因此必須在每個站台個別執行自動化控制器升級、才能進行HA配對。MetroCluster MetroCluster
 * 對於非MetroCluster系統（例如HA叢集）、ARL升級是唯一受支援的程序。
-* 如果您要從AFF 某個不支援的A320系統進行升級、您可以使用Volume Moves來升級控制器硬體、或聯絡技術支援部門。請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+* 如果您是從 AFF A320 系統升級，可以使用 Volume 移動功能來升級控制器硬體，或聯絡技術支援。請參閱 link:other-references.html["參考資料"] 以連結至「透過移動 Volume 或儲存設備進行升級」。
 
 
 .自動化控制器升級程序

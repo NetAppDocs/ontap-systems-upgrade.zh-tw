@@ -29,5 +29,5 @@ summary: 您可以ONTAP 使用「系統控制器更換」命令、重新定位�
 * 您可以使用此程序來升級具有兩個以上節點之叢集中的控制器硬體、但是您需要針對叢集中的每個HA配對分別執行程序。
 * 此程序適用於FAS系統和AFF系統。
 * 從ONTAP 功能更新至功能更新至功能更新至功能更新至功能更新MetroCluster 的版本。由於這個組態站台可位於兩個實體位置、因此必須在每個站台個別執行自動化控制器升級、才能進行HA配對。MetroCluster MetroCluster
-* 如果您要從AFF 某個不支援的A320系統進行升級、您可以使用Volume Moves來升級控制器硬體、或聯絡技術支援部門。如果您願意進行Volume移動、請參閱 link:other_references.html["參考資料"] 若要透過移動磁碟區或儲存設備連結至_Upgrade。
+* 如果您是從 AFF A320 系統升級，可以使用 Volume 移動來升級控制器硬體，或聯絡技術支援。如果您希望進行 Volume 移動，請參閱 link:other-references.html["參考資料"] 以連結至「透過移動 Volume 或儲存設備進行升級」。
 

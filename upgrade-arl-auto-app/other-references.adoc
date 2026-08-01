@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
-permalink: upgrade-arl-manual-app/other_references.html 
+permalink: upgrade-arl-auto-app/other-references.html 
 keywords: other references, documentation, hardware universe, content, documentation center, information 
-summary: 在執行ONTAP 版本號為9.8或更新版本的控制器上支援手動ARL升級所需的參考內容和網站。 
+summary: 使用ONTAP 「系統控制器更換」命令、參考支援執行版本號為「更新版本」的控制器升級所需的內容和網站。 
 ---
 = 參考資料
 :hardbreaks:

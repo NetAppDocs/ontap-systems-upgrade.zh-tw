@@ -68,6 +68,9 @@ image:original_to_new_nodes.png["使用 node3 和 node4 替換 node1 和 node2"]
 [role="quick-margin-para"]
 完成ONTAP 更新、請參閱《更新版本、更新版本、ONTAP 或《更新版本、更新版本、更新版本、更新版本、更新版本、更新版本
 
+.接下來呢？
+在了解透過搬移儲存設備進行升級之後，link:upgrade-prepare-when-moving-storage.html["為升級做好準備"]。
+
 .相關資訊
 * link:upgrade_aff_a250_to_aff_a400_ndu_upgrade_workflow.html["將 AFF A250 轉換為磁碟機櫃、以升級至 AFF A400"]（非破壞性程序）
 * link:convert-to-drive-shelf.html["透過轉換為磁碟機櫃，從 AFF A150、AFF A220 或 FAS2820 升級"] （不中斷營運的程序）

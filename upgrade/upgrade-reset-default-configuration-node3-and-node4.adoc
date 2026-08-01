@@ -54,3 +54,6 @@ Rebooting to finish wipeconfig request.
 
 . 從開機功能表中輸入 8 以重新開機節點，並在 AUTOBOOT 期間輸入 Ctrl-C 以在 LOADER 提示字元處停止節點。
 
+
+.接下來呢？
+在新節點上重設預設組態後，link:upgrade-install-new-nodes.html["安裝新節點"]。

@@ -39,7 +39,7 @@ summary: 使用ONTAP 「系統控制器更換」命令、將執行ONTAP 版本�
 使用 node4 平台的《安裝與設定說明》、對應的磁碟架文件和《HA 對管理》文件連接以下連線。
 
 +
-參考link:other_references.html["參考資料"]連結到_HA 對管理_。
+請參閱 link:other-references.html["參考資料"] 以連結至 _HA 配對管理_。
 
 +
 ** 主控台（遠端管理連接埠）

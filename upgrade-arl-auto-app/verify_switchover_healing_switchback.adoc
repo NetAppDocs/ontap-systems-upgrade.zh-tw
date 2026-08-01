@@ -16,7 +16,7 @@ summary: 使用「系統控制器更換」命令、在升級執行更新版本�
 [role="lead"]
 您應該驗證MetroCluster 該組態的切換、修復及切換作業。
 
-請參閱 link:other_references.html["參考資料"] 若要連結至_SURFManagement MetroCluster 和Disaster Recovery_內容、請使用所述的程序進行協調切換、修復及切換。
+請參閱 link:other-references.html["參考資料"] 以連結至 _MetroCluster 管理和災難恢復_ 內容，並使用其中提到的協商切換、修復和切換回程序。
 
 .接下來呢？
 在驗證切換、修復和切換回之後，link:overview_of_the_arl_upgrade.html["瞭解 ARL 升級順序"]。

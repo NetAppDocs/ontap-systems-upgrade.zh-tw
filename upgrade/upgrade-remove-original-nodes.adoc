@@ -20,6 +20,8 @@ summary: 將磁碟區遷移到新節點後，從叢集中刪除原始節點。�
 ----
 storage failover modify -node <original_node_name> -enabled false
 ----
+
+
 . 將權限等級變更為進階：
 +
 [source, cli]
@@ -165,6 +167,7 @@ set -privilege admin
 ----
 
 
+[[return-admin]]
 . 重複步驟 <<disable-ha,2>> 至 <<return-admin,11>>，從叢集中移除容錯移轉合作夥伴。
 . 如果叢集僅剩兩個節點、請為雙節點叢集設定高可用度：
 +
@@ -175,4 +178,4 @@ cluster ha modify -configured true
 
 
 .接下來呢？
-link:upgrade-complete-move-volumes.html["完成移動卷升級"]
+移除原始節點後，link:upgrade-complete-move-volumes.html["完成移動 Volume 升級"]。

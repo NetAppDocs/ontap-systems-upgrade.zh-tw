@@ -96,4 +96,4 @@ js11      ps0          mixed    LIF1,                   igroup1
 視叢集環境需求而定、您可能會決定建立新的SAN LIF、或是重新建立先前在此程序中刪除的SAN LIF。您可以使用建立或重新建立SAN LIF https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/task_creating_network_interfaces.html["網路介面建立"^] 叢集管理中的程序（使用OnCommand SURE®System Manager_文件）。
 
 .接下來呢？
-link:upgrade-remove-original-nodes.html["從叢集中移除原始節點。"]
+移動、刪除或建立 SAN LIF 後，link:upgrade-remove-original-nodes.html["從叢集中移除原始節點"]。

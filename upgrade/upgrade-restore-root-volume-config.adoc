@@ -56,3 +56,6 @@ Override system id? {y|n} [n] y
 
 
 如果控制器升級失敗並報告「rlib_port_IPspace_assign」錯誤訊息、您必須還原升級、並刪除原始系統上作為HA連接埠的網路連接埠上的LIF。如需詳細資訊、請參閱 link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/PANIC_%3A_rlib_port_ipspace_assign%3A_port_e0a_could_not_be_moved_to_HA_ipspace["這篇知識庫文章"^]。
+
+.接下來呢？
+還原根 Volume 組態後，link:upgrade-complete.html["完成移動儲存設備升級工作流程"]。

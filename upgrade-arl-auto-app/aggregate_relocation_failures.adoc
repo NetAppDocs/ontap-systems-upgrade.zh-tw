@@ -39,7 +39,7 @@ summary: 疑難排解使用「系統控制器更換」命令來升級執行ONTAP
 
 
 +
-有關 `storage aggregate relocation start`、 `override-vetoes` 和 `override-destination-checks` 選項的詳細資訊、請參閱link:other_references.html["參考資料"]以連結至 _ONTAP 9 Command reference_。
+有關  `storage aggregate relocation start`、 `override-vetoes` 和  `override-destination-checks` 選項的詳細資訊、請參閱 link:other-references.html["參考資料"] 以連結至 _ONTAP 9 命令參考_。
 
 
 

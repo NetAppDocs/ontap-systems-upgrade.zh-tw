@@ -36,72 +36,31 @@ summary: 瞭解執行ONTAP 《NetApp》9.8或更新版本之一對控制器的�
 
 image:arl_upgrade_manual_image1.PNG["顯示ARL程序各階段的圖例"]
 
-下表描述了每個階段的高階任務以及階段結束時的彙總所有權狀態。詳細步驟將在後續流程中提供：
+了解您在每個階段執行的高階任務以及階段結束時的彙總所有權狀態。詳細步驟將在後續流程中提供。
 
-[cols="35,65"]
-|===
-| 階段 | 步驟 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]link:determine_aggregates_on_internal_drives.html["階段1：準備升級"]
+[role="quick-margin-para"]
+在第1階段期間、如果需要、您可以確認內部磁碟機不包含根集合體或資料集合體、準備節點進行升級、並執行一系列預先檢查。如有必要、您可以重新輸入磁碟以進行儲存加密、並準備以網路方式開機新的控制器。
 
-
-| link:determine_aggregates_on_internal_drives.html["階段1：準備升級"]  a| 
-在第一階段，如有必要，您需要確認內部磁碟機不包含根目錄彙總或資料彙總，準備節點以進行升級，並執行預先檢查。如有必要，您需要重新配置磁碟金鑰以進行 Storage Encryption，並準備透過網路開機新的控制器。
-
-第1階段結束時的Aggregate所有權：
-
-* node1是node1集合體的主擁有者和目前擁有者。
-* node2是node2 Aggregate的主擁有者和目前擁有者。
-
-
-
-
-| link:relocate_non_root_aggr_node1_node2.html["階段2：淘汰節點1"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]link:relocate_non_root_aggr_node1_node2.html["階段2：淘汰節點1"]
+[role="quick-margin-para"]
 在第2階段期間、您會將非根Aggregate從節點1重新部署至節點2、並將節點1擁有的非SAN資料lifs移至節點2、包括故障或遭否決的Aggregate。您也可以記錄必要的node1資訊、以便稍後在程序中使用、並淘汰node1。
 
-第2階段結束時的Aggregate所有權：
-
-* node1是node1 Aggregate的主擁有者。
-* node2是node1 Aggregate的目前擁有者。
-* node2是node2 Aggregate的主擁有者和目前擁有者。
-
-
-
-
-| link:install_boot_node3.html["階段3：安裝和開機節點3"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]link:install_boot_node3.html["階段3：安裝和開機節點3"]
+[role="quick-margin-para"]
 在第三階段，您需要安裝並開機 node3，並將叢集連接埠和節點管理連接埠從 node1 對應到 node3。如果您使用 NetApp Volume Encryption （NVE），則需要還原金鑰管理器組態。然後，將屬於 node1 的資料 LIF 和 SAN LIF 從 node2 遷移到 node3，將所有彙總從 node2 遷移到 node3，並將 node2 擁有的資料 LIF 和 SAN LIF 遷移到 node3。
 
-第3階段結束時的Aggregate所有權：
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"]link:record_node2_information.html["第4階段：淘汰節點2"]
+[role="quick-margin-para"]
+在第4階段期間、您會記錄必要的node2資訊、以便稍後在程序中使用、然後淘汰node2。
 
-* node2是node2 Aggregate的主擁有者、但不是目前擁有者。
-* node3是原屬於node1的Aggregate的主擁有者和目前擁有者。
-* node2是屬於node2但不是主擁有者的Aggregate的主擁有者和目前擁有者。
-
-
-
-
-| link:record_node2_information.html["第4階段：淘汰節點2"]  a| 
-在第4階段期間、您會記錄必要的node2資訊、以便稍後在程序中使用、然後淘汰node2。集合體擁有權不會發生任何變更。
-
-
-
-| link:install_boot_node4.html["階段5：安裝和開機節點4"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]link:install_boot_node4.html["階段5：安裝和開機節點4"]
+[role="quick-margin-para"]
 在第五階段，您需要安裝並開機 node4，並將叢集連接埠和節點管理連接埠從 node2 對應到 node4。如果您使用 NetApp Volume Encryption （NVE），則需要還原金鑰管理器組態。然後，將屬於 node2 的資料 LIF 和 SAN LIF 從 node3 遷移到 node4，將 node2 的彙總資料從 node3 遷移到 node4，並將 node2 擁有的資料 LIF 和 SAN LIF 遷移到 node3。
 
-第5階段結束時的Aggregate所有權：
-
-* node3是原屬於node1的集合體的主擁有者和目前擁有者。
-* Node4是原屬於節點2的Aggregate主擁有者和目前擁有者。
-
-
-
-
-| link:manage_authentication_kmip.html["第6階段：完成升級"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"]link:manage_authentication_kmip.html["第6階段：完成升級"]
+[role="quick-margin-para"]
 在第6階段期間、您確認新節點已正確設定、如果新節點已啟用加密、則可設定儲存加密或NetApp Volume加密。您也應該取消委任舊節點、並恢復SnapMirror作業。
 
-
-NOTE: 儲存虛擬機器（SVM）災難復原更新不會依照指定的排程中斷。
-
-集合體擁有權不會發生任何變更。
-
-|===
 .接下來呢？
 在審查 ARL 升級工作流程之後，link:guidelines_upgrade_with_arl.html["檢閱使用 ARL 升級控制器的準則"]。

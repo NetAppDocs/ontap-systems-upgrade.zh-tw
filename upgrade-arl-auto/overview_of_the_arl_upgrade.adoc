@@ -32,70 +32,28 @@ summary: 瞭解ONTAP 如何使用「系統控制器更換」命令、將執行�
 
 每個Aggregate都有一個擁有者和目前擁有者。主擁有者是該集合體的實際擁有者、而目前擁有者則是暫時擁有者。
 
-下表說明您在每個階段中執行的高層工作、以及階段結束時的集合擁有權狀態。程序稍後會提供詳細步驟：
+了解您在每個階段執行的高階任務以及階段結束時的 Aggregate 所有權狀態。詳細步驟將在後續流程中提供。
 
-[cols="25,75"]
-|===
-| 階段 | 步驟 
-
-
-| link:prepare_nodes_for_upgrade.html["第1階段：準備升級"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["一"]link:prepare_nodes_for_upgrade.html["第1階段：準備升級"]
+[role="quick-margin-para"]
 在第1階段期間、您會執行預先檢查、並視需要修正Aggregate所有權。如果您使用 Onboard Key Manager 來管理儲存加密、則必須記錄特定資訊、而且您可以選擇靜止 SnapMirror 關係。
 
-第1階段結束時的Aggregate所有權：
-
-* node1是node1集合體的主擁有者和目前擁有者。
-* node2是node2 Aggregate的主擁有者和目前擁有者。
-
-
-
-
-| link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["第2階段：重新部署和淘汰節點1"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["二"]link:relocate_non_root_aggr_and_nas_data_lifs_node1_node2.html["第2階段：重新部署和淘汰節點1"]
+[role="quick-margin-para"]
 在第2階段期間、您會將節點1非根Aggregate和NAS資料lifs重新部署至節點2。此程序大部分是自動化的；此作業會暫停、以便您檢查其狀態。您必須手動恢復作業。如果需要、您可以重新部署故障或被否決的集合體。您必須記錄必要的node1資訊、以便稍後在程序中使用、然後淘汰node1。您也可以在程序稍後的步驟中準備netboot node3和node4。
 
-第2階段結束時的Aggregate所有權：
-
-* node2是node1 Aggregate的目前擁有者。
-* node2是node2 Aggregate的主擁有者和目前擁有者。
-
-
-
-
-| link:install_boot_node3.html["階段3.安裝及開機節點3"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["三"]link:install_boot_node3.html["階段3.安裝及開機節點3"]
+[role="quick-margin-para"]
 在第 3 階段中，您將安裝並開機 node3 ，將叢集和節點管理連接埠從 node1 對應至 node3 ，將 node1 磁碟重新指派至 node3 ，並驗證 node3 安裝。如果需要、您可以在節點3上設定FC或UTA/UTA2組態、並確認節點3已加入仲裁。您也可以將節點1 NAS資料lifs和非根Aggregate從節點2重新部署到節點3、並確認節點3上存在SAN lifs。
 
-第3階段結束時的Aggregate所有權：
-
-* node3是node1 Aggregate的主擁有者和目前擁有者。
-* node2是node2 Aggregate的主擁有者和目前擁有者。
-
-
-
-
-| link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["第4階段：重新部署和淘汰節點2"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["四"]link:relocate_non_root_aggr_nas_lifs_from_node2_to_node3.html["第4階段：重新部署和淘汰節點2"]
+[role="quick-margin-para"]
 在第4階段期間、您將節點2非根集合體和非SAN資料生命週期重新部署到節點3。您也可以記錄必要的node2資訊、然後淘汰node2。
 
-第4階段結束時的Aggregate所有權：
-
-* node3是原屬於node1的Aggregate的主擁有者和目前擁有者。
-* node2是node2 Aggregate的主擁有者。
-* node3是node2 Aggregate的目前擁有者。
-
-
-
-
-| link:install_boot_node4.html["階段5.安裝及開機節點4"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["五"]link:install_boot_node4.html["階段5.安裝及開機節點4"]
+[role="quick-margin-para"]
 在第 5 階段中，您將安裝並開機 node4 ，將叢集和節點管理連接埠從 node2 對應至 node4 ，將 node2 磁碟重新指派至 node4 ，並驗證 node4 安裝。如果需要、您可以在節點4上設定FC或UTA/UTA2組態、並確認節點4已加入仲裁。您也可以將node2 NAS資料lifs和非根Aggregate從node3重新部署到node4、並驗證節點4上是否存在SAN lifs。
 
-第5階段結束時的Aggregate所有權：
-
-* node3是原屬於node1的集合體的主擁有者和目前擁有者。
-* Node4是原屬於節點2的Aggregate主擁有者和目前擁有者。
-
-
-
-
-| link:manage-authentication-using-kmip-servers.html["階段6.完成升級"]  a| 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["六"]link:manage-authentication-using-kmip-servers.html["階段6.完成升級"]
+[role="quick-margin-para"]
 在第6階段期間、您將確認新節點已正確設定、如果新節點已啟用加密、則您可以設定及設定儲存加密或NetApp Volume Encryption。您也應該取消委任舊節點、然後恢復SnapMirror作業。
-
-|===

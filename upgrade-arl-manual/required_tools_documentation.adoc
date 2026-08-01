@@ -22,4 +22,4 @@ summary: 您必須擁有特定工具和文件、才能在執行ONTAP VMware 9.7�
 * 2號十字螺絲起子
 
 
-前往 link:other_references.html["參考資料"] 一節、以存取此升級所需的參考文件清單。
+請前往 link:other-references.html["參考資料"] 部分，存取本次升級所需的參考文件清單。
