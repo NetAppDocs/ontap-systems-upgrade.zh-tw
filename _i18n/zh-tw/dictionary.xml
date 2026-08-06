@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <blocks>
-  <block id="7625a2790853e03d706fd2e8a29fb7ba" category="summary">使用ONTAP 「系統控制器更換」命令、將執行《更新》9.5的控制器升級至9.7時、請設定node4內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡。</block>
   <block id="df5267f8e4bbfa9add1dd732e6b68e41" category="doc">在節點4上設定FC或UTA/UTA2組態</block>
   <block id="291e8826d2b19041a0543b448060f314" category="paragraph">如果node4具有內建FC連接埠、內建統一化目標介面卡（UTA/UTA2）連接埠或UTA/UTA2卡、則必須先設定這些設定、才能完成其餘程序。</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-xref"></block>
@@ -896,7 +895,6 @@
   <block id="eed577fe70cdcd6a422d81d49e0f94ca" category="paragraph">此命令需要Onboard Key Manager（OKM）通關密碼。</block>
   <block id="57bd5edad2e4a85125aa9528f6fa4cea" category="list-text">還原OKM驗證：</block>
   <block id="0a83ed732b07426c840d56d0ee6e648b" category="cell">「安全金鑰管理程式內建同步」</block>
-  <block id="bc8355e3ba73925a2f4cf661fa66be6a" category="summary">使用ONTAP 「系統控制器更換」命令來升級執行《更新版本》9.8或更新版本的控制器時、請設定node4內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡。</block>
   <block id="f91809c39c7c5ad59f2475c5ee644448" category="admonition">在上述主控台輸出範例中、ONTAP 如果系統使用進階磁碟分割（ADP）磁碟、則會提示您輸入合作夥伴節點名稱。</block>
   <block id="cb891bf7e336200833c9e240c76a0cc6" category="list-text">確認節點4的根Aggregate為離線狀態、且從節點2移轉的磁碟根Aggregate為線上狀態、並設定為root：</block>
   <block id="6bab8b4510fec23b1120be927a0bfea7" category="admonition">如果無法執行上一個子步驟、可能會導致節點4從內部根Aggregate開機、或者可能導致系統假設有新的叢集組態存在、或提示您識別一個。</block>
@@ -1513,7 +1511,6 @@
   <block id="4883a9a9fced202f6b61720c6c0446a2" category="list-text">輸入下列命令並檢查其輸出、確認授權已正確安裝：</block>
   <block id="65816664fef74fe3f15406730c518f76" category="list-text">在兩個節點上執行下列命令來設定SP：</block>
   <block id="a98b8d21a1cabe96a7d765976c724ace" category="paragraph">如果節點3和節點4上已啟用儲存加密、請完成中的步驟 <block ref="94c0a6a874300fcf012d00a23a1b673f" category="inline-link-macro-rx"></block>。否則、請完成中的步驟 <block ref="6e48b929ca0767f00c15eeb6d7e78755" category="inline-link-macro-rx"></block>。</block>
-  <block id="92f11749596b34888281bb0c579c2d25" category="summary">在執行ONTAP 更新版本的控制器上進行手動ARL升級時、請在節點4內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡上設定節點4。</block>
   <block id="d3724945a8761461ffee756c3d88b5f7" category="paragraph">如果節點4沒有內建FC連接埠、內建UTA/UTA2連接埠或UTA/UTA2卡、而且您正在升級含有儲存磁碟的系統、則可以跳至 <block ref="fface1ac702bde6d72ceb6e55eb8b2b6" category="inline-link-macro-rx"></block>。</block>
   <block id="bdb2780eb5f1795b94cdb7892cd5237b" category="list-text">比較新節點上的FC設定與先前從原始節點擷取的設定。</block>
   <block id="348795cf2ff362808ef4789bfce998c1" category="paragraph">「-type」是FC4類型、目標或啟動器。</block>
@@ -2212,7 +2209,6 @@
   <block id="823eab722f92d2115c2effb645f5bc93" category="paragraph">「顯示此介面卡的資訊」MetroCluster</block>
   <block id="39b8d1f1fde39b620b3646f81db31ad4" category="paragraph">《不互連鏡像秀》MetroCluster</block>
   <block id="e3cbff5daacc19796803ce053e0bd219" category="summary">啟用HA配對、驗證node3和node4儲存設備存取、並在執行ONTAP 更新版本的控制器上手動升級ARL之後、確認Aggregate擁有權。</block>
-  <block id="8dc470d3ebc8fcb9ed95d55471e7303a" category="summary">在執行ONTAP 更新版本的控制器上手動升級ARL時、請在執行版本號為2的控制器上設定node4內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡。</block>
   <block id="07db5d309a895d3830f3488eb9139adb" category="summary">在ONTAP 執行版本更新至更新版本的控制器上進行手動ARL升級時、請正確關閉節點2、並將其從機架或機箱中移除。</block>
   <block id="b14e77f6abcd7876eb048771f706c19b" category="summary">在執行ONTAP 更新版本的控制器上手動升級ARL時、請在執行版本更新版本的控制器上設定node3內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡。</block>
   <block id="ed576374c6e7857fa007ac7fd9061164" category="summary">在執行ONTAP 版本號為9.7或更早版本的控制器上支援手動ARL升級所需的參考內容和網站。</block>
@@ -2527,7 +2523,6 @@
   <block id="ed3f2da4177cc35b1433eccf1a2e9b37" category="paragraph">發行版本不再於更新版本ONTAP</block>
   <block id="8f2f5cebfa6b4e869a159dbf3cedb773" category="inline-link">尋找Data ONTAP 適用於您的版本的《叢集擴充快速指南》（Cluster Expansion Express Guide）</block>
   <block id="9d9192129e1b9a1e59bd50fc144f8867" category="paragraph"><block ref="9d9192129e1b9a1e59bd50fc144f8867" category="inline-link-rx"></block></block>
-  <block id="4d3a4f006fa6b11c769a39a41cac5793" category="summary">若要透過移動儲存設備來完成升級程序、您必須從新節點刪除任何未使用的連接埠和LIF、重新啟用儲存容錯移轉或高可用度、設定服務處理器（SP\）、安裝新授權、以及設定AutoSupport Re。您可能還需要設定儲存設備或Volume Encryption、並設定FC或CNA連接埠。</block>
   <block id="de87a7c00dcfcf1112ca50efd583f924" category="paragraph">若要透過移動儲存設備來完成升級程序、您必須從新節點刪除任何未使用的連接埠和LIF、重新啟用儲存容錯移轉或高可用度、設定服務處理器（SP）、安裝新的授權、以及設定AutoSupport Re。您可能還需要設定儲存設備或Volume Encryption、並設定FC或CNA連接埠。</block>
   <block id="0bde8f7cae6f7006cf8059b9d923c0a4" category="inline-xref-macro">在更新版本的更新版本中執行ONTAP 最終升級步驟</block>
   <block id="83e8f1a7c1a2c10d90059989f69becc7" category="list-text">在儲存系統提示字元中、顯示關於LIF的資訊：</block>
@@ -2597,7 +2592,6 @@
   <block id="244220515525d7bbce7364431256c704" category="admonition">視所升級系統的網路組態複雜度而定、您可能需要重複步驟5、子步驟（A）到（g）、直到所有連接埠都正確放置在所需位置。</block>
   <block id="b27e1f5014645cf6a835fb2e11524da4" category="list-text">如果系統上未設定任何VLAN、請前往 <block ref="44c817ee9110592f40577b67e8940aff" category="inline-xref-macro-rx"></block>。如果已設定VLAN、請還原先前在不再存在的連接埠上設定或是在移至另一個廣播網域的連接埠上設定的已移除VLAN。</block>
   <block id="72a19323d192a6a70bcf03b98d5355ae" category="paragraph">當所有連接埠均已正確設定並新增至正確的廣播網域時、網路連接埠可連線性show命令應針對所有連接的連接埠、將連線狀態報告為「正常」、對於沒有實體連線的連接埠、狀態應顯示為「不可連線」。如果有任何連接埠報告的狀態不是這兩個連接埠、請依照中所述修復連線能力 <block ref="84a764803e273063ea87749716b7c654" category="inline-xref-macro-rx"></block>。</block>
-  <block id="2f22c527d871517945ac34102d2f6931" category="summary">若要透過移動儲存設備來完成升級程序、您必須從新節點刪除任何未使用的連接埠和LIF、重新啟用儲存容錯移轉或高可用度、設定服務處理器（SP）、安裝新授權、以及設定AutoSupport NetApp。您可能還需要設定儲存設備或Volume Encryption、並設定FC或CNA連接埠。</block>
   <block id="5112ce36807c8e031c9ab063bc28ce71" category="doc">執行ONTAP 更新步驟以更新版本更新至更新版本</block>
   <block id="de11c3d9da699c5b0528297ad39e25cb" category="list-text">從新節點刪除任何未使用的連接埠（進階權限層級）：</block>
   <block id="1edc30c9cec2665a01f0a9cc7910d9fc" category="paragraph">網路連接埠刪除</block>
@@ -2620,7 +2614,6 @@
   <block id="3c6d839c276fd97f3efa9e0584e8ab14" category="paragraph">您必須在節點3和節點4上執行下列步驟。您可以在每個節點上平行執行這些步驟。</block>
   <block id="d4041bfba261eda3180ae9fbf6285d95" category="list-text">當您看到類似於以下內容的提示時、請輸入「yes（是）」：</block>
   <block id="8093d580d9cc0468991044c64c97b174" category="inline-xref-macro">移動、刪除或建立SAN LIF</block>
-  <block id="c9b87fd8826330d02eb0f7e03c49023c" category="summary">若要透過移動磁碟區來完成升級程序、您需要設定服務處理器（SP）、安裝新授權、以及設定AutoSupport 更新。您可能還需要設定儲存設備或Volume Encryption、並設定FC或NCA連接埠。</block>
   <block id="758ed2ce94a0d48e369a05e9792df5bf" category="paragraph">若要透過移動磁碟區完成升級程序、您必須設定服務處理器（SP）、安裝新授權、以及設定AutoSupport 更新。您可能還需要設定儲存設備或Volume Encryption、並設定FC或NCA連接埠。</block>
   <block id="d01decedde31fd5fc9aee34a816e3a84" category="paragraph">「系統節點AutoSupport 無法叫用節點node_name -type all -m則 訊息「node_name coted walled from plate_old to platform _new」（節點名稱已從platfore_old成功升級至platform _new）。</block>
   <block id="533d1f26c154725c9c91afdd1b89aaa4" category="list-text">在「*安裝的系統*」頁面上、以表單輸入舊系統的序號、然後按一下「*執行！*」</block>
@@ -3408,7 +3401,6 @@
   <block id="cac76ada4fbfca68ed190eb21810e1af" category="cell">FAS2820</block>
   <block id="0ad9e0a8a319618923e172d4571038eb" category="summary">如果需要、請在升級的 node1 上還原金鑰管理程式組態、以便使用 ARL 來升級相同機箱中的控制器機型。</block>
   <block id="f41084761f1192d11c824e139538a13d" category="summary">必要時、請設定儲存加密、安裝 SSL 憑證、並在使用 ARL 升級相同機箱中的控制器機型時、設定金鑰管理伺服器。</block>
-  <block id="82896d30ec8a78dd386c091a8c2121e6" category="inline-link-macro">更換 node1 系統模塊</block>
   <block id="644e220a44e1ff19f9d586b2ec3ee2d5" category="summary">在開始升級之前、請確認您擁有正確的硬體、以便在同一個機箱中升級控制器機型。</block>
   <block id="4e106a6c623eb6811b42be00dbde2ef3" category="cell">兩個控制器模組</block>
   <block id="327579b68dffec79f2bcb176142f3d56" category="cell">兩個控制器和兩個 NVRAM 模組</block>
@@ -5483,7 +5475,6 @@
   <block id="d14ed5362debdfbe14cf14c4dcedb45e" category="list-text">將節點2的電纜連接到節點4。</block>
   <block id="8ada17b153e1b3f1e2dd2eacad90b1e5" category="admonition">在此升級過程中，請勿將新機櫃連接到 node3 或 node4。控制器升級完成後，即可將新機櫃無中斷地連接到系統。</block>
   <block id="091cb162e71110eda2cc11ee235e5a9c" category="paragraph">記錄 node3 的系統 ID，以便在 <block ref="3cda7ea9d16e86f3996fa25936d101de" category="inline-xref-macro-rx"></block> 中使用。</block>
-  <block id="c27d8f687453de71fe99b9638caaee93" category="list-text">重新分配磁碟和資料彙總：</block>
   <block id="576404acc1d2c468d9604cd99464b3e9" category="open-title">重新分配給節點3</block>
   <block id="19c7bb430e4d1bead9d5461984527c74" category="paragraph">將 node1 的備援裝置磁碟、屬於根 Aggregate 的磁碟以及任何資料彙總重新分配給 node3：</block>
   <block id="9e1eb9f52027541a9bd23e4f05a40757" category="paragraph"><block ref="3e85ddaa3eb6367e1aff5787943cd287" prefix="" category="inline-code"></block></block>
@@ -5592,4 +5583,12 @@
   <block id="7a5a00d513b1d27412425615c75af559" category="list-text">對於執行 ONTAP 9.7 及更早版本的 MetroCluster 組態，請前往 <block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block> 以連結至「使用 Aggregate 重新定位手動升級執行 ONTAP 9.7 或更早版本的控制器硬體」。</block>
   <block id="2b661462fc016dd9ae9c124f189c3cb4" category="list-text">有關 MetroCluster IP 組態和 Fabric MetroCluster 組態的其他升級選項，請前往 <block ref="9cc9f7a6e6a82728cff1f7183d2d4d15" category="inline-link-macro-rx"></block> 以連結至 _MetroCluster Upgrade and Expansion_ 內容。</block>
   <block id="217f0692dd6e3dd9e6ae89ae211d2e5e" category="sidebar">第五階段：安裝 node2 替換系統模組</block>
+  <block id="05de9e82bcc80e2e8396f0e503d037fd" category="list-text">[[reassign-disks-and-aggregates]]重新指派磁碟和資料聚合：</block>
+  <block id="dcb35290a699d5cd152b36befe0de1e2" category="summary">要完成透過移動磁碟區進行升級的程序，您需要設定 Service Processor （SP）、安裝新授權並設定 AutoSupport。您可能還需要設定 Storage 或 Volume Encryption，並設定 FC 或 NCA 連接埠。</block>
+  <block id="c4d0156d9500edcd23bba4f179a52fa7" category="summary">要完成透過移動儲存設備進行升級的程序，您需要從新節點中刪除所有未使用的連接埠和 LIF，重新啟用儲存設備容錯移轉或高可用度，設定 Service Processor （SP），安裝新授權，並設定 AutoSupport。您可能還需要設定 Storage 或 Volume Encryption，並設定 FC 或 CNA 連接埠。</block>
+  <block id="aba8d067afe2b03d0a12cd1327ec564a" category="summary">使用系統控制器取代指令，在將執行 ONTAP 9.5 的控制器升級至 9.7 時，設定 node4 就職 FC 連接埠、UTA 和 UTA2 連接埠或 UTA 和 UTA2 卡。</block>
+  <block id="6d20cbcee6958032c968a7b309bba444" category="summary">使用 system controller replace 命令，在升級執行 ONTAP 9.8 或更新版本的控制器時，設定 node4 內建 FC 連接埠、UTA 和 UTA2 連接埠或 UTA 和 UTA2 卡。</block>
+  <block id="298812a1d89c69933bb37fd82a6a5814" category="summary">在執行 ONTAP 9.7 或更早版本的控制器上手動進行 ARL 升級時，請設定 node4 的內建 FC 連接埠、UTA 和 UTA2 連接埠或 UTA 和 UTA2 卡。</block>
+  <block id="db5d818f482843c95ffb191e7d48c35e" category="summary">在執行 ONTAP 9.8 或更新版本的控制器上手動進行 ARL 升級時，請設定 node4 就職 FC 連接埠、UTA 和 UTA2 連接埠或 UTA 和 UTA2 卡。</block>
+  <block id="1d1d3bd3fe7acd738c89cf279d744e1b" category="sidebar">替換節點 1 系統模組</block>
 </blocks>

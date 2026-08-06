@@ -29,7 +29,7 @@ entries:
     url: "/upgrade-arl-auto-in-chassis/relocate-failed-or-vetoed-aggr-node2.html"
   - title: 淘汰節點1
     url: "/upgrade-arl-auto-in-chassis/retire-node1.html"
-  - title: 更換 node1 系統模塊
+  - title: 替換節點 1 系統模組
     entries:
     - title: 更換 AFF A250 或 AFF C250
       url: "/upgrade-arl-auto-in-chassis/replace-node1-affa250-affc250.html"

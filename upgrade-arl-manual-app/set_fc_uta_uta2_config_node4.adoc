@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: upgrade-arl-manual-app/set_fc_uta_uta2_config_node4.html 
-keywords: fc configuration, uta configuration, uta2 configuration, configure FC ports, uta/uta2 card, node4, target, adapter, ports 
-summary: 在執行ONTAP 更新版本的控制器上進行手動ARL升級時、請在節點4內建FC連接埠、UTA/UTA2連接埠或UTA/UTA2卡上設定節點4。 
+keywords: fc configuration, uta configuration, uta2 configuration, configure FC ports, uta, uta2 card, node4, target, adapter, ports 
+summary: 在執行 ONTAP 9.8 或更新版本的控制器上手動進行 ARL 升級時，請設定 node4 就職 FC 連接埠、UTA 和 UTA2 連接埠或 UTA 和 UTA2 卡。 
 ---
 = 在節點4上設定FC或UTA/UTA2組態
 :hardbreaks:

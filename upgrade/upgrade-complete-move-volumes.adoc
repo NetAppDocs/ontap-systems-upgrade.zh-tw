@@ -2,7 +2,7 @@
 permalink: upgrade/upgrade-complete-move-volumes.html 
 sidebar: sidebar 
 keywords: complete, procedure, upgrading, upgrade, move, moving, volume, configure, service, processor, sp, license, autosupport, storage, encryption, fc, nca, port, complete the upgrade 
-summary: 若要透過移動磁碟區來完成升級程序、您需要設定服務處理器（SP）、安裝新授權、以及設定AutoSupport 更新。您可能還需要設定儲存設備或Volume Encryption、並設定FC或NCA連接埠。 
+summary: 要完成透過移動磁碟區進行升級的程序，您需要設定 Service Processor （SP）、安裝新授權並設定 AutoSupport。您可能還需要設定 Storage 或 Volume Encryption，並設定 FC 或 NCA 連接埠。 
 ---
 = 完成移動卷升級
 :allow-uri-read: 
