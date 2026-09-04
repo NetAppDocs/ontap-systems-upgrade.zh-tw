@@ -3482,7 +3482,6 @@
   <block id="1cb0cfe1b06273ad55b3f7189d138bb6" category="paragraph">此程序提供自動化程序的步驟、此程序使用自動磁碟指派和網路連接埠連線檢查來簡化控制器升級體驗。</block>
   <block id="7903419bce057c444e1bce59010158ec" category="paragraph">交換對應的替換系統模組之後、您必須使用 netboot node1 。「netboot」一詞表示您是從ONTAP 儲存在遠端伺服器上的鏡像進行開機。準備 netboot 時、您可以將 ONTAP 9 開機映像的複本新增到系統可以存取的 Web 伺服器上。</block>
   <block id="aeadb581bc234293016c883a2bc49cc9" category="paragraph">若要淘汰 node1 、您可以恢復自動作業、以停用 HA 與 node2 配對、並正確關閉 node1 。</block>
-  <block id="656030f2bc1d7ad32243a38c007d0770" category="paragraph">使用替換系統模組啟動 node1 之後、請確認已正確安裝。您必須等待節點2加入仲裁、然後繼續執行控制器更換作業。</block>
   <block id="fc654fff4abe048148189ff6fa5e3c9c" category="paragraph">若要確認正確的設定、請確認 HA 配對已啟用。您也可以驗證 node1 和 node2 是否可以存取彼此的儲存設備、以及是否都不擁有屬於叢集上其他節點的資料生命體。此外、您也可以確認所有的資料集合體都位於其正確的主節點上、而且兩個節點的磁碟區都在線上。如果其中一個新節點有統一化的目標介面卡、您必須還原任何連接埠組態、而且可能需要變更介面卡的使用。</block>
   <block id="37e06fbb743ab1c1935f7d96672ee924" category="paragraph">交換對應的更換 node2 系統模組之後、您可能需要將它們以網路開機。「netboot」一詞表示您是從ONTAP 儲存在遠端伺服器上的鏡像進行開機。準備 netboot 時、您可以將 ONTAP 9 開機映像的複本放到系統可以存取的 Web 伺服器上。</block>
   <block id="c6c7619b1c0744976ce686ab06900424" category="paragraph">在第 1 階段期間、您會確認您擁有適合升級的正確硬體、執行預先檢查、並在必要時修正集合擁有權。如果您使用 Onboard Key Manager 來管理儲存加密、則必須記錄特定資訊、而且您可以選擇要禁用 SnapMirror 關係。</block>
@@ -5591,4 +5590,5 @@
   <block id="298812a1d89c69933bb37fd82a6a5814" category="summary">在執行 ONTAP 9.7 或更早版本的控制器上手動進行 ARL 升級時，請設定 node4 的內建 FC 連接埠、UTA 和 UTA2 連接埠或 UTA 和 UTA2 卡。</block>
   <block id="db5d818f482843c95ffb191e7d48c35e" category="summary">在執行 ONTAP 9.8 或更新版本的控制器上手動進行 ARL 升級時，請設定 node4 就職 FC 連接埠、UTA 和 UTA2 連接埠或 UTA 和 UTA2 卡。</block>
   <block id="1d1d3bd3fe7acd738c89cf279d744e1b" category="sidebar">替換節點 1 系統模組</block>
+  <block id="61a8342f8a44813141884475de4e2a3c" category="paragraph">使用替換系統模組開機 node2 後，請驗證是否已正確安裝。您必須等待 node2 參加仲裁，然後才能繼續執行控制器更換操作。</block>
 </blocks>

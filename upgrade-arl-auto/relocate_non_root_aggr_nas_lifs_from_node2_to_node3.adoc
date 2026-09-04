@@ -37,7 +37,7 @@ NOTE: 不會修改集合體和lifs的主擁有者、只會修改目前擁有者�
 
 +
 ....
-cluster::> storage aggregate show -node node3 state online -root false
+cluster::> storage aggregate show -node node3 -state online -root false
 
 Aggregate      Size         Available   Used%   State   #Vols  Nodes  RAID     Status
 ----------     ---------    ---------   ------  -----   -----  ------ -------  ------
