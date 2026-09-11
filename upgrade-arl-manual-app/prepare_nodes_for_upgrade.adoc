@@ -173,7 +173,7 @@ node2          node1          true     Connected to node1
 
 +
 ....
-cluster::> storage aggregate show -node node2 -is-home false -fields owner-name,homename,state
+cluster::> storage aggregate show -node node2 -is-home false -fields owner-name,home-name,state
 There are no entries matching your query.
 ....
 +
