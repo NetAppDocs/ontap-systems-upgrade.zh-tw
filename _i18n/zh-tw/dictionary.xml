@@ -4680,7 +4680,6 @@
   <block id="7c83d808889f08051a5ca591ce7c8e27" category="list-text">[[relocate-step1]]透過完成以下子步驟來重新定位非根聚合：</block>
   <block id="fc0d545a8e3aca29e30f066934728447" category="list-text">請確認節點3上的合作夥伴系統ID設定是否正確：</block>
   <block id="dfcbf33b107ee8cbdb248e3973591ecd" category="list-text">[[relocate-step5]]重新定位非根聚合：</block>
-  <block id="ed787946b7250668aadee490b38bc4a4" category="section-title">我應該使用哪種升級程式？</block>
   <block id="dd04b613766be00015be37c27c9287a8" category="paragraph">若要選擇合適的升級程序，請查看下表中列出的所有問題。</block>
   <block id="40c8ff48fe09ea0079684fdd1a250ec0" category="cell">問問自己…</block>
   <block id="3b67351e5cad04409e6a96d3746ac449" category="cell">如果你的答案是肯定的，你可以這樣做…</block>
@@ -4709,7 +4708,6 @@
   <block id="4c57db980fd04065c39ac4dffcef854a" category="section-title">例如： FAS9500升級到 FAS90</block>
   <block id="a97ea56b0e00b2379736ae60869ff66a" category="cell">問題</block>
   <block id="67ca848a550c561e54a81891f0d6d223" category="cell">範例答案</block>
-  <block id="be3ad2de4d2b8e3ba0b5c1aa4b8cb05b" category="cell">不。 FAS9500和 FAS90 都運行ONTAP 9.15.1。</block>
   <block id="d3334963d764fa4e8de5f77317d6ec86" category="cell">我是否要執行一次可能造成嚴重後果的升級？</block>
   <block id="5eeadbc38fb7c86d39e9b4b88587473b" category="cell">不，我希望在升級期間保持生產環境在線。</block>
   <block id="980384b8326ad5f69899ae62e2ab1ecb" category="cell">是的。根據我的系統是模組化的還是整合的，我可以透過移動磁碟區或使用聚合重定位 (ARL) 來升級。</block>
@@ -5591,4 +5589,14 @@
   <block id="db5d818f482843c95ffb191e7d48c35e" category="summary">在執行 ONTAP 9.8 或更新版本的控制器上手動進行 ARL 升級時，請設定 node4 就職 FC 連接埠、UTA 和 UTA2 連接埠或 UTA 和 UTA2 卡。</block>
   <block id="1d1d3bd3fe7acd738c89cf279d744e1b" category="sidebar">替換節點 1 系統模組</block>
   <block id="61a8342f8a44813141884475de4e2a3c" category="paragraph">使用替換系統模組開機 node2 後，請驗證是否已正確安裝。您必須等待 node2 參加仲裁，然後才能繼續執行控制器更換操作。</block>
+  <block id="3be649079389687b52aca5285e2b20a4" category="section-title">步驟 1：選擇正確的升級程序</block>
+  <block id="77020be1e60162ee3900759f339c0767" category="section-title">步驟 2：準備升級</block>
+  <block id="a28e21a67dff4d848427cfa15fde856f" category="paragraph">在開始升級流程之前，審查下表中列出的所有問題。</block>
+  <block id="5e3622ee3829e87e1095b6d7f01beaf1" category="cell">如果您的答案是肯定的，那麼您需要這樣做……</block>
+  <block id="2376e2a677900d01e271835b28de0a94" category="cell">我的原始系統叢集上是否存在 FC SAN 組態？</block>
+  <block id="89dcc1d78edaf637785c6ecfca413588" category="inline-link-macro">了解搭配 ONTAP 系統的 FC 和 FCoE 分區</block>
+  <block id="d9be8a4f16ec08dcf1f5e6d2439c4637" category="inline-link-macro">ONTAP 系統的建議 FC 和 FCoE 分區組態</block>
+  <block id="f835dc79760f269bbfd81a777b78620d" category="cell">驗證原始系統和替換系統上所有節點的 SAN 分區組態。請參閱 <block ref="b0267be2c10e97b47f1f9bcbc029b474" category="inline-link-macro-rx"></block> 和 <block ref="0b12576218c74a7268436563b74ec582" category="inline-link-macro-rx"></block>。</block>
+  <block id="7fb0d242758a1608211c466843e7f7e8" category="cell">否。FAS9500 和 FAS90 都執行 ONTAP 9.17.1。</block>
+  <block id="e051a964e918207a93d794544866c861" category="cell">是的。我已經驗證了原始系統和替換系統上所有節點的 SAN 分區組態。</block>
 </blocks>

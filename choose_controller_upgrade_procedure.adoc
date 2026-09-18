@@ -18,8 +18,8 @@ NOTE: 不支援 ASA 升級至 ASA R2 更換系統。如需將資料從 ASA 移�
 
 
 
-[[which-upgrade-procedure-should-i-use]]
-== 我應該使用哪種升級程式？
+[[step-1-select-the-correct-upgrade-procedure]]
+== 步驟 1：選擇正確的升級程序
 
 若要選擇合適的升級程序，請查看下表中列出的所有問題。
 
@@ -68,10 +68,24 @@ ARL 是一種置換手術。您無需隨著新節點的加入而擴展和縮減�
 | 我是否擁有一個整合系統，並且想要僅透過更換控制器模組進行升級，而保留現有的機箱和磁碟？ | link:upgrade-arl-auto-in-chassis/index.html["使用 ARL 進行升級、保留相同的機箱、磁碟及磁碟上儲存的資料"]. 
 
 
+| 我是在升級MetroCluster配置嗎？ | 參考link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["升級、重新整理或擴充MetroCluster 此功能"^]。 
+|===
+
+
+[[step-2-prepare-for-the-upgrade]]
+== 步驟 2：準備升級
+
+在開始升級流程之前，審查下表中列出的所有問題。
+
+[cols="30,70"]
+|===
+| 問問自己… | 如果您的答案是肯定的，那麼您需要這樣做…… 
+
+
 | 我是要遷移一個支援向量機（SVM）嗎？ | 參考link:https://docs.netapp.com/us-en/ontap/svm-migrate/index.html#svm-migration-workflow["SVM 資料移動性概述"^]。 
 
 
-| 我是在升級MetroCluster配置嗎？ | 參考link:https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/concept_choosing_an_upgrade_method_mcc.html["升級、重新整理或擴充MetroCluster 此功能"^]。 
+| 我的原始系統叢集上是否存在 FC SAN 組態？ | 驗證原始系統和替換系統上所有節點的 SAN 分區組態。請參閱 link:https://docs.netapp.com/us-en/ontap/san-config/fibre-channel-fcoe-zoning-concept.html["了解搭配 ONTAP 系統的 FC 和 FCoE 分區"^] 和 link:https://docs.netapp.com/us-en/ontap/san-config/fc-fcoe-recommended-zoning-configuration.html["ONTAP 系統的建議 FC 和 FCoE 分區組態"^]。 
 
 
 | 我是在更換單一零件嗎？ | 請參閱link:https://docs.netapp.com/us-en/ontap-systems/index.html["ONTAP 硬體系統文件"^]並找到該組件的現場可更換單元 (FRU) 宣傳單。 
@@ -88,7 +102,7 @@ ARL 是一種置換手術。您無需隨著新節點的加入而擴展和縮減�
 | 問題 | 範例答案 
 
 
-| 我在原節點和新節點上運行的軟體版本是否不同？ | 不。 FAS9500和 FAS90 都運行ONTAP 9.15.1。 
+| 我在原節點和新節點上運行的軟體版本是否不同？ | 否。FAS9500 和 FAS90 都執行 ONTAP 9.17.1。 
 
 
 | 我是否要執行一次可能造成嚴重後果的升級？ | 不，我希望在升級期間保持生產環境在線。 
@@ -110,6 +124,9 @@ ARL 是一種置換手術。您無需隨著新節點的加入而擴展和縮減�
 
 
 | 我是在升級MetroCluster配置嗎？ | 不，這是一個標準的HA集群。 
+
+
+| 我的原始系統叢集上是否存在 FC SAN 組態？ | 是的。我已經驗證了原始系統和替換系統上所有節點的 SAN 分區組態。 
 
 
 | 我是在更換單一零件嗎？ | 不，我正在升級整個控制器系統。 
