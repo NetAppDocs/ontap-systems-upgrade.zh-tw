@@ -58,7 +58,7 @@ Local System ID: 101268854
 `disk reassign -s <node1_sysid> -d <node3_sysid> -p <node4_sysid>`
 
 ** 此參數 `node1_sysid`是您在「關閉原始節點」中記錄的值，link:upgrade-shutdown-remove-original-nodes.html#shutdown_node_step5["步驟5."]。
-** 僅當存在共享的磁碟時，才指定參數 `-p <node2_sysid>`。
+** 僅當存在共享的磁碟時，才指定參數 `-p <node4_sysid>`。
 
 
 --

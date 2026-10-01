@@ -5476,7 +5476,6 @@
   <block id="19c7bb430e4d1bead9d5461984527c74" category="paragraph">將 node1 的備援裝置磁碟、屬於根 Aggregate 的磁碟以及任何資料彙總重新分配給 node3：</block>
   <block id="9e1eb9f52027541a9bd23e4f05a40757" category="paragraph"><block ref="3e85ddaa3eb6367e1aff5787943cd287" prefix="" category="inline-code"></block></block>
   <block id="035d80ad446a46c968fcbb0f40e59bff" category="list-text">此參數<block ref="bf8d76ef73f87dbf0d27d6adafc03750" prefix=" " category="inline-code"></block>是您在「關閉原始節點」中記錄的值，<block ref="1e1f8cc7c148a6ce0e555a2eab402733" category="inline-link-macro-rx"></block>。</block>
-  <block id="0b0bf670cf9e81b76c1f856decc798dc" category="list-text">僅當存在共享的磁碟時，才指定參數<block ref="bc4c7d36f25c2b011c9a4e9d44cf69ce" prefix=" " category="inline-code"></block>。</block>
   <block id="9c3761bb1f382f977568107f98822095" category="open-title">重新分配給節點4</block>
   <block id="b3223315d463ccaf0b4506447ae447b9" category="paragraph">將節點 2 的備援裝置磁碟、屬於根 Aggregate 的磁碟以及任何資料彙總重新分配給節點 4：</block>
   <block id="358e1893bbf12c04f134205c866ee696" category="paragraph"><block ref="1282cd61a59206d53e5682d1da07e97f" prefix="" category="inline-code"></block></block>
@@ -5599,4 +5598,5 @@
   <block id="f835dc79760f269bbfd81a777b78620d" category="cell">驗證原始系統和替換系統上所有節點的 SAN 分區組態。請參閱 <block ref="b0267be2c10e97b47f1f9bcbc029b474" category="inline-link-macro-rx"></block> 和 <block ref="0b12576218c74a7268436563b74ec582" category="inline-link-macro-rx"></block>。</block>
   <block id="7fb0d242758a1608211c466843e7f7e8" category="cell">否。FAS9500 和 FAS90 都執行 ONTAP 9.17.1。</block>
   <block id="e051a964e918207a93d794544866c861" category="cell">是的。我已經驗證了原始系統和替換系統上所有節點的 SAN 分區組態。</block>
+  <block id="43dcdbe1e8ea835042c3b1cb3b2fc2ed" category="list-text">僅當存在共享的磁碟時，才指定參數<block ref="94d835dc16c43f3c9f59b46dd31e5c6f" prefix=" " category="inline-code"></block>。</block>
 </blocks>
