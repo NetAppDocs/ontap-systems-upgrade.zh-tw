@@ -48,19 +48,19 @@ summary: 使用 ARL 升級同一機箱中的控制器型號時、請使用替換
 --
 如果 node1 沒有自動加入仲裁：
 
-.. 檢查連接埠 e1a 和 e1b 的 IP 空間：
+.. link:https://docs.netapp.com/us-en/ontap-systems/index.html["驗證 node1 叢集連接埠"^]，然後檢查 node1 叢集連接埠的 IPspace：
 +
 「網路連接埠展示」
 
-.. 如果 IP 空間不是“叢集”，請在 e1a 和 e1b 上將 IP 空間變更為“叢集”：
+.. 如果 IPspace 不是「Cluster」，請將 node1 叢集連接埠上的 IPspace 變更為「Cluster」：
 +
 `network port modify -node <node_name> -port <port> -ipspace Cluster`
 
-.. 驗證連接埠 e1a 和 e1b 的 IP 空間是否為「叢集」：
+.. 確認 node1 叢集連接埠的 IPspace 為「Cluster」：
 +
 「網路連接埠展示」
 
-.. 將節點 1 叢集 LIF 遷移到 e1a 和 e1b：
+.. 將 node1 叢集 LIF 遷移至 node1 叢集連接埠：
 +
 `network interface migrate -vserver Cluster -lif <cluster_lif1> -destination-node <node1_name> -destination-port <port_name>`
 

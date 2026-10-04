@@ -4034,7 +4034,6 @@
   <block id="6969dcd136606aa6e90d53d2c4679e06" category="paragraph">下表顯示雙節點無交換器叢集組態的交換器連接埠使用量。</block>
   <block id="4aa636d0c8e798111a1395c5cf44abef" category="cell">AFF A800 、 AFF C800</block>
   <block id="50c089c00eacadfe94238545067e1673" category="cell">AFF A90</block>
-  <block id="5550daaa14d688eff5dec2550faa2310" category="cell">AFF A70 、 AFF C80</block>
   <block id="7aa0e0e616d3fc05f7dffaa202340f4a" category="cell">AFF A250 、 AFF C250</block>
   <block id="1cb4f6c34cb1af85680c6d9e63b2a86d" category="cell">AFF A30 、 AFF C30 、 AFF C60</block>
   <block id="96640993dd2592a16c29226daf83b860" category="cell">e0c</block>
@@ -4320,18 +4319,12 @@
   <block id="9ba9fc17d25add4ac88b7024499346f7" category="list-text">雙節點無交換器集群</block>
   <block id="52d148b751b072a5e6cbab835ff50cf9" category="list-text">將連接的 AFF A250 或 AFF C250 系統升級到 AFF A50、AFF A30、AFF C30 或 AFF C60 系統</block>
   <block id="ad9425984a7bc421520e577ca8fa6ddc" category="paragraph">如果 node1 沒有自動加入仲裁：</block>
-  <block id="2231f07924ae996a2e0335ca51ba8392" category="list-text">檢查連接埠 e1a 和 e1b 的 IP 空間：</block>
-  <block id="0d93c01fb211fce895dfa56e9352568e" category="list-text">如果 IP 空間不是“叢集”，請在 e1a 和 e1b 上將 IP 空間變更為“叢集”：</block>
   <block id="a1f7471b255af2ce2f4e24b7a18b4a16" category="paragraph"><block ref="cad49231dc9ae0f7b5b6641644cb0645" prefix="" category="inline-code"></block></block>
-  <block id="ae96d089b3070a0b74bbf4c5f24a60cf" category="list-text">驗證連接埠 e1a 和 e1b 的 IP 空間是否為「叢集」：</block>
-  <block id="fb988694e04918b3f444ccf586100c68" category="list-text">將節點 1 叢集 LIF 遷移到 e1a 和 e1b：</block>
   <block id="61c7967406d3bbed687be2a2fc12fcf4" category="paragraph"><block ref="77201bdbdb5e1ca6ded21c787e6a1867" prefix="" category="inline-code"></block></block>
   <block id="15a6776356964e218cf6e75d5da438bd" category="list-text">[[verify-node1-step3]]驗證 node1 和 node2 是否屬於同一個集群，以及該集群是否健康：</block>
   <block id="c304740fab96c115c91a4885305cfe13" category="list-text">此步驟適用於以下升級配置。對於所有其他系統升級，請跳過此步驟並轉至<block ref="951e745f9f2e3bc74db45f10f0613198" category="inline-xref-macro-rx"></block> ：</block>
   <block id="fcea2edfedf4023a086d1314bc04b894" category="list-text">將連接的 AFF A250 或 AFF C250 系統升級到 AFF A50、AFF A30、AFF C30 或 AFF C60 系統。</block>
   <block id="c4f73b57af257708b4f825fe0c01f8ee" category="paragraph">如果 node2 沒有自動加入仲裁：</block>
-  <block id="e8623263345db747257101b539fb116a" category="list-text">將節點 2 叢集 LIF 遷移到 e1a 和 e1b：</block>
-  <block id="d36a262908ec596b885d26e7d3c6d090" category="paragraph"><block ref="6cc1893d0214df3ba1a4423c8b22edce" prefix="" category="inline-code"></block></block>
   <block id="41a1ac985b3da653ac747735364a61fb" category="list-text">[[verify-node2-step3]]驗證 node2 和 node1 是否屬於同一個集群，以及該集群是否健康：</block>
   <block id="ffaf5c38853aa6ef5e68631e0c4a1fef" category="list-text">此步驟僅適用於從 AFF A250 或 AFF C250 升級到 AFF A50、AFF A30、AFF C60 或 AFF C30 的雙節點無交換器組態升級。對於所有其他系統升級，請跳過此步驟並轉至<block ref="9c9730c4fd859d78bd3d35e76120bbfc" category="inline-xref-macro-rx"></block> ：</block>
   <block id="41d1809ae493139fc48f336155c6154c" category="paragraph">驗證 e4a、e2a、e1a、e1b 連接埠或 e4a、e4b、e1a、e1b 連接埠是否為「叢集」廣播域中的叢集連接埠。</block>
@@ -4350,7 +4343,6 @@
   <block id="9f5509ea50f3262c2f159d77123f8919" category="list-text">從「集群」廣播域中刪除 e1a 和 e1b：</block>
   <block id="f910ea599d5c2c8323c69531d555ec1b" category="paragraph"><block ref="ab4601f65b55ba79472e7008227a23e9" prefix="" category="inline-code"></block></block>
   <block id="66f26ee54c8814e8b94c065e49d16560" category="list-text">驗證只有叢集連接埠 e4a、e2a 或 e4a、e4b 位於「叢集」廣播域中</block>
-  <block id="b69f8307541b180c301c75852eeaeab7" category="paragraph"><block ref="4362cc8f3c40a5a0a0d9d77b951e1b94" prefix="" category="inline-code"></block></block>
   <block id="536d47e1ce71a4699256360221b299eb" category="list-text">移除 e1a 節點 1 和 e1a 節點 2 以及 e1b 節點 1 和 e1b 節點 2 之間的電纜連接，以確保僅使用有效的叢集 HA 連接且沒有冗餘連接。</block>
   <block id="f538030e7f546e5024b1bb99775e742a" category="list-text">[[verify-node2-step6]]檢查控制器更換操作的狀態，並驗證它處於暫停狀態，並且與 node2 暫停執行安裝新控制器和移動電纜的物理任務之前的狀態相同：</block>
   <block id="3fae990073be4bfc21bbdb3956f8c532" category="list-text">X60132A，4 埠 10/25GbE 卡，適用於雙節點無交換器升級配置</block>
@@ -5599,4 +5591,16 @@
   <block id="7fb0d242758a1608211c466843e7f7e8" category="cell">否。FAS9500 和 FAS90 都執行 ONTAP 9.17.1。</block>
   <block id="e051a964e918207a93d794544866c861" category="cell">是的。我已經驗證了原始系統和替換系統上所有節點的 SAN 分區組態。</block>
   <block id="43dcdbe1e8ea835042c3b1cb3b2fc2ed" category="list-text">僅當存在共享的磁碟時，才指定參數<block ref="94d835dc16c43f3c9f59b46dd31e5c6f" prefix=" " category="inline-code"></block>。</block>
+  <block id="4ebed744f743f3731cc934e74c9bc795" category="cell">AFF A90、AFF A70</block>
+  <block id="83f9d97b7e0ce392def1b9cc710cba11" category="inline-link-macro">驗證 node1 叢集連接埠</block>
+  <block id="a6a3edad85463f469d690690a1b3871e" category="list-text"><block ref="d3ce79281d1fc913d4518e97c134277e" category="inline-link-macro-rx"></block>，然後檢查 node1 叢集連接埠的 IPspace：</block>
+  <block id="7ef4ee596b07314d814764248359bf8c" category="list-text">如果 IPspace 不是「Cluster」，請將 node1 叢集連接埠上的 IPspace 變更為「Cluster」：</block>
+  <block id="35aa0c7bd70cebb8ea8c32f81d5010f5" category="list-text">確認 node1 叢集連接埠的 IPspace 為「Cluster」：</block>
+  <block id="212a783c3adc8fba942feba1ebe87929" category="list-text">將 node1 叢集 LIF 遷移至 node1 叢集連接埠：</block>
+  <block id="e78d26f3d2ad418d8f7dc95adfd4dfc9" category="inline-link-macro">驗證 node2 叢集連接埠</block>
+  <block id="d3d540283e32086fa0cd53dbe57ac5b9" category="list-text"><block ref="123312d0cba1b403a57a4961530c18ea" category="inline-link-macro-rx"></block>，然後檢查 node2 叢集連接埠的 IPspace：</block>
+  <block id="3d73676012cd6dba883facfc39930fe0" category="list-text">如果 IPspace 不是「Cluster」，請將 node2 叢集連接埠上的 IPspace 變更為「Cluster」：</block>
+  <block id="f654c91b68b6a4c46bc8036bb0a1247a" category="list-text">確認 node2 叢集連接埠的 IPspace 為「Cluster」：</block>
+  <block id="e25c139136794abce425d3fa0a956e7c" category="list-text">將 node2 叢集 LIF 遷移到 node2 叢集連接埠：</block>
+  <block id="0038bfbc8a298594554dbee7e17ca566" category="paragraph"><block ref="2206b486a3e9547383ad932f7fc33509" prefix="" category="inline-code"></block></block>
 </blocks>
