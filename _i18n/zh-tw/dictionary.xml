@@ -4885,8 +4885,6 @@
   <block id="ce39be5d7f3311f3002d90b356ccdc14" category="cell">FAS2620^4^，FAS2720^4^</block>
   <block id="ed2a65a81b323e108bb0f144e03c3c4f" category="paragraph">^4^下表顯示控制器升級組合支援的 ONTAP 版本。</block>
   <block id="b69791a38ba725881c6a2fc5ecab63cb" category="cell">9.13.1 或更新版本</block>
-  <block id="e1a6f05f3e6c48b5646a68b138034f8d" category="cell">FAS2760</block>
-  <block id="d03f05e2115035868849d9a9b6ed185f" category="cell">9.11.1P7 或更早版本</block>
   <block id="d431073ae71950468aefd4d8436e1ef0" category="paragraph">安裝了替換模組的 Node1 現在可以啟動了。支援的替換模組列在 <block ref="1148bc021ec205bbffacd287de2b889b" category="inline-link-macro-rx"></block> 中。</block>
   <block id="be478cf082a439418badbebb9d611315" category="paragraph">安裝了替換模組的 Node2 現在可以啟動了。支援的替換模組列在 <block ref="1148bc021ec205bbffacd287de2b889b" category="inline-link-macro-rx"></block> 中。</block>
   <block id="cab3f425a0777f41648c6d4726a06447" category="summary">決定是否使用 ARL 程序升級相同機箱、磁碟中的控制器型號，以及磁碟上儲存的資料。</block>
@@ -5603,4 +5601,5 @@
   <block id="f654c91b68b6a4c46bc8036bb0a1247a" category="list-text">確認 node2 叢集連接埠的 IPspace 為「Cluster」：</block>
   <block id="e25c139136794abce425d3fa0a956e7c" category="list-text">將 node2 叢集 LIF 遷移到 node2 叢集連接埠：</block>
   <block id="0038bfbc8a298594554dbee7e17ca566" category="paragraph"><block ref="2206b486a3e9547383ad932f7fc33509" prefix="" category="inline-code"></block></block>
+  <block id="d4ca4de004c509fdca6f6baba9d067b3" category="cell">9.11.1 或更新版本</block>
 </blocks>
